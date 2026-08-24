@@ -14,6 +14,10 @@ config/name="samsara game"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*uid://bvmx1pu32ivk1"
+
 [input]
 
 up={

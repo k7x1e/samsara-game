@@ -4,3 +4,20 @@
 #began
 #22:24
 #just added mouselook functionality and a cursor. Got basic movement down and i will most likely push this to github now.
+
+#21/08
+#10:25
+#planning to migrate some old assets from dustrialis onto here simply for temporary graphical quality.
+#as i get home i plan to immediately start work on an inventory system similar to the one i made for dustrialis.
+#This game shall carry the heart and soul of dustrialis but in another form.
+#after all they are quite similar.
+
+#24/08
+#22:22
+#i will now begin NPC functionality.
+#combat will be turn based, Fairly simple afaik. Implementing the actual system for it wont be too hard but making the ai work is a whole other story.
+#im kind of skeptical about making a non grid turn based isometric game but i trust itll work.
+#22:46
+#got the most basic of NPC rigs active. Now i got to set up pathfinding so i can get some actual npc behaviours running
+#23:18
+#ive got the basic behaviour I.E most of the basic actor system down. I will now go to bed

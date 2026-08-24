@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ccs47wlxaacj4"]
+
+[ext_resource type="Script" uid="uid://cine2pxbjr6ec" path="res://Scripts/player.gd" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://b8iv4i2fey054" path="res://icon.svg" id="2_gntrk"]
+
+[sub_resource type="Environment" id="Environment_gl6un"]
+background_mode = 1
+fog_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kldst"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_j5yw3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gl6un"]
+size = Vector3(0.7, 0.2, 0.6)
+
+[node name="Player" type="CharacterBody3D" unique_id=1215905502]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
+script = ExtResource("1_kyqiw")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1510999750]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 8, 8)
+environment = SubResource("Environment_gl6un")
+current = true
+size = 9.080143
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1972051746]
+shape = SubResource("CapsuleShape3D_kldst")
+
+[node name="Rotation" type="Node3D" parent="." unique_id=415138007]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rotation" unique_id=403907140]
+mesh = SubResource("CapsuleMesh_j5yw3")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Rotation" unique_id=2104225753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, -0.25)
+mesh = SubResource("BoxMesh_gl6un")
+
+[node name="Cursor" type="Node3D" parent="." unique_id=390801373]
+
+[node name="Sprite3D" type="Sprite3D" parent="Cursor" unique_id=523440784]
+billboard = 1
+texture = ExtResource("2_gntrk")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=109639042]

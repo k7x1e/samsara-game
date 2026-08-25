@@ -11,28 +11,28 @@ border_width_left = 10
 border_width_right = 10
 border_color = Color(0, 0, 0, 1)
 
-[node name="billboard" type="Node3D" unique_id=1199928384]
+[node name="billboard" type="Node3D" unique_id=1199928384 groups=["Pausable"]]
 script = ExtResource("1_dwpb4")
 billboardtext = "I am an npc bro"
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=928405031]
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=928405031 groups=["Pausable"]]
 billboard = 1
 texture = SubResource("ViewportTexture_dwpb4")
 
-[node name="SubViewport" type="SubViewport" parent="." unique_id=1884092643]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1884092643 groups=["Pausable"]]
 transparent_bg = true
 size = Vector2i(512, 50)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport" unique_id=1910178090]
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport" unique_id=1910178090 groups=["Pausable"]]
 
-[node name="CenterContainer" type="CenterContainer" parent="SubViewport/CanvasLayer" unique_id=612352579]
+[node name="CenterContainer" type="CenterContainer" parent="SubViewport/CanvasLayer" unique_id=612352579 groups=["Pausable"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="SubViewport/CanvasLayer/CenterContainer" unique_id=786642556]
+[node name="RichTextLabel" type="RichTextLabel" parent="SubViewport/CanvasLayer/CenterContainer" unique_id=786642556 groups=["Pausable"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 30

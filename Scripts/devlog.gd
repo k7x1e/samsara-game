@@ -34,3 +34,5 @@
 #typing in here to not do so in any documents, each game chapter (or reincarnation) is fairly long but split into parts, Each time you complete a part you kinda prestige and only bring with you that which is bound to your soul and go on to the next part.
 #23:00
 #added the basic function for adding everything in and thus adding the basis for the save function.
+#23:28
+#got the basics of a window for the menu up and running.

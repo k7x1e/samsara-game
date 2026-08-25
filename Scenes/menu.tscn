@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b4apr6vl8oocn"]
+
+[ext_resource type="Script" uid="uid://dhut73dh0ov62" path="res://Scripts/menu.gd" id="1_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://bsajubq81b2qs" path="res://Textures/black.png" id="2_cayip"]
+
+[node name="Menu" type="CanvasLayer" unique_id=539579730]
+follow_viewport_enabled = true
+script = ExtResource("1_xhh6f")
+
+[node name="Menu" type="Control" parent="." unique_id=1668157874]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Menu" unique_id=1030292509]
+modulate = Color(1, 1, 1, 0.49019608)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cayip")

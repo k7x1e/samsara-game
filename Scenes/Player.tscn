@@ -14,7 +14,7 @@ fog_enabled = true
 [sub_resource type="BoxMesh" id="BoxMesh_gl6un"]
 size = Vector3(0.7, 0.2, 0.6)
 
-[node name="Player" type="CharacterBody3D" unique_id=1215905502]
+[node name="Player" type="CharacterBody3D" unique_id=1215905502 groups=["Pausable"]]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
 script = ExtResource("1_kyqiw")
 
@@ -35,6 +35,9 @@ mesh = SubResource("CapsuleMesh_j5yw3")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Rotation" unique_id=2104225753]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, -0.25)
 mesh = SubResource("BoxMesh_gl6un")
+
+[node name="Follower1" type="Node3D" parent="Rotation" unique_id=1040133454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
 [node name="Cursor" type="Node3D" parent="." unique_id=390801373]
 

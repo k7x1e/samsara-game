@@ -1,10 +1,12 @@
 extends Node3D
 
-@onready var Menu = $Menu
+@export var gamestate: gameState
 
+var Menu
 var toggled = false
 
 func _ready():
+	await initialize(gamestate)
 	Menu.set_process(false)
 	Menu.hide()
 
@@ -34,3 +36,11 @@ func pause(paused: bool):
 	else:
 		for object in pausable:
 			object.process_mode = Node.PROCESS_MODE_INHERIT
+
+func initialize(gmestate: gameState):
+	for i in range(gmestate.nodes.size()):
+		var temp = gmestate.nodes[i].scene.instantiate()
+		self.add_child(temp)
+		if gmestate.nodes[i].name == "Menu":
+			Menu = temp
+	return true

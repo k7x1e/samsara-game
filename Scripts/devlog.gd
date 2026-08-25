@@ -29,3 +29,8 @@
 #scrap turn based were going full diabolo
 #18:42
 #finished ability for NPCs to speak, not the full dialogue system of course.
+#22:35
+#planning to implement the director now
+#typing in here to not do so in any documents, each game chapter (or reincarnation) is fairly long but split into parts, Each time you complete a part you kinda prestige and only bring with you that which is bound to your soul and go on to the next part.
+#23:00
+#added the basic function for adding everything in and thus adding the basis for the save function.

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bkimo22crvjn5"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_lfvdv"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_wsunn"]
 
 [node name="Model" type="MeshInstance3D" unique_id=1429497101]
-mesh = SubResource("CapsuleMesh_lfvdv")
+mesh = SubResource("CylinderMesh_wsunn")

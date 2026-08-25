@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dbhtmjtvoohhi"]
+
+[ext_resource type="Script" uid="uid://dvhlvrgx56mc5" path="res://Scripts/billboard.gd" id="1_dwpb4"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dwpb4"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgofq"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_right = 10
+border_color = Color(0, 0, 0, 1)
+
+[node name="billboard" type="Node3D" unique_id=1199928384]
+script = ExtResource("1_dwpb4")
+billboardtext = "I am an npc bro"
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=928405031]
+billboard = 1
+texture = SubResource("ViewportTexture_dwpb4")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1884092643]
+transparent_bg = true
+size = Vector2i(512, 50)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport" unique_id=1910178090]
+
+[node name="CenterContainer" type="CenterContainer" parent="SubViewport/CanvasLayer" unique_id=612352579]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SubViewport/CanvasLayer/CenterContainer" unique_id=786642556]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_fgofq")
+bbcode_enabled = true
+text = "Placeholder"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1

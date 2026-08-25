@@ -27,17 +27,18 @@ func move():
 	#basically just stolen from dustrialis source code.
 	#if behaviour.nav.target_position:
 	tempPos = nav.get_next_path_position()
-	print("headed to ", tempPos)
+	#print("headed to ", tempPos)
 	var direction = position.direction_to(tempPos)
 	if direction:
-		print("i have motion")
+		#print("i have motion")
+		#oh my god nigga "i have motion"
 		velocity.x = direction.x * behaviour.speed
 		velocity.z = direction.z * behaviour.speed
 	else:
-		print("i have nowhere to go....")
+		#print("i have nowhere to go....")
 		velocity.x = move_toward(velocity.x, 0, deltaSHIT)
 		velocity.z = move_toward(velocity.z, 0, deltaSHIT)
-	print(direction, velocity)
+	#print(direction, velocity)
 	#functionality for the ability
 	move_and_slide()
 

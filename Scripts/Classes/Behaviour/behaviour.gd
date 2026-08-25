@@ -6,6 +6,8 @@ class_name Behaviour
 @export var speed: float
 @export var actor: Variant
 
+@export var billboard: PackedScene = preload("res://Scenes/billboard.tscn")
+
 func damage(amt: float) -> bool: #return true if survived, if dead return false to let the actor kill itself.
 	if health - amt > 0:
 		health -= amt
@@ -13,6 +15,12 @@ func damage(amt: float) -> bool: #return true if survived, if dead return false 
 	else: 
 		health = 0
 		return false
+
+func say(message: String):
+	var temp = billboard.instantiate()
+	actor.add_child(temp)
+	temp.billboardtext = message
+	temp.initialize()
 
 func death():
 	#here is where one would stick fancy death stuff, do whatever then send the destruction command.

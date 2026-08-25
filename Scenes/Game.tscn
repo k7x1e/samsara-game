@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://c7loruht48vqs"]
 
 [ext_resource type="Texture2D" uid="uid://b8iv4i2fey054" path="res://icon.svg" id="1_iukft"]
+[ext_resource type="Script" uid="uid://brkcfwu3ix8u6" path="res://Scripts/Root.gd" id="1_kldst"]
 [ext_resource type="PackedScene" uid="uid://ccs47wlxaacj4" path="res://Scenes/Player.tscn" id="2_gl6un"]
 [ext_resource type="PackedScene" uid="uid://wggca4kc4v15" path="res://Scenes/actor.tscn" id="3_j5yw3"]
+[ext_resource type="Script" uid="uid://dhut73dh0ov62" path="res://Scripts/menu.gd" id="5_b2bpf"]
+[ext_resource type="Texture2D" uid="uid://bsajubq81b2qs" path="res://Textures/black.png" id="6_7lihs"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_j5yw3"]
 vertices = PackedVector3Array(9.23, -2.6525652, -1.5099695, 9.309999, -2.6525652, -1.5099695, 9.309999, -2.6525652, -4.5099697, 8.91, -2.6525652, -1.3499694, 8.75, -2.6525652, -1.0299697, 5.5, -2.6525652, -4.5099697, 5.5, -2.6525652, -2.4999695, 5.3199997, -2.6525652, -2.1699696, 11.18, -2.6525652, -1.5099695, 11.18, -2.6525652, -4.5099697, 11.75, -2.6525652, -1.0199695, 11.75, -2.6525652, -0.9599695, 14.5, -2.6525652, -0.96996975, 11.58, -2.6525652, -1.3499694, 11.26, -2.6525652, -1.5099695, 14.5, -2.6525652, -4.5099697, 1.0699997, -0.65256524, 2.0000305, 1.0699997, -0.65256524, -2.0099695, 1, -0.65256524, -2.0099695, 1, -0.65256524, 2.0000305, -8.5, -0.65256524, 4.5000305, 0.5100002, -0.65256524, 4.5000305, 0.5100002, -0.65256524, 2.4900303, 0.67999935, -0.65256524, 2.1600304, 0.67999935, -0.65256524, -2.1699696, 0.5100002, -0.65256524, -2.4999695, 0.5100002, -0.65256524, -4.4899693, -8.5, -0.65256524, -4.4899693, 5.0099993, -2.6525652, 2.0000305, 5.3199997, -2.6525652, 2.1600304, 8.75, -2.6525652, 1.0200305, 5.0099993, -2.6525652, -2.0099695, 4.9399996, -2.6525652, -2.0099695, 4.9399996, -2.6525652, 2.0000305, 11.75, -2.6525652, 0.9500303, 14.5, -2.6525652, 0.96003056, 9.74, -0.65256524, -0.5099697, 9.74, -0.65256524, 0.5000305, 10.75, -0.65256524, 0.5000305, 10.75, -0.65256524, -0.5099697, 9.75, -2.6525652, -0.49996948, 9.75, -2.6525652, 0.4900303, 10.74, -2.6525652, 0.4900303, 10.74, -2.6525652, -0.49996948, 11.75, -2.6525652, 1.0100303, 11.58, -2.6525652, 1.3400302, 11.26, -2.6525652, 1.5000305, 11.18, -2.6525652, 1.5000305, 11.18, -2.6525652, 4.5000305, 14.5, -2.6525652, 4.5000305, 9.309999, -2.6525652, 4.5000305, 9.309999, -2.6525652, 1.5000305, 9.23, -2.6525652, 1.5000305, 8.91, -2.6525652, 1.3400302, 5.5, -2.6525652, 2.4900303, 5.5, -2.6525652, 4.5000305)
@@ -15,7 +18,7 @@ albedo_texture = ExtResource("1_iukft")
 [sub_resource type="PlaneMesh" id="PlaneMesh_kldst"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iukft"]
-size = Vector3(10, 0.5, 10)
+size = Vector3(9.761597, 0.5, 10)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gl6un"]
 size = Vector2(1, 1)
@@ -28,10 +31,36 @@ size = Vector3(5, 0.5, 5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kldst"]
 
 [node name="Root" type="Node3D" unique_id=1717732160]
+process_mode = 3
+script = ExtResource("1_kldst")
 
-[node name="World" type="Node3D" parent="." unique_id=111126419]
+[node name="Menu" type="CanvasLayer" parent="." unique_id=1348151749]
+follow_viewport_enabled = true
+script = ExtResource("5_b2bpf")
+
+[node name="Menu" type="Control" parent="Menu" unique_id=1470952689]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Menu/Menu" unique_id=980361450]
+modulate = Color(1, 1, 1, 0.49019608)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_7lihs")
+
+[node name="World" type="Node3D" parent="." unique_id=111126419 groups=["Pausable"]]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="World" unique_id=1724295944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0005671978, 0.00884819, -0.004940033)
 navigation_mesh = SubResource("NavigationMesh_j5yw3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="World/NavigationRegion3D" unique_id=190387779]
@@ -43,7 +72,7 @@ material_override = SubResource("StandardMaterial3D_j5yw3")
 mesh = SubResource("PlaneMesh_kldst")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/NavigationRegion3D/StaticBody3D" unique_id=418660648]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24996948, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11920166, -0.24996948, 0)
 shape = SubResource("BoxShape3D_iukft")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="World/NavigationRegion3D" unique_id=998431398]
@@ -94,13 +123,13 @@ shape = SubResource("BoxShape3D_kldst")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="World" unique_id=771011730]
 transform = Transform3D(-4.371139e-08, -0.70710677, 0.70710677, 0, 0.7071068, 0.7071068, -1.0000001, 3.090862e-08, -3.090862e-08, 9, 11, 23)
 
-[node name="Player" parent="." unique_id=1215905502 instance=ExtResource("2_gl6un")]
+[node name="Player" parent="." unique_id=1215905502 groups=["Pausable"] instance=ExtResource("2_gl6un")]
 transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, 0, 0, 0)
 
 [node name="Follower1" type="Node3D" parent="Player/Rotation" parent_id_path=PackedInt32Array(1215905502, 415138007) index="2" unique_id=727226637]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
-[node name="Actor" parent="." unique_id=1866149922 instance=ExtResource("3_j5yw3")]
+[node name="Actor" parent="." unique_id=1866149922 groups=["Pausable"] instance=ExtResource("3_j5yw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4541354, 2, 0)
 
 [editable path="Player"]

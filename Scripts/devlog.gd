@@ -21,3 +21,11 @@
 #got the most basic of NPC rigs active. Now i got to set up pathfinding so i can get some actual npc behaviours running
 #23:18
 #ive got the basic behaviour I.E most of the basic actor system down. I will now go to bed
+
+#25/08
+#08:58
+#today i shalt finish up the last of the actor system and begin work on the combat, inventory or ability systems.
+#12:53
+#scrap turn based were going full diabolo
+#18:42
+#finished ability for NPCs to speak, not the full dialogue system of course.

@@ -36,3 +36,9 @@
 #added the basic function for adding everything in and thus adding the basis for the save function.
 #23:28
 #got the basics of a window for the menu up and running.
+
+#26/08
+#13:23
+#i have an oppurtunity
+#14:29
+#just finished up saving and loading. twas not easy.

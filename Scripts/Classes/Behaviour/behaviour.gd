@@ -19,6 +19,7 @@ func damage(amt: float) -> bool: #return true if survived, if dead return false 
 func say(message: String):
 	var temp = billboard.instantiate()
 	actor.add_child(temp)
+	temp.set_owner(actor)
 	temp.billboardtext = message
 	temp.initialize()
 

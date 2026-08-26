@@ -48,6 +48,7 @@ func initialize():
 	behaviour.initialize()
 	var CharModel = NpcClass.model.instantiate()
 	visual.add_child(CharModel)
+	CharModel.set_owner(self)
 
 func destroy():
 	self.queue_free()

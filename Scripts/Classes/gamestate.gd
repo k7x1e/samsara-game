@@ -2,4 +2,24 @@ extends Resource
 
 class_name gameState
 
-@export var nodes: Array[nodePreset]
+@export var initnodes: Array[nodePreset]
+@export var rootNode: Variant
+@export var saves: Array[PackedScene]
+@export var initialized: bool = false
+
+func get_last_save() -> PackedScene:
+	var fart = saves.size()-1
+	print(fart)
+	return saves[fart]
+
+func get_save(i: int) -> PackedScene:
+	return saves[i]
+
+func add_save(theSaveInQuestion: PackedScene):
+	saves.append(theSaveInQuestion)
+
+func initialize():
+	if !initialized:
+		await rootNode.initialize(self)
+		rootNode.Menu.set_process(false)
+		rootNode.Menu.hide()

@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://ccs47wlxaacj4"]
 
 [ext_resource type="Script" uid="uid://cine2pxbjr6ec" path="res://Scripts/player.gd" id="1_kyqiw"]
+[ext_resource type="Script" uid="uid://buvsbboygw12p" path="res://Scripts/wizard.gd" id="2_dewec"]
 [ext_resource type="Texture2D" uid="uid://b8iv4i2fey054" path="res://icon.svg" id="2_gntrk"]
+[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/Classes/spells/spell.gd" id="3_5ixxa"]
+[ext_resource type="PackedScene" uid="uid://bga75wb36a5io" path="res://Scenes/spell.tscn" id="4_nn08x"]
 
 [sub_resource type="Environment" id="Environment_gl6un"]
 background_mode = 1
@@ -13,6 +16,12 @@ fog_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_gl6un"]
 size = Vector3(0.7, 0.2, 0.6)
+
+[sub_resource type="Resource" id="Resource_52ee3"]
+script = ExtResource("3_5ixxa")
+spellNode = ExtResource("4_nn08x")
+name = "FUCK"
+metadata/_custom_type_script = "uid://b52li86lflfyj"
 
 [node name="Player" type="CharacterBody3D" unique_id=1215905502 groups=["Pausable"]]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
@@ -38,6 +47,10 @@ mesh = SubResource("BoxMesh_gl6un")
 
 [node name="Follower1" type="Node3D" parent="Rotation" unique_id=1040133454]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Wizard" type="Node3D" parent="Rotation" unique_id=2016947607]
+script = ExtResource("2_dewec")
+activeLeftSpell = SubResource("Resource_52ee3")
 
 [node name="Cursor" type="Node3D" parent="." unique_id=390801373]
 

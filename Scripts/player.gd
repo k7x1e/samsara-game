@@ -9,7 +9,7 @@ var dashVector = Vector3(dashD, 0, 0)
 @onready var cursorNode = $Cursor
 @onready var camera = $Camera3D
 @onready var rotationNode = $Rotation
-
+@onready var wizard = $Rotation/Wizard
 @onready var followerNode = $Rotation/Follower1 #will be replaced with a function eventually but this will do for now
 
 func _ready():
@@ -43,7 +43,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		var dash = dashD * direction
 		self.position += dash
-
+	if Input.is_action_just_pressed("LeftClick"):
+		wizard.cast(1)
+	
 	move_and_slide()
 
 #evil ass mouselook function niggaaaa

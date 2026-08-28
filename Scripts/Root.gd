@@ -2,10 +2,15 @@ extends Node3D
 
 @export var gamestate: gameState
 
+@onready var preloadshitfuck = load("user://Save/saves.sav")
+
 var Menu
 var toggled = false
 
 func _ready():
+	Globals.Root = self
+	if preloadshitfuck:
+		gamestate = preloadshitfuck
 	gamestate.rootNode = self
 	await gamestate.initialize()
 	gamestate.initialized = true
@@ -53,7 +58,7 @@ func initialize(gmestate: gameState):
 func save():
 	var scene = PackedScene.new()
 	var result = scene.pack(get_tree().get_current_scene())
-	ResourceSaver.save(scene, "res://last_save.tscn")
+	ResourceSaver.save(scene, "res://last_save.tscn", ResourceSaver.FLAG_BUNDLE_RESOURCES)
 	
 	if result == OK:
 		# Save the packed scene to disk (.tscn or .res)

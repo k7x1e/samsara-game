@@ -42,3 +42,9 @@
 #i have an oppurtunity
 #14:29
 #just finished up saving and loading. twas not easy.
+
+#28/08
+#14:10
+#one might observe that the saving only saves locally. 
+#Thats because godot is an evil piece of software coded for the displeasure of he who wishes to make anything but phone games.
+#it will be put off for now as i prioritize spells/inventory.

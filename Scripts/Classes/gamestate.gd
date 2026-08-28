@@ -16,7 +16,12 @@ func get_save(i: int) -> PackedScene:
 	return saves[i]
 
 func add_save(theSaveInQuestion: PackedScene):
+	var fileName = str("save_",saves.size())
+	print(fileName)
+	var filePath = str("user://Save/", fileName)
+	ResourceSaver.save(theSaveInQuestion, filePath)
 	saves.append(theSaveInQuestion)
+	ResourceSaver.save(self, "user://Save/saves.sav")
 
 func initialize():
 	if !initialized:

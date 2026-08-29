@@ -1,11 +1,12 @@
 [gd_scene format=3]
 
-[ext_resource type="PackedScene" path="res://Scenes/world.tscn" id="1_3siir"]
-[ext_resource type="PackedScene" path="res://Scenes/Player.tscn" id="2_lch76"]
-[ext_resource type="PackedScene" path="res://Scenes/actor.tscn" id="3_3pvyx"]
-[ext_resource type="PackedScene" path="res://Scenes/menu.tscn" id="4_rs76j"]
+[ext_resource type="PackedScene" path="res://Scenes/world.tscn" id="1_lch76"]
+[ext_resource type="PackedScene" path="res://Scenes/Player.tscn" id="2_3pvyx"]
+[ext_resource type="PackedScene" path="res://Scenes/actor.tscn" id="3_rs76j"]
+[ext_resource type="PackedScene" path="res://Scenes/menu.tscn" id="4_kqphk"]
+[ext_resource type="PackedScene" path="res://Scenes/gui.tscn" id="5_qaqkx"]
 
-[sub_resource type="GDScript" id="GDScript_kqphk"]
+[sub_resource type="GDScript" id="GDScript_pob5n"]
 script/source = "extends Node3D
 
 @export var gamestate: gameState
@@ -16,6 +17,7 @@ var Menu
 var toggled = false
 
 func _ready():
+	Globals.Root = self
 	if preloadshitfuck:
 		gamestate = preloadshitfuck
 	gamestate.rootNode = self
@@ -81,7 +83,7 @@ func loadSave(which: int):
 	get_tree().change_scene_to_packed(lastSave)
 "
 
-[sub_resource type="GDScript" id="GDScript_qaqkx"]
+[sub_resource type="GDScript" id="GDScript_3cb3b"]
 script/source = "extends Resource
 
 class_name nodePreset
@@ -96,11 +98,11 @@ vertices = PackedVector3Array(9.23, -2.6525652, -1.5099695, 9.309999, -2.6525652
 polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 4, 2), PackedInt32Array(2, 4, 6), PackedInt32Array(2, 6, 5), PackedInt32Array(4, 7, 6), PackedInt32Array(2, 9, 1), PackedInt32Array(1, 9, 8), PackedInt32Array(12, 11, 10), PackedInt32Array(13, 12, 10), PackedInt32Array(14, 8, 9), PackedInt32Array(14, 9, 13), PackedInt32Array(13, 9, 15), PackedInt32Array(13, 15, 12), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17), PackedInt32Array(20, 22, 21), PackedInt32Array(19, 23, 18), PackedInt32Array(18, 23, 24), PackedInt32Array(27, 26, 25), PackedInt32Array(23, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(25, 22, 27), PackedInt32Array(27, 22, 20), PackedInt32Array(30, 29, 28), PackedInt32Array(4, 31, 7), PackedInt32Array(31, 4, 32), PackedInt32Array(32, 4, 30), PackedInt32Array(32, 30, 28), PackedInt32Array(32, 28, 33), PackedInt32Array(17, 32, 16), PackedInt32Array(16, 32, 33), PackedInt32Array(11, 12, 34), PackedInt32Array(34, 12, 35), PackedInt32Array(39, 38, 36), PackedInt32Array(36, 38, 37), PackedInt32Array(43, 42, 40), PackedInt32Array(40, 42, 41), PackedInt32Array(44, 34, 35), PackedInt32Array(45, 44, 35), PackedInt32Array(48, 47, 46), PackedInt32Array(46, 45, 48), PackedInt32Array(48, 45, 49), PackedInt32Array(49, 45, 35), PackedInt32Array(52, 51, 50), PackedInt32Array(53, 52, 50), PackedInt32Array(53, 50, 30), PackedInt32Array(30, 50, 54), PackedInt32Array(54, 50, 55), PackedInt32Array(54, 29, 30), PackedInt32Array(51, 47, 50), PackedInt32Array(50, 47, 48)]
 cell_size = 0.01
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pob5n"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_areea"]
 load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5yw3"]
-albedo_texture = SubResource("CompressedTexture2D_pob5n")
+albedo_texture = SubResource("CompressedTexture2D_areea")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kldst"]
 
@@ -117,7 +119,7 @@ size = Vector3(5, 0.5, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kldst"]
 
-[sub_resource type="PackedScene" id="PackedScene_3cb3b"]
+[sub_resource type="PackedScene" id="PackedScene_bj4io"]
 _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
@@ -133,12 +135,12 @@ _bundled = {
 }
 
 [sub_resource type="Resource" id="Resource_fgofq"]
-script = SubResource("GDScript_qaqkx")
-scene = ExtResource("1_3siir")
+script = SubResource("GDScript_3cb3b")
+scene = ExtResource("1_lch76")
 name = "World"
 metadata/_custom_type_script = "uid://b3rylldbgh8gp"
 
-[sub_resource type="GDScript" id="GDScript_areea"]
+[sub_resource type="GDScript" id="GDScript_rqy01"]
 script/source = "extends CharacterBody3D
 
 
@@ -223,7 +225,7 @@ fog_enabled = true
 [sub_resource type="BoxMesh" id="BoxMesh_gl6un"]
 size = Vector3(0.7, 0.2, 0.6)
 
-[sub_resource type="GDScript" id="GDScript_bj4io"]
+[sub_resource type="GDScript" id="GDScript_d458g"]
 script/source = "extends Node3D
 
 @export var activeLeftSpell: spell
@@ -241,7 +243,7 @@ func cast(which: int): #1: left, 2: right, 3,4,5: other bindable spells
 			print(\"fuck you\")
 "
 
-[sub_resource type="GDScript" id="GDScript_rqy01"]
+[sub_resource type="GDScript" id="GDScript_msv0n"]
 script/source = "extends Resource
 
 class_name spell
@@ -257,15 +259,16 @@ class_name spell
 func cast(caster: Variant):
 	#Globals.Player
 	var actualNode = spellNode.instantiate()
-	caster.add_child(actualNode)
+	Globals.Root.add_child(actualNode)
+	actualNode.global_rotation = caster.global_rotation
 	actualNode.global_position = caster.global_position
 	actualNode.set_owner(Globals.Player)
 "
 
-[sub_resource type="GDScript" id="GDScript_d458g"]
+[sub_resource type="GDScript" id="GDScript_hn5sb"]
 script/source = "extends Node3D
 
-
+@export var speed: float = 5.0
 
 func _ready() -> void:
 	print (\"hej\")
@@ -273,35 +276,40 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#do whatever, ill prioritize actual casting/using. (WEAPONS WILL WORK THE SAME AS SPELLS)
-	pass
+	# Get the forward direction based on current rotation
+	var direction = -transform.basis.z
+	
+	# Set velocity and move
+	var velocity = direction * speed
+	position += velocity
 "
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_6khjq"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_6khjq"]
 
-[sub_resource type="PackedScene" id="PackedScene_msv0n"]
+[sub_resource type="PackedScene" id="PackedScene_u4pnr"]
 _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
 "editable_instances": [],
 "id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Spell", "Node3D", "script", "Collision", "Area3D", "CollisionShape3D", "CollisionShape3D", "shape", "MeshInstance3D", "MeshInstance3D", "mesh"),
+"names": PackedStringArray("Spell", "Node3D", "script", "speed", "Collision", "Area3D", "CollisionShape3D", "CollisionShape3D", "shape", "MeshInstance3D", "MeshInstance3D", "mesh"),
 "node_count": 4,
 "node_ids": PackedInt32Array(252904442, 271090165, 1018534746, 1449368325),
 "node_paths": [NodePath("."), NodePath("./Collision"), NodePath(".")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 0, 0, 1073741825, 0, 6, 5, -1, 1, 7, 1, 0, 1073741826, 0, 9, 8, -1, 1, 10, 2, 0),
-"variants": [SubResource("GDScript_d458g"), SubResource("SphereShape3D_6khjq"), SubResource("SphereMesh_6khjq")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 2, 0, 3, 1, 0, 1073741824, 0, 5, 4, -1, 0, 0, 1073741825, 0, 7, 6, -1, 1, 8, 2, 0, 1073741826, 0, 10, 9, -1, 1, 11, 3, 0),
+"variants": [SubResource("GDScript_hn5sb"), 0.5, SubResource("SphereShape3D_6khjq"), SubResource("SphereMesh_6khjq")],
 "version": 3
 }
 
 [sub_resource type="Resource" id="Resource_52ee3"]
-script = SubResource("GDScript_rqy01")
-spellNode = SubResource("PackedScene_msv0n")
+script = SubResource("GDScript_msv0n")
+spellNode = SubResource("PackedScene_u4pnr")
 name = "FUCK"
 metadata/_custom_type_script = "uid://b52li86lflfyj"
 
-[sub_resource type="PackedScene" id="PackedScene_hn5sb"]
+[sub_resource type="PackedScene" id="PackedScene_v3jp6"]
 _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
@@ -312,18 +320,18 @@ _bundled = {
 "node_ids": PackedInt32Array(1215905502, 1510999750, 1972051746, 415138007, 403907140, 2104225753, 1040133454, 2016947607, 390801373, 523440784, 109639042),
 "node_paths": [NodePath("."), NodePath("."), NodePath("."), NodePath("./Rotation"), NodePath("./Rotation"), NodePath("./Rotation"), NodePath("./Rotation"), NodePath("."), NodePath("./Cursor"), NodePath(".")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 3, 0, 4, 1, 1, 2, 1073741824, 0, 6, 5, -1, 4, 7, 2, 8, 3, 9, 4, 10, 5, 0, 1073741825, 0, 12, 11, -1, 1, 13, 6, 0, 1073741826, 0, 15, 14, -1, 0, 0, 1073741827, 0, 17, 16, -1, 1, 18, 7, 0, 1073741828, 0, 20, 19, -1, 2, 21, 8, 22, 9, 0, 1073741829, 0, 24, 23, -1, 1, 25, 10, 0, 1073741830, 0, 27, 26, -1, 2, 28, 11, 29, 12, 0, 1073741831, 0, 31, 30, -1, 0, 0, 1073741832, 0, 33, 32, -1, 2, 34, 13, 35, 14, 0, 1073741833, 0, 37, 36, -1, 0, 0),
-"variants": [Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0), SubResource("GDScript_areea"), Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 8, 8), SubResource("Environment_gl6un"), true, 9.080143, SubResource("CapsuleShape3D_kldst"), SubResource("CapsuleMesh_j5yw3"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, -0.25), SubResource("BoxMesh_gl6un"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2), SubResource("GDScript_bj4io"), SubResource("Resource_52ee3"), 1, SubResource("CompressedTexture2D_pob5n")],
+"variants": [Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0), SubResource("GDScript_rqy01"), Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 8, 8), SubResource("Environment_gl6un"), true, 9.080143, SubResource("CapsuleShape3D_kldst"), SubResource("CapsuleMesh_j5yw3"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, -0.25), SubResource("BoxMesh_gl6un"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2), SubResource("GDScript_d458g"), SubResource("Resource_52ee3"), 1, SubResource("CompressedTexture2D_areea")],
 "version": 3
 }
 
 [sub_resource type="Resource" id="Resource_7lihs"]
-script = SubResource("GDScript_qaqkx")
-scene = ExtResource("2_lch76")
+script = SubResource("GDScript_3cb3b")
+scene = ExtResource("2_3pvyx")
 position = Vector3(-1, 0, 1)
 name = "Player"
 metadata/_custom_type_script = "uid://b3rylldbgh8gp"
 
-[sub_resource type="GDScript" id="GDScript_u4pnr"]
+[sub_resource type="GDScript" id="GDScript_dpp2b"]
 script/source = "extends CharacterBody3D
 
 @onready var behaviour: Behaviour
@@ -380,7 +388,7 @@ func destroy():
 	self.queue_free()
 "
 
-[sub_resource type="GDScript" id="GDScript_v3jp6"]
+[sub_resource type="GDScript" id="GDScript_6je5b"]
 script/source = "extends Node3D
 
 @export var billboardtext: String = \"Placeholder\"
@@ -405,7 +413,7 @@ border_width_left = 10
 border_width_right = 10
 border_color = Color(0, 0, 0, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_dpp2b"]
+[sub_resource type="PackedScene" id="PackedScene_cmui5"]
 _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
@@ -416,11 +424,11 @@ _bundled = {
 "node_ids": PackedInt32Array(1199928384, 928405031, 1884092643, 1910178090, 612352579, 786642556),
 "node_paths": [NodePath("."), NodePath("."), NodePath("./SubViewport"), NodePath("./SubViewport/CanvasLayer"), NodePath("./SubViewport/CanvasLayer/CenterContainer")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 3, 0, 4, 1, 1, 2, 1073741824, 0, 6, 5, -1, 2, 8, 2, 9, 3, 1, 7, 1073741825, 0, 11, 10, -1, 2, 13, 4, 14, 5, 1, 12, 1073741826, 0, 16, 15, -1, 0, 1, 17, 1073741827, 0, 19, 18, -1, 5, 21, 6, 22, 7, 23, 8, 24, 9, 25, 10, 1, 20, 1073741828, 0, 27, 26, -1, 11, 29, 11, 30, 12, 31, 13, 32, 14, 33, 15, 34, 16, 35, 17, 36, 18, 37, 19, 38, 20, 39, 21, 1, 28),
-"variants": [SubResource("GDScript_v3jp6"), "I am an npc bro", 1, SubResource("ViewportTexture_dwpb4"), true, Vector2i(512, 50), 15, 1.0, 1.0, 2, 2, 2, 3, 30, 30, SubResource("StyleBoxFlat_fgofq"), true, "Placeholder", true, false, 0, 1],
+"variants": [SubResource("GDScript_6je5b"), "I am an npc bro", 1, SubResource("ViewportTexture_dwpb4"), true, Vector2i(512, 50), 15, 1.0, 1.0, 2, 2, 2, 3, 30, 30, SubResource("StyleBoxFlat_fgofq"), true, "Placeholder", true, false, 0, 1],
 "version": 3
 }
 
-[sub_resource type="GDScript" id="GDScript_6je5b"]
+[sub_resource type="GDScript" id="GDScript_hxo51"]
 script/source = "extends Behaviour
 
 class_name Follower
@@ -449,26 +457,26 @@ func update():
 "
 
 [sub_resource type="Resource" id="Resource_ltbwf"]
-script = SubResource("GDScript_6je5b")
-player = Object(CharacterBody3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 1.679261, -0.35516265, 0.54512686),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"disable_mode":0,"collision_layer":1,"collision_mask":1,"collision_priority":1.0,"input_ray_pickable":true,"input_capture_on_drag":false,"axis_lock_linear_x":false,"axis_lock_linear_y":false,"axis_lock_linear_z":false,"axis_lock_angular_x":false,"axis_lock_angular_y":false,"axis_lock_angular_z":false,"motion_mode":0,"up_direction":Vector3(0, 1, 0),"slide_on_ceiling":true,"velocity":Vector3(5, 0, 0),"max_slides":6,"wall_min_slide_angle":0.2617994,"floor_stop_on_slope":true,"floor_constant_speed":false,"floor_block_on_wall":true,"floor_max_angle":0.7853982,"floor_snap_length":0.1,"platform_on_leave":0,"platform_floor_layers":4294967295,"platform_wall_layers":0,"safe_margin":0.001,"script":SubResource("GDScript_areea"),"SPEED":5.0,"dashD":7.5,"dashVector":Vector3(7.5, 0, 0),"cursorNode":Object(Node3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24523717, -0.6781461, -3.2398684),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":null)
+script = SubResource("GDScript_hxo51")
+player = Object(CharacterBody3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 1.5526828, -0.29139882, -0.35434836),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"disable_mode":0,"collision_layer":1,"collision_mask":1,"collision_priority":1.0,"input_ray_pickable":true,"input_capture_on_drag":false,"axis_lock_linear_x":false,"axis_lock_linear_y":false,"axis_lock_linear_z":false,"axis_lock_angular_x":false,"axis_lock_angular_y":false,"axis_lock_angular_z":false,"motion_mode":0,"up_direction":Vector3(0, 1, 0),"slide_on_ceiling":true,"velocity":Vector3(5, 0, 0),"max_slides":6,"wall_min_slide_angle":0.2617994,"floor_stop_on_slope":true,"floor_constant_speed":false,"floor_block_on_wall":true,"floor_max_angle":0.7853982,"floor_snap_length":0.1,"platform_on_leave":0,"platform_floor_layers":4294967295,"platform_wall_layers":0,"safe_margin":0.001,"script":SubResource("GDScript_rqy01"),"SPEED":5.0,"dashD":7.5,"dashVector":Vector3(7.5, 0, 0),"cursorNode":Object(Node3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.905519, -1.7704115, 0.09878367),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":null)
 ,"camera":Object(Camera3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 8, 8),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"keep_aspect":1,"cull_mask":1048575,"environment":SubResource("Environment_gl6un"),"attributes":null,"compositor":null,"h_offset":0.0,"v_offset":0.0,"doppler_tracking":0,"projection":0,"current":true,"fov":75.0,"size":9.080143,"frustum_offset":Vector2(0, 0),"near":0.05,"far":4000.0,"script":null)
-,"rotationNode":Object(Node3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(0.9971475, 0, 0.07547762, 0, 1, 0, -0.07547762, 0, 0.9971475, 0, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":null)
-,"wizard":Object(Node3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":SubResource("GDScript_bj4io"),"activeLeftSpell":SubResource("Resource_52ee3"),"activeRightSpell":null,"spells":Array[SubResource("GDScript_rqy01")]([]))
+,"rotationNode":Object(Node3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(-0.051771298, 0, -0.99865896, 0, 1, 0, 0.99865896, 0, -0.051771298, 0, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":null)
+,"wizard":Object(Node3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":SubResource("GDScript_d458g"),"activeLeftSpell":SubResource("Resource_52ee3"),"activeRightSpell":null,"spells":Array[SubResource("GDScript_msv0n")]([]))
 ,"followerNode":Object(Node3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":null)
 )
 
-nav = Object(NavigationAgent3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","target_position":Vector3(3.1961818, -0.35516265, 1.8485649),"path_desired_distance":1.0,"target_desired_distance":1.0,"path_height_offset":0.0,"path_max_distance":5.0,"navigation_layers":1,"pathfinding_algorithm":0,"path_postprocessing":0,"path_metadata_flags":7,"simplify_path":false,"simplify_epsilon":0.0,"path_return_max_length":0.0,"path_return_max_radius":0.0,"path_search_max_polygons":4096,"path_search_max_distance":0.0,"avoidance_enabled":true,"velocity":Vector3(0, 0, 0),"height":1.0,"radius":1.0,"neighbor_distance":50.0,"max_neighbors":10,"time_horizon_agents":1.0,"time_horizon_obstacles":0.0,"max_speed":10.0,"use_3d_avoidance":false,"keep_y_velocity":true,"avoidance_layers":1,"avoidance_mask":1,"avoidance_priority":1.0,"debug_enabled":false,"debug_use_custom":false,"debug_path_custom_color":Color(1, 1, 1, 1),"debug_path_custom_point_size":4.0,"script":null)
+nav = Object(NavigationAgent3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","target_position":Vector3(0.06715, -0.29139882, 0.98475295),"path_desired_distance":1.0,"target_desired_distance":1.0,"path_height_offset":0.0,"path_max_distance":5.0,"navigation_layers":1,"pathfinding_algorithm":0,"path_postprocessing":0,"path_metadata_flags":7,"simplify_path":false,"simplify_epsilon":0.0,"path_return_max_length":0.0,"path_return_max_radius":0.0,"path_search_max_polygons":4096,"path_search_max_distance":0.0,"avoidance_enabled":true,"velocity":Vector3(0, 0, 0),"height":1.0,"radius":1.0,"neighbor_distance":50.0,"max_neighbors":10,"time_horizon_agents":1.0,"time_horizon_obstacles":0.0,"max_speed":10.0,"use_3d_avoidance":false,"keep_y_velocity":true,"avoidance_layers":1,"avoidance_mask":1,"avoidance_priority":1.0,"debug_enabled":false,"debug_use_custom":false,"debug_path_custom_color":Color(1, 1, 1, 1),"debug_path_custom_point_size":4.0,"script":null)
 
 speed = 3.0
-actor = Object(CharacterBody3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8406315, -1.9902482, 2.128224),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"disable_mode":0,"collision_layer":1,"collision_mask":1,"collision_priority":1.0,"input_ray_pickable":true,"input_capture_on_drag":false,"axis_lock_linear_x":false,"axis_lock_linear_y":false,"axis_lock_linear_z":false,"axis_lock_angular_x":false,"axis_lock_angular_y":false,"axis_lock_angular_z":false,"motion_mode":0,"up_direction":Vector3(0, 1, 0),"slide_on_ceiling":true,"velocity":Vector3(-2.3789544, 0, -0.38155878),"max_slides":6,"wall_min_slide_angle":0.2617994,"floor_stop_on_slope":true,"floor_constant_speed":false,"floor_block_on_wall":true,"floor_max_angle":0.7853982,"floor_snap_length":0.1,"platform_on_leave":0,"platform_floor_layers":4294967295,"platform_wall_layers":0,"safe_margin":0.001,"script":SubResource("GDScript_u4pnr"),"behaviour":SubResource("Resource_ltbwf"),"visual":Object(Node3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":null)
-,"nav":Object(NavigationAgent3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","target_position":Vector3(3.1961818, -0.35516265, 1.8485649),"path_desired_distance":1.0,"target_desired_distance":1.0,"path_height_offset":0.0,"path_max_distance":5.0,"navigation_layers":1,"pathfinding_algorithm":0,"path_postprocessing":0,"path_metadata_flags":7,"simplify_path":false,"simplify_epsilon":0.0,"path_return_max_length":0.0,"path_return_max_radius":0.0,"path_search_max_polygons":4096,"path_search_max_distance":0.0,"avoidance_enabled":true,"velocity":Vector3(0, 0, 0),"height":1.0,"radius":1.0,"neighbor_distance":50.0,"max_neighbors":10,"time_horizon_agents":1.0,"time_horizon_obstacles":0.0,"max_speed":10.0,"use_3d_avoidance":false,"keep_y_velocity":true,"avoidance_layers":1,"avoidance_mask":1,"avoidance_priority":1.0,"debug_enabled":false,"debug_use_custom":false,"debug_path_custom_color":Color(1, 1, 1, 1),"debug_path_custom_point_size":4.0,"script":null)
-,"health":0.0,"NpcClass":null,"deltaSHIT":0.016666666666666666,"tempPos":Vector3(5.0105667, -2.643717, 1.9950905))
+actor = Object(CharacterBody3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69068193, 0.009479009, 0.3898244),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"disable_mode":0,"collision_layer":1,"collision_mask":1,"collision_priority":1.0,"input_ray_pickable":true,"input_capture_on_drag":false,"axis_lock_linear_x":false,"axis_lock_linear_y":false,"axis_lock_linear_z":false,"axis_lock_angular_x":false,"axis_lock_angular_y":false,"axis_lock_angular_z":false,"motion_mode":0,"up_direction":Vector3(0, 1, 0),"slide_on_ceiling":true,"velocity":Vector3(1.9787719, 0, 1.5534155),"max_slides":6,"wall_min_slide_angle":0.2617994,"floor_stop_on_slope":true,"floor_constant_speed":false,"floor_block_on_wall":true,"floor_max_angle":0.7853982,"floor_snap_length":0.1,"platform_on_leave":0,"platform_floor_layers":4294967295,"platform_wall_layers":0,"safe_margin":0.001,"script":SubResource("GDScript_dpp2b"),"behaviour":SubResource("Resource_ltbwf"),"visual":Object(Node3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":null)
+,"nav":Object(NavigationAgent3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","target_position":Vector3(0.06715, -0.29139882, 0.98475295),"path_desired_distance":1.0,"target_desired_distance":1.0,"path_height_offset":0.0,"path_max_distance":5.0,"navigation_layers":1,"pathfinding_algorithm":0,"path_postprocessing":0,"path_metadata_flags":7,"simplify_path":false,"simplify_epsilon":0.0,"path_return_max_length":0.0,"path_return_max_radius":0.0,"path_search_max_polygons":4096,"path_search_max_distance":0.0,"avoidance_enabled":true,"velocity":Vector3(0, 0, 0),"height":1.0,"radius":1.0,"neighbor_distance":50.0,"max_neighbors":10,"time_horizon_agents":1.0,"time_horizon_obstacles":0.0,"max_speed":10.0,"use_3d_avoidance":false,"keep_y_velocity":true,"avoidance_layers":1,"avoidance_mask":1,"avoidance_priority":1.0,"debug_enabled":false,"debug_use_custom":false,"debug_path_custom_color":Color(1, 1, 1, 1),"debug_path_custom_point_size":4.0,"script":null)
+,"health":0.0,"NpcClass":null,"deltaSHIT":0.016666666666666666,"tempPos":Vector3(0.06715, -0.64371705, 0.9847529))
 
 metadata/_custom_type_script = "uid://baf2et18ajmro"
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_wsunn"]
 
-[sub_resource type="PackedScene" id="PackedScene_cmui5"]
+[sub_resource type="PackedScene" id="PackedScene_c8bxl"]
 _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
@@ -483,7 +491,7 @@ _bundled = {
 "version": 3
 }
 
-[sub_resource type="GDScript" id="GDScript_hxo51"]
+[sub_resource type="GDScript" id="GDScript_vx8iy"]
 script/source = "extends Resource
 
 class_name npc
@@ -494,15 +502,15 @@ class_name npc
 "
 
 [sub_resource type="Resource" id="Resource_7ei5c"]
-script = SubResource("GDScript_hxo51")
+script = SubResource("GDScript_vx8iy")
 npcName = "Example Actor"
-model = SubResource("PackedScene_cmui5")
+model = SubResource("PackedScene_c8bxl")
 behaviour = SubResource("Resource_ltbwf")
 metadata/_custom_type_script = "uid://drjjmjc24qipo"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ei5c"]
 
-[sub_resource type="PackedScene" id="PackedScene_c8bxl"]
+[sub_resource type="PackedScene" id="PackedScene_58857"]
 _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
@@ -513,18 +521,18 @@ _bundled = {
 "node_ids": PackedInt32Array(1866149922, 1983415667, 87223851, 1180956514),
 "node_paths": [NodePath("."), NodePath("."), NodePath(".")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 3, 0, 4, 1, 1, 2, 1073741824, 0, 6, 5, -1, 0, 1, 7, 1073741825, 0, 9, 8, -1, 2, 11, 2, 12, 3, 1, 10, 1073741826, 0, 14, 13, -1, 1, 16, 4, 1, 15),
-"variants": [SubResource("GDScript_u4pnr"), SubResource("Resource_7ei5c"), true, 1.0, SubResource("CapsuleShape3D_7ei5c")],
+"variants": [SubResource("GDScript_dpp2b"), SubResource("Resource_7ei5c"), true, 1.0, SubResource("CapsuleShape3D_7ei5c")],
 "version": 3
 }
 
 [sub_resource type="Resource" id="Resource_2irst"]
-script = SubResource("GDScript_qaqkx")
-scene = ExtResource("3_3pvyx")
+script = SubResource("GDScript_3cb3b")
+scene = ExtResource("3_rs76j")
 position = Vector3(-6.8780046, 0.2762599, 0.9218621)
 name = "Placeholder Actor"
 metadata/_custom_type_script = "uid://b3rylldbgh8gp"
 
-[sub_resource type="GDScript" id="GDScript_vx8iy"]
+[sub_resource type="GDScript" id="GDScript_ie458"]
 script/source = "extends CanvasLayer
 
 
@@ -535,10 +543,10 @@ func hideMenu():
 	pass
 "
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_58857"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_orote"]
 load_path = "res://.godot/imported/black.png-2d481fadf105b12859b5ef7f2dcaa43d.ctex"
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhh6f"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwsa2"]
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 5
 border_width_top = 5
@@ -549,7 +557,7 @@ expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
-[sub_resource type="GDScript" id="GDScript_ie458"]
+[sub_resource type="GDScript" id="GDScript_qhfc5"]
 script/source = "extends HBoxContainer
 
 var dragging = false
@@ -567,11 +575,15 @@ func _gui_input(event: InputEvent) -> void:
 		window.global_position = get_global_mouse_position() - offset
 "
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cayip"]
-bg_color = Color(0, 0, 0, 1)
-border_width_top = 5
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_303hs"]
+load_path = "res://.godot/imported/gui_bg.png-159f7d79e10b017a043363f7c1f8fe43.ctex"
 
-[sub_resource type="PackedScene" id="PackedScene_orote"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jsrd8"]
+texture = SubResource("CompressedTexture2D_303hs")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="PackedScene" id="PackedScene_lr3qi"]
 _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
@@ -582,57 +594,40 @@ _bundled = {
 "node_ids": PackedInt32Array(539579730, 1668157874, 1030292509, 1679423571, 483557386, 232444343, 1133072178, 2039275021, 1851446025),
 "node_paths": [NodePath("."), NodePath("./Menu"), NodePath("./Menu"), NodePath("./Menu/Window"), NodePath("./Menu/Window"), NodePath("./Menu/Window/VBoxContainer"), NodePath("./Menu/Window/VBoxContainer/HBoxContainer"), NodePath("./Menu/Window/VBoxContainer")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 2, 0, 3, 1, 0, 1073741824, 0, 5, 4, -1, 7, 6, 2, 7, 3, 8, 4, 9, 5, 10, 6, 11, 7, 12, 8, 0, 1073741825, 0, 14, 13, -1, 9, 15, 9, 16, 10, 17, 11, 18, 12, 19, 13, 20, 14, 21, 15, 22, 16, 23, 17, 0, 1073741826, 0, 25, 24, -1, 3, 26, 18, 27, 19, 28, 20, 0, 1073741827, 0, 30, 29, -1, 7, 31, 21, 32, 22, 33, 23, 34, 24, 35, 25, 36, 26, 37, 27, 0, 1073741828, 0, 39, 38, -1, 6, 40, 28, 41, 29, 42, 30, 43, 31, 44, 32, 45, 33, 0, 1073741829, 0, 47, 46, -1, 3, 48, 34, 49, 35, 50, 36, 0, 1073741830, 0, 52, 51, -1, 2, 53, 37, 54, 38, 0, 1073741831, 0, 56, 55, -1, 3, 57, 39, 58, 40, 59, 41, 0),
-"variants": [true, SubResource("GDScript_vx8iy"), 3, 3, 15, 1.0, 1.0, 2, 2, false, Color(1, 1, 1, 0.49019608), 1, 15, 1.0, 1.0, 2, 2, SubResource("CompressedTexture2D_58857"), 0, 294.0, 265.0, 1, 15, 1.0, 1.0, 2, 2, SubResource("StyleBoxFlat_xhh6f"), 1, 15, 1.0, 1.0, 2, 2, 2, 1, SubResource("GDScript_ie458"), 2, "window title", 2, 3, SubResource("StyleBoxFlat_cayip")],
+"variants": [true, SubResource("GDScript_ie458"), 3, 3, 15, 1.0, 1.0, 2, 2, false, Color(1, 1, 1, 0.49019608), 1, 15, 1.0, 1.0, 2, 2, SubResource("CompressedTexture2D_orote"), 0, 294.0, 265.0, 1, 15, 1.0, 1.0, 2, 2, SubResource("StyleBoxFlat_wwsa2"), 1, 15, 1.0, 1.0, 2, 2, 2, 1, SubResource("GDScript_qhfc5"), 2, "window title", 2, 3, SubResource("StyleBoxTexture_jsrd8")],
 "version": 3
 }
 
 [sub_resource type="Resource" id="Resource_bf53h"]
-script = SubResource("GDScript_qaqkx")
-scene = ExtResource("4_rs76j")
+script = SubResource("GDScript_3cb3b")
+scene = ExtResource("4_kqphk")
 name = "Menu"
 metadata/_custom_type_script = "uid://b3rylldbgh8gp"
 
-[sub_resource type="Resource" id="Resource_3siir"]
-script = SubResource("GDScript_6je5b")
-player = Object(CharacterBody3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 1.679261, -0.35516265, 0.54512686),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"disable_mode":0,"collision_layer":1,"collision_mask":1,"collision_priority":1.0,"input_ray_pickable":true,"input_capture_on_drag":false,"axis_lock_linear_x":false,"axis_lock_linear_y":false,"axis_lock_linear_z":false,"axis_lock_angular_x":false,"axis_lock_angular_y":false,"axis_lock_angular_z":false,"motion_mode":0,"up_direction":Vector3(0, 1, 0),"slide_on_ceiling":true,"velocity":Vector3(5, 0, 0),"max_slides":6,"wall_min_slide_angle":0.2617994,"floor_stop_on_slope":true,"floor_constant_speed":false,"floor_block_on_wall":true,"floor_max_angle":0.7853982,"floor_snap_length":0.1,"platform_on_leave":0,"platform_floor_layers":4294967295,"platform_wall_layers":0,"safe_margin":0.001,"script":SubResource("GDScript_areea"),"SPEED":5.0,"dashD":7.5,"dashVector":Vector3(7.5, 0, 0),"cursorNode":Object(Node3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24523717, -0.6781461, -3.2398684),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":null)
-,"camera":Object(Camera3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 8, 8),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"keep_aspect":1,"cull_mask":1048575,"environment":SubResource("Environment_gl6un"),"attributes":null,"compositor":null,"h_offset":0.0,"v_offset":0.0,"doppler_tracking":0,"projection":0,"current":true,"fov":75.0,"size":9.080143,"frustum_offset":Vector2(0, 0),"near":0.05,"far":4000.0,"script":null)
-,"rotationNode":Object(Node3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(0.9971475, 0, 0.07547762, 0, 1, 0, -0.07547762, 0, 0.9971475, 0, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":null)
-,"wizard":Object(Node3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":SubResource("GDScript_bj4io"),"activeLeftSpell":SubResource("Resource_52ee3"),"activeRightSpell":null,"spells":Array[SubResource("GDScript_rqy01")]([]))
-,"followerNode":Object(Node3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":null)
-)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bdw8h"]
+load_path = "res://.godot/imported/gui_spell_overlay.png-95f27142c5a7cfd0b2299e212a1ebc75.ctex"
 
-nav = Object(NavigationAgent3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","target_position":Vector3(3.1961818, -0.35516265, 1.8485649),"path_desired_distance":1.0,"target_desired_distance":1.0,"path_height_offset":0.0,"path_max_distance":5.0,"navigation_layers":1,"pathfinding_algorithm":0,"path_postprocessing":0,"path_metadata_flags":7,"simplify_path":false,"simplify_epsilon":0.0,"path_return_max_length":0.0,"path_return_max_radius":0.0,"path_search_max_polygons":4096,"path_search_max_distance":0.0,"avoidance_enabled":true,"velocity":Vector3(0, 0, 0),"height":1.0,"radius":1.0,"neighbor_distance":50.0,"max_neighbors":10,"time_horizon_agents":1.0,"time_horizon_obstacles":0.0,"max_speed":10.0,"use_3d_avoidance":false,"keep_y_velocity":true,"avoidance_layers":1,"avoidance_mask":1,"avoidance_priority":1.0,"debug_enabled":false,"debug_use_custom":false,"debug_path_custom_color":Color(1, 1, 1, 1),"debug_path_custom_point_size":4.0,"script":null)
-
-speed = 3.0
-actor = Object(CharacterBody3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8406315, -1.9902482, 2.128224),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"disable_mode":0,"collision_layer":1,"collision_mask":1,"collision_priority":1.0,"input_ray_pickable":true,"input_capture_on_drag":false,"axis_lock_linear_x":false,"axis_lock_linear_y":false,"axis_lock_linear_z":false,"axis_lock_angular_x":false,"axis_lock_angular_y":false,"axis_lock_angular_z":false,"motion_mode":0,"up_direction":Vector3(0, 1, 0),"slide_on_ceiling":true,"velocity":Vector3(-2.3789544, 0, -0.38155878),"max_slides":6,"wall_min_slide_angle":0.2617994,"floor_stop_on_slope":true,"floor_constant_speed":false,"floor_block_on_wall":true,"floor_max_angle":0.7853982,"floor_snap_length":0.1,"platform_on_leave":0,"platform_floor_layers":4294967295,"platform_wall_layers":0,"safe_margin":0.001,"script":SubResource("GDScript_u4pnr"),"behaviour":SubResource("Resource_ltbwf"),"visual":Object(Node3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":null)
-,"nav":Object(NavigationAgent3D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","target_position":Vector3(3.1961818, -0.35516265, 1.8485649),"path_desired_distance":1.0,"target_desired_distance":1.0,"path_height_offset":0.0,"path_max_distance":5.0,"navigation_layers":1,"pathfinding_algorithm":0,"path_postprocessing":0,"path_metadata_flags":7,"simplify_path":false,"simplify_epsilon":0.0,"path_return_max_length":0.0,"path_return_max_radius":0.0,"path_search_max_polygons":4096,"path_search_max_distance":0.0,"avoidance_enabled":true,"velocity":Vector3(0, 0, 0),"height":1.0,"radius":1.0,"neighbor_distance":50.0,"max_neighbors":10,"time_horizon_agents":1.0,"time_horizon_obstacles":0.0,"max_speed":10.0,"use_3d_avoidance":false,"keep_y_velocity":true,"avoidance_layers":1,"avoidance_mask":1,"avoidance_priority":1.0,"debug_enabled":false,"debug_use_custom":false,"debug_path_custom_color":Color(1, 1, 1, 1),"debug_path_custom_point_size":4.0,"script":null)
-,"health":0.0,"NpcClass":SubResource("Resource_7ei5c"),"deltaSHIT":0.016666666666666666,"tempPos":Vector3(5.0105667, -2.643717, 1.9950905))
-
-metadata/_custom_type_script = "uid://baf2et18ajmro"
-
-[sub_resource type="Resource" id="Resource_lch76"]
-script = SubResource("GDScript_hxo51")
-npcName = "Example Actor"
-model = SubResource("PackedScene_cmui5")
-behaviour = SubResource("Resource_3siir")
-metadata/_custom_type_script = "uid://drjjmjc24qipo"
-
-[sub_resource type="PackedScene" id="PackedScene_3pvyx"]
+[sub_resource type="PackedScene" id="PackedScene_ucose"]
 _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
 "editable_instances": [],
-"id_paths": [],
-"names": PackedStringArray("Root", "process_mode", "script", "gamestate", "Node3D", "World", "Pausable", "Player", "transform", "velocity", "CharacterBody3D", "Actor", "NpcClass", "Menu", "visible", "follow_viewport_enabled", "CanvasLayer"),
-"node_count": 5,
-"node_ids": PackedInt32Array(1717732160, 1226380381, 1215905502, 1866149922, 539579730),
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 4, 0, -1, 3, 1, 0, 2, 1, 3, 2, 0, 0, 0, 4, 5, 3, 0, 1, 6, 0, 0, 10, 7, 4, 3, 8, 5, 9, 6, 2, 7, 1, 6, 0, 0, 10, 11, 8, 4, 8, 9, 9, 10, 2, 11, 12, 12, 1, 6, 0, 0, 16, 13, 13, 3, 14, 14, 15, 15, 2, 16, 0),
-"variants": [3, SubResource("GDScript_kqphk"), Resource("res://Resources/gameState.tres"), ExtResource("1_3siir"), ExtResource("2_lch76"), Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 1.4667481, -0.24799834, -0.76865), Vector3(5, 0, 0), SubResource("GDScript_areea"), ExtResource("3_3pvyx"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9764469, -1.0043548, -0.7357011), Vector3(-0.9233034, 0, -1.8934486), SubResource("GDScript_u4pnr"), SubResource("Resource_lch76"), ExtResource("4_rs76j"), false, true, SubResource("GDScript_vx8iy")],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("GUI", "CanvasLayer", "follow_viewport_enabled", "Control", "Control", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "spells", "Control", "layout_mode", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "offset_right", "grow_horizontal", "grow_vertical", "Panel", "Panel", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "HBoxContainer", "HBoxContainer", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "offset_right", "offset_bottom", "grow_horizontal", "grow_vertical", "theme_override_constants/separation", "Spell1", "Control", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "spellIcon", "TextureRect", "layout_mode", "offset_right", "offset_bottom", "texture", "TextureRect2", "TextureRect", "modulate", "layout_mode", "offset_right", "offset_bottom", "texture", "spellBorder", "TextureRect", "layout_mode", "offset_right", "offset_bottom", "Dimmin", "TextureRect", "visible", "modulate", "layout_mode", "offset_right", "offset_bottom", "texture", "expand_mode", "Label", "Label", "layout_mode", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "grow_horizontal", "grow_vertical", "text", "horizontal_alignment", "Spell2", "Control", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "spellIcon", "TextureRect", "layout_mode", "offset_right", "offset_bottom", "texture", "TextureRect2", "TextureRect", "modulate", "layout_mode", "offset_right", "offset_bottom", "texture", "spellBorder", "TextureRect", "layout_mode", "offset_right", "offset_bottom", "Dimmin", "TextureRect", "visible", "modulate", "layout_mode", "offset_right", "offset_bottom", "texture", "expand_mode", "Label", "Label", "layout_mode", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "grow_horizontal", "grow_vertical", "text", "horizontal_alignment", "Spell3", "Control", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "spellIcon", "TextureRect", "layout_mode", "offset_right", "offset_bottom", "texture", "TextureRect2", "TextureRect", "modulate", "layout_mode", "offset_right", "offset_bottom", "texture", "spellBorder", "TextureRect", "layout_mode", "offset_right", "offset_bottom", "Dimmin", "TextureRect", "visible", "modulate", "layout_mode", "offset_right", "offset_bottom", "texture", "expand_mode", "Label", "Label", "layout_mode", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "grow_horizontal", "grow_vertical", "text", "horizontal_alignment", "Spell4", "Control", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "spellIcon", "TextureRect", "layout_mode", "offset_right", "offset_bottom", "texture", "TextureRect2", "TextureRect", "modulate", "layout_mode", "offset_right", "offset_bottom", "texture", "spellBorder", "TextureRect", "layout_mode", "offset_right", "offset_bottom", "Dimmin", "TextureRect", "visible", "modulate", "layout_mode", "offset_right", "offset_bottom", "texture", "expand_mode", "Label", "Label", "layout_mode", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "grow_horizontal", "grow_vertical", "text", "horizontal_alignment", "Spell5", "Control", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "spellIcon", "TextureRect", "layout_mode", "offset_right", "offset_bottom", "texture", "TextureRect2", "TextureRect", "modulate", "layout_mode", "offset_right", "offset_bottom", "texture", "spellBorder", "TextureRect", "layout_mode", "offset_right", "offset_bottom", "Dimmin", "TextureRect", "visible", "modulate", "layout_mode", "offset_right", "offset_bottom", "texture", "expand_mode", "Label", "Label", "layout_mode", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "grow_horizontal", "grow_vertical", "text", "horizontal_alignment"),
+"node_count": 35,
+"node_ids": PackedInt32Array(539199906, 1294274690, 341486062, 2143040135, 739165100, 120876537, 722418140, 1452164036, 2126193593, 1587111808, 630605957, 2079626732, 874825775, 753409486, 225941330, 1425379372, 85568992, 1386412390, 146703493, 1014421268, 1081411632, 613984268, 1939276109, 1699544945, 2145263988, 971595826, 1179445528, 2068907062, 1601934257, 2034597489, 250750489, 1476296964, 943232233, 402421951, 1925214460),
+"node_paths": [NodePath("."), NodePath("./Control"), NodePath("./Control/spells"), NodePath("./Control/spells"), NodePath("./Control/spells/HBoxContainer"), NodePath("./Control/spells/HBoxContainer/Spell1"), NodePath("./Control/spells/HBoxContainer/Spell1"), NodePath("./Control/spells/HBoxContainer/Spell1"), NodePath("./Control/spells/HBoxContainer/Spell1"), NodePath("./Control/spells/HBoxContainer/Spell1"), NodePath("./Control/spells/HBoxContainer"), NodePath("./Control/spells/HBoxContainer/Spell2"), NodePath("./Control/spells/HBoxContainer/Spell2"), NodePath("./Control/spells/HBoxContainer/Spell2"), NodePath("./Control/spells/HBoxContainer/Spell2"), NodePath("./Control/spells/HBoxContainer/Spell2"), NodePath("./Control/spells/HBoxContainer"), NodePath("./Control/spells/HBoxContainer/Spell3"), NodePath("./Control/spells/HBoxContainer/Spell3"), NodePath("./Control/spells/HBoxContainer/Spell3"), NodePath("./Control/spells/HBoxContainer/Spell3"), NodePath("./Control/spells/HBoxContainer/Spell3"), NodePath("./Control/spells/HBoxContainer"), NodePath("./Control/spells/HBoxContainer/Spell4"), NodePath("./Control/spells/HBoxContainer/Spell4"), NodePath("./Control/spells/HBoxContainer/Spell4"), NodePath("./Control/spells/HBoxContainer/Spell4"), NodePath("./Control/spells/HBoxContainer/Spell4"), NodePath("./Control/spells/HBoxContainer"), NodePath("./Control/spells/HBoxContainer/Spell5"), NodePath("./Control/spells/HBoxContainer/Spell5"), NodePath("./Control/spells/HBoxContainer/Spell5"), NodePath("./Control/spells/HBoxContainer/Spell5"), NodePath("./Control/spells/HBoxContainer/Spell5")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 6, 5, 1, 6, 2, 7, 3, 8, 4, 9, 5, 10, 6, 0, 1073741825, 0, 12, 11, -1, 11, 13, 7, 14, 8, 15, 9, 16, 10, 17, 11, 18, 12, 19, 13, 20, 14, 21, 15, 22, 16, 23, 17, 0, 1073741826, 0, 25, 24, -1, 6, 26, 18, 27, 19, 28, 20, 29, 21, 30, 22, 31, 23, 0, 1073741827, 0, 33, 32, -1, 11, 34, 24, 35, 25, 36, 26, 37, 27, 38, 28, 39, 29, 40, 30, 41, 31, 42, 32, 43, 33, 44, 34, 0, 1073741828, 0, 46, 45, -1, 3, 47, 35, 48, 36, 49, 37, 0, 1073741829, 0, 51, 50, -1, 4, 52, 38, 53, 39, 54, 40, 55, 41, 0, 1073741830, 0, 57, 56, -1, 5, 58, 42, 59, 43, 60, 44, 61, 45, 62, 46, 0, 1073741831, 0, 64, 63, -1, 3, 65, 47, 66, 48, 67, 49, 0, 1073741832, 0, 69, 68, -1, 7, 70, 50, 71, 51, 72, 52, 73, 53, 74, 54, 75, 55, 76, 56, 0, 1073741833, 0, 78, 77, -1, 12, 79, 57, 80, 58, 81, 59, 82, 60, 83, 61, 84, 62, 85, 63, 86, 64, 87, 65, 88, 66, 89, 67, 90, 68, 0, 1073741834, 0, 92, 91, -1, 3, 93, 69, 94, 70, 95, 71, 0, 1073741835, 0, 97, 96, -1, 4, 98, 72, 99, 73, 100, 74, 101, 75, 0, 1073741836, 0, 103, 102, -1, 5, 104, 76, 105, 77, 106, 78, 107, 79, 108, 80, 0, 1073741837, 0, 110, 109, -1, 3, 111, 81, 112, 82, 113, 83, 0, 1073741838, 0, 115, 114, -1, 7, 116, 84, 117, 85, 118, 86, 119, 87, 120, 88, 121, 89, 122, 90, 0, 1073741839, 0, 124, 123, -1, 12, 125, 91, 126, 92, 127, 93, 128, 94, 129, 95, 130, 96, 131, 97, 132, 98, 133, 99, 134, 100, 135, 101, 136, 102, 0, 1073741840, 0, 138, 137, -1, 3, 139, 103, 140, 104, 141, 105, 0, 1073741841, 0, 143, 142, -1, 4, 144, 106, 145, 107, 146, 108, 147, 109, 0, 1073741842, 0, 149, 148, -1, 5, 150, 110, 151, 111, 152, 112, 153, 113, 154, 114, 0, 1073741843, 0, 156, 155, -1, 3, 157, 115, 158, 116, 159, 117, 0, 1073741844, 0, 161, 160, -1, 7, 162, 118, 163, 119, 164, 120, 165, 121, 166, 122, 167, 123, 168, 124, 0, 1073741845, 0, 170, 169, -1, 12, 171, 125, 172, 126, 173, 127, 174, 128, 175, 129, 176, 130, 177, 131, 178, 132, 179, 133, 180, 134, 181, 135, 182, 136, 0, 1073741846, 0, 184, 183, -1, 3, 185, 137, 186, 138, 187, 139, 0, 1073741847, 0, 189, 188, -1, 4, 190, 140, 191, 141, 192, 142, 193, 143, 0, 1073741848, 0, 195, 194, -1, 5, 196, 144, 197, 145, 198, 146, 199, 147, 200, 148, 0, 1073741849, 0, 202, 201, -1, 3, 203, 149, 204, 150, 205, 151, 0, 1073741850, 0, 207, 206, -1, 7, 208, 152, 209, 153, 210, 154, 211, 155, 212, 156, 213, 157, 214, 158, 0, 1073741851, 0, 216, 215, -1, 12, 217, 159, 218, 160, 219, 161, 220, 162, 221, 163, 222, 164, 223, 165, 224, 166, 225, 167, 226, 168, 227, 169, 228, 170, 0, 1073741852, 0, 230, 229, -1, 3, 231, 171, 232, 172, 233, 173, 0, 1073741853, 0, 235, 234, -1, 4, 236, 174, 237, 175, 238, 176, 239, 177, 0, 1073741854, 0, 241, 240, -1, 5, 242, 178, 243, 179, 244, 180, 245, 181, 246, 182, 0, 1073741855, 0, 248, 247, -1, 3, 249, 183, 250, 184, 251, 185, 0, 1073741856, 0, 253, 252, -1, 7, 254, 186, 255, 187, 256, 188, 257, 189, 258, 190, 259, 191, 260, 192, 0, 1073741857, 0, 262, 261, -1, 12, 263, 193, 264, 194, 265, 195, 266, 196, 267, 197, 268, 198, 269, 199, 270, 200, 271, 201, 272, 202, 273, 203, 274, 204, 0),
+"variants": [true, 3, 15, 1.0, 1.0, 2, 2, 1, 7, 0.5, 1.0, 0.5, 1.0, -380.0, -168.0, 380.0, 2, 0, 1, 15, 1.0, 1.0, 2, 2, 1, 15, 1.0, 1.0, 20.0, 20.0, -20.0, -20.0, 2, 2, 20, Vector2(128, 128), 2, 0, 0, 128.0, 128.0, SubResource("CompressedTexture2D_areea"), Color(1, 1, 1, 0.5647059), 0, 40.0, 40.0, SubResource("CompressedTexture2D_bdw8h"), 0, 40.0, 40.0, false, Color(1, 1, 1, 0.6666667), 0, 128.0, 128.0, SubResource("CompressedTexture2D_orote"), 1, 1, 3, 1.0, 1.0, 1.0, 1.0, -40.0, -23.0, 0, 0, "M1", 2, Vector2(128, 128), 2, 0, 0, 128.0, 128.0, SubResource("CompressedTexture2D_areea"), Color(1, 1, 1, 0.5647059), 0, 40.0, 40.0, SubResource("CompressedTexture2D_bdw8h"), 0, 40.0, 40.0, false, Color(1, 1, 1, 0.6666667), 0, 128.0, 128.0, SubResource("CompressedTexture2D_orote"), 1, 1, 3, 1.0, 1.0, 1.0, 1.0, -40.0, -23.0, 0, 0, "M2", 2, Vector2(128, 128), 2, 0, 0, 128.0, 128.0, SubResource("CompressedTexture2D_areea"), Color(1, 1, 1, 0.5647059), 0, 40.0, 40.0, SubResource("CompressedTexture2D_bdw8h"), 0, 40.0, 40.0, false, Color(1, 1, 1, 0.6666667), 0, 128.0, 128.0, SubResource("CompressedTexture2D_orote"), 1, 1, 3, 1.0, 1.0, 1.0, 1.0, -40.0, -23.0, 0, 0, "C", 2, Vector2(128, 128), 2, 0, 0, 128.0, 128.0, SubResource("CompressedTexture2D_areea"), Color(1, 1, 1, 0.5647059), 0, 40.0, 40.0, SubResource("CompressedTexture2D_bdw8h"), 0, 40.0, 40.0, false, Color(1, 1, 1, 0.6666667), 0, 128.0, 128.0, SubResource("CompressedTexture2D_orote"), 1, 1, 3, 1.0, 1.0, 1.0, 1.0, -40.0, -23.0, 0, 0, "V", 2, Vector2(128, 128), 2, 0, 0, 128.0, 128.0, SubResource("CompressedTexture2D_areea"), Color(1, 1, 1, 0.5647059), 0, 40.0, 40.0, SubResource("CompressedTexture2D_bdw8h"), 0, 40.0, 40.0, false, Color(1, 1, 1, 0.6666667), 0, 128.0, 128.0, SubResource("CompressedTexture2D_orote"), 1, 1, 3, 1.0, 1.0, 1.0, 1.0, -40.0, -23.0, 0, 0, "B", 2],
 "version": 3
 }
 
-[sub_resource type="GDScript" id="GDScript_qhfc5"]
+[sub_resource type="Resource" id="Resource_f4myi"]
+script = SubResource("GDScript_3cb3b")
+scene = ExtResource("5_qaqkx")
+metadata/_custom_type_script = "uid://b3rylldbgh8gp"
+
+[sub_resource type="GDScript" id="GDScript_28v2x"]
 script/source = "extends Resource
 
 class_name gameState
@@ -665,35 +660,37 @@ func initialize():
 		rootNode.Menu.hide()
 "
 
-[sub_resource type="Resource" id="Resource_303hs"]
-script = SubResource("GDScript_qhfc5")
-initnodes = Array[SubResource("GDScript_qaqkx")]([SubResource("Resource_fgofq"), SubResource("Resource_7lihs"), SubResource("Resource_2irst"), SubResource("Resource_bf53h")])
-rootNode = Object(Node3D,"unique_name_in_owner":false,"process_mode":3,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":SubResource("GDScript_kqphk"),"gamestate":SubResource("Resource_303hs"),"preloadshitfuck":null,"Menu":Object(CanvasLayer,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","layer":1,"visible":false,"offset":Vector2(0, 0),"rotation":0.0,"scale":Vector2(1, 1),"transform":Transform2D(1, 0, 0, 1, 0, 0),"follow_viewport_enabled":true,"follow_viewport_scale":1.0,"script":SubResource("GDScript_vx8iy"))
+[sub_resource type="Resource" id="Resource_tq3co"]
+script = SubResource("GDScript_28v2x")
+initnodes = Array[SubResource("GDScript_3cb3b")]([SubResource("Resource_fgofq"), SubResource("Resource_7lihs"), SubResource("Resource_2irst"), SubResource("Resource_bf53h"), SubResource("Resource_f4myi")])
+rootNode = Object(Node3D,"unique_name_in_owner":false,"process_mode":3,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":SubResource("GDScript_pob5n"),"gamestate":SubResource("Resource_tq3co"),"preloadshitfuck":null,"Menu":Object(CanvasLayer,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","layer":1,"visible":false,"offset":Vector2(0, 0),"rotation":0.0,"scale":Vector2(1, 1),"transform":Transform2D(1, 0, 0, 1, 0, 0),"follow_viewport_enabled":true,"follow_viewport_scale":1.0,"script":SubResource("GDScript_ie458"))
 ,"toggled":false)
 
-saves = Array[PackedScene]([SubResource("PackedScene_3pvyx")])
 initialized = true
 metadata/_custom_type_script = "uid://cdociv5s4yb3q"
 
 [node name="Root" type="Node3D" unique_id=1717732160]
 process_mode = 3
-script = SubResource("GDScript_kqphk")
-gamestate = SubResource("Resource_303hs")
+script = SubResource("GDScript_pob5n")
+gamestate = SubResource("Resource_tq3co")
 
-[node name="World" type="Node3D" parent="." unique_id=1226380381 groups=["Pausable"] instance=ExtResource("1_3siir")]
+[node name="World" type="Node3D" parent="." unique_id=1226380381 groups=["Pausable"] instance=ExtResource("1_lch76")]
 
-[node name="Player" type="CharacterBody3D" parent="." unique_id=1215905502 groups=["Pausable"] instance=ExtResource("2_lch76")]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 1.679261, -0.35516265, 0.54512686)
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1215905502 groups=["Pausable"] instance=ExtResource("2_3pvyx")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 1.5526828, -0.29139882, -0.35434836)
 velocity = Vector3(5, 0, 0)
-script = SubResource("GDScript_areea")
+script = SubResource("GDScript_rqy01")
 
-[node name="Actor" type="CharacterBody3D" parent="." unique_id=1866149922 groups=["Pausable"] instance=ExtResource("3_3pvyx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8406315, -1.9902482, 2.128224)
-velocity = Vector3(-2.3789544, 0, -0.38155878)
-script = SubResource("GDScript_u4pnr")
+[node name="Actor" type="CharacterBody3D" parent="." unique_id=1866149922 groups=["Pausable"] instance=ExtResource("3_rs76j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69068193, 0.009479009, 0.3898244)
+velocity = Vector3(1.9787719, 0, 1.5534155)
+script = SubResource("GDScript_dpp2b")
 NpcClass = SubResource("Resource_7ei5c")
 
-[node name="Menu" type="CanvasLayer" parent="." unique_id=539579730 instance=ExtResource("4_rs76j")]
+[node name="Menu" type="CanvasLayer" parent="." unique_id=539579730 instance=ExtResource("4_kqphk")]
 visible = false
 follow_viewport_enabled = true
-script = SubResource("GDScript_vx8iy")
+script = SubResource("GDScript_ie458")
+
+[node name="GUI" type="CanvasLayer" parent="." unique_id=539199906 instance=ExtResource("5_qaqkx")]
+follow_viewport_enabled = true

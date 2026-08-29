@@ -1,0 +1,16 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://ciy75oh1vleff"]
+
+[ext_resource type="Texture2D" uid="uid://e4dt8qq1mika" path="res://Textures/UI/gui_panel.png" id="1_yp86c"]
+
+[resource]
+texture = ExtResource("1_yp86c")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1

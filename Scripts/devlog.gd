@@ -48,3 +48,9 @@
 #one might observe that the saving only saves locally. 
 #Thats because godot is an evil piece of software coded for the displeasure of he who wishes to make anything but phone games.
 #it will be put off for now as i prioritize spells/inventory.
+#18:37
+#forgot to log but ive been working on the gui for a while now.
+
+#29/08
+#10:45
+#finished ui styling yesterday forgot to push doey

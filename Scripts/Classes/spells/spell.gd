@@ -10,6 +10,11 @@ class_name spell
 @export var description: String
 @export var Icon: Texture
 
+#for the sake of ui
+@export var castable: bool
+@export var equipped: bool
+@export var uiNode: Variant
+
 func cast(caster: Variant):
 	#Globals.Player
 	var actualNode = spellNode.instantiate()

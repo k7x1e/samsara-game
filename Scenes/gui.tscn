@@ -1,3 +1,286 @@
 [gd_scene format=3 uid="uid://dpdhvjrvm5xcf"]
 
+[ext_resource type="Script" uid="uid://bnpt3mse7ebc4" path="res://Scripts/UI/gui.gd" id="1_3w84o"]
+[ext_resource type="Texture2D" uid="uid://b8iv4i2fey054" path="res://icon.svg" id="1_qyd3e"]
+[ext_resource type="Texture2D" uid="uid://lpfs7nwlndnf" path="res://Textures/UI/gui_spell_overlay.png" id="2_bm56d"]
+[ext_resource type="Script" uid="uid://bpssskossic25" path="res://Scripts/UI/SpellMaster.gd" id="2_xnb2j"]
+[ext_resource type="Script" uid="uid://dej6pga7p6fl0" path="res://Scripts/UI/spellui.gd" id="3_gnd4w"]
+[ext_resource type="Texture2D" uid="uid://bsajubq81b2qs" path="res://Textures/black.png" id="3_n5m23"]
+
 [node name="GUI" type="CanvasLayer" unique_id=539199906]
+follow_viewport_enabled = true
+script = ExtResource("1_3w84o")
+
+[node name="Control" type="Control" parent="." unique_id=1294274690]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="spells" type="Control" parent="Control" unique_id=341486062]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -380.0
+offset_top = -168.0
+offset_right = 380.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="Control/spells" unique_id=2143040135]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/spells" unique_id=739165100]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+script = ExtResource("2_xnb2j")
+
+[node name="Spell1" type="Control" parent="Control/spells/HBoxContainer" unique_id=120876537]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("3_gnd4w")
+
+[node name="spellIcon" type="TextureRect" parent="Control/spells/HBoxContainer/Spell1" unique_id=722418140]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("1_qyd3e")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/spells/HBoxContainer/Spell1" unique_id=1452164036]
+modulate = Color(1, 1, 1, 0.5647059)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_bm56d")
+
+[node name="spellBorder" type="TextureRect" parent="Control/spells/HBoxContainer/Spell1" unique_id=2126193593]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Dimmin" type="TextureRect" parent="Control/spells/HBoxContainer/Spell1" unique_id=1587111808]
+visible = false
+modulate = Color(1, 1, 1, 0.6666667)
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("3_n5m23")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/spells/HBoxContainer/Spell1" unique_id=630605957]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "M1"
+horizontal_alignment = 2
+
+[node name="Spell2" type="Control" parent="Control/spells/HBoxContainer" unique_id=2079626732]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="spellIcon" type="TextureRect" parent="Control/spells/HBoxContainer/Spell2" unique_id=874825775]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("1_qyd3e")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/spells/HBoxContainer/Spell2" unique_id=753409486]
+modulate = Color(1, 1, 1, 0.5647059)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_bm56d")
+
+[node name="spellBorder" type="TextureRect" parent="Control/spells/HBoxContainer/Spell2" unique_id=225941330]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Dimmin" type="TextureRect" parent="Control/spells/HBoxContainer/Spell2" unique_id=1425379372]
+visible = false
+modulate = Color(1, 1, 1, 0.6666667)
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("3_n5m23")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/spells/HBoxContainer/Spell2" unique_id=85568992]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "M2"
+horizontal_alignment = 2
+
+[node name="Spell3" type="Control" parent="Control/spells/HBoxContainer" unique_id=1386412390]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="spellIcon" type="TextureRect" parent="Control/spells/HBoxContainer/Spell3" unique_id=146703493]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("1_qyd3e")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/spells/HBoxContainer/Spell3" unique_id=1014421268]
+modulate = Color(1, 1, 1, 0.5647059)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_bm56d")
+
+[node name="spellBorder" type="TextureRect" parent="Control/spells/HBoxContainer/Spell3" unique_id=1081411632]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Dimmin" type="TextureRect" parent="Control/spells/HBoxContainer/Spell3" unique_id=613984268]
+visible = false
+modulate = Color(1, 1, 1, 0.6666667)
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("3_n5m23")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/spells/HBoxContainer/Spell3" unique_id=1939276109]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "C"
+horizontal_alignment = 2
+
+[node name="Spell4" type="Control" parent="Control/spells/HBoxContainer" unique_id=1699544945]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="spellIcon" type="TextureRect" parent="Control/spells/HBoxContainer/Spell4" unique_id=2145263988]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("1_qyd3e")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/spells/HBoxContainer/Spell4" unique_id=971595826]
+modulate = Color(1, 1, 1, 0.5647059)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_bm56d")
+
+[node name="spellBorder" type="TextureRect" parent="Control/spells/HBoxContainer/Spell4" unique_id=1179445528]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Dimmin" type="TextureRect" parent="Control/spells/HBoxContainer/Spell4" unique_id=2068907062]
+visible = false
+modulate = Color(1, 1, 1, 0.6666667)
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("3_n5m23")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/spells/HBoxContainer/Spell4" unique_id=1601934257]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "V"
+horizontal_alignment = 2
+
+[node name="Spell5" type="Control" parent="Control/spells/HBoxContainer" unique_id=2034597489]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="spellIcon" type="TextureRect" parent="Control/spells/HBoxContainer/Spell5" unique_id=250750489]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("1_qyd3e")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/spells/HBoxContainer/Spell5" unique_id=1476296964]
+modulate = Color(1, 1, 1, 0.5647059)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_bm56d")
+
+[node name="spellBorder" type="TextureRect" parent="Control/spells/HBoxContainer/Spell5" unique_id=943232233]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Dimmin" type="TextureRect" parent="Control/spells/HBoxContainer/Spell5" unique_id=402421951]
+visible = false
+modulate = Color(1, 1, 1, 0.6666667)
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("3_n5m23")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/spells/HBoxContainer/Spell5" unique_id=1925214460]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "B"
+horizontal_alignment = 2

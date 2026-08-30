@@ -1,4 +1,4 @@
-### Samsara Game (working title)
+# Samsonarum
 
 WIP
 Nothing shall be added here unless needed.

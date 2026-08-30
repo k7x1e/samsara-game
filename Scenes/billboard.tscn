@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dbhtmjtvoohhi"]
 
 [ext_resource type="Script" uid="uid://dvhlvrgx56mc5" path="res://Scripts/billboard.gd" id="1_dwpb4"]
+[ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="2_br66b"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_dwpb4"]
 viewport_path = NodePath("SubViewport")
@@ -35,6 +36,7 @@ grow_vertical = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="SubViewport/CanvasLayer/CenterContainer" unique_id=786642556 groups=["Pausable"]]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_br66b")
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_fgofq")

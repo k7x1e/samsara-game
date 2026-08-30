@@ -54,3 +54,7 @@
 #29/08
 #10:45
 #finished ui styling yesterday forgot to push doey
+
+#30/08
+#19:37
+#been working on UI

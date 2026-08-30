@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bsajubq81b2qs" path="res://Textures/black.png" id="2_cayip"]
 [ext_resource type="Script" uid="uid://mo4mee6m6nr1" path="res://Scripts/UI/windowTitleBar.gd" id="3_cayip"]
 [ext_resource type="StyleBox" uid="uid://ciy75oh1vleff" path="res://Resources/UI/styleBox.tres" id="4_158mb"]
+[ext_resource type="Script" uid="uid://80ps74wrcq4r" path="res://Scripts/UI/resize_handle.gd" id="5_jsrd8"]
+[ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="5_wbdvm"]
+[ext_resource type="Texture2D" uid="uid://bn60qyl38svpl" path="res://Textures/UI/gui_scale_handle.png" id="6_wbdvm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_158mb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -27,7 +30,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Menu" unique_id=1030292509]
-visible = false
 modulate = Color(1, 1, 1, 0.49019608)
 layout_mode = 1
 anchors_preset = 15
@@ -39,8 +41,10 @@ texture = ExtResource("2_cayip")
 
 [node name="Window" type="Control" parent="Menu" unique_id=1679423571]
 anchors_preset = 0
-offset_right = 1208.0
-offset_bottom = 960.0
+offset_left = 331.0
+offset_top = 396.0
+offset_right = 1204.0
+offset_bottom = 1343.0
 
 [node name="Panel" type="Panel" parent="Menu/Window" unique_id=483557386]
 layout_mode = 1
@@ -66,9 +70,33 @@ script = ExtResource("3_cayip")
 
 [node name="Label" type="Label" parent="Menu/Window/VBoxContainer/HBoxContainer" unique_id=2039275021]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_wbdvm")
 text = "window title"
 
 [node name="PanelContainer" type="PanelContainer" parent="Menu/Window/VBoxContainer" unique_id=1851446025]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_158mb")
+
+[node name="Control" type="Control" parent="Menu/Window" unique_id=1803125968]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("5_jsrd8")
+maxX = 3200.0
+maxY = 1600.0
+
+[node name="TextureRect" type="TextureRect" parent="Menu/Window/Control" unique_id=2059667442]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_wbdvm")
+
+[connection signal="gui_input" from="Menu/Window/Control/TextureRect" to="Menu/Window/Control" method="_on_texture_rect_gui_input"]

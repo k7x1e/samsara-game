@@ -62,3 +62,7 @@
 #31/08
 #14:00
 #been working even more on UI
+#22:10
+#i was thinking of getting some coding done.
+#22:50
+#finished up some more functionality for the spells

@@ -14,6 +14,11 @@ scene = ExtResource("2_0brm1")
 name = "World"
 metadata/_custom_type_script = "uid://b3rylldbgh8gp"
 
+[sub_resource type="Resource" id="Resource_f4myi"]
+script = ExtResource("1_8ag07")
+scene = ExtResource("6_0brm1")
+metadata/_custom_type_script = "uid://b3rylldbgh8gp"
+
 [sub_resource type="Resource" id="Resource_7lihs"]
 script = ExtResource("1_8ag07")
 scene = ExtResource("3_f4myi")
@@ -28,11 +33,6 @@ position = Vector3(-6.8780046, 0.2762599, 0.9218621)
 name = "Placeholder Actor"
 metadata/_custom_type_script = "uid://b3rylldbgh8gp"
 
-[sub_resource type="Resource" id="Resource_f4myi"]
-script = ExtResource("1_8ag07")
-scene = ExtResource("6_0brm1")
-metadata/_custom_type_script = "uid://b3rylldbgh8gp"
-
 [sub_resource type="Resource" id="Resource_bf53h"]
 script = ExtResource("1_8ag07")
 scene = ExtResource("5_cm6gp")
@@ -41,6 +41,6 @@ metadata/_custom_type_script = "uid://b3rylldbgh8gp"
 
 [resource]
 script = ExtResource("6_y7o6f")
-initnodes = Array[ExtResource("1_8ag07")]([SubResource("Resource_fgofq"), SubResource("Resource_7lihs"), SubResource("Resource_2irst"), SubResource("Resource_f4myi"), SubResource("Resource_bf53h")])
+initnodes = Array[ExtResource("1_8ag07")]([SubResource("Resource_fgofq"), SubResource("Resource_f4myi"), SubResource("Resource_7lihs"), SubResource("Resource_2irst"), SubResource("Resource_bf53h")])
 rootNode = null
 metadata/_custom_type_script = "uid://cdociv5s4yb3q"

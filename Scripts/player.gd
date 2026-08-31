@@ -43,8 +43,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		var dash = dashD * direction
 		self.position += dash
-	if Input.is_action_just_pressed("LeftClick"):
-		wizard.cast(1)
+	#actually ykw why are we even doing the casting here?§
 	
 	move_and_slide()
 

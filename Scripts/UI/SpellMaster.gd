@@ -20,3 +20,5 @@ func updateSpells(spellList: Array[spell]):
 func updateSpell(spellNode: Node, spel: spell):
 	print("updated spell")
 	spellNode.iconNode.texture = spel.Icon
+	spel.uiNode = spellNode
+	spellNode.costLabel.text = str(spel.cost)

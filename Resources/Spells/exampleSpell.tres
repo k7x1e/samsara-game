@@ -7,6 +7,7 @@
 [resource]
 script = ExtResource("2_p2noy")
 spellNode = ExtResource("3_37g3t")
+coolDown = 0.2
 name = "FUCK"
 Icon = ExtResource("1_2c3am")
 uiNode = null

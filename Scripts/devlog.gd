@@ -58,3 +58,7 @@
 #30/08
 #19:37
 #been working on UI
+
+#31/08
+#14:00
+#been working even more on UI

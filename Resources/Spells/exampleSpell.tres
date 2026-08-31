@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="spell" format=3 uid="uid://cvkb5exdvybqf"]
+
+[ext_resource type="Texture2D" uid="uid://874crc0bp3hk" path="res://icon.png" id="1_2c3am"]
+[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/Classes/spells/spell.gd" id="2_p2noy"]
+[ext_resource type="PackedScene" uid="uid://bga75wb36a5io" path="res://Scenes/spell.tscn" id="3_37g3t"]
+
+[resource]
+script = ExtResource("2_p2noy")
+spellNode = ExtResource("3_37g3t")
+name = "FUCK"
+Icon = ExtResource("1_2c3am")
+uiNode = null
+metadata/_custom_type_script = "uid://b52li86lflfyj"

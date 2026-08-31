@@ -3,10 +3,15 @@
 [ext_resource type="Script" uid="uid://bnpt3mse7ebc4" path="res://Scripts/UI/gui.gd" id="1_3w84o"]
 [ext_resource type="Texture2D" uid="uid://b8iv4i2fey054" path="res://icon.svg" id="1_qyd3e"]
 [ext_resource type="Texture2D" uid="uid://lpfs7nwlndnf" path="res://Textures/UI/gui_spell_overlay.png" id="2_bm56d"]
+[ext_resource type="Texture2D" uid="uid://c8cink4nhbiot" path="res://Textures/UI/gui_spell_bg.png" id="2_gnd4w"]
 [ext_resource type="Script" uid="uid://bpssskossic25" path="res://Scripts/UI/SpellMaster.gd" id="2_xnb2j"]
 [ext_resource type="Script" uid="uid://dej6pga7p6fl0" path="res://Scripts/UI/spellui.gd" id="3_gnd4w"]
 [ext_resource type="Texture2D" uid="uid://bsajubq81b2qs" path="res://Textures/black.png" id="3_n5m23"]
 [ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="7_xnb2j"]
+[ext_resource type="Texture2D" uid="uid://r5spf6c0vud0" path="res://Textures/UI/gui_spell_border.png" id="9_bf1fa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bf1fa"]
+texture = ExtResource("2_gnd4w")
 
 [node name="GUI" type="CanvasLayer" unique_id=539199906]
 follow_viewport_enabled = true
@@ -27,9 +32,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -380.0
-offset_top = -168.0
-offset_right = 380.0
+offset_left = -390.0
+offset_top = -188.0
+offset_right = 390.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -40,15 +45,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bf1fa")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/spells" unique_id=739165100]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = -20.0
+offset_left = 30.0
+offset_top = 40.0
+offset_right = -10.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -62,13 +68,15 @@ size_flags_horizontal = 0
 script = ExtResource("3_gnd4w")
 
 [node name="spellIcon" type="TextureRect" parent="Control/spells/HBoxContainer/Spell1" unique_id=722418140]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
 texture = ExtResource("1_qyd3e")
+expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Control/spells/HBoxContainer/Spell1" unique_id=1452164036]
-modulate = Color(1, 1, 1, 0.5647059)
+modulate = Color(1, 1, 1, 0.7529412)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -107,15 +115,18 @@ horizontal_alignment = 2
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
+script = ExtResource("3_gnd4w")
 
 [node name="spellIcon" type="TextureRect" parent="Control/spells/HBoxContainer/Spell2" unique_id=874825775]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
 texture = ExtResource("1_qyd3e")
+expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Control/spells/HBoxContainer/Spell2" unique_id=753409486]
-modulate = Color(1, 1, 1, 0.5647059)
+modulate = Color(1, 1, 1, 0.7529412)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -154,15 +165,18 @@ horizontal_alignment = 2
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
+script = ExtResource("3_gnd4w")
 
 [node name="spellIcon" type="TextureRect" parent="Control/spells/HBoxContainer/Spell3" unique_id=146703493]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
 texture = ExtResource("1_qyd3e")
+expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Control/spells/HBoxContainer/Spell3" unique_id=1014421268]
-modulate = Color(1, 1, 1, 0.5647059)
+modulate = Color(1, 1, 1, 0.7529412)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -201,15 +215,18 @@ horizontal_alignment = 2
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
+script = ExtResource("3_gnd4w")
 
 [node name="spellIcon" type="TextureRect" parent="Control/spells/HBoxContainer/Spell4" unique_id=2145263988]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
 texture = ExtResource("1_qyd3e")
+expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Control/spells/HBoxContainer/Spell4" unique_id=971595826]
-modulate = Color(1, 1, 1, 0.5647059)
+modulate = Color(1, 1, 1, 0.7529412)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -248,15 +265,18 @@ horizontal_alignment = 2
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
+script = ExtResource("3_gnd4w")
 
 [node name="spellIcon" type="TextureRect" parent="Control/spells/HBoxContainer/Spell5" unique_id=250750489]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
 texture = ExtResource("1_qyd3e")
+expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Control/spells/HBoxContainer/Spell5" unique_id=1476296964]
-modulate = Color(1, 1, 1, 0.5647059)
+modulate = Color(1, 1, 1, 0.7529412)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -290,3 +310,15 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("7_xnb2j")
 text = "B"
 horizontal_alignment = 2
+
+[node name="Border" type="TextureRect" parent="Control/spells" unique_id=677281916]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_bf1fa")

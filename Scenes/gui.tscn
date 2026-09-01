@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dpdhvjrvm5xcf"]
 
 [ext_resource type="StyleBox" uid="uid://ciy75oh1vleff" path="res://Resources/UI/styleBox.tres" id="1_705sf"]
-[ext_resource type="Texture2D" uid="uid://b8iv4i2fey054" path="res://icon.svg" id="1_qyd3e"]
 [ext_resource type="Texture2D" uid="uid://lpfs7nwlndnf" path="res://Textures/UI/gui_spell_overlay.png" id="2_bm56d"]
 [ext_resource type="Texture2D" uid="uid://c8cink4nhbiot" path="res://Textures/UI/gui_spell_bg.png" id="2_gnd4w"]
 [ext_resource type="Script" uid="uid://bpssskossic25" path="res://Scripts/UI/SpellMaster.gd" id="2_xnb2j"]
@@ -12,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cyqje7y4rspgv" path="res://Textures/UI/gui_bar_blank.png" id="8_s7psx"]
 [ext_resource type="Texture2D" uid="uid://dl2o4crxyd073" path="res://Textures/UI/gui_bar_over.png" id="9_705sf"]
 [ext_resource type="Texture2D" uid="uid://r5spf6c0vud0" path="res://Textures/UI/gui_spell_border.png" id="9_bf1fa"]
+[ext_resource type="Texture2D" uid="uid://be3ehv472u2gm" path="res://Textures/UI/gui_spell_placeholder.png" id="10_6wv5k"]
 [ext_resource type="Texture2D" uid="uid://c1utujj8n0c4a" path="res://Textures/UI/gui_bar_progress_health.png" id="10_603go"]
 [ext_resource type="Texture2D" uid="uid://ce725l0bb4na5" path="res://Textures/UI/gui_bar_progress_mana.png" id="11_6wv5k"]
 
@@ -57,7 +57,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-value = 30.0
 fill_mode = 3
 nine_patch_stretch = true
 texture_under = ExtResource("8_s7psx")
@@ -140,7 +139,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
-texture = ExtResource("1_qyd3e")
+texture = ExtResource("10_6wv5k")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="spells/HBoxContainer/Spell1" unique_id=1452164036]
@@ -208,7 +207,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
-texture = ExtResource("1_qyd3e")
+texture = ExtResource("10_6wv5k")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="spells/HBoxContainer/Spell2" unique_id=753409486]
@@ -277,7 +276,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
-texture = ExtResource("1_qyd3e")
+texture = ExtResource("10_6wv5k")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="spells/HBoxContainer/Spell3" unique_id=1014421268]
@@ -346,7 +345,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
-texture = ExtResource("1_qyd3e")
+texture = ExtResource("10_6wv5k")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="spells/HBoxContainer/Spell4" unique_id=971595826]
@@ -415,7 +414,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
-texture = ExtResource("1_qyd3e")
+texture = ExtResource("10_6wv5k")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="spells/HBoxContainer/Spell5" unique_id=1476296964]

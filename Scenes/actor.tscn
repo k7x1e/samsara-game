@@ -24,6 +24,8 @@ metadata/_custom_type_script = "uid://drjjmjc24qipo"
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ei5c"]
 
 [node name="Actor" type="CharacterBody3D" unique_id=1866149922 groups=["Pausable"]]
+collision_layer = 9
+collision_mask = 9
 script = ExtResource("1_a4aht")
 NpcClass = SubResource("Resource_7ei5c")
 

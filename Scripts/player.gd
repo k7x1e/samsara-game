@@ -16,6 +16,8 @@ var dashVector = Vector3(dashD, 0, 0)
 @onready var wizard = $Rotation/Wizard
 @onready var followerNode = $Rotation/Follower1 #will be replaced with a function eventually but this will do for now
 
+@export var globalmousePos: Vector3
+
 func _ready():
 	initialize()
 
@@ -66,10 +68,11 @@ func look_at_mouse():
 	#check result
 	var result = spacestate.intersect_ray(query)
 	if result.has("position"):
-		var target_pos = result["position"]
+		var localmousePos = result["position"]
+		globalmousePos = result["position"]
 		
-		target_pos.y = global_position.y
+		localmousePos.y = global_position.y
 		
-		if global_position.distance_to(target_pos) > 0.1:
+		if global_position.distance_to(localmousePos) > 0.1:
 			cursorNode.global_position = result["position"]
-			rotationNode.look_at(target_pos, Vector3.UP)
+			rotationNode.look_at(localmousePos, Vector3.UP)

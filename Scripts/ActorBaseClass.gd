@@ -4,7 +4,7 @@ extends CharacterBody3D
 @onready var visual = $Visual
 @onready var nav = $Nav
 
-@export var health: float
+@export var health: float = 100
 @export var NpcClass: npc
 
 
@@ -22,6 +22,13 @@ func _physics_process(delta: float) -> void:
 	#basically to tick the behaviour script(when i eventually make it). 
 	#Will most likely be replaced by a tick function handled by the combat manager.
 	behaviour.update()
+
+func damage(amt: float):
+	print("took damage")
+	health -= amt
+	behaviour.say(str("-", amt), 0.5)
+	if health <= 0:
+		behaviour.death()
 
 func move():
 	#basically just stolen from dustrialis source code.

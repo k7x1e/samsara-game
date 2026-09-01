@@ -16,10 +16,11 @@ func damage(amt: float) -> bool: #return true if survived, if dead return false 
 		health = 0
 		return false
 
-func say(message: String):
+func say(message: String, duration: float):
 	var temp = billboard.instantiate()
 	actor.add_child(temp)
 	temp.set_owner(actor)
+	temp.duration = duration
 	temp.billboardtext = message
 	temp.initialize()
 

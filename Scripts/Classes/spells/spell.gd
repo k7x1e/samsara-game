@@ -24,6 +24,7 @@ func cast(caster: Variant):
 		actualNode.global_rotation = caster.global_rotation
 		actualNode.global_position = caster.global_position
 		actualNode.set_owner(Globals.Player)
+		actualNode.initialize()
 		cooldown()
 		Globals.Player.mana -= cost
 		return true

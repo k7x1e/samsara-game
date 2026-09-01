@@ -96,3 +96,5 @@
 #added a heal spell
 #15:12
 #added rudimentary health and mana bars
+#16:15
+#on the train now, finished basics for a lightning strike ability

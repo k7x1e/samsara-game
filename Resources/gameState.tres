@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ccs47wlxaacj4" path="res://Scenes/Player.tscn" id="3_f4myi"]
 [ext_resource type="Resource" uid="uid://c4x1td6kh5txm" path="res://Resources/evil.tres" id="4_8ag07"]
 [ext_resource type="PackedScene" uid="uid://b4apr6vl8oocn" path="res://Scenes/menu.tscn" id="5_cm6gp"]
+[ext_resource type="PackedScene" uid="uid://bflspavgatr07" path="res://Scenes/spawner.tscn" id="6_f4myi"]
 [ext_resource type="Script" uid="uid://cdociv5s4yb3q" path="res://Scripts/Classes/gamestate.gd" id="6_y7o6f"]
 
 [sub_resource type="Resource" id="Resource_fgofq"]
@@ -24,10 +25,17 @@ metadata/_custom_type_script = "uid://b3rylldbgh8gp"
 script = ExtResource("1_8ag07")
 scene = ExtResource("5_cm6gp")
 name = "Menu"
+to_be_placed = false
+metadata/_custom_type_script = "uid://b3rylldbgh8gp"
+
+[sub_resource type="Resource" id="Resource_0brm1"]
+script = ExtResource("1_8ag07")
+scene = ExtResource("6_f4myi")
+position = Vector3(47.168, 0, -0.173)
 metadata/_custom_type_script = "uid://b3rylldbgh8gp"
 
 [resource]
 script = ExtResource("6_y7o6f")
-initnodes = Array[ExtResource("1_8ag07")]([SubResource("Resource_fgofq"), SubResource("Resource_7lihs"), ExtResource("4_8ag07"), SubResource("Resource_bf53h")])
+initnodes = Array[ExtResource("1_8ag07")]([SubResource("Resource_fgofq"), SubResource("Resource_7lihs"), ExtResource("4_8ag07"), SubResource("Resource_bf53h"), SubResource("Resource_0brm1")])
 rootNode = null
 metadata/_custom_type_script = "uid://cdociv5s4yb3q"

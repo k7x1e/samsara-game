@@ -50,7 +50,8 @@ func move():
 	move_and_slide()
 
 func initialize():
-	behaviour = NpcClass.behaviour
+	
+	behaviour = NpcClass.behaviour.duplicate()
 	behaviour.actor = self
 	behaviour.initialize()
 	var CharModel = NpcClass.model.instantiate()

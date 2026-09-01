@@ -11,11 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://npof8x327f48" path="res://Textures/asphyxiation.jpeg" id="6_52ee3"]
 [ext_resource type="Resource" uid="uid://crlfg83irgqnk" path="res://Resources/Items/testItem.tres" id="6_o3h8g"]
 [ext_resource type="Resource" uid="uid://byn8lfwpbjv8r" path="res://Resources/Spells/thunderbolt.tres" id="8_miouo"]
-[ext_resource type="Texture2D" uid="uid://7wri6gpkv7tl" path="res://Textures/icons/spells/trampstamp.png" id="9_arntx"]
+[ext_resource type="Resource" uid="uid://bs0h3ygx3g5bt" path="res://Resources/Spells/skooma.tres" id="9_1e7my"]
 [ext_resource type="Resource" uid="uid://grrdhtwvlugn" path="res://Resources/Spells/heal_spell.tres" id="9_o3h8g"]
-[ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/Classes/Items/SpellItem.gd" id="10_lslt6"]
 [ext_resource type="Script" uid="uid://x7tekc2114cw" path="res://Scripts/Classes/stats.gd" id="10_o3h8g"]
-[ext_resource type="PackedScene" uid="uid://7qfb2a4v0ehs" path="res://Scenes/spells/skoomaSpell.tscn" id="12_lslt6"]
 [ext_resource type="Resource" uid="uid://bvx7kyepfo1oa" path="res://Resources/Spells/placeholder.tres" id="12_miouo"]
 
 [sub_resource type="Resource" id="Resource_o3h8g"]
@@ -30,28 +28,9 @@ icon = ExtResource("6_52ee3")
 equippable = true
 metadata/_custom_type_script = "uid://brua5tb5kc0it"
 
-[sub_resource type="Resource" id="Resource_ulo2v"]
-script = ExtResource("3_5ixxa")
-spellNode = ExtResource("12_lslt6")
-cost = 200
-coolDown = 20.0
-name = "Spell"
-Icon = ExtResource("9_arntx")
-uiNode = null
-spellTimer = null
-metadata/_custom_type_script = "uid://b52li86lflfyj"
-
-[sub_resource type="Resource" id="Resource_1iu4k"]
-script = ExtResource("10_lslt6")
-theSpell = SubResource("Resource_ulo2v")
-name = "Skooma"
-icon = ExtResource("9_arntx")
-Type = "Spell"
-metadata/_custom_type_script = "uid://crrif2oof7ji8"
-
 [sub_resource type="Resource" id="Resource_megsn"]
 script = ExtResource("4_yoq75")
-inventory = Array[ExtResource("2_megsn")]([ExtResource("4_o3h8g"), ExtResource("6_o3h8g"), SubResource("Resource_arntx"), ExtResource("9_o3h8g"), ExtResource("8_miouo"), SubResource("Resource_1iu4k")])
+inventory = Array[ExtResource("2_megsn")]([ExtResource("4_o3h8g"), ExtResource("6_o3h8g"), SubResource("Resource_arntx"), ExtResource("9_o3h8g"), ExtResource("8_miouo"), ExtResource("9_1e7my")])
 idHandler = SubResource("Resource_o3h8g")
 metadata/_custom_type_script = "uid://cse3ubaxht2cj"
 
@@ -79,6 +58,8 @@ size = Vector3(0.7, 0.2, 0.6)
 
 [node name="Player" type="CharacterBody3D" unique_id=1215905502 groups=["Pausable"]]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_kyqiw")
 inventory = SubResource("Resource_megsn")
 stats = SubResource("Resource_1e7my")

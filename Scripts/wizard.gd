@@ -6,9 +6,9 @@ extends Node3D
 
 #check for input
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("LeftClick"):
+	if Input.is_action_pressed("LeftClick"):
 		cast(0)
-	if Input.is_action_just_pressed("rightClick"):
+	if Input.is_action_pressed("rightClick"):
 		cast(1)
 	if Input.is_action_just_pressed("spell3"):
 		cast(2)

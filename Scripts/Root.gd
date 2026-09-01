@@ -51,6 +51,8 @@ func initialize(gmestate: gameState):
 		var temp = gmestate.initnodes[i].scene.instantiate()
 		self.add_child(temp)
 		temp.set_owner(self)
+		if gmestate.initnodes[i].to_be_placed:
+			temp.global_position = gmestate.initnodes[i].position
 		if gmestate.initnodes[i].name == "Menu":
 			Menu = temp.menu
 	return true

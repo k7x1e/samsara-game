@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bqdpiionfhc5e" path="res://Scripts/ActorBaseClass.gd" id="1_a4aht"]
 [ext_resource type="PackedScene" uid="uid://bkimo22crvjn5" path="res://Scenes/PlaceholderModel.tscn" id="2_7ei5c"]
-[ext_resource type="Script" uid="uid://baf2et18ajmro" path="res://Scripts/classes/Behaviour/Follower.gd" id="2_k81ir"]
-[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="2_lfvdv"]
+[ext_resource type="Script" uid="uid://baf2et18ajmro" path="res://Scripts/Classes/Behaviour/Follower.gd" id="2_k81ir"]
+[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/Classes/npc.gd" id="2_lfvdv"]
 [ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="2_ltbwf"]
 
 [sub_resource type="Resource" id="Resource_ltbwf"]

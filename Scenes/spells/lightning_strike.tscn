@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bhg0ayjvobmef"]
 
-[ext_resource type="Script" uid="uid://b1lxn3p36pvr1" path="res://Scripts/classes/spells/lightning_strike.gd" id="1_7kp3g"]
+[ext_resource type="Script" uid="uid://b1lxn3p36pvr1" path="res://Scripts/Classes/spells/lightning_strike.gd" id="1_7kp3g"]
 [ext_resource type="Texture2D" uid="uid://citma6vf0j7s5" path="res://Textures/spells/lightning_strike.png" id="2_4oncq"]
+[ext_resource type="Texture2D" uid="uid://cnlpfxmcle0t8" path="res://Textures/spells/lightning_strike_red.png" id="3_l303g"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wk5h0"]
 radius = 2.0770488
@@ -32,6 +33,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 4.736725, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_4oncq")]
+}
 
 [sub_resource type="Animation" id="Animation_l303g"]
 resource_name = "Strike"
@@ -59,6 +72,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 4.736725, 0), Vector3(0, 5.745624, 0), Vector3(0, 3.3173676, 0), Vector3(0, 5.745624, 0), Vector3(0, 3.3173676, 0), Vector3(0, 5.745624, 0), Vector3(0, 0.46564937, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.033317856, 0.06659436, 0.1330809),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_4oncq"), ExtResource("3_l303g"), ExtResource("2_4oncq"), ExtResource("2_4oncq")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0ycbv"]

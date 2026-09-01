@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://iucjrslv446t"]
+
+[ext_resource type="Script" uid="uid://bqdpiionfhc5e" path="res://Scripts/ActorBaseClass.gd" id="1_0830c"]
+[ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="2_ghaa6"]
+[ext_resource type="Script" uid="uid://wwksmh6v3aja" path="res://Scripts/Classes/Behaviour/baseEnemy.gd" id="3_0830c"]
+[ext_resource type="PackedScene" uid="uid://dcjnetgb821re" path="res://Scenes/EnemyModel.tscn" id="4_0830c"]
+[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/Classes/npc.gd" id="5_8uf12"]
+
+[sub_resource type="Resource" id="Resource_ghaa6"]
+script = ExtResource("3_0830c")
+damageArea = null
+player = null
+nav = null
+atdamage = 20.0
+health = 100.0
+speed = 5.0
+actor = null
+metadata/_custom_type_script = "uid://wwksmh6v3aja"
+
+[sub_resource type="Resource" id="Resource_7ei5c"]
+script = ExtResource("5_8uf12")
+npcName = "Example Actor"
+model = ExtResource("4_0830c")
+behaviour = SubResource("Resource_ghaa6")
+metadata/_custom_type_script = "uid://drjjmjc24qipo"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ei5c"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1dp5w"]
+radius = 2.018302
+
+[node name="Actor" type="CharacterBody3D" unique_id=1866149922 groups=["Pausable"]]
+collision_layer = 9
+collision_mask = 9
+script = ExtResource("1_0830c")
+NpcClass = SubResource("Resource_7ei5c")
+
+[node name="Visual" type="Node3D" parent="." unique_id=1983415667 groups=["Pausable"]]
+
+[node name="Nav" type="NavigationAgent3D" parent="." unique_id=87223851 groups=["Pausable"]]
+avoidance_enabled = true
+radius = 1.0
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1180956514 groups=["Pausable"]]
+shape = SubResource("CapsuleShape3D_7ei5c")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1569967285]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1787433241]
+shape = SubResource("SphereShape3D_1dp5w")

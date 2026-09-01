@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bflspavgatr07"]
+
+[ext_resource type="Script" uid="uid://cwykx4d3qjhf2" path="res://Scripts/spawner.gd" id="1_2bop2"]
+[ext_resource type="PackedScene" uid="uid://iucjrslv446t" path="res://Scenes/enemy.tscn" id="2_mdv8j"]
+
+[node name="Spawner" type="Node3D" unique_id=517591928]
+script = ExtResource("1_2bop2")
+nodeToSpawn = ExtResource("2_mdv8j")
+duration = 1.0

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="itemSpell" format=3 uid="uid://grrdhtwvlugn"]
+[gd_resource type="Resource" format=3 uid="uid://grrdhtwvlugn"]
 
 [ext_resource type="Texture2D" uid="uid://bqxdpdin82oyj" path="res://Textures/icons/spells/heal.png" id="1_yly4q"]
 [ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/classes/Items/SpellItem.gd" id="2_ragd7"]
@@ -13,6 +13,7 @@ coolDown = 3.0
 name = "Heal"
 Icon = ExtResource("1_yly4q")
 uiNode = null
+spellTimer = null
 metadata/_custom_type_script = "uid://b52li86lflfyj"
 
 [resource]

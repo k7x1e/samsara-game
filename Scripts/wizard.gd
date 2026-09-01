@@ -27,5 +27,11 @@ func cast(which: int): #1: left, 2: right, 3,4,5: other bindable spells
 	if which <= 4:
 		spells[which].cast(self)
 
-func remove(which: int):
+func remove(which: int, replacement: bool):
+	if replacement:
+		var spellToRemove: spell = spells[which]
+		var itemToUnequip: itemClass = Globals.inventory.getFromUID(spellToRemove.parentItemUID)
+		var NodeToUnequip: Node = Globals.inventory.GetNode(itemToUnequip)
+		itemToUnequip.equipped = false
+		Globals.inventory.unequip(NodeToUnequip)
 	spells[which] = placeholderSpell.duplicate()

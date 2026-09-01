@@ -19,8 +19,10 @@ func initialize(fart: itemClass):
 func checkBorder():
 	match ownItem.equipped:
 		true:
+			print("checkced border, equipped")
 			equipBorder.show()
 		false:
+			print("checked border, unequipped")
 			equipBorder.hide()
 
 func _gui_input(event: InputEvent) -> void:

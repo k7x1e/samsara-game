@@ -7,6 +7,7 @@ class_name InventoryClass
 @export var idHandler: ItemIdHandler
 
 func assignIDs():
+	idHandler.usedArrays = []
 	for i in range(inventory.size()):
 		idHandler.give_id(inventory[i])
 
@@ -26,3 +27,6 @@ func remove(which:itemClass):
 func add(which:itemClass):
 	inventory.append(which)
 	assignIDs()
+
+func getUIDindex(id:int):
+	return idHandler.usedArrays.find(id)

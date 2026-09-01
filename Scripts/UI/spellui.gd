@@ -5,6 +5,8 @@ extends Control
 @onready var timerNode = $Timer
 @onready var costLabel = $Label
 
+@export var spel: spell
+
 @export var timer_active: bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -15,7 +17,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if timer_active:
-		dim.value = timerNode.wait_time - timerNode.time_left
+		dim.value = spel.spellTimer.wait_time - spel.spellTimer.time_left
 
 
 func _on_timer_timeout() -> void:

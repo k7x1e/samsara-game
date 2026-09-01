@@ -3,9 +3,7 @@
 [ext_resource type="Script" uid="uid://b1lxn3p36pvr1" path="res://Scripts/classes/spells/lightning_strike.gd" id="1_7kp3g"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wk5h0"]
-radius = 5.269429
-
-[sub_resource type="SphereMesh" id="SphereMesh_7kp3g"]
+radius = 2.0770488
 
 [node name="LightningStrike" type="Node3D" unique_id=1545189971]
 script = ExtResource("1_7kp3g")
@@ -16,6 +14,3 @@ collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Effect" unique_id=294766419]
 shape = SubResource("SphereShape3D_wk5h0")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1839169168]
-mesh = SubResource("SphereMesh_7kp3g")

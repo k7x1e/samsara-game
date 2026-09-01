@@ -98,3 +98,5 @@
 #added rudimentary health and mana bars
 #16:15
 #on the train now, finished basics for a lightning strike ability
+#18:18
+#managed to fix the evil bug preventing spell replacing from working fully

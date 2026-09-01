@@ -14,3 +14,14 @@ func give_id(itemInQuestion: itemClass):
 					result = 0
 			if result == 1:
 				itemInQuestion.UID = temp
+				give_id_based_on_type(itemInQuestion, temp)
+				usedArrays.append(temp)
+
+func give_id_based_on_type(theItem: itemClass, id: int):
+	match theItem.Type:
+		"Spell":
+			theItem.theSpell.parentItemUID = id
+		"Item":
+			pass
+		_:
+			print("item lacks type, UID not properly assigned to subitems")

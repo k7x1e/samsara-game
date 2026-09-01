@@ -12,4 +12,5 @@ coolDown = 0.2
 name = "FUCK"
 Icon = ExtResource("1_2c3am")
 uiNode = null
+spellTimer = null
 metadata/_custom_type_script = "uid://b52li86lflfyj"

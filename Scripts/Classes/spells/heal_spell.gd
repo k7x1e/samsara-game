@@ -5,7 +5,7 @@ extends Node3D
 @onready var billboard = $billboard
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func initialize() -> void:
 	Globals.Player.health += amount
 	await billboard.initialize()
 	#print("killing self")

@@ -48,10 +48,15 @@ func assignSpell(which: int):
 	if itemInQ.Type == "Spell":
 		if Globals.wizard.spells.has(itemInQ.theSpell):
 			#oh my god
-			Globals.wizard.remove(Globals.wizard.spells.find(itemInQ.theSpell))
+			print("replacing")
+			Globals.inventory.unequipItem(itemInQ)
+			Globals.wizard.remove(Globals.wizard.spells.find(itemInQ.theSpell), false)
+		if Globals.wizard.spells[which] != Globals.wizard.placeholderSpell:
+			Globals.wizard.remove(which, true)
 		Globals.wizard.spells[which] = itemInQ.theSpell
-		Globals.spellMaster.updateSpells(Globals.wizard.spells)
 		itemInQ.equipped = true
+		Globals.inventory.updateInventory()
+		Globals.spellMaster.updateSpells(Globals.wizard.spells)
 		currentItem.checkBorder()
 
 func _on_assign_1_pressed() -> void:

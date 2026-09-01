@@ -9,10 +9,11 @@ var dropDownNode: Node
 
 var dragging: bool = false
 var draggingNode: Node
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.inventory = self
-	await get_tree().create_timer(0.01).timeout
+	await get_tree().create_timer(0.1).timeout
 	dropDownNode = Globals.menu.dropdown
 
 
@@ -68,10 +69,21 @@ func unequip(what: Node):
 	what.checkBorder()
 	match what.ownItem.Type:
 		"Spell":
-			Globals.wizard.remove(Globals.wizard.spells.find(what.ownItem.theSpell))
+			Globals.wizard.remove(Globals.wizard.spells.find(what.ownItem.theSpell), false)
 			Globals.spellMaster.updateSpells(Globals.wizard.spells)
 		_:
 			pass
+	updateInventory()
+
+func unequipItem(what: itemClass):
+	what.equipped = false
+	match what.Type:
+		"Spell":
+			Globals.wizard.remove(Globals.wizard.spells.find(what.theSpell), false)
+			Globals.spellMaster.updateSpells(Globals.wizard.spells)
+		_:
+			pass
+	updateInventory()
 
 func _gui_input(event: InputEvent) -> void:
 	#checkColumns()
@@ -85,6 +97,15 @@ func stopDragging():
 		theInventory.add(itembackup)
 		updateInventory()
 		dragging = false
+
+func getFromUID(id: int):
+	return theInventory.inventory[theInventory.getUIDindex(id)]
+
+func GetNode(itemC: itemClass):
+	for n in self.get_children():
+		if n.ownItem == itemC:
+			return n
+	return false
 
 func dropDown(nodeinquestion: Node):
 	#replace with a neat function

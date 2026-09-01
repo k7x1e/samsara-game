@@ -18,6 +18,9 @@ var dashVector = Vector3(dashD, 0, 0)
 
 @export var globalmousePos: Vector3
 
+func damage(amt: float):
+	health -= amt
+
 func _ready():
 	initialize()
 

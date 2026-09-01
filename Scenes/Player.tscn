@@ -6,9 +6,8 @@
 [ext_resource type="Script" uid="uid://brua5tb5kc0it" path="res://Scripts/classes/itemClass.gd" id="2_megsn"]
 [ext_resource type="Script" uid="uid://2byv6rxls8gu" path="res://Scripts/classes/Items/ItemIdHandler.gd" id="2_miouo"]
 [ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/classes/spells/spell.gd" id="3_5ixxa"]
-[ext_resource type="Texture2D" uid="uid://874crc0bp3hk" path="res://icon.png" id="3_glx4g"]
-[ext_resource type="Resource" uid="uid://cvkb5exdvybqf" path="res://Resources/Spells/exampleSpell.tres" id="3_nn08x"]
 [ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/classes/Items/SpellItem.gd" id="4_miouo"]
+[ext_resource type="Resource" uid="uid://cg1q03enedviq" path="res://Resources/Spells/tests.tres" id="4_o3h8g"]
 [ext_resource type="Script" uid="uid://cse3ubaxht2cj" path="res://Scripts/classes/Inventory.gd" id="4_yoq75"]
 [ext_resource type="Texture2D" uid="uid://npof8x327f48" path="res://Textures/asphyxiation.jpeg" id="6_52ee3"]
 [ext_resource type="Resource" uid="uid://crlfg83irgqnk" path="res://Resources/Items/testItem.tres" id="6_o3h8g"]
@@ -19,14 +18,6 @@
 [sub_resource type="Resource" id="Resource_o3h8g"]
 script = ExtResource("2_miouo")
 metadata/_custom_type_script = "uid://2byv6rxls8gu"
-
-[sub_resource type="Resource" id="Resource_1e7my"]
-script = ExtResource("4_miouo")
-theSpell = ExtResource("3_nn08x")
-name = "FUCk"
-icon = ExtResource("3_glx4g")
-Type = "Spell"
-metadata/_custom_type_script = "uid://crrif2oof7ji8"
 
 [sub_resource type="Resource" id="Resource_arntx"]
 script = ExtResource("2_megsn")
@@ -43,6 +34,7 @@ coolDown = 30.0
 name = "Lightning Strike"
 Icon = ExtResource("2_gntrk")
 uiNode = null
+spellTimer = null
 metadata/_custom_type_script = "uid://b52li86lflfyj"
 
 [sub_resource type="Resource" id="Resource_lslt6"]
@@ -55,7 +47,7 @@ metadata/_custom_type_script = "uid://crrif2oof7ji8"
 
 [sub_resource type="Resource" id="Resource_megsn"]
 script = ExtResource("4_yoq75")
-inventory = Array[ExtResource("2_megsn")]([SubResource("Resource_1e7my"), ExtResource("6_o3h8g"), SubResource("Resource_arntx"), ExtResource("9_o3h8g"), SubResource("Resource_lslt6")])
+inventory = Array[ExtResource("2_megsn")]([ExtResource("4_o3h8g"), ExtResource("6_o3h8g"), SubResource("Resource_arntx"), ExtResource("9_o3h8g"), SubResource("Resource_lslt6")])
 idHandler = SubResource("Resource_o3h8g")
 metadata/_custom_type_script = "uid://cse3ubaxht2cj"
 

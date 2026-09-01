@@ -13,8 +13,11 @@ class_name spell
 
 #for the sake of ui
 @export var castable: bool = true
+@export var cooldown_active: bool = false
 @export var equipped: bool
 @export var uiNode: Variant
+@export var spellTimer: Variant
+@export var parentItemUID: int
 
 func cast(caster: Variant):
 	#Globals.Player
@@ -25,18 +28,23 @@ func cast(caster: Variant):
 		actualNode.global_position = caster.global_position
 		actualNode.set_owner(Globals.Player)
 		actualNode.initialize()
-		cooldown()
 		Globals.Player.mana -= cost
+		cooldown_active = true
+		cooldown()
 		return true
 	else:
 		return false
 
 func cooldown():
+	spellTimer = Timer.new()
+	Globals.spellMaster.add_child(spellTimer)
 	castable = false
 	uiNode.dim.show()
 	uiNode.timer_active = true
-	uiNode.timerNode.start(coolDown)
-	uiNode.dim.max_value = uiNode.timerNode.wait_time
+	uiNode.timerNode = spellTimer
+	spellTimer.start(coolDown)
+	uiNode.dim.max_value = spellTimer.wait_time
 	await Engine.get_main_loop().create_timer(coolDown).timeout
+	cooldown_active = false
 	uiNode.dim.hide()
 	castable = true

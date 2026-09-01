@@ -198,6 +198,7 @@ offset_bottom = 40.0
 texture = ExtResource("6_wbdvm")
 
 [node name="DropDown" type="Control" parent="Menu" unique_id=335422401]
+visible = false
 anchors_preset = 0
 offset_right = 180.0
 offset_bottom = 299.0

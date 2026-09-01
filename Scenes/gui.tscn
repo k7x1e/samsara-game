@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dpdhvjrvm5xcf"]
 
+[ext_resource type="StyleBox" uid="uid://ciy75oh1vleff" path="res://Resources/UI/styleBox.tres" id="1_705sf"]
 [ext_resource type="Texture2D" uid="uid://b8iv4i2fey054" path="res://icon.svg" id="1_qyd3e"]
 [ext_resource type="Texture2D" uid="uid://lpfs7nwlndnf" path="res://Textures/UI/gui_spell_overlay.png" id="2_bm56d"]
 [ext_resource type="Texture2D" uid="uid://c8cink4nhbiot" path="res://Textures/UI/gui_spell_bg.png" id="2_gnd4w"]
@@ -7,7 +8,12 @@
 [ext_resource type="Script" uid="uid://dej6pga7p6fl0" path="res://Scripts/UI/spellui.gd" id="3_gnd4w"]
 [ext_resource type="Texture2D" uid="uid://bsajubq81b2qs" path="res://Textures/black.png" id="3_n5m23"]
 [ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="7_xnb2j"]
+[ext_resource type="Script" uid="uid://d0mxnjexou1u4" path="res://Scripts/UI/bars.gd" id="8_705sf"]
+[ext_resource type="Texture2D" uid="uid://cyqje7y4rspgv" path="res://Textures/UI/gui_bar_blank.png" id="8_s7psx"]
+[ext_resource type="Texture2D" uid="uid://dl2o4crxyd073" path="res://Textures/UI/gui_bar_over.png" id="9_705sf"]
 [ext_resource type="Texture2D" uid="uid://r5spf6c0vud0" path="res://Textures/UI/gui_spell_border.png" id="9_bf1fa"]
+[ext_resource type="Texture2D" uid="uid://c1utujj8n0c4a" path="res://Textures/UI/gui_bar_progress_health.png" id="10_603go"]
+[ext_resource type="Texture2D" uid="uid://ce725l0bb4na5" path="res://Textures/UI/gui_bar_progress_mana.png" id="11_6wv5k"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bf1fa"]
 texture = ExtResource("2_gnd4w")
@@ -20,6 +26,71 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Bars" type="Control" parent="." unique_id=2118262531]
+custom_minimum_size = Vector2(900, 188)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -450.0
+offset_top = -188.0
+offset_right = 450.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("8_705sf")
+
+[node name="health" type="Panel" parent="Bars" unique_id=1205958196]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_705sf")
+
+[node name="bar" type="TextureProgressBar" parent="Bars/health" unique_id=2050707504]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 30.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("8_s7psx")
+texture_over = ExtResource("9_705sf")
+texture_progress = ExtResource("10_603go")
+
+[node name="mana" type="Panel" parent="Bars" unique_id=1566776946]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_705sf")
+
+[node name="bar" type="TextureProgressBar" parent="Bars/mana" unique_id=1633508278]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1000.0
+value = 30.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("8_s7psx")
+texture_over = ExtResource("9_705sf")
+texture_progress = ExtResource("11_6wv5k")
+
 [node name="spells" type="Control" parent="." unique_id=341486062]
 layout_mode = 1
 anchors_preset = 7
@@ -27,9 +98,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -390.0
+offset_left = -400.0
 offset_top = -188.0
-offset_right = 390.0
+offset_right = 400.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -44,13 +115,15 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_bf1fa")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="spells" unique_id=739165100]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = 40.0
-offset_right = -10.0
-offset_bottom = -20.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -54.0
+offset_right = 360.0
+offset_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -399,6 +472,19 @@ step = 0.01
 fill_mode = 4
 nine_patch_stretch = true
 texture_progress = ExtResource("3_n5m23")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="spells" unique_id=478047916]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -148.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+alignment = 1
 
 [node name="Border" type="TextureRect" parent="spells" unique_id=677281916]
 layout_mode = 1

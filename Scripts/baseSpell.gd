@@ -3,8 +3,10 @@ extends Node3D
 @export var speed: float = 5.0
 
 func _ready() -> void:
+	Globals.Player.health -= 50.0
 	await get_tree().create_timer(5.0).timeout
 	self.queue_free()
+	#TEMPORARY
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

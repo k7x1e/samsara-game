@@ -94,3 +94,5 @@
 #added equip/unequip to the dropdown, unassign
 #14:46
 #added a heal spell
+#15:12
+#added rudimentary health and mana bars

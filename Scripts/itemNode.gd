@@ -1,0 +1,33 @@
+extends Control
+
+@onready var Icon = $Icon
+@onready var equipBorder = $equipBorder
+
+@export var ownItem: itemClass
+
+@export var dragging: bool = false
+
+var offset = Vector2(5,5)
+
+# Called when the node enters the scene tree for the first time.
+func initialize(fart: itemClass):
+	print("initializing item")
+	ownItem = fart
+	Icon.texture = fart.icon
+	checkBorder()
+
+func checkBorder():
+	match ownItem.equipped:
+		true:
+			equipBorder.show()
+		false:
+			equipBorder.hide()
+
+func _gui_input(event: InputEvent) -> void:
+	if event.is_action_pressed("LeftClick"):
+		print("clicked")
+		self.get_parent().pickup(self)
+
+func _process(_delta: float) -> void:
+	if dragging:
+		self.global_position = get_global_mouse_position()+offset

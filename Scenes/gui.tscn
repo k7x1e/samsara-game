@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dpdhvjrvm5xcf"]
 
-[ext_resource type="Script" uid="uid://bnpt3mse7ebc4" path="res://Scripts/UI/gui.gd" id="1_3w84o"]
 [ext_resource type="Texture2D" uid="uid://b8iv4i2fey054" path="res://icon.svg" id="1_qyd3e"]
 [ext_resource type="Texture2D" uid="uid://lpfs7nwlndnf" path="res://Textures/UI/gui_spell_overlay.png" id="2_bm56d"]
 [ext_resource type="Texture2D" uid="uid://c8cink4nhbiot" path="res://Textures/UI/gui_spell_bg.png" id="2_gnd4w"]
@@ -13,11 +12,7 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bf1fa"]
 texture = ExtResource("2_gnd4w")
 
-[node name="GUI" type="CanvasLayer" unique_id=539199906]
-follow_viewport_enabled = true
-script = ExtResource("1_3w84o")
-
-[node name="Control" type="Control" parent="." unique_id=1294274690]
+[node name="spellGui" type="Control" unique_id=1294274690]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,7 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="spells" type="Control" parent="Control" unique_id=341486062]
+[node name="spells" type="Control" parent="." unique_id=341486062]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -38,7 +33,7 @@ offset_right = 390.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Panel" type="Panel" parent="Control/spells" unique_id=2143040135]
+[node name="Panel" type="Panel" parent="spells" unique_id=2143040135]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,7 +42,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_bf1fa")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/spells" unique_id=739165100]
+[node name="HBoxContainer" type="HBoxContainer" parent="spells" unique_id=739165100]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,13 +56,13 @@ grow_vertical = 2
 theme_override_constants/separation = 20
 script = ExtResource("2_xnb2j")
 
-[node name="Spell1" type="Control" parent="Control/spells/HBoxContainer" unique_id=120876537]
+[node name="Spell1" type="Control" parent="spells/HBoxContainer" unique_id=120876537]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
 script = ExtResource("3_gnd4w")
 
-[node name="spellIcon" type="TextureRect" parent="Control/spells/HBoxContainer/Spell1" unique_id=722418140]
+[node name="spellIcon" type="TextureRect" parent="spells/HBoxContainer/Spell1" unique_id=722418140]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
@@ -75,19 +70,19 @@ offset_bottom = 128.0
 texture = ExtResource("1_qyd3e")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control/spells/HBoxContainer/Spell1" unique_id=1452164036]
+[node name="TextureRect2" type="TextureRect" parent="spells/HBoxContainer/Spell1" unique_id=1452164036]
 modulate = Color(1, 1, 1, 0.7529412)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_bm56d")
 
-[node name="spellBorder" type="TextureRect" parent="Control/spells/HBoxContainer/Spell1" unique_id=2126193593]
+[node name="spellBorder" type="TextureRect" parent="spells/HBoxContainer/Spell1" unique_id=2126193593]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="key" type="Label" parent="Control/spells/HBoxContainer/Spell1" unique_id=630605957]
+[node name="key" type="Label" parent="spells/HBoxContainer/Spell1" unique_id=630605957]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -102,7 +97,7 @@ theme_override_fonts/font = ExtResource("7_xnb2j")
 text = "M1"
 horizontal_alignment = 2
 
-[node name="Label" type="Label" parent="Control/spells/HBoxContainer/Spell1" unique_id=651801128]
+[node name="Label" type="Label" parent="spells/HBoxContainer/Spell1" unique_id=651801128]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -114,9 +109,9 @@ theme_override_fonts/font = ExtResource("7_xnb2j")
 text = "999"
 vertical_alignment = 2
 
-[node name="Timer" type="Timer" parent="Control/spells/HBoxContainer/Spell1" unique_id=417188883]
+[node name="Timer" type="Timer" parent="spells/HBoxContainer/Spell1" unique_id=417188883]
 
-[node name="Dimmin" type="TextureProgressBar" parent="Control/spells/HBoxContainer/Spell1" unique_id=1083850158]
+[node name="Dimmin" type="TextureProgressBar" parent="spells/HBoxContainer/Spell1" unique_id=1083850158]
 modulate = Color(1, 1, 1, 0.7176471)
 layout_mode = 1
 anchors_preset = 15
@@ -129,13 +124,13 @@ fill_mode = 4
 nine_patch_stretch = true
 texture_progress = ExtResource("3_n5m23")
 
-[node name="Spell2" type="Control" parent="Control/spells/HBoxContainer" unique_id=2079626732]
+[node name="Spell2" type="Control" parent="spells/HBoxContainer" unique_id=2079626732]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
 script = ExtResource("3_gnd4w")
 
-[node name="spellIcon" type="TextureRect" parent="Control/spells/HBoxContainer/Spell2" unique_id=874825775]
+[node name="spellIcon" type="TextureRect" parent="spells/HBoxContainer/Spell2" unique_id=874825775]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
@@ -143,19 +138,19 @@ offset_bottom = 128.0
 texture = ExtResource("1_qyd3e")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control/spells/HBoxContainer/Spell2" unique_id=753409486]
+[node name="TextureRect2" type="TextureRect" parent="spells/HBoxContainer/Spell2" unique_id=753409486]
 modulate = Color(1, 1, 1, 0.7529412)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_bm56d")
 
-[node name="spellBorder" type="TextureRect" parent="Control/spells/HBoxContainer/Spell2" unique_id=225941330]
+[node name="spellBorder" type="TextureRect" parent="spells/HBoxContainer/Spell2" unique_id=225941330]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="key" type="Label" parent="Control/spells/HBoxContainer/Spell2" unique_id=85568992]
+[node name="key" type="Label" parent="spells/HBoxContainer/Spell2" unique_id=85568992]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -170,7 +165,7 @@ theme_override_fonts/font = ExtResource("7_xnb2j")
 text = "M2"
 horizontal_alignment = 2
 
-[node name="Label" type="Label" parent="Control/spells/HBoxContainer/Spell2" unique_id=401433709]
+[node name="Label" type="Label" parent="spells/HBoxContainer/Spell2" unique_id=401433709]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -182,9 +177,9 @@ theme_override_fonts/font = ExtResource("7_xnb2j")
 text = "999"
 vertical_alignment = 2
 
-[node name="Timer" type="Timer" parent="Control/spells/HBoxContainer/Spell2" unique_id=67943433]
+[node name="Timer" type="Timer" parent="spells/HBoxContainer/Spell2" unique_id=67943433]
 
-[node name="Dimmin" type="TextureProgressBar" parent="Control/spells/HBoxContainer/Spell2" unique_id=398542736]
+[node name="Dimmin" type="TextureProgressBar" parent="spells/HBoxContainer/Spell2" unique_id=398542736]
 visible = false
 modulate = Color(1, 1, 1, 0.7176471)
 layout_mode = 1
@@ -198,13 +193,13 @@ fill_mode = 4
 nine_patch_stretch = true
 texture_progress = ExtResource("3_n5m23")
 
-[node name="Spell3" type="Control" parent="Control/spells/HBoxContainer" unique_id=1386412390]
+[node name="Spell3" type="Control" parent="spells/HBoxContainer" unique_id=1386412390]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
 script = ExtResource("3_gnd4w")
 
-[node name="spellIcon" type="TextureRect" parent="Control/spells/HBoxContainer/Spell3" unique_id=146703493]
+[node name="spellIcon" type="TextureRect" parent="spells/HBoxContainer/Spell3" unique_id=146703493]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
@@ -212,19 +207,19 @@ offset_bottom = 128.0
 texture = ExtResource("1_qyd3e")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control/spells/HBoxContainer/Spell3" unique_id=1014421268]
+[node name="TextureRect2" type="TextureRect" parent="spells/HBoxContainer/Spell3" unique_id=1014421268]
 modulate = Color(1, 1, 1, 0.7529412)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_bm56d")
 
-[node name="spellBorder" type="TextureRect" parent="Control/spells/HBoxContainer/Spell3" unique_id=1081411632]
+[node name="spellBorder" type="TextureRect" parent="spells/HBoxContainer/Spell3" unique_id=1081411632]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="key" type="Label" parent="Control/spells/HBoxContainer/Spell3" unique_id=1939276109]
+[node name="key" type="Label" parent="spells/HBoxContainer/Spell3" unique_id=1939276109]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -239,7 +234,7 @@ theme_override_fonts/font = ExtResource("7_xnb2j")
 text = "C"
 horizontal_alignment = 2
 
-[node name="Label" type="Label" parent="Control/spells/HBoxContainer/Spell3" unique_id=53187122]
+[node name="Label" type="Label" parent="spells/HBoxContainer/Spell3" unique_id=53187122]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -251,9 +246,9 @@ theme_override_fonts/font = ExtResource("7_xnb2j")
 text = "999"
 vertical_alignment = 2
 
-[node name="Timer" type="Timer" parent="Control/spells/HBoxContainer/Spell3" unique_id=440478083]
+[node name="Timer" type="Timer" parent="spells/HBoxContainer/Spell3" unique_id=440478083]
 
-[node name="Dimmin" type="TextureProgressBar" parent="Control/spells/HBoxContainer/Spell3" unique_id=1223105501]
+[node name="Dimmin" type="TextureProgressBar" parent="spells/HBoxContainer/Spell3" unique_id=1223105501]
 visible = false
 modulate = Color(1, 1, 1, 0.7176471)
 layout_mode = 1
@@ -267,13 +262,13 @@ fill_mode = 4
 nine_patch_stretch = true
 texture_progress = ExtResource("3_n5m23")
 
-[node name="Spell4" type="Control" parent="Control/spells/HBoxContainer" unique_id=1699544945]
+[node name="Spell4" type="Control" parent="spells/HBoxContainer" unique_id=1699544945]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
 script = ExtResource("3_gnd4w")
 
-[node name="spellIcon" type="TextureRect" parent="Control/spells/HBoxContainer/Spell4" unique_id=2145263988]
+[node name="spellIcon" type="TextureRect" parent="spells/HBoxContainer/Spell4" unique_id=2145263988]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
@@ -281,19 +276,19 @@ offset_bottom = 128.0
 texture = ExtResource("1_qyd3e")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control/spells/HBoxContainer/Spell4" unique_id=971595826]
+[node name="TextureRect2" type="TextureRect" parent="spells/HBoxContainer/Spell4" unique_id=971595826]
 modulate = Color(1, 1, 1, 0.7529412)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_bm56d")
 
-[node name="spellBorder" type="TextureRect" parent="Control/spells/HBoxContainer/Spell4" unique_id=1179445528]
+[node name="spellBorder" type="TextureRect" parent="spells/HBoxContainer/Spell4" unique_id=1179445528]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="key" type="Label" parent="Control/spells/HBoxContainer/Spell4" unique_id=1601934257]
+[node name="key" type="Label" parent="spells/HBoxContainer/Spell4" unique_id=1601934257]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -308,7 +303,7 @@ theme_override_fonts/font = ExtResource("7_xnb2j")
 text = "V"
 horizontal_alignment = 2
 
-[node name="Label" type="Label" parent="Control/spells/HBoxContainer/Spell4" unique_id=2124543401]
+[node name="Label" type="Label" parent="spells/HBoxContainer/Spell4" unique_id=2124543401]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -320,9 +315,9 @@ theme_override_fonts/font = ExtResource("7_xnb2j")
 text = "999"
 vertical_alignment = 2
 
-[node name="Timer" type="Timer" parent="Control/spells/HBoxContainer/Spell4" unique_id=109373457]
+[node name="Timer" type="Timer" parent="spells/HBoxContainer/Spell4" unique_id=109373457]
 
-[node name="Dimmin" type="TextureProgressBar" parent="Control/spells/HBoxContainer/Spell4" unique_id=2121619696]
+[node name="Dimmin" type="TextureProgressBar" parent="spells/HBoxContainer/Spell4" unique_id=2121619696]
 visible = false
 modulate = Color(1, 1, 1, 0.7176471)
 layout_mode = 1
@@ -336,13 +331,13 @@ fill_mode = 4
 nine_patch_stretch = true
 texture_progress = ExtResource("3_n5m23")
 
-[node name="Spell5" type="Control" parent="Control/spells/HBoxContainer" unique_id=2034597489]
+[node name="Spell5" type="Control" parent="spells/HBoxContainer" unique_id=2034597489]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
 script = ExtResource("3_gnd4w")
 
-[node name="spellIcon" type="TextureRect" parent="Control/spells/HBoxContainer/Spell5" unique_id=250750489]
+[node name="spellIcon" type="TextureRect" parent="spells/HBoxContainer/Spell5" unique_id=250750489]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
@@ -350,19 +345,19 @@ offset_bottom = 128.0
 texture = ExtResource("1_qyd3e")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control/spells/HBoxContainer/Spell5" unique_id=1476296964]
+[node name="TextureRect2" type="TextureRect" parent="spells/HBoxContainer/Spell5" unique_id=1476296964]
 modulate = Color(1, 1, 1, 0.7529412)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_bm56d")
 
-[node name="spellBorder" type="TextureRect" parent="Control/spells/HBoxContainer/Spell5" unique_id=943232233]
+[node name="spellBorder" type="TextureRect" parent="spells/HBoxContainer/Spell5" unique_id=943232233]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="key" type="Label" parent="Control/spells/HBoxContainer/Spell5" unique_id=1925214460]
+[node name="key" type="Label" parent="spells/HBoxContainer/Spell5" unique_id=1925214460]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -377,7 +372,7 @@ theme_override_fonts/font = ExtResource("7_xnb2j")
 text = "B"
 horizontal_alignment = 2
 
-[node name="Label" type="Label" parent="Control/spells/HBoxContainer/Spell5" unique_id=1408326428]
+[node name="Label" type="Label" parent="spells/HBoxContainer/Spell5" unique_id=1408326428]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -389,9 +384,9 @@ theme_override_fonts/font = ExtResource("7_xnb2j")
 text = "999"
 vertical_alignment = 2
 
-[node name="Timer" type="Timer" parent="Control/spells/HBoxContainer/Spell5" unique_id=2045811791]
+[node name="Timer" type="Timer" parent="spells/HBoxContainer/Spell5" unique_id=2045811791]
 
-[node name="Dimmin" type="TextureProgressBar" parent="Control/spells/HBoxContainer/Spell5" unique_id=992808077]
+[node name="Dimmin" type="TextureProgressBar" parent="spells/HBoxContainer/Spell5" unique_id=992808077]
 visible = false
 modulate = Color(1, 1, 1, 0.7176471)
 layout_mode = 1
@@ -405,7 +400,7 @@ fill_mode = 4
 nine_patch_stretch = true
 texture_progress = ExtResource("3_n5m23")
 
-[node name="Border" type="TextureRect" parent="Control/spells" unique_id=677281916]
+[node name="Border" type="TextureRect" parent="spells" unique_id=677281916]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -417,8 +412,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_bf1fa")
 
-[connection signal="timeout" from="Control/spells/HBoxContainer/Spell1/Timer" to="Control/spells/HBoxContainer/Spell1" method="_on_timer_timeout"]
-[connection signal="timeout" from="Control/spells/HBoxContainer/Spell2/Timer" to="Control/spells/HBoxContainer/Spell2" method="_on_timer_timeout"]
-[connection signal="timeout" from="Control/spells/HBoxContainer/Spell3/Timer" to="Control/spells/HBoxContainer/Spell3" method="_on_timer_timeout"]
-[connection signal="timeout" from="Control/spells/HBoxContainer/Spell4/Timer" to="Control/spells/HBoxContainer/Spell4" method="_on_timer_timeout"]
-[connection signal="timeout" from="Control/spells/HBoxContainer/Spell5/Timer" to="Control/spells/HBoxContainer/Spell5" method="_on_timer_timeout"]
+[connection signal="timeout" from="spells/HBoxContainer/Spell1/Timer" to="spells/HBoxContainer/Spell1" method="_on_timer_timeout"]
+[connection signal="timeout" from="spells/HBoxContainer/Spell2/Timer" to="spells/HBoxContainer/Spell2" method="_on_timer_timeout"]
+[connection signal="timeout" from="spells/HBoxContainer/Spell3/Timer" to="spells/HBoxContainer/Spell3" method="_on_timer_timeout"]
+[connection signal="timeout" from="spells/HBoxContainer/Spell4/Timer" to="spells/HBoxContainer/Spell4" method="_on_timer_timeout"]
+[connection signal="timeout" from="spells/HBoxContainer/Spell5/Timer" to="spells/HBoxContainer/Spell5" method="_on_timer_timeout"]

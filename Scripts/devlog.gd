@@ -66,3 +66,13 @@
 #i was thinking of getting some coding done.
 #22:50
 #finished up some more functionality for the spells
+
+#01/09
+#09:55
+#this is the first actual pass or whatever we have in our gymnasiearbete, which i assume whoever dares read this knows is what this game is for.
+#loke requested something, shut up bitch #ignored !!!
+#10:39
+#i am kind of lost as to how to make an inventory but im chipping away at it from the remnants of how i remember it working. wml
+#11:15
+#having the absolute basics set up it is time to figure out the NIGHTMARE that is picking items up. I remember this not so fondly from dustrialis and i fear it yet.
+#if i remember correctly dustrialis handled the picking up in some spaghetti between the inventory and item node but i think im going to handle such things from the inventory now.

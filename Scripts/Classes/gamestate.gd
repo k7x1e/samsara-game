@@ -28,3 +28,4 @@ func initialize():
 		await rootNode.initialize(self)
 		rootNode.Menu.set_process(false)
 		rootNode.Menu.hide()
+		Globals.inventory.initialize()

@@ -15,7 +15,7 @@ func initialize():
 	
 	await Engine.get_main_loop().create_timer(1.0).timeout
 	
-	say("Hello World")
+	say("hello sol")
 
 func update():
 	#print("I am to chase", str(player.global_position))

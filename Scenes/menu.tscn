@@ -2,11 +2,16 @@
 
 [ext_resource type="Script" uid="uid://dhut73dh0ov62" path="res://Scripts/UI/menu.gd" id="1_xhh6f"]
 [ext_resource type="Texture2D" uid="uid://bsajubq81b2qs" path="res://Textures/black.png" id="2_cayip"]
+[ext_resource type="Script" uid="uid://dw2ie14lhuqx5" path="res://Scripts/fakeMenu.gd" id="2_g8i7c"]
+[ext_resource type="Script" uid="uid://b3ajmnaru6c4v" path="res://Scripts/UI/blankWindow.gd" id="3_7qvly"]
 [ext_resource type="Script" uid="uid://mo4mee6m6nr1" path="res://Scripts/UI/windowTitleBar.gd" id="3_cayip"]
+[ext_resource type="PackedScene" uid="uid://dpdhvjrvm5xcf" path="res://Scenes/gui.tscn" id="3_rfqti"]
 [ext_resource type="StyleBox" uid="uid://ciy75oh1vleff" path="res://Resources/UI/styleBox.tres" id="4_158mb"]
 [ext_resource type="Script" uid="uid://80ps74wrcq4r" path="res://Scripts/UI/resize_handle.gd" id="5_jsrd8"]
 [ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="5_wbdvm"]
 [ext_resource type="Texture2D" uid="uid://bn60qyl38svpl" path="res://Textures/UI/gui_scale_handle.png" id="6_wbdvm"]
+[ext_resource type="Script" uid="uid://dut0nr44rnls7" path="res://Scripts/UI/inventoryMenu.gd" id="8_6swd7"]
+[ext_resource type="Script" uid="uid://c71xw8g6kkryn" path="res://Scripts/inventory.gd" id="8_q3rjx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_158mb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -28,6 +33,7 @@ offset_right = -9.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_g8i7c")
 
 [node name="TextureRect" type="TextureRect" parent="Menu" unique_id=1030292509]
 modulate = Color(1, 1, 1, 0.49019608)
@@ -45,6 +51,7 @@ offset_left = 331.0
 offset_top = 396.0
 offset_right = 1204.0
 offset_bottom = 1343.0
+script = ExtResource("3_7qvly")
 
 [node name="Panel" type="Panel" parent="Menu/Window" unique_id=483557386]
 layout_mode = 1
@@ -94,9 +101,87 @@ maxX = 3200.0
 maxY = 1600.0
 
 [node name="TextureRect" type="TextureRect" parent="Menu/Window/Control" unique_id=2059667442]
+modulate = Color(0.4417584, 0, 0.086844064, 1)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("6_wbdvm")
 
+[node name="Inventory" type="Control" parent="Menu" unique_id=339712170]
+custom_minimum_size = Vector2(296, 168)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -947.0
+offset_right = 873.0
+grow_vertical = 0
+script = ExtResource("8_6swd7")
+
+[node name="Panel" type="Panel" parent="Menu/Inventory" unique_id=1343213998]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_158mb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Inventory" unique_id=2033229514]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/Inventory/VBoxContainer" unique_id=1000792313]
+layout_mode = 2
+alignment = 1
+script = ExtResource("3_cayip")
+
+[node name="Label" type="Label" parent="Menu/Inventory/VBoxContainer/HBoxContainer" unique_id=1758731909]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_wbdvm")
+text = "Inventory"
+
+[node name="PanelContainer" type="PanelContainer" parent="Menu/Inventory/VBoxContainer" unique_id=1302822794]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_158mb")
+
+[node name="GridContainer" type="GridContainer" parent="Menu/Inventory/VBoxContainer/PanelContainer" unique_id=641757518]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+script = ExtResource("8_q3rjx")
+
+[node name="Control" type="Control" parent="Menu/Inventory" unique_id=1986825879]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("5_jsrd8")
+maxX = 3200.0
+maxY = 1600.0
+
+[node name="TextureRect" type="TextureRect" parent="Menu/Inventory/Control" unique_id=1583004423]
+modulate = Color(0.4417584, 0, 0.086844064, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_wbdvm")
+
+[node name="spellGui" parent="." unique_id=1294274690 instance=ExtResource("3_rfqti")]
+mouse_filter = 2
+
 [connection signal="gui_input" from="Menu/Window/Control/TextureRect" to="Menu/Window/Control" method="_on_texture_rect_gui_input"]
+[connection signal="gui_input" from="Menu/Inventory/Control/TextureRect" to="Menu/Inventory/Control" method="_on_texture_rect_gui_input"]

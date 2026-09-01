@@ -19,5 +19,10 @@ func _on_texture_rect_gui_input(event: InputEvent) -> void:
 		var maxVector = Vector2(maxX,maxY)
 		if offset.x <= maxVector.x and offset.y <= maxVector.y:
 			window.size = offset
+		elif !offset.x <= maxVector.x and offset.y <= maxVector.y:
+			window.size.y = offset.y
+		else:
+			window.size.x = offset.x
+		window.updateWindow()
 	if Input.is_action_just_released("LeftClick"):
 		dragging = false

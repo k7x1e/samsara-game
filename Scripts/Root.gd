@@ -52,7 +52,7 @@ func initialize(gmestate: gameState):
 		self.add_child(temp)
 		temp.set_owner(self)
 		if gmestate.initnodes[i].name == "Menu":
-			Menu = temp
+			Menu = temp.menu
 	return true
 
 func save():

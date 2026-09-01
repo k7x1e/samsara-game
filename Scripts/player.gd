@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@export var inventory: InventoryClass
 
 @export var SPEED = 5.0
 @export var dashD = 7.5
@@ -20,6 +21,7 @@ func getFollowerNode() -> Node3D:
 
 func initialize():
 	Globals.Player = self
+	inventory.assignIDs()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

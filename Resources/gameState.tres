@@ -1,22 +1,16 @@
 [gd_resource type="Resource" script_class="gameState" format=3 uid="uid://b5t6pkvtcweo4"]
 
-[ext_resource type="Script" uid="uid://b3rylldbgh8gp" path="res://Scripts/Classes/nodeStart.gd" id="1_8ag07"]
+[ext_resource type="Script" uid="uid://b3rylldbgh8gp" path="res://Scripts/classes/nodeStart.gd" id="1_8ag07"]
 [ext_resource type="PackedScene" uid="uid://dgo271ukrhe1h" path="res://Scenes/world.tscn" id="2_0brm1"]
 [ext_resource type="PackedScene" uid="uid://ccs47wlxaacj4" path="res://Scenes/Player.tscn" id="3_f4myi"]
 [ext_resource type="PackedScene" uid="uid://wggca4kc4v15" path="res://Scenes/actor.tscn" id="4_mk8vb"]
 [ext_resource type="PackedScene" uid="uid://b4apr6vl8oocn" path="res://Scenes/menu.tscn" id="5_cm6gp"]
-[ext_resource type="PackedScene" uid="uid://dpdhvjrvm5xcf" path="res://Scenes/gui.tscn" id="6_0brm1"]
-[ext_resource type="Script" uid="uid://cdociv5s4yb3q" path="res://Scripts/Classes/gamestate.gd" id="6_y7o6f"]
+[ext_resource type="Script" uid="uid://cdociv5s4yb3q" path="res://Scripts/classes/gamestate.gd" id="6_y7o6f"]
 
 [sub_resource type="Resource" id="Resource_fgofq"]
 script = ExtResource("1_8ag07")
 scene = ExtResource("2_0brm1")
 name = "World"
-metadata/_custom_type_script = "uid://b3rylldbgh8gp"
-
-[sub_resource type="Resource" id="Resource_f4myi"]
-script = ExtResource("1_8ag07")
-scene = ExtResource("6_0brm1")
 metadata/_custom_type_script = "uid://b3rylldbgh8gp"
 
 [sub_resource type="Resource" id="Resource_7lihs"]
@@ -41,6 +35,6 @@ metadata/_custom_type_script = "uid://b3rylldbgh8gp"
 
 [resource]
 script = ExtResource("6_y7o6f")
-initnodes = Array[ExtResource("1_8ag07")]([SubResource("Resource_fgofq"), SubResource("Resource_f4myi"), SubResource("Resource_7lihs"), SubResource("Resource_2irst"), SubResource("Resource_bf53h")])
+initnodes = Array[ExtResource("1_8ag07")]([SubResource("Resource_fgofq"), SubResource("Resource_7lihs"), SubResource("Resource_2irst"), SubResource("Resource_bf53h")])
 rootNode = null
 metadata/_custom_type_script = "uid://cdociv5s4yb3q"

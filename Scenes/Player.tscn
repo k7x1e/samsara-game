@@ -2,11 +2,32 @@
 
 [ext_resource type="Script" uid="uid://cine2pxbjr6ec" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Script" uid="uid://buvsbboygw12p" path="res://Scripts/wizard.gd" id="2_dewec"]
+[ext_resource type="Script" uid="uid://2byv6rxls8gu" path="res://Scripts/classes/Items/ItemIdHandler.gd" id="2_glx4g"]
 [ext_resource type="Texture2D" uid="uid://b8iv4i2fey054" path="res://icon.svg" id="2_gntrk"]
-[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/Classes/spells/spell.gd" id="3_5ixxa"]
+[ext_resource type="Script" uid="uid://brua5tb5kc0it" path="res://Scripts/classes/Item.gd" id="2_megsn"]
+[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/classes/spells/spell.gd" id="3_5ixxa"]
 [ext_resource type="Resource" uid="uid://cvkb5exdvybqf" path="res://Resources/Spells/exampleSpell.tres" id="3_nn08x"]
+[ext_resource type="Resource" uid="uid://crlfg83irgqnk" path="res://Resources/Items/testItem.tres" id="3_yoq75"]
+[ext_resource type="Script" uid="uid://cse3ubaxht2cj" path="res://Scripts/classes/Inventory.gd" id="4_yoq75"]
 [ext_resource type="Texture2D" uid="uid://d2ax1l3mkeisl" path="res://Textures/jewish.jpeg" id="5_nn08x"]
 [ext_resource type="Texture2D" uid="uid://npof8x327f48" path="res://Textures/asphyxiation.jpeg" id="6_52ee3"]
+[ext_resource type="Texture2D" uid="uid://874crc0bp3hk" path="res://icon.png" id="6_ksbbd"]
+
+[sub_resource type="Resource" id="Resource_miouo"]
+script = ExtResource("2_glx4g")
+metadata/_custom_type_script = "uid://2byv6rxls8gu"
+
+[sub_resource type="Resource" id="Resource_ksbbd"]
+script = ExtResource("2_megsn")
+name = "nigga pubert"
+icon = ExtResource("6_ksbbd")
+metadata/_custom_type_script = "uid://brua5tb5kc0it"
+
+[sub_resource type="Resource" id="Resource_glx4g"]
+script = ExtResource("4_yoq75")
+inventory = Array[ExtResource("2_megsn")]([ExtResource("3_yoq75"), SubResource("Resource_ksbbd"), ExtResource("3_yoq75")])
+idHandler = SubResource("Resource_miouo")
+metadata/_custom_type_script = "uid://cse3ubaxht2cj"
 
 [sub_resource type="Environment" id="Environment_gl6un"]
 background_mode = 1
@@ -21,6 +42,7 @@ size = Vector3(0.7, 0.2, 0.6)
 
 [sub_resource type="Resource" id="Resource_52ee3"]
 script = ExtResource("3_5ixxa")
+coolDown = 3.0
 Icon = ExtResource("5_nn08x")
 uiNode = null
 metadata/_custom_type_script = "uid://b52li86lflfyj"
@@ -46,6 +68,7 @@ metadata/_custom_type_script = "uid://b52li86lflfyj"
 [node name="Player" type="CharacterBody3D" unique_id=1215905502 groups=["Pausable"]]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
 script = ExtResource("1_kyqiw")
+inventory = SubResource("Resource_glx4g")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1510999750]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 8, 8)

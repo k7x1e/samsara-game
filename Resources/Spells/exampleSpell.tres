@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="spell" format=3 uid="uid://cvkb5exdvybqf"]
 
-[ext_resource type="Texture2D" uid="uid://874crc0bp3hk" path="res://icon.png" id="1_2c3am"]
-[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/classes/spells/spell.gd" id="2_p2noy"]
+[ext_resource type="Texture2D" uid="uid://7wri6gpkv7tl" path="res://Textures/icons/spells/trampstamp.png" id="1_2c3am"]
+[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/Classes/spells/spell.gd" id="2_p2noy"]
 [ext_resource type="PackedScene" uid="uid://bga75wb36a5io" path="res://Scenes/spell.tscn" id="3_37g3t"]
 
 [resource]

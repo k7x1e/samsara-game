@@ -3,15 +3,19 @@
 [ext_resource type="Script" uid="uid://cine2pxbjr6ec" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Script" uid="uid://buvsbboygw12p" path="res://Scripts/wizard.gd" id="2_dewec"]
 [ext_resource type="Texture2D" uid="uid://b8iv4i2fey054" path="res://icon.svg" id="2_gntrk"]
-[ext_resource type="Script" uid="uid://brua5tb5kc0it" path="res://Scripts/classes/itemClass.gd" id="2_megsn"]
-[ext_resource type="Script" uid="uid://2byv6rxls8gu" path="res://Scripts/classes/Items/ItemIdHandler.gd" id="2_miouo"]
-[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/classes/spells/spell.gd" id="3_5ixxa"]
+[ext_resource type="Script" uid="uid://brua5tb5kc0it" path="res://Scripts/Classes/itemClass.gd" id="2_megsn"]
+[ext_resource type="Script" uid="uid://2byv6rxls8gu" path="res://Scripts/Classes/Items/ItemIdHandler.gd" id="2_miouo"]
+[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/Classes/spells/spell.gd" id="3_5ixxa"]
 [ext_resource type="Resource" uid="uid://cg1q03enedviq" path="res://Resources/Spells/tests.tres" id="4_o3h8g"]
-[ext_resource type="Script" uid="uid://cse3ubaxht2cj" path="res://Scripts/classes/Inventory.gd" id="4_yoq75"]
+[ext_resource type="Script" uid="uid://cse3ubaxht2cj" path="res://Scripts/Classes/Inventory.gd" id="4_yoq75"]
 [ext_resource type="Texture2D" uid="uid://npof8x327f48" path="res://Textures/asphyxiation.jpeg" id="6_52ee3"]
 [ext_resource type="Resource" uid="uid://crlfg83irgqnk" path="res://Resources/Items/testItem.tres" id="6_o3h8g"]
 [ext_resource type="Resource" uid="uid://byn8lfwpbjv8r" path="res://Resources/Spells/thunderbolt.tres" id="8_miouo"]
+[ext_resource type="Texture2D" uid="uid://7wri6gpkv7tl" path="res://Textures/icons/spells/trampstamp.png" id="9_arntx"]
 [ext_resource type="Resource" uid="uid://grrdhtwvlugn" path="res://Resources/Spells/heal_spell.tres" id="9_o3h8g"]
+[ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/Classes/Items/SpellItem.gd" id="10_lslt6"]
+[ext_resource type="Script" uid="uid://x7tekc2114cw" path="res://Scripts/Classes/stats.gd" id="10_o3h8g"]
+[ext_resource type="PackedScene" uid="uid://7qfb2a4v0ehs" path="res://Scenes/spells/skoomaSpell.tscn" id="12_lslt6"]
 [ext_resource type="Resource" uid="uid://bvx7kyepfo1oa" path="res://Resources/Spells/placeholder.tres" id="12_miouo"]
 
 [sub_resource type="Resource" id="Resource_o3h8g"]
@@ -26,11 +30,40 @@ icon = ExtResource("6_52ee3")
 equippable = true
 metadata/_custom_type_script = "uid://brua5tb5kc0it"
 
+[sub_resource type="Resource" id="Resource_ulo2v"]
+script = ExtResource("3_5ixxa")
+spellNode = ExtResource("12_lslt6")
+cost = 200
+coolDown = 20.0
+name = "Spell"
+Icon = ExtResource("9_arntx")
+uiNode = null
+spellTimer = null
+metadata/_custom_type_script = "uid://b52li86lflfyj"
+
+[sub_resource type="Resource" id="Resource_1iu4k"]
+script = ExtResource("10_lslt6")
+theSpell = SubResource("Resource_ulo2v")
+name = "Skooma"
+icon = ExtResource("9_arntx")
+Type = "Spell"
+metadata/_custom_type_script = "uid://crrif2oof7ji8"
+
 [sub_resource type="Resource" id="Resource_megsn"]
 script = ExtResource("4_yoq75")
-inventory = Array[ExtResource("2_megsn")]([ExtResource("4_o3h8g"), ExtResource("6_o3h8g"), SubResource("Resource_arntx"), ExtResource("9_o3h8g"), ExtResource("8_miouo")])
+inventory = Array[ExtResource("2_megsn")]([ExtResource("4_o3h8g"), ExtResource("6_o3h8g"), SubResource("Resource_arntx"), ExtResource("9_o3h8g"), ExtResource("8_miouo"), SubResource("Resource_1iu4k")])
 idHandler = SubResource("Resource_o3h8g")
 metadata/_custom_type_script = "uid://cse3ubaxht2cj"
+
+[sub_resource type="Resource" id="Resource_1e7my"]
+script = ExtResource("10_o3h8g")
+agility = 3.0
+magic = 2.0
+perception = 2.0
+intelligence = 2.0
+strength = 2.0
+stats = null
+metadata/_custom_type_script = "uid://x7tekc2114cw"
 
 [sub_resource type="Environment" id="Environment_gl6un"]
 background_mode = 1
@@ -48,6 +81,7 @@ size = Vector3(0.7, 0.2, 0.6)
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
 script = ExtResource("1_kyqiw")
 inventory = SubResource("Resource_megsn")
+stats = SubResource("Resource_1e7my")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1510999750]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 8, 8)

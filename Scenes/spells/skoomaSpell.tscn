@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://7qfb2a4v0ehs"]
+
+[ext_resource type="Script" uid="uid://dpeb7j3p0rtrt" path="res://Scripts/Classes/spells/skooma_spell.gd" id="1_utyee"]
+
+[node name="SkoomaPotion" type="Node3D" unique_id=1241915503]
+script = ExtResource("1_utyee")

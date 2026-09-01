@@ -20,6 +20,7 @@ func say(message: String, duration: float, rootparent: bool = false):
 	var temp = billboard.instantiate()
 	if rootparent:
 		Globals.Root.add_child(temp)
+		temp.global_position = actor.global_position
 	else:
 		actor.add_child(temp)
 	temp.set_owner(actor)

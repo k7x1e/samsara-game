@@ -8,6 +8,18 @@ extends CharacterBody3D
 @export var mana: float = 1000
 @export var health: float = 100
 
+@export var max_mana: float = 1000
+@export var max_health: float = 100
+
+@export var mana_recovery: float = 1.0
+@export var mana_recovery_amt: float = 20
+var canRecoverMana: bool = true
+
+@export var health_recovery: float = 2.0
+var canRecoverhealth: bool = true
+
+@export var stats: Stats
+
 var dashVector = Vector3(dashD, 0, 0)
 
 @onready var cursorNode = $Cursor
@@ -17,6 +29,15 @@ var dashVector = Vector3(dashD, 0, 0)
 @onready var followerNode = $Rotation/Follower1 #will be replaced with a function eventually but this will do for now
 
 @export var globalmousePos: Vector3
+
+func refreshStats():
+	SPEED = stats.retrieve(0) * 2.5
+	max_mana = ((stats.retrieve(1) + stats.retrieve(3)) / 2) * 1000
+	max_health = stats.retrieve(4) * 50
+	
+	mana_recovery_amt = stats.retrieve(1) * 10
+	
+	health_recovery = stats.retrieve(4)
 
 func damage(amt: float):
 	health -= amt
@@ -29,9 +50,33 @@ func getFollowerNode() -> Node3D:
 
 func initialize():
 	Globals.Player = self
+	Globals.stats = stats
 	inventory.assignIDs()
+	stats.initialize()
+	refreshStats()
+
+func recoverMana():
+	print("recovering manaa")
+	#genuinely the dumbest shit ill ever code
+	canRecoverMana = false
+	await get_tree().create_timer(mana_recovery).timeout
+	mana += mana_recovery_amt
+	canRecoverMana = true
+
+func recoverHealth():
+	#genuinely the dumbest shit ill ever code
+	canRecoverhealth = false
+	await get_tree().create_timer(health_recovery).timeout
+	if health < max_health:
+		health += health_recovery
+	canRecoverhealth = true
 
 func _physics_process(delta: float) -> void:
+	if canRecoverMana:
+		recoverMana()
+	if canRecoverhealth:
+		recoverHealth()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

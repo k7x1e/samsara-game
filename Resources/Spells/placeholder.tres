@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="spell" format=3 uid="uid://bvx7kyepfo1oa"]
+
+[ext_resource type="Texture2D" uid="uid://b8iv4i2fey054" path="res://icon.svg" id="1_1mvjh"]
+[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/classes/spells/spell.gd" id="2_37lvr"]
+
+[resource]
+script = ExtResource("2_37lvr")
+Icon = ExtResource("1_1mvjh")
+castable = false
+uiNode = null
+metadata/_custom_type_script = "uid://b52li86lflfyj"

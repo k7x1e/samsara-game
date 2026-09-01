@@ -3,6 +3,8 @@ extends GridContainer
 @onready var window = get_node("../../../")
 @onready var itemNode = preload("res://Scenes/item.tscn")
 
+var dropDownNode: Node
+
 @export var theInventory: InventoryClass
 
 var dragging: bool = false
@@ -10,6 +12,8 @@ var draggingNode: Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.inventory = self
+	await get_tree().create_timer(0.01).timeout
+	dropDownNode = Globals.menu.dropdown
 
 
 func initialize():
@@ -63,3 +67,9 @@ func stopDragging():
 		theInventory.add(itembackup)
 		updateInventory()
 		dragging = false
+
+func dropDown(nodeinquestion: Node):
+	#replace with a neat function
+	dropDownNode.show()
+	dropDownNode.global_position = get_global_mouse_position()
+	dropDownNode.currentItem = nodeinquestion

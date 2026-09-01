@@ -10,6 +10,6 @@ class_name itemClass
 @export var description: String
 @export var icon: Texture
 
-@export var Type: String
+@export var Type: String = "Item"
 
 @export var equipped: bool

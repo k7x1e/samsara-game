@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bn60qyl38svpl" path="res://Textures/UI/gui_scale_handle.png" id="6_wbdvm"]
 [ext_resource type="Script" uid="uid://dut0nr44rnls7" path="res://Scripts/UI/inventoryMenu.gd" id="8_6swd7"]
 [ext_resource type="Script" uid="uid://c71xw8g6kkryn" path="res://Scripts/inventory.gd" id="8_q3rjx"]
+[ext_resource type="Script" uid="uid://dscj8jy3r1qnb" path="res://Scripts/UI/drop_down.gd" id="12_23t3j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_158mb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -180,8 +181,74 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("6_wbdvm")
 
+[node name="DropDown" type="Control" parent="Menu" unique_id=335422401]
+visible = false
+anchors_preset = 0
+offset_right = 171.0
+offset_bottom = 269.0
+script = ExtResource("12_23t3j")
+
+[node name="Panel" type="Panel" parent="Menu/DropDown" unique_id=1954048637]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_158mb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/DropDown" unique_id=1158503371]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="assign1" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=864016602]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_wbdvm")
+text = "Assign to spell 1"
+alignment = 0
+
+[node name="assign2" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=1607351525]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_wbdvm")
+text = "Assign to spell 2"
+alignment = 0
+
+[node name="assign3" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=919623343]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_wbdvm")
+text = "Assign to spell 3"
+alignment = 0
+
+[node name="assign4" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=339653769]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_wbdvm")
+text = "Assign to spell 4"
+alignment = 0
+
+[node name="assign5" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=1968307184]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_wbdvm")
+text = "Assign to spell 5"
+alignment = 0
+
+[node name="close" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=885407721]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_wbdvm")
+text = "Close"
+alignment = 0
+
 [node name="spellGui" parent="." unique_id=1294274690 instance=ExtResource("3_rfqti")]
 mouse_filter = 2
 
 [connection signal="gui_input" from="Menu/Window/Control/TextureRect" to="Menu/Window/Control" method="_on_texture_rect_gui_input"]
 [connection signal="gui_input" from="Menu/Inventory/Control/TextureRect" to="Menu/Inventory/Control" method="_on_texture_rect_gui_input"]
+[connection signal="pressed" from="Menu/DropDown/VBoxContainer/assign1" to="Menu/DropDown" method="_on_assign_1_pressed"]
+[connection signal="pressed" from="Menu/DropDown/VBoxContainer/assign2" to="Menu/DropDown" method="_on_assign_2_pressed"]
+[connection signal="pressed" from="Menu/DropDown/VBoxContainer/assign3" to="Menu/DropDown" method="_on_assign_3_pressed"]
+[connection signal="pressed" from="Menu/DropDown/VBoxContainer/assign4" to="Menu/DropDown" method="_on_assign_4_pressed"]
+[connection signal="pressed" from="Menu/DropDown/VBoxContainer/assign5" to="Menu/DropDown" method="_on_assign_5_pressed"]
+[connection signal="pressed" from="Menu/DropDown/VBoxContainer/close" to="Menu/DropDown" method="_on_close_pressed"]

@@ -76,3 +76,7 @@
 #11:15
 #having the absolute basics set up it is time to figure out the NIGHTMARE that is picking items up. I remember this not so fondly from dustrialis and i fear it yet.
 #if i remember correctly dustrialis handled the picking up in some spaghetti between the inventory and item node but i think im going to handle such things from the inventory now.
+#12:12
+#finished up the basic inventory system. Its now time for the menu(for equipping and whatnot)
+#12:54
+#finished spell equipping

@@ -5,3 +5,4 @@ var Root: Node3D
 var spellMaster: Control
 var inventory: Control
 var menu: Node
+var wizard: Node

@@ -80,3 +80,5 @@
 #finished up the basic inventory system. Its now time for the menu(for equipping and whatnot)
 #12:54
 #finished spell equipping
+#13:01
+#added a much tuffer placeholder icon

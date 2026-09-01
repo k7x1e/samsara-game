@@ -105,3 +105,5 @@
 #i do not know what to do now.
 #19:12
 #finished a sexy ass lightning bolt and doubled the debugger errors
+#22:32
+#made a whole lot of bullshit im done for today

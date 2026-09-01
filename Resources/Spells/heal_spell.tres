@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/classes/spells/spell.gd" id="3_5tm8y"]
 [ext_resource type="PackedScene" uid="uid://b5w0a01u8whh2" path="res://Scenes/spells/heal_spell.tscn" id="4_ob1ol"]
 
-[sub_resource type="Resource" id="Resource_lslt6"]
+[sub_resource type="Resource" id="Resource_yly4q"]
 script = ExtResource("3_5tm8y")
 spellNode = ExtResource("4_ob1ol")
 cost = 200
@@ -18,7 +18,8 @@ metadata/_custom_type_script = "uid://b52li86lflfyj"
 
 [resource]
 script = ExtResource("2_ragd7")
-theSpell = SubResource("Resource_lslt6")
+theSpell = SubResource("Resource_yly4q")
+itemID = 3
 name = "Heal"
 icon = ExtResource("1_yly4q")
 Type = "Spell"

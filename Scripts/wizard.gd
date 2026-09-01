@@ -34,4 +34,5 @@ func remove(which: int, replacement: bool):
 		var NodeToUnequip: Node = Globals.inventory.GetNode(itemToUnequip)
 		itemToUnequip.equipped = false
 		Globals.inventory.unequip(NodeToUnequip)
-	spells[which] = placeholderSpell.duplicate()
+	#for some odd reason it was set to duplicate the placeholder which was causing these bugs
+	spells[which] = placeholderSpell

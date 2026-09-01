@@ -18,7 +18,7 @@ func updateSpells(spellList: Array[spell]):
 		updateSpell(spells[i], spellList[i])
 
 func updateSpell(spellNode: Node, spel: spell):
-	print("updated spell")
+	#print("updated spell")
 	spellNode.spel = spel
 	spellNode.iconNode.texture = spel.Icon
 	spellNode.dim.max_value = spel.coolDown
@@ -28,7 +28,7 @@ func updateSpell(spellNode: Node, spel: spell):
 			print("showing dim")
 			spellNode.dim.show()
 		false:
-			print("hiding dim")
+			#print("hiding dim")
 			spellNode.dim.hide()
 	spel.uiNode = spellNode
 	spellNode.costLabel.text = str(spel.cost)

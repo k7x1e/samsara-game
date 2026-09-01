@@ -10,11 +10,14 @@ extends Control
 @onready var assign5 = $VBoxContainer/assign5
 @onready var unassign = $VBoxContainer/unassign
 
+@onready var nameLabel = $VBoxContainer/Name
+
 @export var currentItem: Node
 
 func updateItem(iteminQ: Node):
 	currentItem = iteminQ
-	var tempitem = currentItem.ownItem
+	var tempitem: itemClass = currentItem.ownItem
+	nameLabel.text = tempitem.name
 	match tempitem.Type:
 		"Spell":
 			equipButtons(true)
@@ -48,10 +51,12 @@ func assignSpell(which: int):
 	if itemInQ.Type == "Spell":
 		if Globals.wizard.spells.has(itemInQ.theSpell):
 			#oh my god
-			print("replacing")
+			#for some bumfuck reason certain spells(healing spell) believe they are other spells (thunderbolt)
+			print("moving, IE this one already exists here")
 			Globals.inventory.unequipItem(itemInQ)
 			Globals.wizard.remove(Globals.wizard.spells.find(itemInQ.theSpell), false)
 		if Globals.wizard.spells[which] != Globals.wizard.placeholderSpell:
+			print("replacing")
 			Globals.wizard.remove(which, true)
 		Globals.wizard.spells[which] = itemInQ.theSpell
 		itemInQ.equipped = true

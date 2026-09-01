@@ -100,3 +100,8 @@
 #on the train now, finished basics for a lightning strike ability
 #18:18
 #managed to fix the evil bug preventing spell replacing from working fully
+#18:47
+#finally managed to fix all the spell issues that i know of
+#i do not know what to do now.
+#19:12
+#finished a sexy ass lightning bolt and doubled the debugger errors

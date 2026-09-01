@@ -11,7 +11,7 @@ var offset = Vector2(5,5)
 
 # Called when the node enters the scene tree for the first time.
 func initialize(fart: itemClass):
-	print("initializing item")
+	#print("initializing item")
 	ownItem = fart
 	Icon.texture = fart.icon
 	checkBorder()
@@ -19,10 +19,10 @@ func initialize(fart: itemClass):
 func checkBorder():
 	match ownItem.equipped:
 		true:
-			print("checkced border, equipped")
+			#print("checkced border, equipped")
 			equipBorder.show()
 		false:
-			print("checked border, unequipped")
+			#print("checked border, unequipped")
 			equipBorder.hide()
 
 func _gui_input(event: InputEvent) -> void:

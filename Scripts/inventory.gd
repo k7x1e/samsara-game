@@ -26,7 +26,7 @@ func initialize():
 		self.size = window.custom_minimum_size
 
 func updateInventory():
-	print("updating inventory")
+	#print("updating inventory")
 	flush()
 	theInventory = Globals.Player.inventory
 	for i in range(theInventory.inventory.size()):
@@ -42,7 +42,7 @@ func checkColumns():
 	self.set_columns(columns)
 	var tempsizeY = int((theInventory.inventory.size()/2)+1) * 148
 	var tempsizeX = int(sqrt(theInventory.inventory.size())+1) * 148
-	print(tempsizeX)
+	#print(tempsizeX)
 	var minimumsize: Vector2 = Vector2(tempsizeX, tempsizeX + 26)
 	window.custom_minimum_size = minimumsize
 

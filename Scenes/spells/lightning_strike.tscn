@@ -1,9 +1,71 @@
 [gd_scene format=3 uid="uid://bhg0ayjvobmef"]
 
 [ext_resource type="Script" uid="uid://b1lxn3p36pvr1" path="res://Scripts/classes/spells/lightning_strike.gd" id="1_7kp3g"]
+[ext_resource type="Texture2D" uid="uid://citma6vf0j7s5" path="res://Textures/spells/lightning_strike.png" id="2_4oncq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wk5h0"]
 radius = 2.0770488
+
+[sub_resource type="Animation" id="Animation_4oncq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 4.736725, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l303g"]
+resource_name = "Strike"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03333334, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.2, 1.2, 1.2), Vector3(0.7, 0.7, 0.7), Vector3(1.2, 1.2, 1.2), Vector3(0.7, 0.7, 0.7), Vector3(1.2, 1.2, 1.2), Vector3(0.1, 0.1, 0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.03333334, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 4.736725, 0), Vector3(0, 5.745624, 0), Vector3(0, 3.3173676, 0), Vector3(0, 5.745624, 0), Vector3(0, 3.3173676, 0), Vector3(0, 5.745624, 0), Vector3(0, 0.46564937, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ycbv"]
+_data = {
+&"RESET": SubResource("Animation_4oncq"),
+&"Strike": SubResource("Animation_l303g")
+}
 
 [node name="LightningStrike" type="Node3D" unique_id=1545189971]
 script = ExtResource("1_7kp3g")
@@ -14,3 +76,10 @@ collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Effect" unique_id=294766419]
 shape = SubResource("SphereShape3D_wk5h0")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=868290978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.736725, 0)
+texture = ExtResource("2_4oncq")
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=1429827914]
+libraries/ = SubResource("AnimationLibrary_0ycbv")

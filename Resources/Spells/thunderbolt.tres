@@ -1,0 +1,26 @@
+[gd_resource type="Resource" format=3 uid="uid://byn8lfwpbjv8r"]
+
+[ext_resource type="Texture2D" uid="uid://vurd4da4ncj0" path="res://Textures/icons/spells/thunderbolt.png.png" id="1_a0dko"]
+[ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/classes/Items/SpellItem.gd" id="2_6iu0s"]
+[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/classes/spells/spell.gd" id="3_qc33c"]
+[ext_resource type="PackedScene" uid="uid://bhg0ayjvobmef" path="res://Scenes/spells/lightning_strike.tscn" id="4_4n8aw"]
+
+[sub_resource type="Resource" id="Resource_a0dko"]
+script = ExtResource("3_qc33c")
+spellNode = ExtResource("4_4n8aw")
+cost = 500
+coolDown = 30.0
+name = "Lightning Strike"
+Icon = ExtResource("1_a0dko")
+uiNode = null
+spellTimer = null
+metadata/_custom_type_script = "uid://b52li86lflfyj"
+
+[resource]
+script = ExtResource("2_6iu0s")
+theSpell = SubResource("Resource_a0dko")
+itemID = 4
+name = "Lightning Strike"
+icon = ExtResource("1_a0dko")
+Type = "Spell"
+metadata/_custom_type_script = "uid://crrif2oof7ji8"

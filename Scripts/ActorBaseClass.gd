@@ -8,7 +8,7 @@ extends CharacterBody3D
 @export var NpcClass: npc
 
 
-var deltaSHIT
+var deltaSHIT: float = 1
 var tempPos
 
 func _ready() -> void:
@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 func damage(amt: float):
 	print("took damage")
 	health -= amt
-	behaviour.say(str("-", amt), 0.5)
+	behaviour.say(str("-", amt), 0.2, true)
 	if health <= 0:
 		behaviour.death()
 

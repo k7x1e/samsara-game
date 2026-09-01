@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("2_s8mmw")
+itemID = 1
 name = "Shit and Poop"
 icon = ExtResource("1_s8mmw")
 metadata/_custom_type_script = "uid://brua5tb5kc0it"

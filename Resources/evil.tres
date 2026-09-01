@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="nodePreset" format=3 uid="uid://c4x1td6kh5txm"]
+
+[ext_resource type="PackedScene" uid="uid://wggca4kc4v15" path="res://Scenes/actor.tscn" id="1_w4qst"]
+[ext_resource type="Script" uid="uid://b3rylldbgh8gp" path="res://Scripts/classes/nodeStart.gd" id="2_xsgk1"]
+
+[resource]
+script = ExtResource("2_xsgk1")
+scene = ExtResource("1_w4qst")
+position = Vector3(-6.8780046, 0.2762599, 0.9218621)
+name = "Placeholder Actor"
+metadata/_custom_type_script = "uid://b3rylldbgh8gp"

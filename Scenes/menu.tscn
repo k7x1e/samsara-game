@@ -198,10 +198,9 @@ offset_bottom = 40.0
 texture = ExtResource("6_wbdvm")
 
 [node name="DropDown" type="Control" parent="Menu" unique_id=335422401]
-visible = false
 anchors_preset = 0
 offset_right = 180.0
-offset_bottom = 299.0
+offset_bottom = 328.0
 script = ExtResource("12_23t3j")
 
 [node name="Panel" type="Panel" parent="Menu/DropDown" unique_id=1954048637]
@@ -221,6 +220,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
+
+[node name="Name" type="Label" parent="Menu/DropDown/VBoxContainer" unique_id=240930019]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_wbdvm")
+theme_override_styles/normal = ExtResource("15_kmwmt")
+text = "Name"
+vertical_alignment = 1
 
 [node name="equip" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=73306769]
 custom_minimum_size = Vector2(0, 30)

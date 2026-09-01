@@ -3,7 +3,7 @@ extends Resource
 class_name spell
 
 @export var spellNode: PackedScene
-@export var cost: int #WONT BE INTEGRATED FOR A WHILE
+@export var cost: int
 @export var coolDown: float = 1.0 #IN SECONDS
 
 #implemented
@@ -18,13 +18,14 @@ class_name spell
 
 func cast(caster: Variant):
 	#Globals.Player
-	if castable:
+	if castable and Globals.Player.mana >= cost:
 		var actualNode = spellNode.instantiate()
 		Globals.Root.add_child(actualNode)
 		actualNode.global_rotation = caster.global_rotation
 		actualNode.global_position = caster.global_position
 		actualNode.set_owner(Globals.Player)
 		cooldown()
+		Globals.Player.mana -= cost
 		return true
 	else:
 		return false

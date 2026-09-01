@@ -50,11 +50,21 @@ func pickup(what: Node):
 	remove_child(what)
 	Globals.menu.add_child(what)
 	what.dragging = true
-	pickedItem.equipped = false
+	unequip(what)
 	dragging = true
 	draggingNode = what
 	updateInventory()
 	print("picked up a ", what.ownItem.name)
+
+func unequip(what: Node):
+	what.ownItem.equipped = false
+	what.checkBorder()
+	match what.ownItem.Type:
+		"Spell":
+			Globals.wizard.remove(Globals.wizard.spells.find(what.ownItem.theSpell))
+			Globals.spellMaster.updateSpells(Globals.wizard.spells)
+		_:
+			pass
 
 func _gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("LeftClick"):
@@ -72,4 +82,4 @@ func dropDown(nodeinquestion: Node):
 	#replace with a neat function
 	dropDownNode.show()
 	dropDownNode.global_position = get_global_mouse_position()
-	dropDownNode.currentItem = nodeinquestion
+	dropDownNode.updateItem(nodeinquestion)

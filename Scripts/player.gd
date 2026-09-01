@@ -5,6 +5,8 @@ extends CharacterBody3D
 @export var SPEED = 5.0
 @export var dashD = 7.5
 
+@export var mana: float = 1000
+
 var dashVector = Vector3(dashD, 0, 0)
 
 @onready var cursorNode = $Cursor

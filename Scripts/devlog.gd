@@ -82,3 +82,9 @@
 #finished spell equipping
 #13:01
 #added a much tuffer placeholder icon
+#13:12
+#improved the item menu and added ability to discard
+#13:40
+#implemented spell cost
+#13:45
+#i do not know what to do now

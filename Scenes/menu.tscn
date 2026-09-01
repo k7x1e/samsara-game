@@ -13,6 +13,9 @@
 [ext_resource type="Script" uid="uid://dut0nr44rnls7" path="res://Scripts/UI/inventoryMenu.gd" id="8_6swd7"]
 [ext_resource type="Script" uid="uid://c71xw8g6kkryn" path="res://Scripts/inventory.gd" id="8_q3rjx"]
 [ext_resource type="Script" uid="uid://dscj8jy3r1qnb" path="res://Scripts/UI/drop_down.gd" id="12_23t3j"]
+[ext_resource type="StyleBox" uid="uid://ds457w8c45wbg" path="res://Resources/UI/dropdownNormal.tres" id="13_5ti5v"]
+[ext_resource type="StyleBox" uid="uid://lufuxo8vt8ji" path="res://Resources/UI/dropdownPressed.tres" id="14_1by5w"]
+[ext_resource type="StyleBox" uid="uid://he3jioswdiig" path="res://Resources/UI/dropdownDisabled.tres" id="15_kmwmt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_158mb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -47,6 +50,7 @@ grow_vertical = 2
 texture = ExtResource("2_cayip")
 
 [node name="Window" type="Control" parent="Menu" unique_id=1679423571]
+layout_mode = 1
 anchors_preset = 0
 offset_left = 331.0
 offset_top = 396.0
@@ -111,11 +115,14 @@ texture = ExtResource("6_wbdvm")
 [node name="Inventory" type="Control" parent="Menu" unique_id=339712170]
 custom_minimum_size = Vector2(296, 168)
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -873.0
 offset_top = -947.0
-offset_right = 873.0
+grow_horizontal = 0
 grow_vertical = 0
 script = ExtResource("8_6swd7")
 
@@ -184,7 +191,7 @@ texture = ExtResource("6_wbdvm")
 [node name="DropDown" type="Control" parent="Menu" unique_id=335422401]
 visible = false
 anchors_preset = 0
-offset_right = 171.0
+offset_right = 180.0
 offset_bottom = 269.0
 script = ExtResource("12_23t3j")
 
@@ -205,39 +212,91 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="assign1" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=864016602]
+[node name="equip" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=73306769]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_wbdvm")
+theme_override_styles/normal = ExtResource("13_5ti5v")
+theme_override_styles/pressed = ExtResource("14_1by5w")
+theme_override_styles/hover = ExtResource("14_1by5w")
+theme_override_styles/disabled = ExtResource("15_kmwmt")
+text = "Equip Item"
+alignment = 0
+
+[node name="assign1" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=864016602]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_wbdvm")
+theme_override_styles/normal = ExtResource("13_5ti5v")
+theme_override_styles/pressed = ExtResource("14_1by5w")
+theme_override_styles/hover = ExtResource("14_1by5w")
+theme_override_styles/disabled = ExtResource("15_kmwmt")
 text = "Assign to spell 1"
 alignment = 0
 
 [node name="assign2" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=1607351525]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_wbdvm")
+theme_override_styles/normal = ExtResource("13_5ti5v")
+theme_override_styles/pressed = ExtResource("14_1by5w")
+theme_override_styles/hover = ExtResource("14_1by5w")
+theme_override_styles/disabled = ExtResource("15_kmwmt")
 text = "Assign to spell 2"
 alignment = 0
 
 [node name="assign3" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=919623343]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_wbdvm")
+theme_override_styles/normal = ExtResource("13_5ti5v")
+theme_override_styles/pressed = ExtResource("14_1by5w")
+theme_override_styles/hover = ExtResource("14_1by5w")
+theme_override_styles/disabled = ExtResource("15_kmwmt")
 text = "Assign to spell 3"
 alignment = 0
 
 [node name="assign4" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=339653769]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_wbdvm")
+theme_override_styles/normal = ExtResource("13_5ti5v")
+theme_override_styles/pressed = ExtResource("14_1by5w")
+theme_override_styles/hover = ExtResource("14_1by5w")
+theme_override_styles/disabled = ExtResource("15_kmwmt")
 text = "Assign to spell 4"
 alignment = 0
 
 [node name="assign5" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=1968307184]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_wbdvm")
+theme_override_styles/normal = ExtResource("13_5ti5v")
+theme_override_styles/pressed = ExtResource("14_1by5w")
+theme_override_styles/hover = ExtResource("14_1by5w")
+theme_override_styles/disabled = ExtResource("15_kmwmt")
 text = "Assign to spell 5"
 alignment = 0
 
-[node name="close" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=885407721]
+[node name="discard" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=213929783]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_wbdvm")
+theme_override_styles/normal = ExtResource("13_5ti5v")
+theme_override_styles/pressed = ExtResource("14_1by5w")
+theme_override_styles/hover = ExtResource("14_1by5w")
+theme_override_styles/disabled = ExtResource("15_kmwmt")
+text = "Discard Item"
+alignment = 0
+
+[node name="close" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=885407721]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_wbdvm")
+theme_override_styles/normal = ExtResource("13_5ti5v")
+theme_override_styles/pressed = ExtResource("14_1by5w")
+theme_override_styles/hover = ExtResource("14_1by5w")
+theme_override_styles/disabled = ExtResource("15_kmwmt")
 text = "Close"
 alignment = 0
 
@@ -246,9 +305,11 @@ mouse_filter = 2
 
 [connection signal="gui_input" from="Menu/Window/Control/TextureRect" to="Menu/Window/Control" method="_on_texture_rect_gui_input"]
 [connection signal="gui_input" from="Menu/Inventory/Control/TextureRect" to="Menu/Inventory/Control" method="_on_texture_rect_gui_input"]
+[connection signal="pressed" from="Menu/DropDown/VBoxContainer/equip" to="Menu/DropDown" method="_on_assign_1_pressed"]
 [connection signal="pressed" from="Menu/DropDown/VBoxContainer/assign1" to="Menu/DropDown" method="_on_assign_1_pressed"]
 [connection signal="pressed" from="Menu/DropDown/VBoxContainer/assign2" to="Menu/DropDown" method="_on_assign_2_pressed"]
 [connection signal="pressed" from="Menu/DropDown/VBoxContainer/assign3" to="Menu/DropDown" method="_on_assign_3_pressed"]
 [connection signal="pressed" from="Menu/DropDown/VBoxContainer/assign4" to="Menu/DropDown" method="_on_assign_4_pressed"]
 [connection signal="pressed" from="Menu/DropDown/VBoxContainer/assign5" to="Menu/DropDown" method="_on_assign_5_pressed"]
+[connection signal="pressed" from="Menu/DropDown/VBoxContainer/discard" to="Menu/DropDown" method="_on_discard_pressed"]
 [connection signal="pressed" from="Menu/DropDown/VBoxContainer/close" to="Menu/DropDown" method="_on_close_pressed"]

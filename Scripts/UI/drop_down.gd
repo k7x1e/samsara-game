@@ -1,12 +1,14 @@
 extends Control
 
 @onready var equipB = $VBoxContainer/equip
+@onready var unEquipB = $VBoxContainer/unequip
 
 @onready var assign1 = $VBoxContainer/assign1
 @onready var assign2 = $VBoxContainer/assign2
 @onready var assign3 = $VBoxContainer/assign3
 @onready var assign4 = $VBoxContainer/assign4
 @onready var assign5 = $VBoxContainer/assign5
+@onready var unassign = $VBoxContainer/unassign
 
 @export var currentItem: Node
 
@@ -15,19 +17,27 @@ func updateItem(iteminQ: Node):
 	var tempitem = currentItem.ownItem
 	match tempitem.Type:
 		"Spell":
-			equipB.disabled = true
-			assign1.disabled = false
-			assign2.disabled = false
-			assign3.disabled = false
-			assign4.disabled = false
-			assign5.disabled = false
+			equipButtons(true)
+			assignButtons(false)
 		"Item":
-			equipB.disabled = true
-			assign1.disabled = true
-			assign2.disabled = true
-			assign3.disabled = true
-			assign4.disabled = true
-			assign5.disabled = true
+			equipButtons(true)
+			assignButtons(true)
+	if tempitem.equippable:
+		equipButtons(false)
+	if tempitem.equipped and tempitem.equippable:
+		unEquipB.disabled = false
+			
+func equipButtons(disableD: bool):
+	equipB.disabled = disableD
+	unEquipB.disabled = true
+
+func assignButtons(disableD: bool):
+	assign1.disabled = disableD
+	assign2.disabled = disableD
+	assign3.disabled = disableD
+	assign4.disabled = disableD
+	assign5.disabled = disableD
+	unassign.disabled = disableD
 
 func close():
 	self.hide()
@@ -67,6 +77,18 @@ func _on_assign_4_pressed() -> void:
 func _on_assign_5_pressed() -> void:
 	assignSpell(4)
 	close()
+
+func _on_unassign_pressed() -> void:
+	Globals.inventory.unequip(currentItem)
+	close()
+
+#equipping
+
+func _on_equip_pressed() -> void:
+	pass # Replace with function body.
+
+func _on_unequip_pressed() -> void:
+	pass # Replace with function body.
 
 #etcetera
 

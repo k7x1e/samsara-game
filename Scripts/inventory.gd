@@ -18,7 +18,11 @@ func _ready() -> void:
 
 func initialize():
 	await updateInventory()
-	await checkColumns()
+	#genuinely evil strat, for some reason it has some weird sorting algorithm thingy so this should fix it. adjust the value if the player would for some reason start out with a huge inventory
+	for i in range(1,100):
+		await checkColumns()
+		window.size = window.custom_minimum_size
+		self.size = window.custom_minimum_size
 
 func updateInventory():
 	print("updating inventory")
@@ -34,9 +38,11 @@ func updateInventory():
 
 func checkColumns():
 	var columns = int(self.size.x / 148)
-	self.columns = columns
-	var tempsize = int((theInventory.inventory.size()/2)+1) * 148
-	var minimumsize: Vector2 = Vector2(296, tempsize + 26)
+	self.set_columns(columns)
+	var tempsizeY = int((theInventory.inventory.size()/2)+1) * 148
+	var tempsizeX = int(sqrt(theInventory.inventory.size())+1) * 148
+	print(tempsizeX)
+	var minimumsize: Vector2 = Vector2(tempsizeX, tempsizeX + 26)
 	window.custom_minimum_size = minimumsize
 
 func flush():
@@ -45,16 +51,17 @@ func flush():
 		n.queue_free()
 
 func pickup(what: Node):
-	var pickedItem = what.ownItem
-	theInventory.remove(pickedItem)
-	remove_child(what)
-	Globals.menu.add_child(what)
-	what.dragging = true
-	unequip(what)
-	dragging = true
-	draggingNode = what
-	updateInventory()
-	print("picked up a ", what.ownItem.name)
+	if !dragging:
+		var pickedItem = what.ownItem
+		theInventory.remove(pickedItem)
+		remove_child(what)
+		Globals.menu.add_child(what)
+		what.dragging = true
+		unequip(what)
+		dragging = true
+		draggingNode = what
+		updateInventory()
+		print("picked up a ", what.ownItem.name)
 
 func unequip(what: Node):
 	what.ownItem.equipped = false
@@ -67,6 +74,7 @@ func unequip(what: Node):
 			pass
 
 func _gui_input(event: InputEvent) -> void:
+	#checkColumns()
 	if event.is_action_pressed("LeftClick"):
 		stopDragging()
 

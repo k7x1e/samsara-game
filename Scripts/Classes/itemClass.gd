@@ -13,3 +13,4 @@ class_name itemClass
 @export var Type: String = "Item"
 
 @export var equipped: bool
+@export var equippable: bool = false #DOES NOT APPLY TO SPELLS

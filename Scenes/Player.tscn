@@ -30,6 +30,7 @@ metadata/_custom_type_script = "uid://crrif2oof7ji8"
 script = ExtResource("2_megsn")
 name = "worthless shit"
 icon = ExtResource("6_52ee3")
+equippable = true
 metadata/_custom_type_script = "uid://brua5tb5kc0it"
 
 [sub_resource type="Resource" id="Resource_megsn"]

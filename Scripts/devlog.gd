@@ -88,3 +88,5 @@
 #implemented spell cost
 #13:45
 #i do not know what to do now
+#14:05
+#oh my god bruh

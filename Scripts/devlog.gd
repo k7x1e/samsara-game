@@ -90,3 +90,7 @@
 #i do not know what to do now
 #14:05
 #oh my god bruh
+#14:21
+#added equip/unequip to the dropdown, unassign
+#14:46
+#added a heal spell

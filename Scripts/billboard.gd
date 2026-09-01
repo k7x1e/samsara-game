@@ -11,3 +11,4 @@ func initialize():
 	textNode.text = billboardtext
 	await Engine.get_main_loop().create_timer(duration).timeout
 	self.queue_free()
+	return true

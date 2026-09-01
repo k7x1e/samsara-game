@@ -6,6 +6,7 @@ extends CharacterBody3D
 @export var dashD = 7.5
 
 @export var mana: float = 1000
+@export var health: float = 100
 
 var dashVector = Vector3(dashD, 0, 0)
 

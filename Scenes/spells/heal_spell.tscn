@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b5w0a01u8whh2"]
+
+[ext_resource type="Script" uid="uid://dlyx7ntafx2b0" path="res://Scripts/classes/spells/heal_spell.gd" id="1_omio0"]
+[ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="2_353w4"]
+
+[node name="HealSpell" type="Node3D" unique_id=839941787]
+script = ExtResource("1_omio0")
+
+[node name="billboard" parent="." unique_id=1199928384 instance=ExtResource("2_353w4")]
+billboardtext = "HEALED !!!!"

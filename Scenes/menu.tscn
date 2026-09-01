@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bn60qyl38svpl" path="res://Textures/UI/gui_scale_handle.png" id="6_wbdvm"]
 [ext_resource type="Script" uid="uid://dut0nr44rnls7" path="res://Scripts/UI/inventoryMenu.gd" id="8_6swd7"]
 [ext_resource type="Script" uid="uid://c71xw8g6kkryn" path="res://Scripts/inventory.gd" id="8_q3rjx"]
+[ext_resource type="Texture2D" uid="uid://cioushjp77jse" path="res://Textures/UI/gui_inventory_grid_border.png" id="11_kmwmt"]
 [ext_resource type="Script" uid="uid://dscj8jy3r1qnb" path="res://Scripts/UI/drop_down.gd" id="12_23t3j"]
 [ext_resource type="StyleBox" uid="uid://ds457w8c45wbg" path="res://Resources/UI/dropdownNormal.tres" id="13_5ti5v"]
 [ext_resource type="StyleBox" uid="uid://lufuxo8vt8ji" path="res://Resources/UI/dropdownPressed.tres" id="14_1by5w"]
@@ -20,6 +21,12 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_158mb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_top = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rc6uw"]
+texture = ExtResource("11_kmwmt")
+texture_margin_top = 20.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [node name="Menu" type="CanvasLayer" unique_id=539579730]
 follow_viewport_enabled = true
@@ -144,7 +151,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Menu/Inventory/VBoxContainer" unique_id=1000792313]
 layout_mode = 2
@@ -159,7 +165,7 @@ text = "Inventory"
 [node name="PanelContainer" type="PanelContainer" parent="Menu/Inventory/VBoxContainer" unique_id=1302822794]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_158mb")
+theme_override_styles/panel = SubResource("StyleBoxTexture_rc6uw")
 
 [node name="GridContainer" type="GridContainer" parent="Menu/Inventory/VBoxContainer/PanelContainer" unique_id=641757518]
 custom_minimum_size = Vector2(128, 128)

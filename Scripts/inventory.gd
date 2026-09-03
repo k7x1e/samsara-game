@@ -40,7 +40,7 @@ func updateInventory():
 func checkColumns():
 	var columns = int(self.size.x / 148)
 	self.set_columns(columns)
-	var tempsizeY = int((theInventory.inventory.size()/2)+1) * 148
+	var _tempsizeY = int((theInventory.inventory.size()/2)+1) * 148
 	var tempsizeX = int(sqrt(theInventory.inventory.size())+1) * 148
 	#print(tempsizeX)
 	var minimumsize: Vector2 = Vector2(tempsizeX, tempsizeX + 26)

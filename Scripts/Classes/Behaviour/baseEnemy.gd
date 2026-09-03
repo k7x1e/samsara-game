@@ -17,9 +17,12 @@ func initialize():
 	damageArea = actor.get_node("Area3D")
 
 func update():
-	var tempPosition = player.global_position
+	if player:
+		var tempPosition = player.global_position
+		nav.target_position = tempPosition
+	else:
+		player = Globals.Player
 	#tempPosition.y = actor.global_position.y
-	nav.target_position = tempPosition
 	actor.move()
 	if can_attack:
 		attack()

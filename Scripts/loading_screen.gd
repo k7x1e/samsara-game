@@ -10,7 +10,7 @@ func _ready() -> void:
 		push_error("Failed to start threaded load: " + str(err))
 		return
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var status = ResourceLoader.load_threaded_get_status(targetPath, progress)
 	
 	match status:

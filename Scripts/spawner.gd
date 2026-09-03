@@ -5,7 +5,7 @@ extends Node3D
 
 var can_spawn: bool = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if can_spawn:
 		spawnNode()
 

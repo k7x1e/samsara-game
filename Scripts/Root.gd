@@ -6,6 +6,8 @@ extends Node3D
 
 var Menu
 var toggled = false
+var paused = false
+var pauseMenu
 
 func _ready():
 	Globals.Root = self
@@ -15,7 +17,9 @@ func _ready():
 	await gamestate.initialize()
 	gamestate.initialized = true
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		pauseGame()
 	if Input.is_action_just_pressed("menu"):
 		toggleMenu()
 	if Input.is_action_just_pressed("ui_accept"):
@@ -23,23 +27,37 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("evilDebugKey"):
 		loadSave(2)
 
+func pauseGame():
+	print("pausing")
+	if !paused and !toggled:
+		pause(true)
+		pauseMenu.set_process(true)
+		pauseMenu.show()
+		paused = true
+	elif !toggled:
+		pause(false)
+		pauseMenu.set_process(false)
+		pauseMenu.hide()
+		paused = false
+
 func toggleMenu():
-	if !toggled:
+	if !toggled and !paused:
 		Menu.set_process(true)
 		Menu.show()
 		Menu.activateMenu()
 		pause(true)
-	else:
+		toggled = !toggled
+	elif !paused:
 		Menu.hideMenu()
 		Menu.hide()
 		Menu.set_process(false)
 		pause(false)
-	toggled = !toggled
+		toggled = !toggled
 
 #straight up stealing code from dustrialis, gng
-func pause(paused: bool):
+func pause(Paused: bool):
 	var pausable = get_tree().get_nodes_in_group("Pausable")
-	if paused:
+	if Paused:
 		for object in pausable:
 			object.process_mode = Node.PROCESS_MODE_DISABLED
 	else:
@@ -58,6 +76,7 @@ func initialize(gmestate: gameState):
 	return true
 
 func save():
+	# REDO
 	var scene = PackedScene.new()
 	var result = scene.pack(get_tree().get_current_scene())
 	ResourceSaver.save(scene, "res://last_save.tscn", ResourceSaver.FLAG_BUNDLE_RESOURCES)
@@ -70,7 +89,7 @@ func save():
 	result = 0
 	
 
-func loadSave(which: int):
+func loadSave(_which: int):
 	#were just gonna assume it means the last
 	var lastSave = gamestate.get_last_save()
 	get_tree().change_scene_to_packed(lastSave)

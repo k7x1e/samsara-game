@@ -7,6 +7,8 @@ extends Node3D
 var Menu
 var toggled = false
 var paused = false
+var inDialogue = false
+var dialogueMenu
 var pauseMenu
 
 func _ready():
@@ -16,6 +18,7 @@ func _ready():
 	gamestate.rootNode = self
 	await gamestate.initialize()
 	gamestate.initialized = true
+	dialogueMenu = Globals.dialogueMenu
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
@@ -27,32 +30,54 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("evilDebugKey"):
 		loadSave(2)
 
+func startDialogue(theconvo: conversation):
+	Globals.dialogueMenu.index = 0
+	Globals.dialogueMenu.dialogueToUse = theconvo
+	toggleDialogue()
+	Globals.dialogueMenu.update()
+
+func stopDialogue():
+	toggleDialogue()
+
+func toggleDialogue():
+	if !paused and !toggled and !inDialogue:
+		pause(true)
+		Globals.dialogueMenu.set_process(true)
+		Globals.dialogueMenu.get_parent().show()
+		inDialogue = true
+	elif !toggled and !paused:
+		pause(false)
+		Globals.dialogueMenu.set_process(false)
+		Globals.dialogueMenu.get_parent().hide()
+		inDialogue = false
+
 func pauseGame():
 	print("pausing")
-	if !paused and !toggled:
+	if !paused and !toggled and !inDialogue:
 		pause(true)
 		pauseMenu.set_process(true)
 		pauseMenu.show()
 		paused = true
-	elif !toggled:
+	elif !toggled and !inDialogue:
 		pause(false)
 		pauseMenu.set_process(false)
 		pauseMenu.hide()
 		paused = false
 
 func toggleMenu():
-	if !toggled and !paused:
+	if !toggled and !paused and !inDialogue:
 		Menu.set_process(true)
 		Menu.show()
 		Menu.activateMenu()
 		pause(true)
 		toggled = !toggled
-	elif !paused:
+	elif !paused and !inDialogue:
 		Menu.hideMenu()
 		Menu.hide()
 		Menu.set_process(false)
 		pause(false)
 		toggled = !toggled
+
 
 #straight up stealing code from dustrialis, gng
 func pause(Paused: bool):

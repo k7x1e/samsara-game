@@ -1,4 +1,4 @@
-[gd_resource type="Resource" format=3 uid="uid://bs0h3ygx3g5bt"]
+[gd_resource type="Resource" script_class="itemSpell" format=3 uid="uid://bs0h3ygx3g5bt"]
 
 [ext_resource type="Texture2D" uid="uid://7wri6gpkv7tl" path="res://Textures/icons/spells/trampstamp.png" id="1_7ncdq"]
 [ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/classes/Items/SpellItem.gd" id="2_tvk3q"]

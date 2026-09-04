@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://cdrnpgknxmfk3"]
+
+[ext_resource type="Script" uid="uid://bpxaob14mroqk" path="res://Scripts/UI/dialogue.gd" id="1_p21q5"]
+[ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/classes/dialogueClass.gd" id="2_4hwkt"]
+[ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="2_p21q5"]
+[ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/classes/dialogueOption.gd" id="3_shd1d"]
+[ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/classes/conversation.gd" id="4_j1ns2"]
+[ext_resource type="Texture2D" uid="uid://c80awwmaefapk" path="res://Textures/UI/gui_panel_blank.png" id="5_4hwkt"]
+
+[sub_resource type="Resource" id="Resource_4hwkt"]
+script = ExtResource("3_shd1d")
+text = "FUCK YOU"
+target = 1
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_shd1d"]
+script = ExtResource("3_shd1d")
+text = "stop"
+target = -1
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_n2qm0"]
+script = ExtResource("2_4hwkt")
+isDialogue = true
+dialogueText = "Bitchass niggaaaaa!!!"
+dialogueOptions = Array[ExtResource("3_shd1d")]([SubResource("Resource_4hwkt"), SubResource("Resource_shd1d")])
+target = 1
+metadata/_custom_type_script = "uid://bg6c48acdck1"
+
+[sub_resource type="Resource" id="Resource_j1ns2"]
+script = ExtResource("2_4hwkt")
+isDialogue = true
+dialogueText = "hi"
+metadata/_custom_type_script = "uid://bg6c48acdck1"
+
+[sub_resource type="Resource" id="Resource_2et6r"]
+script = ExtResource("4_j1ns2")
+manuscript = Array[ExtResource("2_4hwkt")]([SubResource("Resource_n2qm0"), SubResource("Resource_j1ns2")])
+metadata/_custom_type_script = "uid://bin58sxq57jsc"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_shd1d"]
+texture = ExtResource("5_4hwkt")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_4hwkt"]
+font_size = 40
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5mcti"]
+font_size = 35
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Dialogue" type="Control" unique_id=8686405]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1470741180]
+modulate = Color(1, 1, 1, 0.5294118)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="dialogue" type="Control" parent="." unique_id=1302385826]
+layout_mode = 1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+script = ExtResource("1_p21q5")
+dialogueToUse = SubResource("Resource_2et6r")
+
+[node name="Panel" type="Panel" parent="dialogue" unique_id=1541136492]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_shd1d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="dialogue" unique_id=723293023]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.01
+anchor_right = 0.99
+anchor_bottom = 0.99
+theme_override_constants/separation = 15
+
+[node name="name" type="Label" parent="dialogue/VBoxContainer" unique_id=1818851391]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p21q5")
+text = "Actor name"
+label_settings = SubResource("LabelSettings_4hwkt")
+
+[node name="Label" type="Label" parent="dialogue/VBoxContainer" unique_id=2002034310]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p21q5")
+text = "Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+"
+label_settings = SubResource("LabelSettings_5mcti")
+
+[node name="Options" type="VBoxContainer" parent="dialogue/VBoxContainer" unique_id=1067125414]
+layout_mode = 2

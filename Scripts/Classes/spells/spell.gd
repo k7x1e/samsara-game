@@ -21,12 +21,13 @@ class_name spell
 
 func cast(caster: Variant):
 	#Globals.Player
+	updateStats()
 	if castable and Globals.Player.mana >= cost:
 		var actualNode = spellNode.instantiate()
 		Globals.Root.add_child(actualNode)
 		actualNode.global_rotation = caster.global_rotation
 		actualNode.global_position = caster.global_position
-		actualNode.set_owner(Globals.Player)
+		actualNode.set_owner(Globals.Root)
 		actualNode.initialize()
 		Globals.Player.mana -= cost
 		cooldown_active = true
@@ -34,6 +35,10 @@ func cast(caster: Variant):
 		return true
 	else:
 		return false
+
+func updateStats():
+	self.coolDown -= Globals.stats.stats[1] * 0.25
+	self.cost -= int(Globals.stats.stats[1] / 10) * 25
 
 func cooldown():
 	spellTimer = Timer.new()

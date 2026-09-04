@@ -1,4 +1,4 @@
-[gd_resource type="Resource" format=3 uid="uid://byn8lfwpbjv8r"]
+[gd_resource type="Resource" script_class="itemSpell" format=3 uid="uid://byn8lfwpbjv8r"]
 
 [ext_resource type="Texture2D" uid="uid://vurd4da4ncj0" path="res://Textures/icons/spells/thunderbolt.png.png" id="1_a0dko"]
 [ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/classes/Items/SpellItem.gd" id="2_6iu0s"]

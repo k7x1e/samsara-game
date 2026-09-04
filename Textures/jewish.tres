@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c4g7apr7awkie"]
+
+[ext_resource type="Texture2D" uid="uid://d2ax1l3mkeisl" path="res://textures/jewish.jpeg" id="1_fee3t"]
+
+[resource]
+albedo_texture = ExtResource("1_fee3t")
+metallic_specular = 0.0
+texture_filter = 2

@@ -5,7 +5,7 @@ var scaleValue: float
 var backupScale
 
 @onready var resolutionPicker = $VBoxContainer/Resolution/Control/OptionButton
-var resolutionValue
+var resolutionValue: Vector2i = Vector2i(1920,1080)
 var backupResolution
 
 # Called when the node enters the scene tree for the first time.
@@ -18,7 +18,7 @@ func initialize():
 	sData = await loadSettings()
 	await get_tree().create_timer(0.1).timeout
 	scaleValue = sData["uiscale"]
-	resolutionValue = sData["resolutionvalue"]
+	#resolutionValue = sData["resolutionvalue"], depreceated. does not work
 	await saveSettings(false)
 	scaleSlider.value = ProjectSettings.get_setting("display/window/stretch/scale")
 
@@ -35,7 +35,7 @@ func loadSettings():
 	
 	var open_err = FileAccess.open("user://settings.shit", FileAccess.READ)
 	var json_object = JSON.new()
-	var parse_err = json_object.parse(open_err.get_as_text())
+	var _parse_err = json_object.parse(open_err.get_as_text())
 	print ("succeeded in loading")
 	settingdata = json_object.get_data()
 	return settingdata

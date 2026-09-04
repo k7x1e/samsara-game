@@ -17,6 +17,7 @@
 [ext_resource type="StyleBox" uid="uid://ds457w8c45wbg" path="res://Resources/UI/dropdownNormal.tres" id="13_5ti5v"]
 [ext_resource type="StyleBox" uid="uid://lufuxo8vt8ji" path="res://Resources/UI/dropdownPressed.tres" id="14_1by5w"]
 [ext_resource type="StyleBox" uid="uid://he3jioswdiig" path="res://Resources/UI/dropdownDisabled.tres" id="15_kmwmt"]
+[ext_resource type="PackedScene" uid="uid://cdrnpgknxmfk3" path="res://Scenes/dialogue.tscn" id="18_rc6uw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_158mb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -351,6 +352,8 @@ alignment = 0
 
 [node name="spellGui" parent="." unique_id=1294274690 instance=ExtResource("3_rfqti")]
 mouse_filter = 2
+
+[node name="Dialogue" parent="." unique_id=8686405 instance=ExtResource("18_rc6uw")]
 
 [connection signal="gui_input" from="Menu/Window/Control/TextureRect" to="Menu/Window/Control" method="_on_texture_rect_gui_input"]
 [connection signal="gui_input" from="Menu/Inventory/Control/TextureRect" to="Menu/Inventory/Control" method="_on_texture_rect_gui_input"]

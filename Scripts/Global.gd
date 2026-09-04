@@ -8,3 +8,4 @@ var menu: Node
 var wizard: Node
 var stats: Stats
 var settingsMenu: Control
+var dialogueMenu: Control

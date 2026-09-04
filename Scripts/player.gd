@@ -28,6 +28,8 @@ var dashVector = Vector3(dashD, 0, 0)
 @onready var wizard = $Rotation/Wizard
 @onready var followerNode = $Rotation/Follower1 #will be replaced with a function eventually but this will do for now
 
+@onready var dialogueArea = $Area3D
+
 @export var globalmousePos: Vector3
 
 func refreshStats():
@@ -95,12 +97,20 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
 	#bitch dash, to be replaced
-	if Input.is_action_just_pressed("ui_accept"):
-		var dash = dashD * direction
-		self.position += dash
-	#actually ykw why are we even doing the casting here?§
+	#actually ykw why are we even doing the casting here?
+	#check for dialogue
+	if Input.is_action_just_pressed("interact"):
+		checkDialogue()
 	
 	move_and_slide()
+
+func checkDialogue():
+	if dialogueArea.has_overlapping_bodies():
+		var bodies = dialogueArea.get_overlapping_bodies()
+		for body in bodies:
+			if body.NpcClass.behaviour.hasDialogue:
+				Globals.Root.startDialogue(body.NpcClass.behaviour.words)
+				return
 
 #evil ass mouselook function niggaaaa
 func look_at_mouse():

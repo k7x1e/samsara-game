@@ -38,8 +38,8 @@ func updateInventory():
 	#check players inventory, 
 
 func checkColumns():
-	var columns = int(self.size.x / 148)
-	self.set_columns(columns)
+	var Columns = int(self.size.x / 148)
+	self.set_columns(Columns)
 	var _tempsizeY = int((theInventory.inventory.size()/2)+1) * 148
 	var tempsizeX = int(sqrt(theInventory.inventory.size())+1) * 148
 	#print(tempsizeX)

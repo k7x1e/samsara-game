@@ -5,6 +5,7 @@ class_name Behaviour
 @export var health: float
 @export var speed: float
 @export var actor: Variant
+@export var hasDialoge: bool = false
 
 @export var billboard: PackedScene = preload("res://Scenes/billboard.tscn")
 
@@ -23,7 +24,7 @@ func say(message: String, duration: float, rootparent: bool = false):
 		temp.global_position = actor.global_position
 	else:
 		actor.add_child(temp)
-	temp.set_owner(actor)
+	temp.set_owner(Globals.Root)
 	temp.duration = duration
 	temp.billboardtext = message
 	temp.initialize()

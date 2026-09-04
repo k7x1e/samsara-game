@@ -121,3 +121,21 @@
 	#started implementing resolution change. Will finish once able to work again.
 	#13:45
 	#finished adding resolution to settings menu
+	#
+	##04/09
+	#10:36
+	#it is today that the big development day shall happen.
+	#i will now do minor bugfixed
+	#11:19
+	#idek what to do bro i gotta implement quests shiiet
+	#straight up stole the quest class from dustrialis. This means ill have to add dialogue. Shit.
+	#12:12
+	#soon done with the dialogue system
+	#12:42
+	#finished basic dialogue i will now never code again
+	#14:42
+	#i really should add leveling. Instead i shall begin work on a simple test map
+	#14:51
+	#realized mapping in blender is a futile effort so i shall begin setting up trenchbroom.
+	#15:13
+	#set trenchbroom up and made a test map. I will need to add some sort of fancy shader to make stuff thats in the way of the character be kinda shadowed

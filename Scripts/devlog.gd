@@ -138,4 +138,7 @@
 	#14:51
 	#realized mapping in blender is a futile effort so i shall begin setting up trenchbroom.
 	#15:13
-	#set trenchbroom up and made a test map. I will need to add some sort of fancy shader to make stuff thats in the way of the character be kinda shadowed
+	#set trenchbroom up and made a test map. I will need to add some sort of fancy shader to make stuff thats in the way of the character be kinda shadowed.
+	#i will try to start that at least now
+	#15:26
+	#easier than expected

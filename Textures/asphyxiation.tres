@@ -1,8 +1,10 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://038qr5cjl15x"]
 
-[ext_resource type="Texture2D" uid="uid://npof8x327f48" path="res://textures/asphyxiation.jpeg" id="1_5w0uv"]
+[ext_resource type="Texture2D" uid="uid://npof8x327f48" path="res://Textures/asphyxiation.jpeg" id="1_5w0uv"]
 
 [resource]
 albedo_texture = ExtResource("1_5w0uv")
 metallic_specular = 0.0
 texture_filter = 2
+distance_fade_mode = 2
+distance_fade_max_distance = 11.0

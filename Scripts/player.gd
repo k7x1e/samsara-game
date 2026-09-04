@@ -51,6 +51,7 @@ func getFollowerNode() -> Node3D:
 	return followerNode
 
 func initialize():
+	print(global_position.distance_to(camera.global_position))
 	Globals.Player = self
 	Globals.stats = stats
 	inventory.assignIDs()

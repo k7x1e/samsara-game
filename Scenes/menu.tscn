@@ -354,6 +354,7 @@ alignment = 0
 mouse_filter = 2
 
 [node name="Dialogue" parent="." unique_id=8686405 instance=ExtResource("18_rc6uw")]
+visible = false
 
 [connection signal="gui_input" from="Menu/Window/Control/TextureRect" to="Menu/Window/Control" method="_on_texture_rect_gui_input"]
 [connection signal="gui_input" from="Menu/Inventory/Control/TextureRect" to="Menu/Inventory/Control" method="_on_texture_rect_gui_input"]

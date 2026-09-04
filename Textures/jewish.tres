@@ -6,3 +6,5 @@
 albedo_texture = ExtResource("1_fee3t")
 metallic_specular = 0.0
 texture_filter = 2
+distance_fade_mode = 2
+distance_fade_max_distance = 11.0

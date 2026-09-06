@@ -37,7 +37,7 @@ metadata/_custom_type_script = "uid://cse3ubaxht2cj"
 [sub_resource type="Resource" id="Resource_1e7my"]
 script = ExtResource("10_o3h8g")
 agility = 3.0
-magic = 500.0
+magic = 3.0
 perception = 2.0
 intelligence = 2.0
 strength = 2.0

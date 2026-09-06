@@ -142,3 +142,7 @@
 	#i will try to start that at least now
 	#15:26
 	#easier than expected
+	#
+	##06/09
+	#23:02
+	#really been lacking. only writing this to say i finally managed to figure out entities in trenchbroom.

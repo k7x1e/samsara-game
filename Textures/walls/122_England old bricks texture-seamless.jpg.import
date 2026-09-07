@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://de26lppmjx5r2"
-path.s3tc="res://.godot/imported/122_England old bricks texture-seamless.jpg-66670f7032c21fd7846f1cf9a1b7bdce.s3tc.ctex"
+path.s3tc="res://.godot/imported/122_England old bricks texture-seamless.jpg-4c59947980f228cec7a89055284dc863.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/walls/122_England old bricks texture-seamless.jpg"
-dest_files=["res://.godot/imported/122_England old bricks texture-seamless.jpg-66670f7032c21fd7846f1cf9a1b7bdce.s3tc.ctex"]
+source_file="res://Textures/walls/122_England old bricks texture-seamless.jpg"
+dest_files=["res://.godot/imported/122_England old bricks texture-seamless.jpg-4c59947980f228cec7a89055284dc863.s3tc.ctex"]
 
 [params]
 

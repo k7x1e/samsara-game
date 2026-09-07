@@ -6,4 +6,4 @@
 [node name="Spawner" type="Node3D" unique_id=517591928 groups=["Pausable"]]
 script = ExtResource("1_2bop2")
 nodeToSpawn = ExtResource("2_mdv8j")
-duration = 1.0
+duration = 0.2

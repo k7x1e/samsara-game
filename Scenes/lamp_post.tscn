@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cudxfh8rneqcv" path="res://Models/lampPost3.glb" id="1_la7ei"]
 [ext_resource type="ArrayMesh" uid="uid://bsfmse6ulqrh4" path="res://Resources/new_array_mesh.tres" id="2_26ten"]
+[ext_resource type="Texture2D" uid="uid://bobpuvlc86igt" path="res://Textures/shine.png" id="3_4v58s"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_la7ei"]
 height = 6.1293945
@@ -13,7 +14,7 @@ radius = 0.29052734
 
 [node name="lampPost3" parent="StaticBody3D" unique_id=1802787284 instance=ExtResource("1_la7ei")]
 
-[node name="Cube" parent="StaticBody3D/lampPost3" index="3" unique_id=809673335]
+[node name="Cube" parent="StaticBody3D/lampPost3" index="3" unique_id=1711810201]
 mesh = ExtResource("2_26ten")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1625508557]
@@ -28,14 +29,34 @@ omni_range = 30.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1359070121]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9595798, 6.378217, 0)
+visible = false
 light_color = Color(0.6720421, 0.5009419, 0, 1)
 light_energy = 1.5
 omni_range = 30.0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=990055982]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96, 6.378, 0)
+visible = false
 light_color = Color(0.6720421, 0.5009419, 0, 1)
 light_energy = 1.5
 omni_range = 30.0
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=2029844700]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.845846, 0)
+modulate = Color(1, 1, 1, 0.29803923)
+billboard = 1
+texture = ExtResource("3_4v58s")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=818970302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9656962, 6.371424, 0)
+modulate = Color(1, 1, 1, 0.29803923)
+billboard = 1
+texture = ExtResource("3_4v58s")
+
+[node name="Sprite3D3" type="Sprite3D" parent="." unique_id=351135220]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.966, 6.371, 0)
+modulate = Color(1, 1, 1, 0.29803923)
+billboard = 1
+texture = ExtResource("3_4v58s")
 
 [editable path="StaticBody3D/lampPost3"]

@@ -20,6 +20,7 @@ func update():
 	if player:
 		var tempPosition = player.global_position
 		nav.target_position = tempPosition
+		actor.visual.look_at(tempPosition, Vector3.UP)
 	else:
 		player = Globals.Player
 	#tempPosition.y = actor.global_position.y

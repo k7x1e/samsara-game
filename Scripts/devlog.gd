@@ -159,4 +159,5 @@
 	#finish the actual functionalities of dialogue (conditions, quests)1
 	#15:29
 	#im starting to lose it i dont want to touch any of this this game will suck ass and im the only one putting any effort into it
-	
+	#18:02
+	#i dont know what to do

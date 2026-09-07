@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6puxm6w3wd0q"
-path.s3tc="res://.godot/imported/DRIFTWD.png-726eb1e953dbd671d87d32c321f013f8.s3tc.ctex"
+path.s3tc="res://.godot/imported/DRIFTWD.png-c4a1af8eaaa7b3637f64605dadcc3800.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/placeholder_tex/WOOD/DRIFTWD.png"
-dest_files=["res://.godot/imported/DRIFTWD.png-726eb1e953dbd671d87d32c321f013f8.s3tc.ctex"]
+source_file="res://Textures/placeholder_tex/WOOD/DRIFTWD.png"
+dest_files=["res://.godot/imported/DRIFTWD.png-c4a1af8eaaa7b3637f64605dadcc3800.s3tc.ctex"]
 
 [params]
 

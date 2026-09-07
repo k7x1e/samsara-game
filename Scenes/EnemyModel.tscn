@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://dcjnetgb821re"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_wsunn"]
+[ext_resource type="PackedScene" uid="uid://lbqiv3vry15d" path="res://Models/horrifying monster.glb" id="1_io2ad"]
 
-[node name="Model" type="MeshInstance3D" unique_id=1429497101]
-mesh = SubResource("CylinderMesh_wsunn")
+[node name="Node3D" type="Node3D" unique_id=1047184049]
+
+[node name="horrifying monster" parent="." unique_id=75950070 instance=ExtResource("1_io2ad")]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 0, -1, 0)
+
+[editable path="horrifying monster"]

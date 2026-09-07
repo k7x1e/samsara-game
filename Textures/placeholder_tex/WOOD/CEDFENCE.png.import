@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://beppbc3ib4bn1"
-path.s3tc="res://.godot/imported/CEDFENCE.png-39ead9a83ad2f7ece5366c73a1360e51.s3tc.ctex"
+path.s3tc="res://.godot/imported/CEDFENCE.png-c4038a1f2ae7f9e6133219ea381edc88.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/placeholder_tex/WOOD/CEDFENCE.png"
-dest_files=["res://.godot/imported/CEDFENCE.png-39ead9a83ad2f7ece5366c73a1360e51.s3tc.ctex"]
+source_file="res://Textures/placeholder_tex/WOOD/CEDFENCE.png"
+dest_files=["res://.godot/imported/CEDFENCE.png-c4038a1f2ae7f9e6133219ea381edc88.s3tc.ctex"]
 
 [params]
 

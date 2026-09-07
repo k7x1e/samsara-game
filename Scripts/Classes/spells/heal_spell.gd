@@ -6,7 +6,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func initialize() -> void:
-	Globals.stats.stats[1] = 500
+	Globals.stats.stats[1] *= 10
 	Globals.Player.health += amount
 	await billboard.initialize()
 	#print("killing self")

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://shagb2fs10d4"
-path.s3tc="res://.godot/imported/GRYCON7.png-544cb4ca08a03c662b0f73c8caaacb2b.s3tc.ctex"
+path.s3tc="res://.godot/imported/GRYCON7.png-11e0e4467915482bd58a658c52bdfc93.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/placeholder_tex/CONCRETE/GRYCON7.png"
-dest_files=["res://.godot/imported/GRYCON7.png-544cb4ca08a03c662b0f73c8caaacb2b.s3tc.ctex"]
+source_file="res://Textures/placeholder_tex/CONCRETE/GRYCON7.png"
+dest_files=["res://.godot/imported/GRYCON7.png-11e0e4467915482bd58a658c52bdfc93.s3tc.ctex"]
 
 [params]
 

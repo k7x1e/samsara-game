@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cb2e8jraydtvx"]
+
+[ext_resource type="PackedScene" uid="uid://cyeqhwp1lfccv" path="res://Models/drain.glb" id="1_bkr73"]
+
+[node name="Node3D" type="Node3D" unique_id=306760563]
+
+[node name="drain" parent="." unique_id=2090594271 instance=ExtResource("1_bkr73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)

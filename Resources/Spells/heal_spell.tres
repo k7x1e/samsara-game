@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="itemSpell" format=3 uid="uid://grrdhtwvlugn"]
 
 [ext_resource type="Texture2D" uid="uid://bqxdpdin82oyj" path="res://Textures/icons/spells/heal.png" id="1_yly4q"]
-[ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/Classes/Items/SpellItem.gd" id="2_ragd7"]
-[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/Classes/spells/spell.gd" id="3_5tm8y"]
+[ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/classes/Items/SpellItem.gd" id="2_ragd7"]
+[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/classes/spells/spell.gd" id="3_5tm8y"]
 [ext_resource type="PackedScene" uid="uid://b5w0a01u8whh2" path="res://Scenes/spells/heal_spell.tscn" id="4_ob1ol"]
 
 [sub_resource type="Resource" id="Resource_yly4q"]

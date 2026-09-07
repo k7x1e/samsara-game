@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" format=3 uid="uid://ddwcqvbad6plq"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_qswu5"]
+[ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="2_3cxn8"]
+[ext_resource type="PackedScene" uid="uid://cv1a2spb7dc7b" path="res://Scenes/lamp_post.tscn" id="2_3xg4b"]
+
+[resource]
+script = ExtResource("2_3cxn8")
+scene_file = ExtResource("2_3xg4b")
+classname = "LampPost"
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8),
+"studio": "\"LampPost.glb\""
+})
+node_class = "Node3D"
+metadata/_custom_type_script = "uid://ldfqjtq0br35"

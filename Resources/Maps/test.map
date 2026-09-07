@@ -7,21 +7,21 @@
 "classname" "worldspawn"
 // brush 0
 {
-( -192 192 0 ) ( -192 -640 0 ) ( -192 -640 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
-( -192 -640 0 ) ( 192 -640 0 ) ( 192 -640 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -192 192 8 ) ( -192 -640 8 ) ( -192 -640 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -192 -640 8 ) ( 192 -640 8 ) ( 192 -640 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
 ( 192 -640 -4 ) ( 192 192 -4 ) ( -192 192 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
-( -192 192 0 ) ( 192 192 0 ) ( 192 -640 0 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
-( 192 192 -4 ) ( 192 192 0 ) ( -192 192 0 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
-( 192 -640 0 ) ( 192 192 0 ) ( 192 192 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -192 192 8 ) ( 192 192 8 ) ( 192 -640 8 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( 192 192 -4 ) ( 192 192 8 ) ( -192 192 8 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 192 -640 8 ) ( 192 192 8 ) ( 192 192 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
 }
 // brush 1
 {
-( 192 -192 0 ) ( 192 -448 0 ) ( 192 -448 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
-( 192 -448 0 ) ( 704 -448 0 ) ( 704 -448 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
-( 704 -448 -4 ) ( 704 -192 -4 ) ( 192 -192 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
-( 192 -192 0 ) ( 704 -192 0 ) ( 704 -448 0 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
-( 704 -192 -4 ) ( 704 -192 0 ) ( 192 -192 0 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
-( 704 -448 0 ) ( 704 -192 0 ) ( 704 -192 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 192 -192 8 ) ( 192 -448 8 ) ( 192 -448 4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 192 -448 8 ) ( 704 -448 8 ) ( 704 -448 4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 704 -448 4 ) ( 704 -192 4 ) ( 192 -192 4 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( 192 -192 8 ) ( 704 -192 8 ) ( 704 -448 8 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( 704 -192 4 ) ( 704 -192 8 ) ( 192 -192 8 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 704 -448 8 ) ( 704 -192 8 ) ( 704 -192 4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
 }
 // brush 2
 {
@@ -52,12 +52,12 @@
 }
 // brush 5
 {
-( 192 184 0 ) ( 192 -184 0 ) ( 192 -184 -4 ) placeholder_tex/WOOD/OLDWOOD [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
-( 192 -184 0 ) ( 704 -184 0 ) ( 704 -184 -4 ) placeholder_tex/WOOD/OLDWOOD [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 192 184 8 ) ( 192 -184 8 ) ( 192 -184 -4 ) placeholder_tex/WOOD/OLDWOOD [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 192 -184 8 ) ( 704 -184 8 ) ( 704 -184 -4 ) placeholder_tex/WOOD/OLDWOOD [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
 ( 704 -184 -4 ) ( 704 184 -4 ) ( 192 184 -4 ) placeholder_tex/WOOD/OLDWOOD [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
-( 192 184 0 ) ( 704 184 0 ) ( 704 -184 0 ) placeholder_tex/WOOD/OLDWOOD [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
-( 704 184 -4 ) ( 704 184 0 ) ( 192 184 0 ) placeholder_tex/WOOD/OLDWOOD [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
-( 704 -184 0 ) ( 704 184 0 ) ( 704 184 -4 ) placeholder_tex/WOOD/OLDWOOD [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 192 184 8 ) ( 704 184 8 ) ( 704 -184 8 ) placeholder_tex/WOOD/OLDWOOD [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( 704 184 -4 ) ( 704 184 8 ) ( 192 184 8 ) placeholder_tex/WOOD/OLDWOOD [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 704 -184 8 ) ( 704 184 8 ) ( 704 184 -4 ) placeholder_tex/WOOD/OLDWOOD [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
 }
 // brush 6
 {
@@ -124,21 +124,50 @@
 }
 // brush 13
 {
-( -196 192 384 ) ( -196 -640 384 ) ( -196 -640 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -196 -640 384 ) ( -192 -640 384 ) ( -192 -640 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -192 -640 -4 ) ( -192 192 -4 ) ( -196 192 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -196 192 384 ) ( -192 192 384 ) ( -192 -640 384 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -192 192 -4 ) ( -192 192 384 ) ( -196 192 384 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -192 -640 384 ) ( -192 192 384 ) ( -192 192 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -448 192 16 ) ( -448 -640 16 ) ( -448 -640 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -192 -640 16 ) ( -172 -640 -4 ) ( -448 -640 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -172 -640 -4 ) ( -172 192 -4 ) ( -448 192 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -448 192 16 ) ( -192 192 16 ) ( -192 -640 16 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -448 192 -4 ) ( -172 192 -4 ) ( -192 192 16 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -192 192 16 ) ( -172 192 -4 ) ( -172 -640 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
 }
 }
 // entity 1
 {
-"classname" "enemy"
-"origin" "-88 -280 8"
+"classname" "LampPost"
+"origin" "-264 152 24"
+"angle" "270"
 }
 // entity 2
 {
-"classname" "light"
-"origin" "448 0 176"
+"classname" "LampPost"
+"origin" "-264 -104 24"
+"angle" "270"
+}
+// entity 3
+{
+"classname" "LampPost"
+"origin" "-264 -360 24"
+"angle" "270"
+}
+// entity 4
+{
+"classname" "LampPost"
+"origin" "-264 -616 24"
+"angle" "270"
+}
+// entity 5
+{
+"classname" "enemy"
+"origin" "92 -400 16"
+}
+// entity 6
+{
+"classname" "enemy"
+"origin" "-100 -196 16"
+}
+// entity 7
+{
+"classname" "spawner"
+"origin" "-20 -524 16"
 }

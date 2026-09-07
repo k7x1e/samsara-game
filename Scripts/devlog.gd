@@ -146,3 +146,10 @@
 	##06/09
 	#23:02
 	#really been lacking. only writing this to say i finally managed to figure out entities in trenchbroom.
+	#
+	##07/09
+	#09:45
+	#i wish to get shit done today. I think i will implement doors and interiors. Simply because im way too lazy to actually finish the dialogue/quest system
+	#no fuck that ill make some cool models
+	#13:40
+	#been doing a whole lot of bullshit

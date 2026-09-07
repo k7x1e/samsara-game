@@ -9,5 +9,10 @@ script = ExtResource("2_u86bl")
 scene_file = ExtResource("2_lb7i6")
 classname = "drain"
 description = "drain gangggg"
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8),
+"studio": "\"drain.glb\""
+})
 node_class = "Node3D"
 metadata/_custom_type_script = "uid://ldfqjtq0br35"

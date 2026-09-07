@@ -155,3 +155,8 @@
 	#been doing a whole lot of bullshit
 	#14:49
 	#redid the mouselook/cursor function
+	#im just wasting my fucking time i gotta implement quests into dialogue, just finish the dialogue in general (AND CHANGE ITS FONT !!!)
+	#finish the actual functionalities of dialogue (conditions, quests)1
+	#15:29
+	#im starting to lose it i dont want to touch any of this this game will suck ass and im the only one putting any effort into it
+	

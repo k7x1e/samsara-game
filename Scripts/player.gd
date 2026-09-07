@@ -132,7 +132,6 @@ func look_at_mouse():
 		
 		localmousePos.y = global_position.y
 		if global_position.distance_to(localmousePos) > 0.1:
-			cursorNode.global_position = localmousePos
 			rotationNode.look_at(localmousePos, Vector3.UP)
 	else:
 		print("failing somehow")

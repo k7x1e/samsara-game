@@ -7,12 +7,12 @@
 "classname" "worldspawn"
 // brush 0
 {
-( -192 192 8 ) ( -192 -640 8 ) ( -192 -640 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.1 0.2
-( -192 -640 8 ) ( 192 -640 8 ) ( 192 -640 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.1 0.2
-( 192 -640 -4 ) ( 192 192 -4 ) ( -192 192 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.1 0.2
-( -192 192 8 ) ( 192 192 8 ) ( 192 -640 8 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.1 0.2
-( 192 192 -4 ) ( 192 192 8 ) ( -192 192 8 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.1 0.2
-( 192 -640 8 ) ( 192 192 8 ) ( 192 192 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.1 0.2
+( -192 192 8 ) ( -192 -1408 8 ) ( -192 -1408 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -192 -1408 8 ) ( 192 -1408 8 ) ( 192 -1408 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 192 -1408 -4 ) ( 192 192 -4 ) ( -192 192 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -192 192 8 ) ( 192 192 8 ) ( 192 -1408 8 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( 192 192 -4 ) ( 192 192 8 ) ( -192 192 8 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 192 -1408 8 ) ( 192 192 8 ) ( 192 192 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
 }
 // brush 1
 {
@@ -124,12 +124,12 @@
 }
 // brush 13
 {
-( -448 192 16 ) ( -448 -640 16 ) ( -448 -640 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
-( -192 -640 16 ) ( -172 -640 -4 ) ( -448 -640 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
-( -172 -640 -4 ) ( -172 192 -4 ) ( -448 192 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
-( -448 192 16 ) ( -192 192 16 ) ( -192 -640 16 ) placeholder_tex/CONCRETE/GRYCON7 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -448 192 16 ) ( -448 -1024 16 ) ( -448 -1040 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -192 -1024 16 ) ( -172 -1040 -4 ) ( -448 -1040 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 1 0 0 0 ] [ 0 -2.7817808468846267e-16 1 324 ] 0 0.2 0.2
+( -172 -1040 -4 ) ( -172 192 -4 ) ( -448 192 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -448 192 16 ) ( -192 192 16 ) ( -192 -1024 16 ) placeholder_tex/CONCRETE/GRYCON7 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
 ( -448 192 -4 ) ( -172 192 -4 ) ( -192 192 16 ) placeholder_tex/CONCRETE/GRYCON7 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
-( -192 192 16 ) ( -172 192 -4 ) ( -172 -640 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -172 -1040 -4 ) ( -192 -1024 16 ) ( -192 192 16 ) placeholder_tex/CONCRETE/GRYCON7 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
 }
 // brush 14
 {
@@ -209,55 +209,134 @@
 }
 // brush 22
 {
-( -464 -640 0 ) ( -464 -639 0 ) ( -464 -640 1 ) __TB_empty [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -464 -640 0 ) ( -464 -640 1 ) ( -463 -640 0 ) __TB_empty [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -464 -640 0 ) ( -463 -640 0 ) ( -464 -639 0 ) __TB_empty [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -448 -224 192 ) ( -448 -223 192 ) ( -447 -224 192 ) __TB_empty [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -448 -224 192 ) ( -447 -224 192 ) ( -448 -224 193 ) __TB_empty [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -448 -224 192 ) ( -448 -224 193 ) ( -448 -223 192 ) __TB_empty [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -960 -768 16 ) ( -960 -1024 16 ) ( -960 -1040 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -960 -1024 16 ) ( -448 -1024 16 ) ( -448 -1040 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -448 -1040 -4 ) ( -448 -768 -4 ) ( -960 -768 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -960 -768 16 ) ( -448 -768 16 ) ( -448 -1024 16 ) placeholder_tex/CONCRETE/GRYCON7 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -448 -768 -4 ) ( -448 -768 16 ) ( -960 -768 16 ) placeholder_tex/CONCRETE/GRYCON7 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -448 -1024 16 ) ( -448 -768 16 ) ( -448 -768 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+}
+// brush 23
+{
+( -960 -1024 8 ) ( -960 -1280 8 ) ( -960 -1280 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -960 -1280 8 ) ( -192 -1280 8 ) ( -192 -1280 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -192 -1280 -4 ) ( -192 -1024 -4 ) ( -960 -1024 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -960 -1024 8 ) ( -192 -1024 8 ) ( -192 -1280 8 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -192 -1024 -4 ) ( -192 -1024 8 ) ( -960 -1024 8 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -192 -1280 8 ) ( -192 -1024 8 ) ( -192 -1024 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+}
+// brush 24
+{
+( 192 -1408 16 ) ( 176 -1408 -4 ) ( 176 -432 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 192 -1408 16 ) ( 704 -1408 16 ) ( 704 -1408 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 704 -1408 -4 ) ( 704 -432 -4 ) ( 176 -432 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( 192 -448 16 ) ( 704 -448 16 ) ( 704 -1408 16 ) placeholder_tex/CONCRETE/GRYCON7 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( 176 -432 -4 ) ( 704 -432 -4 ) ( 704 -448 16 ) placeholder_tex/CONCRETE/GRYCON7 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 704 -448 16 ) ( 704 -432 -4 ) ( 704 -1408 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+}
+// brush 25
+{
+( -960 -1264 -4 ) ( -960 -1280 16 ) ( -960 -1408 16 ) placeholder_tex/CONCRETE/GRYCON7 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -192 -1408 16 ) ( -176 -1408 -4 ) ( -960 -1408 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -176 -1408 -4 ) ( -176 -1264 -4 ) ( -960 -1264 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -960 -1280 16 ) ( -192 -1280 16 ) ( -192 -1408 16 ) placeholder_tex/CONCRETE/GRYCON7 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -960 -1264 -4 ) ( -176 -1264 -4 ) ( -192 -1280 16 ) placeholder_tex/CONCRETE/GRYCON7 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -192 -1280 16 ) ( -176 -1264 -4 ) ( -176 -1408 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+}
+// brush 26
+{
+( -960 -256 384 ) ( -960 -768 384 ) ( -960 -768 -4 ) "walls/122_England old bricks texture-seamless" [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -960 -768 384 ) ( -448 -768 384 ) ( -448 -768 -4 ) "walls/122_England old bricks texture-seamless" [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -448 -768 -4 ) ( -448 -256 -4 ) ( -960 -256 -4 ) "walls/122_England old bricks texture-seamless" [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -960 -256 384 ) ( -448 -256 384 ) ( -448 -768 384 ) "walls/122_England old bricks texture-seamless" [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -448 -256 -4 ) ( -448 -256 384 ) ( -960 -256 384 ) "walls/122_England old bricks texture-seamless" [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -448 -768 384 ) ( -448 -256 384 ) ( -448 -256 -4 ) "walls/122_England old bricks texture-seamless" [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
 }
 }
 // entity 1
 {
 "classname" "LampPost"
-"origin" "-264 152 24"
+"origin" "-264 72 24"
 "angle" "270"
 }
 // entity 2
 {
 "classname" "LampPost"
-"origin" "-264 -104 24"
+"origin" "-264 -184 24"
 "angle" "270"
 }
 // entity 3
 {
 "classname" "LampPost"
-"origin" "-264 -360 24"
+"origin" "-264 -696 24"
 "angle" "270"
 }
 // entity 4
 {
-"classname" "LampPost"
-"origin" "-264 -616 24"
-"angle" "270"
+"classname" "enemy"
+"origin" "92 -400 16"
 }
 // entity 5
 {
 "classname" "enemy"
-"origin" "92 -400 16"
-}
-// entity 6
-{
-"classname" "enemy"
 "origin" "-100 -196 16"
 }
-// entity 7
+// entity 6
 {
 "classname" "spawner"
 "origin" "-20 -524 16"
 }
+// entity 7
+{
+"classname" "LampPost"
+"origin" "-264 -440 24"
+"angle" "270"
+}
 // entity 8
 {
-"classname" "spawner"
-"origin" "616 24 16"
+"classname" "LampPost"
+"origin" "-264 -952 24"
+"angle" "225"
+}
+// entity 9
+{
+"classname" "LampPost"
+"origin" "-520 -952 24"
+"angle" "180"
+}
+// entity 10
+{
+"classname" "LampPost"
+"origin" "-776 -952 24"
+"angle" "180"
+}
+// entity 11
+{
+"classname" "LampPost"
+"origin" "264 -520 24"
+"angle" "225"
+}
+// entity 12
+{
+"classname" "LampPost"
+"origin" "520 -520 24"
+"angle" "180"
+}
+// entity 13
+{
+"classname" "LampPost"
+"origin" "264 -776 24"
+"angle" "270"
+}
+// entity 14
+{
+"classname" "LampPost"
+"origin" "264 -1032 24"
+"angle" "270"
+}
+// entity 15
+{
+"classname" "LampPost"
+"origin" "264 -1288 24"
+"angle" "270"
 }

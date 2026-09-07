@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://btb1temjtlv4u"]
+
+[ext_resource type="Texture2D" uid="uid://de26lppmjx5r2" path="res://textures/walls/122_England old bricks texture-seamless.jpg" id="1_36qwo"]
+
+[resource]
+albedo_texture = ExtResource("1_36qwo")
+metallic_specular = 0.0
+texture_filter = 2

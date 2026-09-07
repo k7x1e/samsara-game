@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://d2py2h2xe5qhq"]
+
+[ext_resource type="PackedScene" uid="uid://da8klov8goj42" path="res://Models/lantern.glb" id="1_vhu8j"]
+[ext_resource type="Texture2D" uid="uid://bobpuvlc86igt" path="res://Textures/shine.png" id="2_dq0i0"]
+
+[node name="lantern" type="Node3D" unique_id=742290621]
+
+[node name="lantern" parent="." unique_id=2124839038 instance=ExtResource("1_vhu8j")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0.15)
+
+[node name="Cylinder_002" parent="lantern" index="3" unique_id=1764523775]
+layers = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lantern" unique_id=316284723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17840688, 0)
+light_color = Color(0.57090336, 0.42544308, 0, 1)
+light_energy = 1.5
+light_bake_mode = 1
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 30.0
+
+[node name="Sprite3D" type="Sprite3D" parent="lantern" unique_id=1620646956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17840688, 0)
+pixel_size = 0.005
+billboard = 1
+texture = ExtResource("2_dq0i0")
+
+[editable path="lantern"]

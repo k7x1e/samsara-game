@@ -79,10 +79,12 @@ radius = 0.29052734
 [node name="lampPost" type="Node3D" unique_id=1926539373]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1905396169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 
 [node name="lampPost3" parent="StaticBody3D" unique_id=236893190 instance=ExtResource("1_la7ei")]
 
-[node name="Cube" parent="StaticBody3D/lampPost3" index="3" unique_id=1219630766]
+[node name="Cube" parent="StaticBody3D/lampPost3" index="3" unique_id=276108427]
+layers = 2
 mesh = SubResource("ArrayMesh_4v58s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1625508557]
@@ -90,25 +92,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0692353, 0)
 shape = SubResource("CylinderShape3D_la7ei")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=977519396]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.9774203, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.617672, 0)
 light_color = Color(0.57090336, 0.42544308, 0, 1)
 light_energy = 1.5
+light_bake_mode = 1
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 omni_range = 30.0
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=2029844700]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.8339524, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.600947, 0)
 pixel_size = 0.005
 billboard = 1
 texture = ExtResource("3_4v58s")
 
 [node name="Sprite3D2" type="Sprite3D" parent="." unique_id=818970302]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9656962, 6.226833, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9656962, 6.048088, 0)
 pixel_size = 0.005
 billboard = 1
 texture = ExtResource("3_4v58s")
 
 [node name="Sprite3D3" type="Sprite3D" parent="." unique_id=351135220]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.966, 6.2264085, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.966, 6.0476637, 0)
 pixel_size = 0.005
 billboard = 1
 texture = ExtResource("3_4v58s")

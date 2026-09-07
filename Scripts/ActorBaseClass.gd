@@ -21,6 +21,9 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	#basically to tick the behaviour script(when i eventually make it). 
 	#Will most likely be replaced by a tick function handled by the combat manager.
+	#TO BE REPLACED
+
+func tick():
 	behaviour.update()
 
 func damage(amt: float):
@@ -31,6 +34,8 @@ func damage(amt: float):
 		behaviour.death()
 
 func move():
+	if not is_inside_tree() or not nav.is_inside_tree():
+		return
 	#basically just stolen from dustrialis source code.
 	#if behaviour.nav.target_position:
 	tempPos = nav.get_next_path_position()

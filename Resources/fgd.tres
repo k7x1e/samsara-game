@@ -11,7 +11,6 @@
 
 [resource]
 script = ExtResource("1_nxjbw")
-target_map_editor = 2
 fgd_name = "Samsonarum"
 base_fgd_files = Array[Resource]([ExtResource("1_thwb8")])
 entity_definitions = Array[Resource]([ExtResource("2_ihtdy"), ExtResource("3_ei1db"), ExtResource("4_tbbir"), ExtResource("5_ei1db"), ExtResource("6_tbbir"), ExtResource("7_u87at")])

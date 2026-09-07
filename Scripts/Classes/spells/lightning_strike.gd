@@ -21,11 +21,6 @@ func initialize() -> void:
 	await get_tree().create_timer(0.2).timeout
 	self.queue_free()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
 func damageBodies():
 	print("damaging bodies")
 	var bodies = effectArea.get_overlapping_bodies()

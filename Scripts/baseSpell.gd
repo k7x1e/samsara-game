@@ -9,7 +9,7 @@ func initialize() -> void:
 	#TEMPORARY
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func tick():
 	#do whatever, ill prioritize actual casting/using. (WEAPONS WILL WORK THE SAME AS SPELLS)
 	# Get the forward direction based on current rotation
 	var direction = -transform.basis.z

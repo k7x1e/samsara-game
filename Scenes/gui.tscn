@@ -26,7 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Bars" type="Control" parent="." unique_id=2118262531]
+[node name="Bars" type="Control" parent="." unique_id=2118262531 groups=["updatable"]]
 custom_minimum_size = Vector2(900, 188)
 layout_mode = 1
 anchors_preset = 7
@@ -128,7 +128,7 @@ grow_vertical = 2
 theme_override_constants/separation = 20
 script = ExtResource("2_xnb2j")
 
-[node name="Spell1" type="Control" parent="spells/HBoxContainer" unique_id=120876537]
+[node name="Spell1" type="Control" parent="spells/HBoxContainer" unique_id=120876537 groups=["ticked"]]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -196,7 +196,7 @@ fill_mode = 4
 nine_patch_stretch = true
 texture_progress = ExtResource("3_n5m23")
 
-[node name="Spell2" type="Control" parent="spells/HBoxContainer" unique_id=2079626732]
+[node name="Spell2" type="Control" parent="spells/HBoxContainer" unique_id=2079626732 groups=["ticked"]]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -265,7 +265,7 @@ fill_mode = 4
 nine_patch_stretch = true
 texture_progress = ExtResource("3_n5m23")
 
-[node name="Spell3" type="Control" parent="spells/HBoxContainer" unique_id=1386412390]
+[node name="Spell3" type="Control" parent="spells/HBoxContainer" unique_id=1386412390 groups=["ticked"]]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -334,7 +334,7 @@ fill_mode = 4
 nine_patch_stretch = true
 texture_progress = ExtResource("3_n5m23")
 
-[node name="Spell4" type="Control" parent="spells/HBoxContainer" unique_id=1699544945]
+[node name="Spell4" type="Control" parent="spells/HBoxContainer" unique_id=1699544945 groups=["ticked"]]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -403,7 +403,7 @@ fill_mode = 4
 nine_patch_stretch = true
 texture_progress = ExtResource("3_n5m23")
 
-[node name="Spell5" type="Control" parent="spells/HBoxContainer" unique_id=2034597489]
+[node name="Spell5" type="Control" parent="spells/HBoxContainer" unique_id=2034597489 groups=["ticked"]]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0

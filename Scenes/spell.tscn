@@ -6,7 +6,7 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_6khjq"]
 
-[node name="Spell" type="Node3D" unique_id=252904442]
+[node name="Spell" type="Node3D" unique_id=252904442 groups=["ticked"]]
 script = ExtResource("1_nx6qu")
 speed = 0.5
 

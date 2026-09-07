@@ -165,3 +165,19 @@
 	#after a bunch of tomfoolery ive managed to fix the issues surrounding spells misfiring.
 	#21:29
 	#added a cool lantern
+	#21:44 
+	#fully implemented said lantern.
+	#
+	##08/09
+	#00:40
+	#i mean i got jack nor shit done today but the game made huge progress
+	#how
+	#also the game is running REALLY slowly so i really need to optimize some things.
+	#i think its time for the ticks.
+	#01:04
+	#finished a tick and update system. This will be inconvenient in the future but i managed to get process time down to a third.
+	#of course getting it down to a third is because i only run at a third.
+	#01:15
+	#ive optimized a bunch and realized a crucial flaw. Software rendering.
+	#of course the process time and rendering time somehow correlate when its the same spyware laden chip doing it.
+	#shite

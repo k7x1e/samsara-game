@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func tick():
 	if timer_active:
 		dim.value = spel.spellTimer.wait_time - spel.spellTimer.time_left
 

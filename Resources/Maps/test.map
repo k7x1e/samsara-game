@@ -7,12 +7,12 @@
 "classname" "worldspawn"
 // brush 0
 {
-( -192 192 8 ) ( -192 -1408 8 ) ( -192 -1408 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -192 1152 8 ) ( -192 -1408 8 ) ( -192 -1408 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
 ( -192 -1408 8 ) ( 192 -1408 8 ) ( 192 -1408 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
-( 192 -1408 -4 ) ( 192 192 -4 ) ( -192 192 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
-( -192 192 8 ) ( 192 192 8 ) ( 192 -1408 8 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
-( 192 192 -4 ) ( 192 192 8 ) ( -192 192 8 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
-( 192 -1408 8 ) ( 192 192 8 ) ( 192 192 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 192 -1408 -4 ) ( 192 1152 -4 ) ( -192 1152 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -192 1152 8 ) ( 192 1152 8 ) ( 192 -1408 8 ) placeholder_tex/CONCRETE/ASPHALT3 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( 192 1152 -4 ) ( 192 1152 8 ) ( -192 1152 8 ) placeholder_tex/CONCRETE/ASPHALT3 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 192 -1408 8 ) ( 192 1152 8 ) ( 192 1152 -4 ) placeholder_tex/CONCRETE/ASPHALT3 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
 }
 // brush 1
 {
@@ -124,12 +124,12 @@
 }
 // brush 13
 {
-( -448 192 16 ) ( -448 -1024 16 ) ( -448 -1040 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -448 1152 16 ) ( -448 -1024 16 ) ( -448 -1040 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
 ( -192 -1024 16 ) ( -172 -1040 -4 ) ( -448 -1040 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 1 0 0 0 ] [ 0 -2.7817808468846267e-16 1 324 ] 0 0.2 0.2
-( -172 -1040 -4 ) ( -172 192 -4 ) ( -448 192 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
-( -448 192 16 ) ( -192 192 16 ) ( -192 -1024 16 ) placeholder_tex/CONCRETE/GRYCON7 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
-( -448 192 -4 ) ( -172 192 -4 ) ( -192 192 16 ) placeholder_tex/CONCRETE/GRYCON7 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
-( -172 -1040 -4 ) ( -192 -1024 16 ) ( -192 192 16 ) placeholder_tex/CONCRETE/GRYCON7 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -172 -1040 -4 ) ( -172 1152 -4 ) ( -448 1152 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -448 1152 16 ) ( -192 1152 16 ) ( -192 -1024 16 ) placeholder_tex/CONCRETE/GRYCON7 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -448 1152 -4 ) ( -172 1152 -4 ) ( -192 1152 16 ) placeholder_tex/CONCRETE/GRYCON7 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -172 -1040 -4 ) ( -192 -1024 16 ) ( -192 1152 16 ) placeholder_tex/CONCRETE/GRYCON7 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
 }
 // brush 14
 {
@@ -245,12 +245,147 @@
 }
 // brush 26
 {
-( -960 -256 384 ) ( -960 -768 384 ) ( -960 -768 -4 ) "walls/122_England old bricks texture-seamless" [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
-( -960 -768 384 ) ( -448 -768 384 ) ( -448 -768 -4 ) "walls/122_England old bricks texture-seamless" [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -960 -256 192 ) ( -960 -768 192 ) ( -960 -768 -4 ) "walls/122_England old bricks texture-seamless" [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -960 -768 192 ) ( -448 -768 192 ) ( -448 -768 -4 ) "walls/122_England old bricks texture-seamless" [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
 ( -448 -768 -4 ) ( -448 -256 -4 ) ( -960 -256 -4 ) "walls/122_England old bricks texture-seamless" [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
-( -960 -256 384 ) ( -448 -256 384 ) ( -448 -768 384 ) "walls/122_England old bricks texture-seamless" [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
-( -448 -256 -4 ) ( -448 -256 384 ) ( -960 -256 384 ) "walls/122_England old bricks texture-seamless" [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
-( -448 -768 384 ) ( -448 -256 384 ) ( -448 -256 -4 ) "walls/122_England old bricks texture-seamless" [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -960 -256 192 ) ( -448 -256 192 ) ( -448 -768 192 ) "walls/122_England old bricks texture-seamless" [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -448 -256 -4 ) ( -448 -256 192 ) ( -960 -256 192 ) "walls/122_England old bricks texture-seamless" [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -448 -768 192 ) ( -448 -256 192 ) ( -448 -256 -4 ) "walls/122_England old bricks texture-seamless" [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+}
+// brush 27
+{
+( -464 -240 608 ) ( -464 -272 624 ) ( -464 -272 16 ) placeholder_tex/MINERALS/REDSTONE [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -464 -272 624 ) ( -432 -272 624 ) ( -432 -272 16 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -432 -272 16 ) ( -432 -240 16 ) ( -464 -240 16 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -464 -240 608 ) ( -432 -240 608 ) ( -432 -272 624 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -432 -240 16 ) ( -432 -240 608 ) ( -464 -240 608 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -432 -272 624 ) ( -432 -240 608 ) ( -432 -240 16 ) placeholder_tex/MINERALS/REDSTONE [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+}
+// brush 28
+{
+( -464 -752 624 ) ( -464 -784 608 ) ( -464 -784 16 ) placeholder_tex/MINERALS/REDSTONE [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -464 -784 608 ) ( -432 -784 608 ) ( -432 -784 16 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -464 -752 624 ) ( -432 -752 624 ) ( -432 -784 608 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -432 -784 16 ) ( -432 -752 16 ) ( -464 -752 16 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -432 -752 16 ) ( -432 -752 624 ) ( -464 -752 624 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -432 -784 608 ) ( -432 -752 624 ) ( -432 -752 16 ) placeholder_tex/MINERALS/REDSTONE [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+}
+// brush 29
+{
+( -976 -752 624 ) ( -976 -784 608 ) ( -976 -784 16 ) placeholder_tex/MINERALS/REDSTONE [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -976 -784 608 ) ( -944 -784 608 ) ( -944 -784 16 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -976 -752 624 ) ( -944 -752 624 ) ( -944 -784 608 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -944 -784 16 ) ( -944 -752 16 ) ( -976 -752 16 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -944 -752 16 ) ( -944 -752 624 ) ( -976 -752 624 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -944 -784 608 ) ( -944 -752 624 ) ( -944 -752 16 ) placeholder_tex/MINERALS/REDSTONE [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+}
+// brush 30
+{
+( -992 -224 208 ) ( -992 -800 208 ) ( -992 -800 192 ) placeholder_tex/MINERALS/REDSTONE [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -992 -800 208 ) ( -416 -800 208 ) ( -416 -800 192 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -416 -800 192 ) ( -416 -224 192 ) ( -992 -224 192 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -992 -224 208 ) ( -416 -224 208 ) ( -416 -800 208 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -416 -224 192 ) ( -416 -224 208 ) ( -992 -224 208 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -416 -800 208 ) ( -416 -224 208 ) ( -416 -224 192 ) placeholder_tex/MINERALS/REDSTONE [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 31
+{
+( -960 -256 576 ) ( -960 -768 576 ) ( -960 -768 208 ) placeholder_tex/WOOD/WHTWOOD2 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -960 -768 576 ) ( -448 -768 576 ) ( -448 -768 208 ) placeholder_tex/WOOD/WHTWOOD2 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -448 -768 208 ) ( -448 -256 208 ) ( -960 -256 208 ) placeholder_tex/WOOD/WHTWOOD2 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -960 -256 576 ) ( -448 -256 576 ) ( -448 -768 576 ) placeholder_tex/WOOD/WHTWOOD2 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -448 -256 208 ) ( -448 -256 576 ) ( -960 -256 576 ) placeholder_tex/WOOD/WHTWOOD2 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -448 -768 576 ) ( -448 -256 576 ) ( -448 -256 208 ) placeholder_tex/WOOD/WHTWOOD2 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+}
+// brush 32
+{
+( -992 -224 400 ) ( -992 -800 400 ) ( -992 -800 384 ) placeholder_tex/MINERALS/REDSTONE [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -992 -800 400 ) ( -416 -800 400 ) ( -416 -800 384 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -416 -800 384 ) ( -416 -224 384 ) ( -992 -224 384 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -992 -224 400 ) ( -416 -224 400 ) ( -416 -800 400 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -416 -224 384 ) ( -416 -224 400 ) ( -992 -224 400 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -416 -800 400 ) ( -416 -224 400 ) ( -416 -224 384 ) placeholder_tex/MINERALS/REDSTONE [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 33
+{
+( -960 -576 704 ) ( -960 -768 608 ) ( -960 -768 576 ) placeholder_tex/WOOD/WHTWOOD2 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -960 -768 608 ) ( -448 -768 608 ) ( -448 -768 576 ) placeholder_tex/WOOD/WHTWOOD2 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -960 -576 704 ) ( -448 -576 704 ) ( -448 -768 608 ) placeholder_tex/WOOD/WHTWOOD2 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -448 -768 576 ) ( -448 -576 576 ) ( -960 -576 576 ) placeholder_tex/WOOD/WHTWOOD2 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -448 -576 576 ) ( -448 -576 704 ) ( -960 -576 704 ) placeholder_tex/WOOD/WHTWOOD2 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -448 -768 608 ) ( -448 -576 704 ) ( -448 -576 576 ) placeholder_tex/WOOD/WHTWOOD2 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+}
+// brush 34
+{
+( -960 -256 608 ) ( -960 -448 704 ) ( -960 -448 576 ) placeholder_tex/WOOD/WHTWOOD2 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -960 -448 704 ) ( -448 -448 704 ) ( -448 -448 576 ) placeholder_tex/WOOD/WHTWOOD2 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -448 -448 576 ) ( -448 -256 576 ) ( -960 -256 576 ) placeholder_tex/WOOD/WHTWOOD2 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -960 -256 608 ) ( -448 -256 608 ) ( -448 -448 704 ) placeholder_tex/WOOD/WHTWOOD2 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -448 -256 576 ) ( -448 -256 608 ) ( -960 -256 608 ) placeholder_tex/WOOD/WHTWOOD2 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -448 -448 704 ) ( -448 -256 608 ) ( -448 -256 576 ) placeholder_tex/WOOD/WHTWOOD2 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+}
+// brush 35
+{
+( -960 -448 704 ) ( -960 -576 704 ) ( -960 -576 576 ) placeholder_tex/WOOD/WHTWOOD2 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -960 -576 704 ) ( -448 -576 704 ) ( -448 -576 576 ) placeholder_tex/WOOD/WHTWOOD2 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -448 -576 576 ) ( -448 -448 576 ) ( -960 -448 576 ) placeholder_tex/WOOD/WHTWOOD2 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -960 -448 704 ) ( -448 -448 704 ) ( -448 -576 704 ) placeholder_tex/WOOD/WHTWOOD2 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -448 -448 576 ) ( -448 -448 704 ) ( -960 -448 704 ) placeholder_tex/WOOD/WHTWOOD2 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -448 -576 704 ) ( -448 -448 704 ) ( -448 -448 576 ) placeholder_tex/WOOD/WHTWOOD2 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+}
+// brush 36
+{
+( -992 -576 720 ) ( -992 -832 592 ) ( -992 -832 576 ) placeholder_tex/MINERALS/REDSTONE [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -992 -832 592 ) ( -416 -832 592 ) ( -416 -832 576 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -416 -832 592 ) ( -992 -832 592 ) ( -992 -576 720 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -416 -832 576 ) ( -416 -576 704 ) ( -992 -576 704 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -416 -576 704 ) ( -416 -576 720 ) ( -992 -576 720 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -416 -832 592 ) ( -416 -576 720 ) ( -416 -576 704 ) placeholder_tex/MINERALS/REDSTONE [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 37
+{
+( -992 -192 592 ) ( -992 -448 720 ) ( -992 -448 704 ) placeholder_tex/MINERALS/REDSTONE [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -992 -448 720 ) ( -416 -448 720 ) ( -416 -448 704 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -416 -448 704 ) ( -416 -192 576 ) ( -992 -192 576 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -992 -192 592 ) ( -416 -192 592 ) ( -416 -448 720 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -416 -192 576 ) ( -416 -192 592 ) ( -992 -192 592 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -416 -448 720 ) ( -416 -192 592 ) ( -416 -192 576 ) placeholder_tex/MINERALS/REDSTONE [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 38
+{
+( -992 -448 720 ) ( -992 -576 720 ) ( -992 -576 704 ) placeholder_tex/MINERALS/REDSTONE [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -992 -576 720 ) ( -416 -576 720 ) ( -416 -576 704 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -416 -576 704 ) ( -416 -448 704 ) ( -992 -448 704 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -992 -448 720 ) ( -416 -448 720 ) ( -416 -576 720 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -416 -448 704 ) ( -416 -448 720 ) ( -992 -448 720 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -416 -576 720 ) ( -416 -448 720 ) ( -416 -448 704 ) placeholder_tex/MINERALS/REDSTONE [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 39
+{
+( -976 -240 608 ) ( -976 -272 624 ) ( -976 -272 16 ) placeholder_tex/MINERALS/REDSTONE [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -976 -272 624 ) ( -944 -272 624 ) ( -944 -272 16 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -944 -272 16 ) ( -944 -240 16 ) ( -976 -240 16 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -976 -240 608 ) ( -944 -240 608 ) ( -944 -272 624 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( -944 -240 16 ) ( -944 -240 608 ) ( -976 -240 608 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( -944 -272 624 ) ( -944 -240 608 ) ( -944 -240 16 ) placeholder_tex/MINERALS/REDSTONE [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+}
+// brush 40
+{
+( -992 -240 592 ) ( -992 -784 592 ) ( -992 -784 576 ) placeholder_tex/MINERALS/REDSTONE [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -992 -784 592 ) ( -416 -784 592 ) ( -416 -784 576 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -416 -784 576 ) ( -416 -240 576 ) ( -992 -240 576 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -992 -240 592 ) ( -416 -240 592 ) ( -416 -784 592 ) placeholder_tex/MINERALS/REDSTONE [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -416 -240 576 ) ( -416 -240 592 ) ( -992 -240 592 ) placeholder_tex/MINERALS/REDSTONE [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -416 -784 592 ) ( -416 -240 592 ) ( -416 -240 576 ) placeholder_tex/MINERALS/REDSTONE [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 41
+{
+( 192 192 16 ) ( 176 192 -4 ) ( 176 1168 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 192 192 16 ) ( 704 192 16 ) ( 704 192 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 704 192 -4 ) ( 704 1168 -4 ) ( 176 1168 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( 192 1152 16 ) ( 704 1152 16 ) ( 704 192 16 ) placeholder_tex/CONCRETE/GRYCON7 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.2 0.2
+( 176 1168 -4 ) ( 704 1168 -4 ) ( 704 1152 16 ) placeholder_tex/CONCRETE/GRYCON7 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
+( 704 1152 16 ) ( 704 1168 -4 ) ( 704 192 -4 ) placeholder_tex/CONCRETE/GRYCON7 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.2 0.2
 }
 }
 // entity 1
@@ -349,4 +484,85 @@
 {
 "classname" "drain"
 "origin" "424 -328 16"
+}
+// entity 18
+{
+"classname" "lantern"
+"origin" "-424 8 120"
+}
+// entity 19
+{
+"classname" "lantern"
+"origin" "-424 -632 104"
+}
+// entity 20
+{
+"classname" "lantern"
+"origin" "-424 -392 104"
+}
+// entity 21
+{
+"classname" "LampPost"
+"origin" "-264 840 24"
+"angle" "270"
+}
+// entity 22
+{
+"classname" "LampPost"
+"origin" "-264 584 24"
+"angle" "270"
+}
+// entity 23
+{
+"classname" "LampPost"
+"origin" "-264 328 24"
+"angle" "270"
+}
+// entity 24
+{
+"classname" "LampPost"
+"origin" "-264 1096 24"
+"angle" "270"
+}
+// entity 25
+{
+"classname" "LampPost"
+"origin" "264 328 24"
+"angle" "270"
+}
+// entity 26
+{
+"classname" "LampPost"
+"origin" "264 584 24"
+"angle" "270"
+}
+// entity 27
+{
+"classname" "LampPost"
+"origin" "264 840 24"
+"angle" "270"
+}
+// entity 28
+{
+"classname" "LampPost"
+"origin" "264 1096 24"
+"angle" "270"
+}
+// entity 29
+{
+"classname" "LampPost"
+"origin" "-264 -1352 24"
+"angle" "135"
+}
+// entity 30
+{
+"classname" "LampPost"
+"origin" "-520 -1352 24"
+"angle" "180"
+}
+// entity 31
+{
+"classname" "LampPost"
+"origin" "-776 -1352 24"
+"angle" "180"
 }

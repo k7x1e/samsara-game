@@ -4,6 +4,15 @@ extends Node3D
 
 @onready var preloadshitfuck = load("user://Save/saves.sav")
 
+@export var tickrate: float ##per second
+@export var updaterate: float ##per 10 seconds
+
+var tickdelay:float
+var ticktick: float = 0.0
+
+var updatedelay: float
+var updatetick: float = 0.0
+
 var Menu
 var toggled = false
 var paused = false
@@ -11,7 +20,11 @@ var inDialogue = false
 var dialogueMenu
 var pauseMenu
 
+var isPaused = false
+
 func _ready():
+	updatedelay = 10.0 / updaterate
+	tickdelay = 1.0 / tickrate
 	Globals.Root = self
 	if preloadshitfuck:
 		gamestate = preloadshitfuck
@@ -29,6 +42,25 @@ func _physics_process(_delta: float) -> void:
 		save()
 	if Input.is_action_just_pressed("evilDebugKey"):
 		loadSave(2)
+	ticktick += _delta
+	updatetick += _delta
+	if ticktick >= tickdelay and !isPaused:
+		#print("ticking")
+		signaltick()
+		ticktick = 0.0
+	if updatetick >= updatedelay and !isPaused:
+		signalupdate()
+		updatetick = 0.0
+
+func signaltick():
+	var tickable = get_tree().get_nodes_in_group("ticked")
+	for object in tickable:
+		object.tick()
+	
+func signalupdate():
+	var updatable = get_tree().get_nodes_in_group("updatable")
+	for object in updatable:
+		object.update()
 
 func startDialogue(theconvo: conversation):
 	Globals.dialogueMenu.index = 0
@@ -83,9 +115,11 @@ func toggleMenu():
 func pause(Paused: bool):
 	var pausable = get_tree().get_nodes_in_group("Pausable")
 	if Paused:
+		isPaused = true
 		for object in pausable:
 			object.process_mode = Node.PROCESS_MODE_DISABLED
 	else:
+		isPaused = false
 		for object in pausable:
 			object.process_mode = Node.PROCESS_MODE_INHERIT
 

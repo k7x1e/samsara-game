@@ -2,11 +2,16 @@
 
 [ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_rliun"]
 [ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="2_md17n"]
-[ext_resource type="PackedScene" uid="uid://da8klov8goj42" path="res://Models/lantern.glb" id="2_n5jeh"]
+[ext_resource type="PackedScene" uid="uid://d2py2h2xe5qhq" path="res://Scenes/models/lantern.tscn" id="2_n5jeh"]
 
 [resource]
 script = ExtResource("2_md17n")
 scene_file = ExtResource("2_n5jeh")
 classname = "lantern"
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8),
+"studio": "\"lantern.glb\""
+})
 node_class = "Node3D"
 metadata/_custom_type_script = "uid://ldfqjtq0br35"

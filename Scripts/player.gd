@@ -74,19 +74,27 @@ func recoverHealth():
 		health += health_recovery
 	canRecoverhealth = true
 
-func _physics_process(delta: float) -> void:
+func tick():
 	if canRecoverMana:
 		recoverMana()
 	if canRecoverhealth:
 		recoverHealth()
 	
+	if Input.is_action_just_pressed("interact"):
+		checkDialogue()
+	look_at_mouse()
+	setCursor()
+	
+#move over all that isnt acute to the tick
+func _physics_process(delta: float) -> void:
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	#call mouselook func
-	look_at_mouse()
 	
+	#call mouselook func
+	#look_at_mouse()
 	#swage movement m8
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -100,8 +108,7 @@ func _physics_process(delta: float) -> void:
 	#bitch dash, to be replaced
 	#actually ykw why are we even doing the casting here?
 	#check for dialogue
-	if Input.is_action_just_pressed("interact"):
-		checkDialogue()
+	
 	
 	move_and_slide()
 
@@ -115,7 +122,6 @@ func checkDialogue():
 
 #evil ass mouselook function niggaaaa
 func look_at_mouse():
-	setCursor()
 	var mouse_pos = get_viewport().get_mouse_position()
 	
 	#ray

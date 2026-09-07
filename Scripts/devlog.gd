@@ -161,3 +161,7 @@
 	#im starting to lose it i dont want to touch any of this this game will suck ass and im the only one putting any effort into it
 	#18:02
 	#i dont know what to do
+	#20:29
+	#after a bunch of tomfoolery ive managed to fix the issues surrounding spells misfiring.
+	#21:29
+	#added a cool lantern

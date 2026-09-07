@@ -3,7 +3,9 @@ extends Resource
 class_name spell
 
 @export var spellNode: PackedScene
+@export var basecost: int
 @export var cost: int
+@export var basecoolDown: float = 1.0 #IN SECONDS
 @export var coolDown: float = 1.0 #IN SECONDS
 
 #implemented
@@ -19,10 +21,14 @@ class_name spell
 @export var spellTimer: Variant
 @export var parentItemUID: int
 
+var curThreads: int = 0
+
 func cast(caster: Variant):
+	#print (curThreads)
 	#Globals.Player
 	updateStats()
-	if castable and Globals.Player.mana >= cost:
+	if castable and !cooldown_active and Globals.Player.mana >= cost and curThreads == 0:
+		castable = false
 		var actualNode = spellNode.instantiate()
 		Globals.Root.add_child(actualNode)
 		actualNode.global_rotation = caster.global_rotation
@@ -37,19 +43,22 @@ func cast(caster: Variant):
 		return false
 
 func updateStats():
-	self.coolDown -= Globals.stats.stats[1] * 0.25
-	self.cost -= int(Globals.stats.stats[1] / 10) * 25
+	self.coolDown = basecoolDown - (int(Globals.stats.stats[1] / 5) * 0.25)
+	#print (coolDown, basecoolDown)
+	self.cost = basecost - (int(Globals.stats.stats[1] / 10) * 25)
+	#print(cost, basecost)
 
 func cooldown():
+	curThreads += 1
 	spellTimer = Timer.new()
 	Globals.spellMaster.add_child(spellTimer)
-	castable = false
 	uiNode.dim.show()
 	uiNode.timer_active = true
 	uiNode.timerNode = spellTimer
 	spellTimer.start(coolDown)
 	uiNode.dim.max_value = spellTimer.wait_time
 	await Engine.get_main_loop().create_timer(coolDown).timeout
+	curThreads -= 1
 	cooldown_active = false
 	uiNode.dim.hide()
 	castable = true

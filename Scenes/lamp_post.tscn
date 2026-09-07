@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cv1a2spb7dc7b"]
 
 [ext_resource type="PackedScene" uid="uid://cudxfh8rneqcv" path="res://Models/lampPost3.glb" id="1_la7ei"]
+[ext_resource type="ArrayMesh" uid="uid://bsfmse6ulqrh4" path="res://Resources/new_array_mesh.tres" id="2_26ten"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_la7ei"]
 height = 6.1293945
@@ -11,6 +12,9 @@ radius = 0.29052734
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1905396169]
 
 [node name="lampPost3" parent="StaticBody3D" unique_id=1802787284 instance=ExtResource("1_la7ei")]
+
+[node name="Cube" parent="StaticBody3D/lampPost3" index="3" unique_id=809673335]
+mesh = ExtResource("2_26ten")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1625508557]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0692353, 0)
@@ -33,3 +37,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96, 6.378, 0)
 light_color = Color(0.6720421, 0.5009419, 0, 1)
 light_energy = 1.5
 omni_range = 30.0
+
+[editable path="StaticBody3D/lampPost3"]

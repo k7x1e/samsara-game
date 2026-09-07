@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://46ih54x660e3"]
+
+[ext_resource type="Texture2D" uid="uid://beppbc3ib4bn1" path="res://textures/placeholder_tex/WOOD/CEDFENCE.png" id="1_1dlww"]
+
+[resource]
+albedo_texture = ExtResource("1_1dlww")
+metallic_specular = 0.0
+texture_filter = 2

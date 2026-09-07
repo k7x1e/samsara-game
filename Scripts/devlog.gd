@@ -153,3 +153,5 @@
 	#no fuck that ill make some cool models
 	#13:40
 	#been doing a whole lot of bullshit
+	#14:49
+	#redid the mouselook/cursor function

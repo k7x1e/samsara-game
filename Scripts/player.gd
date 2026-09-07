@@ -115,6 +115,31 @@ func checkDialogue():
 
 #evil ass mouselook function niggaaaa
 func look_at_mouse():
+	setCursor()
+	var mouse_pos = get_viewport().get_mouse_position()
+	
+	#ray
+	var ray_origin = camera.project_ray_origin(mouse_pos)
+	var direction = camera.project_ray_normal(mouse_pos)
+	
+	var plane = Plane(Vector3.UP, 0.0)
+	
+	var hit = plane.intersects_ray(ray_origin, direction)
+	
+	if hit != null:
+		var localmousePos = hit
+		globalmousePos = hit
+		
+		localmousePos.y = global_position.y
+		if global_position.distance_to(localmousePos) > 0.1:
+			cursorNode.global_position = localmousePos
+			rotationNode.look_at(localmousePos, Vector3.UP)
+	else:
+		print("failing somehow")
+		return Vector3.ZERO
+
+#use old cursor functionality
+func setCursor():
 	var spacestate = get_world_3d().direct_space_state
 	var mouse_pos = get_viewport().get_mouse_position()
 	
@@ -126,12 +151,5 @@ func look_at_mouse():
 	
 	#check result
 	var result = spacestate.intersect_ray(query)
-	if result.has("position"):
-		var localmousePos = result["position"]
-		globalmousePos = result["position"]
-		
-		localmousePos.y = global_position.y
-		
-		if global_position.distance_to(localmousePos) > 0.1:
-			cursorNode.global_position = result["position"]
-			rotationNode.look_at(localmousePos, Vector3.UP)
+	if result.has("position") and global_position.distance_to(result["position"]) > 0.1:
+		cursorNode.global_position = result["position"]

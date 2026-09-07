@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cine2pxbjr6ec" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Script" uid="uid://buvsbboygw12p" path="res://Scripts/wizard.gd" id="2_dewec"]
-[ext_resource type="Texture2D" uid="uid://b8iv4i2fey054" path="res://icon.svg" id="2_gntrk"]
 [ext_resource type="Script" uid="uid://brua5tb5kc0it" path="res://Scripts/classes/itemClass.gd" id="2_megsn"]
 [ext_resource type="Script" uid="uid://2byv6rxls8gu" path="res://Scripts/classes/Items/ItemIdHandler.gd" id="2_miouo"]
 [ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/classes/spells/spell.gd" id="3_5ixxa"]
@@ -15,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://grrdhtwvlugn" path="res://Resources/Spells/heal_spell.tres" id="9_o3h8g"]
 [ext_resource type="Script" uid="uid://x7tekc2114cw" path="res://Scripts/classes/stats.gd" id="10_o3h8g"]
 [ext_resource type="Resource" uid="uid://bvx7kyepfo1oa" path="res://Resources/Spells/placeholder.tres" id="12_miouo"]
+[ext_resource type="Texture2D" uid="uid://dhmu0toe1itnr" path="res://addons/func_godot/textures/clip.png" id="15_1e7my"]
 
 [sub_resource type="Resource" id="Resource_o3h8g"]
 script = ExtResource("2_miouo")
@@ -99,7 +99,7 @@ placeholderSpell = ExtResource("12_miouo")
 
 [node name="Sprite3D" type="Sprite3D" parent="Cursor" unique_id=523440784]
 billboard = 1
-texture = ExtResource("2_gntrk")
+texture = ExtResource("15_1e7my")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=109639042]
 

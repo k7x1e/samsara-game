@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("2_xsgk1")
 scene = ExtResource("1_w4qst")
-position = Vector3(-6.8780046, 0.2762599, 0.9218621)
+position = Vector3(-0.12994671, 1.743719, -34.62157)
 name = "Placeholder Actor"
 metadata/_custom_type_script = "uid://b3rylldbgh8gp"

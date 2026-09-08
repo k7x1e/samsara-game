@@ -8,7 +8,9 @@
 [sub_resource type="Resource" id="Resource_a0dko"]
 script = ExtResource("3_qc33c")
 spellNode = ExtResource("4_4n8aw")
+basecost = 500
 cost = 500
+basecoolDown = 30.0
 coolDown = 30.0
 name = "Lightning Strike"
 Icon = ExtResource("1_a0dko")

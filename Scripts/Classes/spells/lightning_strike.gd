@@ -8,8 +8,6 @@ extends Node3D
 func initialize() -> void:
 	print("ive been cast")
 	self.global_position = Globals.Player.globalmousePos
-	var cameraTargetPos = Vector3(Globals.Player.camera.global_position.x, global_position.y, Globals.Player.camera.global_position.z)
-	self.look_at(cameraTargetPos)
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 	if effectArea.has_overlapping_bodies():

@@ -8,4 +8,4 @@ process_mode = 3
 script = ExtResource("1_kldst")
 gamestate = ExtResource("2_gl6un")
 tickrate = 60.0
-updaterate = 1.0
+updaterate = 10.0

@@ -11,6 +11,7 @@
 script = ExtResource("6_imt7d")
 game_name = "Samsonarum"
 icon = ExtResource("5_q8ef7")
+palette_path = ""
 fgd_file = ExtResource("4_q8ef7")
 entity_scale = "1"
 metadata/_custom_type_script = "uid://cx44c4vnq8bt5"

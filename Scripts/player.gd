@@ -128,7 +128,7 @@ func look_at_mouse():
 	var ray_origin = camera.project_ray_origin(mouse_pos)
 	var direction = camera.project_ray_normal(mouse_pos)
 	
-	var plane = Plane(Vector3.UP, 0.0)
+	var plane = Plane(Vector3.UP, global_position.y)
 	
 	var hit = plane.intersects_ray(ray_origin, direction)
 	

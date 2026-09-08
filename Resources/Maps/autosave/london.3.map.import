@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://daekhakcurb87"
+path="res://.godot/imported/london.3.map-d338c5c258fb1b22528c30a0e676a34c.tres"
+
+[deps]
+
+source_file="res://Resources/Maps/autosave/london.3.map"
+dest_files=["res://.godot/imported/london.3.map-d338c5c258fb1b22528c30a0e676a34c.tres"]
+
+[params]
+

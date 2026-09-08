@@ -6,7 +6,7 @@
 [node name="lantern" type="Node3D" unique_id=742290621]
 
 [node name="lantern" parent="." unique_id=2124839038 instance=ExtResource("1_vhu8j")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0.15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.15)
 
 [node name="Cylinder_002" parent="lantern" index="3" unique_id=1764523775]
 layers = 2
@@ -14,9 +14,8 @@ layers = 2
 [node name="OmniLight3D" type="OmniLight3D" parent="lantern" unique_id=316284723]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17840688, 0)
 light_color = Color(0.57090336, 0.42544308, 0, 1)
-light_energy = 1.5
+light_energy = 2.274
 light_bake_mode = 1
-shadow_enabled = true
 shadow_caster_mask = 4294967293
 omni_range = 30.0
 

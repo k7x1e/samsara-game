@@ -185,3 +185,6 @@
 	#going to start off by adding shadow size to settings.
 	#10:00
 	#I believe ive at the very least added basic functionality for changing the shadow size.
+	#22:07
+	#ive not really gotten much done today outside of mapping and textures.
+	#began work on FULL london map.

@@ -36,6 +36,7 @@ func cast(caster: Variant):
 		actualNode.set_owner(Globals.Root)
 		actualNode.initialize()
 		Globals.Player.mana -= cost
+		print(Globals.Player.mana)
 		cooldown_active = true
 		cooldown()
 		return true

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b5lhqq81k3m47"]
+
+[ext_resource type="Texture2D" uid="uid://cp4npq5ipug7l" path="res://textures/walls/shitbricks.jpg" id="1_ei75f"]
+
+[resource]
+albedo_texture = ExtResource("1_ei75f")
+metallic_specular = 0.0
+texture_filter = 2

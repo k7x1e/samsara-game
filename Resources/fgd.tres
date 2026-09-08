@@ -8,10 +8,11 @@
 [ext_resource type="Resource" uid="uid://ddwcqvbad6plq" path="res://Resources/trenchbroom/lamppost.tres" id="5_ei1db"]
 [ext_resource type="Resource" uid="uid://dmqw1b0fkn2eq" path="res://Resources/trenchbroom/drain.tres" id="6_tbbir"]
 [ext_resource type="Resource" uid="uid://csjql2qh15dkn" path="res://Resources/trenchbroom/lantern.tres" id="7_u87at"]
+[ext_resource type="Resource" uid="uid://dy4oj3w6x8evv" path="res://Resources/trenchbroom/barrel.tres" id="8_odwdo"]
 
 [resource]
 script = ExtResource("1_nxjbw")
 fgd_name = "Samsonarum"
 base_fgd_files = Array[Resource]([ExtResource("1_thwb8")])
-entity_definitions = Array[Resource]([ExtResource("2_ihtdy"), ExtResource("3_ei1db"), ExtResource("4_tbbir"), ExtResource("5_ei1db"), ExtResource("6_tbbir"), ExtResource("7_u87at")])
+entity_definitions = Array[Resource]([ExtResource("2_ihtdy"), ExtResource("3_ei1db"), ExtResource("4_tbbir"), ExtResource("5_ei1db"), ExtResource("6_tbbir"), ExtResource("7_u87at"), ExtResource("8_odwdo")])
 metadata/_custom_type_script = "uid://drlmgulwbjwqu"

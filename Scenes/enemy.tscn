@@ -32,6 +32,9 @@ radius = 2.018302
 [node name="Actor" type="CharacterBody3D" unique_id=1866149922 groups=["Pausable", "ticked"]]
 collision_layer = 9
 collision_mask = 9
+floor_stop_on_slope = false
+floor_block_on_wall = false
+floor_max_angle = 3.1415927
 script = ExtResource("1_0830c")
 NpcClass = SubResource("Resource_7ei5c")
 

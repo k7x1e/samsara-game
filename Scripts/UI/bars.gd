@@ -4,6 +4,6 @@ extends Control
 @onready var manaB = $mana/bar
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func update():
+func tick():
 	healthB.value = Globals.Player.health
 	manaB.value = Globals.Player.mana

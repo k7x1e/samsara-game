@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.palette"
+type="Resource"
+uid="uid://dnohdps8r1wle"
+path="res://.godot/imported/palette.lmp-546a09c3c132bad63897d865b559b124.tres"
+
+[deps]
+
+source_file="res://Textures/palette.lmp"
+dest_files=["res://.godot/imported/palette.lmp-546a09c3c132bad63897d865b559b124.tres"]
+
+[params]
+

@@ -8,7 +8,9 @@
 [sub_resource type="Resource" id="Resource_ulo2v"]
 script = ExtResource("3_hxswb")
 spellNode = ExtResource("4_vf0wm")
+basecost = 200
 cost = 200
+basecoolDown = 20.0
 coolDown = 20.0
 name = "Spell"
 Icon = ExtResource("1_7ncdq")

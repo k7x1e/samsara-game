@@ -7,7 +7,7 @@
 resource_name = "Material.001"
 cull_mode = 2
 albedo_color = Color(0.0063275467, 0.0063275467, 0.0063275467, 1)
-metallic = 0.65
+metallic = 0.81
 roughness = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlh6e"]
@@ -93,10 +93,9 @@ shape = SubResource("CylinderShape3D_la7ei")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=977519396]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.617672, 0)
-light_color = Color(0.57090336, 0.42544308, 0, 1)
-light_energy = 1.5
+light_color = Color(0.6120014, 0.4536134, 0, 1)
+light_energy = 2.111
 light_bake_mode = 1
-shadow_enabled = true
 shadow_caster_mask = 4294967293
 omni_range = 30.0
 

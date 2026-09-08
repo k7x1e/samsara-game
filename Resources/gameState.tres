@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://b3rylldbgh8gp"
 [sub_resource type="Resource" id="Resource_7lihs"]
 script = ExtResource("1_8ag07")
 scene = ExtResource("3_f4myi")
-position = Vector3(2.8345394, 1.2500005, 3.916432)
+position = Vector3(26.613056, 1.5, 74.634575)
 name = "Player"
 metadata/_custom_type_script = "uid://b3rylldbgh8gp"
 

@@ -181,3 +181,7 @@
 	#ive optimized a bunch and realized a crucial flaw. Software rendering.
 	#of course the process time and rendering time somehow correlate when its the same spyware laden chip doing it.
 	#shite
+	#09:52
+	#going to start off by adding shadow size to settings.
+	#10:00
+	#I believe ive at the very least added basic functionality for changing the shadow size.

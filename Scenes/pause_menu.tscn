@@ -10,6 +10,7 @@
 [ext_resource type="LabelSettings" uid="uid://b1ril15u6t25p" path="res://Resources/sampleLabel.tres" id="7_sjs17"]
 [ext_resource type="Script" uid="uid://c4ddkm6wi5mas" path="res://Scripts/UI/settingsMenu.gd" id="9_stj27"]
 [ext_resource type="Script" uid="uid://dgpn8lfjmaaj8" path="res://Scripts/UI/resolutionPicker.gd" id="10_ix48p"]
+[ext_resource type="Script" uid="uid://bajopykwbkmi5" path="res://Scripts/UI/shadowsize.gd" id="11_524vl"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_524vl"]
 texture = ExtResource("6_ix48p")
@@ -18,7 +19,6 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="PauseMenu" type="Control" unique_id=782323223]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -207,6 +207,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("10_ix48p")
+
+[node name="shadow" type="Panel" parent="menu/VBoxContainer/PanelContainer/Settings/VBoxContainer" unique_id=2102913500]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="name" type="Label" parent="menu/VBoxContainer/PanelContainer/Settings/VBoxContainer/shadow" unique_id=2075256852]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 346.0
+offset_bottom = 35.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_myy0f")
+text = "ShadowSize"
+label_settings = ExtResource("7_sjs17")
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="menu/VBoxContainer/PanelContainer/Settings/VBoxContainer/shadow" unique_id=180931743]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="OptionButton" type="OptionButton" parent="menu/VBoxContainer/PanelContainer/Settings/VBoxContainer/shadow/Control" unique_id=522844123]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_524vl")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="menu/VBoxContainer/PanelContainer/Settings/VBoxContainer" unique_id=1728761902]
 custom_minimum_size = Vector2(0, 40)

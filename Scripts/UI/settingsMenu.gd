@@ -8,6 +8,10 @@ var backupScale
 var resolutionValue: Vector2i = Vector2i(1920,1080)
 var backupResolution
 
+@onready var shadowPicker = $VBoxContainer/shadow/Control/OptionButton
+var shadowValue: int = 1024
+var backupshadow
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.settingsMenu = self
@@ -41,7 +45,7 @@ func loadSettings():
 	return settingdata
 
 func saveSettings(toFile: bool):
-	#ProjectSettings.set_setting("display/window/stretch/scale", scaleSlider.value)
+	ProjectSettings.set_setting("rendering/lights_and_shadows/directional_shadow/size", shadowValue)
 	get_window().content_scale_factor = scaleValue
 	DisplayServer.window_set_size(resolutionValue)
 	if toFile:

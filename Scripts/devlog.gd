@@ -210,3 +210,5 @@
 	#trams working now. They only need models, tracks and some fancy animations.
 	#13:53
 	#added an insanely ugly model for the tram. Crashing out soon
+	#17:03
+	#i am home now. I will immediately do the things ive been forgetting to. (I.E migrating the id handler to be a global class.

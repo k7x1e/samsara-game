@@ -3,20 +3,19 @@
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_fo5ed"]
 [ext_resource type="Script" uid="uid://casbs53tk6ea7" path="res://Scripts/london.gd" id="1_no8kt"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_5ukr8"]
-[ext_resource type="Material" uid="uid://cq13l28n0b6wb" path="res://textures/walls/stones.tres" id="3_1cojt"]
-[ext_resource type="Material" uid="uid://b5lhqq81k3m47" path="res://textures/walls/shitbricks.tres" id="4_yq1aw"]
-[ext_resource type="Material" uid="uid://b57c556rfh6eu" path="res://textures/walls/stones2.tres" id="5_pyn1s"]
-[ext_resource type="Material" uid="uid://d2jvvestwm6l4" path="res://textures/walls/wood-pillar.tres" id="6_no8kt"]
+[ext_resource type="Material" uid="uid://cq13l28n0b6wb" path="res://Textures/walls/stones.tres" id="3_1cojt"]
+[ext_resource type="Material" uid="uid://b5lhqq81k3m47" path="res://Textures/walls/shitbricks.tres" id="4_yq1aw"]
+[ext_resource type="Material" uid="uid://b57c556rfh6eu" path="res://Textures/walls/stones2.tres" id="5_pyn1s"]
+[ext_resource type="Material" uid="uid://d2jvvestwm6l4" path="res://Textures/walls/wood-pillar.tres" id="6_no8kt"]
 [ext_resource type="PackedScene" uid="uid://iucjrslv446t" path="res://Scenes/enemy.tscn" id="7_k7acu"]
-[ext_resource type="Material" uid="uid://o0gey3geom8x" path="res://textures/walls/whiteconcrete.tres" id="7_xbk3s"]
+[ext_resource type="Material" uid="uid://o0gey3geom8x" path="res://Textures/walls/whiteconcrete.tres" id="7_xbk3s"]
 [ext_resource type="PackedScene" uid="uid://cv1a2spb7dc7b" path="res://Scenes/models/lamp_post.tscn" id="8_5v1tr"]
-[ext_resource type="Material" path="res://textures/placeholder_tex/MINERALS/REDSTONE.tres" id="8_i4fjy"]
 [ext_resource type="Environment" uid="uid://lyhkdkhxwhlj" path="res://Resources/game_environment.tres" id="8_k7acu"]
-[ext_resource type="Material" uid="uid://b0txcg4ax1y1l" path="res://textures/walls/stones3.tres" id="9_pt3ps"]
-[ext_resource type="Material" uid="uid://c8ces8rtp3sym" path="res://textures/walls/stones4.tres" id="10_hmc15"]
-[ext_resource type="Material" uid="uid://bc66qjdyjsxyj" path="res://textures/walls/wood.tres" id="11_dt0r1"]
-[ext_resource type="Material" uid="uid://cpda1hrgtywu1" path="res://textures/walls/brappystones.tres" id="12_qebug"]
-[ext_resource type="Material" uid="uid://tu86cwkfo515" path="res://textures/black.tres" id="13_o2rbt"]
+[ext_resource type="Material" uid="uid://b0txcg4ax1y1l" path="res://Textures/walls/stones3.tres" id="9_pt3ps"]
+[ext_resource type="Material" uid="uid://c8ces8rtp3sym" path="res://Textures/walls/stones4.tres" id="10_hmc15"]
+[ext_resource type="Material" uid="uid://bc66qjdyjsxyj" path="res://Textures/walls/wood.tres" id="11_dt0r1"]
+[ext_resource type="Material" uid="uid://cpda1hrgtywu1" path="res://Textures/walls/brappystones.tres" id="12_qebug"]
+[ext_resource type="Material" uid="uid://tu86cwkfo515" path="res://Textures/black.tres" id="13_o2rbt"]
 [ext_resource type="PackedScene" uid="uid://cb2e8jraydtvx" path="res://Scenes/models/drain.tscn" id="14_kn0ld"]
 [ext_resource type="PackedScene" uid="uid://d2py2h2xe5qhq" path="res://Scenes/models/lantern.tscn" id="15_hgpy0"]
 [ext_resource type="PackedScene" uid="uid://dsl1kpww8rdt0" path="res://Scenes/models/barrel.tscn" id="17_0pcbe"]
@@ -98,7 +97,6 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 108,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8AMAAxADIAMAAyADMANAA1ADYANAA2ADcAOAA5ADoAOAA6ADsAPAA9AD4APAA+AD8AQABBAEIAQABCAEMARABFAEYARABGAEcA"),
-"material": ExtResource("8_i4fjy"),
 "name": "placeholder_tex/MINERALS/REDSTONE",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

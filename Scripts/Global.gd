@@ -10,3 +10,5 @@ var stats: Stats
 var settingsMenu: Control
 var dialogueMenu: Control
 var currentWorldNode: Node
+
+var idHandler = ItemIdHandler.new()

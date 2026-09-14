@@ -7,6 +7,8 @@ class_name InventoryClass
 @export var idHandler: ItemIdHandler
 
 func assignIDs():
+	if !idHandler:
+		idHandler = Globals.idHandler
 	idHandler.usedArrays = []
 	for i in range(inventory.size()):
 		idHandler.give_id(inventory[i])

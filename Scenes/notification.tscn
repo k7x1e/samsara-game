@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://co56i3kh45h03"]
+
+[ext_resource type="Script" uid="uid://c1sq1djlgalom" path="res://Scripts/notification.gd" id="1_6kda2"]
+[ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="1_wohpn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wohpn"]
+font_size = 30
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wohpn"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="Animation" id="Animation_wohpn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.9490196)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6kda2"]
+resource_name = "notif"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1.2311403),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.9490196), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0009999999, 1),
+"transitions": PackedFloat32Array(1, 4.5948124),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.6, 0.6, 0.6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lk1ln"]
+_data = {
+&"RESET": SubResource("Animation_wohpn"),
+&"notif": SubResource("Animation_6kda2")
+}
+
+[node name="notification" type="Node3D" unique_id=633069758]
+script = ExtResource("1_6kda2")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=879773878 groups=["Pausable"]]
+transparent_bg = true
+size = Vector2i(512, 50)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport" unique_id=946751260 groups=["Pausable"]]
+
+[node name="CenterContainer" type="CenterContainer" parent="SubViewport/CanvasLayer" unique_id=1083919178 groups=["Pausable"]]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SubViewport/CanvasLayer/CenterContainer" unique_id=321443388]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_wohpn")
+text = "Levelled up, niggaaa"
+label_settings = SubResource("LabelSettings_wohpn")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1941277878]
+modulate = Color(1, 1, 1, 0.9490196)
+billboard = 1
+texture = SubResource("ViewportTexture_wohpn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1844106017]
+libraries/ = SubResource("AnimationLibrary_lk1ln")

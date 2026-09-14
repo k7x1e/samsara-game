@@ -29,6 +29,8 @@ var dashVector = Vector3(dashD, 0, 0)
 @onready var wizard = $Rotation/Wizard
 @onready var followerNode = $Rotation/Follower1 #will be replaced with a function eventually but this will do for now
 
+@onready var notification = preload("res://Scenes/notification.tscn")
+
 @onready var dialogueArea = $Area3D
 
 @export var globalmousePos: Vector3
@@ -46,6 +48,18 @@ func refreshStats():
 
 func damage(amt: float):
 	health -= amt
+	if health <= 0:
+		death()
+
+func death():
+	pass
+
+func notify(notif: String):
+	var temp = notification.instantiate()
+	self.add_child(temp)
+	temp.set_owner(self)
+	temp.ntext = notif
+	temp.global_position = self.global_position
 
 func _ready():
 	initialize()

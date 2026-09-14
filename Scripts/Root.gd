@@ -188,9 +188,11 @@ func save():
 		gamestate.add_save(scene.duplicate(true))
 	scene = 0
 	result = 0
-	
 
 func loadSave(_which: int):
 	#were just gonna assume it means the last
 	var lastSave = gamestate.get_last_save()
 	get_tree().change_scene_to_packed(lastSave)
+
+func death():
+	pause(true)

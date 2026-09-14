@@ -21,6 +21,7 @@ class_name Stats
 @export var progressStats: Array[Variant] = [agilityprogress, magicprogress, perceptionprogress, intelligenceprogress, strengthprogress]
 @export var statDescriptions: Array[String] = ["This stat determines how fast you are, in other words how agile you are.", "How proficient you are within the magic arts. Decreases spell cooldown, cost and increases effect.", 
 "Perception. How good you are at spotting things and how good you are with guns.", "How smart you are, Affects speech and mana.", "Your physical strength. Makes you able to lift more and melee harder."]
+@export var statNames: Array[String] = ["Agility", "Magic", "Perception", "Intelligence", "Strength"]
 
 @export var progressMax: int = 50
 
@@ -57,4 +58,5 @@ func checkLevels():
 			print("leveled up stat: ", b)
 			setstat(b, stats[b]+1)
 			Globals.spellMaster.updateSpells(Globals.spellMaster.spellArray)
+			Globals.Player.notify(str("Leveled up ", statNames[b], "."))
 		b += 1

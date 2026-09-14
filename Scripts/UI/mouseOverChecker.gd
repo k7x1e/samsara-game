@@ -6,13 +6,18 @@ extends Control
 @export var amIUnderTheCharacterSheet: bool = false
 @export var ifSoWhichStatAmI: int
 
-func _gui_input(event: InputEvent) -> void:
+func _ready() -> void:
+	mouse_entered.connect(_mouse_entered)
+	mouse_exited.connect(_mouse_exited)
+
+
+func _mouse_entered():
 	print("mouse is over")
 	mouse_over = true
 	if amIUnderTheCharacterSheet:
 		charSheet.showMenu(ifSoWhichStatAmI)
 
-func mouse_exited():
+func _mouse_exited():
 	mouse_over = false
 	if amIUnderTheCharacterSheet:
 		charSheet.hideMenu()

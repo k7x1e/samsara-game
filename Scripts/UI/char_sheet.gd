@@ -26,6 +26,7 @@ func showMenu(stat: int):
 	toolTip.following = true
 	toolTip.show()
 	toolTip.pLabel.text = str(Globals.stats.progressStats[stat], "/", Globals.stats.progressMax)
+	toolTip.dLabel.text = Globals.stats.statDescriptions[stat]
 
 func hideMenu():
 	toolTip.following = false

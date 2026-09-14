@@ -9,6 +9,9 @@ extends HBoxContainer
 @onready var spells: Array[Node] = [$Spell1,$Spell2,$Spell3,$Spell4,$Spell5]
 var spellArray: Array[spell] = []
 
+func update():
+	updateSpells(spellArray)
+
 func _ready() -> void:
 	Globals.spellMaster = self
 
@@ -32,3 +35,4 @@ func updateSpell(spellNode: Node, spel: spell):
 			spellNode.dim.hide()
 	spel.uiNode = spellNode
 	spellNode.costLabel.text = str(spel.cost)
+	spel.updateStats()

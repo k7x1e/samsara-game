@@ -112,7 +112,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_bf1fa")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="spells" unique_id=739165100]
+[node name="HBoxContainer" type="HBoxContainer" parent="spells" unique_id=739165100 groups=["updatable"]]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

@@ -13,13 +13,6 @@ var is_stopped: bool = false
 var current_stop_index = 0
 var indexgoingforward = true
 
-func _ready() -> void:
-	await get_tree().create_timer(0.5).timeout
-	
-	
-	#progress_ratio = 0.0
-	#update_configuration_warnings() # Or yield a frame
-
 func _process(delta: float) -> void:
 	phbody.global_position = global_position
 	if is_stopped or stopoffsets.is_empty():

@@ -1,16 +1,16 @@
 [gd_resource type="Resource" script_class="spell" format=3 uid="uid://cvkb5exdvybqf"]
 
 [ext_resource type="Texture2D" uid="uid://7wri6gpkv7tl" path="res://Textures/icons/spells/trampstamp.png" id="1_2c3am"]
-[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/classes/spells/spell.gd" id="2_p2noy"]
+[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/Classes/spells/spell.gd" id="2_p2noy"]
 [ext_resource type="PackedScene" uid="uid://bga75wb36a5io" path="res://Scenes/spell.tscn" id="3_37g3t"]
 
 [resource]
 script = ExtResource("2_p2noy")
 spellNode = ExtResource("3_37g3t")
-basecost = 50
-cost = 50
-basecoolDown = 0.2
-coolDown = 0.2
+basecost = 1
+cost = 1
+basecoolDown = 0.01
+coolDown = 0.01
 name = "FUCK"
 Icon = ExtResource("1_2c3am")
 uiNode = null

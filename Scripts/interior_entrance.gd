@@ -25,12 +25,13 @@ func _ready() -> void:
 	#print(stringshit)
 	#load("res://Scenes/Worlds/Interiors/londonPub.tscn")
 
-func tick():
+func _process(delta: float) -> void:
 	if overlapping:
 		print("overlapping")
 		billboard.show()
 		#billboard.global_position = Globals.Player.global_position
 		if Input.is_action_just_pressed("enter"):
+			print("pressed a button eyes emoji")
 			var bodies = playerChecker.get_overlapping_bodies()
 			for body in bodies:
 				print(body.name)

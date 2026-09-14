@@ -6,10 +6,11 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_yjaxa"]
 radius = 1.0
 
-[node name="interiorEntrance" type="Node3D" unique_id=188525590 groups=["ticked"]]
+[node name="interiorEntrance" type="Node3D" unique_id=188525590]
 script = ExtResource("1_yjaxa")
 
 [node name="billboard" parent="." unique_id=1199928384 instance=ExtResource("2_bdig2")]
+billboardtext = "placeHolder"
 duration = 0.0
 
 [node name="check" type="Area3D" parent="." unique_id=1507733400]

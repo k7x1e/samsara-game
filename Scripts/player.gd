@@ -19,6 +19,7 @@ var canRecoverMana: bool = true
 var canRecoverhealth: bool = true
 
 @export var stats: Stats
+@export var experienceThresh: float = 20
 
 var dashVector = Vector3(dashD, 0, 0)
 
@@ -31,6 +32,8 @@ var dashVector = Vector3(dashD, 0, 0)
 @onready var dialogueArea = $Area3D
 
 @export var globalmousePos: Vector3
+
+var referenceN: Node3D
 
 func refreshStats():
 	SPEED = stats.retrieve(0) * 2.5
@@ -51,6 +54,9 @@ func getFollowerNode() -> Node3D:
 	return followerNode
 
 func initialize():
+	referenceN = Node3D.new()
+	Globals.Root.add_child(referenceN)
+	referenceN.global_position = self.global_position
 	print(global_position.distance_to(camera.global_position))
 	Globals.Player = self
 	Globals.stats = stats
@@ -158,3 +164,13 @@ func setCursor():
 	var result = spacestate.intersect_ray(query)
 	if result.has("position") and global_position.distance_to(result["position"]) > 0.1:
 		cursorNode.global_position = result["position"]
+
+
+#leveling from walking
+func update():
+	var dist = self.global_position.distance_to(referenceN.global_position)
+	print(dist)
+	if dist >= experienceThresh:
+		stats.experience(0)
+	referenceN.global_position = self.global_position
+	print(self.global_position.distance_to(referenceN.global_position))

@@ -4,7 +4,8 @@ extends Control
 
 @export var offset: Vector2 = Vector2(10,10)
 
-@onready var pLabel = $Label
+@onready var pLabel = $VBoxContainer/Label
+@onready var dLabel = $VBoxContainer/desc
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

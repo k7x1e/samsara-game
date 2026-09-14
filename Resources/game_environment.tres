@@ -5,4 +5,5 @@ background_mode = 1
 ssao_enabled = true
 ssao_intensity = 3.7
 fog_enabled = true
-fog_light_color = Color(0, 0, 0, 1)
+fog_light_color = Color(0.038285255, 0.012378421, 0, 1)
+volumetric_fog_albedo = Color(0.21230483, 0.21230483, 0.21230483, 1)

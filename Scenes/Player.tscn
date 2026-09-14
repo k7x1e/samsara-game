@@ -56,7 +56,7 @@ size = Vector3(0.7, 0.2, 0.6)
 [sub_resource type="SphereShape3D" id="SphereShape3D_1e7my"]
 radius = 3.0
 
-[node name="Player" type="CharacterBody3D" unique_id=1215905502 groups=["Pausable", "ticked"]]
+[node name="Player" type="CharacterBody3D" unique_id=1215905502 groups=["Pausable", "ticked", "updatable"]]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
 collision_layer = 4109
 collision_mask = 4109
@@ -65,6 +65,7 @@ floor_block_on_wall = false
 script = ExtResource("1_kyqiw")
 inventory = SubResource("Resource_megsn")
 stats = SubResource("Resource_1e7my")
+experienceThresh = 5.0
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1510999750]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 8, 8)

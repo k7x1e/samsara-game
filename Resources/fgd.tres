@@ -12,10 +12,11 @@
 [ext_resource type="Resource" uid="uid://mtefq0up8kme" path="res://Resources/trenchbroom/interior_entrance.tres" id="9_gpfhl"]
 [ext_resource type="Resource" uid="uid://d2vphw0v1ct8s" path="res://Resources/trenchbroom/londontable.tres" id="10_8lyky"]
 [ext_resource type="Resource" uid="uid://b4ui77cfe4bvu" path="res://Resources/trenchbroom/tramPathPoint.tres" id="11_0jbh3"]
+[ext_resource type="Resource" uid="uid://comjux8xb8eao" path="res://Resources/trenchbroom/zone.tres" id="12_4o6vo"]
 
 [resource]
 script = ExtResource("1_nxjbw")
 fgd_name = "Samsonarum"
 base_fgd_files = Array[Resource]([ExtResource("1_thwb8")])
-entity_definitions = Array[Resource]([ExtResource("2_ihtdy"), ExtResource("3_ei1db"), ExtResource("4_tbbir"), ExtResource("5_ei1db"), ExtResource("6_tbbir"), ExtResource("7_u87at"), ExtResource("8_odwdo"), ExtResource("9_gpfhl"), ExtResource("10_8lyky"), ExtResource("11_0jbh3")])
+entity_definitions = Array[Resource]([ExtResource("2_ihtdy"), ExtResource("3_ei1db"), ExtResource("4_tbbir"), ExtResource("5_ei1db"), ExtResource("6_tbbir"), ExtResource("7_u87at"), ExtResource("8_odwdo"), ExtResource("9_gpfhl"), ExtResource("10_8lyky"), ExtResource("11_0jbh3"), ExtResource("12_4o6vo")])
 metadata/_custom_type_script = "uid://drlmgulwbjwqu"

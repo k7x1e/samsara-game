@@ -1,8 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://b0txcg4ax1y1l"]
 
-[ext_resource type="Texture2D" uid="uid://df3j7w1w812ym" path="res://textures/walls/stones3.png" id="1_3ukfa"]
+[ext_resource type="Texture2D" uid="uid://df3j7w1w812ym" path="res://Textures/walls/stones3.png" id="1_3ukfa"]
 
 [resource]
 albedo_texture = ExtResource("1_3ukfa")
 metallic_specular = 0.0
 texture_filter = 2
+distance_fade_mode = 2

@@ -208,3 +208,5 @@
 	#upon adding a second tram line it for some strange reason only adds one. Shit
 	#12:20
 	#trams working now. They only need models, tracks and some fancy animations.
+	#13:53
+	#added an insanely ugly model for the tram. Crashing out soon

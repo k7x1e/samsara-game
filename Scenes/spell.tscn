@@ -8,7 +8,7 @@
 
 [node name="Spell" type="Node3D" unique_id=252904442 groups=["ticked"]]
 script = ExtResource("1_nx6qu")
-speed = 0.5
+speed = 15.0
 
 [node name="Collision" type="Area3D" parent="." unique_id=271090165]
 collision_layer = 8

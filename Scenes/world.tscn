@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://iucjrslv446t" path="res://Scenes/enemy.tscn" id="7_k7acu"]
 [ext_resource type="Material" uid="uid://o0gey3geom8x" path="res://textures/walls/whiteconcrete.tres" id="7_xbk3s"]
 [ext_resource type="PackedScene" uid="uid://cv1a2spb7dc7b" path="res://Scenes/models/lamp_post.tscn" id="8_5v1tr"]
-[ext_resource type="Material" uid="uid://vtgfbnw1vno1" path="res://textures/placeholder_tex/MINERALS/REDSTONE.tres" id="8_i4fjy"]
+[ext_resource type="Material" path="res://textures/placeholder_tex/MINERALS/REDSTONE.tres" id="8_i4fjy"]
 [ext_resource type="Environment" uid="uid://lyhkdkhxwhlj" path="res://Resources/game_environment.tres" id="8_k7acu"]
 [ext_resource type="Material" uid="uid://b0txcg4ax1y1l" path="res://textures/walls/stones3.tres" id="9_pt3ps"]
 [ext_resource type="Material" uid="uid://c8ces8rtp3sym" path="res://textures/walls/stones4.tres" id="10_hmc15"]
@@ -2066,8 +2066,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -15.
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=721709652]
 environment = ExtResource("8_k7acu")
-
-[node name="LightmapGI" type="LightmapGI" parent="WorldEnvironment" unique_id=703090527]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1723835610]
 transform = Transform3D(0.8909986, -0.30555174, 0.335797, 0, 0.7396311, 0.6730125, -0.45400605, -0.5996532, 0.6590103, 0, 0, 0)

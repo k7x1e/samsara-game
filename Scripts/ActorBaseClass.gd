@@ -22,9 +22,11 @@ func _physics_process(delta: float) -> void:
 	#basically to tick the behaviour script(when i eventually make it). 
 	#Will most likely be replaced by a tick function handled by the combat manager.
 	#TO BE REPLACED
+	move()
 
 func tick():
 	behaviour.update()
+	
 
 func damage(amt: float):
 	print("took damage")

@@ -27,7 +27,7 @@ func update():
 	else:
 		player = Globals.Player
 	#tempPosition.y = actor.global_position.y
-	actor.move()
+	#actor.move()
 	if can_attack:
 		attack()
 

@@ -5,12 +5,18 @@ extends Node3D
 @export var tramTransforms: Dictionary[int,Array]
 @export var tramNodes: Dictionary[int, Path3D]
 
+@export var alreadyInitialized = false
+
 func _ready() -> void:
 	Globals.currentWorldNode = self
 	await get_tree().create_timer(0.2).timeout
-	initialize()
+	if !alreadyInitialized:
+		initialize()
+		alreadyInitialized=true
+	
 
 func initialize():
+	print("initializing")
 	var startPoint
 	var x = 0
 	

@@ -4,11 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://bobpuvlc86igt" path="res://Textures/shine.png" id="2_dq0i0"]
 
 [node name="lantern" type="Node3D" unique_id=742290621]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="lantern" parent="." unique_id=2124839038 instance=ExtResource("1_vhu8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.15)
 
 [node name="Cylinder_002" parent="lantern" index="3" unique_id=1764523775]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="lantern" unique_id=316284723]

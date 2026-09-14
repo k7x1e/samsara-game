@@ -1,0 +1,30 @@
+// Game: Samsonarum
+// Format: Valve
+// Generator: TrenchBroom 2026.2 (Build v2026.2 Release macOS)
+// entity 0
+{
+"mapversion" "220"
+"wad" ""
+"classname" "worldspawn"
+// brush 0
+{
+( -384 64 16 ) ( -384 -64 16 ) ( -384 -64 -16 ) walls/wood [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -384 -64 16 ) ( 64 -64 16 ) ( 64 -64 -16 ) walls/wood [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 64 -64 -16 ) ( 64 64 -16 ) ( -384 64 -16 ) walls/wood [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -384 64 16 ) ( 64 64 16 ) ( 64 -64 16 ) walls/wood [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 64 64 -16 ) ( 64 64 16 ) ( -384 64 16 ) walls/wood [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 64 -64 16 ) ( 64 64 16 ) ( 64 64 -16 ) walls/wood [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+}
+// entity 1
+{
+"classname" "LampPost"
+"origin" "56 -8 24"
+}
+// entity 2
+{
+"classname" "InteriorEntrance"
+"origin" "-344 -8 24"
+"fromInterior" "1"
+"targetScene" "londonPub"
+}

@@ -9,6 +9,7 @@ extends Node3D
 func initialize():
 	spriteNode.position.y += yOffset
 	textNode.text = billboardtext
-	await Engine.get_main_loop().create_timer(duration).timeout
-	self.queue_free()
+	if duration != 0.0:
+		await Engine.get_main_loop().create_timer(duration).timeout
+		self.queue_free()
 	return true

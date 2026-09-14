@@ -19,6 +19,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="PauseMenu" type="Control" unique_id=782323223]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

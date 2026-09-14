@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dpd75hihwor21"]
+
+[ext_resource type="Script" uid="uid://dcwe40fqa6pe4" path="res://Scripts/interior_entrance.gd" id="1_yjaxa"]
+[ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="2_bdig2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yjaxa"]
+radius = 1.0
+
+[node name="interiorEntrance" type="Node3D" unique_id=188525590 groups=["ticked"]]
+script = ExtResource("1_yjaxa")
+
+[node name="billboard" parent="." unique_id=1199928384 instance=ExtResource("2_bdig2")]
+duration = 0.0
+
+[node name="check" type="Area3D" parent="." unique_id=1507733400]
+collision_layer = 0
+collision_mask = 4096
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="check" unique_id=1246241857]
+shape = SubResource("SphereShape3D_yjaxa")
+
+[connection signal="body_entered" from="check" to="." method="body_entered"]
+[connection signal="body_exited" from="check" to="." method="body_exited"]

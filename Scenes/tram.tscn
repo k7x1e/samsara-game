@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bx6m3vwscasgo"]
+
+[ext_resource type="Script" uid="uid://cn2hunp5p4yb6" path="res://Scenes/tramNode.gd" id="1_iwt87"]
+[ext_resource type="Script" uid="uid://incnqxctlvqs" path="res://Scripts/tram.gd" id="1_me52x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_me52x"]
+size = Vector3(5, 0.1, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_23mt2"]
+size = Vector3(5, 1, 3)
+
+[node name="Tram" type="Node3D" unique_id=1078428078]
+script = ExtResource("1_iwt87")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." unique_id=1731027495]
+sync_to_physics = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1411995629]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_me52x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=1415012216]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_23mt2")
+
+[node name="Tram" type="PathFollow3D" parent="." unique_id=1160540813 node_paths=PackedStringArray("phbody")]
+rotation_mode = 1
+loop = false
+script = ExtResource("1_me52x")
+speed = 10.0
+phbody = NodePath("../AnimatableBody3D")
+stopduration = 3.0

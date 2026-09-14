@@ -188,3 +188,23 @@
 	#22:07
 	#ive not really gotten much done today outside of mapping and textures.
 	#began work on FULL london map.
+	#
+	##10/09
+	#17:17
+	#i havent written anything here but ive been working.
+	#
+	##14/09
+	#10:57
+	#i am deeply sorry for not doing much.
+	#ive been trying to figure out this fuck ass tram for long now it just refuses to work completely.
+	#god i wish i could license malice mizer for this.
+	#11:01
+	#honestly godot is such a strange engine i dont understand it sometimes, why do characterbodies get stuck, why do pathfollowers start at origin???
+	#11:09
+	#managed to fix the root issue but now it isnt moving at all.
+	#11:20
+	#i managed to get the tram working. what a strange system
+	#11:34
+	#upon adding a second tram line it for some strange reason only adds one. Shit
+	#12:20
+	#trams working now. They only need models, tracks and some fancy animations.

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDPointClass" format=3 uid="uid://b4ui77cfe4bvu"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_hunyd"]
+[ext_resource type="PackedScene" uid="uid://dkv6nfqn3au3" path="res://Scenes/models/tram_path_point.tscn" id="2_h10wc"]
+[ext_resource type="Script" uid="uid://cxsqwtsqd8w33" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="2_ypvwi"]
+
+[resource]
+script = ExtResource("2_ypvwi")
+scene_file = ExtResource("2_h10wc")
+classname = "TramPathPoint"
+class_properties = Dictionary[String, Variant]({
+"belongsTo": 0,
+"index": 0,
+"isAStop": false,
+"startpoint": false
+})
+metadata/_custom_type_script = "uid://cxsqwtsqd8w33"

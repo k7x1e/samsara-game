@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dkv6nfqn3au3"]
+
+[ext_resource type="Script" uid="uid://drlckyowledlj" path="res://Scripts/tram_path_point.gd" id="1_73gb5"]
+
+[node name="tramPathPoint" type="Node3D" unique_id=1251394223]
+script = ExtResource("1_73gb5")

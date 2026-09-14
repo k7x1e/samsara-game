@@ -20,7 +20,49 @@ var inDialogue = false
 var dialogueMenu
 var pauseMenu
 
+var newWorld
+var newWorldCaller ##dont know what this is still doing here
+
+@export var mainWorldNode: PackedScene
+var mainWorldPlayerPos
+
 var isPaused = false
+@export var interiors: Dictionary[String, PackedScene]
+
+func changeWorld(caller: Variant, Targetscene: String, fromMain: bool):
+	if fromMain:
+		#save current world
+		var tempworld = $World
+		var temptemptemp = PackedScene.new()
+		var tempresult = await temptemptemp.pack(tempworld)
+		if tempresult == OK:
+			mainWorldNode = temptemptemp
+			mainWorldPlayerPos = global_position
+		
+		tempworld.queue_free()
+		newWorldCaller = caller
+		
+		var tempTarget = interiors[Targetscene]
+		
+		newWorld = tempTarget.instantiate()
+		self.add_child(newWorld)
+		newWorld.set_owner(self)
+		
+		mainWorldPlayerPos = Globals.Player.global_position
+		Globals.Player.global_position = newWorld.playerSpawn.global_position
+	
+	else:
+		var temptemptemp2 = PackedScene.new()
+		var tempresult2 = await temptemptemp2.pack(newWorld)
+		
+		newWorld.queue_free()
+		
+		newWorld = mainWorldNode.instantiate()
+		self.add_child(newWorld)
+		newWorld.set_owner(self)
+		
+		interiors[Targetscene] = temptemptemp2
+		Globals.Player.global_position = mainWorldPlayerPos
 
 func _ready():
 	updatedelay = 10.0 / updaterate

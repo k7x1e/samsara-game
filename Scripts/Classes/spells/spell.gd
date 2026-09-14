@@ -29,6 +29,7 @@ func cast(caster: Variant):
 	updateStats()
 	if castable and !cooldown_active and Globals.Player.mana >= cost and curThreads == 0:
 		castable = false
+		Globals.stats.experience(1)
 		var actualNode = spellNode.instantiate()
 		Globals.Root.add_child(actualNode)
 		actualNode.global_rotation = caster.global_rotation

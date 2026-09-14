@@ -36,6 +36,9 @@ perception = 2.0
 intelligence = 2.0
 strength = 2.0
 stats = null
+progressStats = null
+progressMax = 2
+statDict = null
 metadata/_custom_type_script = "uid://x7tekc2114cw"
 
 [sub_resource type="Environment" id="Environment_gl6un"]

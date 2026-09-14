@@ -30,6 +30,7 @@ func initialize():
 		)
 		#var shit: Array[Vector3]
 		for b in tramTransforms[x]:
+			curve.add_point(b.global_position)
 			#check if its the start point, honestly redundant.
 			if b.isStop:
 				print("stop found, murdering coder")
@@ -41,7 +42,6 @@ func initialize():
 				#this SHOULD fix origin starting issue
 				#tramNodes[i].global_position = b.global_position
 			#shit.append(b.global_position)
-			curve.add_point(b.global_position)
 		
 		tramNodes[i].curve = curve
 		stop_offsets.sort()

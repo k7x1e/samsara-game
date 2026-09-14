@@ -210,5 +210,14 @@
 	#trams working now. They only need models, tracks and some fancy animations.
 	#13:53
 	#added an insanely ugly model for the tram. Crashing out soon
+<<<<<<< HEAD
 	#17:03
 	#i am home now. I will immediately do the things ive been forgetting to. (I.E migrating the id handler to be a global class.
+=======
+	#14:02
+	#i dont even want to do this anymore
+	#14:19
+	#fixed a bug with the trams, feeling like im gonna lose it.
+	#14:21
+	#i need to get some actual work done so im gonna implement the character sheet.
+>>>>>>> 10bbbee4c775e5a3c6699d0bd72ee3e64149d143

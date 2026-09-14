@@ -12,3 +12,7 @@ func activateMenu():
 
 func hideMenu():
 	pass
+
+
+func _on_agility_mouse_entered() -> void:
+	pass # Replace with function body.

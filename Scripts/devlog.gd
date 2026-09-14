@@ -210,3 +210,9 @@
 	#trams working now. They only need models, tracks and some fancy animations.
 	#13:53
 	#added an insanely ugly model for the tram. Crashing out soon
+	#14:02
+	#i dont even want to do this anymore
+	#14:19
+	#fixed a bug with the trams, feeling like im gonna lose it.
+	#14:21
+	#i need to get some actual work done so im gonna implement the character sheet.

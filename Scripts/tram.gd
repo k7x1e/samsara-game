@@ -11,11 +11,12 @@ var goingForward: bool = true
 var is_stopped: bool = false
 
 var current_stop_index = 0
+var indexgoingforward = true
 
 func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
 	
-	phbody.global_rotation = global_rotation
+	
 	#progress_ratio = 0.0
 	#update_configuration_warnings() # Or yield a frame
 
@@ -26,23 +27,32 @@ func _process(delta: float) -> void:
 	if goingForward:
 		progress += speed * delta
 	else:
+		#print("going backwards")
 		progress -= speed * delta
 	if progress_ratio == 1.0 or progress_ratio == 0.0:
 		goingForward = !goingForward
 
 func tick():
+	phbody.global_rotation = global_rotation
 	#print(global_position, phbody.global_position)
 	if is_stopped or stopoffsets.is_empty():
 		return
 	
 	
-	if current_stop_index < stopoffsets.size():
+	if current_stop_index < stopoffsets.size() and !current_stop_index < 0:
+		#print(current_stop_index, stopoffsets.size())
 		var next_stop = stopoffsets[current_stop_index]
-		if progress >= next_stop:
-			print("at stop", current_stop_index)
+		if (progress >= next_stop and goingForward) or (progress <= next_stop and !goingForward):
+			#print("at stop", current_stop_index)
 			progress = next_stop          # snap exactly
 			is_stopped = true
-			match goingForward:
+			if current_stop_index == stopoffsets.size() - 1:
+				#print("going backwards")
+				indexgoingforward = false
+			elif current_stop_index == 0:
+				#print(" going forwards")
+				indexgoingforward = true
+			match indexgoingforward:
 				true:
 					current_stop_index += 1
 				false:

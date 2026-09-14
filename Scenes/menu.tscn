@@ -3,16 +3,19 @@
 [ext_resource type="Script" uid="uid://dhut73dh0ov62" path="res://Scripts/UI/menu.gd" id="1_xhh6f"]
 [ext_resource type="Texture2D" uid="uid://bsajubq81b2qs" path="res://Textures/black.png" id="2_cayip"]
 [ext_resource type="Script" uid="uid://dw2ie14lhuqx5" path="res://Scripts/fakeMenu.gd" id="2_g8i7c"]
-[ext_resource type="Script" uid="uid://b3ajmnaru6c4v" path="res://Scripts/UI/blankWindow.gd" id="3_7qvly"]
 [ext_resource type="Script" uid="uid://mo4mee6m6nr1" path="res://Scripts/UI/windowTitleBar.gd" id="3_cayip"]
 [ext_resource type="PackedScene" uid="uid://dpdhvjrvm5xcf" path="res://Scenes/gui.tscn" id="3_rfqti"]
 [ext_resource type="StyleBox" uid="uid://ciy75oh1vleff" path="res://Resources/UI/styleBox.tres" id="4_158mb"]
+[ext_resource type="Script" uid="uid://cc3vogycdtbde" path="res://Scripts/UI/char_sheet.gd" id="4_dldpb"]
 [ext_resource type="Script" uid="uid://80ps74wrcq4r" path="res://Scripts/UI/resize_handle.gd" id="5_jsrd8"]
 [ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="5_wbdvm"]
 [ext_resource type="Texture2D" uid="uid://bn60qyl38svpl" path="res://Textures/UI/gui_scale_handle.png" id="6_wbdvm"]
 [ext_resource type="Script" uid="uid://dut0nr44rnls7" path="res://Scripts/UI/inventoryMenu.gd" id="8_6swd7"]
+[ext_resource type="LabelSettings" uid="uid://b1ril15u6t25p" path="res://Resources/sampleLabel.tres" id="8_d77ms"]
 [ext_resource type="Script" uid="uid://c71xw8g6kkryn" path="res://Scripts/inventory.gd" id="8_q3rjx"]
+[ext_resource type="Script" uid="uid://cbl10r5a0xxmh" path="res://Scripts/UI/mouseOverChecker.gd" id="9_d77ms"]
 [ext_resource type="Texture2D" uid="uid://cioushjp77jse" path="res://Textures/UI/gui_inventory_grid_border.png" id="11_kmwmt"]
+[ext_resource type="Script" uid="uid://dgvxv4hvhj2dl" path="res://Scripts/UI/tooltip.gd" id="12_3p34a"]
 [ext_resource type="Script" uid="uid://dscj8jy3r1qnb" path="res://Scripts/UI/drop_down.gd" id="12_23t3j"]
 [ext_resource type="StyleBox" uid="uid://ds457w8c45wbg" path="res://Resources/UI/dropdownNormal.tres" id="13_5ti5v"]
 [ext_resource type="StyleBox" uid="uid://lufuxo8vt8ji" path="res://Resources/UI/dropdownPressed.tres" id="14_1by5w"]
@@ -57,16 +60,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_cayip")
 
-[node name="Window" type="Control" parent="Menu" unique_id=1679423571]
+[node name="CharSheet" type="Control" parent="Menu" unique_id=1679423571 groups=["updatable"]]
 layout_mode = 1
 anchors_preset = 0
 offset_left = 331.0
 offset_top = 396.0
-offset_right = 1204.0
-offset_bottom = 1343.0
-script = ExtResource("3_7qvly")
+offset_right = 915.0
+offset_bottom = 986.0
+script = ExtResource("4_dldpb")
 
-[node name="Panel" type="Panel" parent="Menu/Window" unique_id=483557386]
+[node name="Panel" type="Panel" parent="Menu/CharSheet" unique_id=483557386]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -75,7 +78,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("4_158mb")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Window" unique_id=232444343]
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/CharSheet" unique_id=232444343]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,22 +86,71 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Menu/Window/VBoxContainer" unique_id=1133072178]
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/CharSheet/VBoxContainer" unique_id=1133072178]
 layout_mode = 2
 alignment = 1
 script = ExtResource("3_cayip")
 
-[node name="Label" type="Label" parent="Menu/Window/VBoxContainer/HBoxContainer" unique_id=2039275021]
+[node name="Label" type="Label" parent="Menu/CharSheet/VBoxContainer/HBoxContainer" unique_id=2039275021]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_wbdvm")
 text = "window title"
 
-[node name="PanelContainer" type="PanelContainer" parent="Menu/Window/VBoxContainer" unique_id=1851446025]
+[node name="PanelContainer" type="PanelContainer" parent="Menu/CharSheet/VBoxContainer" unique_id=1851446025]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_158mb")
 
-[node name="Control" type="Control" parent="Menu/Window" unique_id=1803125968]
+[node name="Label" type="Label" parent="Menu/CharSheet/VBoxContainer/PanelContainer" unique_id=1378383630]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("5_wbdvm")
+text = "This: that
+Shit: fart
+Shit: fart
+Shit: fart
+Shit: fart
+Shit: fart"
+label_settings = ExtResource("8_d77ms")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/CharSheet/VBoxContainer/PanelContainer" unique_id=628293531]
+layout_mode = 2
+
+[node name="Agility" type="Control" parent="Menu/CharSheet/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1574399457]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+script = ExtResource("9_d77ms")
+amIUnderTheCharacterSheet = true
+
+[node name="Magic" type="Control" parent="Menu/CharSheet/VBoxContainer/PanelContainer/VBoxContainer" unique_id=2135109056]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+script = ExtResource("9_d77ms")
+amIUnderTheCharacterSheet = true
+ifSoWhichStatAmI = 1
+
+[node name="Perception" type="Control" parent="Menu/CharSheet/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1375662548]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+script = ExtResource("9_d77ms")
+amIUnderTheCharacterSheet = true
+ifSoWhichStatAmI = 2
+
+[node name="Intelligence" type="Control" parent="Menu/CharSheet/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1514432239]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+script = ExtResource("9_d77ms")
+amIUnderTheCharacterSheet = true
+ifSoWhichStatAmI = 3
+
+[node name="Strength" type="Control" parent="Menu/CharSheet/VBoxContainer/PanelContainer/VBoxContainer" unique_id=680371974]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+script = ExtResource("9_d77ms")
+amIUnderTheCharacterSheet = true
+ifSoWhichStatAmI = 4
+
+[node name="Control" type="Control" parent="Menu/CharSheet" unique_id=1803125968]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -113,12 +165,38 @@ script = ExtResource("5_jsrd8")
 maxX = 3200.0
 maxY = 1600.0
 
-[node name="TextureRect" type="TextureRect" parent="Menu/Window/Control" unique_id=2059667442]
+[node name="TextureRect" type="TextureRect" parent="Menu/CharSheet/Control" unique_id=2059667442]
 modulate = Color(0.4417584, 0, 0.086844064, 1)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("6_wbdvm")
+
+[node name="tooltip" type="Control" parent="Menu/CharSheet" unique_id=828683554]
+anchors_preset = 0
+offset_right = 236.0
+offset_bottom = 31.0
+script = ExtResource("12_3p34a")
+
+[node name="Panel" type="Panel" parent="Menu/CharSheet/tooltip" unique_id=1262284943]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_158mb")
+
+[node name="Label" type="Label" parent="Menu/CharSheet/tooltip" unique_id=209898302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_wbdvm")
+text = "Progress: 100/100"
+label_settings = ExtResource("8_d77ms")
 
 [node name="Inventory" type="Control" parent="Menu" unique_id=339712170]
 custom_minimum_size = Vector2(296, 168)
@@ -356,7 +434,7 @@ mouse_filter = 2
 [node name="Dialogue" parent="." unique_id=8686405 instance=ExtResource("18_rc6uw")]
 visible = false
 
-[connection signal="gui_input" from="Menu/Window/Control/TextureRect" to="Menu/Window/Control" method="_on_texture_rect_gui_input"]
+[connection signal="gui_input" from="Menu/CharSheet/Control/TextureRect" to="Menu/CharSheet/Control" method="_on_texture_rect_gui_input"]
 [connection signal="gui_input" from="Menu/Inventory/Control/TextureRect" to="Menu/Inventory/Control" method="_on_texture_rect_gui_input"]
 [connection signal="pressed" from="Menu/DropDown/VBoxContainer/equip" to="Menu/DropDown" method="_on_equip_pressed"]
 [connection signal="pressed" from="Menu/DropDown/VBoxContainer/unequip" to="Menu/DropDown" method="_on_unequip_pressed"]

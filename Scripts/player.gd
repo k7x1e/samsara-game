@@ -59,7 +59,7 @@ func initialize():
 	refreshStats()
 
 func recoverMana():
-	print("recovering manaa")
+	#print("recovering manaa")
 	#genuinely the dumbest shit ill ever code
 	canRecoverMana = false
 	await get_tree().create_timer(mana_recovery).timeout

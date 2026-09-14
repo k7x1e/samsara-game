@@ -71,6 +71,7 @@ stats = SubResource("Resource_1e7my")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1510999750]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 8, 8)
+cull_mask = 524287
 environment = SubResource("Environment_gl6un")
 current = true
 size = 9.080143

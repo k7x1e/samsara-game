@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://v0yces7hu6vr"]
-
-[ext_resource type="Texture2D" uid="uid://b6j0issh4elek" path="res://textures/placeholder_tex/WOOD/ZEBRAWD.png" id="1_gxubo"]
-
-[resource]
-albedo_texture = ExtResource("1_gxubo")
-metallic_specular = 0.0
-texture_filter = 2

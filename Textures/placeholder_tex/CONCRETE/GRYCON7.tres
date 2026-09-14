@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://v8wcy24mu21r"]
-
-[ext_resource type="Texture2D" uid="uid://shagb2fs10d4" path="res://textures/placeholder_tex/CONCRETE/GRYCON7.png" id="1_adp6p"]
-
-[resource]
-albedo_texture = ExtResource("1_adp6p")
-metallic_specular = 0.0
-texture_filter = 2

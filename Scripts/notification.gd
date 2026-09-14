@@ -7,8 +7,7 @@ extends Node3D
 @export var ntext: String = "why"
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	await get_tree().create_timer(0.02).timeout
+func initialize() -> void:
 	self.global_position.y += offset
 	print("im in")
 	textLabel.text = ntext

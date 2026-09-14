@@ -52,7 +52,8 @@ func damage(amt: float):
 		death()
 
 func death():
-	pass
+	notify("you died !!")
+	Globals.Root.death()
 
 func notify(notif: String):
 	var temp = notification.instantiate()
@@ -60,6 +61,7 @@ func notify(notif: String):
 	temp.set_owner(self)
 	temp.ntext = notif
 	temp.global_position = self.global_position
+	temp.initialize()
 
 func _ready():
 	initialize()

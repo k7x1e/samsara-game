@@ -226,3 +226,22 @@
 	#17:59
 	#i had for some reason placed literally ONE if check on tick as if that was gonna do anything which caused it to only work if it was overlapping with the tick
 	#and for some reason the trams STILL break upon going out and in
+	#
+	##15/09
+	#09:57
+	#ive been fucking around for a few minutes and i think ill go get a coffee and then fix the dialogue system.
+	#or should i work on making sound for the game?
+	#09:58
+	#fuck music i must get this dialogue system working
+	#10:34
+	#successfully implemented quests within dialogue and such
+	#i will now grab another cup and get to work on making the dialogue menu better,
+	#making a quest menu and some other bullshit.
+	#must say im quite proud of the notification stuff.
+	#ALSO THIS IS VERY IMPORTANT SET THE DIALOGUE FONT TO MS GOTHIC
+	#LOOK UP THE RIGHTS FIRST THOUGH
+	#10:51
+	#finished up improvements to the dialogue menu. Of course i use ms gothic, since i legally own windows i can legally MAKE REFERENCE to MS gothic.
+	#of course i can not bundle it with the game but since i already have it on my mac its all good and as long as one has it installed it should work no matter the system
+	#of course there is a fallback.
+	#i will now commit, push and then get to work on a quest menu.

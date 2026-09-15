@@ -27,11 +27,31 @@ func update():
 			var temp= option.instantiate()
 			optionNode.add_child(temp)
 			temp.text = i.text
-			temp.pressed.connect(optionPressed.bind(i.target))
+			temp.pressed.connect(optionPressed.bind(i))
 			b += 1
+		if currentW.questStatus != 0:
+			print(currentW.questStatus)
+			currentW.quest.setQuestState(currentW.questStatus)
+			#i must say, this system is shit but damn if it isnt convenient to scale
 
-func optionPressed(i: int):
-	if i == -1:
+func optionPressed(i: DialogueOption):
+	if i.target == -1:
 		Globals.Root.stopDialogue()
-	index = i
+		return
+	index = 3
+	match i.condMode:
+		1:
+			match i.condition.fulfilled:
+				true:
+					index = i.target
+				false:
+					index = i.fallbackTarget
+		0:
+			match i.condition.fulfilled:
+				true:
+					index = i.fallbackTarget
+				false:
+					index = i.target
+		-1:
+			index = i.target
 	update()

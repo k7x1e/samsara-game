@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dsl1kpww8rdt0" path="res://Scenes/models/barrel.tscn" id="7_nm06v"]
 [ext_resource type="PackedScene" uid="uid://d2py2h2xe5qhq" path="res://Scenes/models/lantern.tscn" id="8_7f25j"]
 [ext_resource type="PackedScene" uid="uid://d2ndbyf01218u" path="res://Scenes/models/light.tscn" id="9_nm06v"]
+[ext_resource type="PackedScene" uid="uid://wggca4kc4v15" path="res://Scenes/actor.tscn" id="11_7f25j"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_8l2jw"]
 vertices = PackedVector3Array(-12.25, 7, -23.25, -12.5, 7, -31.5, -15.25, 7, -31.5, -15.25, 7, 0.5, -4.5, 7, 0.5, -4.5, 7, -23.25, 2.5, 1, -25, 2.5, 1, -31.5, -9.5, 1, -31.5, -9.5, 1, -25, 4.75, 1, -24.25, 7.5, 1, -24, 7.75, 1, -25, 4.5, 1, -25, 9.5, 1, -31.5, 9.5, 1, -25, 7.75, 1, -23.25, 4.25, 1, -23.25, 9.5, 1, -23.25, -9.25, 1, -20.75, -9.25, 1, 0.5, 9.5, 1, 0.5, -6.25, 1, -23.25, -6.25, 1, -22, -7, 1, -21.25, -8.25, 3.5, -22.75, -7.5, 3.5, -22.5, -7.5, 3.5, -23)
@@ -173,3 +174,6 @@ environment = ExtResource("3_4in25")
 
 [node name="SpawnPoint" type="Node3D" parent="." unique_id=1150304135]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Actor" parent="." unique_id=1866149922 instance=ExtResource("11_7f25j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7139394, 0.5, -16.553745)

@@ -1,0 +1,7 @@
+[gd_resource type="SystemFont" format=3 uid="uid://cri31ihw34lpf"]
+
+[ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="1_8ydui"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("1_8ydui")])
+font_names = PackedStringArray("MS Gothic")

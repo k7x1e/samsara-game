@@ -43,7 +43,7 @@ func initialize():
 				#tramNodes[i].global_position = b.global_position
 			#shit.append(b.global_position)
 		
-		tramNodes[i].curve = curve
+		tramNodes[i].curve = curve.duplicate()
 		stop_offsets.sort()
 		
 		var shitfart = tram.instantiate()

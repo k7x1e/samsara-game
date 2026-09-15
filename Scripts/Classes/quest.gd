@@ -12,6 +12,12 @@ class_name Quest
 @export var givesReward: bool
 @export var reward: itemClass
 @export var descriptions: Array[String] ## just matches the states.
+@export var dependentConditions: Dictionary[int, Array] = {
+	0: [],
+	1: [],
+	2: [],
+	3: []
+} ##THIS WILL BE REPLACED EVENTUALLY. But all conditions contained within these will simply be set to true.
 
 func getQuestState() -> int:
 	if botched:
@@ -26,10 +32,23 @@ func isQuestStatePossible(state: int):
 		return false
 
 func setQuestState(state: int): ##cannot go backwards, 1 given, 2 achieved, 3 completed.
+	var succesful = false
 	if state > quest_state:
 		quest_state = state
+		succesful = true
 	if completeUponAchievement and state == 2:
-		state = 3
+		quest_state = 3
+		succesful = true
+	
+	if succesful:
+		match state:
+			1:
+				Globals.Player.notify(str("Discovered quest ", questName, "."))
+			3:
+				Globals.Player.notify(str("Completed quest ", questName, "."))
+		
+		for i in dependentConditions[state]:
+			i.fulfilled = true
 
 func botchQuest():
 	botched = true

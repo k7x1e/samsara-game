@@ -2,8 +2,6 @@ class_name DialogueOption
 extends Resource
 
 @export var text = "Sample Text"
-@export var triggersCommand: bool
-@export var command = "whatever it does"
 @export var target: int
 @export var requiresItem: bool
 @export var requiredItem: Item

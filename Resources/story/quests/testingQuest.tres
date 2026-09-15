@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://c2qv5krngu0i0"]
+
+[ext_resource type="Resource" uid="uid://b4f1jaos0metv" path="res://Resources/story/conditions/testCondition.tres" id="1_bjgej"]
+[ext_resource type="Script" uid="uid://ctffm134lsqah" path="res://Scripts/classes/quest.gd" id="1_rnvvs"]
+
+[resource]
+script = ExtResource("1_rnvvs")
+questName = "Sample Quest"
+dependentConditions = Dictionary[int, Array]({
+0: [],
+1: [ExtResource("1_bjgej")],
+2: [],
+3: []
+})
+metadata/_custom_type_script = "uid://ctffm134lsqah"

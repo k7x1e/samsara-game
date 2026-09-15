@@ -8,4 +8,7 @@ script = ExtResource("2_37lvr")
 Icon = ExtResource("1_1mvjh")
 castable = false
 uiNode = null
+spellTimer = null
+statted = false
+isPlaceHolder = true
 metadata/_custom_type_script = "uid://b52li86lflfyj"

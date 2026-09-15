@@ -41,9 +41,9 @@ func retrieve(stat: int): #0: agility, 1: magic, 2: perception, 3: intelligence,
 	return stats[stat]
 
 func setstat(stat: int, amt: float):
-	print(stats[stat])
+	#print(stats[stat])
 	stats[stat] = amt
-	print(stats[stat])
+	#print(stats[stat])
 	Globals.Player.refreshStats()
 
 func experience(stat:int):

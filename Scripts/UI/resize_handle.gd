@@ -14,7 +14,7 @@ func _on_texture_rect_gui_input(event: InputEvent) -> void:
 			dragging = true
 	if Input.is_action_pressed("LeftClick") and dragging:
 		offset = get_global_mouse_position() - window.global_position
-		print("dragging")
+		#print("dragging")
 		#check if it excedes max size
 		var maxVector = Vector2(maxX,maxY)
 		if offset.x <= maxVector.x and offset.y <= maxVector.y:

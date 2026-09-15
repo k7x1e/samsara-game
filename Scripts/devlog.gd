@@ -252,3 +252,13 @@
 	#finished the quest tracker. time to push it.
 	#12:05
 	#added support for sfx. I will now add ambience.
+	#12:15
+	#idrk what to do now
+	#i gotta add item quantities
+	#12:23
+	#trying to add a consumable but for some strange reason the timer for it only triggers once.
+	#why the fuck is it like this
+	#12:29
+	#i am the most retarded man on the planet. i had forgotten that the heal spell gives you like a trillion xp
+	#12:34
+	#fixed the bug and commented most of the debugging prints

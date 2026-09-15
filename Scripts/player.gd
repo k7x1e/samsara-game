@@ -171,7 +171,7 @@ func look_at_mouse():
 		if global_position.distance_to(localmousePos) > 0.1:
 			rotationNode.look_at(localmousePos, Vector3.UP)
 	else:
-		print("failing somehow")
+		#print("failing somehow")
 		return Vector3.ZERO
 
 #use old cursor functionality
@@ -194,8 +194,8 @@ func setCursor():
 #leveling from walking
 func update():
 	var dist = self.global_position.distance_to(referenceN.global_position)
-	print(dist)
+	#print(dist)
 	if dist >= experienceThresh:
 		stats.experience(0)
 	referenceN.global_position = self.global_position
-	print(self.global_position.distance_to(referenceN.global_position))
+	#print(self.global_position.distance_to(referenceN.global_position))

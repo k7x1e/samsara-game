@@ -34,7 +34,7 @@ func update():
 func attack():
 	var bodies = damageArea.get_overlapping_bodies()
 	for body in bodies:
-		print("attacking player..")
+		#print("attacking player..")
 		body.damage(atdamage)
 		cooldown()
 		return true

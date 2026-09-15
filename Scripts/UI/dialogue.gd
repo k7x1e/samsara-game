@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func update():
 	nameLabel.text = dialogueToUse.speakerName
-	print("updating dialogue")
+	#print("updating dialogue")
 	for i in optionNode.get_children():
 		i.queue_free()
 	var currentW = dialogueToUse.manuscript[index]

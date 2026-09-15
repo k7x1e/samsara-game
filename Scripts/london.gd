@@ -16,7 +16,7 @@ func _ready() -> void:
 	
 
 func initialize():
-	print("initializing")
+	#print("initializing")
 	var startPoint
 	var x = 0
 	
@@ -33,11 +33,11 @@ func initialize():
 			curve.add_point(b.global_position)
 			#check if its the start point, honestly redundant.
 			if b.isStop:
-				print("stop found, murdering coder")
+				#print("stop found, murdering coder")
 				var offset = curve.get_closest_offset(tramNodes[i].to_local(b.global_position))
 				stop_offsets.append(offset)
 			if b.isStartPoint:
-				print("found start point")
+				#print("found start point")
 				startPoint = b
 				#this SHOULD fix origin starting issue
 				#tramNodes[i].global_position = b.global_position
@@ -52,7 +52,7 @@ func initialize():
 		shitfart.set_owner(self)
 		shitfart.TramFollower.stopoffsets = stop_offsets.duplicate()
 		
-		print("Baked length: ", curve.get_baked_length())
-		print(curve.get_point_position(0))
+		#print("Baked length: ", curve.get_baked_length())
+		#print(curve.get_point_position(0))
 		
 		x+=1

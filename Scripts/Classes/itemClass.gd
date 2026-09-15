@@ -1,8 +1,8 @@
 extends Resource
 
-#THIS IS IMPORTANT EVERY SINGLE ITEM HAS TO BE UNIQUE OTHERWISE IT WILL INTRODUCE INSANE GLITCHES
 class_name itemClass
 
+#THIS IS IMPORTANT EVERY SINGLE ITEM HAS TO BE UNIQUE OTHERWISE IT WILL INTRODUCE INSANE GLITCHES
 @export var itemID: int #mostly for tracking purposes
 @export var UID: int = 0 #AT NO POINT CAN THIS MATCH ANY OTHER ID EVER USED
 
@@ -14,3 +14,5 @@ class_name itemClass
 
 @export var equipped: bool
 @export var equippable: bool = false #DOES NOT APPLY TO SPELLS
+
+@export var quantity: int

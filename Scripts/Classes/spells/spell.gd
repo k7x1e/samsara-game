@@ -21,6 +21,10 @@ class_name spell
 @export var spellTimer: Variant
 @export var parentItemUID: int
 
+@export var limited: bool = false
+@export var statted: bool = true
+@export var isPlaceHolder: bool = false
+
 var curThreads: int = 0
 
 func cast(caster: Variant):
@@ -37,7 +41,7 @@ func cast(caster: Variant):
 		actualNode.set_owner(Globals.Root)
 		actualNode.initialize()
 		Globals.Player.mana -= cost
-		print(Globals.Player.mana)
+		#print(Globals.Player.mana)
 		cooldown_active = true
 		cooldown()
 		return true
@@ -45,10 +49,11 @@ func cast(caster: Variant):
 		return false
 
 func updateStats():
-	self.coolDown = basecoolDown - (int(Globals.stats.stats[1] / 5) * 0.25)
-	#print (coolDown, basecoolDown)
-	self.cost = basecost - (int(Globals.stats.stats[1] / 10) * 25)
-	#print(cost, basecost)
+	if statted:
+		self.coolDown = basecoolDown - (int(Globals.stats.stats[1] / 5) * 0.25)
+		#print (coolDown, basecoolDown)
+		self.cost = basecost - (int(Globals.stats.stats[1] / 10) * 25)
+		#print(cost, basecost)
 
 func cooldown():
 	curThreads += 1

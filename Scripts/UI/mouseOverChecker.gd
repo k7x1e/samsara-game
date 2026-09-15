@@ -12,7 +12,7 @@ func _ready() -> void:
 
 
 func _mouse_entered():
-	print("mouse is over")
+	#print("mouse is over")
 	mouse_over = true
 	if amIUnderTheCharacterSheet:
 		charSheet.showMenu(ifSoWhichStatAmI)

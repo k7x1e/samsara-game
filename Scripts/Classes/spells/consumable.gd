@@ -2,8 +2,6 @@ extends spell
 
 class_name consumable
 
-@export var quantity: int
-
 func cast(caster: Variant):
 	#print (curThreads)
 	#Globals.Player

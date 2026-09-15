@@ -67,12 +67,13 @@ grow_vertical = 2
 texture = ExtResource("2_cayip")
 
 [node name="CharSheet" type="Control" parent="Menu" unique_id=1679423571 groups=["updatable"]]
+custom_minimum_size = Vector2(175, 200)
 layout_mode = 1
 anchors_preset = 0
 offset_left = 331.0
 offset_top = 396.0
-offset_right = 915.0
-offset_bottom = 986.0
+offset_right = 744.0
+offset_bottom = 818.0
 script = ExtResource("4_dldpb")
 
 [node name="Panel" type="Panel" parent="Menu/CharSheet" unique_id=483557386]
@@ -112,7 +113,6 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("5_wbdvm")
 text = "This: that
-Shit: fart
 Shit: fart
 Shit: fart
 Shit: fart

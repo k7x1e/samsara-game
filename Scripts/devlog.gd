@@ -262,3 +262,5 @@
 	#i am the most retarded man on the planet. i had forgotten that the heal spell gives you like a trillion xp
 	#12:34
 	#fixed the bug and commented most of the debugging prints
+	#12:48
+	#updated minimum size. Done for this period.

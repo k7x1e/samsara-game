@@ -2,6 +2,8 @@ extends Resource
 
 class_name spell
 
+signal quantity_changed()
+
 @export var spellNode: PackedScene
 @export var basecost: int
 @export var cost: int
@@ -24,6 +26,10 @@ class_name spell
 @export var limited: bool = false
 @export var statted: bool = true
 @export var isPlaceHolder: bool = false
+@export var quantity: int:
+	set(value):
+		quantity = value
+		emit_signal('quantity_changed')
 
 var curThreads: int = 0
 

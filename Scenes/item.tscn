@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cgqxfnfjw3hhu" path="res://Scripts/itemNode.gd" id="1_u06aw"]
 [ext_resource type="Texture2D" uid="uid://874crc0bp3hk" path="res://icon.png" id="1_ys0gr"]
 [ext_resource type="Texture2D" uid="uid://bf80uj3kg2cjb" path="res://Textures/UI/gui_item_equipborder.png" id="2_76mu4"]
+[ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="4_tnst4"]
+[ext_resource type="LabelSettings" uid="uid://b1ril15u6t25p" path="res://Resources/sampleLabel.tres" id="5_renmp"]
 
 [node name="Item" type="Control" unique_id=2077732867]
 custom_minimum_size = Vector2(128, 128)
@@ -31,3 +33,17 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("2_76mu4")
 expand_mode = 1
+
+[node name="quantity" type="Label" parent="." unique_id=286975103]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -33.0
+offset_right = 123.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_tnst4")
+text = "67"
+label_settings = ExtResource("5_renmp")
+vertical_alignment = 2

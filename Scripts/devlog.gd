@@ -250,3 +250,5 @@
 	#anyways time to get a dialogue system going.
 	#11:38
 	#finished the quest tracker. time to push it.
+	#12:05
+	#added support for sfx. I will now add ambience.

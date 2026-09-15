@@ -58,5 +58,5 @@ func checkLevels():
 			print("leveled up stat: ", b)
 			setstat(b, stats[b]+1)
 			Globals.spellMaster.updateSpells(Globals.spellMaster.spellArray)
-			Globals.Player.notify(str("Leveled up ", statNames[b], "."))
+			Globals.Player.notify(str("Leveled up ", statNames[b], "."), "Level1")
 		b += 1

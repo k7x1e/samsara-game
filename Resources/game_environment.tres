@@ -2,7 +2,6 @@
 
 [resource]
 background_mode = 1
-ssr_enabled = true
 ssao_enabled = true
 ssao_intensity = 3.7
 fog_enabled = true

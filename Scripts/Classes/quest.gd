@@ -52,9 +52,9 @@ func setQuestState(state: int): ##cannot go backwards, 1 given, 2 achieved, 3 co
 	if succesful:
 		match state:
 			1:
-				Globals.Player.notify(str("Discovered quest ", questName, "."))
+				Globals.Player.notify(str("Discovered quest ", questName, "."), "Mission1")
 			3:
-				Globals.Player.notify(str("Completed quest ", questName, "."))
+				Globals.Player.notify(str("Completed quest ", questName, "."), "Mission1")
 		
 		for i in dependentConditions[state]:
 			i.fulfilled = true

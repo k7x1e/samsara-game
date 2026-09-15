@@ -37,6 +37,9 @@ var dashVector = Vector3(dashD, 0, 0)
 
 @export var quests: Array[Quest]
 
+@export var sounds: Dictionary[String, AudioStream]
+@onready var sfx = $sfx
+
 var referenceN: Node3D
 
 func refreshStats():
@@ -57,13 +60,16 @@ func death():
 	notify("you died !!")
 	Globals.Root.death()
 
-func notify(notif: String):
+func notify(notif: String, Audio: String = "None"):
 	var temp = notification.instantiate()
 	self.add_child(temp)
 	temp.set_owner(self)
 	temp.ntext = notif
 	temp.global_position = self.global_position
 	temp.initialize()
+	if Audio != "None":
+		sfx.stream = sounds[Audio]
+		sfx.play()
 
 func _ready():
 	initialize()

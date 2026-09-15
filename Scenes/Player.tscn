@@ -16,6 +16,8 @@
 [ext_resource type="Script" uid="uid://ctffm134lsqah" path="res://Scripts/classes/quest.gd" id="11_lslt6"]
 [ext_resource type="Resource" uid="uid://bvx7kyepfo1oa" path="res://Resources/Spells/placeholder.tres" id="12_miouo"]
 [ext_resource type="Resource" uid="uid://c2qv5krngu0i0" path="res://Resources/story/quests/testingQuest.tres" id="12_ulo2v"]
+[ext_resource type="AudioStream" uid="uid://bikro78yehb60" path="res://sound/notification/mission.wav" id="13_1iu4k"]
+[ext_resource type="AudioStream" uid="uid://b0ahih5c8udqs" path="res://sound/notification/something.wav" id="14_m0x7a"]
 [ext_resource type="Texture2D" uid="uid://dhmu0toe1itnr" path="res://addons/func_godot/textures/clip.png" id="15_1e7my"]
 
 [sub_resource type="Resource" id="Resource_arntx"]
@@ -72,6 +74,10 @@ inventory = SubResource("Resource_megsn")
 stats = SubResource("Resource_1e7my")
 experienceThresh = 5.0
 quests = Array[ExtResource("11_lslt6")]([ExtResource("12_ulo2v"), SubResource("Resource_1iu4k")])
+sounds = Dictionary[String, AudioStream]({
+"Level1": ExtResource("14_m0x7a"),
+"Mission1": ExtResource("13_1iu4k")
+})
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1510999750]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 8, 8)
@@ -107,6 +113,7 @@ billboard = 1
 texture = ExtResource("15_1e7my")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=109639042]
+current = true
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1500637159]
 collision_layer = 512
@@ -114,3 +121,5 @@ collision_mask = 512
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=71046948]
 shape = SubResource("SphereShape3D_1e7my")
+
+[node name="sfx" type="AudioStreamPlayer" parent="." unique_id=1697929875]

@@ -269,3 +269,5 @@
 	#i will need to make a good enemy ai, matter of fact several.
 	#i will also need to make a dash ability. just make a "spell" that increases your speed tenfold for 0.2 seconds
 	#also i need to nerf leveling
+	#21:38
+	#ive spent a while now mapping. Result looks like it was pushed out of my anus

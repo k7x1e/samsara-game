@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://d1q4pbt71euiy"
+path="res://.godot/imported/londonPub-crash.map-e33c70890c7c00016caaf68359094059.tres"
+
+[deps]
+
+source_file="res://Resources/Maps/londonPub-crash.map"
+dest_files=["res://.godot/imported/londonPub-crash.map-e33c70890c7c00016caaf68359094059.tres"]
+
+[params]
+

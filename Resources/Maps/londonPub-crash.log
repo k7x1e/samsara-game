@@ -1,0 +1,34 @@
+Loading document from "/media/the_butt_tickler/gamer/samsara-game/Resources/Maps/london.map"
+Adding file system path "/tmp/.mount_TrenchFbeHbm/usr/bin/../share/TrenchBroom/defaults/assets"
+Adding file system path "/media/the_butt_tickler/gamer/samsara-game/"
+Found 0 shaders
+Loaded entity definition file Samsonarum.fgd
+Found 0 shaders
+No usable diffuse textures found for material 0 of model 'LampPost.glb', loading fallback texture
+No usable diffuse textures found for material 1 of model 'LampPost.glb', loading fallback texture
+No usable diffuse textures found for material 0 of model 'lantern.glb', loading fallback texture
+No usable diffuse textures found for material 0 of model 'lantern.glb', loading fallback texture
+No usable diffuse textures found for material 1 of model 'lantern.glb', loading fallback texture
+No usable diffuse textures found for material 2 of model 'lantern.glb', loading fallback texture
+No usable diffuse textures found for material 3 of model 'lantern.glb', loading fallback texture
+Reloading material collections
+Found 0 shaders
+Loading document from "/media/the_butt_tickler/gamer/samsara-game/Resources/Maps/londonPub.map"
+Adding file system path "/tmp/.mount_TrenchFbeHbm/usr/bin/../share/TrenchBroom/defaults/assets"
+Adding file system path "/media/the_butt_tickler/gamer/samsara-game/"
+Found 0 shaders
+Loaded entity definition file Samsonarum.fgd
+Found 0 shaders
+No usable diffuse textures found for material 0 of model 'lantern.glb', loading fallback texture
+No usable diffuse textures found for material 0 of model 'lantern.glb', loading fallback texture
+No usable diffuse textures found for material 1 of model 'lantern.glb', loading fallback texture
+No usable diffuse textures found for material 2 of model 'lantern.glb', loading fallback texture
+No usable diffuse textures found for material 3 of model 'lantern.glb', loading fallback texture
+Saving document to "/media/the_butt_tickler/gamer/samsara-game/Resources/Maps/londonPub.map"
+Saved "/media/the_butt_tickler/gamer/samsara-game/Resources/Maps/londonPub.map" in 115ms
+At unknown location: Parsed successfully as Valve entities
+Saving document to "/media/the_butt_tickler/gamer/samsara-game/Resources/Maps/londonPub.map"
+Saved "/media/the_butt_tickler/gamer/samsara-game/Resources/Maps/londonPub.map" in 77ms
+At unknown location: Parsed successfully as Valve entities
+At unknown location: Parsed successfully as Valve entities
+Could not intersect brushes: Brush is empty

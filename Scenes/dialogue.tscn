@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://cdrnpgknxmfk3"]
 
 [ext_resource type="Script" uid="uid://bpxaob14mroqk" path="res://Scripts/UI/dialogue.gd" id="1_p21q5"]
-[ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/classes/dialogueClass.gd" id="2_4hwkt"]
-[ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="2_p21q5"]
-[ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/classes/dialogueOption.gd" id="3_shd1d"]
-[ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/classes/conversation.gd" id="4_j1ns2"]
+[ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/Classes/dialogueClass.gd" id="2_4hwkt"]
+[ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/Classes/dialogueOption.gd" id="3_shd1d"]
+[ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/Classes/conversation.gd" id="4_j1ns2"]
 [ext_resource type="Texture2D" uid="uid://djcuoctbo0jvk" path="res://Textures/UI/gui_panel_dialogue.png" id="5_4hwkt"]
 [ext_resource type="SystemFont" uid="uid://cri31ihw34lpf" path="res://Resources/Fonts/dialogue.tres" id="7_shd1d"]
 
@@ -107,20 +106,16 @@ theme_override_constants/separation = 15
 
 [node name="name" type="Label" parent="dialogue/VBoxContainer" unique_id=1818851391]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_p21q5")
+theme_override_fonts/font = ExtResource("7_shd1d")
 text = "Actor name"
 label_settings = SubResource("LabelSettings_4hwkt")
 
 [node name="Label" type="Label" parent="dialogue/VBoxContainer" unique_id=2002034310]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_shd1d")
-text = "Lorem ipsum
-Lorem ipsum
-Lorem ipsum
-Lorem ipsum
-Lorem ipsum
-Lorem ipsum
-"
+text = "i <3 you ms gothic
+this is example dialogue
+ancient reptilian brain"
 label_settings = SubResource("LabelSettings_5mcti")
 
 [node name="Options" type="VBoxContainer" parent="dialogue/VBoxContainer" unique_id=1067125414]

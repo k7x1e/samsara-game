@@ -1,0 +1,38 @@
+OS:	Linux Mint 21.3
+Qt:	6.10.3
+GL_VENDOR:	NVIDIA Corporation
+GL_RENDERER:	NVIDIA GeForce GTX 1060 6GB/PCIe/SSE2
+GL_VERSION:	4.6.0 NVIDIA 580.159.03
+TrenchBroom Version:	2026.2
+TrenchBroom Build:	v2026.2 Release Linux
+Reason:	SIGSEGV
+Stack trace (most recent call first):
+#0  0x00005643915e8d0a in tb::ui::(anonymous namespace)::CrashHandler(int) at /tmp/.mount_TrenchLOkKMc/usr/bin/trenchbroom
+#1  0x00007f4c82bf151f at /lib/x86_64-linux-gnu/libc.so.6
+#2  0x0000564391c7ef94 in tb::mdl::Node::issueHidden(int) const at /tmp/.mount_TrenchLOkKMc/usr/bin/trenchbroom
+#3  0x0000564391776dd0 in tb::ui::IssueBrowserModel::data(QModelIndex const&, int) const at /tmp/.mount_TrenchLOkKMc/usr/bin/trenchbroom
+#4  0x00007f4c8357b98e in QAbstractItemModel::multiData(QModelIndex const&, QModelRoleDataSpan) const at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Core.so.6
+#5  0x00007f4c84ab513c in QStyledItemDelegate::initStyleOption(QStyleOptionViewItem*, QModelIndex const&) const at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Widgets.so.6
+#6  0x00007f4c84ab4dae in QStyledItemDelegate::sizeHint(QStyleOptionViewItem const&, QModelIndex const&) const at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Widgets.so.6
+#7  0x00007f4c84ae4222 at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Widgets.so.6
+#8  0x00007f4c84aed9ce in QTableView::sizeHintForRow(int) const at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Widgets.so.6
+#9  0x00007f4c84a9ccd0 at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Widgets.so.6
+#10 0x00007f4c84a9d3b8 in QHeaderView::length() const at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Widgets.so.6
+#11 0x00007f4c84aef468 in QTableView::updateGeometries() at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Widgets.so.6
+#12 0x00007f4c84aefb97 in QTableView::timerEvent(QTimerEvent*) at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Widgets.so.6
+#13 0x00007f4c8335f91e in QObject::event(QEvent*) at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Core.so.6
+#14 0x00007f4c84840595 in QFrame::event(QEvent*) at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Widgets.so.6
+#15 0x00007f4c84789dca in QApplicationPrivate::notify_helper(QObject*, QEvent*) at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Widgets.so.6
+#16 0x00007f4c8330635f in QCoreApplication::notifyInternal2(QObject*, QEvent*) at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Core.so.6
+#17 0x00007f4c834c4969 in QTimerInfoList::activateTimers() at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Core.so.6
+#18 0x00007f4c835ff833 at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Core.so.6
+#19 0x00007f4c82102d3a in g_main_context_dispatch at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#20 0x00007f4c82158487 at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#21 0x00007f4c821003e2 in g_main_context_iteration at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#22 0x00007f4c835ff9ed in QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Core.so.6
+#23 0x00007f4c833124da in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Core.so.6
+#24 0x00007f4c8330e049 in QCoreApplication::exec() at /tmp/.mount_TrenchLOkKMc/usr/bin/../lib/libQt6Core.so.6
+#25 0x00005643913b0654 in main at /tmp/.mount_TrenchLOkKMc/usr/bin/trenchbroom
+#26 0x00007f4c82bd8d8f in __libc_start_call_main at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+#27 0x00007f4c82bd8e3f in __libc_start_main_impl at ./csu/../csu/libc-start.c:392:3
+#28 0x00005643915af9e4 in _start at /tmp/.mount_TrenchLOkKMc/usr/bin/trenchbroom

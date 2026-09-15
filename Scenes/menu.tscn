@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://dgvxv4hvhj2dl" path="res://Scripts/UI/tooltip.gd" id="12_3p34a"]
 [ext_resource type="Script" uid="uid://dscj8jy3r1qnb" path="res://Scripts/UI/drop_down.gd" id="12_23t3j"]
 [ext_resource type="StyleBox" uid="uid://ds457w8c45wbg" path="res://Resources/UI/dropdownNormal.tres" id="13_5ti5v"]
+[ext_resource type="Script" uid="uid://rokee7uc8edj" path="res://Scripts/UI/quest_menu.gd" id="13_owyel"]
 [ext_resource type="StyleBox" uid="uid://lufuxo8vt8ji" path="res://Resources/UI/dropdownPressed.tres" id="14_1by5w"]
 [ext_resource type="StyleBox" uid="uid://he3jioswdiig" path="res://Resources/UI/dropdownDisabled.tres" id="15_kmwmt"]
 [ext_resource type="PackedScene" uid="uid://cdrnpgknxmfk3" path="res://Scenes/dialogue.tscn" id="18_rc6uw"]
@@ -216,6 +217,82 @@ size_flags_vertical = 3
 text = "This stat determines jack shit. Pee and poo all over the walls"
 label_settings = SubResource("LabelSettings_3p34a")
 autowrap_mode = 2
+
+[node name="questTracker" type="Control" parent="Menu" unique_id=1616411586 groups=["init", "updatable"]]
+custom_minimum_size = Vector2(600, 200)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -818.0
+offset_top = 88.0
+offset_right = -218.0
+offset_bottom = 688.0
+grow_horizontal = 0
+script = ExtResource("13_owyel")
+
+[node name="Panel" type="Panel" parent="Menu/questTracker" unique_id=1126889908]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_158mb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/questTracker" unique_id=1673988820]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/questTracker/VBoxContainer" unique_id=112088036]
+layout_mode = 2
+alignment = 1
+script = ExtResource("3_cayip")
+
+[node name="Label" type="Label" parent="Menu/questTracker/VBoxContainer/HBoxContainer" unique_id=889495681]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_wbdvm")
+text = "Quest Tracker"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Menu/questTracker/VBoxContainer" unique_id=498483146]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="questContainer" type="VBoxContainer" parent="Menu/questTracker/VBoxContainer/ScrollContainer" unique_id=1562728118]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="ignore" type="Control" parent="Menu/questTracker/VBoxContainer/ScrollContainer/questContainer" unique_id=32634153]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Menu/questTracker" unique_id=836588801]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("5_jsrd8")
+maxX = 3200.0
+maxY = 1600.0
+
+[node name="TextureRect" type="TextureRect" parent="Menu/questTracker/Control" unique_id=581355101]
+modulate = Color(0.4417584, 0, 0.086844064, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_wbdvm")
 
 [node name="Inventory" type="Control" parent="Menu" unique_id=339712170]
 custom_minimum_size = Vector2(296, 168)
@@ -455,6 +532,7 @@ mouse_filter = 2
 visible = false
 
 [connection signal="gui_input" from="Menu/CharSheet/Control/TextureRect" to="Menu/CharSheet/Control" method="_on_texture_rect_gui_input"]
+[connection signal="gui_input" from="Menu/questTracker/Control/TextureRect" to="Menu/questTracker/Control" method="_on_texture_rect_gui_input"]
 [connection signal="gui_input" from="Menu/Inventory/Control/TextureRect" to="Menu/Inventory/Control" method="_on_texture_rect_gui_input"]
 [connection signal="pressed" from="Menu/DropDown/VBoxContainer/equip" to="Menu/DropDown" method="_on_equip_pressed"]
 [connection signal="pressed" from="Menu/DropDown/VBoxContainer/unequip" to="Menu/DropDown" method="_on_unequip_pressed"]

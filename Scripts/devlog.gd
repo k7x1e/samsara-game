@@ -245,3 +245,8 @@
 	#of course i can not bundle it with the game but since i already have it on my mac its all good and as long as one has it installed it should work no matter the system
 	#of course there is a fallback.
 	#i will now commit, push and then get to work on a quest menu.
+	#10:55
+	#i moved the check dialogue function from tick to process. No idea why i even put inputs in tick to begin with its retarded and it breaks everything.
+	#anyways time to get a dialogue system going.
+	#11:38
+	#finished the quest tracker. time to push it.

@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bvwq44ohpnw77"]
+
+[ext_resource type="Script" uid="uid://cdhg5y7400tn1" path="res://Scripts/UI/questUI.gd" id="1_2revy"]
+[ext_resource type="Texture2D" uid="uid://dl4mnnuurln0h" path="res://Textures/UI/gui_panel_quest.png" id="1_cbd34"]
+[ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="3_gpg5m"]
+[ext_resource type="Texture2D" uid="uid://bqxdpdin82oyj" path="res://Textures/icons/spells/heal.png" id="3_gq147"]
+[ext_resource type="LabelSettings" uid="uid://b1ril15u6t25p" path="res://Resources/sampleLabel.tres" id="4_gq147"]
+[ext_resource type="SystemFont" uid="uid://cri31ihw34lpf" path="res://Resources/Fonts/dialogue.tres" id="5_uy4b8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h63v2"]
+texture = ExtResource("1_cbd34")
+texture_margin_top = 20.0
+expand_margin_top = 20.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_anv4d"]
+font_size = 15
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Quest" type="Control" unique_id=1717426852]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2revy")
+
+[node name="Panel" type="Panel" parent="." unique_id=987569904]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_h63v2")
+
+[node name="Stuff" type="HBoxContainer" parent="." unique_id=456736620]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+
+[node name="Icon" type="TextureRect" parent="Stuff" unique_id=323029651]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("3_gq147")
+expand_mode = 1
+
+[node name="info" type="VBoxContainer" parent="Stuff" unique_id=1646605705]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Importance" type="HBoxContainer" parent="Stuff/info" unique_id=1326632252]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Stuff/info/Importance" unique_id=837587420]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_gpg5m")
+text = "Quest Name"
+label_settings = ExtResource("4_gq147")
+
+[node name="Status" type="Label" parent="Stuff/info/Importance" unique_id=1664718691]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gpg5m")
+text = "Quest Status"
+label_settings = ExtResource("4_gq147")
+horizontal_alignment = 2
+
+[node name="Description" type="Label" parent="Stuff/info" unique_id=1662895652]
+clip_contents = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("5_uy4b8")
+text = "Quest description... Bullshit"
+label_settings = SubResource("LabelSettings_anv4d")
+autowrap_mode = 2

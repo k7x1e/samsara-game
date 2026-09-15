@@ -104,6 +104,11 @@ func signalupdate():
 	for object in updatable:
 		object.update()
 
+func signalinit():
+	var initable = get_tree().get_nodes_in_group("init")
+	for object in initable:
+		object.initialize()
+
 func startDialogue(theconvo: conversation):
 	Globals.dialogueMenu.index = 0
 	Globals.dialogueMenu.dialogueToUse = theconvo
@@ -174,6 +179,7 @@ func initialize(gmestate: gameState):
 			temp.global_position = gmestate.initnodes[i].position
 		if gmestate.initnodes[i].name == "Menu":
 			Menu = temp.menu
+	signalinit()
 	return true
 
 func save():

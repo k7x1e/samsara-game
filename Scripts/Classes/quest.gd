@@ -3,15 +3,24 @@ class_name Quest
 
 #most of this will deadass be ripped from dustrialis
 @export_enum("Unknown", "Given","Achieved","Completed") var quest_state: int
-
 @export var botched: bool
+
+@export var icon: Texture2D
+
 @export var questName: String
 @export var questId: int
 @export var completeUponAchievement: bool
 @export var announce: bool
 @export var givesReward: bool
 @export var reward: itemClass
-@export var descriptions: Array[String] ## just matches the states.
+@export var descriptions: Array[String] = [
+	"blank",
+	"You've discovered this quest.",
+	"You've progressed this quest.",
+	"You've completed this quest,",
+	"mystery status",
+	"You've failed this quest."
+]## just matches the states.
 @export var dependentConditions: Dictionary[int, Array] = {
 	0: [],
 	1: [],
@@ -56,6 +65,12 @@ func botchQuest():
 func questReward(inv: Node):
 	if givesReward:
 		Globals.inventory.add(reward)
+
+func isQuestDiscovered():
+	if quest_state != 0:
+		return true
+	else:
+		return false
 
 func isQuestCompleted():
 	if quest_state == 4:

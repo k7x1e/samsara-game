@@ -12,3 +12,5 @@ var dialogueMenu: Control
 var currentWorldNode: Node
 
 var idHandler = ItemIdHandler.new()
+
+var quests: Array[Quest]

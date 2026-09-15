@@ -38,6 +38,7 @@ Pausable=""
 Persistent=""
 ticked=""
 updatable=""
+init=""
 
 [input]
 

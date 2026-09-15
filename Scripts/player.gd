@@ -35,6 +35,8 @@ var dashVector = Vector3(dashD, 0, 0)
 
 @export var globalmousePos: Vector3
 
+@export var quests: Array[Quest]
+
 var referenceN: Node3D
 
 func refreshStats():
@@ -70,6 +72,7 @@ func getFollowerNode() -> Node3D:
 	return followerNode
 
 func initialize():
+	Globals.quests = quests
 	referenceN = Node3D.new()
 	Globals.Root.add_child(referenceN)
 	referenceN.global_position = self.global_position
@@ -102,8 +105,7 @@ func tick():
 	if canRecoverhealth:
 		recoverHealth()
 	
-	if Input.is_action_just_pressed("interact"):
-		checkDialogue()
+	
 	look_at_mouse()
 	setCursor()
 	
@@ -114,7 +116,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	
+	if Input.is_action_just_pressed("interact"):
+		checkDialogue()
 	#call mouselook func
 	#look_at_mouse()
 	#swage movement m8

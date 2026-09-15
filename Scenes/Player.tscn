@@ -13,7 +13,9 @@
 [ext_resource type="Resource" uid="uid://grrdhtwvlugn" path="res://Resources/Spells/heal_spell.tres" id="9_o3h8g"]
 [ext_resource type="Script" uid="uid://x7tekc2114cw" path="res://Scripts/classes/stats.gd" id="10_o3h8g"]
 [ext_resource type="Environment" uid="uid://lyhkdkhxwhlj" path="res://Resources/game_environment.tres" id="11_1e7my"]
+[ext_resource type="Script" uid="uid://ctffm134lsqah" path="res://Scripts/classes/quest.gd" id="11_lslt6"]
 [ext_resource type="Resource" uid="uid://bvx7kyepfo1oa" path="res://Resources/Spells/placeholder.tres" id="12_miouo"]
+[ext_resource type="Resource" uid="uid://c2qv5krngu0i0" path="res://Resources/story/quests/testingQuest.tres" id="12_ulo2v"]
 [ext_resource type="Texture2D" uid="uid://dhmu0toe1itnr" path="res://addons/func_godot/textures/clip.png" id="15_1e7my"]
 
 [sub_resource type="Resource" id="Resource_arntx"]
@@ -41,6 +43,14 @@ progressStats = null
 statDict = null
 metadata/_custom_type_script = "uid://x7tekc2114cw"
 
+[sub_resource type="Resource" id="Resource_1iu4k"]
+script = ExtResource("11_lslt6")
+quest_state = 1
+icon = ExtResource("6_52ee3")
+questName = "Test Quest"
+descriptions = Array[String](["", "Ignore this one."])
+metadata/_custom_type_script = "uid://ctffm134lsqah"
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kldst"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_j5yw3"]
@@ -61,6 +71,7 @@ script = ExtResource("1_kyqiw")
 inventory = SubResource("Resource_megsn")
 stats = SubResource("Resource_1e7my")
 experienceThresh = 5.0
+quests = Array[ExtResource("11_lslt6")]([ExtResource("12_ulo2v"), SubResource("Resource_1iu4k")])
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1510999750]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 8, 8)

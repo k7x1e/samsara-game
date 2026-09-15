@@ -264,3 +264,8 @@
 	#fixed the bug and commented most of the debugging prints
 	#12:48
 	#updated minimum size. Done for this period.
+	#16:45
+	#minor adjustments. Once i get home i will start making big things.
+	#i will need to make a good enemy ai, matter of fact several.
+	#i will also need to make a dash ability. just make a "spell" that increases your speed tenfold for 0.2 seconds
+	#also i need to nerf leveling

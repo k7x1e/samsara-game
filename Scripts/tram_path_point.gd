@@ -15,4 +15,5 @@ func _func_godot_apply_properties(entity_properties: Dictionary) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().create_timer(0.01).timeout
-	Globals.currentWorldNode.tramTransforms[belongsTo].append(self)
+	if Globals.currentWorldNode.containsTrams:
+		Globals.currentWorldNode.tramTransforms[belongsTo].append(self)

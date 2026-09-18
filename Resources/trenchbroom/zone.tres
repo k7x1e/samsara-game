@@ -1,7 +1,20 @@
 [gd_resource type="Resource" script_class="FuncGodotFGDSolidClass" format=3 uid="uid://comjux8xb8eao"]
 
 [ext_resource type="Script" uid="uid://5cow84q03m6a" path="res://addons/func_godot/src/fgd/func_godot_fgd_solid_class.gd" id="1_1dcmu"]
+[ext_resource type="Script" uid="uid://brlk7l6n2hmmg" path="res://Scripts/zone.gd" id="2_1eldg"]
 
 [resource]
 script = ExtResource("1_1dcmu")
+use_in_baked_light = false
+render_layers = 524288
+collision_layer = 2048
+collision_mask = 2048
+script_class = ExtResource("2_1eldg")
+classname = "zone"
+description = "fart"
+class_properties = Dictionary[String, Variant]({
+"name": "zoneName",
+"why": false
+})
+node_class = "Node3D"
 metadata/_custom_type_script = "uid://5cow84q03m6a"

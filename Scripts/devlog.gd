@@ -271,3 +271,19 @@
 	#also i need to nerf leveling
 	#21:38
 	#ive spent a while now mapping. Result looks like it was pushed out of my anus
+	#
+	##17/09
+	#10:51
+	#good day. been kinda stuck. i will now implement zones.
+	#17:53
+	#highk forgot to actually do that so ill do so now.
+	#
+	##18/09
+	#09:50
+	#been really lacking as of late. i never even implemented the goddamned zones. Matter of fact i think im going to focus primarily on writing today.
+	#nevermind today i shall add a simple enemy.
+	#i will need to implement signals into enemies and then add a separate monitor node that takes all these signals and does something with them.
+	#10:08
+	#finished a very basic enemy ai. im considering scrapping the trams. THey dont work thematically
+	#10:11
+	#removed trams, or atleast made them not be used.

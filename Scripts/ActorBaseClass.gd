@@ -4,7 +4,7 @@ extends CharacterBody3D
 @onready var visual = $Visual
 @onready var nav = $Nav
 
-@export var health: float = 100
+@export var health: float = 100 ##welcome to cp brother
 @export var NpcClass: npc
 
 

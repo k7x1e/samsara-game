@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bobpuvlc86igt"
 path.s3tc="res://.godot/imported/shine.png-dad14e980a7357803d9f9e3c2193e377.s3tc.ctex"
+path.etc2="res://.godot/imported/shine.png-dad14e980a7357803d9f9e3c2193e377.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Textures/shine.png"
-dest_files=["res://.godot/imported/shine.png-dad14e980a7357803d9f9e3c2193e377.s3tc.ctex"]
+dest_files=["res://.godot/imported/shine.png-dad14e980a7357803d9f9e3c2193e377.s3tc.ctex", "res://.godot/imported/shine.png-dad14e980a7357803d9f9e3c2193e377.etc2.ctex"]
 
 [params]
 

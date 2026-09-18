@@ -2,6 +2,8 @@ extends Resource
 
 class_name InventoryClass
 
+signal inventoryChanged()
+
 @export var inventory: Array[itemClass]
 
 @export var idHandler: ItemIdHandler
@@ -29,6 +31,7 @@ func remove(which:itemClass):
 func add(which:itemClass):
 	inventory.append(which)
 	assignIDs()
+	inventoryChanged.emit()
 
 func getUIDindex(id:int):
 	return idHandler.usedArrays.find(id)

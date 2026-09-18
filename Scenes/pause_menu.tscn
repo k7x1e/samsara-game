@@ -8,6 +8,7 @@
 [ext_resource type="StyleBox" uid="uid://he3jioswdiig" path="res://Resources/UI/dropdownDisabled.tres" id="5_stj27"]
 [ext_resource type="Texture2D" uid="uid://cc2ms4njuib66" path="res://Textures/UI/gui_panel_onlytop.png" id="6_ix48p"]
 [ext_resource type="LabelSettings" uid="uid://b1ril15u6t25p" path="res://Resources/sampleLabel.tres" id="7_sjs17"]
+[ext_resource type="SystemFont" uid="uid://cri31ihw34lpf" path="res://Resources/Fonts/dialogue.tres" id="8_0fi7f"]
 [ext_resource type="Script" uid="uid://c4ddkm6wi5mas" path="res://Scripts/UI/settingsMenu.gd" id="9_stj27"]
 [ext_resource type="Script" uid="uid://dgpn8lfjmaaj8" path="res://Scripts/UI/resolutionPicker.gd" id="10_ix48p"]
 [ext_resource type="Script" uid="uid://bajopykwbkmi5" path="res://Scripts/UI/shadowsize.gd" id="11_524vl"]
@@ -19,7 +20,6 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="PauseMenu" type="Control" unique_id=782323223]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,24 +111,40 @@ size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_524vl")
 
 [node name="Info" type="Control" parent="menu/VBoxContainer/PanelContainer" unique_id=721207304]
-visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="menu/VBoxContainer/PanelContainer/Info" unique_id=121648541]
+[node name="ScrollContainer" type="ScrollContainer" parent="menu/VBoxContainer/PanelContainer/Info" unique_id=1087630443]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "There isnt really much to put in this here info section thus far. Enjoy the game
 
-"
+[node name="Label" type="Label" parent="menu/VBoxContainer/PanelContainer/Info/ScrollContainer" unique_id=121648541]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("8_0fi7f")
+text = "welcome to the playtest.
+There is thus far one quest to do and you start it by going into the pub (building right next to you, decorated) and talking to the person inside (space or Q).
+If you die you have to restart the game. There is no saving but for settings. The only saving that works is the gui scale which i recommend you change to taste.
+You start out without any spells assigned as you need to go into the menu and manually assign them (right click)
+The various skills you have level as you do them and there are unlocks (only 1 as of now. Dash ability at level 5 agility). Although only 2 of the skills actually level as of now.
+The windows in the inventory can be moved and resized.
+
+Controls:
+Menu: middle mouse button or E
+Interact: Space or Q
+Spells: Displayed on respective slots.
+Open dropdown: Right Click (on item)
+Toggle pause menu: Escape"
 label_settings = ExtResource("7_sjs17")
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Settings" type="Control" parent="menu/VBoxContainer/PanelContainer" unique_id=57805001]
+visible = false
 layout_mode = 2
 script = ExtResource("9_stj27")
 

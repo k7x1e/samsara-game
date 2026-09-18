@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnlpfxmcle0t8"
 path.s3tc="res://.godot/imported/lightning_strike_red.png-c302625b882d77b8173143d8652b812e.s3tc.ctex"
+path.etc2="res://.godot/imported/lightning_strike_red.png-c302625b882d77b8173143d8652b812e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Textures/spells/lightning_strike_red.png"
-dest_files=["res://.godot/imported/lightning_strike_red.png-c302625b882d77b8173143d8652b812e.s3tc.ctex"]
+dest_files=["res://.godot/imported/lightning_strike_red.png-c302625b882d77b8173143d8652b812e.s3tc.ctex", "res://.godot/imported/lightning_strike_red.png-c302625b882d77b8173143d8652b812e.etc2.ctex"]
 
 [params]
 

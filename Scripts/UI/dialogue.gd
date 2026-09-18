@@ -27,6 +27,10 @@ func update():
 			var temp= option.instantiate()
 			optionNode.add_child(temp)
 			temp.text = i.text
+			if i.fallbackTarget == -2 and !i.condition.fulfilled:
+				temp.disabled = true
+				if i.hide:
+					temp.hide()
 			temp.pressed.connect(optionPressed.bind(i))
 			b += 1
 		if currentW.questStatus != 0:

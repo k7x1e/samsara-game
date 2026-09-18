@@ -13,6 +13,8 @@ var draggingNode: Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.inventory = self
+	Globals.Player.inventory.inventoryChanged.connect(updateInventory)
+	Globals.Player.inventory.inventoryChanged.connect(checkColumns)
 	await get_tree().create_timer(0.1).timeout
 	dropDownNode = Globals.menu.dropdown
 
@@ -34,6 +36,7 @@ func updateInventory():
 		self.add_child(temp)
 		temp.set_owner(self)
 		temp.initialize(theInventory.inventory[i])
+		print("added: ", theInventory.inventory[i].name)
 		
 	#check players inventory, 
 
@@ -55,7 +58,7 @@ func pickup(what: Node):
 	if !dragging:
 		var pickedItem = what.ownItem
 		theInventory.remove(pickedItem)
-		remove_child(what)
+		self.remove_child(what)
 		Globals.menu.add_child(what)
 		what.dragging = true
 		unequip(what)

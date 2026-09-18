@@ -42,6 +42,8 @@ var dashVector = Vector3(dashD, 0, 0)
 
 @export var statuseffects: Array[statuseffect]
 
+@export var unlocks: Dictionary[String, itemClass]
+
 var referenceN: Node3D
 
 func modifyEffects(index: statuseffect, append: bool):
@@ -52,6 +54,13 @@ func modifyEffects(index: statuseffect, append: bool):
 			statuseffects.erase(index)
 	print("refreshing effects")
 	Globals.effecthandler.refreshEffects()
+
+func checkLevelUnlocks(stat: int, level: int): ## only items as of now
+	var unlockindex = str(stat, level)
+	if unlocks.has(unlockindex):
+		var unlock = unlocks[unlockindex]
+		print("unlocked some bullshit")
+		inventory.add(unlock)
 
 func refreshStats():
 	SPEED = stats.retrieve(0) * 2.5
@@ -66,6 +75,7 @@ func damage(amt: float):
 	health -= amt
 	if health <= 0:
 		death()
+	notify(str("-", str(amt)))
 
 func death():
 	notify("you died !!")

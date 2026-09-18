@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://b0ahih5c8udqs" path="res://sound/notification/something.wav" id="14_m0x7a"]
 [ext_resource type="Texture2D" uid="uid://dhmu0toe1itnr" path="res://addons/func_godot/textures/clip.png" id="15_1e7my"]
 [ext_resource type="Script" uid="uid://bs1xhdp0kaywn" path="res://Scripts/classes/statuseffect.gd" id="18_i2e8t"]
+[ext_resource type="Resource" uid="uid://blam2i3pgoujr" path="res://Resources/Items/dash.tres" id="19_qidb7"]
 
 [sub_resource type="Resource" id="Resource_arntx"]
 script = ExtResource("2_megsn")
@@ -61,7 +62,7 @@ metadata/_custom_type_script = "uid://cse3ubaxht2cj"
 
 [sub_resource type="Resource" id="Resource_1e7my"]
 script = ExtResource("10_o3h8g")
-agility = 3.0
+agility = 4.0
 magic = 3.0
 perception = 2.0
 intelligence = 2.0
@@ -111,6 +112,9 @@ sounds = Dictionary[String, AudioStream]({
 "Mission1": ExtResource("13_1iu4k")
 })
 statuseffects = Array[ExtResource("18_i2e8t")]([SubResource("Resource_qidb7")])
+unlocks = Dictionary[String, ExtResource("2_megsn")]({
+"05": ExtResource("19_qidb7")
+})
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1510999750]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 8, 8)

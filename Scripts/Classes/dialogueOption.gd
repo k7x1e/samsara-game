@@ -10,3 +10,4 @@ extends Resource
 @export var condition: Condition
 @export var condMode: int = -1 ##-1 do nothing, 0 need false, 1 need true.
 @export var fallbackTarget: int ##if condition failed go to this target instead.
+@export var hide: bool = false ##If condition isnt met and the fallback is -2 this will determine whether the option is given to begin with.

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="spell" format=3 uid="uid://c16nv1e2gr28j"]
+
+[ext_resource type="Texture2D" uid="uid://874crc0bp3hk" path="res://icon.png" id="1_1yucx"]
+[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/classes/spells/spell.gd" id="2_xphm0"]
+[ext_resource type="PackedScene" uid="uid://wjrts7plxpwx" path="res://Scenes/spells/dash.tscn" id="3_uhqoq"]
+
+[resource]
+script = ExtResource("2_xphm0")
+spellNode = ExtResource("3_uhqoq")
+basecoolDown = 2.0
+coolDown = 2.0
+name = "Dash"
+description = "Is this even used?"
+Icon = ExtResource("1_1yucx")
+uiNode = null
+spellTimer = null
+statted = false
+metadata/_custom_type_script = "uid://b52li86lflfyj"

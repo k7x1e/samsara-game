@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cyegqe5r0yyeg"
 path.s3tc="res://.godot/imported/zone.png-693949a4408d6775ce7f9281e1735497.s3tc.ctex"
+path.etc2="res://.godot/imported/zone.png-693949a4408d6775ce7f9281e1735497.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Textures/zone.png"
-dest_files=["res://.godot/imported/zone.png-693949a4408d6775ce7f9281e1735497.s3tc.ctex"]
+dest_files=["res://.godot/imported/zone.png-693949a4408d6775ce7f9281e1735497.s3tc.ctex", "res://.godot/imported/zone.png-693949a4408d6775ce7f9281e1735497.etc2.ctex"]
 
 [params]
 

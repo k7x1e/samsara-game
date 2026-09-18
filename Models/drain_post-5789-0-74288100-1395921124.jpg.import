@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://eihrcekfduwp"
 path.s3tc="res://.godot/imported/drain_post-5789-0-74288100-1395921124.jpg-1ed64ffdb9a2ed208c0b671587282abf.s3tc.ctex"
+path.etc2="res://.godot/imported/drain_post-5789-0-74288100-1395921124.jpg-1ed64ffdb9a2ed208c0b671587282abf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Models/drain_post-5789-0-74288100-1395921124.jpg"
-dest_files=["res://.godot/imported/drain_post-5789-0-74288100-1395921124.jpg-1ed64ffdb9a2ed208c0b671587282abf.s3tc.ctex"]
+dest_files=["res://.godot/imported/drain_post-5789-0-74288100-1395921124.jpg-1ed64ffdb9a2ed208c0b671587282abf.s3tc.ctex", "res://.godot/imported/drain_post-5789-0-74288100-1395921124.jpg-1ed64ffdb9a2ed208c0b671587282abf.etc2.ctex"]
 
 [params]
 

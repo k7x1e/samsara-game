@@ -3,7 +3,6 @@ extends Node
 var Root: Node3D
 
 var Player: CharacterBody3D
-var inventory: Control
 var wizard: Node
 var stats: Stats
 
@@ -12,6 +11,7 @@ var dialogueMenu: Control
 var menu: Node
 var spellMaster: Control
 var effecthandler: Control
+var inventory: Control
 
 var currentWorldNode: Node
 

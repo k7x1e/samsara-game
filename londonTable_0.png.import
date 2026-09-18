@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://wvusa6wvq3gj"
 path.s3tc="res://.godot/imported/londonTable_0.png-a971f03bda65b0e3126fcc4a6e4cc619.s3tc.ctex"
+path.etc2="res://.godot/imported/londonTable_0.png-a971f03bda65b0e3126fcc4a6e4cc619.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://londonTable_0.png"
-dest_files=["res://.godot/imported/londonTable_0.png-a971f03bda65b0e3126fcc4a6e4cc619.s3tc.ctex"]
+dest_files=["res://.godot/imported/londonTable_0.png-a971f03bda65b0e3126fcc4a6e4cc619.s3tc.ctex", "res://.godot/imported/londonTable_0.png-a971f03bda65b0e3126fcc4a6e4cc619.etc2.ctex"]
 
 [params]
 

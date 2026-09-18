@@ -180,6 +180,7 @@ offset_bottom = 40.0
 texture = ExtResource("6_wbdvm")
 
 [node name="tooltip" type="Control" parent="Menu/CharSheet" unique_id=828683554]
+visible = false
 layout_mode = 1
 anchors_preset = 0
 offset_right = 248.0

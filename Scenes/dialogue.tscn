@@ -111,12 +111,15 @@ text = "Actor name"
 label_settings = SubResource("LabelSettings_4hwkt")
 
 [node name="Label" type="Label" parent="dialogue/VBoxContainer" unique_id=2002034310]
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_shd1d")
 text = "i <3 you ms gothic
 this is example dialogue
 ancient reptilian brain"
 label_settings = SubResource("LabelSettings_5mcti")
+autowrap_mode = 2
+paragraph_separator = "(n)"
 
 [node name="Options" type="VBoxContainer" parent="dialogue/VBoxContainer" unique_id=1067125414]
 layout_mode = 2

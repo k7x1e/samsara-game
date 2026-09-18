@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxxkvpgqno66s"
 path.s3tc="res://.godot/imported/barrel_wood.jpg-a4692910aa73fb903ec1beb1f029ebaa.s3tc.ctex"
+path.etc2="res://.godot/imported/barrel_wood.jpg-a4692910aa73fb903ec1beb1f029ebaa.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Models/barrel_wood.jpg"
-dest_files=["res://.godot/imported/barrel_wood.jpg-a4692910aa73fb903ec1beb1f029ebaa.s3tc.ctex"]
+dest_files=["res://.godot/imported/barrel_wood.jpg-a4692910aa73fb903ec1beb1f029ebaa.s3tc.ctex", "res://.godot/imported/barrel_wood.jpg-a4692910aa73fb903ec1beb1f029ebaa.etc2.ctex"]
 
 [params]
 

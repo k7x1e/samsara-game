@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://cvctmqurpaor8"
+path="res://.godot/imported/mysteryPlace.map-26f49661b4d43c489c258abaed38381e.tres"
+
+[deps]
+
+source_file="res://Resources/Maps/mysteryPlace.map"
+dest_files=["res://.godot/imported/mysteryPlace.map-26f49661b4d43c489c258abaed38381e.tres"]
+
+[params]
+

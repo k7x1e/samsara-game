@@ -299,3 +299,17 @@
 	#i fucked the inventory up big time.
 	#13:14
 	#fixed the bug and managed to add level unlocks and a dash ability.
+	#i wonder if its time to start making dungeons soon
+	#i am enslaving mikhail and forcing him to actually work. poor guy has to actually do something.
+	#13:52
+	#further implemented a basic test quest. I believe that the game is at a playable state now and that all that needs to be added is all the assets.
+	#13:57
+	#its time to start playtesting. I will implement a basic info screen in the pause that contains info kinda like i did in dustrialis and i will polish some stuff
+	#14:15
+	#implemented hiding of options
+	#14:29
+	#i believe ive added most of the polish needed to start the playtest i just gotta inform about the leveling.
+	#14:31
+	#i will now build and upload playtest.
+	#14:39
+	#ive now uploaded the builds

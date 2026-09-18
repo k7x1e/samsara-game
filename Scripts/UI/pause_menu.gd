@@ -9,7 +9,7 @@ extends Control
 @onready var systemNode = $VBoxContainer/PanelContainer/System
 @onready var systemButton = $VBoxContainer/Sections/system
 
-var activeMenu: int = 1 #0 info, 1 settings, 2 system
+var activeMenu: int = 0 #0 info, 1 settings, 2 system
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -3,16 +3,19 @@ extends CharacterBody3D
 @onready var behaviour: Behaviour
 @onready var visual = $Visual
 @onready var nav = $Nav
+@onready var monitor = $Monitor
 
 @export var health: float = 100 ##welcome to cp brother
 @export var NpcClass: npc
-
+@export var hasMonitor: bool = false
 
 var deltaSHIT: float = 1
 var tempPos
 
 func _ready() -> void:
-	initialize()
+	await initialize()
+	if hasMonitor:
+		await monitor.initialize()
 
 func _physics_process(delta: float) -> void:
 	deltaSHIT = delta
@@ -64,6 +67,7 @@ func initialize():
 	var CharModel = NpcClass.model.instantiate()
 	visual.add_child(CharModel)
 	CharModel.set_owner(self)
+	return true
 
 func destroy():
 	self.queue_free()

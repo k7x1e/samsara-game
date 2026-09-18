@@ -1072,9 +1072,9 @@ size = Vector2(400, 400)
 script = ExtResource("1_no8kt")
 containsTrams = false
 tramNodes = {
-0: NodePath(""),
-1: NodePath(""),
-2: NodePath("")
+0: null,
+1: null,
+2: null
 }
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=801468481]

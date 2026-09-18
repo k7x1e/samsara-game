@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dpdhvjrvm5xcf"]
 
 [ext_resource type="StyleBox" uid="uid://ciy75oh1vleff" path="res://Resources/UI/styleBox.tres" id="1_705sf"]
+[ext_resource type="Script" uid="uid://dg7uwqfqibhfy" path="res://Scripts/UI/effects.gd" id="1_t4dsw"]
 [ext_resource type="Texture2D" uid="uid://lpfs7nwlndnf" path="res://Textures/UI/gui_spell_overlay.png" id="2_bm56d"]
 [ext_resource type="Texture2D" uid="uid://c8cink4nhbiot" path="res://Textures/UI/gui_spell_bg.png" id="2_gnd4w"]
 [ext_resource type="Script" uid="uid://bpssskossic25" path="res://Scripts/UI/SpellMaster.gd" id="2_xnb2j"]
@@ -25,6 +26,30 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="effects" type="Control" parent="." unique_id=247651944 groups=["init"]]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -940.0
+offset_top = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_t4dsw")
+
+[node name="effect" type="HBoxContainer" parent="effects" unique_id=1173654302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 2
 
 [node name="Bars" type="Control" parent="." unique_id=2118262531 groups=["ticked"]]
 custom_minimum_size = Vector2(900, 188)

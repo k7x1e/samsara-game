@@ -1,14 +1,18 @@
 extends Node
 
-var Player: CharacterBody3D
 var Root: Node3D
-var spellMaster: Control
+
+var Player: CharacterBody3D
 var inventory: Control
-var menu: Node
 var wizard: Node
 var stats: Stats
+
 var settingsMenu: Control
 var dialogueMenu: Control
+var menu: Node
+var spellMaster: Control
+var effecthandler: Control
+
 var currentWorldNode: Node
 
 var idHandler = ItemIdHandler.new()

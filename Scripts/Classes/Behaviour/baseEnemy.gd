@@ -6,6 +6,8 @@ signal playerFoundAlert()
 signal attacking()
 signal damaged()
 
+@export var alerts: bool = true
+@export var alertArea: Variant
 @export var damageArea: Variant
 @export var detectionArea: Variant
 @export var player: Variant
@@ -21,10 +23,13 @@ func initialize():
 	player = Globals.Player
 	
 	nav = actor.nav
+	
 	damageArea = actor.get_node("attackrange")
 	detectionArea = actor.visual.get_node("detection")
 	detectionArea.body_entered.connect(detectionEntered)
 	detectionArea.body_exited.connect(detectionExited)
+	
+	alertArea = actor.get_node("aura")
 
 func detectionEntered(body: Node3D):
 	print("body has entered")
@@ -34,11 +39,18 @@ func detectionEntered(body: Node3D):
 func detectionExited(body: Node3D):
 	pass
 
-func detectPlayer(detected: bool):
+func detectPlayer(detected: bool, isAlerted: bool = false): ##detected is whether or not it is and the second is whether or not said alert comes from alert
 	if detected:
+		if alerts and !isAlerted:
+			alertEnemies(1)
 		print("detected player")
 		enemy_state = 1
 		playerFoundAlert.emit()
+
+func alertEnemies(state: int):
+	var bodies = alertArea.get_overlapping_bodies()
+	for body in bodies:
+		body.behaviour.detectPlayer(true, true)
 
 func update():
 	if !player:

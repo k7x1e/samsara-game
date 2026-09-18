@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://emc8e78qh3yc"]
+
+[ext_resource type="Script" uid="uid://cxdt0al7a20h0" path="res://Scripts/UI/status_icon.gd" id="1_bm01e"]
+[ext_resource type="Texture2D" uid="uid://bqxdpdin82oyj" path="res://Textures/icons/spells/heal.png" id="1_p7ihi"]
+[ext_resource type="Texture2D" uid="uid://50ench47ag7p" path="res://Textures/UI/gui_effect_border.png" id="3_omcvc"]
+
+[node name="statusIcon" type="Control" unique_id=434576144 groups=["ticked"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bm01e")
+
+[node name="icon" type="TextureRect" parent="." unique_id=891412608]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_p7ihi")
+expand_mode = 1
+
+[node name="fade" type="ColorRect" parent="." unique_id=1148617690]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="border" type="TextureRect" parent="." unique_id=1163875481]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_omcvc")
+expand_mode = 1

@@ -287,3 +287,11 @@
 	#finished a very basic enemy ai. im considering scrapping the trams. THey dont work thematically
 	#10:11
 	#removed trams, or atleast made them not be used.
+	#10:20
+	#added said monitor
+	#10:29
+	#added so that if an enemy is alerted it will alert the enemies nearby.
+	#11:48
+	#almost done adding status effects
+	#12:24
+	#effects implemented.

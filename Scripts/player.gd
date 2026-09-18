@@ -40,7 +40,18 @@ var dashVector = Vector3(dashD, 0, 0)
 @export var sounds: Dictionary[String, AudioStream]
 @onready var sfx = $sfx
 
+@export var statuseffects: Array[statuseffect]
+
 var referenceN: Node3D
+
+func modifyEffects(index: statuseffect, append: bool):
+	match append:
+		true:
+			statuseffects.append(index)
+		false:
+			statuseffects.erase(index)
+	print("refreshing effects")
+	Globals.effecthandler.refreshEffects()
 
 func refreshStats():
 	SPEED = stats.retrieve(0) * 2.5

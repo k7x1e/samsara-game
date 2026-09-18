@@ -5,9 +5,13 @@
 [ext_resource type="Script" uid="uid://wwksmh6v3aja" path="res://Scripts/classes/Behaviour/baseEnemy.gd" id="3_0830c"]
 [ext_resource type="PackedScene" uid="uid://dcjnetgb821re" path="res://Scenes/EnemyModel.tscn" id="4_0830c"]
 [ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="5_8uf12"]
+[ext_resource type="Script" uid="uid://xmtxhcqgxgc2" path="res://Scripts/enemyMonitor.gd" id="6_ghaa6"]
+[ext_resource type="AudioStream" uid="uid://b0ahih5c8udqs" path="res://sound/notification/something.wav" id="7_auwsv"]
+[ext_resource type="AudioStream" uid="uid://bikro78yehb60" path="res://sound/notification/mission.wav" id="8_8uf12"]
 
 [sub_resource type="Resource" id="Resource_ghaa6"]
 script = ExtResource("3_0830c")
+alertArea = null
 damageArea = null
 detectionArea = null
 player = null
@@ -33,14 +37,18 @@ radius = 8.0
 [sub_resource type="SphereShape3D" id="SphereShape3D_1dp5w"]
 radius = 2.018302
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_auwsv"]
+radius = 16.0
+
 [node name="Actor" type="CharacterBody3D" unique_id=1866149922 groups=["Pausable", "ticked"]]
-collision_layer = 9
-collision_mask = 9
+collision_layer = 65545
+collision_mask = 65545
 floor_stop_on_slope = false
 floor_block_on_wall = false
 floor_max_angle = 3.1415927
 script = ExtResource("1_0830c")
 NpcClass = SubResource("Resource_7ei5c")
+hasMonitor = true
 
 [node name="Visual" type="Node3D" parent="." unique_id=1983415667 groups=["Pausable"]]
 
@@ -65,3 +73,20 @@ collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="attackrange" unique_id=1787433241 groups=["Pausable"]]
 shape = SubResource("SphereShape3D_1dp5w")
+
+[node name="Monitor" type="Node3D" parent="." unique_id=708360727]
+script = ExtResource("6_ghaa6")
+sounds = Dictionary[String, AudioStream]({
+"attack": ExtResource("7_auwsv"),
+"damage": ExtResource("8_8uf12"),
+"found": ExtResource("7_auwsv")
+})
+
+[node name="sfx" type="AudioStreamPlayer3D" parent="Monitor" unique_id=226239370]
+
+[node name="aura" type="Area3D" parent="." unique_id=1374981180]
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="aura" unique_id=311374690]
+shape = SubResource("SphereShape3D_auwsv")

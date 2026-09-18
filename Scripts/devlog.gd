@@ -295,3 +295,7 @@
 	#almost done adding status effects
 	#12:24
 	#effects implemented.
+	#13:08
+	#i fucked the inventory up big time.
+	#13:14
+	#fixed the bug and managed to add level unlocks and a dash ability.

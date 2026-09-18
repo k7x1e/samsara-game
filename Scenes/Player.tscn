@@ -23,6 +23,8 @@
 [ext_resource type="AudioStream" uid="uid://b0ahih5c8udqs" path="res://sound/notification/something.wav" id="14_m0x7a"]
 [ext_resource type="Texture2D" uid="uid://dhmu0toe1itnr" path="res://addons/func_godot/textures/clip.png" id="15_1e7my"]
 [ext_resource type="Script" uid="uid://bs1xhdp0kaywn" path="res://Scripts/classes/statuseffect.gd" id="18_i2e8t"]
+[ext_resource type="Texture2D" uid="uid://874crc0bp3hk" path="res://icon.png" id="19_qidb7"]
+[ext_resource type="PackedScene" uid="uid://wjrts7plxpwx" path="res://Scenes/spells/dash.tscn" id="21_70hv0"]
 
 [sub_resource type="Resource" id="Resource_arntx"]
 script = ExtResource("2_megsn")
@@ -61,7 +63,7 @@ metadata/_custom_type_script = "uid://cse3ubaxht2cj"
 
 [sub_resource type="Resource" id="Resource_1e7my"]
 script = ExtResource("10_o3h8g")
-agility = 3.0
+agility = 4.0
 magic = 3.0
 perception = 2.0
 intelligence = 2.0
@@ -84,6 +86,28 @@ script = ExtResource("18_i2e8t")
 icon = ExtResource("9_x63xi")
 active = true
 metadata/_custom_type_script = "uid://bs1xhdp0kaywn"
+
+[sub_resource type="Resource" id="Resource_u7x0b"]
+script = ExtResource("3_5ixxa")
+spellNode = ExtResource("21_70hv0")
+basecoolDown = 2.0
+coolDown = 2.0
+name = "Dash"
+description = "Is this even used?"
+Icon = ExtResource("19_qidb7")
+uiNode = null
+spellTimer = null
+statted = false
+metadata/_custom_type_script = "uid://b52li86lflfyj"
+
+[sub_resource type="Resource" id="Resource_i2e8t"]
+script = ExtResource("10_i2e8t")
+theSpell = SubResource("Resource_u7x0b")
+name = "Dash"
+description = "Ability to dash a bit. Unlocked at Agility level 5."
+icon = ExtResource("19_qidb7")
+Type = "Spell"
+metadata/_custom_type_script = "uid://crrif2oof7ji8"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kldst"]
 
@@ -111,6 +135,9 @@ sounds = Dictionary[String, AudioStream]({
 "Mission1": ExtResource("13_1iu4k")
 })
 statuseffects = Array[ExtResource("18_i2e8t")]([SubResource("Resource_qidb7")])
+unlocks = Dictionary[String, ExtResource("2_megsn")]({
+"05": SubResource("Resource_i2e8t")
+})
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1510999750]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 8, 8)

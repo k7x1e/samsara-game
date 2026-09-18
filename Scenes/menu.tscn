@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://dgvxv4hvhj2dl" path="res://Scripts/UI/tooltip.gd" id="12_3p34a"]
 [ext_resource type="Script" uid="uid://dscj8jy3r1qnb" path="res://Scripts/UI/drop_down.gd" id="12_23t3j"]
 [ext_resource type="StyleBox" uid="uid://ds457w8c45wbg" path="res://Resources/UI/dropdownNormal.tres" id="13_5ti5v"]
+[ext_resource type="SystemFont" uid="uid://cri31ihw34lpf" path="res://Resources/Fonts/dialogue.tres" id="13_h63v2"]
 [ext_resource type="Script" uid="uid://rokee7uc8edj" path="res://Scripts/UI/quest_menu.gd" id="13_owyel"]
 [ext_resource type="StyleBox" uid="uid://lufuxo8vt8ji" path="res://Resources/UI/dropdownPressed.tres" id="14_1by5w"]
 [ext_resource type="StyleBox" uid="uid://he3jioswdiig" path="res://Resources/UI/dropdownDisabled.tres" id="15_kmwmt"]
@@ -179,7 +180,6 @@ offset_bottom = 40.0
 texture = ExtResource("6_wbdvm")
 
 [node name="tooltip" type="Control" parent="Menu/CharSheet" unique_id=828683554]
-visible = false
 layout_mode = 1
 anchors_preset = 0
 offset_right = 248.0
@@ -214,6 +214,7 @@ label_settings = ExtResource("8_d77ms")
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("13_h63v2")
 text = "This stat determines jack shit. Pee and poo all over the walls"
 label_settings = SubResource("LabelSettings_3p34a")
 autowrap_mode = 2

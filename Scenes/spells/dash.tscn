@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://wjrts7plxpwx"]
+
+[ext_resource type="Script" uid="uid://gx4yuhciio7d" path="res://Scripts/classes/spells/dash.gd" id="1_3s646"]
+
+[node name="dash" type="Node3D" unique_id=1347508900]
+script = ExtResource("1_3s646")

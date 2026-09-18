@@ -2,6 +2,8 @@ extends Resource
 
 class_name Stats
 
+signal statChanged()
+
 @export var agility: float
 @export var agilityprogress: int
 
@@ -45,6 +47,7 @@ func setstat(stat: int, amt: float):
 	stats[stat] = amt
 	#print(stats[stat])
 	Globals.Player.refreshStats()
+	statChanged.emit()
 
 func experience(stat:int):
 	progressStats[stat] += 1
@@ -58,5 +61,6 @@ func checkLevels():
 			print("leveled up stat: ", b)
 			setstat(b, stats[b]+1)
 			Globals.spellMaster.updateSpells(Globals.spellMaster.spellArray)
+			Globals.Player.checkLevelUnlocks(b,stats[b])
 			Globals.Player.notify(str("Leveled up ", statNames[b], "."), "Level1")
 		b += 1

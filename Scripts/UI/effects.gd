@@ -25,5 +25,9 @@ func refreshEffects():
 			effectsnode.add_child(temp)
 			temp.set_owner(self)
 			
+			#scrapped tooltip implementation
+			#temp.gui_input.connect(iconguiInput.bind(temp))
 			temp.statusEffect = effects[bx]
 			temp.initialize()
+
+#func iconguiInput

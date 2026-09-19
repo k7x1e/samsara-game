@@ -313,3 +313,7 @@
 	#i will now build and upload playtest.
 	#14:39
 	#ive now uploaded the builds
+	#
+	##19/09
+	#10:24
+	#borodji is here now. i will try to get to do some.

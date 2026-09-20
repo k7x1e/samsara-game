@@ -8,6 +8,7 @@
 script = ExtResource("2_ywhkp")
 scene_file = ExtResource("2_vw4n3")
 classname = "barrel"
+description = "barrel. About 1 and a half players in width and about one and a third in height. good for reference i guess."
 meta_properties = Dictionary[String, Variant]({
 "color": Color(0.8, 0.8, 0.8, 1),
 "size": AABB(-8, -8, -8, 8, 8, 8),

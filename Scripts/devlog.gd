@@ -319,4 +319,9 @@
 	#borodji is here now. i will try to get some work done.
 	#16:23
 	#the update is practically fucking everything up. upon lowering the update rate from 10 to 2.5 the fps goes from 25 to appearing smooth (but somehow not being smooth fps wise)
+	#
+	##20/09
+	#17:28
+	#i have found out that culling wasnt set up. how wise of me.
+	#anyhow i need to set somethings up in the settings menu. Most notably max fps, vsync, whether or not to use culling (why would you not)
 	

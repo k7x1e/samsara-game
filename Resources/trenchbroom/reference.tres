@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDPointClass" format=3 uid="uid://dsj65iun7hhfy"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_acuwq"]
+[ext_resource type="PackedScene" uid="uid://dcjnetgb821re" path="res://Scenes/EnemyModel.tscn" id="2_1yk63"]
+[ext_resource type="Script" uid="uid://cxsqwtsqd8w33" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="2_c1p4l"]
+
+[resource]
+script = ExtResource("2_c1p4l")
+scene_file = ExtResource("2_1yk63")
+classname = "sizeReference"
+description = "Default enemy model for size ref."
+node_class = "Node3D"
+metadata/_custom_type_script = "uid://cxsqwtsqd8w33"

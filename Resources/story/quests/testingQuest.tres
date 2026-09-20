@@ -9,6 +9,7 @@
 script = ExtResource("1_rnvvs")
 icon = ExtResource("2_dqt25")
 questName = "Sample Quest"
+descriptions = Array[String](["blank", "You've discovered this quest.", "You've progressed this quest.", "You've completed the playtesting demo.", "mystery status", "You've failed this quest."])
 dependentConditions = Dictionary[int, Array]({
 0: [],
 1: [ExtResource("1_bjgej")],

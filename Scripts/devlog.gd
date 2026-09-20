@@ -316,4 +316,7 @@
 	#
 	##19/09
 	#10:24
-	#borodji is here now. i will try to get to do some.
+	#borodji is here now. i will try to get some work done.
+	#16:23
+	#the update is practically fucking everything up. upon lowering the update rate from 10 to 2.5 the fps goes from 25 to appearing smooth (but somehow not being smooth fps wise)
+	

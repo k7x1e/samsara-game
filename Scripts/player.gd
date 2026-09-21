@@ -229,20 +229,26 @@ func update():
 	#print(self.global_position.distance_to(referenceN.global_position))
 
 func get_save_data():
+	var quests_copy: Array[Quest] = []
+	for q in quests:
+		quests_copy.append(q.duplicate(true))
 	return {
 		"inventory": inventory.duplicate(true),
 		"stats": stats.duplicate(true),
 		#wizard section
-		"spells": wizard.spells.duplicate(true),
+		#"spells": wizard.spells.duplicate(true),
 		"health": health,
 		"mana": mana,
+		"quests": quests_copy,
 	}
 
 func load_save_data(data: Dictionary):
-	loaded = true
+	#loaded = true
 	inventory = data["inventory"]
 	stats = data["stats"]
-	spells = Globals.convertArray(data["spells"],spell)
+	#spells = Globals.convertArray(data["spells"],spell)
 	health = data["health"]
 	mana = data["mana"]
+	quests = Globals.convertArray(data["quests"],Quest)
+	Globals.quests = quests
 	refreshStats()

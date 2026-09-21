@@ -67,6 +67,7 @@ func changeWorld(caller: Variant, Targetscene: String, fromMain: bool):
 		Globals.Player.global_position = mainWorldPlayerPos
 
 func _ready():
+	Globals.gamestate = Globals.gamestate.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 	gamestate = Globals.gamestate
 	updatedelay = 10.0 / updaterate
 	tickdelay = 1.0 / tickrate
@@ -194,19 +195,19 @@ func initalizeSave():
 	
 	for obj in get_tree().get_nodes_in_group("Persistent"):
 		obj.queue_free()
+	Globals.setGlobals(lsave.globals_data)
 	pause(true)
 	await get_tree().process_frame
 	pause(false)
 	#stick special stuff here
 	Globals.setGlobals(lsave.globals_data)
-	
 	for data in lsave.nodes:
 		var scene = load(data.scene)
 		var instance = scene.instantiate()
 		instance.name = data.name
 		add_child(instance)
 		instance.set_owner(self)
-		print(data.name)
+		#print(data.name)
 		if data.to_be_placed:
 			instance.global_position = data.position
 			instance.global_rotation = data.rotation
@@ -219,9 +220,9 @@ func initalizeSave():
 
 
 func save(rNode: Node, name: String):
-	print(name)
+	#print(name)
 	var path = str("user://saves/",name,".res")
-	print(path)
+	#print(path)
 	
 	var save = SaveGame.new()
 	
@@ -252,6 +253,7 @@ func save(rNode: Node, name: String):
 	save.globals_data = Globals.getGlobals()
 	gamestate.add_save(save, name)
 	save.globals_data = Globals.getGlobals()
+	save.globals_data["gamestate"].saves.clear()
 	save.timestamp = Time.get_date_string_from_system()
 	
 	var err = ResourceSaver.save(save, path)
@@ -260,7 +262,7 @@ func save(rNode: Node, name: String):
 
 func loadSave(_which: String):
 	var save = await gamestate.get_save(_which)
-	print(save)
+	#print(save)
 	
 	Globals.saveToLoad = save
 	Globals.loadSave = true

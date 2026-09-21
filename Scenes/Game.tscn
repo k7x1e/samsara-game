@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c7loruht48vqs"]
 
 [ext_resource type="Script" uid="uid://brkcfwu3ix8u6" path="res://Scripts/Root.gd" id="1_kldst"]
-[ext_resource type="Resource" uid="uid://b5t6pkvtcweo4" path="res://Resources/gamestate.tres" id="2_kldst"]
+[ext_resource type="Resource" uid="uid://b5t6pkvtcweo4" path="res://Resources/gameState.tres" id="2_kldst"]
 [ext_resource type="PackedScene" uid="uid://c12hkpbebfwf0" path="res://Scenes/Worlds/Interiors/londonPub.tscn" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://nxogfgeamf7b" path="res://Scenes/Worlds/Interiors/mysteryPlace.tscn" id="4_kldst"]
 

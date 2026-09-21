@@ -11,6 +11,6 @@ func initialize():
 	actor.behaviour.damaged.connect(playsfx.bind("damage"))
 
 func playsfx(which:String):
-	print("playing: ", which)
+	#print("playing: ", which)
 	sfx.stream = sounds[which]
 	sfx.play()

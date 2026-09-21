@@ -22,3 +22,4 @@ func updateQuest(): ## does not support conversations with several quests yet. w
 			if i.quest.questId == linkedQuest.questId:
 				print("updated quest")
 				i.quest = linkedQuest
+				linkedQuest.update()

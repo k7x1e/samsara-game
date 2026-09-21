@@ -32,7 +32,7 @@ func initialize():
 	alertArea = actor.get_node("aura")
 
 func detectionEntered(body: Node3D):
-	print("body has entered")
+	#print("body has entered")
 	if body == player:
 		detectPlayer(true)
 
@@ -43,7 +43,7 @@ func detectPlayer(detected: bool, isAlerted: bool = false): ##detected is whethe
 	if detected:
 		if alerts and !isAlerted:
 			alertEnemies(1)
-		print("detected player")
+		#print("detected player")
 		enemy_state = 1
 		playerFoundAlert.emit()
 

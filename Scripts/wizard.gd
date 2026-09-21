@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var spells: Array[spell] = []
+@export var spells: Array[spell] = [placeholderSpell,placeholderSpell,placeholderSpell,placeholderSpell,placeholderSpell]
 
 @export var placeholderSpell: spell
 

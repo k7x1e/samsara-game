@@ -29,6 +29,9 @@ var backupGlobals
 @export var gamestate: gameState = preload("res://Resources/gameState.tres")
 
 func getGlobals() -> Dictionary[String, Variant]:
+	var quests_copy: Array[Quest] = []
+	for q in quests:
+		quests_copy.append(q.duplicate(true))
 	return {
 		#"Root": Root,
 		#"Player": Player,
@@ -42,13 +45,17 @@ func getGlobals() -> Dictionary[String, Variant]:
 		#"inventory": inventory,
 		#"currentWorldNode": currentWorldNode,
 		#"idHandler": idHandler.duplicate(true),
-		"quests": quests.duplicate(true),
-		"gamestate": gamestate.duplicate(true),
+		"quests": quests_copy,
+		"gamestate": gamestate.duplicate_deep(Resource.DEEP_DUPLICATE_ALL),
 	}
+	#print(quests[0].getQuestState())
 
 func setGlobals(data: Dictionary):
+	quests.clear()
+	#print("THIS IS THE STATUS OF THE QUEST YOU WANT",data["quests"][0].getQuestState())
 	quests = convertArray(data["quests"], Quest)
-	gamestate = data["gamestate"]
+	#print(quests[0].getQuestState())
+	gamestate = data["gamestate"].duplicate(true)
 
 func convertArray(from:Array, type:Variant) -> Array:
 	var result = []

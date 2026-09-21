@@ -18,7 +18,7 @@ func get_last_save() -> SaveGame:
 func get_save(i: String) -> SaveGame:
 	if saves[i]:
 		return saves[i]
-		print("found it")
+		#print("found it")
 	else:
 		return null
 
@@ -28,25 +28,25 @@ func add_save(theSaveInQuestion: SaveGame, name: String = "placeholder"):
 	saves[name] = theSaveInQuestion
 
 func initialize():
-	
 	saves.clear()
 	var dir = DirAccess.open("user://")
 	if not dir.dir_exists("saves"):
 		dir.make_dir("saves")
 	dir = DirAccess.open("user://saves/")
 	dir.list_dir_begin()
+	
 	var file_name = dir.get_next()
 	while file_name != "":
-		print("found ourselves a ", file_name)
+		#print("found ourselves a ", file_name)
 		var tempname = file_name.left(-4)
 		
 		var save_file = load(str("user://saves/",file_name))
-		print(save_file)
-		print(tempname)
-		saves[tempname] = save_file
+		#print(save_file)
+		#print(tempname)
+		saves[tempname] = save_file.duplicate(true)
 		file_name = dir.get_next()
 
-	print(saves.size())
+	#print(saves.size())
 	if !initialized:
 		await rootNode.initialize(self)
 		rootNode.Menu.set_process(false)

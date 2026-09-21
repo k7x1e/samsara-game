@@ -41,6 +41,7 @@ func isQuestStatePossible(state: int):
 		return false
 
 func setQuestState(state: int): ##cannot go backwards, 1 given, 2 achieved, 3 completed.
+	#print("changed eyes emoji")
 	var succesful = false
 	if state > quest_state:
 		quest_state = state
@@ -57,9 +58,10 @@ func setQuestState(state: int): ##cannot go backwards, 1 given, 2 achieved, 3 co
 				Globals.Player.notify(str("Progressed ", questName, "."), "Mission1")
 			3:
 				Globals.Player.notify(str("Completed quest ", questName, "."), "Mission1")
-		
-		for i in dependentConditions[state]:
-			i.fulfilled = true
+		update()
+func update():
+	for i in dependentConditions[quest_state]:
+		i.fulfilled = true
 
 func botchQuest():
 	botched = true

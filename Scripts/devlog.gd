@@ -376,3 +376,14 @@
 	#saving is fully functional now afaik
 	#19:44
 	#i believe im ready to build
+	#20:33
+	#by doing nothing ive managed to break the saving system.
+	#holy shit
+	#20:39
+	#i have a save im dissecting but like nothing seems to be wrong here
+	#21:51
+	#HOW THERE IS LITERALLY NOTHING THAT COULD BE CAUSING THIS
+	#21:57
+	#for some strange reason the player was assigning the globals for quests to its own. fuck
+	#22:09
+	#managed to fix the saving issues (atleast that i know of)

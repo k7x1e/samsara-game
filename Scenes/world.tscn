@@ -2284,7 +2284,7 @@ points = PackedVector3Array(32, 0.25, -108, 52.000004, 0.25, -108, 32, 0, -108, 
 material = ExtResource("25_i4fjy")
 size = Vector2(400, 400)
 
-[node name="World" type="Node3D" unique_id=1226380381 node_paths=PackedStringArray("tramNodes") groups=["Pausable", "Persistent"]]
+[node name="World" type="Node3D" unique_id=1226380381 node_paths=PackedStringArray("tramNodes") groups=["Pausable"]]
 script = ExtResource("1_no8kt")
 containsTrams = false
 tramNodes = {

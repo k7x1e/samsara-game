@@ -83,8 +83,6 @@ func _physics_process(_delta: float) -> void:
 		pauseGame()
 	if Input.is_action_just_pressed("menu"):
 		toggleMenu()
-	if Input.is_action_just_pressed("evilDebugKey"):
-		save(self,"user://save.scn")
 	ticktick += _delta
 	updatetick += _delta
 	if ticktick >= tickdelay and !isPaused:
@@ -111,6 +109,7 @@ func signalinit():
 		object.initialize()
 
 func startDialogue(theconvo: conversation):
+	theconvo.updateQuest()
 	Globals.dialogueMenu.index = 0
 	Globals.dialogueMenu.dialogueToUse = theconvo
 	toggleDialogue()
@@ -173,9 +172,10 @@ func pause(Paused: bool):
 		for object in pausable:
 			object.process_mode = Node.PROCESS_MODE_INHERIT
 
-func initialize(gmestate: gameState):
+func initialize(gmestate: gameState, sendinit: bool = true):
 	for i in range(gmestate.initnodes.size()):
-		var temp = gmestate.initnodes[i].scene.instantiate()
+		var scene = load(gmestate.initnodes[i].scene)
+		var temp = scene.instantiate()
 		self.add_child(temp)
 		temp.set_owner(self)
 		if gmestate.initnodes[i].to_be_placed:
@@ -184,27 +184,44 @@ func initialize(gmestate: gameState):
 			Menu = temp.menu
 		if gmestate.initnodes[i].name == "Player":
 			temp.initialize()
-	signalinit()
+	if sendinit:
+		signalinit()
 	return true
 
 func initalizeSave():
-	var tempnodes = Globals.saveToLoad.nodes
-	for i in Globals.saveToLoad.nodes:
-		var temp = i.scene.instantiate()
-		self.add_child(temp)
-		temp.set_owner(self)
-		if i.to_be_placed:
-			temp.global_position = i.position
-		if i.name == "Menu":
-			Menu = temp.menu
-		if i.name == "Player":
-			temp.initialize()
-		print(i.name)
-
+	initialize(Globals.gamestate, false)
+	var lsave = Globals.saveToLoad
+	
+	for obj in get_tree().get_nodes_in_group("Persistent"):
+		obj.queue_free()
+	pause(true)
+	await get_tree().process_frame
+	pause(false)
+	#stick special stuff here
+	Globals.setGlobals(lsave.globals_data)
+	
+	for data in lsave.nodes:
+		var scene = load(data.scene)
+		var instance = scene.instantiate()
+		instance.name = data.name
+		add_child(instance)
+		instance.set_owner(self)
+		print(data.name)
+		if data.to_be_placed:
+			instance.global_position = data.position
+			instance.global_rotation = data.rotation
+		if instance.has_method("load_save_data"):
+			instance.load_save_data(data.extra_data)
+		if instance.name == "Player":
+			instance.global_position = data.position + Vector3(0,1,0)
+			instance.initialize()
+	signalinit()
 
 
 func save(rNode: Node, name: String):
-	var path = str("user://saves/",name,".tres")
+	print(name)
+	var path = str("user://saves/",name,".res")
+	print(path)
 	
 	var save = SaveGame.new()
 	
@@ -214,45 +231,32 @@ func save(rNode: Node, name: String):
 	for object in persistent:
 		var temp = nodePreset.new()
 		temp.name = object.name
-		temp.scene_path = object.scene_file_path   # if it was instanced from a scene
+		temp.scene = object.scene_file_path   # if it was instanced from a scene
 		# or keep a PackedScene reference only if the scene is a clean, self-contained .tscn
 		
 		if object is Node3D:
 			temp.position = object.global_position
 			temp.rotation = object.global_rotation
+			temp.to_be_placed = true
 		
 		# Collect only the data you care about
 		if object.has_method("get_save_data"):
 			temp.extra_data = object.get_save_data()
 		
 		if "isGlobal" in object:
-			temp.in_globals = object.isGlobal
-			temp.globals_name = object.globalName
+			temp.inGlobals = object.isGlobal
+			temp.globalsName = object.globalName
 		nodes.append(temp)
 	save.nodes = nodes
 	
 	save.globals_data = Globals.getGlobals()
 	gamestate.add_save(save, name)
 	save.globals_data = Globals.getGlobals()
+	save.timestamp = Time.get_date_string_from_system()
 	
 	var err = ResourceSaver.save(save, path)
 	if err != OK:
 		push_error("Failed to save: %s" % error_string(err))
-
-func _set_owner_recursive(root: Node, _owner: Node) -> void:
-	var stack: Array[Node] = [root]
-	var count = 0
-	while not stack.is_empty():
-		var node = stack.pop_back()
-		count += 1
-		# Don't set owner on the root itself
-		if node != root:
-			node.owner = root
-			
-		# Add children to the stack
-		for child in node.get_children():
-			stack.append(child)
-	print("Set owner on ", count, " nodes")
 
 func loadSave(_which: String):
 	var save = await gamestate.get_save(_which)

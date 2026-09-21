@@ -9,4 +9,4 @@ class_name nodePreset
 @export var name: String
 @export var to_be_placed: bool = false
 @export var inGlobals: bool = false
-@export var globalsName: StringName
+@export var globalsName: String

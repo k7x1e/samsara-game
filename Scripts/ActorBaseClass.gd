@@ -60,7 +60,6 @@ func move():
 	move_and_slide()
 
 func initialize():
-	
 	behaviour = NpcClass.behaviour.duplicate()
 	behaviour.actor = self
 	behaviour.initialize()
@@ -71,3 +70,17 @@ func initialize():
 
 func destroy():
 	self.queue_free()
+
+func get_save_data():
+	return {
+		"npc": NpcClass.duplicate(true),
+		"behaviour": behaviour,
+		"health": health,
+	}
+
+func load_save_data(data: Dictionary):
+	behaviour = data["behaviour"]
+	NpcClass = data["npc"]
+	health = data["health"]
+	behaviour.actor = self
+	behaviour.initialize()

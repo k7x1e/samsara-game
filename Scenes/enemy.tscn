@@ -40,7 +40,7 @@ radius = 2.018302
 [sub_resource type="SphereShape3D" id="SphereShape3D_auwsv"]
 radius = 16.0
 
-[node name="Actor" type="CharacterBody3D" unique_id=1866149922 groups=["Pausable", "ticked"]]
+[node name="Actor" type="CharacterBody3D" unique_id=1866149922 groups=["Pausable", "Persistent", "ticked"]]
 collision_layer = 65545
 collision_mask = 65545
 floor_stop_on_slope = false

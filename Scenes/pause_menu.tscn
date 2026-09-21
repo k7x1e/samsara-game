@@ -20,7 +20,8 @@ texture_margin_top = 20.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="PauseMenu" type="Control" unique_id=782323223 groups=["Persistent"]]
+[node name="PauseMenu" type="Control" unique_id=782323223]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -303,36 +304,53 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="savingloading" type="HBoxContainer" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer" unique_id=1201639891 groups=["init"]]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 script = ExtResource("13_uscpe")
 
-[node name="saving" type="HBoxContainer" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading" unique_id=7362571]
+[node name="VBoxContainer" type="VBoxContainer" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading" unique_id=356561327]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LineEdit" type="LineEdit" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/saving" unique_id=2084841169]
+[node name="saving" type="HBoxContainer" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/VBoxContainer" unique_id=7362571]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LineEdit" type="LineEdit" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/VBoxContainer/saving" unique_id=2084841169]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "savename"
 
-[node name="save" type="Button" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/saving" unique_id=351422454]
+[node name="save" type="Button" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/VBoxContainer/saving" unique_id=351422454]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_myy0f")
 text = "Save"
 
-[node name="loading" type="HBoxContainer" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading" unique_id=578082395]
+[node name="loading" type="HBoxContainer" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/VBoxContainer" unique_id=578082395]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="OptionButton" type="OptionButton" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/VBoxContainer/loading" unique_id=779853190]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="OptionButton" type="OptionButton" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/loading" unique_id=779853190]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="load" type="Button" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/loading" unique_id=1718147769]
+[node name="load" type="Button" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/VBoxContainer/loading" unique_id=1718147769]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_myy0f")
 text = "Load"
+
+[node name="Label" type="Label" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading" unique_id=1374279161]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_myy0f")
+text = "Save Info"
+label_settings = ExtResource("7_sjs17")
+autowrap_mode = 2
 
 [connection signal="pressed" from="menu/VBoxContainer/Sections/info" to="menu" method="info_pressed"]
 [connection signal="pressed" from="menu/VBoxContainer/Sections/settings" to="menu" method="settings_pressed"]
@@ -340,5 +358,6 @@ text = "Load"
 [connection signal="drag_ended" from="menu/VBoxContainer/PanelContainer/Settings/VBoxContainer/Scale/Control/HSlider" to="menu/VBoxContainer/PanelContainer/Settings" method="slider_drag_ended"]
 [connection signal="pressed" from="menu/VBoxContainer/PanelContainer/Settings/VBoxContainer/HBoxContainer/save" to="menu/VBoxContainer/PanelContainer/Settings" method="save_pressed"]
 [connection signal="pressed" from="menu/VBoxContainer/PanelContainer/Settings/VBoxContainer/HBoxContainer/discard" to="menu/VBoxContainer/PanelContainer/Settings" method="discard_pressed"]
-[connection signal="pressed" from="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/saving/save" to="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading" method="_on_save_pressed"]
-[connection signal="pressed" from="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/loading/load" to="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading" method="_on_load_pressed"]
+[connection signal="pressed" from="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/VBoxContainer/saving/save" to="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading" method="_on_save_pressed"]
+[connection signal="item_selected" from="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/VBoxContainer/loading/OptionButton" to="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading" method="_on__item_selected"]
+[connection signal="pressed" from="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/VBoxContainer/loading/load" to="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading" method="_on_load_pressed"]

@@ -47,8 +47,10 @@ var dashVector = Vector3(dashD, 0, 0)
 @export var isGlobal: bool = true
 @export var globalName: StringName = "Player"
 
+var spells: Array[spell]
 
 var referenceN: Node3D
+var loaded = false
 
 func modifyEffects(index: statuseffect, append: bool):
 	match append:
@@ -109,6 +111,8 @@ func getFollowerNode() -> Node3D:
 	return followerNode
 
 func initialize():
+	if loaded:
+		wizard.spells = spells
 	inventory.assignIDs()
 	stats.initialize()
 	refreshStats()
@@ -223,3 +227,22 @@ func update():
 		stats.experience(0)
 	referenceN.global_position = self.global_position
 	#print(self.global_position.distance_to(referenceN.global_position))
+
+func get_save_data():
+	return {
+		"inventory": inventory.duplicate(true),
+		"stats": stats.duplicate(true),
+		#wizard section
+		"spells": wizard.spells.duplicate(true),
+		"health": health,
+		"mana": mana,
+	}
+
+func load_save_data(data: Dictionary):
+	loaded = true
+	inventory = data["inventory"]
+	stats = data["stats"]
+	spells = Globals.convertArray(data["spells"],spell)
+	health = data["health"]
+	mana = data["mana"]
+	refreshStats()

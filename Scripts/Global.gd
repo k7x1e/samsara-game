@@ -19,7 +19,9 @@ var backupGlobals
 
 @export var idHandler = ItemIdHandler.new()
 
+#its important that all story stuff is stored here so that we can keep track of them
 @export var quests: Array[Quest]
+@export var conditions: Array[Condition]
 
 @export var saveToLoad: SaveGame
 @export var loadSave: bool = false
@@ -28,22 +30,28 @@ var backupGlobals
 
 func getGlobals() -> Dictionary[String, Variant]:
 	return {
-		"Root": Root,
-		"Player": Player,
-		"wizard": wizard,
-		"stats": stats,
-		"settingsMenu": settingsMenu,
-		"dialogueMenu": dialogueMenu,
-		"menu": menu,
-		"spellMaster": spellMaster,
-		"effecthandler": effecthandler,
-		"inventory": inventory,
-		"currentWorldNode": currentWorldNode,
-		"idHandler": idHandler,
-		"quests": quests,
-		"gamestate": gamestate,
+		#"Root": Root,
+		#"Player": Player,
+		#"wizard": wizard,
+		#"stats": stats.duplicate(true),
+		#"settingsMenu": settingsMenu,
+		#"dialogueMenu": dialogueMenu,
+		#"menu": menu,
+		#"spellMaster": spellMaster,
+		#"effecthandler": effecthandler,
+		#"inventory": inventory,
+		#"currentWorldNode": currentWorldNode,
+		#"idHandler": idHandler.duplicate(true),
+		"quests": quests.duplicate(true),
+		"gamestate": gamestate.duplicate(true),
 	}
 
-func setGlobals(data: Dictionary[String, Variant]):
-	for i in data:
-		self.set(i, data.get(i))
+func setGlobals(data: Dictionary):
+	quests = convertArray(data["quests"], Quest)
+	gamestate = data["gamestate"]
+
+func convertArray(from:Array, type:Variant) -> Array:
+	var result = []
+	result.assign(from)
+	result = Array(result, TYPE_OBJECT, "Resource", type)
+	return result

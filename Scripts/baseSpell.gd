@@ -22,6 +22,7 @@ func _physics_process(delta: float) -> void:
 	position += velocity
 
 func _on_collision_body_entered(body: Node3D) -> void:
+	print(body.name)
 	if body.name != "Player":
 		body.damage(spdamage)
 		self.queue_free()

@@ -362,3 +362,17 @@
 	#why does it have to be this difficult bro genuinely this is impossible
 	#17:49
 	#i know of a solution but its horrible and i hate myself.
+	#18:33
+	#the saving and loading PRETTY MUCH works now. There are still some things to iron out
+	#18:51
+	#saving is working.
+	#18:58
+	#saving was functional but as it turns out i need to make the conditions a ficial thing too.
+	#19:19
+	#ive pretty much fully fixed saving with the quests. I still do not know why the saving function hallucinates "user:/save.scn"
+	#19:23
+	#for some strange reason a debug saving key was still present in the code.
+	#19:30
+	#saving is fully functional now afaik
+	#19:44
+	#i believe im ready to build

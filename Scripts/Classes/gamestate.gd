@@ -25,7 +25,7 @@ func get_save(i: String) -> SaveGame:
 func add_save(theSaveInQuestion: SaveGame, name: String = "placeholder"):
 	last_saved = name
 	var fuckyou = {name: theSaveInQuestion}
-	saves.assign(fuckyou)
+	saves[name] = theSaveInQuestion
 
 func initialize():
 	
@@ -38,7 +38,7 @@ func initialize():
 	var file_name = dir.get_next()
 	while file_name != "":
 		print("found ourselves a ", file_name)
-		var tempname = file_name.left(-5)
+		var tempname = file_name.left(-4)
 		
 		var save_file = load(str("user://saves/",file_name))
 		print(save_file)
@@ -54,6 +54,7 @@ func initialize():
 		Globals.inventory.initialize()
 	elif Globals.loadSave:
 		rootNode.initalizeSave()
+		rootNode.signalinit()
 		Globals.inventory.initialize()
 	#else:
 	#	Globals.setGlobals(rootNode.backupGlobals)

@@ -1,10 +1,12 @@
 extends HBoxContainer
 
-@onready var saveNameNode = $saving/LineEdit
-@onready var loadingNode = $loading/OptionButton
+@onready var saveNameNode = $VBoxContainer/saving/LineEdit
+@onready var loadingNode = $VBoxContainer/loading/OptionButton
 
-@onready var saveButton = $saving/save
-@onready var loadButton = $loading/load
+@onready var saveButton = $VBoxContainer/saving/save
+@onready var loadButton = $VBoxContainer/loading/load
+
+@onready var infoNode = $Label
 
 @export var saves: Dictionary[int,String]
 
@@ -33,3 +35,11 @@ func _on_load_pressed() -> void:
 	var save = saves[index]
 	Globals.Root.loadSave(save)
 	
+
+
+func _on__item_selected(index: int) -> void:
+	var sindex = saves[loadingNode.get_selected_id()]
+	var selected: SaveGame = Globals.Root.gamestate.saves[sindex]
+	var infoString = str(sindex, "\n", selected.timestamp, "\n", selected.Description)
+	print(infoString)
+	infoNode.text = infoString

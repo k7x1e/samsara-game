@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://bcl25trll3xwe"
+path="res://.godot/imported/london-west.map-a2245bc2956b8ad2b8bbc2ada7aeb174.tres"
+
+[deps]
+
+source_file="res://Resources/Maps/london-west.map"
+dest_files=["res://.godot/imported/london-west.map-a2245bc2956b8ad2b8bbc2ada7aeb174.tres"]
+
+[params]
+

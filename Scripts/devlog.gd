@@ -324,4 +324,8 @@
 	#17:28
 	#i have found out that culling wasnt set up. how wise of me.
 	#anyhow i need to set somethings up in the settings menu. Most notably max fps, vsync, whether or not to use culling (why would you not)
+	#
+	##21/09
+	#10:05
+	#im planning to get atleast something done today. I honestly think i will add in malice mizer as a placeholder. Also i gotta get to work on a main menu soon.
 	

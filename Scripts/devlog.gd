@@ -387,3 +387,7 @@
 	#for some strange reason the player was assigning the globals for quests to its own. fuck
 	#22:09
 	#managed to fix the saving issues (atleast that i know of)
+	#22:22
+	#i will fix the info menu and then i believe im done for today.
+	#22:26
+	#rewrote info text. Im done in godot for today

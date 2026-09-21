@@ -39,7 +39,7 @@ texture_margin_top = 20.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="Menu" type="CanvasLayer" unique_id=539579730]
+[node name="Menu" type="CanvasLayer" unique_id=539579730 groups=["Persistent"]]
 follow_viewport_enabled = true
 script = ExtResource("1_xhh6f")
 

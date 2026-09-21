@@ -328,4 +328,37 @@
 	##21/09
 	#10:05
 	#im planning to get atleast something done today. I honestly think i will add in malice mizer as a placeholder. Also i gotta get to work on a main menu soon.
-	
+	#12:05
+	#finally got around to splitting the entire map in half. Should yield an increase in perfomance.
+	#12:10
+	#you know what MAYBE could yield an increase in performance? not being in the fucking 3d view while testing the game it literally halves the fps due to rendering twice.
+	#cosmically retarded award.
+	#i also have an insane idea for saving the game. I already pack the entire game upon saving what happens if i just convert the ENTIRE game scene to JSON...
+	#starting that now.
+	#12:14
+	#i am completely deadass it worked.
+	#how does one even parse a packedscene as json
+	#13:10
+	#ive been debugging this for what feels like AGES bro. I need to make a whole new function to handle changing to packedscenes.
+	#13:14
+	#i cant figure this shit out i will give up for now.
+	#14:43
+	#i know the solution.
+	#15:48
+	#im still trying to figure this bullshit out. I think im just going to use the persistent thingie and make a gamestate out of that
+	#total rewrite of the saving function based off the initnodes function
+	#of course that wouldnt work with the globals.
+	#it all feels hopeless genuinely how do i make this.
+	#no i know
+	#16:21
+	#im this close to having it work
+	#16:31
+	#turns out canvaslayers dont have global positions
+	#17:20
+	#dude genuinely fuck all of this i am losing it why doe sNOTHING work
+	#17:29
+	#my so called genius solution did jack shit. i have to do it the insanely difficult way.
+	#17:33
+	#why does it have to be this difficult bro genuinely this is impossible
+	#17:49
+	#i know of a solution but its horrible and i hate myself.

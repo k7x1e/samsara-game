@@ -4,6 +4,10 @@ extends Node
 
 @onready var dropdown = $Menu/DropDown
 
+@export var isGlobal: bool = true
+@export var globalName: StringName = "menu"
+
+
 func _ready() -> void:
 	Globals.menu = self
 

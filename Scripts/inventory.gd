@@ -13,13 +13,12 @@ var draggingNode: Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.inventory = self
+
+func initialize():
 	Globals.Player.inventory.inventoryChanged.connect(updateInventory)
 	Globals.Player.inventory.inventoryChanged.connect(checkColumns)
 	await get_tree().create_timer(0.1).timeout
 	dropDownNode = Globals.menu.dropdown
-
-
-func initialize():
 	await updateInventory()
 	#genuinely evil strat, for some reason it has some weird sorting algorithm thingy so this should fix it. adjust the value if the player would for some reason start out with a huge inventory
 	for i in range(1,100):

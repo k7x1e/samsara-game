@@ -12,7 +12,7 @@ extends Control
 var activeMenu: int = 0 #0 info, 1 settings, 2 system
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func initialize() -> void:
 	Globals.Root.pauseMenu = get_parent()
 	updateMenu()
 

@@ -44,6 +44,10 @@ var dashVector = Vector3(dashD, 0, 0)
 
 @export var unlocks: Dictionary[String, itemClass]
 
+@export var isGlobal: bool = true
+@export var globalName: StringName = "Player"
+
+
 var referenceN: Node3D
 
 func modifyEffects(index: statuseffect, append: bool):
@@ -93,19 +97,18 @@ func notify(notif: String, Audio: String = "None"):
 		sfx.play()
 
 func _ready():
-	initialize()
+	Globals.Player = self
+	Globals.quests = quests
+	Globals.stats = stats
+	print(global_position.distance_to(camera.global_position))
+	referenceN = Node3D.new()
+	Globals.Root.add_child(referenceN)
+	referenceN.global_position = self.global_position
 
 func getFollowerNode() -> Node3D:
 	return followerNode
 
 func initialize():
-	Globals.quests = quests
-	referenceN = Node3D.new()
-	Globals.Root.add_child(referenceN)
-	referenceN.global_position = self.global_position
-	print(global_position.distance_to(camera.global_position))
-	Globals.Player = self
-	Globals.stats = stats
 	inventory.assignIDs()
 	stats.initialize()
 	refreshStats()

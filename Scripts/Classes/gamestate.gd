@@ -27,7 +27,7 @@ func add_save(theSaveInQuestion: SaveGame, name: String = "placeholder"):
 	var fuckyou = {name: theSaveInQuestion}
 	saves[name] = theSaveInQuestion
 
-func initialize():
+func initializeSaves():
 	saves.clear()
 	var dir = DirAccess.open("user://")
 	if not dir.dir_exists("saves"):
@@ -45,14 +45,18 @@ func initialize():
 		#print(tempname)
 		saves[tempname] = save_file.duplicate(true)
 		file_name = dir.get_next()
+	return true
 
+func initialize():
+	initializeSaves()
 	#print(saves.size())
-	if !initialized:
+	if !initialized and !Globals.loadSave:
 		await rootNode.initialize(self)
 		rootNode.Menu.set_process(false)
 		rootNode.Menu.hide()
 		Globals.inventory.initialize()
 	elif Globals.loadSave:
+		print("loading form a save")
 		rootNode.initalizeSave()
 		rootNode.signalinit()
 		Globals.inventory.initialize()

@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://dgpn8lfjmaaj8" path="res://Scripts/UI/resolutionPicker.gd" id="10_ix48p"]
 [ext_resource type="Script" uid="uid://bajopykwbkmi5" path="res://Scripts/UI/shadowsize.gd" id="11_524vl"]
 [ext_resource type="Script" uid="uid://bryewuvbgtcpm" path="res://Scripts/UI/savingloading.gd" id="13_uscpe"]
+[ext_resource type="Script" uid="uid://bp7xtwy1os41f" path="res://Scripts/UI/quit.gd" id="14_taale"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_524vl"]
 texture = ExtResource("6_ix48p")
@@ -113,6 +114,7 @@ size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_524vl")
 
 [node name="Info" type="Control" parent="menu/VBoxContainer/PanelContainer" unique_id=721207304]
+visible = false
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="menu/VBoxContainer/PanelContainer/Info" unique_id=1087630443]
@@ -289,7 +291,6 @@ theme_override_styles/disabled = ExtResource("5_stj27")
 text = "Discard"
 
 [node name="System" type="Control" parent="menu/VBoxContainer/PanelContainer" unique_id=1603087875]
-visible = false
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="menu/VBoxContainer/PanelContainer/System" unique_id=2122097367]
@@ -354,6 +355,23 @@ text = "Save Info"
 label_settings = ExtResource("7_sjs17")
 autowrap_mode = 2
 
+[node name="quit" type="HBoxContainer" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer" unique_id=1866296168]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+script = ExtResource("14_taale")
+
+[node name="menu" type="Button" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/quit" unique_id=1611429764]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_myy0f")
+text = "Exit to Main Menu"
+
+[node name="quit" type="Button" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/quit" unique_id=2036615661]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_myy0f")
+text = "Exit to OS"
+
 [connection signal="pressed" from="menu/VBoxContainer/Sections/info" to="menu" method="info_pressed"]
 [connection signal="pressed" from="menu/VBoxContainer/Sections/settings" to="menu" method="settings_pressed"]
 [connection signal="pressed" from="menu/VBoxContainer/Sections/system" to="menu" method="system_pressed"]
@@ -363,3 +381,5 @@ autowrap_mode = 2
 [connection signal="pressed" from="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/VBoxContainer/saving/save" to="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading" method="_on_save_pressed"]
 [connection signal="item_selected" from="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/VBoxContainer/loading/OptionButton" to="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading" method="_on__item_selected"]
 [connection signal="pressed" from="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/VBoxContainer/loading/load" to="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading" method="_on_load_pressed"]
+[connection signal="pressed" from="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/quit/menu" to="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/quit" method="_on_menu_pressed"]
+[connection signal="pressed" from="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/quit/quit" to="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/quit" method="_on_quit_pressed"]

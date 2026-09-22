@@ -391,3 +391,10 @@
 	#i will fix the info menu and then i believe im done for today.
 	#22:26
 	#rewrote info text. Im done in godot for today
+	#
+	##22/09
+	#12:45
+	#today is off school wise. i was thinking of using it to get some work done. (notably a main menu)
+	#will start today
+	#13:14
+	#the loading isnt working

@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="samsonarum"
-run/main_scene="uid://dt6nd2jpamwq8"
+config/version="alpha"
+run/main_scene="uid://bjo1qm1kfwu2s"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.png"
 

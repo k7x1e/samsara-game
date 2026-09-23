@@ -26,8 +26,9 @@ var dashVector = Vector3(dashD, 0, 0)
 @onready var cursorNode = $Cursor
 @onready var camera = $Camera3D
 @onready var rotationNode = $Rotation
-@onready var wizard = $Rotation/Wizard
+@onready var wizard = $Wizard
 @onready var followerNode = $Rotation/Follower1 #will be replaced with a function eventually but this will do for now
+@onready var lookTarget = $lookTarget
 
 @onready var notification = preload("res://Scenes/notification.tscn")
 
@@ -160,6 +161,8 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		
+		rotationNode.walkTarget = global_position + direction
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -196,8 +199,10 @@ func look_at_mouse():
 		globalmousePos = hit
 		
 		localmousePos.y = global_position.y
-		if global_position.distance_to(localmousePos) > 0.1:
-			rotationNode.look_at(localmousePos, Vector3.UP)
+		rotationNode.lookTarget = localmousePos
+		wizard.look_at(localmousePos, Vector3.UP)
+		#if global_position.distance_to(localmousePos) > 0.1:
+		#	rotationNode.look_at(localmousePos, Vector3.UP)
 	else:
 		#print("failing somehow")
 		return Vector3.ZERO

@@ -398,3 +398,8 @@
 	#will start today
 	#13:14
 	#the loading isnt working
+	#
+	##13/09
+	#09:29
+	#managed to implement the character looking towards the mouse and
+	#that it would turn around if the angle exceeded 90 in either direction

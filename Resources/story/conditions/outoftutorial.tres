@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Condition" format=3 uid="uid://bnntlvv555o7v"]
+
+[ext_resource type="Script" uid="uid://dybd1neh08it" path="res://Scripts/classes/condition.gd" id="1_4aflo"]
+
+[resource]
+script = ExtResource("1_4aflo")
+name = "out of tutorial"
+metadata/_custom_type_script = "uid://dybd1neh08it"

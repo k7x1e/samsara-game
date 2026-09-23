@@ -4866,11 +4866,4 @@ mesh = SubResource("PlaneMesh_pt3ps")
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=29895087]
 occluder = ExtResource("30_o2rbt")
 
-[connection signal="moving" from="NavigationRegion3D/east/entity_21_enemy" to="NavigationRegion3D/east/entity_21_enemy/Monitor" method="moving"]
-[connection signal="moving" from="NavigationRegion3D/east/entity_22_enemy" to="NavigationRegion3D/east/entity_22_enemy/Monitor" method="moving"]
-[connection signal="moving" from="NavigationRegion3D/east/entity_39_enemy" to="NavigationRegion3D/east/entity_39_enemy/Monitor" method="moving"]
-[connection signal="moving" from="NavigationRegion3D/east/entity_40_enemy" to="NavigationRegion3D/east/entity_40_enemy/Monitor" method="moving"]
-[connection signal="moving" from="NavigationRegion3D/east/entity_78_enemy" to="NavigationRegion3D/east/entity_78_enemy/Monitor" method="moving"]
-[connection signal="moving" from="NavigationRegion3D/east/entity_79_enemy" to="NavigationRegion3D/east/entity_79_enemy/Monitor" method="moving"]
-
 [editable path="Water"]

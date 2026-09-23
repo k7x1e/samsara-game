@@ -55,6 +55,7 @@ func initialize():
 		rootNode.Menu.set_process(false)
 		rootNode.Menu.hide()
 		Globals.inventory.initialize()
+		rootNode.triggerTutorial()
 	elif Globals.loadSave:
 		print("loading form a save")
 		rootNode.initalizeSave()

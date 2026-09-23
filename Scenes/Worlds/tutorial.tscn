@@ -1,0 +1,148 @@
+[gd_scene format=4 uid="uid://prrtp8iwyf2t"]
+
+[ext_resource type="Script" uid="uid://c2nmolbivfrt2" path="res://Scripts/interiorPoopFartHolder.gd" id="1_cxoe0"]
+[ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_ed5bu"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_cxoe0"]
+[ext_resource type="Script" uid="uid://bqdpiionfhc5e" path="res://Scripts/ActorBaseClass.gd" id="2_mvt4t"]
+[ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="3_65i65"]
+[ext_resource type="Material" uid="uid://bn1yxkelwqsrk" path="res://Textures/walls/sinistererplanks.tres" id="3_s7tx2"]
+[ext_resource type="PackedScene" uid="uid://d2ndbyf01218u" path="res://Scenes/models/light.tscn" id="4_fn4jr"]
+[ext_resource type="Resource" uid="uid://bnntlvv555o7v" path="res://Resources/story/conditions/outoftutorial.tres" id="4_m7ia4"]
+[ext_resource type="Script" uid="uid://b7hyysg2wlwul" path="res://Scripts/classes/Behaviour/tutorialguy.gd" id="5_0wdrf"]
+[ext_resource type="Environment" uid="uid://lyhkdkhxwhlj" path="res://Resources/game_environment.tres" id="5_1f7fd"]
+[ext_resource type="Resource" uid="uid://xm2tqnhksoev" path="res://Resources/story/conversations/tutorial.tres" id="6_65i65"]
+[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="13_w8204"]
+[ext_resource type="PackedScene" uid="uid://2bbch46haypm" path="res://Models/elder.glb" id="14_ktix3"]
+
+[sub_resource type="Resource" id="Resource_00gsy"]
+script = ExtResource("5_0wdrf")
+player = null
+nav = null
+hasDialogue = true
+words = ExtResource("6_65i65")
+outoftutorial = ExtResource("4_m7ia4")
+actor = null
+metadata/_custom_type_script = "uid://b7hyysg2wlwul"
+
+[sub_resource type="Resource" id="Resource_lakn1"]
+script = ExtResource("13_w8204")
+npcName = "Tutorial Guy"
+usesModel = false
+behaviour = SubResource("Resource_00gsy")
+metadata/_custom_type_script = "uid://drjjmjc24qipo"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ei5c"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_pen7r"]
+vertices = PackedVector3Array(-31.5, 0.5, -6.75, -9, 0.5, -6.75, -9, 0.5, -8.75, -6.75, 0.5, -9, -6.75, 0.5, -31.5, -31.5, 0.5, -31.5, 7, 0.5, -9, 7, 0.5, -31.5, 9, 0.5, -9, 9.25, 0.5, -7.25, 31.5, 0.5, -7.5, 31.5, 0.5, -31.5, 9.25, 0.5, 7.25, 31.5, 0.5, 7.5, -7.25, 0.5, -7.25, -7.25, 0.5, 7.5, 7.5, 0.5, 7.5, 7.5, 0.5, -7.25, -31.5, 0.5, 7, -9, 0.5, 7, -7.5, 0.5, 31.5, -7.25, 0.5, 9.25, -9, 0.5, 9, -31.5, 0.5, 31.5, 9.25, 0.5, 8.75, 8.75, 0.5, 9.25, 7.25, 0.5, 9.25, 7.5, 0.5, 31.5, 31.5, 0.5, 31.5)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(3, 2, 4), PackedInt32Array(4, 2, 5), PackedInt32Array(5, 2, 0), PackedInt32Array(4, 7, 3), PackedInt32Array(3, 7, 6), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(11, 8, 7), PackedInt32Array(8, 6, 7), PackedInt32Array(9, 10, 12), PackedInt32Array(12, 10, 13), PackedInt32Array(17, 16, 14), PackedInt32Array(14, 16, 15), PackedInt32Array(0, 1, 18), PackedInt32Array(18, 1, 19), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 20, 23), PackedInt32Array(22, 23, 18), PackedInt32Array(18, 19, 22), PackedInt32Array(24, 12, 13), PackedInt32Array(27, 26, 25), PackedInt32Array(24, 13, 25), PackedInt32Array(25, 13, 28), PackedInt32Array(25, 28, 27), PackedInt32Array(21, 26, 20), PackedInt32Array(20, 26, 27)]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_65i65"]
+_surfaces = [{
+"aabb": AABB(-288, -0.5, -288, 576, 0.5, 576),
+"attribute_data": PackedByteArray("vH62wgAAAAC8frZCAAAAALx+tkI/6Kg+vH62wj/oqD68frZCP+ioPrx+tsI/6Kg+vH62wgAAAAC8frZCAAAAALx+tsJHBT5DvH62wkcFPsO8frZCRwU+w7x+tkJHBT5DvH62QkcFPkO8frbCRwU+Q7x+tsJHBT7DvH62QkcFPsO8frbCAAAAALx+tkIAAAAAvH62Qj/oqD68frbCP+ioPrx+tkI/6Kg+vH62wj/oqD68frbCAAAAALx+tkIAAAAA"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": ExtResource("3_s7tx2"),
+"name": "walls/sinistererplanks",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AACQQwAAAAAAAJDDAACQwwAAAAAAAJDDAACQwwAAAL8AAJDDAACQQwAAAL8AAJDDAACQwwAAAL8AAJBDAACQwwAAAL8AAJDDAACQwwAAAAAAAJDDAACQwwAAAAAAAJBDAACQwwAAAL8AAJBDAACQQwAAAL8AAJBDAACQQwAAAL8AAJDDAACQwwAAAL8AAJDDAACQwwAAAAAAAJBDAACQwwAAAAAAAJDDAACQQwAAAAAAAJDDAACQQwAAAAAAAJBDAACQQwAAAAAAAJBDAACQQwAAAAAAAJDDAACQQwAAAL8AAJDDAACQQwAAAL8AAJBDAACQQwAAAL8AAJBDAACQwwAAAL8AAJBDAACQwwAAAAAAAJBDAACQQwAAAAAAAJBD/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+}]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m7ia4"]
+points = PackedVector3Array(288, 0, 288, 288, -0.5, 288, -288, 0, 288, -288, -0.5, 288, 288, 0, -288, 288, -0.5, -288, -288, 0, -288, -288, -0.5, -288)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0wdrf"]
+points = PackedVector3Array(-8, 8, 8.5, -8, 0, 8.5, -8.5, 8, 8.5, -8.5, 0, 8.5, -8, 8, -8.5, -8, 0, -8.5, -8.5, 8, -8.5, -8.5, 0, -8.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_00gsy"]
+points = PackedVector3Array(8.5, 8, 8.5, 8.5, 0, 8.5, 8, 8, 8.5, 8, 0, 8.5, 8.5, 8, -8.5, 8.5, 0, -8.5, 8, 8, -8.5, 8, 0, -8.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f4idf"]
+points = PackedVector3Array(8, 8, -8, 8, 0, -8, -8, 8, -8, -8, 0, -8, 8, 8, -8.5, 8, 0, -8.5, -8, 8, -8.5, -8, 0, -8.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mvt4t"]
+points = PackedVector3Array(8, 8, 8.5, 8, 0, 8.5, -8, 8, 8.5, -8, 0, 8.5, 8, 8, 8, 8, 0, 8, -8, 8, 8, -8, 0, 8)
+
+[node name="tutorial" type="Node3D" unique_id=800210436]
+script = ExtResource("1_cxoe0")
+
+[node name="Actor" type="CharacterBody3D" parent="." unique_id=1866149922 groups=["Pausable", "ticked"]]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.9560418, -1)
+collision_layer = 521
+collision_mask = 521
+script = ExtResource("2_mvt4t")
+NpcClass = SubResource("Resource_lakn1")
+
+[node name="Visual" type="Node3D" parent="Actor" unique_id=1983415667 groups=["Pausable"]]
+
+[node name="elder" parent="Actor/Visual" unique_id=1582481163 instance=ExtResource("14_ktix3")]
+transform = Transform3D(-1.0927845e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927845e-08, 0, 0.118780494, 0)
+
+[node name="Skeleton3D" parent="Actor/Visual/elder/Armature" parent_id_path=PackedInt32Array(1582481163, 2068219804) index="0" unique_id=1614033723]
+bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
+bones/1/rotation = Quaternion(0.9381848, 0.012157031, 0.34126696, 0.056554317)
+bones/3/rotation = Quaternion(0.00014069397, -0.00022516689, 0.011307918, 0.9999361)
+bones/7/rotation = Quaternion(-0.36593214, -0.027977932, -0.12831022, 0.9213292)
+bones/8/rotation = Quaternion(-0.23305106, -0.018484527, -0.022327406, 0.9720324)
+bones/9/rotation = Quaternion(-0.118990615, -0.038885873, 0.029414108, 0.9916975)
+bones/11/rotation = Quaternion(0.11406366, 0.8830993, -0.36882517, -0.26663277)
+bones/12/rotation = Quaternion(0.30592144, -0.05869044, -0.15602674, 0.9373491)
+bones/13/rotation = Quaternion(0.054251563, -0.18838324, 0.059412085, 0.9787945)
+bones/15/rotation = Quaternion(0.72698486, 0.094962806, -0.058514364, 0.6775332)
+bones/16/rotation = Quaternion(0.03743713, -0.008029879, -0.00083015836, 0.9992664)
+bones/17/rotation = Quaternion(0.6096443, 0.7403935, -0.14562067, 0.24278796)
+bones/19/rotation = Quaternion(-0.731865, -0.011666051, 0.015933152, 0.6811635)
+bones/20/rotation = Quaternion(-0.03742334, -7.324756e-07, -0.0013116588, 0.99929875)
+bones/21/rotation = Quaternion(-0.11982031, -0.0892347, -0.61523545, 0.7740579)
+
+[node name="Nav" type="NavigationAgent3D" parent="Actor" unique_id=87223851 groups=["Pausable"]]
+avoidance_enabled = true
+radius = 1.0
+
+[node name="Collision" type="CollisionShape3D" parent="Actor" unique_id=1180956514 groups=["Pausable"]]
+shape = SubResource("CapsuleShape3D_7ei5c")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=318183600]
+navigation_mesh = SubResource("NavigationMesh_pen7r")
+
+[node name="FuncGodotMap" type="Node3D" parent="NavigationRegion3D" unique_id=634871295]
+script = ExtResource("1_ed5bu")
+local_map_file = "uid://dlyu12nb1gnqb"
+map_settings = ExtResource("2_cxoe0")
+metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
+
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="NavigationRegion3D/FuncGodotMap" unique_id=856181280]
+collision_mask = 0
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=1232709354]
+mesh = SubResource("ArrayMesh_65i65")
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=1660272903]
+shape = SubResource("ConvexPolygonShape3D_m7ia4")
+
+[node name="entity_0_brush_1_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=641559398]
+shape = SubResource("ConvexPolygonShape3D_0wdrf")
+
+[node name="entity_0_brush_2_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=149657876]
+shape = SubResource("ConvexPolygonShape3D_00gsy")
+
+[node name="entity_0_brush_3_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=1620799407]
+shape = SubResource("ConvexPolygonShape3D_f4idf")
+
+[node name="entity_0_brush_4_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=880115561]
+shape = SubResource("ConvexPolygonShape3D_mvt4t")
+
+[node name="entity_1_light" parent="NavigationRegion3D/FuncGodotMap" unique_id=290002343 instance=ExtResource("4_fn4jr")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 4.25, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1171431402]
+environment = ExtResource("5_1f7fd")
+
+[node name="SpawnPoint" type="Node3D" parent="." unique_id=1198856778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[editable path="Actor/Visual/elder"]

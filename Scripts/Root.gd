@@ -31,7 +31,15 @@ var mainWorldPlayerPos
 var isPaused = false
 @export var interiors: Dictionary[String, PackedScene]
 
-func changeWorld(caller: Variant, Targetscene: String, fromMain: bool):
+@export var fadeAnim: AnimationPlayer
+
+func fadeIn():
+	fadeAnim.play("fadein")
+
+func fadeOut():
+	fadeAnim.play("fadeout")
+
+func changeWorld(caller: Variant, Targetscene: String, fromMain: bool, fade: bool = true):
 	if fromMain:
 		#save current world
 		var tempworld = $World
@@ -40,6 +48,10 @@ func changeWorld(caller: Variant, Targetscene: String, fromMain: bool):
 		if tempresult == OK:
 			mainWorldNode = temptemptemp
 			mainWorldPlayerPos = global_position
+		if fade:
+			fadeOut()
+			pause(true)
+			await get_tree().create_timer(2).timeout
 		
 		tempworld.queue_free()
 		newWorldCaller = caller
@@ -50,12 +62,22 @@ func changeWorld(caller: Variant, Targetscene: String, fromMain: bool):
 		self.add_child(newWorld)
 		newWorld.set_owner(self)
 		
+		if fade:
+			pause(false)
+			fadeIn()
+		
 		mainWorldPlayerPos = Globals.Player.global_position
 		Globals.Player.global_position = newWorld.playerSpawn.global_position
+		
 	
 	else:
 		var temptemptemp2 = PackedScene.new()
 		var tempresult2 = await temptemptemp2.pack(newWorld)
+		
+		if fade:
+			fadeOut()
+			pause(true)
+			await get_tree().create_timer(2).timeout
 		
 		newWorld.queue_free()
 		
@@ -63,10 +85,17 @@ func changeWorld(caller: Variant, Targetscene: String, fromMain: bool):
 		self.add_child(newWorld)
 		newWorld.set_owner(self)
 		
+		if fade:
+			pause(false)
+			fadeIn()
+		
 		interiors[Targetscene] = temptemptemp2
 		Globals.Player.global_position = mainWorldPlayerPos
+		
+		
 
 func _ready():
+	fadeIn()
 	Globals.gamestate = Globals.gamestate.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 	gamestate = Globals.gamestate
 	updatedelay = 10.0 / updaterate
@@ -172,6 +201,9 @@ func pause(Paused: bool):
 		isPaused = false
 		for object in pausable:
 			object.process_mode = Node.PROCESS_MODE_INHERIT
+
+func triggerTutorial():
+	changeWorld(self,"tutorial", true, false)
 
 func initialize(gmestate: gameState, sendinit: bool = true):
 	for i in range(gmestate.initnodes.size()):

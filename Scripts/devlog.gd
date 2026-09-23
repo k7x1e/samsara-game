@@ -421,3 +421,7 @@
 	#added menu/button sounds, time to push and then start making generic british man
 	#20:39
 	#ive made a bunch of small shit changes, i will now push another playtest
+	#22:21
+	#WHY IS EVERYTHING BROKEN
+	#22:56
+	#added a (very rudimentary) tutorial/intro and fading.

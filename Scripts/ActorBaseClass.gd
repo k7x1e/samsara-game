@@ -32,7 +32,6 @@ func _physics_process(delta: float) -> void:
 
 func tick():
 	behaviour.update()
-	
 
 func damage(amt: float):
 	print("took damage")

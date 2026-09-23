@@ -2,7 +2,7 @@ extends Resource
 class_name Quest
 
 #most of this will deadass be ripped from dustrialis
-@export_enum("Unknown", "Given","Achieved","Completed") var quest_state: int
+@export_enum("Unknown", "Given","Achieved","Completed","Failed") var quest_state: int
 @export var botched: bool
 
 @export var icon: Texture2D
@@ -25,7 +25,8 @@ class_name Quest
 	0: [],
 	1: [],
 	2: [],
-	3: []
+	3: [],
+	4: []
 } ##THIS WILL BE REPLACED EVENTUALLY. But all conditions contained within these will simply be set to true.
 
 func getQuestState() -> int:
@@ -59,12 +60,16 @@ func setQuestState(state: int): ##cannot go backwards, 1 given, 2 achieved, 3 co
 			3:
 				Globals.Player.notify(str("Completed quest ", questName, "."), "Mission1")
 		update()
+
 func update():
 	for i in dependentConditions[quest_state]:
 		i.fulfilled = true
 
 func botchQuest():
 	botched = true
+	quest_state = 4
+	update()
+	Globals.Player.notify(str("Failed quest ", questName, "."), "Mission1")
 
 func questReward(inv: Node):
 	if givesReward:

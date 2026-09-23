@@ -4,18 +4,91 @@
 [ext_resource type="Resource" uid="uid://b5t6pkvtcweo4" path="res://Resources/gameState.tres" id="2_kldst"]
 [ext_resource type="PackedScene" uid="uid://c12hkpbebfwf0" path="res://Scenes/Worlds/Interiors/londonPub.tscn" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://nxogfgeamf7b" path="res://Scenes/Worlds/Interiors/mysteryPlace.tscn" id="4_kldst"]
+[ext_resource type="PackedScene" uid="uid://prrtp8iwyf2t" path="res://Scenes/Worlds/tutorial.tscn" id="5_7lihs"]
 [ext_resource type="AudioStream" uid="uid://ds1552d2ah3xk" path="res://sound/music/Dueil Angoisseus.mp3" id="5_b2bpf"]
 
-[node name="Root" type="Node3D" unique_id=1717732160]
+[sub_resource type="Animation" id="Animation_65i65"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_m7ia4"]
+resource_name = "fadein"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0wdrf"]
+resource_name = "fadeout"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7lihs"]
+_data = {
+&"RESET": SubResource("Animation_65i65"),
+&"fadein": SubResource("Animation_m7ia4"),
+&"fadeout": SubResource("Animation_0wdrf")
+}
+
+[node name="Root" type="Node3D" unique_id=1717732160 node_paths=PackedStringArray("fadeAnim")]
 process_mode = 3
 script = ExtResource("1_kldst")
 gamestate = ExtResource("2_kldst")
 interiors = Dictionary[String, PackedScene]({
 "londonPub": ExtResource("3_j5yw3"),
-"mysteryPlace": ExtResource("4_kldst")
+"mysteryPlace": ExtResource("4_kldst"),
+"tutorial": ExtResource("5_7lihs")
 })
+fadeAnim = NodePath("fading/AnimationPlayer")
 
 [node name="bgm" type="AudioStreamPlayer" parent="." unique_id=830326665]
 stream = ExtResource("5_b2bpf")
 volume_db = -4.0
 autoplay = true
+
+[node name="fading" type="CanvasLayer" parent="." unique_id=440606973]
+layer = 3
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="fading" unique_id=1656779079]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fading" unique_id=1880819554]
+libraries/ = SubResource("AnimationLibrary_7lihs")

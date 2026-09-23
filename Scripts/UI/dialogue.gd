@@ -33,9 +33,11 @@ func update():
 					temp.hide()
 			temp.pressed.connect(optionPressed.bind(i))
 			b += 1
-		if currentW.questStatus != 0:
+		if currentW.questStatus != 0 and currentW.questStatus != 4:
 			print(currentW.questStatus)
 			currentW.quest.setQuestState(currentW.questStatus)
+		elif currentW.questStatus == 4:
+			currentW.quest.botchQuest()
 			#i must say, this system is shit but damn if it isnt convenient to scale
 
 func optionPressed(i: DialogueOption):

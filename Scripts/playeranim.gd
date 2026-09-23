@@ -36,9 +36,13 @@ func playAnim(_which: String):
 		"castMind":
 			set("parameters/Add3/add_amount",-1)
 			set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+			await get_tree().create_timer(1).timeout
+			set("parameters/Add3/add_amount",0)
 		"eat":
 			set("parameters/Add3/add_amount",1)
 			set("parameters/OneShot 3/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+			await get_tree().create_timer(0.67).timeout
+			set("parameters/Add3/add_amount",0)
 		"cast":
 			set("parameters/Add3/add_amount",0)
 			set("parameters/OneShot 2/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)

@@ -2,10 +2,49 @@
 
 [ext_resource type="StyleBox" uid="uid://ciy75oh1vleff" path="res://Resources/UI/styleBox.tres" id="1_5pknu"]
 [ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="2_b7htb"]
+[ext_resource type="AudioStream" uid="uid://bikro78yehb60" path="res://sound/notification/mission.wav" id="2_snj4n"]
 [ext_resource type="Script" uid="uid://csgte3pjpefyy" path="res://Scripts/UI/MainMenu.gd" id="2_v10og"]
 [ext_resource type="StyleBox" uid="uid://ds457w8c45wbg" path="res://Resources/UI/dropdownNormal.tres" id="4_kqm77"]
 [ext_resource type="StyleBox" uid="uid://lufuxo8vt8ji" path="res://Resources/UI/dropdownPressed.tres" id="5_snj4n"]
 [ext_resource type="StyleBox" uid="uid://he3jioswdiig" path="res://Resources/UI/dropdownDisabled.tres" id="6_wofhc"]
+[ext_resource type="AudioStream" uid="uid://d2bjqs5atc2s7" path="res://sound/music/peste noire menu.mp3" id="7_kqm77"]
+
+[sub_resource type="Animation" id="Animation_wofhc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fading:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qmf6k"]
+resource_name = "new_game"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fading:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rn1t7"]
+_data = {
+&"RESET": SubResource("Animation_wofhc"),
+&"new_game": SubResource("Animation_qmf6k")
+}
 
 [node name="Control" type="Control" unique_id=1760898885]
 layout_mode = 3
@@ -109,6 +148,7 @@ theme_override_styles/disabled = ExtResource("6_wofhc")
 text = "Load Game"
 
 [node name="loading" type="HBoxContainer" parent="Control/main" unique_id=432090404]
+visible = false
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
@@ -151,6 +191,28 @@ theme_override_styles/hover = ExtResource("6_wofhc")
 theme_override_styles/disabled = ExtResource("6_wofhc")
 text = "Quit
 "
+
+[node name="anim" type="AnimationPlayer" parent="Control" unique_id=1595246681]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_rn1t7")
+
+[node name="sfx" type="AudioStreamPlayer" parent="Control" unique_id=1601464450]
+stream = ExtResource("2_snj4n")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=765968729]
+stream = ExtResource("7_kqm77")
+volume_db = -3.0
+autoplay = true
+
+[node name="fading" type="ColorRect" parent="." unique_id=1573682752]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
 
 [connection signal="pressed" from="Control/main/cont" to="Control" method="continue_pressed"]
 [connection signal="pressed" from="Control/main/new" to="Control" method="new_pressed"]

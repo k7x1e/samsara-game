@@ -4,8 +4,8 @@ var forward: Vector3 = -global_transform.basis.z
 
 signal reversed(isit: bool)
 
-@export var walkTarget: Vector3
-@export var lookTarget: Vector3
+@export var walkTarget: Vector3 = Vector3(0,0,0)
+@export var lookTarget: Vector3 = Vector3(0,0,0)
 
 @export var actualWalkTarget: Vector3
 @export var actualLookTarget: Vector3
@@ -18,7 +18,7 @@ signal reversed(isit: bool)
 
 @export var rotationSpeed = 5.0
 
-var desired_facing
+var desired_facing: Vector3 = Vector3(0,0,0)
 
 func tick():
 	diff = getAngles()

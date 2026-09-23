@@ -2,6 +2,7 @@ extends GridContainer
 
 @onready var window = get_node("../../../")
 @onready var itemNode = preload("res://Scenes/item.tscn")
+@onready var nsfx = $"../sfx"
 
 var dropDownNode: Node
 
@@ -111,6 +112,7 @@ func GetNode(itemC: itemClass):
 
 func dropDown(nodeinquestion: Node):
 	#replace with a neat function
+	nsfx.play()
 	dropDownNode.show()
 	dropDownNode.global_position = get_global_mouse_position()
 	dropDownNode.updateItem(nodeinquestion)

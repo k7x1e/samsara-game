@@ -415,3 +415,7 @@
 	#implemented animations and added a slight delay (0.34s) to spells for maximum effect
 	#16:55
 	#added a bunch of animations and stuff
+	#18:40
+	#did some mostly cosmetic tweaks. I should add in holdable items that limit ones ability to do spells (most notably for future melee implementation and for cool shit like lanterns)
+	#19:10
+	#added menu/button sounds, time to push and then start making generic british man

@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b65syv7l401qe"]
 
 [ext_resource type="SystemFont" uid="uid://cri31ihw34lpf" path="res://Resources/Fonts/dialogue.tres" id="1_murnp"]
+[ext_resource type="Script" uid="uid://d163f5ur8ukli" path="res://Scripts/UI/button_sound.gd" id="2_3hodh"]
+[ext_resource type="AudioStream" uid="uid://xb56kx4sujei" path="res://sound/notification/menu.wav" id="3_1kx44"]
 
 [node name="DialogueOption" type="Button" unique_id=35727853]
 custom_minimum_size = Vector2(0, 60)
@@ -10,3 +12,7 @@ theme_override_fonts/font = ExtResource("1_murnp")
 theme_override_font_sizes/font_size = 35
 text = "Sure, Why not"
 alignment = 0
+script = ExtResource("2_3hodh")
+
+[node name="sfx" type="AudioStreamPlayer" parent="." unique_id=1553422051]
+stream = ExtResource("3_1kx44")

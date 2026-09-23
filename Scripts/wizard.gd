@@ -26,10 +26,11 @@ func _ready():
 
 # Called when the node enters the scene tree for the first time.
 func cast(which: int): #1: left, 2: right, 3,4,5: other bindable spells
-	casted.emit(spells[which].animation)
-	await get_tree().create_timer(0.34).timeout
-	if which <= 4:
-		spells[which].cast(self)
+	if spells[which].castable:
+		casted.emit(spells[which].animation)
+		await get_tree().create_timer(0.34).timeout
+		if which <= 4:
+			spells[which].cast(self)
 
 func remove(which: int, replacement: bool):
 	if replacement:

@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bhg0ayjvobmef"]
 
-[ext_resource type="Script" uid="uid://b1lxn3p36pvr1" path="res://Scripts/classes/spells/lightning_strike.gd" id="1_7kp3g"]
+[ext_resource type="Script" uid="uid://b1lxn3p36pvr1" path="res://Scripts/Classes/spells/lightning_strike.gd" id="1_7kp3g"]
 [ext_resource type="Texture2D" uid="uid://citma6vf0j7s5" path="res://Textures/spells/lightning_strike.png" id="2_4oncq"]
 [ext_resource type="Texture2D" uid="uid://cnlpfxmcle0t8" path="res://Textures/spells/lightning_strike_red.png" id="3_l303g"]
+[ext_resource type="AudioStream" uid="uid://c2drq5fea0dcc" path="res://sound/sfx/thunder.mp3" id="4_0ycbv"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wk5h0"]
 radius = 2.0770488
@@ -69,6 +70,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite3D:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_l303g"]
 resource_name = "Strike"
@@ -133,6 +146,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite3D:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.19764827, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0ycbv"]
 _data = {
@@ -152,6 +177,7 @@ shape = SubResource("SphereShape3D_wk5h0")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=868290978]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.736725, 0)
+modulate = Color(1, 1, 1, 0)
 billboard = 2
 texture = ExtResource("2_4oncq")
 
@@ -164,3 +190,8 @@ light_color = Color(0.73257554, 0.99999994, 0.9743635, 1)
 light_energy = 20.0
 shadow_enabled = true
 omni_range = 50.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1292062454]
+stream = ExtResource("4_0ycbv")
+volume_db = 3.0
+autoplay = true

@@ -419,3 +419,5 @@
 	#did some mostly cosmetic tweaks. I should add in holdable items that limit ones ability to do spells (most notably for future melee implementation and for cool shit like lanterns)
 	#19:10
 	#added menu/button sounds, time to push and then start making generic british man
+	#20:39
+	#ive made a bunch of small shit changes, i will now push another playtest

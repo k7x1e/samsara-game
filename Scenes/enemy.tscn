@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://wwksmh6v3aja" path="res://Scripts/Classes/Behaviour/baseEnemy.gd" id="3_0830c"]
 [ext_resource type="PackedScene" uid="uid://dcjnetgb821re" path="res://Scenes/EnemyModel.tscn" id="4_0830c"]
 [ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/Classes/npc.gd" id="5_8uf12"]
+[ext_resource type="PackedScene" uid="uid://bnkq4ylk1qenb" path="res://Models/peasant1.glb" id="5_auwsv"]
 [ext_resource type="Script" uid="uid://xmtxhcqgxgc2" path="res://Scripts/enemyMonitor.gd" id="6_ghaa6"]
 [ext_resource type="AudioStream" uid="uid://b0ahih5c8udqs" path="res://sound/notification/something.wav" id="7_auwsv"]
 [ext_resource type="AudioStream" uid="uid://bikro78yehb60" path="res://sound/notification/mission.wav" id="8_8uf12"]
@@ -29,6 +30,36 @@ model = ExtResource("4_0830c")
 behaviour = SubResource("Resource_ghaa6")
 metadata/_custom_type_script = "uid://drjjmjc24qipo"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_auwsv"]
+animation = &"rest"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8uf12"]
+animation = &"rest"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_po0sg"]
+animation = &"walk_002"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_haro7"]
+filters = ["Armature", "Armature/Skeleton3D:Bone.009.L", "Armature/Skeleton3D:Bone.009.R", "Armature/Skeleton3D:Bone.010.L", "Armature/Skeleton3D:Bone.010.R", "Armature/Skeleton3D:Bone.011.L", "Armature/Skeleton3D:Bone.011.R"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_56vhr"]
+filter_enabled = true
+filters = ["Armature", "Armature/Skeleton3D:Bone.009.L", "Armature/Skeleton3D:Bone.009.R", "Armature/Skeleton3D:Bone.010.L", "Armature/Skeleton3D:Bone.010.R", "Armature/Skeleton3D:Bone.011.L", "Armature/Skeleton3D:Bone.011.R"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ta2yt"]
+graph_offset = Vector2(-555.1677, 118.49962)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_56vhr")
+nodes/Blend2/position = Vector2(80, 100)
+"nodes/Blend2 2/node" = SubResource("AnimationNodeBlend2_haro7")
+"nodes/Blend2 2/position" = Vector2(-180, 240)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_po0sg")
+nodes/Animation/position = Vector2(-480, 200)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_auwsv")
+"nodes/Animation 2/position" = Vector2(-480, 360)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_8uf12")
+"nodes/Animation 3/position" = Vector2(-180, 60)
+node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"Animation 3", &"Blend2", 1, &"Blend2 2", &"Blend2 2", 0, &"Animation", &"Blend2 2", 1, &"Animation 2"]
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_0830c"]
 radius = 8.0
 
@@ -52,6 +83,34 @@ hasMonitor = true
 
 [node name="Visual" type="Node3D" parent="." unique_id=1983415667 groups=["Pausable"]]
 
+[node name="peasant1" parent="Visual" unique_id=347662839 instance=ExtResource("5_auwsv")]
+transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0, 0.46035022, 0)
+visible = false
+
+[node name="Skeleton3D" parent="Visual/peasant1/Armature" parent_id_path=PackedInt32Array(347662839, 1919338655) index="0" unique_id=1589811251]
+bones/0/rotation = Quaternion(0.93800986, 0.021814236, 0.34066674, -0.060064632)
+bones/1/rotation = Quaternion(0.9380234, 0.02123142, 0.340704, 0.059852175)
+bones/3/rotation = Quaternion(0.011904065, -1.947772e-05, -0.00663829, 0.9999072)
+bones/7/rotation = Quaternion(-0.4562524, -0.049126726, -0.16023543, 0.87392503)
+bones/8/rotation = Quaternion(-0.07875365, -0.067492984, -0.10037203, 0.98952925)
+bones/9/rotation = Quaternion(0.014338688, -0.16604029, -0.09179396, 0.9817326)
+bones/11/rotation = Quaternion(0.29179817, -0.54254735, 0.37417188, 0.693175)
+bones/12/rotation = Quaternion(0.1711241, -0.021128928, -0.18060134, 0.96832496)
+bones/13/rotation = Quaternion(0.050900236, 0.41268268, -0.017628388, 0.9092807)
+bones/16/rotation = Quaternion(-0.8186941, 0.0015661928, -0.0042684693, 0.57421184)
+bones/17/rotation = Quaternion(0.035624515, -0.006866725, -0.00079939474, 0.9993414)
+bones/18/rotation = Quaternion(0.6617629, 0.7422541, -0.04189004, 0.09682031)
+bones/19/rotation = Quaternion(-0.7361974, -0.011818324, 0.015811201, 0.6764789)
+bones/20/rotation = Quaternion(-0.03561408, 1.2992999e-05, -0.0011733371, 0.9993649)
+bones/21/rotation = Quaternion(-0.118881576, -0.08768176, -0.6523435, 0.74338883)
+
+[node name="AnimationTree" type="AnimationTree" parent="Visual" unique_id=1179248732]
+root_node = NodePath("../peasant1")
+tree_root = SubResource("AnimationNodeBlendTree_ta2yt")
+anim_player = NodePath("../peasant1/AnimationPlayer")
+parameters/Blend2/blend_amount = 1.0
+"parameters/Blend2 2/blend_amount" = 1.0
+
 [node name="detection" type="Area3D" parent="Visual" unique_id=1714052568]
 collision_layer = 4
 collision_mask = 4
@@ -74,8 +133,9 @@ collision_mask = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="attackrange" unique_id=1787433241 groups=["Pausable"]]
 shape = SubResource("SphereShape3D_1dp5w")
 
-[node name="Monitor" type="Node3D" parent="." unique_id=708360727]
+[node name="Monitor" type="Node3D" parent="." unique_id=708360727 node_paths=PackedStringArray("animTree")]
 script = ExtResource("6_ghaa6")
+animTree = NodePath("../Visual/AnimationTree")
 sounds = Dictionary[String, AudioStream]({
 "attack": ExtResource("7_auwsv"),
 "damage": ExtResource("8_8uf12"),
@@ -90,3 +150,7 @@ collision_mask = 65536
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="aura" unique_id=311374690]
 shape = SubResource("SphereShape3D_auwsv")
+
+[connection signal="moving" from="." to="Monitor" method="moving"]
+
+[editable path="Visual/peasant1"]

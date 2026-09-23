@@ -113,9 +113,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 
 [node name="cont" type="Button" parent="Control/main" unique_id=2032355595]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b7htb")
 theme_override_font_sizes/font_size = 30
@@ -126,7 +127,7 @@ theme_override_styles/disabled = ExtResource("6_wofhc")
 text = "Continue"
 
 [node name="new" type="Button" parent="Control/main" unique_id=197020223]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b7htb")
 theme_override_font_sizes/font_size = 30
@@ -137,7 +138,7 @@ theme_override_styles/disabled = ExtResource("6_wofhc")
 text = "New Game"
 
 [node name="load" type="Button" parent="Control/main" unique_id=218093630]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b7htb")
 theme_override_font_sizes/font_size = 30
@@ -169,7 +170,7 @@ theme_override_styles/disabled = ExtResource("6_wofhc")
 text = "Load"
 
 [node name="Settings" type="Button" parent="Control/main" unique_id=1197933415]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b7htb")
 theme_override_font_sizes/font_size = 30
@@ -181,7 +182,7 @@ disabled = true
 text = "Settings"
 
 [node name="quit" type="Button" parent="Control/main" unique_id=1368176867]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b7htb")
 theme_override_font_sizes/font_size = 30

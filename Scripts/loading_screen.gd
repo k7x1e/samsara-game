@@ -1,10 +1,12 @@
 extends Node3D
 
+@onready var anim = $AnimationPlayer
 @onready var pBar = $CanvasLayer/Control/ProgressBar
 @export var targetPath: String = "res://Scenes/Game.tscn"
 var progress: Array[float] = []
 
 func _ready() -> void:
+	anim.play("fadein")
 	var err = ResourceLoader.load_threaded_request(targetPath)
 	if err != OK:
 		push_error("Failed to start threaded load: " + str(err))
@@ -18,6 +20,8 @@ func _process(_delta: float) -> void:
 			pBar.value = progress[0] * 100
 		ResourceLoader.THREAD_LOAD_LOADED:
 			var scene = ResourceLoader.load_threaded_get(targetPath)
+			anim.play("fadeout")
+			await get_tree().create_timer(1).timeout
 			get_tree().change_scene_to_packed(scene)
 		ResourceLoader.THREAD_LOAD_FAILED:
 			push_error("failed to load: " + targetPath)

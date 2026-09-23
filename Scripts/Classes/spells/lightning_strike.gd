@@ -17,7 +17,7 @@ func initialize() -> void:
 		#print("theres nothing")
 	#put fancy animation here
 	anim.play("Strike")
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(3.0).timeout
 	self.queue_free()
 
 func damageBodies():

@@ -196,24 +196,24 @@ lookTargetNode = NodePath("../lookTarget")
 transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0, 0.06221825, 0)
 
 [node name="Armature" parent="Rotation/londonProtag" index="2" unique_id=126068967]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2945143, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23583148, 0)
 
 [node name="Skeleton3D" parent="Rotation/londonProtag/Armature" index="0" unique_id=165164722]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.93802303, 0.021248598, 0.3407028, 0.059858944)
-bones/3/rotation = Quaternion(7.357586e-06, -1.1775097e-05, 0.00059134717, 0.9999999)
+bones/1/rotation = Quaternion(0.9381906, 0.011712105, 0.34129378, 0.056392472)
+bones/3/rotation = Quaternion(0.00020738857, -0.000331905, 0.016668327, 0.999861)
 bones/7/rotation = Quaternion(-0.44035098, -0.038220607, -0.14063428, 0.8859189)
 bones/8/rotation = Quaternion(-0.10192373, -0.04477334, -0.00794932, 0.9937524)
 bones/9/rotation = Quaternion(-0.1742328, -0.037101448, 0.030870324, 0.983521)
 bones/11/rotation = Quaternion(0.09578161, 0.8317535, -0.4750532, -0.27080724)
 bones/12/rotation = Quaternion(0.11073944, -0.056747783, -0.22298814, 0.9668468)
 bones/13/rotation = Quaternion(0.14083622, -0.18853085, 0.107122675, 0.9659949)
-bones/15/rotation = Quaternion(0.6503979, 0.3947418, -0.2685598, 0.59079367)
-bones/16/rotation = Quaternion(0.024174754, -0.047572568, 0.3731698, 0.9262272)
-bones/17/rotation = Quaternion(0.7085743, 0.6482784, -0.18283159, 0.21030964)
-bones/19/rotation = Quaternion(-0.6992199, 0.23538758, 0.18576035, 0.64898175)
-bones/20/rotation = Quaternion(-0.032564092, 0.026158344, 0.24256223, 0.9692363)
-bones/21/rotation = Quaternion(-0.105285116, -0.09897502, -0.44131827, 0.88563937)
+bones/15/rotation = Quaternion(0.7218794, -0.0923157, 0.07214008, 0.6820291)
+bones/16/rotation = Quaternion(0.025745584, -0.04372372, 0.33623102, 0.94041175)
+bones/17/rotation = Quaternion(0.44325668, 0.84684366, -0.08613801, 0.28099748)
+bones/19/rotation = Quaternion(-0.69243264, -0.27377367, -0.16667143, 0.646379)
+bones/20/rotation = Quaternion(-0.032846007, 0.024925206, 0.23106442, 0.9720644)
+bones/21/rotation = Quaternion(-0.12794524, -0.07830242, -0.73894507, 0.65685534)
 
 [node name="AimModifier3D" type="AimModifier3D" parent="Rotation/londonProtag/Armature/Skeleton3D" index="0" unique_id=1846975441]
 transform = Transform3D(5.722046e-06, 30.000004, 3.5762798e-06, -4.547474e-13, -3.576279e-06, 30.000002, 30.00001, -8.583069e-06, -1.5916157e-12, -1.0048591e-14, 1.1764284, -5.024298e-15)

@@ -24,6 +24,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="PauseMenu" type="Control" unique_id=782323223]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -128,7 +129,6 @@ size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_524vl")
 
 [node name="Info" type="Control" parent="menu/VBoxContainer/PanelContainer" unique_id=721207304]
-visible = false
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="menu/VBoxContainer/PanelContainer/Info" unique_id=1087630443]
@@ -153,6 +153,7 @@ You start out without any spells assigned as you need to go into the menu and ma
 The various skills you have level as you do them and there are unlocks (only 1 as of now. Dash ability at level 5 agility). Although only 2 of the skills actually level as of now.
 The windows in the inventory can be moved and resized.
 The city is mostly blocked out but is far from finished, ideas are gladly welcome.
+ALSO, the music currently in the game is temporary and is only there to show off an atmosphere.
 
 Controls:
 Menu: middle mouse button or E
@@ -305,6 +306,7 @@ theme_override_styles/disabled = ExtResource("5_stj27")
 text = "Discard"
 
 [node name="System" type="Control" parent="menu/VBoxContainer/PanelContainer" unique_id=1603087875]
+visible = false
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="menu/VBoxContainer/PanelContainer/System" unique_id=2122097367]

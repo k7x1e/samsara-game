@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+signal moving(fact: bool)
+var ismoving: bool= false
+
 @onready var behaviour: Behaviour
 @onready var visual = $Visual
 @onready var nav = $Nav
@@ -51,10 +54,16 @@ func move():
 		#oh my god nigga "i have motion"
 		velocity.x = direction.x * behaviour.speed
 		velocity.z = direction.z * behaviour.speed
+		if !ismoving:
+			moving.emit(true)
+			ismoving = true
 	else:
 		#print("i have nowhere to go....")
 		velocity.x = move_toward(velocity.x, 0, deltaSHIT)
 		velocity.z = move_toward(velocity.z, 0, deltaSHIT)
+		if ismoving:
+			moving.emit(false)
+			ismoving = false
 	#print(direction, velocity)
 	#functionality for the ability
 	move_and_slide()
@@ -63,9 +72,10 @@ func initialize():
 	behaviour = NpcClass.behaviour.duplicate()
 	behaviour.actor = self
 	behaviour.initialize()
-	var CharModel = NpcClass.model.instantiate()
-	visual.add_child(CharModel)
-	CharModel.set_owner(self)
+	if NpcClass.usesModel:
+		var CharModel = NpcClass.model.instantiate()
+		visual.add_child(CharModel)
+		CharModel.set_owner(self)
 	return true
 
 func destroy():

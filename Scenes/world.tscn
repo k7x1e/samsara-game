@@ -27,7 +27,6 @@
 [ext_resource type="PackedScene" uid="uid://dkv6nfqn3au3" path="res://Scenes/models/tram_path_point.tscn" id="21_pyn1s"]
 [ext_resource type="PackedScene" uid="uid://daom4qcquiy1h" path="res://Scenes/water.tscn" id="24_xbk3s"]
 [ext_resource type="Material" uid="uid://63juvhtxigjk" path="res://Resources/Shaders/water.tres" id="25_i4fjy"]
-[ext_resource type="AudioStream" uid="uid://dcsq2upnw386b" path="res://sound/music/ambient/hope.mp3" id="26_pt3ps"]
 [ext_resource type="ArrayOccluder3D" uid="uid://msn8rr6fi7y5" path="res://Resources/Maps/world.occ" id="30_o2rbt"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_j5yw3"]
@@ -4864,11 +4863,14 @@ light_energy = 0.4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 mesh = SubResource("PlaneMesh_pt3ps")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=189543457]
-stream = ExtResource("26_pt3ps")
-autoplay = true
-
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=29895087]
 occluder = ExtResource("30_o2rbt")
+
+[connection signal="moving" from="NavigationRegion3D/east/entity_21_enemy" to="NavigationRegion3D/east/entity_21_enemy/Monitor" method="moving"]
+[connection signal="moving" from="NavigationRegion3D/east/entity_22_enemy" to="NavigationRegion3D/east/entity_22_enemy/Monitor" method="moving"]
+[connection signal="moving" from="NavigationRegion3D/east/entity_39_enemy" to="NavigationRegion3D/east/entity_39_enemy/Monitor" method="moving"]
+[connection signal="moving" from="NavigationRegion3D/east/entity_40_enemy" to="NavigationRegion3D/east/entity_40_enemy/Monitor" method="moving"]
+[connection signal="moving" from="NavigationRegion3D/east/entity_78_enemy" to="NavigationRegion3D/east/entity_78_enemy/Monitor" method="moving"]
+[connection signal="moving" from="NavigationRegion3D/east/entity_79_enemy" to="NavigationRegion3D/east/entity_79_enemy/Monitor" method="moving"]
 
 [editable path="Water"]

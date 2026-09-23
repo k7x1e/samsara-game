@@ -31,6 +31,8 @@ signal quantity_changed()
 		quantity = value
 		emit_signal('quantity_changed')
 
+@export var animation: String = "cast"
+
 var curThreads: int = 0
 
 func cast(caster: Variant):

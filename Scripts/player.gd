@@ -1,5 +1,10 @@
 extends CharacterBody3D
 
+signal moving()
+signal stopping()
+
+@export var is_moving: bool = false
+
 @export var inventory: InventoryClass
 
 @export var SPEED = 5.0
@@ -47,6 +52,7 @@ var dashVector = Vector3(dashD, 0, 0)
 
 @export var isGlobal: bool = true
 @export var globalName: StringName = "Player"
+
 
 var spells: Array[spell]
 
@@ -163,9 +169,18 @@ func _physics_process(delta: float) -> void:
 		velocity.z = direction.z * SPEED
 		
 		rotationNode.walkTarget = global_position + direction
+		
+		if !is_moving:
+			moving.emit()
+			is_moving = true
+	
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		
+		if is_moving:
+			stopping.emit()
+			is_moving = false
 	
 	#bitch dash, to be replaced
 	#actually ykw why are we even doing the casting here?

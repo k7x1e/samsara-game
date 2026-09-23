@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="gameState" format=3 uid="uid://b5t6pkvtcweo4"]
 
-[ext_resource type="Script" uid="uid://b3rylldbgh8gp" path="res://Scripts/classes/nodeStart.gd" id="1_x2yb1"]
-[ext_resource type="Script" uid="uid://8rdsmfig1jxy" path="res://Scripts/classes/SavveGame.gd" id="6_68t1i"]
-[ext_resource type="Script" uid="uid://cdociv5s4yb3q" path="res://Scripts/classes/gamestate.gd" id="7_dptg4"]
+[ext_resource type="Script" uid="uid://b3rylldbgh8gp" path="res://Scripts/Classes/nodeStart.gd" id="1_x2yb1"]
+[ext_resource type="Script" uid="uid://8rdsmfig1jxy" path="res://Scripts/Classes/SavveGame.gd" id="6_68t1i"]
+[ext_resource type="Script" uid="uid://cdociv5s4yb3q" path="res://Scripts/Classes/gamestate.gd" id="7_dptg4"]
 
 [sub_resource type="Resource" id="Resource_fgofq"]
 script = ExtResource("1_x2yb1")

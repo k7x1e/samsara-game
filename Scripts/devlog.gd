@@ -411,3 +411,7 @@
 	#ive added a couple animations (nothing fancy) and i will need to make a monitor for the player like i did with the enemies. I think i will place it in the animationtree.
 	#before i do that i need to add a walk animation though
 	#i will now cease development until i am home again.
+	#16:19
+	#implemented animations and added a slight delay (0.34s) to spells for maximum effect
+	#16:55
+	#added a bunch of animations and stuff

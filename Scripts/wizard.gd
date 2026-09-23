@@ -1,5 +1,7 @@
 extends Node3D
 
+signal casted(anim: String)
+
 @export var spells: Array[spell] = [placeholderSpell,placeholderSpell,placeholderSpell,placeholderSpell,placeholderSpell]
 
 @export var placeholderSpell: spell
@@ -24,6 +26,8 @@ func _ready():
 
 # Called when the node enters the scene tree for the first time.
 func cast(which: int): #1: left, 2: right, 3,4,5: other bindable spells
+	casted.emit(spells[which].animation)
+	await get_tree().create_timer(0.34).timeout
 	if which <= 4:
 		spells[which].cast(self)
 

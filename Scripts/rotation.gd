@@ -14,6 +14,8 @@ var forward: Vector3 = -global_transform.basis.z
 
 @export var backwards: bool = false
 
+@export var rotationSpeed = 5.0
+
 func tick():
 	diff = rad_to_deg(getAngles())
 	
@@ -29,9 +31,12 @@ func tick():
 	#actualWalkTarget = walkTarget
 	actualLookTarget = lookTarget
 	
-	changeRotation()
+	
 	
 	#wizard.look_at(lookTarget, Vector3.UP)
+
+func _process(delta: float) -> void:
+	changeRotation(delta)
 
 func getAngles() -> float:
 	var dir1 = (walkTarget - global_position).normalized()
@@ -45,7 +50,11 @@ func getAngles() -> float:
 	
 	return angle_between_positions
 
-func changeRotation():
+func changeRotation(delta:float):
 	#make it work like it did for now as i figure out a solution
-	self.look_at(actualWalkTarget)
+	var target_transform = global_transform.looking_at(actualWalkTarget, Vector3.UP)
+	global_transform = global_transform.interpolate_with(target_transform, rotationSpeed * delta)
+	global_rotation.z = 0
+	global_rotation.x = 0
+	#global_rotation.move_toward(Vector3(target_transform.rotation),delta * rotationSpeed)
 	lookTargetNode.global_position = actualLookTarget

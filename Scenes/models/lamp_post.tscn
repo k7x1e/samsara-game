@@ -83,7 +83,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 
 [node name="lampPost3" parent="StaticBody3D" unique_id=236893190 instance=ExtResource("1_la7ei")]
 
-[node name="Cube" parent="StaticBody3D/lampPost3" index="3" unique_id=1219630766]
+[node name="Cube" parent="StaticBody3D/lampPost3" index="3" unique_id=276108427]
 layers = 2
 mesh = SubResource("ArrayMesh_4v58s")
 

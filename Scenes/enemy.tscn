@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bqdpiionfhc5e" path="res://Scripts/ActorBaseClass.gd" id="1_0830c"]
 [ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="2_ghaa6"]
-[ext_resource type="Script" uid="uid://wwksmh6v3aja" path="res://Scripts/Classes/Behaviour/baseEnemy.gd" id="3_0830c"]
+[ext_resource type="Script" uid="uid://wwksmh6v3aja" path="res://Scripts/classes/Behaviour/baseEnemy.gd" id="3_0830c"]
 [ext_resource type="PackedScene" uid="uid://dcjnetgb821re" path="res://Scenes/EnemyModel.tscn" id="4_0830c"]
-[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/Classes/npc.gd" id="5_8uf12"]
+[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="5_8uf12"]
 [ext_resource type="PackedScene" uid="uid://bnkq4ylk1qenb" path="res://Models/peasant1.glb" id="5_auwsv"]
 [ext_resource type="Script" uid="uid://xmtxhcqgxgc2" path="res://Scripts/enemyMonitor.gd" id="6_ghaa6"]
 [ext_resource type="AudioStream" uid="uid://b0ahih5c8udqs" path="res://sound/notification/something.wav" id="7_auwsv"]
@@ -87,10 +87,10 @@ hasMonitor = true
 transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0, 0.46035022, 0)
 visible = false
 
-[node name="Skeleton3D" parent="Visual/peasant1/Armature" parent_id_path=PackedInt32Array(347662839, 1919338655) index="0" unique_id=1589811251]
+[node name="Skeleton3D" parent="Visual/peasant1/Armature" parent_id_path=PackedInt32Array(347662839, 504917625) index="0" unique_id=1970704553]
 bones/0/rotation = Quaternion(0.93800986, 0.021814236, 0.34066674, -0.060064632)
-bones/1/rotation = Quaternion(0.9380234, 0.02123142, 0.340704, 0.059852175)
-bones/3/rotation = Quaternion(0.011904065, -1.947772e-05, -0.00663829, 0.9999072)
+bones/1/rotation = Quaternion(0.938164, 0.013672806, 0.34117517, 0.057105087)
+bones/3/rotation = Quaternion(0.012064243, -0.00043789268, 0.0064756484, 0.9999062)
 bones/7/rotation = Quaternion(-0.4562524, -0.049126726, -0.16023543, 0.87392503)
 bones/8/rotation = Quaternion(-0.07875365, -0.067492984, -0.10037203, 0.98952925)
 bones/9/rotation = Quaternion(0.014338688, -0.16604029, -0.09179396, 0.9817326)
@@ -143,6 +143,7 @@ sounds = Dictionary[String, AudioStream]({
 })
 
 [node name="sfx" type="AudioStreamPlayer3D" parent="Monitor" unique_id=226239370]
+bus = &"Sfx"
 
 [node name="aura" type="Area3D" parent="." unique_id=1374981180]
 collision_layer = 65536

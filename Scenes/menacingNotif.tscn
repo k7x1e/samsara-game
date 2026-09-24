@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c3cxe4a03fsv6"]
+
+[ext_resource type="Script" uid="uid://dea4josrlwb6n" path="res://Scripts/UI/menacing_notif.gd" id="1_gxvkv"]
+[ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="1_m0rof"]
+[ext_resource type="AudioStream" uid="uid://cs1ygjrv7be2n" path="res://sound/sfx/typewriter.wav" id="3_r3qmv"]
+
+[node name="coolText" type="Control" unique_id=949500454]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -240.0
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_gxvkv")
+maxOffset = 8.0
+spaceDelay = 0.4
+reverseLetterDelay = 0.01
+
+[node name="label" type="RichTextLabel" parent="." unique_id=280299227]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -313.5
+offset_top = -32.5
+offset_right = 313.5
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("1_m0rof")
+theme_override_font_sizes/normal_font_size = 50
+text = "ACT 3: ENLIGHTENMENT"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="sfx" type="AudioStreamPlayer" parent="." unique_id=1575734066]
+stream = ExtResource("3_r3qmv")
+volume_db = -5.0
+bus = &"Sfx"

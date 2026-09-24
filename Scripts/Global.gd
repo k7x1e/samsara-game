@@ -28,6 +28,16 @@ var backupGlobals
 
 @export var gamestate: gameState = preload("res://Resources/gameState.tres")
 
+@export var mainWorldPlayerPos: Vector3
+
+@export var softlocked: bool = false:
+	set(value):
+		softlocked = value
+		#notify that the game has been softlocked
+		#Player.notify("You've killed a mortal whose fate was essential to yours. The prophecy cannot be completed.")
+		Root.prophecyNotif.show()
+		print("game is now uncompletable")
+
 func getGlobals() -> Dictionary[String, Variant]:
 	var quests_copy: Array[Quest] = []
 	for q in quests:
@@ -47,8 +57,14 @@ func getGlobals() -> Dictionary[String, Variant]:
 		#"idHandler": idHandler.duplicate(true),
 		"quests": quests_copy,
 		"gamestate": gamestate.duplicate_deep(Resource.DEEP_DUPLICATE_ALL),
+		"mainWorldPlayerPos": mainWorldPlayerPos,
 	}
 	#print(quests[0].getQuestState())
+
+func setDefaultGlobals():
+	#only thing this should need to do is just reload the gamestate
+	gamestate = load("res://Resources/gameState.tres")
+
 
 func setGlobals(data: Dictionary):
 	quests.clear()
@@ -56,6 +72,7 @@ func setGlobals(data: Dictionary):
 	quests = convertArray(data["quests"], Quest)
 	#print(quests[0].getQuestState())
 	gamestate = data["gamestate"].duplicate(true)
+	mainWorldPlayerPos = data["mainWorldPlayerPos"]
 
 func convertArray(from:Array, type:Variant) -> Array:
 	var result = []

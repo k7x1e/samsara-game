@@ -399,7 +399,7 @@
 	#13:14
 	#the loading isnt working
 	#
-	##13/09
+	##23/09
 	#09:29
 	#managed to implement the character looking towards the mouse and
 	#that it would turn around if the angle exceeded 90 in either direction
@@ -425,3 +425,23 @@
 	#WHY IS EVERYTHING BROKEN
 	#22:56
 	#added a (very rudimentary) tutorial/intro and fading.
+	#idrk what to add now as im too lazy to get any writing done
+	#
+	##24/09
+	#11:23
+	#i genuinely do not know what could or should be done
+	#11:26
+	#i should add a prophecy warning like in morrowind (only for characters that are ABSOLUTELY NECESSARY)
+	#11:40
+	#made the tutorial guy immortal
+	#13:22
+	#i have no idea what to do/add now. #i think im gonna just start focusing more on mapping
+	#21:07
+	#for a solid amount of hours now ive been mapping on and off on the wizards lair. I think that the slow part of the development is coming now as i worked too fast and catched up.
+	#it is of course already planned that the game will follow a three act structure
+	#i just came to think of something
+	#21:52
+	#added a fancy typewriter notification thing
+	#22:35
+	#been fixing saving issues relating to interiors. Weird coding.
+	#works now.

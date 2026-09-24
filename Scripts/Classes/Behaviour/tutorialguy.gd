@@ -9,9 +9,17 @@ class_name TutorialGuy
 @export var words: conversation
 @export var outoftutorial: Condition
 
-var playerFollowerNode: Variant
+@export var respawnPosition: Vector3
+@export var ownPosition: Vector3
+
+@export var moving: bool = false
+
+@export var animTree: AnimationNodeBlendTree
+
+@export var playerFollowerNode: Variant
 
 func initialize():
+	ownPosition = actor.global_position
 	player = Globals.Player
 	playerFollowerNode = player.getFollowerNode()
 	
@@ -22,11 +30,26 @@ func initialize():
 	say("Press Space or Q to interact.", 1.0)
 
 func update():
-	#print("I am to chase", str(player.global_position))
-	#var tempPosition = playerFollowerNode.global_position
-	#tempPosition.y = actor.global_position.y
-	#nav.target_position = tempPosition
-	#actor.move()
+	if moving:
+		#print("I am to chase", str(player.global_position))
+		#var tempPosition = playerFollowerNode.global_position
+		#tempPosition.y = actor.global_position.y
+		if nav.is_target_reached:
+			moving = false
+		nav.target_position = ownPosition
+		actor.move()
+		if !moving:
+			await Engine.get_main_loop().create_timer(2.0).timeout
+			say("You cannot kill me.", 2.0)
+		if actor.global_position.distance_to(ownPosition) <= 0.1:
+			print("no longer walking")
+			animTree.set("parameters/Blend2 2/blend_amount", 0.0)
 	if outoftutorial.fulfilled:
 		print("out of tutorial")
-		Globals.Root.changeWorld(self, "tutorial", false)
+		Globals.Root.changeWorld(self, "tutorial", false, true, true)
+
+func death():
+	animTree.set("parameters/Blend2 2/blend_amount", 1.0)
+	actor.health = 100
+	actor.global_position = respawnPosition
+	moving = true

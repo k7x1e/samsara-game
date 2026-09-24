@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://nxogfgeamf7b" path="res://Scenes/Worlds/Interiors/mysteryPlace.tscn" id="4_kldst"]
 [ext_resource type="PackedScene" uid="uid://prrtp8iwyf2t" path="res://Scenes/Worlds/tutorial.tscn" id="5_7lihs"]
 [ext_resource type="AudioStream" uid="uid://ds1552d2ah3xk" path="res://sound/music/Dueil Angoisseus.mp3" id="5_b2bpf"]
+[ext_resource type="PackedScene" uid="uid://def56i5yvabj3" path="res://Scenes/Worlds/Interiors/wizard_lair.tscn" id="6_2irst"]
+[ext_resource type="PackedScene" uid="uid://dgo271ukrhe1h" path="res://Scenes/world.tscn" id="7_bf53h"]
+[ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="7_fgofq"]
 
 [sub_resource type="Animation" id="Animation_65i65"]
 length = 0.001
@@ -61,21 +64,30 @@ _data = {
 &"fadeout": SubResource("Animation_0wdrf")
 }
 
-[node name="Root" type="Node3D" unique_id=1717732160 node_paths=PackedStringArray("fadeAnim")]
+[sub_resource type="LabelSettings" id="LabelSettings_7lihs"]
+font_size = 30
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Root" type="Node3D" unique_id=1717732160 node_paths=PackedStringArray("prophecyNotif", "fadeAnim")]
 process_mode = 3
 script = ExtResource("1_kldst")
 gamestate = ExtResource("2_kldst")
 interiors = Dictionary[String, PackedScene]({
+"london": ExtResource("7_bf53h"),
 "londonPub": ExtResource("3_j5yw3"),
 "mysteryPlace": ExtResource("4_kldst"),
-"tutorial": ExtResource("5_7lihs")
+"tutorial": ExtResource("5_7lihs"),
+"wizardLair": ExtResource("6_2irst")
 })
+prophecyNotif = NodePath("fading/prophecyNotif")
 fadeAnim = NodePath("fading/AnimationPlayer")
 
 [node name="bgm" type="AudioStreamPlayer" parent="." unique_id=830326665]
 stream = ExtResource("5_b2bpf")
 volume_db = -4.0
 autoplay = true
+bus = &"Music"
 
 [node name="fading" type="CanvasLayer" parent="." unique_id=440606973]
 layer = 3
@@ -92,3 +104,18 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fading" unique_id=1880819554]
 libraries/ = SubResource("AnimationLibrary_7lihs")
+
+[node name="prophecyNotif" type="Label" parent="fading" unique_id=1516429143]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1119.0
+offset_top = 30.0
+offset_right = 1119.0
+offset_bottom = 99.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_fgofq")
+text = "You've killed a mortal whose fate was essential to yours. The prophecy cannot be completed."
+label_settings = SubResource("LabelSettings_7lihs")
+horizontal_alignment = 1

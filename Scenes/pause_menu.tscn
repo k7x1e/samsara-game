@@ -94,6 +94,7 @@ script = ExtResource("7_6wqnn")
 
 [node name="sfx" type="AudioStreamPlayer" parent="menu/VBoxContainer/Sections/info" unique_id=1881296641]
 stream = ExtResource("8_1ymcx")
+bus = &"Sfx"
 
 [node name="settings" type="Button" parent="menu/VBoxContainer/Sections" unique_id=982685603]
 layout_mode = 2
@@ -108,6 +109,7 @@ script = ExtResource("7_6wqnn")
 
 [node name="sfx" type="AudioStreamPlayer" parent="menu/VBoxContainer/Sections/settings" unique_id=1436815604]
 stream = ExtResource("8_1ymcx")
+bus = &"Sfx"
 
 [node name="system" type="Button" parent="menu/VBoxContainer/Sections" unique_id=710094359]
 layout_mode = 2
@@ -122,6 +124,7 @@ script = ExtResource("7_6wqnn")
 
 [node name="sfx" type="AudioStreamPlayer" parent="menu/VBoxContainer/Sections/system" unique_id=2092213701]
 stream = ExtResource("8_1ymcx")
+bus = &"Sfx"
 
 [node name="PanelContainer" type="PanelContainer" parent="menu/VBoxContainer" unique_id=337170653]
 layout_mode = 2

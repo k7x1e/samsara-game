@@ -349,6 +349,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_rc6uw")
 
 [node name="sfx" type="AudioStreamPlayer" parent="Menu/Inventory/VBoxContainer/PanelContainer" unique_id=1361512347]
 stream = ExtResource("23_ocger")
+bus = &"Sfx"
 
 [node name="GridContainer" type="GridContainer" parent="Menu/Inventory/VBoxContainer/PanelContainer" unique_id=641757518]
 custom_minimum_size = Vector2(128, 128)
@@ -428,6 +429,7 @@ script = ExtResource("22_l6llh")
 
 [node name="sfx" type="AudioStreamPlayer" parent="Menu/DropDown/VBoxContainer/equip" unique_id=1625508181]
 stream = ExtResource("23_ocger")
+bus = &"Sfx"
 
 [node name="unequip" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=1792963011]
 custom_minimum_size = Vector2(0, 30)
@@ -444,6 +446,7 @@ script = ExtResource("22_l6llh")
 
 [node name="sfx" type="AudioStreamPlayer" parent="Menu/DropDown/VBoxContainer/unequip" unique_id=223808885]
 stream = ExtResource("23_ocger")
+bus = &"Sfx"
 
 [node name="assign1" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=864016602]
 custom_minimum_size = Vector2(0, 30)
@@ -460,6 +463,7 @@ script = ExtResource("22_l6llh")
 
 [node name="sfx" type="AudioStreamPlayer" parent="Menu/DropDown/VBoxContainer/assign1" unique_id=62432808]
 stream = ExtResource("23_ocger")
+bus = &"Sfx"
 
 [node name="assign2" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=1607351525]
 custom_minimum_size = Vector2(0, 30)
@@ -476,6 +480,7 @@ script = ExtResource("22_l6llh")
 
 [node name="sfx" type="AudioStreamPlayer" parent="Menu/DropDown/VBoxContainer/assign2" unique_id=1120680757]
 stream = ExtResource("23_ocger")
+bus = &"Sfx"
 
 [node name="assign3" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=919623343]
 custom_minimum_size = Vector2(0, 30)
@@ -492,6 +497,7 @@ script = ExtResource("22_l6llh")
 
 [node name="sfx" type="AudioStreamPlayer" parent="Menu/DropDown/VBoxContainer/assign3" unique_id=1086185164]
 stream = ExtResource("23_ocger")
+bus = &"Sfx"
 
 [node name="assign4" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=339653769]
 custom_minimum_size = Vector2(0, 30)
@@ -508,6 +514,7 @@ script = ExtResource("22_l6llh")
 
 [node name="sfx" type="AudioStreamPlayer" parent="Menu/DropDown/VBoxContainer/assign4" unique_id=229115560]
 stream = ExtResource("23_ocger")
+bus = &"Sfx"
 
 [node name="assign5" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=1968307184]
 custom_minimum_size = Vector2(0, 30)
@@ -524,6 +531,7 @@ script = ExtResource("22_l6llh")
 
 [node name="sfx" type="AudioStreamPlayer" parent="Menu/DropDown/VBoxContainer/assign5" unique_id=1163467788]
 stream = ExtResource("23_ocger")
+bus = &"Sfx"
 
 [node name="unassign" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=162804744]
 custom_minimum_size = Vector2(0, 30)
@@ -540,6 +548,7 @@ script = ExtResource("22_l6llh")
 
 [node name="sfx" type="AudioStreamPlayer" parent="Menu/DropDown/VBoxContainer/unassign" unique_id=373112765]
 stream = ExtResource("23_ocger")
+bus = &"Sfx"
 
 [node name="discard" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=213929783]
 custom_minimum_size = Vector2(0, 30)
@@ -556,6 +565,7 @@ script = ExtResource("22_l6llh")
 
 [node name="sfx" type="AudioStreamPlayer" parent="Menu/DropDown/VBoxContainer/discard" unique_id=1874621733]
 stream = ExtResource("23_ocger")
+bus = &"Sfx"
 
 [node name="close" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=885407721]
 custom_minimum_size = Vector2(0, 30)
@@ -572,6 +582,7 @@ script = ExtResource("22_l6llh")
 
 [node name="sfx" type="AudioStreamPlayer" parent="Menu/DropDown/VBoxContainer/close" unique_id=2125063466]
 stream = ExtResource("23_ocger")
+bus = &"Sfx"
 
 [node name="spellGui" parent="." unique_id=1294274690 instance=ExtResource("3_rfqti")]
 mouse_filter = 2

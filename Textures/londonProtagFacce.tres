@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cqc3u4605pbco"]
+
+[ext_resource type="Texture2D" uid="uid://dv5u5ey2l6unj" path="res://Textures/londonProtagFacce.png" id="1_rfb4e"]
+
+[resource]
+albedo_texture = ExtResource("1_rfb4e")
+metallic_specular = 0.0
+texture_filter = 2

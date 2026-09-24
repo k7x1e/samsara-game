@@ -8,3 +8,6 @@ class_name SaveGame
 
 @export var timestamp: String
 @export var Description: String = "Save file. Would have some stuff to say here but there is no info that ive implemented yet"
+
+@export var interiors: Dictionary[String,PackedScene]
+@export var currentInterior: String

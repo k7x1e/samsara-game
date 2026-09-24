@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bhg0ayjvobmef"]
 
-[ext_resource type="Script" uid="uid://b1lxn3p36pvr1" path="res://Scripts/Classes/spells/lightning_strike.gd" id="1_7kp3g"]
+[ext_resource type="Script" uid="uid://b1lxn3p36pvr1" path="res://Scripts/classes/spells/lightning_strike.gd" id="1_7kp3g"]
 [ext_resource type="Texture2D" uid="uid://citma6vf0j7s5" path="res://Textures/spells/lightning_strike.png" id="2_4oncq"]
 [ext_resource type="Texture2D" uid="uid://cnlpfxmcle0t8" path="res://Textures/spells/lightning_strike_red.png" id="3_l303g"]
 [ext_resource type="AudioStream" uid="uid://c2drq5fea0dcc" path="res://sound/sfx/thunder.mp3" id="4_0ycbv"]
@@ -195,3 +195,4 @@ omni_range = 50.0
 stream = ExtResource("4_0ycbv")
 volume_db = 3.0
 autoplay = true
+bus = &"Sfx"

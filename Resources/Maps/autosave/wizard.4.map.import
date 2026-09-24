@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://b11wxtw77y4kn"
+path="res://.godot/imported/wizard.4.map-522701deff5313ace8bbd720b149f52b.tres"
+
+[deps]
+
+source_file="res://Resources/Maps/autosave/wizard.4.map"
+dest_files=["res://.godot/imported/wizard.4.map-522701deff5313ace8bbd720b149f52b.tres"]
+
+[params]
+

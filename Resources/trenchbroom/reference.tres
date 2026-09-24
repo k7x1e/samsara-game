@@ -1,13 +1,17 @@
-[gd_resource type="Resource" script_class="FuncGodotFGDPointClass" format=3 uid="uid://dsj65iun7hhfy"]
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" format=3 uid="uid://dsj65iun7hhfy"]
 
 [ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_acuwq"]
-[ext_resource type="PackedScene" uid="uid://dcjnetgb821re" path="res://Scenes/EnemyModel.tscn" id="2_1yk63"]
-[ext_resource type="Script" uid="uid://cxsqwtsqd8w33" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="2_c1p4l"]
+[ext_resource type="PackedScene" uid="uid://dmwlw28tgirug" path="res://Scenes/models/player_reference.tscn" id="2_1yk63"]
+[ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="2_acuwq"]
 
 [resource]
-script = ExtResource("2_c1p4l")
+script = ExtResource("2_acuwq")
 scene_file = ExtResource("2_1yk63")
 classname = "sizeReference"
-description = "Default enemy model for size ref."
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8),
+"studio": "\"sizeReference.glb\""
+})
 node_class = "Node3D"
-metadata/_custom_type_script = "uid://cxsqwtsqd8w33"
+metadata/_custom_type_script = "uid://ldfqjtq0br35"

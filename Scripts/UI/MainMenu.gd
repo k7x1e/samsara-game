@@ -50,6 +50,8 @@ func continue_pressed() -> void:
 	loadSave(saves2[0])
 
 func new_pressed() -> void:
+	Globals.loadSave = false
+	Globals.gamestate.initialized = false
 	await menuSound()
 	get_tree().change_scene_to_packed(loadingScreen)
 

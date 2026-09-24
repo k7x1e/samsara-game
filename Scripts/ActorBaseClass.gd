@@ -38,6 +38,8 @@ func damage(amt: float):
 	health -= amt
 	behaviour.say(str("-", amt), 0.2, true)
 	if health <= 0:
+		if NpcClass.necessary:
+			Globals.softlocked = true
 		behaviour.death()
 
 func move():

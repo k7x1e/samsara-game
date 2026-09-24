@@ -33,8 +33,6 @@ metadata/_custom_type_script = "uid://dvewwpayy1s83"
 script = ExtResource("1_fdpo0")
 dialogueText = "You might not know who you are and neither do I. (n)We are both here under orders of the one god to make sure you know what you're doing."
 dialogueOptions = Array[ExtResource("2_ros8p")]([SubResource("Resource_ugpl6")])
-questStatus = 1
-quest = ExtResource("3_v8vff")
 metadata/_custom_type_script = "uid://bg6c48acdck1"
 
 [sub_resource type="Resource" id="Resource_645mn"]

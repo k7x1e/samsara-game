@@ -6,6 +6,8 @@ class_name gameState
 @export var rootNode: Variant
 @export var saves: Dictionary[String, SaveGame]
 @export var initialized: bool = false
+@export var newWorld: Variant
+@export var newWorldName: NodePath ## INSANE JANK, Just make sure no two places have the same name
 
 var last_saved: String
 
@@ -51,6 +53,7 @@ func initialize():
 	initializeSaves()
 	#print(saves.size())
 	if !initialized and !Globals.loadSave:
+		
 		await rootNode.initialize(self)
 		rootNode.Menu.set_process(false)
 		rootNode.Menu.hide()

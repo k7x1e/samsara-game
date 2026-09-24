@@ -9,7 +9,7 @@ script = ExtResource("1_vkchj")
 icon = ExtResource("1_by6ly")
 questName = "The Tutorial."
 questId = 67
-descriptions = Array[String](["blank", "You've discovered this quest.", "You've progressed this quest.", "You completed the tutorial.", "mystery status", "You skipped the tutorial."])
+descriptions = Array[String](["blank", "You've discovered this quest.", "You've progressed this quest.", "You completed the tutorial.", "You skipped the tutorial...", "You skipped the tutorial."])
 dependentConditions = Dictionary[int, Array]({
 0: [],
 1: [],

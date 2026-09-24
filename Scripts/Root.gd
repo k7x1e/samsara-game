@@ -20,18 +20,28 @@ var inDialogue = false
 var dialogueMenu
 var pauseMenu
 
-var newWorld
+#var newWorld
 var newWorldCaller ##dont know what this is still doing here
 
 var backupGlobals
 
 @export var mainWorldNode: PackedScene
-var mainWorldPlayerPos
 
 var isPaused = false
 @export var interiors: Dictionary[String, PackedScene]
+@export var currentInterior: String = "london"
 
+@export var prophecyNotif: Node
 @export var fadeAnim: AnimationPlayer
+
+@onready var mNotif = preload("res://Scenes/menacingNotif.tscn")
+
+func notify(what: String, useSound: bool = false):
+	var tempP = mNotif.instantiate()
+	$fading.add_child(tempP)
+	tempP.toShow = what
+	tempP.sound = useSound
+	tempP.initialize()
 
 func fadeIn():
 	fadeAnim.play("fadein")
@@ -39,58 +49,70 @@ func fadeIn():
 func fadeOut():
 	fadeAnim.play("fadeout")
 
-func changeWorld(caller: Variant, Targetscene: String, fromMain: bool, fade: bool = true):
+func changeWorld(caller: Variant, Targetscene: String, fromMain: bool, fade: bool = true, fromTutorial: bool = false, onLoading: bool = false):
 	if fromMain:
 		#save current world
-		var tempworld = $World
-		var temptemptemp = PackedScene.new()
-		var tempresult = await temptemptemp.pack(tempworld)
-		if tempresult == OK:
-			mainWorldNode = temptemptemp
-			mainWorldPlayerPos = global_position
-		if fade:
-			fadeOut()
-			pause(true)
-			await get_tree().create_timer(2).timeout
-		
-		tempworld.queue_free()
+		if !onLoading:
+			var tempworld = $World
+			var temptemptemp = PackedScene.new()
+			var tempresult = await temptemptemp.pack(tempworld)
+			if tempresult == OK:
+				interiors["london"] = temptemptemp
+			if fade:
+				fadeOut()
+				pause(true)
+				await get_tree().create_timer(2).timeout
+			
+			tempworld.queue_free()
+		else:
+			$World.queue_free()
 		newWorldCaller = caller
 		
 		var tempTarget = interiors[Targetscene]
+		currentInterior = Targetscene
 		
-		newWorld = tempTarget.instantiate()
-		self.add_child(newWorld)
-		newWorld.set_owner(self)
+		gamestate.newWorld = tempTarget.instantiate()
+		self.add_child(gamestate.newWorld)
+		gamestate.newWorld.set_owner(self)
+		gamestate.newWorldName = get_path_to(gamestate.newWorld)
 		
 		if fade:
 			pause(false)
 			fadeIn()
 		
-		mainWorldPlayerPos = Globals.Player.global_position
-		Globals.Player.global_position = newWorld.playerSpawn.global_position
+		if !onLoading:
+			Globals.mainWorldPlayerPos = Globals.Player.global_position
+		Globals.Player.global_position = gamestate.newWorld.playerSpawn.global_position
 		
 	
 	else:
+		if !gamestate.newWorld:
+			gamestate.newWorld = get_node(gamestate.newWorldName)
 		var temptemptemp2 = PackedScene.new()
-		var tempresult2 = await temptemptemp2.pack(newWorld)
+		var tempresult2 = await temptemptemp2.pack(gamestate.newWorld)
 		
 		if fade:
 			fadeOut()
 			pause(true)
 			await get_tree().create_timer(2).timeout
 		
-		newWorld.queue_free()
+		if gamestate.newWorld:
+			gamestate.newWorld.queue_free()
 		
-		newWorld = mainWorldNode.instantiate()
-		self.add_child(newWorld)
-		newWorld.set_owner(self)
+		gamestate.newWorld = interiors["london"].instantiate()
+		self.add_child(gamestate.newWorld)
+		gamestate.newWorld.set_owner(self)
 		
 		if fade:
 			pause(false)
 			fadeIn()
 		
+		if fromTutorial:
+			notify("Samsonarum", true)
+		
 		interiors[Targetscene] = temptemptemp2
-		Globals.Player.global_position = mainWorldPlayerPos
+		currentInterior = "london"
+		Globals.Player.global_position = Globals.mainWorldPlayerPos
 		
 		
 
@@ -248,6 +270,9 @@ func initalizeSave():
 		if instance.name == "Player":
 			instance.global_position = data.position + Vector3(0,1,0)
 			instance.initialize()
+	interiors = lsave.interiors
+	if lsave.currentInterior != "london":
+		changeWorld(self,lsave.currentInterior,true,false,false,true)
 	signalinit()
 
 
@@ -287,6 +312,8 @@ func save(rNode: Node, name: String):
 	save.globals_data = Globals.getGlobals()
 	save.globals_data["gamestate"].saves.clear()
 	save.timestamp = Time.get_date_string_from_system()
+	save.interiors=interiors.duplicate(true)
+	save.currentInterior = currentInterior
 	
 	var err = ResourceSaver.save(save, path)
 	if err != OK:

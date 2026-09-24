@@ -34,4 +34,5 @@ metadata/_custom_type_script = "uid://b3rylldbgh8gp"
 script = ExtResource("7_dptg4")
 initnodes = Array[ExtResource("1_x2yb1")]([SubResource("Resource_fgofq"), SubResource("Resource_7lihs"), SubResource("Resource_bf53h"), SubResource("Resource_mk8vb")])
 rootNode = null
+newWorld = null
 metadata/_custom_type_script = "uid://cdociv5s4yb3q"

@@ -252,6 +252,7 @@ func get_save_data():
 	var quests_copy: Array[Quest] = []
 	for q in quests:
 		quests_copy.append(q.duplicate(true))
+	print("saving... stuff....")
 	return {
 		"inventory": inventory.duplicate(true),
 		"stats": stats.duplicate(true),
@@ -271,4 +272,5 @@ func load_save_data(data: Dictionary):
 	mana = data["mana"]
 	quests = Globals.convertArray(data["quests"],Quest)
 	Globals.quests = quests
+	Globals.stats = stats
 	refreshStats()

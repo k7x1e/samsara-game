@@ -132,6 +132,7 @@ size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_524vl")
 
 [node name="Info" type="Control" parent="menu/VBoxContainer/PanelContainer" unique_id=721207304]
+visible = false
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="menu/VBoxContainer/PanelContainer/Info" unique_id=1087630443]
@@ -309,7 +310,6 @@ theme_override_styles/disabled = ExtResource("5_stj27")
 text = "Discard"
 
 [node name="System" type="Control" parent="menu/VBoxContainer/PanelContainer" unique_id=1603087875]
-visible = false
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="menu/VBoxContainer/PanelContainer/System" unique_id=2122097367]
@@ -349,6 +349,11 @@ placeholder_text = "savename"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_myy0f")
 text = "Save"
+script = ExtResource("7_6wqnn")
+
+[node name="sfx" type="AudioStreamPlayer" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/VBoxContainer/saving/save" unique_id=1407346471]
+stream = ExtResource("8_1ymcx")
+bus = &"Sfx"
 
 [node name="loading" type="HBoxContainer" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/VBoxContainer" unique_id=578082395]
 layout_mode = 2
@@ -363,6 +368,11 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_myy0f")
 text = "Load"
+script = ExtResource("7_6wqnn")
+
+[node name="sfx" type="AudioStreamPlayer" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading/VBoxContainer/loading/load" unique_id=971524245]
+stream = ExtResource("8_1ymcx")
+bus = &"Sfx"
 
 [node name="Label" type="Label" parent="menu/VBoxContainer/PanelContainer/System/ScrollContainer/VBoxContainer/savingloading" unique_id=1374279161]
 custom_minimum_size = Vector2(64, 64)
@@ -370,7 +380,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_myy0f")
-text = "Save Info"
+text = "No save selected !!"
 label_settings = ExtResource("7_sjs17")
 autowrap_mode = 2
 

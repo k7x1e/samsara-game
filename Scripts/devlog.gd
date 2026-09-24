@@ -445,3 +445,12 @@
 	#22:35
 	#been fixing saving issues relating to interiors. Weird coding.
 	#works now.
+	#22:51
+	#works NOW.
+	#23:01
+	#now for some strange reason i discover that the stats stopped working when saved.
+	#i had disabled stat saving for debug reasons......
+	#23:12
+	#figured that stuff out. Time to make the saves be sorted based on date.
+	#23:31
+	#minor fixes done, might push playtest.

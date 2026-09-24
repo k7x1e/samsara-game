@@ -42,6 +42,6 @@ func _on_load_pressed() -> void:
 func _on__item_selected(index: int) -> void:
 	var sindex = saves[index]
 	var selected: SaveGame = Globals.Root.gamestate.saves[sindex]
-	var infoString = str(sindex, "\n", selected.timestamp, "\n", selected.Description)
+	var infoString = str(sindex, "\n", selected.timestamp.left(10), "\n", selected.Description)
 	print(infoString)
 	infoNode.text = infoString

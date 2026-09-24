@@ -281,3 +281,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0)
 [node name="Actor" parent="." unique_id=1934936362 instance=ExtResource("11_130w1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.096186, 1.7073615, -9.677196)
 NpcClass = SubResource("Resource_gerup")
+
+[connection signal="moving" from="NavigationRegion3D/FuncGodotMap/entity_2_enemy" to="NavigationRegion3D/FuncGodotMap/entity_2_enemy/Monitor" method="moving"]
+[connection signal="moving" from="NavigationRegion3D/FuncGodotMap/entity_3_enemy" to="NavigationRegion3D/FuncGodotMap/entity_3_enemy/Monitor" method="moving"]
+[connection signal="moving" from="NavigationRegion3D/FuncGodotMap/entity_4_enemy" to="NavigationRegion3D/FuncGodotMap/entity_4_enemy/Monitor" method="moving"]

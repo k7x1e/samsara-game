@@ -49,23 +49,31 @@ func fadeIn():
 func fadeOut():
 	fadeAnim.play("fadeout")
 
+func packCurrent():
+	if !gamestate.newWorld:
+			gamestate.newWorld = get_node(gamestate.newWorldName)
+	
+	var tempworld
+	if currentInterior == "london":
+		tempworld = $World
+	else:
+		tempworld = gamestate.newWorld
+	
+	var temptemptemp = PackedScene.new()
+	var tempresult = await temptemptemp.pack(tempworld)
+	if tempresult == OK:
+		interiors[currentInterior] = temptemptemp
+
 func changeWorld(caller: Variant, Targetscene: String, fromMain: bool, fade: bool = true, fromTutorial: bool = false, onLoading: bool = false):
 	if fromMain:
 		#save current world
 		if !onLoading:
-			var tempworld = $World
-			var temptemptemp = PackedScene.new()
-			var tempresult = await temptemptemp.pack(tempworld)
-			if tempresult == OK:
-				interiors["london"] = temptemptemp
+			packCurrent()
 			if fade:
 				fadeOut()
 				pause(true)
 				await get_tree().create_timer(2).timeout
-			
-			tempworld.queue_free()
-		else:
-			$World.queue_free()
+		$World.queue_free()
 		newWorldCaller = caller
 		
 		var tempTarget = interiors[Targetscene]
@@ -90,6 +98,7 @@ func changeWorld(caller: Variant, Targetscene: String, fromMain: bool, fade: boo
 			gamestate.newWorld = get_node(gamestate.newWorldName)
 		var temptemptemp2 = PackedScene.new()
 		var tempresult2 = await temptemptemp2.pack(gamestate.newWorld)
+		currentInterior = "london"
 		
 		if fade:
 			fadeOut()
@@ -111,7 +120,6 @@ func changeWorld(caller: Variant, Targetscene: String, fromMain: bool, fade: boo
 			notify("Samsonarum", true)
 		
 		interiors[Targetscene] = temptemptemp2
-		currentInterior = "london"
 		Globals.Player.global_position = Globals.mainWorldPlayerPos
 		
 		
@@ -283,6 +291,8 @@ func save(rNode: Node, name: String):
 	
 	var save = SaveGame.new()
 	
+	packCurrent()
+	
 	#set nodes
 	var nodes: Array[nodePreset]
 	var persistent = get_tree().get_nodes_in_group("Persistent")
@@ -304,14 +314,15 @@ func save(rNode: Node, name: String):
 		if "isGlobal" in object:
 			temp.inGlobals = object.isGlobal
 			temp.globalsName = object.globalName
-		nodes.append(temp)
+		nodes.append(temp.duplicate(true))
 	save.nodes = nodes
 	
 	save.globals_data = Globals.getGlobals()
 	gamestate.add_save(save, name)
+	save.Description = str("Last completed quest: ", Globals.lastCompletedQuestName)
 	save.globals_data = Globals.getGlobals()
 	save.globals_data["gamestate"].saves.clear()
-	save.timestamp = Time.get_date_string_from_system()
+	save.timestamp = Time.get_datetime_string_from_system()
 	save.interiors=interiors.duplicate(true)
 	save.currentInterior = currentInterior
 	

@@ -38,6 +38,8 @@ var backupGlobals
 		Root.prophecyNotif.show()
 		print("game is now uncompletable")
 
+@export var lastCompletedQuestName: String = "None."
+
 func getGlobals() -> Dictionary[String, Variant]:
 	var quests_copy: Array[Quest] = []
 	for q in quests:
@@ -46,7 +48,7 @@ func getGlobals() -> Dictionary[String, Variant]:
 		#"Root": Root,
 		#"Player": Player,
 		#"wizard": wizard,
-		#"stats": stats.duplicate(true),
+		"stats": stats.duplicate(true),
 		#"settingsMenu": settingsMenu,
 		#"dialogueMenu": dialogueMenu,
 		#"menu": menu,
@@ -58,6 +60,7 @@ func getGlobals() -> Dictionary[String, Variant]:
 		"quests": quests_copy,
 		"gamestate": gamestate.duplicate_deep(Resource.DEEP_DUPLICATE_ALL),
 		"mainWorldPlayerPos": mainWorldPlayerPos,
+		"lastCompletedQuestName": lastCompletedQuestName,
 	}
 	#print(quests[0].getQuestState())
 
@@ -67,6 +70,8 @@ func setDefaultGlobals():
 
 
 func setGlobals(data: Dictionary):
+	lastCompletedQuestName = data["lastCompletedQuestName"]
+	stats = data["stats"].duplicate(true)
 	quests.clear()
 	#print("THIS IS THE STATUS OF THE QUEST YOU WANT",data["quests"][0].getQuestState())
 	quests = convertArray(data["quests"], Quest)

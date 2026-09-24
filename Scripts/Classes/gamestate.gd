@@ -29,6 +29,24 @@ func add_save(theSaveInQuestion: SaveGame, name: String = "placeholder"):
 	var fuckyou = {name: theSaveInQuestion}
 	saves[name] = theSaveInQuestion
 
+func sort_dict_newest_first(dict: Dictionary) -> Dictionary:
+	# Get all keys
+	var keys := dict.keys()
+	
+	# Sort the keys by the creation_time of the value objects (newest first)
+	keys.sort_custom(func(a, b):
+		var time_a := Time.get_unix_time_from_datetime_string(dict[a].timestamp)
+		var time_b := Time.get_unix_time_from_datetime_string(dict[b].timestamp)
+		return time_a > time_b
+	)
+	
+	# Rebuild a new dictionary in the sorted order
+	var sorted_dict: Dictionary [String, SaveGame] = {}
+	for key in keys:
+		sorted_dict[key] = dict[key]
+	
+	return sorted_dict
+
 func initializeSaves():
 	saves.clear()
 	var dir = DirAccess.open("user://")
@@ -47,6 +65,7 @@ func initializeSaves():
 		#print(tempname)
 		saves[tempname] = save_file.duplicate(true)
 		file_name = dir.get_next()
+	saves = sort_dict_newest_first(saves)
 	return true
 
 func initialize():

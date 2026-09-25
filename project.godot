@@ -16,6 +16,10 @@ run/main_scene="uid://bjo1qm1kfwu2s"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.png"
 
+[audio]
+
+buses/default_bus_layout="uid://fbnk8rbwu1mp"
+
 [autoload]
 
 Globals="*uid://bvmx1pu32ivk1"
@@ -130,4 +134,3 @@ textures/vram_compression/import_etc2_astc=true
 lights_and_shadows/directional_shadow/size=1024
 lights_and_shadows/directional_shadow/size.mobile=1024
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
-mesh_lod/lod_change/threshold_pixels=250.0

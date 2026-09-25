@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dvhlvrgx56mc5" path="res://Scripts/billboard.gd" id="1_dwpb4"]
 [ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="2_br66b"]
+[ext_resource type="AudioStream" uid="uid://cs1ygjrv7be2n" path="res://sound/sfx/typewriter.wav" id="3_q1ro4"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_dwpb4"]
 viewport_path = NodePath("SubViewport")
@@ -46,3 +47,8 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
+
+[node name="sfx" type="AudioStreamPlayer3D" parent="." unique_id=1239307463]
+stream = ExtResource("3_q1ro4")
+volume_db = -20.0
+bus = &"Sfx"

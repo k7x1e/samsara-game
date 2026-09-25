@@ -454,3 +454,7 @@
 	#figured that stuff out. Time to make the saves be sorted based on date.
 	#23:31
 	#minor fixes done, might push playtest.
+	#
+	##25/09
+	#09:23
+	#i got an idea for the billboards

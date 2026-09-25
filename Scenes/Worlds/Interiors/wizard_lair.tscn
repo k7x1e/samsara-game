@@ -8,6 +8,17 @@
 [ext_resource type="Environment" uid="uid://lyhkdkhxwhlj" path="res://Resources/game_environment.tres" id="5_3paqk"]
 [ext_resource type="PackedScene" uid="uid://d2py2h2xe5qhq" path="res://Scenes/models/lantern.tscn" id="5_5n35u"]
 [ext_resource type="PackedScene" uid="uid://dmwlw28tgirug" path="res://Scenes/models/player_reference.tscn" id="7_wrfno"]
+[ext_resource type="Script" uid="uid://bqdpiionfhc5e" path="res://Scripts/ActorBaseClass.gd" id="9_q57ei"]
+[ext_resource type="Script" uid="uid://dvhlvrgx56mc5" path="res://Scripts/billboard.gd" id="10_h6ii7"]
+[ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="11_1wjhy"]
+[ext_resource type="AudioStream" uid="uid://cs1ygjrv7be2n" path="res://sound/sfx/typewriter.wav" id="12_6ev86"]
+[ext_resource type="Script" uid="uid://baf2et18ajmro" path="res://Scripts/classes/Behaviour/Follower.gd" id="13_td7dd"]
+[ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/classes/dialogueClass.gd" id="14_5jejy"]
+[ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/classes/dialogueOption.gd" id="15_12ahy"]
+[ext_resource type="AudioStream" uid="uid://dgnq7njgglc5s" path="res://sound/sfx/bladee.mp3" id="19_u1jmu"]
+[ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/classes/conversation.gd" id="20_gfhn5"]
+[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="21_ej7lo"]
+[ext_resource type="PackedScene" uid="uid://2bbch46haypm" path="res://Models/elder.glb" id="22_h6ii7"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_vn7uv"]
 vertices = PackedVector3Array(-8.25, 0.5, -9.75, -3.75, 0.5, -10.75, -4, 0.5, -12.25, -9.75, 0, -19, -9.25, 0.5, -9.75, -5.916666, 0, -14.5, -9.392858, 0, -12.392857, -6.519964, 0.5, -12.492038, -3, 0, -21.25, -5.75, 0, -21.25, -3, 0.5, -12.5, -3, 0, -15.416666, -1.75, 0.5, -11.5, 2, 0.5, -11.5, 2, 0.5, -12.25, -2, 0.5, -12.5, 3, 0.5, -12.5, 3, 0, -21.25, -2.333334, 0, -15.416666, 3, 0, -15.416666, 0.9901085, 0.5, -13.976115, 4, 0.5, -12.25, 3.75, 0.5, -10.75, 8.25, 0.5, -9.75, 9, 0.5, -9.75, 9.75, 0, -19, 5.916666, 0, -14.5, 9.214287, 0, -12.392858, 5.75, 0, -21.25, -15.75, 0, -16.25, -19, 0, -10, -9.75, 0.5, -9.5, -12.392857, 0, -9.642858, 9.75, 0.5, -9.25, 19, 0, -9.75, 16, 0, -16, 12.392857, 0, -9.392858, 2, 0.5, -10.75, -1.75, 0.5, -10.75, 2, 0.5, -3, 2.75, 0.5, -2.25, 3.25, 0.5, -10.25, -7.5, 0.5, -9.25, -3.5, 0.5, -10.25, -2.5, 0.5, -10.25, -7.5, 0.5, -8, -2.5, 0.5, -2.75, 7.5, 0.5, -9.25, 7.5, 0.5, -7.75, 3, 0.5, -1.75, 10.25, 0.5, -2.5, 10.25, 0.5, -3.25, 9, 0.5, -7.5, -11, 0.5, -4, -10.25, 0.5, -3.25, -9, 0.5, -7.5, -9.75, 0.5, -8, -21.25, 0, -5.75, -21.25, 0, -3, -12.5, 0.5, -3, -12.25, 0.5, -4, -14.178572, 0, -5.714287, -15.416666, 0, -3, -12.519964, 0.5, -6.4920387, 11, 0.5, -4, 9.75, 0.5, -8, 12, 0.5, -4, 20.25, 0, -7, 14.75, 0, -5, 11.474998, 0.5, -8.025, -11.5, 0.5, -1.75, -11.5, 0.5, 2, -10.75, 0.5, 2, -10.5, 0.5, -2, -10.25, 0.5, 3.25, -2.25, 0.5, 2.75, -3, 0.5, 2, -8, 0.5, -7.25, -3, 0.5, -2, 7.25, 15.5, -7.75, 7.25, 15.5, -7.25, 7.75, 15.5, -7.25, 7.75, 15.5, -7.75, 21.5, 0, -2.75, 21.5, 0, -5, 12.75, 0.5, -2.75, 15.666668, 0, -2.75, -0.75, -7, -3.75, -1.25, -7, -4.25, -1.25, -7, -3.5, -1.75, -7, -3.25, -1.75, -7, -2.75, 1.75, -7, -2.75, 1.25, -7, -4.25, 0.75, -7, -3.75, -0.75, 15.5, -3.75, -1.25, 15.5, -4.25, -1.25, 15.5, -3.5, -1.75, 15.5, -3.25, -1.75, 15.5, -2.75, 1.75, 15.5, -2.75, 1.25, 15.5, -4.25, 0.75, 15.5, -3.75, -12.5, 0.5, 2.25, -12.5, 0.5, -2, -21.25, 0, 3, -15.416666, 0, 2.5, -15.416666, 0, -2.333334, -14.024879, 0.5, 0.9848709, -12.5, 0.5, 3, -15.416666, 0, 3, 12.25, 0.5, -1.75, 11.5, 0.5, -1.75, 11.5, 0.5, 2, 12.5, 0.5, 2, 12.75, 0.5, 2.75, 21.5, 0, 2.75, 15.666668, 0, 2.75, 10.75, 0.5, -1.75, 10.5, 0.5, 2, 10.25, 0.5, 2.5, 3, 0.5, 1.75, 2, 2.5, 1.5, 1.5, 2.5, -2, -2, 2.5, -1.5, -2, 2.5, 1.5, -1.5, 2.5, 2, 1.5, 2.5, 2, -1.5, 2.5, -2, 2, 2.5, -1.5, -3.75, -7, 0.75, -4.25, -7, 1.25, -2.75, -7, 1.75, -2.75, -7, -1.75, -4.25, -7, -1.25, -3.75, -7, -0.75, -3.75, 15.5, 0.75, -4.25, 15.5, 1.25, -2.75, 15.5, 1.75, -2.75, 15.5, -1.75, -4.25, 15.5, -1.25, -3.75, 15.5, -0.75, 3.5, -7, -0.5, 4.25, -7, -1.25, 2.75, -7, -1.75, 2.75, -7, 1.75, 4.25, -7, 1.25, 2.75, 15.5, 1.75, 4.25, 15.5, 1.25, 3.75, 15.5, 0.75, 3.75, 15.5, -0.75, 4.25, 15.5, -1.25, 2.75, 15.5, -1.75, 9.25, 0.5, 7.5, 9.75, 0.5, 8.25, 10.75, 0.5, 3.75, 10.25, 0.5, 3.5, 8, 0.5, 7.5, 2.75, 0.5, 2.25, 3.5, 0.5, 10.25, 4, 0.5, 11, 7.5, 0.5, 9, 7.5, 0.5, 7.75, 1.75, 0.5, 3, 2.5, 0.5, 10.25, -11.25, 0.5, 4, -10, 0.5, 8.25, -9.25, 0.5, 7.5, -7.75, 0.5, 7.5, -2.5, 0.5, 10.25, -1.75, 0.5, 3, -7.5, 0.5, 9, -3.25, 0.5, 10.25, -1.75, -7, 2.75, -1.25, -7, 4.25, -0.5, -7, 3.5, 1.25, -7, 4.25, 1.75, -7, 3, 1.25, 15.5, 3.5, 1.75, 15.5, 3.25, 1.75, 15.5, 2.75, -1.75, 15.5, 2.75, -0.5, 15.5, 3.5, -1.25, 15.5, 4.25, 1.25, 15.5, 4.25, 8, 0.5, 9.75, 4.25, 0.5, 12, 9.25, 0.5, 9.75, 12.25, 0.5, 4, 21.5, 0, 5.75, 14.892857, 0, 4.5, 16.25, 0, 16.25, 10.25, 0, 10.67857, 2.75, 0.5, 12.75, 2.75, 0, 21.5, 5.75, 0, 21.5, 2.75, 0, 15.666668, -12.25, 0.5, 4.25, -9.75, 0.5, 9.25, -21.25, 0, 5.75, -16, 0, 16, -11.535714, 0, 11.17857, -14.821428, 0, 3.8928566, -8.75, 0, 19.5, -8.5, 0.5, 10, -8.571428, 0, 12.714287, -1.75, 0.5, 10.75, -1.75, 0.5, 11.5, 2, 0.5, 11.5, 2, 0.5, 10.5, 7.25, -7, 7.25, 7.25, -7, 7.75, 7.75, -7, 7.75, 7.75, -7, 7.25, 7.25, 15.5, 7.25, 7.25, 15.5, 7.75, 7.75, 15.5, 7.75, 7.75, 15.5, 7.25, -4, 0.5, 11, -4, 0.5, 12, -7.25, 0, 20.25, -5.083334, 0, 14.75, -1.75, 0.5, 12.25, 2, 0.5, 12.5, -2.75, 0.5, 12.75, -2.75, 0, 21.5, -2.75, 0, 15.666668, -5, 0, 21.5)
@@ -921,6 +932,68 @@ points = PackedVector3Array(10.5, 4.75, -19.500002, 10.5, 4, -19.500002, 6, 4.75
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_47l10"]
 points = PackedVector3Array(10.5, -0.5, -19.500002, 10.5, -1, -19.500002, 6.000001, -0.5, -21.75, 6.000001, -1, -21.75, 10.875002, -0.5, -20.250004, 10.875002, -1, -20.250004, 6.375002, -0.5, -22.500004, 6.375002, -1, -22.500004)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dwpb4"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgofq"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_right = 10
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_ibf28"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("billboard", "script", "billboardtext", "Pausable", "Node3D", "Sprite3D", "texture", "SubViewport", "transparent_bg", "size", "CanvasLayer", "CenterContainer", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "RichTextLabel", "layout_mode", "size_flags_horizontal", "theme_override_fonts/normal_font", "theme_override_font_sizes/normal_font_size", "theme_override_font_sizes/bold_font_size", "theme_override_styles/normal", "bbcode_enabled", "text", "fit_content", "scroll_active", "autowrap_mode", "horizontal_alignment", "sfx", "stream", "volume_db", "bus", "AudioStreamPlayer3D"),
+"node_count": 7,
+"node_ids": PackedInt32Array(1199928384, 928405031, 1884092643, 1910178090, 612352579, 786642556, 1239307463),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 4, 0, -1, 2, 1, 0, 2, 1, 1, 3, 0, 0, 5, 5, -1, 2, 0, 2, 6, 3, 1, 3, 0, 0, 7, 7, -1, 2, 8, 4, 9, 5, 1, 3, 2, 0, 10, 10, -1, 0, 1, 3, 3, 0, 11, 11, -1, 5, 12, 6, 13, 7, 14, 7, 15, 8, 16, 8, 1, 3, 4, 0, 17, 17, -1, 12, 18, 8, 19, 9, 20, 10, 21, 11, 22, 11, 23, 12, 24, 4, 25, 13, 26, 4, 27, 14, 28, 15, 29, 2, 1, 3, 0, 0, 34, 30, -1, 3, 31, 16, 32, 17, 33, 18, 0),
+"variants": [ExtResource("10_h6ii7"), "I am an npc bro", 1, SubResource("ViewportTexture_dwpb4"), true, Vector2i(512, 50), 15, 1.0, 2, 3, ExtResource("11_1wjhy"), 30, SubResource("StyleBoxFlat_fgofq"), "Placeholder", false, 0, ExtResource("12_6ev86"), -20.0, &"Sfx"],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_mnc57"]
+script = ExtResource("15_12ahy")
+text = "what?"
+target = -1
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_u1jmu"]
+script = ExtResource("14_5jejy")
+dialogueText = "Hello man im Bladee drain gang"
+dialogueOptions = Array[ExtResource("15_12ahy")]([SubResource("Resource_mnc57")])
+metadata/_custom_type_script = "uid://bg6c48acdck1"
+
+[sub_resource type="Resource" id="Resource_rslet"]
+script = ExtResource("20_gfhn5")
+speakerName = "Bladee"
+manuscript = Array[ExtResource("14_5jejy")]([SubResource("Resource_u1jmu")])
+metadata/_custom_type_script = "uid://bin58sxq57jsc"
+
+[sub_resource type="Resource" id="Resource_3whnx"]
+script = ExtResource("13_td7dd")
+player = null
+nav = null
+hasDialogue = true
+words = SubResource("Resource_rslet")
+speed = 3.0
+actor = null
+billboard = SubResource("PackedScene_ibf28")
+metadata/_custom_type_script = "uid://baf2et18ajmro"
+
+[sub_resource type="Resource" id="Resource_to1ki"]
+script = ExtResource("21_ej7lo")
+npcName = "Bladee"
+usesModel = false
+behaviour = SubResource("Resource_3whnx")
+metadata/_custom_type_script = "uid://drjjmjc24qipo"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ei5c"]
 
 [node name="wizardLair" type="Node3D" unique_id=1010842364]
 script = ExtResource("1_5n35u")
@@ -1852,3 +1925,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 15)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=841263572]
 transform = Transform3D(-0.7071068, 0.49999997, -0.4999999, 6.181724e-08, 0.7071068, 0.7071068, 0.70710677, 0.5, -0.50000006, 0, 0, 0)
 light_energy = 0.344
+
+[node name="Actor" type="CharacterBody3D" parent="." unique_id=1866149922 groups=["Pausable"]]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1, -8)
+collision_layer = 521
+collision_mask = 521
+script = ExtResource("9_q57ei")
+NpcClass = SubResource("Resource_to1ki")
+
+[node name="Visual" type="Node3D" parent="Actor" unique_id=1983415667 groups=["Pausable"]]
+
+[node name="elder" parent="Actor/Visual" unique_id=7493415 instance=ExtResource("22_h6ii7")]
+transform = Transform3D(-1.3113416e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113416e-08, 0, 0.2998966, 0)
+
+[node name="Skeleton3D" parent="Actor/Visual/elder/Armature" parent_id_path=PackedInt32Array(7493415, 482351033) index="0" unique_id=1296813774]
+bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
+bones/1/rotation = Quaternion(0.9380566, 0.019708714, 0.3408006, 0.05929957)
+bones/3/rotation = Quaternion(0.00021356749, -0.00034179376, 0.017164934, 0.9998526)
+bones/5/rotation = Quaternion(0.022711672, -1.1917787e-07, 2.7074563e-09, 0.99974203)
+bones/7/rotation = Quaternion(-0.36593214, -0.027977932, -0.12831022, 0.9213292)
+bones/8/rotation = Quaternion(-0.23305106, -0.018484527, -0.022327406, 0.9720324)
+bones/9/rotation = Quaternion(-0.118990615, -0.038885873, 0.029414108, 0.9916975)
+bones/11/rotation = Quaternion(0.11406366, 0.8830993, -0.36882517, -0.26663277)
+bones/12/rotation = Quaternion(0.30592144, -0.05869044, -0.15602674, 0.9373491)
+bones/13/rotation = Quaternion(0.054251563, -0.18838324, 0.059412085, 0.9787945)
+bones/15/rotation = Quaternion(0.72698486, 0.094962806, -0.058514364, 0.6775332)
+bones/16/rotation = Quaternion(0.03743713, -0.008029879, -0.00083015836, 0.9992664)
+bones/17/rotation = Quaternion(0.6096443, 0.7403935, -0.14562067, 0.24278796)
+bones/19/rotation = Quaternion(-0.731865, -0.011666051, 0.015933152, 0.6811635)
+bones/20/rotation = Quaternion(-0.03742334, -7.324756e-07, -0.0013116588, 0.99929875)
+bones/21/rotation = Quaternion(-0.11982031, -0.0892347, -0.61523545, 0.7740579)
+
+[node name="Nav" type="NavigationAgent3D" parent="Actor" unique_id=87223851 groups=["Pausable"]]
+avoidance_enabled = true
+radius = 1.0
+
+[node name="Collision" type="CollisionShape3D" parent="Actor" unique_id=1180956514 groups=["Pausable"]]
+shape = SubResource("CapsuleShape3D_7ei5c")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Actor" unique_id=1298169297]
+stream = ExtResource("19_u1jmu")
+volume_db = -5.0
+autoplay = true
+bus = &"Sfx"
+
+[editable path="Actor/Visual/elder"]

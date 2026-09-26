@@ -8,9 +8,9 @@ signal casted(anim: String)
 
 #check for input
 func _process(_delta: float) -> void:
-	if Input.is_action_pressed("LeftClick"):
+	if Input.is_action_just_pressed("LeftClick"):
 		cast(0)
-	if Input.is_action_pressed("rightClick"):
+	if Input.is_action_just_pressed("rightClick"):
 		cast(1)
 	if Input.is_action_just_pressed("spell3"):
 		cast(2)
@@ -26,11 +26,19 @@ func _ready():
 
 # Called when the node enters the scene tree for the first time.
 func cast(which: int): #1: left, 2: right, 3,4,5: other bindable spells
-	if spells[which].castable:
+	if spells[which].castable and spells[which].checkEquipment():
 		casted.emit(spells[which].animation)
 		await get_tree().create_timer(0.34).timeout
 		if which <= 4:
-			spells[which].cast(self)
+			var _result = spells[which].cast(self)
+	elif !spells[which].checkEquipment():
+		fail("Hands full")
+
+func fail(reason: String = " "):
+	var stringpoop = "Failed casting spell."
+	if reason != " ":
+		stringpoop += str(" ", reason)
+	Globals.Player.notify(stringpoop)
 
 func remove(which: int, replacement: bool):
 	if replacement:

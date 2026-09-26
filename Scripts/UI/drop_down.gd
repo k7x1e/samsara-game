@@ -26,13 +26,13 @@ func updateItem(iteminQ: Node):
 			equipButtons(true)
 			assignButtons(true)
 	if tempitem.equippable:
-		equipButtons(false)
+		equipButtons(false, tempitem.equipped)
 	if tempitem.equipped and tempitem.equippable:
 		unEquipB.disabled = false
 			
-func equipButtons(disableD: bool):
+func equipButtons(disableD: bool, isEquipped: bool = false):
 	equipB.disabled = disableD
-	unEquipB.disabled = true
+	unEquipB.disabled = !isEquipped
 
 func assignButtons(disableD: bool):
 	assign1.disabled = disableD
@@ -95,10 +95,18 @@ func _on_unassign_pressed() -> void:
 #equipping
 
 func _on_equip_pressed() -> void:
-	pass # Replace with function body.
+	var result = Globals.Player.equipment.equip(currentItem.ownItem)
+	if result == false:
+		Globals.Player.notify("Failed to equip. One or more required slots are full.")
+	else:
+		Globals.Player.notify(str("Equipped ", currentItem.ownItem.name, "."))
 
 func _on_unequip_pressed() -> void:
-	pass # Replace with function body.
+	var result = Globals.Player.equipment.unequip(currentItem.ownItem)
+	if result == false:
+		Globals.Player.notify("Failed to unequip. Item not equipped.")
+	else:
+		Globals.Player.notify(str("Unequipped ", currentItem.ownItem.name, "."))
 
 #etcetera
 

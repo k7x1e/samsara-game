@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://l0h4n0debnqg"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_cpbav"]
+
+[node name="ModifierBoneTarget3D" type="ModifierBoneTarget3D" unique_id=1057993999]
+
+[node name="lanternItem" type="Node3D" parent="." unique_id=1275375653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4935996, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="lanternItem" unique_id=956788846]
+layers = 8
+mesh = SubResource("SphereMesh_cpbav")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lanternItem" unique_id=1264706030]

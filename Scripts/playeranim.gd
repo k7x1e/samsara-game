@@ -8,7 +8,12 @@ extends AnimationTree
 
 @export var backwards: bool = false
 
+var statemachinespell: AnimationNodeStateMachinePlayback
+var statemachineitem: AnimationNodeStateMachinePlayback
+
 func _ready():
+	statemachinespell = get("parameters/StateMachine spell/playback")
+	statemachineitem = get("parameters/StateMachine item/playback")
 	updateAnim()
 
 func moving() -> void:
@@ -32,20 +37,10 @@ func updateAnim():
 			set("parameters/Blend2/blend_amount",1.0)
 
 func playAnim(_which: String):
-	match _which:
-		"castMind":
-			set("parameters/Add3/add_amount",-1)
-			set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
-			await get_tree().create_timer(1).timeout
-			set("parameters/Add3/add_amount",0)
-		"eat":
-			set("parameters/Add3/add_amount",1)
-			set("parameters/OneShot 3/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
-			await get_tree().create_timer(0.67).timeout
-			set("parameters/Add3/add_amount",0)
-		"cast":
-			set("parameters/Add3/add_amount",0)
-			set("parameters/OneShot 2/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+	statemachinespell.travel(_which)
+
+func playEquipAnim(_which: String):
+	statemachineitem.travel(_which)
 
 func casted(anim: String) -> void:
 	playAnim(anim)

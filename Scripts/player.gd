@@ -5,6 +5,7 @@ signal stopping()
 
 @export var is_moving: bool = false
 
+@export var equipment: EquipmentManager
 @export var inventory: InventoryClass
 
 @export var SPEED = 5.0
@@ -34,6 +35,8 @@ var dashVector = Vector3(dashD, 0, 0)
 @onready var wizard = $Wizard
 @onready var followerNode = $Rotation/Follower1 #will be replaced with a function eventually but this will do for now
 @onready var lookTarget = $lookTarget
+@onready var animManager = $Rotation/anim
+@onready var skeleton = $Rotation/londonProtag/Armature/Skeleton3D
 
 @onready var notification = preload("res://Scenes/notification.tscn")
 

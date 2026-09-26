@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cine2pxbjr6ec" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Script" uid="uid://buvsbboygw12p" path="res://Scripts/wizard.gd" id="2_dewec"]
+[ext_resource type="Script" uid="uid://xod4o8t818eu" path="res://Scripts/classes/equipment.gd" id="2_kih0c"]
 [ext_resource type="Script" uid="uid://brua5tb5kc0it" path="res://Scripts/classes/itemClass.gd" id="2_megsn"]
 [ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/classes/spells/spell.gd" id="3_5ixxa"]
 [ext_resource type="Resource" uid="uid://cg1q03enedviq" path="res://Resources/Spells/tests.tres" id="4_o3h8g"]
@@ -11,10 +12,13 @@
 [ext_resource type="Resource" uid="uid://burvo2yn4lmxq" path="res://Resources/Items/heal.tres" id="8_70hv0"]
 [ext_resource type="Resource" uid="uid://byn8lfwpbjv8r" path="res://Resources/Spells/thunderbolt.tres" id="8_miouo"]
 [ext_resource type="Resource" uid="uid://bs0h3ygx3g5bt" path="res://Resources/Spells/skooma.tres" id="9_1e7my"]
+[ext_resource type="Texture2D" uid="uid://b8iv4i2fey054" path="res://icon.svg" id="9_utwlt"]
 [ext_resource type="Texture2D" uid="uid://bqxdpdin82oyj" path="res://Textures/icons/spells/heal.png" id="9_x63xi"]
+[ext_resource type="Script" uid="uid://ig7vm5nrl2aa" path="res://Scripts/classes/Items/equipmentClass.gd" id="10_kih0c"]
 [ext_resource type="Script" uid="uid://x7tekc2114cw" path="res://Scripts/classes/stats.gd" id="10_o3h8g"]
 [ext_resource type="Environment" uid="uid://lyhkdkhxwhlj" path="res://Resources/game_environment.tres" id="11_1e7my"]
 [ext_resource type="Script" uid="uid://ctffm134lsqah" path="res://Scripts/classes/quest.gd" id="11_lslt6"]
+[ext_resource type="PackedScene" uid="uid://l0h4n0debnqg" path="res://Scenes/items/lantern_item.tscn" id="11_lyrkg"]
 [ext_resource type="Resource" uid="uid://bvx7kyepfo1oa" path="res://Resources/Spells/placeholder.tres" id="12_miouo"]
 [ext_resource type="Resource" uid="uid://c2qv5krngu0i0" path="res://Resources/story/quests/testingQuest.tres" id="12_ulo2v"]
 [ext_resource type="AudioStream" uid="uid://bikro78yehb60" path="res://sound/notification/mission.wav" id="13_1iu4k"]
@@ -27,17 +31,32 @@
 [ext_resource type="PackedScene" uid="uid://cwkh1mr03cpqs" path="res://Models/londonProtag.glb" id="25_8flut"]
 [ext_resource type="Script" uid="uid://beia0b2yblfv0" path="res://Scripts/playeranim.gd" id="26_u7x0b"]
 
+[sub_resource type="Resource" id="Resource_c43xd"]
+script = ExtResource("2_kih0c")
+metadata/_custom_type_script = "uid://xod4o8t818eu"
+
 [sub_resource type="Resource" id="Resource_arntx"]
 script = ExtResource("2_megsn")
 itemID = 2
 name = "worthless shit"
 icon = ExtResource("6_52ee3")
-equippable = true
 metadata/_custom_type_script = "uid://brua5tb5kc0it"
+
+[sub_resource type="Resource" id="Resource_lyrkg"]
+script = ExtResource("10_kih0c")
+slot = "armRight"
+node = ExtResource("11_lyrkg")
+curNode = null
+itemID = 676767
+name = "Lantern"
+icon = ExtResource("9_utwlt")
+Type = "Equipment"
+equippable = true
+metadata/_custom_type_script = "uid://ig7vm5nrl2aa"
 
 [sub_resource type="Resource" id="Resource_megsn"]
 script = ExtResource("4_yoq75")
-inventory = Array[ExtResource("2_megsn")]([ExtResource("4_o3h8g"), ExtResource("6_o3h8g"), SubResource("Resource_arntx"), ExtResource("8_miouo"), ExtResource("9_1e7my"), ExtResource("8_70hv0")])
+inventory = Array[ExtResource("2_megsn")]([ExtResource("4_o3h8g"), ExtResource("6_o3h8g"), SubResource("Resource_arntx"), ExtResource("8_miouo"), ExtResource("9_1e7my"), ExtResource("8_70hv0"), SubResource("Resource_lyrkg")])
 metadata/_custom_type_script = "uid://cse3ubaxht2cj"
 
 [sub_resource type="Resource" id="Resource_1e7my"]
@@ -68,25 +87,10 @@ metadata/_custom_type_script = "uid://bs1xhdp0kaywn"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kldst"]
 
-[sub_resource type="AnimationNodeAdd3" id="AnimationNodeAdd3_u7x0b"]
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_kih0c"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_utwlt"]
 animation = &"walk_002"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kih0c"]
-animation = &"MindSpell"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c43xd"]
-animation = &"rest"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_avx33"]
-animation = &"rest"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rxg2u"]
-animation = &"boringCast"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xixlo"]
-animation = &"rest"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bfbt0"]
 animation = &"Eat"
@@ -105,48 +109,85 @@ filters = ["Armature", "Armature/Skeleton3D:Bone.009.L", "Armature/Skeleton3D:Bo
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_c43xd"]
 
-[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_wosd6"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wosd6"]
+animation = &"holdForward"
 
-[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_hkrn1"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lyrkg"]
+switch_mode = 2
+advance_mode = 0
 
-[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_rxg2u"]
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lyrkg"]
+states/End/position = Vector2(900, 100.171875)
+states/Start/position = Vector2(245.5, 100.21484)
+states/holdForward/node = SubResource("AnimationNodeAnimation_wosd6")
+states/holdForward/position = Vector2(509.2354, 119.48)
+transitions = ["Start", "holdForward", SubResource("AnimationNodeStateMachineTransition_lyrkg")]
+graph_offset = Vector2(79.47045, 27.990028)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kih0c"]
+animation = &"Eat"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wpo1r"]
+animation = &"MindSpell"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pqity"]
+animation = &"boringCast"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_opqna"]
+animation = &"rest"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_00okb"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c43xd"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_avx33"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rxg2u"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_teras"]
+states/Eat/node = SubResource("AnimationNodeAnimation_kih0c")
+states/Eat/position = Vector2(487.82507, 72.30982)
+states/MindSpell/node = SubResource("AnimationNodeAnimation_wpo1r")
+states/MindSpell/position = Vector2(320.225, 231.61)
+states/Start/position = Vector2(123, 99.25)
+states/boringCast/node = SubResource("AnimationNodeAnimation_pqity")
+states/boringCast/position = Vector2(512.725, 243.10999)
+states/rest/node = SubResource("AnimationNodeAnimation_opqna")
+states/rest/position = Vector2(358.5, 51)
+transitions = ["Start", "rest", SubResource("AnimationNodeStateMachineTransition_00okb"), "MindSpell", "rest", SubResource("AnimationNodeStateMachineTransition_c43xd"), "boringCast", "rest", SubResource("AnimationNodeStateMachineTransition_avx33"), "Eat", "rest", SubResource("AnimationNodeStateMachineTransition_rxg2u")]
+graph_offset = Vector2(79.47008, 25.22982)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_c43xd"]
-graph_offset = Vector2(-613.3765, 381.5445)
+graph_offset = Vector2(-520.10406, 284.88995)
 nodes/output/position = Vector2(500, 100)
 nodes/Blend2/node = SubResource("AnimationNodeBlend2_c43xd")
 nodes/Blend2/position = Vector2(-180, -20)
-"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_kih0c")
-"nodes/Animation 3/position" = Vector2(-560, 480)
+"nodes/Animation 9/node" = SubResource("AnimationNodeAnimation_70hv0")
+"nodes/Animation 9/position" = Vector2(-800, -20)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_utwlt")
 "nodes/Animation 2/position" = Vector2(-800, -180)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_lyrkg")
 nodes/Animation/position = Vector2(-560, 120)
 "nodes/Blend2 2/node" = SubResource("AnimationNodeBlend2_avx33")
 "nodes/Blend2 2/position" = Vector2(235.48795, 247.86899)
-"nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_c43xd")
-"nodes/Animation 4/position" = Vector2(-560, 320)
-nodes/OneShot/node = SubResource("AnimationNodeOneShot_rxg2u")
-nodes/OneShot/position = Vector2(-340, 320)
-nodes/Add3/node = SubResource("AnimationNodeAdd3_u7x0b")
-nodes/Add3/position = Vector2(20, 460)
-"nodes/OneShot 2/node" = SubResource("AnimationNodeOneShot_wosd6")
-"nodes/OneShot 2/position" = Vector2(-340, 640)
-"nodes/OneShot 3/node" = SubResource("AnimationNodeOneShot_hkrn1")
-"nodes/OneShot 3/position" = Vector2(-340, 960)
-"nodes/Animation 5/node" = SubResource("AnimationNodeAnimation_avx33")
-"nodes/Animation 5/position" = Vector2(-560, 640)
-"nodes/Animation 6/node" = SubResource("AnimationNodeAnimation_rxg2u")
-"nodes/Animation 6/position" = Vector2(-560, 800)
-"nodes/Animation 7/node" = SubResource("AnimationNodeAnimation_xixlo")
-"nodes/Animation 7/position" = Vector2(-560, 960)
+"nodes/StateMachine item/node" = SubResource("AnimationNodeStateMachine_lyrkg")
+"nodes/StateMachine item/position" = Vector2(-260, 650)
+"nodes/StateMachine spell/node" = SubResource("AnimationNodeStateMachine_teras")
+"nodes/StateMachine spell/position" = Vector2(-242.7903, 365.09848)
 "nodes/Animation 8/node" = SubResource("AnimationNodeAnimation_bfbt0")
-"nodes/Animation 8/position" = Vector2(-560, 1120)
+"nodes/Animation 8/position" = Vector2(-830, 1080)
 "nodes/Blend2 3/node" = SubResource("AnimationNodeBlend2_8flut")
 "nodes/Blend2 3/position" = Vector2(-480, -140)
-"nodes/Animation 9/node" = SubResource("AnimationNodeAnimation_70hv0")
-"nodes/Animation 9/position" = Vector2(-800, -20)
-node_connections = [&"output", 0, &"Blend2 2", &"Blend2", 0, &"Blend2 3", &"Blend2", 1, &"Animation", &"Blend2 2", 0, &"Add3", &"Blend2 2", 1, &"Blend2", &"OneShot", 0, &"Animation 4", &"OneShot", 1, &"Animation 3", &"Add3", 0, &"OneShot", &"Add3", 1, &"OneShot 2", &"Add3", 2, &"OneShot 3", &"OneShot 2", 0, &"Animation 5", &"OneShot 2", 1, &"Animation 6", &"OneShot 3", 0, &"Animation 7", &"OneShot 3", 1, &"Animation 8", &"Blend2 3", 0, &"Animation 2", &"Blend2 3", 1, &"Animation 9"]
+nodes/Add2/node = SubResource("AnimationNodeAdd2_kih0c")
+nodes/Add2/position = Vector2(50, 450)
+node_connections = [&"output", 0, &"Blend2 2", &"Blend2", 0, &"Blend2 3", &"Blend2", 1, &"Animation", &"Blend2 2", 0, &"Add2", &"Blend2 2", 1, &"Blend2", &"Blend2 3", 0, &"Animation 2", &"Blend2 3", 1, &"Animation 9", &"Add2", 0, &"StateMachine spell", &"Add2", 1, &"StateMachine item"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1e7my"]
 radius = 3.0
@@ -158,6 +199,7 @@ collision_mask = 4109
 floor_stop_on_slope = false
 floor_block_on_wall = false
 script = ExtResource("1_kyqiw")
+equipment = SubResource("Resource_c43xd")
 inventory = SubResource("Resource_megsn")
 stats = SubResource("Resource_1e7my")
 experienceThresh = 5.0
@@ -193,28 +235,29 @@ placeholderSpell = ExtResource("12_miouo")
 script = ExtResource("21_8flut")
 lookTargetNode = NodePath("../lookTarget")
 
-[node name="londonProtag" parent="Rotation" unique_id=998312763 instance=ExtResource("25_8flut")]
+[node name="londonProtag" parent="Rotation" unique_id=1098917376 instance=ExtResource("25_8flut")]
 transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0, 0.06221825, 0)
 
-[node name="Armature" parent="Rotation/londonProtag" index="2" unique_id=979264765]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1866476, 0)
+[node name="Armature" parent="Rotation/londonProtag" index="2" unique_id=1182342492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25041863, 0)
 
-[node name="Skeleton3D" parent="Rotation/londonProtag/Armature" index="0" unique_id=1446936922]
+[node name="Skeleton3D" parent="Rotation/londonProtag/Armature" index="0" unique_id=1788119391]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.93806046, 0.01952449, 0.34081227, 0.059232637)
-bones/3/rotation = Quaternion(4.803827e-05, -7.688055e-05, 0.0038609533, 0.9999926)
-bones/7/rotation = Quaternion(-0.44035098, -0.038220607, -0.14063428, 0.8859189)
-bones/8/rotation = Quaternion(-0.10192373, -0.04477334, -0.00794932, 0.9937524)
-bones/9/rotation = Quaternion(-0.1742328, -0.037101448, 0.030870324, 0.983521)
-bones/11/rotation = Quaternion(0.09578161, 0.8317535, -0.4750532, -0.27080724)
-bones/12/rotation = Quaternion(0.11073944, -0.056747783, -0.22298814, 0.9668468)
-bones/13/rotation = Quaternion(0.14083622, -0.18853085, 0.107122675, 0.9659949)
-bones/15/rotation = Quaternion(0.72921884, 0.051011406, -0.027815143, 0.68180937)
-bones/16/rotation = Quaternion(0.013563067, -0.069745146, 0.58895516, 0.8050364)
-bones/17/rotation = Quaternion(0.46417624, 0.8360822, -0.09344886, 0.27708155)
-bones/19/rotation = Quaternion(-0.6849411, -0.2971231, -0.18306893, 0.6395775)
-bones/20/rotation = Quaternion(-0.0269046, 0.04703871, 0.43728662, 0.8976881)
-bones/21/rotation = Quaternion(-0.12956697, -0.07479319, -0.77004474, 0.6202013)
+bones/1/rotation = Quaternion(0.93812346, 0.016210195, 0.34101945, 0.058028184)
+bones/3/rotation = Quaternion(0.00011756689, -0.00018815423, 0.009449137, 0.99995536)
+bones/7/rotation = Quaternion(-0.440351, -0.03822061, -0.14063425, 0.8859189)
+bones/8/rotation = Quaternion(-0.10192366, -0.044773385, -0.007949366, 0.99375236)
+bones/9/rotation = Quaternion(-0.17423274, -0.03710145, 0.030870311, 0.98352104)
+bones/10/rotation = Quaternion(0.22203927, 0.5698971, 0.78985965, 0.045138724)
+bones/11/rotation = Quaternion(0.09578154, 0.8317536, -0.4750532, -0.2708071)
+bones/12/rotation = Quaternion(0.11073949, -0.056747727, -0.22298805, 0.9668468)
+bones/13/rotation = Quaternion(0.14083624, -0.18853082, 0.10712266, 0.96599483)
+bones/15/rotation = Quaternion(0.7183302, 0.16916317, -0.110394195, 0.6657317)
+bones/16/rotation = Quaternion(0.0071800654, -0.08040006, 0.69510573, 0.71436155)
+bones/17/rotation = Quaternion(0.4847334, 0.82484215, -0.10067562, 0.27300808)
+bones/19/rotation = Quaternion(-0.7253938, -0.116987444, -0.05713449, 0.6759094)
+bones/20/rotation = Quaternion(-0.034210175, 0.018586408, 0.17196321, 0.9843337)
+bones/21/rotation = Quaternion(-0.12736396, -0.07938601, -0.7286393, 0.66825235)
 
 [node name="AimModifier3D" type="AimModifier3D" parent="Rotation/londonProtag/Armature/Skeleton3D" index="0" unique_id=1846975441]
 transform = Transform3D(5.722046e-06, 30.000004, 3.5762798e-06, -4.547474e-13, -3.576279e-06, 30.000002, 30.00001, -8.583069e-06, -1.5916157e-12, -1.0048591e-14, 1.1764284, -5.024298e-15)
@@ -237,17 +280,8 @@ tree_root = SubResource("AnimationNodeBlendTree_c43xd")
 anim_player = NodePath("../londonProtag/AnimationPlayer")
 parameters/Blend2/blend_amount = 0.0
 "parameters/Blend2 2/blend_amount" = 1.0
-parameters/OneShot/active = false
-parameters/OneShot/internal_active = false
-parameters/OneShot/request = 0
-parameters/Add3/add_amount = 0.0
-"parameters/OneShot 2/active" = false
-"parameters/OneShot 2/internal_active" = false
-"parameters/OneShot 2/request" = 0
-"parameters/OneShot 3/active" = false
-"parameters/OneShot 3/internal_active" = false
-"parameters/OneShot 3/request" = 0
 "parameters/Blend2 3/blend_amount" = 0.0
+parameters/Add2/add_amount = 1.0
 script = ExtResource("26_u7x0b")
 player = NodePath("../..")
 anim = NodePath("../londonProtag/AnimationPlayer")

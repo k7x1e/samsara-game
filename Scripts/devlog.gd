@@ -458,3 +458,18 @@
 	##25/09
 	#09:23
 	#i got an idea for the billboards
+	#
+	##26/09
+	#12:47
+	#i am currently seated next to my beloved girlfriend and i am feeling veyr inspired.
+	#today will be the day that equipment is implemented.
+	#i should also EVENTUALLY switch out the damage stuff on actors for the much sexier player notifs.
+	#13:37
+	#got equipment working at a basic level. Time to make it work with spells
+	#13:56
+	#made the equipment work with the spells. Time to figure out having the equipping do something
+	#14:22
+	#changed to state machines for the animations. Much better
+	#what i think is that i will just make it so that the equipmentitem has an initialize function that checks if it has "equipmentspells" associated and equips them. Either that or the actual node for the equipment does that upon initializing.
+	#14:41
+	#finished basic implementation of equipment

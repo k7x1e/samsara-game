@@ -98,13 +98,13 @@ _data = {
 [node name="notification" type="Node3D" unique_id=633069758]
 script = ExtResource("1_6kda2")
 
-[node name="SubViewport" type="SubViewport" parent="." unique_id=879773878 groups=["Pausable"]]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=879773878]
 transparent_bg = true
 size = Vector2i(1024, 50)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport" unique_id=946751260 groups=["Pausable"]]
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport" unique_id=946751260]
 
-[node name="CenterContainer" type="CenterContainer" parent="SubViewport/CanvasLayer" unique_id=1083919178 groups=["Pausable"]]
+[node name="CenterContainer" type="CenterContainer" parent="SubViewport/CanvasLayer" unique_id=1083919178]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

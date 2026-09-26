@@ -14,8 +14,8 @@ signal quantity_changed()
 
 @export var Type: String = "Item"
 
-@export var equipped: bool
-@export var equippable: bool = false #DOES NOT APPLY TO SPELLS
+@export var equipped: bool = false
+@export var equippable: bool = false #DOES NOT APPLY TO SPELLS #moved to the actual equipment base class
 
 @export var quantity: int:
 	set(value):

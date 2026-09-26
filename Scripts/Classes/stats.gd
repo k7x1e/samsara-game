@@ -27,6 +27,8 @@ signal statChanged()
 
 @export var progressMax: int = 50
 
+@export var spellHandThreshhold = 5.0
+
 #just put stats and their function
 @export var statDict: Dictionary[String, Variant] = {
 	"Agility": agility,

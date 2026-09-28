@@ -473,3 +473,33 @@
 	#what i think is that i will just make it so that the equipmentitem has an initialize function that checks if it has "equipmentspells" associated and equips them. Either that or the actual node for the equipment does that upon initializing.
 	#14:41
 	#finished basic implementation of equipment
+	#15:09
+	#i should add a bartering system. Ill add currency first
+	#15:31
+	#finished up currency. Its time to do to the spells and equipment what i did to the globals.
+	#
+	##28/09
+	#08:55
+	#i am stranded at sols until 13 something. Time to work
+	#09:34
+	#done some mostly small stuff. What i actually need to do is implement the music manager and an intro. But first i will do some writing.
+	#10:56
+	#planned out entire london MAIN story
+	#11:10
+	#fixing some bugs and for some insane reason the fucking npc flies away if youve loaded a save
+	#11:12
+	#WHY WERE THE ACTORS MOVING EVERY FRAME AND HOW DID IT IMAGINE IT HAD TO FUCKING FLY AWAY
+	#11:20
+	#i believe it all should work now
+	#11:29
+	#added the ability for quests to be main quests
+	#12:05
+	#i should add books. though first i will implement a place they can be in
+	#12:28
+	#npcs just randomly decided to break
+	#13:01
+	#before i go home i need to add support for different descriptions during the progression of the quests.
+	#13:05
+	#that was surprisingly easy to implement.
+	#13:15
+	#added some quests. Time to push.

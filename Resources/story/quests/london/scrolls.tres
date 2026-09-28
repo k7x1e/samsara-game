@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://bf48dl51ufr1w"]
+
+[ext_resource type="Texture2D" uid="uid://b5vahpso3sg3n" path="res://Textures/icons/quests/scrolls.png" id="1_0rc35"]
+[ext_resource type="Script" uid="uid://ctffm134lsqah" path="res://Scripts/classes/quest.gd" id="2_5qfgr"]
+
+[resource]
+script = ExtResource("2_5qfgr")
+icon = ExtResource("1_0rc35")
+questName = "Get the three vessels."
+questId = 53289
+mainQuest = true
+announce = true
+progressDescriptionsActive = true
+descriptions = Array[String](["blank", "You've learned about the three vessels. Now you have to find them", "This is to be replaced.", "You've found the three vessels and unlocked the divine secrets.", "mystery status", "You failed to acquire the three divine vessels."])
+progressDescriptions = Array[String](["You've acquired the first vessel. Find the second.", "You've acquired the second vessel. Find the third."])
+metadata/_custom_type_script = "uid://ctffm134lsqah"

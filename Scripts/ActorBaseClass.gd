@@ -28,7 +28,6 @@ func _physics_process(delta: float) -> void:
 	#basically to tick the behaviour script(when i eventually make it). 
 	#Will most likely be replaced by a tick function handled by the combat manager.
 	#TO BE REPLACED
-	move()
 
 func tick():
 	behaviour.update()
@@ -43,6 +42,7 @@ func damage(amt: float):
 		behaviour.death()
 
 func move():
+	#print("i am moving.")
 	if not is_inside_tree() or not nav.is_inside_tree():
 		return
 	#basically just stolen from dustrialis source code.

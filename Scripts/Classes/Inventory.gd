@@ -8,6 +8,8 @@ signal inventoryChanged()
 
 @export var idHandler: ItemIdHandler
 
+@export var goldItem: gold
+
 func assignIDs():
 	if !idHandler:
 		idHandler = Globals.idHandler
@@ -29,6 +31,7 @@ func remove(which:itemClass):
 	assignIDs()
 
 func add(which:itemClass):
+	#this is not called when loading game. OR it is but only once for some strange reason
 	inventory.append(which)
 	assignIDs()
 	inventoryChanged.emit()

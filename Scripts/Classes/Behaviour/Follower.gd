@@ -22,7 +22,8 @@ func initialize():
 
 func update():
 	#print("I am to chase", str(player.global_position))
-	var tempPosition = playerFollowerNode.global_position
+	#var tempPosition = playerFollowerNode.global_position
 	#tempPosition.y = actor.global_position.y
-	nav.target_position = tempPosition
-	actor.move()
+	#nav.target_position = tempPosition
+	#actor.move()
+	pass

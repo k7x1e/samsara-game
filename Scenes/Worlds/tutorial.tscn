@@ -110,8 +110,8 @@ transform = Transform3D(-1.0927845e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.092784
 
 [node name="Skeleton3D" parent="Actor/Visual/elder/Armature" parent_id_path=PackedInt32Array(7493415, 482351033) index="0" unique_id=1296813774]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.93801326, 0.021673534, 0.34067574, 0.060013283)
-bones/3/rotation = Quaternion(0.00012807446, -0.00020497065, 0.010293657, 0.999947)
+bones/1/rotation = Quaternion(0.9380715, 0.018985264, 0.3408463, 0.05903672)
+bones/3/rotation = Quaternion(0.00021332304, -0.00034140254, 0.01714529, 0.999853)
 bones/5/rotation = Quaternion(0.022711672, -1.1917787e-07, 2.7074563e-09, 0.99974203)
 bones/7/rotation = Quaternion(-0.36593214, -0.027977932, -0.12831022, 0.9213292)
 bones/8/rotation = Quaternion(-0.23305106, -0.018484527, -0.022327406, 0.9720324)

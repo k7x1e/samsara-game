@@ -363,7 +363,7 @@ environment = SubResource("Environment_xglpw")
 [node name="SpawnPoint" type="Node3D" parent="." unique_id=1150304135]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0)
 
-[node name="Actor" parent="." unique_id=1866149922 instance=ExtResource("11_7f25j")]
+[node name="Actor" parent="." unique_id=1866149922 groups=["Persistent"] instance=ExtResource("11_7f25j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7139394, 4.1990347, -16.553745)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=737405364]

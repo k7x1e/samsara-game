@@ -63,10 +63,19 @@ text = "Okay...."
 target = -1
 metadata/_custom_type_script = "uid://dvewwpayy1s83"
 
+[sub_resource type="Resource" id="Resource_axmk6"]
+script = ExtResource("5_5kmxp")
+text = "Could you skip this quest for 75 gold?"
+target = 4
+fallbackTarget = -1
+costsMoney = true
+cost = 75
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
 [sub_resource type="Resource" id="Resource_5kmxp"]
 script = ExtResource("4_ttr5y")
 dialogueText = "no youre not. But i could give you one. (n)Go to the building two blocks down. On the right side of it there is a set of stairs. Climb said stars and enter. There will be a few guys guarding there but talk to the guy inside in the hallway to the right and then return to me."
-dialogueOptions = Array[ExtResource("5_5kmxp")]([SubResource("Resource_jluoo")])
+dialogueOptions = Array[ExtResource("5_5kmxp")]([SubResource("Resource_jluoo"), SubResource("Resource_axmk6")])
 questStatus = 1
 quest = ExtResource("7_jluoo")
 metadata/_custom_type_script = "uid://bg6c48acdck1"
@@ -103,6 +112,7 @@ metadata/_custom_type_script = "uid://bg6c48acdck1"
 script = ExtResource("6_jluoo")
 speakerName = "Mysterious man"
 manuscript = Array[ExtResource("4_ttr5y")]([SubResource("Resource_26o22"), SubResource("Resource_387h1"), SubResource("Resource_5kmxp"), SubResource("Resource_sjhd2"), SubResource("Resource_k4n7o")])
+hasQuest = true
 metadata/_custom_type_script = "uid://bin58sxq57jsc"
 
 [sub_resource type="Resource" id="Resource_ltbwf"]
@@ -124,7 +134,7 @@ metadata/_custom_type_script = "uid://drjjmjc24qipo"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ei5c"]
 
-[node name="Actor" type="CharacterBody3D" unique_id=1866149922 groups=["Pausable"]]
+[node name="Actor" type="CharacterBody3D" unique_id=1866149922 groups=["Pausable", "Persistent"]]
 collision_layer = 521
 collision_mask = 521
 script = ExtResource("1_a4aht")

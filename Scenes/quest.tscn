@@ -20,6 +20,12 @@ font_size = 15
 shadow_size = 3
 shadow_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_gpg5m"]
+font = ExtResource("5_uy4b8")
+font_size = 15
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
 [node name="Quest" type="Control" unique_id=1717426852]
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 3
@@ -89,3 +95,18 @@ theme_override_fonts/font = ExtResource("5_uy4b8")
 text = "Quest description... Bullshit"
 label_settings = SubResource("LabelSettings_anv4d")
 autowrap_mode = 2
+
+[node name="typelable" type="Label" parent="Stuff/info/Description" unique_id=855838240]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Quest Type"
+label_settings = SubResource("LabelSettings_gpg5m")
+horizontal_alignment = 2

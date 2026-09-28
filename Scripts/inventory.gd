@@ -32,6 +32,9 @@ func updateInventory():
 	flush()
 	theInventory = Globals.Player.inventory
 	for i in range(theInventory.inventory.size()):
+		if theInventory.inventory[i].has_method("initialize"):
+			if !theInventory.inventory[i].initialized:
+				theInventory.inventory[i].initialize()
 		var temp = itemNode.instantiate()
 		self.add_child(temp)
 		temp.set_owner(self)

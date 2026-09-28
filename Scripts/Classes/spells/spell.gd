@@ -39,9 +39,14 @@ var curThreads: int = 0
 
 func checkEquipment() -> bool:
 	var tempSpells = Globals.Player.equipment.checkSlots(requiredSlots)
-	for i in tempSpells:
-		if !i:
-			return false
+	match typeof(tempSpells):
+		TYPE_ARRAY:
+			for i in tempSpells:
+				if !i:
+					return false
+		TYPE_BOOL:
+			if !tempSpells:
+				return false
 	return true
 
 func cast(caster: Variant):

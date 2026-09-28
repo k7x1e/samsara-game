@@ -18,7 +18,7 @@ func equip(item: itemClass):
 		item.equipped = true
 		updated.emit()
 		Globals.Player.animManager.playEquipAnim(item.associatedAnimation)
-		item.initialize()
+		item.initializeItem()
 		return true
 	else:
 		print(slots[item.slot].name)

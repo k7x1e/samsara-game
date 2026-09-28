@@ -1,14 +1,24 @@
 [gd_scene format=3 uid="uid://l0h4n0debnqg"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_cpbav"]
+[ext_resource type="Texture2D" uid="uid://bobpuvlc86igt" path="res://Textures/shine.png" id="1_71umd"]
+[ext_resource type="PackedScene" uid="uid://bj28q8tser5qi" path="res://Models/lanternItem.glb" id="1_snjn7"]
 
 [node name="ModifierBoneTarget3D" type="ModifierBoneTarget3D" unique_id=1057993999]
 
 [node name="lanternItem" type="Node3D" parent="." unique_id=1275375653]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4935996, 0)
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0.6, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="lanternItem" unique_id=956788846]
-layers = 8
-mesh = SubResource("SphereMesh_cpbav")
+[node name="Sprite3D" type="Sprite3D" parent="lanternItem" unique_id=1904018353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.99204844, 0)
+pixel_size = 0.005
+billboard = 1
+texture = ExtResource("1_71umd")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="lanternItem" unique_id=1264706030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.99563444, 0)
+layers = 2
+light_color = Color(0.5825375, 0.38598925, 7.70092e-07, 1)
+light_energy = 2.0
+omni_range = 10.0
+
+[node name="lanternItem" parent="lanternItem" unique_id=754240510 instance=ExtResource("1_snjn7")]

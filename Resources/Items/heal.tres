@@ -17,6 +17,7 @@ limited = true
 statted = false
 quantity = 5
 animation = "eat"
+requiredSlots = Array[String](["armLeft"])
 metadata/_custom_type_script = "uid://ehkal6i02pq"
 
 [resource]

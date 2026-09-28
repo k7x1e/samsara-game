@@ -12,20 +12,22 @@
 [ext_resource type="Resource" uid="uid://burvo2yn4lmxq" path="res://Resources/Items/heal.tres" id="8_70hv0"]
 [ext_resource type="Resource" uid="uid://byn8lfwpbjv8r" path="res://Resources/Spells/thunderbolt.tres" id="8_miouo"]
 [ext_resource type="Resource" uid="uid://bs0h3ygx3g5bt" path="res://Resources/Spells/skooma.tres" id="9_1e7my"]
-[ext_resource type="Texture2D" uid="uid://b8iv4i2fey054" path="res://icon.svg" id="9_utwlt"]
 [ext_resource type="Texture2D" uid="uid://bqxdpdin82oyj" path="res://Textures/icons/spells/heal.png" id="9_x63xi"]
-[ext_resource type="Script" uid="uid://ig7vm5nrl2aa" path="res://Scripts/classes/Items/equipmentClass.gd" id="10_kih0c"]
 [ext_resource type="Script" uid="uid://x7tekc2114cw" path="res://Scripts/classes/stats.gd" id="10_o3h8g"]
+[ext_resource type="Resource" uid="uid://cfcd0wi1f6o47" path="res://Resources/Items/lantern.tres" id="10_utwlt"]
 [ext_resource type="Environment" uid="uid://lyhkdkhxwhlj" path="res://Resources/game_environment.tres" id="11_1e7my"]
+[ext_resource type="Script" uid="uid://cok8qfpgpgw3b" path="res://Scripts/classes/Items/gold.gd" id="11_kih0c"]
 [ext_resource type="Script" uid="uid://ctffm134lsqah" path="res://Scripts/classes/quest.gd" id="11_lslt6"]
-[ext_resource type="PackedScene" uid="uid://l0h4n0debnqg" path="res://Scenes/items/lantern_item.tscn" id="11_lyrkg"]
+[ext_resource type="Texture2D" uid="uid://b7t62a858e771" path="res://sizeReference_1.png" id="11_lyrkg"]
 [ext_resource type="Resource" uid="uid://bvx7kyepfo1oa" path="res://Resources/Spells/placeholder.tres" id="12_miouo"]
 [ext_resource type="Resource" uid="uid://c2qv5krngu0i0" path="res://Resources/story/quests/testingQuest.tres" id="12_ulo2v"]
 [ext_resource type="AudioStream" uid="uid://bikro78yehb60" path="res://sound/notification/mission.wav" id="13_1iu4k"]
 [ext_resource type="Resource" uid="uid://1huepcxmm62c" path="res://Resources/story/quests/tutorialQuest.tres" id="13_8flut"]
 [ext_resource type="AudioStream" uid="uid://b0ahih5c8udqs" path="res://sound/notification/something.wav" id="14_m0x7a"]
 [ext_resource type="Texture2D" uid="uid://dhmu0toe1itnr" path="res://addons/func_godot/textures/clip.png" id="15_1e7my"]
+[ext_resource type="Resource" uid="uid://bf48dl51ufr1w" path="res://Resources/story/quests/london/scrolls.tres" id="18_c43xd"]
 [ext_resource type="Script" uid="uid://bs1xhdp0kaywn" path="res://Scripts/classes/statuseffect.gd" id="18_i2e8t"]
+[ext_resource type="Texture2D" uid="uid://bpnkh2tp6rng4" path="res://Textures/icons/quests/investigateWizards.png" id="19_avx33"]
 [ext_resource type="Resource" uid="uid://blam2i3pgoujr" path="res://Resources/Items/dash.tres" id="19_qidb7"]
 [ext_resource type="Script" uid="uid://phth27cyk05k" path="res://Scripts/rotation.gd" id="21_8flut"]
 [ext_resource type="PackedScene" uid="uid://cwkh1mr03cpqs" path="res://Models/londonProtag.glb" id="25_8flut"]
@@ -43,20 +45,16 @@ icon = ExtResource("6_52ee3")
 metadata/_custom_type_script = "uid://brua5tb5kc0it"
 
 [sub_resource type="Resource" id="Resource_lyrkg"]
-script = ExtResource("10_kih0c")
-slot = "armRight"
-node = ExtResource("11_lyrkg")
-curNode = null
-itemID = 676767
-name = "Lantern"
-icon = ExtResource("9_utwlt")
-Type = "Equipment"
-equippable = true
-metadata/_custom_type_script = "uid://ig7vm5nrl2aa"
+script = ExtResource("11_kih0c")
+name = "Gold"
+icon = ExtResource("11_lyrkg")
+Type = "Currency"
+quantity = 100
+metadata/_custom_type_script = "uid://cok8qfpgpgw3b"
 
 [sub_resource type="Resource" id="Resource_megsn"]
 script = ExtResource("4_yoq75")
-inventory = Array[ExtResource("2_megsn")]([ExtResource("4_o3h8g"), ExtResource("6_o3h8g"), SubResource("Resource_arntx"), ExtResource("8_miouo"), ExtResource("9_1e7my"), ExtResource("8_70hv0"), SubResource("Resource_lyrkg")])
+inventory = Array[ExtResource("2_megsn")]([ExtResource("4_o3h8g"), ExtResource("6_o3h8g"), SubResource("Resource_arntx"), ExtResource("8_miouo"), ExtResource("9_1e7my"), ExtResource("8_70hv0"), ExtResource("10_utwlt"), SubResource("Resource_lyrkg")])
 metadata/_custom_type_script = "uid://cse3ubaxht2cj"
 
 [sub_resource type="Resource" id="Resource_1e7my"]
@@ -71,12 +69,14 @@ progressStats = null
 statDict = null
 metadata/_custom_type_script = "uid://x7tekc2114cw"
 
-[sub_resource type="Resource" id="Resource_1iu4k"]
+[sub_resource type="Resource" id="Resource_rxg2u"]
 script = ExtResource("11_lslt6")
-quest_state = 1
-icon = ExtResource("6_52ee3")
-questName = "Test Quest"
-descriptions = Array[String](["", "Ignore this one."])
+icon = ExtResource("19_avx33")
+questName = "Investigate the Mystics."
+questId = 789
+mainQuest = true
+announce = true
+descriptions = Array[String](["blank", "You've learned about the existence of the Mystics. Find out more.", "You've started to find out more and more about the Mystics and their quest.", "You've found out all you need to know about the mystics.", "mystery status", "You betrayed [THE MAN] and joined the Mystics."])
 metadata/_custom_type_script = "uid://ctffm134lsqah"
 
 [sub_resource type="Resource" id="Resource_qidb7"]
@@ -203,7 +203,7 @@ equipment = SubResource("Resource_c43xd")
 inventory = SubResource("Resource_megsn")
 stats = SubResource("Resource_1e7my")
 experienceThresh = 5.0
-quests = Array[ExtResource("11_lslt6")]([ExtResource("12_ulo2v"), SubResource("Resource_1iu4k"), ExtResource("13_8flut")])
+quests = Array[ExtResource("11_lslt6")]([ExtResource("12_ulo2v"), ExtResource("13_8flut"), ExtResource("18_c43xd"), SubResource("Resource_rxg2u")])
 sounds = Dictionary[String, AudioStream]({
 "Level1": ExtResource("14_m0x7a"),
 "Mission1": ExtResource("13_1iu4k")
@@ -239,12 +239,12 @@ lookTargetNode = NodePath("../lookTarget")
 transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0, 0.06221825, 0)
 
 [node name="Armature" parent="Rotation/londonProtag" index="2" unique_id=1182342492]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25041863, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6535616, 0)
 
 [node name="Skeleton3D" parent="Rotation/londonProtag/Armature" index="0" unique_id=1788119391]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.93812346, 0.016210195, 0.34101945, 0.058028184)
-bones/3/rotation = Quaternion(0.00011756689, -0.00018815423, 0.009449137, 0.99995536)
+bones/1/rotation = Quaternion(0.93815786, 0.014086697, 0.34114996, 0.057256132)
+bones/3/rotation = Quaternion(0.00016211042, -0.00025944176, 0.013029207, 0.99991506)
 bones/7/rotation = Quaternion(-0.440351, -0.03822061, -0.14063425, 0.8859189)
 bones/8/rotation = Quaternion(-0.10192366, -0.044773385, -0.007949366, 0.99375236)
 bones/9/rotation = Quaternion(-0.17423274, -0.03710145, 0.030870311, 0.98352104)
@@ -252,12 +252,12 @@ bones/10/rotation = Quaternion(0.22203927, 0.5698971, 0.78985965, 0.045138724)
 bones/11/rotation = Quaternion(0.09578154, 0.8317536, -0.4750532, -0.2708071)
 bones/12/rotation = Quaternion(0.11073949, -0.056747727, -0.22298805, 0.9668468)
 bones/13/rotation = Quaternion(0.14083624, -0.18853082, 0.10712266, 0.96599483)
-bones/15/rotation = Quaternion(0.7183302, 0.16916317, -0.110394195, 0.6657317)
-bones/16/rotation = Quaternion(0.0071800654, -0.08040006, 0.69510573, 0.71436155)
-bones/17/rotation = Quaternion(0.4847334, 0.82484215, -0.10067562, 0.27300808)
-bones/19/rotation = Quaternion(-0.7253938, -0.116987444, -0.05713449, 0.6759094)
-bones/20/rotation = Quaternion(-0.034210175, 0.018586408, 0.17196321, 0.9843337)
-bones/21/rotation = Quaternion(-0.12736396, -0.07938601, -0.7286393, 0.66825235)
+bones/15/rotation = Quaternion(0.6799911, 0.32147318, -0.2171068, 0.62219906)
+bones/16/rotation = Quaternion(0.0069123693, -0.08080773, 0.69921225, 0.710299)
+bones/17/rotation = Quaternion(0.5442452, 0.78830284, -0.12185256, 0.25986138)
+bones/19/rotation = Quaternion(-0.7216387, 0.12929009, 0.11310328, 0.6706187)
+bones/20/rotation = Quaternion(-0.036518678, 0.0059562703, 0.054217182, 0.9978434)
+bones/21/rotation = Quaternion(-0.11428174, -0.0938426, -0.54463756, 0.825532)
 
 [node name="AimModifier3D" type="AimModifier3D" parent="Rotation/londonProtag/Armature/Skeleton3D" index="0" unique_id=1846975441]
 transform = Transform3D(5.722046e-06, 30.000004, 3.5762798e-06, -4.547474e-13, -3.576279e-06, 30.000002, 30.00001, -8.583069e-06, -1.5916157e-12, -1.0048591e-14, 1.1764284, -5.024298e-15)

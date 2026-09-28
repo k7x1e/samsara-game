@@ -56,11 +56,18 @@ var dashVector = Vector3(dashD, 0, 0)
 @export var isGlobal: bool = true
 @export var globalName: StringName = "Player"
 
+@export var goldamt: int = 100
 
 var spells: Array[spell]
 
 var referenceN: Node3D
 var loaded = false
+
+func initializeGold():
+	Globals.goldItem.gold_changed.connect(updateGold)
+
+func updateGold():
+	goldamt = Globals.goldItem.quantity
 
 func modifyEffects(index: statuseffect, append: bool):
 	match append:
@@ -260,10 +267,11 @@ func get_save_data():
 		"inventory": inventory.duplicate(true),
 		"stats": stats.duplicate(true),
 		#wizard section
-		#"spells": wizard.spells.duplicate(true),
+		"spells": wizard.spells.duplicate(true),
 		"health": health,
 		"mana": mana,
 		"quests": quests_copy,
+		"equipment": equipment.duplicate(true),
 	}
 
 func load_save_data(data: Dictionary):
@@ -271,9 +279,11 @@ func load_save_data(data: Dictionary):
 	inventory = data["inventory"]
 	stats = data["stats"]
 	#spells = Globals.convertArray(data["spells"],spell)
+	#equipment = data["equipment"]
 	health = data["health"]
 	mana = data["mana"]
 	quests = Globals.convertArray(data["quests"],Quest)
 	Globals.quests = quests
 	Globals.stats = stats
 	refreshStats()
+	#Globals.goldItem = inventory.goldItem

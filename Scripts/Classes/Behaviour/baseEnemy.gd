@@ -63,7 +63,7 @@ func update():
 		2:
 			pass
 	#tempPosition.y = actor.global_position.y
-	#actor.move()
+	actor.move()
 
 func wander():
 	pass #do nothing for now

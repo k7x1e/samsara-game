@@ -40,6 +40,8 @@ var backupGlobals
 
 @export var lastCompletedQuestName: String = "None."
 
+@export var goldItem: gold
+
 func getGlobals() -> Dictionary[String, Variant]:
 	var quests_copy: Array[Quest] = []
 	for q in quests:

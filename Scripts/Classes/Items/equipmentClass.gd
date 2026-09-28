@@ -11,7 +11,7 @@ class_name equipmentItem
 
 @export var curNode: Variant
 
-func initialize():
+func initializeItem():
 	var temp = node.instantiate()
 	Globals.Player.skeleton.add_child(temp)
 	temp.set_owner(Globals.Player)

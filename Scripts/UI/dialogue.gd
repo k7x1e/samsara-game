@@ -31,6 +31,8 @@ func update():
 				temp.disabled = true
 				if i.hide:
 					temp.hide()
+			elif i.costsMoney and Globals.Player.goldamt < i.cost:
+				temp.disabled = true
 			temp.pressed.connect(optionPressed.bind(i))
 			b += 1
 		if currentW.questStatus != 0 and currentW.questStatus != 4:
@@ -45,6 +47,7 @@ func optionPressed(i: DialogueOption):
 		Globals.Root.stopDialogue()
 		return
 	index = 3
+	index = i.target
 	match i.condMode:
 		1:
 			match i.condition.fulfilled:
@@ -58,6 +61,6 @@ func optionPressed(i: DialogueOption):
 					index = i.fallbackTarget
 				false:
 					index = i.target
-		-1:
-			index = i.target
+	if i.costsMoney:
+		Globals.goldItem.removeGold(i.cost)
 	update()

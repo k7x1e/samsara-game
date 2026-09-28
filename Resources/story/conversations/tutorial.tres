@@ -67,4 +67,5 @@ metadata/_custom_type_script = "uid://bg6c48acdck1"
 script = ExtResource("4_4rbfs")
 speakerName = "Mysterious Man"
 manuscript = Array[ExtResource("1_fdpo0")]([SubResource("Resource_0wdrf"), SubResource("Resource_ktix3"), SubResource("Resource_ir32r"), SubResource("Resource_vl8n3")])
+hasQuest = true
 metadata/_custom_type_script = "uid://bin58sxq57jsc"

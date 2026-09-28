@@ -17,6 +17,7 @@ signal quantity_changed()
 @export var equipped: bool = false
 @export var equippable: bool = false #DOES NOT APPLY TO SPELLS #moved to the actual equipment base class
 
+@export var cost: int
 @export var quantity: int:
 	set(value):
 		quantity = value

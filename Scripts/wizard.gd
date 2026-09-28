@@ -49,3 +49,13 @@ func remove(which: int, replacement: bool):
 		Globals.inventory.unequip(NodeToUnequip)
 	#for some odd reason it was set to duplicate the placeholder which was causing these bugs
 	spells[which] = placeholderSpell
+
+func savespells() -> Array[int]:
+	var result: Array[int]
+	for i in spells:
+		result.append(i.parentItemUID)
+	return result
+
+func loadspells(which: Array[int]):
+	for i in which:
+		pass

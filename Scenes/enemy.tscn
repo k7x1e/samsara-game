@@ -19,7 +19,7 @@ player = null
 nav = null
 atdamage = 20.0
 health = 100.0
-speed = 6.0
+speed = 15.0
 actor = null
 metadata/_custom_type_script = "uid://wwksmh6v3aja"
 
@@ -89,8 +89,8 @@ visible = false
 
 [node name="Skeleton3D" parent="Visual/peasant1/Armature" parent_id_path=PackedInt32Array(347662839, 504917625) index="0" unique_id=1970704553]
 bones/0/rotation = Quaternion(0.93800986, 0.021814236, 0.34066674, -0.060064632)
-bones/1/rotation = Quaternion(0.938164, 0.013672806, 0.34117517, 0.057105087)
-bones/3/rotation = Quaternion(0.012064243, -0.00043789268, 0.0064756484, 0.9999062)
+bones/1/rotation = Quaternion(0.93816686, 0.0134722525, 0.34118742, 0.05703215)
+bones/3/rotation = Quaternion(0.012068346, -0.00044867705, 0.0068136714, 0.99990386)
 bones/7/rotation = Quaternion(-0.4562524, -0.049126726, -0.16023543, 0.87392503)
 bones/8/rotation = Quaternion(-0.07875365, -0.067492984, -0.10037203, 0.98952925)
 bones/9/rotation = Quaternion(0.014338688, -0.16604029, -0.09179396, 0.9817326)

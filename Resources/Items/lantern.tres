@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="equipmentItem" format=3 uid="uid://cfcd0wi1f6o47"]
+
+[ext_resource type="Texture2D" uid="uid://b8iv4i2fey054" path="res://icon.svg" id="1_r6agu"]
+[ext_resource type="PackedScene" uid="uid://l0h4n0debnqg" path="res://Scenes/items/lantern_item.tscn" id="2_hewwn"]
+[ext_resource type="Script" uid="uid://ig7vm5nrl2aa" path="res://Scripts/classes/Items/equipmentClass.gd" id="3_f0jnu"]
+
+[resource]
+script = ExtResource("3_f0jnu")
+slot = "armRight"
+node = ExtResource("2_hewwn")
+curNode = null
+itemID = 676767
+name = "Lantern"
+icon = ExtResource("1_r6agu")
+Type = "Equipment"
+equippable = true
+metadata/_custom_type_script = "uid://ig7vm5nrl2aa"

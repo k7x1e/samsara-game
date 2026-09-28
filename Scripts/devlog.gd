@@ -512,3 +512,12 @@
 	#finished home map.
 	#16:43
 	#took a cig with dexter and now i feel like shit so i shall cease development for some time
+	#18:27
+	#its time for something i guess.
+	#books.
+	#18:50
+	#nevermind i shalt implement a tooltip instead
+	#19:15
+	#changed the item type to a enum
+	#21:03
+	#been doin a whole bunch of bullshit

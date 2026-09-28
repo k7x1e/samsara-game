@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="itemSpell" format=3 uid="uid://burvo2yn4lmxq"]
 
 [ext_resource type="Texture2D" uid="uid://bqxdpdin82oyj" path="res://Textures/icons/spells/heal.png" id="1_1acg4"]
-[ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/classes/Items/SpellItem.gd" id="2_5n4on"]
-[ext_resource type="Script" uid="uid://ehkal6i02pq" path="res://Scripts/classes/spells/consumable.gd" id="3_mwbfv"]
+[ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/Classes/Items/SpellItem.gd" id="2_5n4on"]
+[ext_resource type="Script" uid="uid://ehkal6i02pq" path="res://Scripts/Classes/spells/consumable.gd" id="3_mwbfv"]
 [ext_resource type="PackedScene" uid="uid://b5w0a01u8whh2" path="res://Scenes/spells/heal_spell.tscn" id="4_kekp0"]
 
 [sub_resource type="Resource" id="Resource_70hv0"]
@@ -26,5 +26,6 @@ theSpell = SubResource("Resource_70hv0")
 name = "Health Potion"
 description = "Some bullshit i guess"
 icon = ExtResource("1_1acg4")
-Type = "Spell"
+Type = 3
+isSpell = true
 metadata/_custom_type_script = "uid://crrif2oof7ji8"

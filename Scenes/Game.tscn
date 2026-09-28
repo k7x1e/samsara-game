@@ -87,7 +87,7 @@ fadeAnim = NodePath("fading/AnimationPlayer")
 
 [node name="bgm" type="AudioStreamPlayer" parent="." unique_id=830326665]
 stream = ExtResource("5_b2bpf")
-volume_db = -4.0
+volume_db = -10.0
 autoplay = true
 bus = &"Music"
 

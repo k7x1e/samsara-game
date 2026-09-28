@@ -24,5 +24,6 @@ func _physics_process(delta: float) -> void:
 func _on_collision_body_entered(body: Node3D) -> void:
 	print(body.name)
 	if body.name != "Player":
+		Globals.stats.experience(1)
 		body.damage(spdamage)
 		self.queue_free()

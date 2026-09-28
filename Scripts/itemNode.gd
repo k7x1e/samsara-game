@@ -14,7 +14,7 @@ var offset = Vector2(5,5)
 func initialize(fart: itemClass):
 	#print("initializing item")
 	ownItem = fart
-	if ownItem.Type == "Spell":
+	if ownItem.isSpell:
 		ownItem.theSpell.quantity_changed.connect(update)
 	else:
 		ownItem.quantity_changed.connect(update)
@@ -23,7 +23,7 @@ func initialize(fart: itemClass):
 	update()
 
 func update():
-	if ownItem.Type == "Spell":
+	if ownItem.isSpell:
 		ownItem.quantity = ownItem.theSpell.quantity
 	if ownItem.quantity != 0:
 		quantitylabel.text = str(ownItem.quantity)

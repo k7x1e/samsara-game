@@ -14,7 +14,7 @@ func update():
 	var statString: String = ""
 	var x = 0
 	for i in Globals.stats.stats:
-		statString += str(stats[x], ": ", i, "\n")
+		statString += str(stats[x], ": ", int(i), "\n")
 		x += 1
 	statLabel.text = statString
 

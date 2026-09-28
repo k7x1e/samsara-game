@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b8iv4i2fey054" path="res://icon.svg" id="1_r6agu"]
 [ext_resource type="PackedScene" uid="uid://l0h4n0debnqg" path="res://Scenes/items/lantern_item.tscn" id="2_hewwn"]
-[ext_resource type="Script" uid="uid://ig7vm5nrl2aa" path="res://Scripts/classes/Items/equipmentClass.gd" id="3_f0jnu"]
+[ext_resource type="Script" uid="uid://ig7vm5nrl2aa" path="res://Scripts/Classes/Items/equipmentClass.gd" id="3_f0jnu"]
 
 [resource]
 script = ExtResource("3_f0jnu")
@@ -12,6 +12,6 @@ curNode = null
 itemID = 676767
 name = "Lantern"
 icon = ExtResource("1_r6agu")
-Type = "Equipment"
+Type = 2
 equippable = true
 metadata/_custom_type_script = "uid://ig7vm5nrl2aa"

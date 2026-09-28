@@ -1,5 +1,7 @@
 extends Control
 
+@onready var useB = $VBoxContainer/use
+
 @onready var equipB = $VBoxContainer/equip
 @onready var unEquipB = $VBoxContainer/unequip
 
@@ -19,12 +21,26 @@ func updateItem(iteminQ: Node):
 	var tempitem: itemClass = currentItem.ownItem
 	nameLabel.text = tempitem.name
 	match tempitem.Type:
-		"Spell":
-			equipButtons(true)
-			assignButtons(false)
-		"Item":
+		0:
 			equipButtons(true)
 			assignButtons(true)
+			useB.disabled = true
+		1:
+			equipButtons(true)
+			assignButtons(false)
+			useB.disabled = true
+		2:
+			equipButtons(false)
+			assignButtons(true)
+			useB.disabled = true
+		3:
+			equipButtons(true)
+			assignButtons(false)
+			useB.disabled = false
+		_:
+			equipButtons(true)
+			assignButtons(true)
+			useB.disabled = true
 	if tempitem.equippable:
 		equipButtons(false, tempitem.equipped)
 	if tempitem.equipped and tempitem.equippable:
@@ -48,7 +64,7 @@ func close():
 #assigning section
 func assignSpell(which: int):
 	var itemInQ = currentItem.ownItem
-	if itemInQ.Type == "Spell":
+	if itemInQ.isSpell:
 		if Globals.wizard.spells.has(itemInQ.theSpell):
 			#oh my god
 			#for some bumfuck reason certain spells(healing spell) believe they are other spells (thunderbolt)
@@ -118,3 +134,7 @@ func _on_discard_pressed() -> void:
 	Globals.Player.inventory.remove(currentItem.ownItem)
 	Globals.inventory.updateInventory()
 	close()
+
+
+func _on_use_pressed() -> void:
+	currentItem.ownItem.theSpell.cast(self, true)

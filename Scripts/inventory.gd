@@ -73,22 +73,16 @@ func pickup(what: Node):
 func unequip(what: Node):
 	what.ownItem.equipped = false
 	what.checkBorder()
-	match what.ownItem.Type:
-		"Spell":
-			Globals.wizard.remove(Globals.wizard.spells.find(what.ownItem.theSpell), false)
-			Globals.spellMaster.updateSpells(Globals.wizard.spells)
-		_:
-			pass
+	if what.ownItem.isSpell:
+		Globals.wizard.remove(Globals.wizard.spells.find(what.ownItem.theSpell), false)
+		Globals.spellMaster.updateSpells(Globals.wizard.spells)
 	updateInventory()
 
 func unequipItem(what: itemClass):
 	what.equipped = false
-	match what.Type:
-		"Spell":
-			Globals.wizard.remove(Globals.wizard.spells.find(what.theSpell), false)
-			Globals.spellMaster.updateSpells(Globals.wizard.spells)
-		_:
-			pass
+	if what.isSpell:
+		Globals.wizard.remove(Globals.wizard.spells.find(what.theSpell), false)
+		Globals.spellMaster.updateSpells(Globals.wizard.spells)
 	updateInventory()
 
 func _gui_input(event: InputEvent) -> void:

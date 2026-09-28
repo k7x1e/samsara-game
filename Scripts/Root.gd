@@ -14,11 +14,10 @@ var updatedelay: float
 var updatetick: float = 0.0
 
 var Menu
-var toggled = false
-var paused = false
-var inDialogue = false
 var dialogueMenu
 var pauseMenu
+
+@export_enum("none", "dialogue", "menu", "paused", "specific") var currentMenu: int
 
 #var newWorld
 var newWorldCaller ##dont know what this is still doing here
@@ -179,45 +178,45 @@ func stopDialogue():
 	toggleDialogue()
 
 func toggleDialogue():
-	if !paused and !toggled and !inDialogue:
+	if currentMenu == 0:
 		pause(true)
 		Globals.dialogueMenu.set_process(true)
 		Globals.dialogueMenu.get_parent().show()
-		inDialogue = true
-	elif !toggled and !paused:
+		currentMenu = 1
+	elif currentMenu == 1:
 		pause(false)
 		Globals.dialogueMenu.set_process(false)
 		Globals.dialogueMenu.get_parent().hide()
-		inDialogue = false
+		currentMenu = 0
 
 func pauseGame():
 	if !pauseMenu:
 		pauseMenu = get_node("PauseMenu")
 	print("pausing")
-	if !paused and !toggled and !inDialogue:
+	if currentMenu == 0:
 		pause(true)
 		pauseMenu.set_process(true)
 		pauseMenu.show()
-		paused = true
-	elif !toggled and !inDialogue:
+		currentMenu = 3
+	elif currentMenu == 3:
 		pause(false)
 		pauseMenu.set_process(false)
 		pauseMenu.hide()
-		paused = false
+		currentMenu = 0
 
 func toggleMenu():
-	if !toggled and !paused and !inDialogue:
+	if currentMenu == 0:
 		Menu.set_process(true)
 		Menu.show()
 		Menu.activateMenu()
 		pause(true)
-		toggled = !toggled
-	elif !paused and !inDialogue:
+		currentMenu = 2
+	elif currentMenu == 2:
 		Menu.hideMenu()
 		Menu.hide()
 		Menu.set_process(false)
 		pause(false)
-		toggled = !toggled
+		currentMenu = 0
 
 
 #straight up stealing code from dustrialis, gng

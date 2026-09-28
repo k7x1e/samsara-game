@@ -24,6 +24,7 @@ func damageBodies():
 	#print("damaging bodies")
 	var bodies = effectArea.get_overlapping_bodies()
 	for body in bodies:
+		Globals.stats.experience(1)
 		#print("damaging bodies")
 		body.damage(150)
 		

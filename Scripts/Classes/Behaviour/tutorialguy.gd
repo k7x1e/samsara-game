@@ -34,15 +34,15 @@ func update():
 		#print("I am to chase", str(player.global_position))
 		#var tempPosition = playerFollowerNode.global_position
 		#tempPosition.y = actor.global_position.y
-		if nav.is_target_reached:
-			moving = false
+		#if nav.is_target_reached:
+		#	moving = false
 		nav.target_position = ownPosition
 		actor.move()
 		if !moving:
 			await Engine.get_main_loop().create_timer(2.0).timeout
 			say("You cannot kill me.", 2.0)
 		if actor.global_position.distance_to(ownPosition) <= 0.1:
-			print("no longer walking")
+			#print("no longer walking")
 			animTree.set("parameters/Blend2 2/blend_amount", 0.0)
 	if outoftutorial.fulfilled:
 		print("out of tutorial")

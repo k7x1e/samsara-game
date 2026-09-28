@@ -2,7 +2,9 @@ extends spell
 
 class_name consumable
 
-func cast(caster: Variant):
+@export var hasNode: bool = true
+
+func cast(_caster: Variant, _fromInventory: bool = false):
 	#print (curThreads)
 	#Globals.Player
 	#updateStats()
@@ -11,10 +13,11 @@ func cast(caster: Variant):
 		castable = false
 		var actualNode = spellNode.instantiate()
 		Globals.Root.add_child(actualNode)
-		actualNode.global_rotation = caster.global_rotation
-		actualNode.global_position = caster.global_position
+		#actualNode.global_rotation = caster.global_rotation
+		#actualNode.global_position = caster.global_position
 		actualNode.set_owner(Globals.Root)
 		actualNode.initialize()
+		hasNode = !_fromInventory
 		cooldown_active = true
 		cooldown()
 		return true
@@ -25,13 +28,15 @@ func cooldown():
 	curThreads += 1
 	spellTimer = Timer.new()
 	Globals.spellMaster.add_child(spellTimer)
-	uiNode.dim.show()
-	uiNode.timer_active = true
-	uiNode.timerNode = spellTimer
+	if hasNode:
+		uiNode.dim.show()
+		uiNode.timer_active = true
+		uiNode.timerNode = spellTimer
+		uiNode.dim.max_value = spellTimer.wait_time
 	spellTimer.start(coolDown)
-	uiNode.dim.max_value = spellTimer.wait_time
 	await Engine.get_main_loop().create_timer(coolDown).timeout
 	curThreads -= 1
 	cooldown_active = false
-	uiNode.dim.hide()
+	if hasNode:
+		uiNode.dim.hide()
 	castable = true

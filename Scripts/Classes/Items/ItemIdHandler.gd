@@ -7,7 +7,7 @@ class_name ItemIdHandler
 func give_id(itemInQuestion: itemClass):
 	if itemInQuestion:
 		while itemInQuestion.UID == 0:
-			if itemInQuestion.Type != "Currency":
+			if itemInQuestion.Type != 5:
 				var temp = randi()
 				var result: int = 1  #0 means used
 				for i in range(usedArrays.size()):
@@ -22,9 +22,9 @@ func give_id(itemInQuestion: itemClass):
 
 func give_id_based_on_type(theItem: itemClass, id: int):
 	match theItem.Type:
-		"Spell":
+		1:
 			theItem.theSpell.parentItemUID = id
-		"Item":
+		0:
 			pass
 		_:
 			print("item lacks type, UID not properly assigned to subitems")

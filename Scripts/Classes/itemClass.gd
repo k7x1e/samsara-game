@@ -12,7 +12,8 @@ signal quantity_changed()
 @export var description: String
 @export var icon: Texture
 
-@export var Type: String = "Item"
+@export_enum("Item", "Spell", "Equipment", "Consumable", "Book", "Currency") var Type: int ## item, spell, equipment, consumable, book, currency
+@export var isSpell: bool = false
 
 @export var equipped: bool = false
 @export var equippable: bool = false #DOES NOT APPLY TO SPELLS #moved to the actual equipment base class

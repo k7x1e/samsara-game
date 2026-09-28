@@ -82,7 +82,7 @@ func checkLevelUnlocks(stat: int, level: int): ## only items as of now
 	var unlockindex = str(stat, level)
 	if unlocks.has(unlockindex):
 		var unlock = unlocks[unlockindex]
-		print("unlocked some bullshit")
+		notify(str("unlocked: ", unlock.name))
 		inventory.add(unlock)
 
 func refreshStats():

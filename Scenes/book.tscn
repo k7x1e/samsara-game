@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://b6swssf6mol5s"]
+
+[node name="Book" type="Control" unique_id=415083737]
+layout_mode = 3
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.7
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=913111707]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pages" type="HBoxContainer" parent="." unique_id=192896586]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.03
+anchor_right = 0.97
+anchor_bottom = 0.97
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="page1" type="VBoxContainer" parent="pages" unique_id=1974532086]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="text" type="Label" parent="pages/page1" unique_id=1857838757]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+size_flags_vertical = 3
+text = "The Lusty Argonian Maid, v1
+Act IV, Scene III, continued
+
+Lifts-Her-Tail
+Certainly not, kind sir! I am here but to clean your chambers.
+
+Crantius Colto
+Is that all you have come here for, little one? My chambers?
+
+Lifts-Her-Tail
+I have no idea what it is you imply, master. I am but a poor Argonian maid.
+
+Crantius Colto
+So you are, my dumpling. And a good one at that. Such strong legs and shapely tail.
+
+Lifts-Her-Tail
+You embarrass me, sir!
+
+Crantius Colto
+Fear not. You are safe here with me."
+autowrap_mode = 2
+
+[node name="page2" type="VBoxContainer" parent="pages" unique_id=1384428506]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="text" type="Label" parent="pages/page2" unique_id=1592964408]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Lifts-Her-Tail
+I must finish my cleaning, sir. The mistress will have my head if I do not!
+
+Crantius Colto
+Cleaning, eh? I have something for you. Here, polish my spear.
+
+Lifts-Her-Tail
+But it is huge! It could take me all night!
+
+Crantius Colto
+Plenty of time, my sweet. Plenty of time.
+
+END OF ACT IV, SCENE III"
+autowrap_mode = 2
+
+[node name="lastPage" type="Button" parent="." unique_id=1192997868]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_right = 32.0
+grow_vertical = 0
+
+[node name="nextPage" type="Button" parent="." unique_id=1398731676]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+grow_horizontal = 0
+grow_vertical = 0

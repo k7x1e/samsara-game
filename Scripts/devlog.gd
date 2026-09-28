@@ -521,3 +521,6 @@
 	#changed the item type to a enum
 	#21:03
 	#been doin a whole bunch of bullshit
+	#21:10
+	#this is not written inside godot and will not be applied but remember, as for creating a map if its smaller by a factor of x (I.E 1x = 5) then you can just do vector division. As long as the origin is the same point for both of them translating is simply division.
+	#Making a minimap IS NOT challenging.

@@ -1,8 +1,8 @@
 [gd_scene format=4]
 
-[ext_resource type="PackedScene" path="res://Scenes/Player.tscn" id="1_3siir"]
-[ext_resource type="PackedScene" path="res://Scenes/menu.tscn" id="2_lch76"]
-[ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="3_3pvyx"]
+[ext_resource type="PackedScene" uid="uid://ccs47wlxaacj4" path="res://Scenes/Player.tscn" id="1_3siir"]
+[ext_resource type="PackedScene" uid="uid://b4apr6vl8oocn" path="res://Scenes/menu.tscn" id="2_lch76"]
+[ext_resource type="PackedScene" uid="uid://ctqlxrikarog4" path="res://Scenes/pause_menu.tscn" id="3_3pvyx"]
 
 [sub_resource type="GDScript" id="GDScript_kqphk"]
 script/source = "extends Node3D

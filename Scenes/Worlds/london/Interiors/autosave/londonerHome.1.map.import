@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://dmghxdcc0rafi"
+path="res://.godot/imported/londonerHome.1.map-c550268729ff7ffbec4f3185ccd991b6.tres"
+
+[deps]
+
+source_file="res://Scenes/Worlds/london/Interiors/autosave/londonerHome.1.map"
+dest_files=["res://.godot/imported/londonerHome.1.map-c550268729ff7ffbec4f3185ccd991b6.tres"]
+
+[params]
+

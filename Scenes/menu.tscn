@@ -47,7 +47,6 @@ script = ExtResource("1_xhh6f")
 
 [node name="Menu" type="Control" parent="." unique_id=1668157874]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -274,7 +273,34 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 
-[node name="ignore" type="Control" parent="Menu/questTracker/VBoxContainer/ScrollContainer/questContainer" unique_id=32634153]
+[node name="main" type="VBoxContainer" parent="Menu/questTracker/VBoxContainer/ScrollContainer/questContainer" unique_id=1256872687]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Menu/questTracker/VBoxContainer/ScrollContainer/questContainer/main" unique_id=1407295825]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_wbdvm")
+text = "Main Quests"
+label_settings = ExtResource("8_d77ms")
+horizontal_alignment = 1
+
+[node name="noOverLap" type="Control" parent="Menu/questTracker/VBoxContainer/ScrollContainer/questContainer/main" unique_id=1990325763]
+layout_mode = 2
+
+[node name="sub" type="VBoxContainer" parent="Menu/questTracker/VBoxContainer/ScrollContainer/questContainer" unique_id=585098761]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Menu/questTracker/VBoxContainer/ScrollContainer/questContainer/sub" unique_id=1137047025]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_wbdvm")
+text = "Substory Quests"
+label_settings = ExtResource("8_d77ms")
+horizontal_alignment = 1
+
+[node name="noOverLap" type="Control" parent="Menu/questTracker/VBoxContainer/ScrollContainer/questContainer/sub" unique_id=1355236095]
 layout_mode = 2
 
 [node name="Control" type="Control" parent="Menu/questTracker" unique_id=836588801]

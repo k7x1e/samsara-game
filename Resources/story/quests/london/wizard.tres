@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://dmhd8hbkd8ft7"]
+
+[ext_resource type="Texture2D" uid="uid://bpnkh2tp6rng4" path="res://Textures/icons/quests/investigateWizards.png" id="1_y7xnb"]
+[ext_resource type="Script" uid="uid://ctffm134lsqah" path="res://Scripts/classes/quest.gd" id="2_nctam"]
+
+[resource]
+script = ExtResource("2_nctam")
+icon = ExtResource("1_y7xnb")
+questName = "Investigate the Mystics."
+questId = 789
+mainQuest = true
+announce = true
+descriptions = Array[String](["blank", "You've learned about the existence of the Mystics. Find out more.", "You've started to find out more and more about the Mystics and their quest.", "You've found out all you need to know about the mystics.", "mystery status", "You betrayed [THE MAN] and joined the Mystics."])
+metadata/_custom_type_script = "uid://ctffm134lsqah"

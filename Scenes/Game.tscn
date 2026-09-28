@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://brkcfwu3ix8u6" path="res://Scripts/Root.gd" id="1_kldst"]
 [ext_resource type="Resource" uid="uid://b5t6pkvtcweo4" path="res://Resources/gameState.tres" id="2_kldst"]
-[ext_resource type="PackedScene" uid="uid://c12hkpbebfwf0" path="res://Scenes/Worlds/Interiors/londonPub.tscn" id="3_j5yw3"]
-[ext_resource type="PackedScene" uid="uid://nxogfgeamf7b" path="res://Scenes/Worlds/Interiors/mysteryPlace.tscn" id="4_kldst"]
+[ext_resource type="PackedScene" uid="uid://c12hkpbebfwf0" path="res://Scenes/Worlds/london/Interiors/londonPub.tscn" id="3_j5yw3"]
+[ext_resource type="PackedScene" uid="uid://nxogfgeamf7b" path="res://Scenes/Worlds/london/Interiors/mysteryPlace.tscn" id="4_kldst"]
 [ext_resource type="PackedScene" uid="uid://prrtp8iwyf2t" path="res://Scenes/Worlds/tutorial.tscn" id="5_7lihs"]
 [ext_resource type="AudioStream" uid="uid://ds1552d2ah3xk" path="res://sound/music/Dueil Angoisseus.mp3" id="5_b2bpf"]
-[ext_resource type="PackedScene" uid="uid://def56i5yvabj3" path="res://Scenes/Worlds/Interiors/wizard_lair.tscn" id="6_2irst"]
+[ext_resource type="PackedScene" uid="uid://def56i5yvabj3" path="res://Scenes/Worlds/london/Interiors/wizard_lair.tscn" id="6_2irst"]
 [ext_resource type="PackedScene" uid="uid://dgo271ukrhe1h" path="res://Scenes/world.tscn" id="7_bf53h"]
 [ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="7_fgofq"]
+[ext_resource type="PackedScene" uid="uid://66nltbg1vkjx" path="res://Scenes/Worlds/london/Interiors/londonerHome.tscn" id="8_71axn"]
 
 [sub_resource type="Animation" id="Animation_65i65"]
 length = 0.001
@@ -76,6 +77,7 @@ gamestate = ExtResource("2_kldst")
 interiors = Dictionary[String, PackedScene]({
 "london": ExtResource("7_bf53h"),
 "londonPub": ExtResource("3_j5yw3"),
+"londonerHome": ExtResource("8_71axn"),
 "mysteryPlace": ExtResource("4_kldst"),
 "tutorial": ExtResource("5_7lihs"),
 "wizardLair": ExtResource("6_2irst")

@@ -113,6 +113,9 @@ func GetNode(itemC: itemClass):
 			return n
 	return false
 
+func closeDropDown():
+	dropDownNode.hide()
+
 func dropDown(nodeinquestion: Node):
 	#replace with a neat function
 	nsfx.play()

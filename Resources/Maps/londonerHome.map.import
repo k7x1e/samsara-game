@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://dx18k7bl06der"
+path="res://.godot/imported/londonerHome.map-85316ff8e9dda8e07369f5a4b9db236d.tres"
+
+[deps]
+
+source_file="res://Resources/Maps/londonerHome.map"
+dest_files=["res://.godot/imported/londonerHome.map-85316ff8e9dda8e07369f5a4b9db236d.tres"]
+
+[params]
+

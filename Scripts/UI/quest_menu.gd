@@ -1,6 +1,8 @@
 extends Control
 
-@onready var questcontainer = $VBoxContainer/ScrollContainer/questContainer
+#words to the wise, make sure these arent twisted
+@onready var sidequestcontainer = $VBoxContainer/ScrollContainer/questContainer/sub
+@onready var mainquestcontainer = $VBoxContainer/ScrollContainer/questContainer/main
 @onready var questNode = preload("res://Scenes/quest.tscn")
 
 @export var quests: Array[Quest]
@@ -15,14 +17,24 @@ func updateWindow():
 func initialize():
 	quests = Globals.quests
 	#purge
-	for i in questcontainer.get_children():
-		i.queue_free()
+	for i in mainquestcontainer.get_children():
+		if i.name != "Label":
+			i.queue_free()
+	for i in sidequestcontainer.get_children():
+		if i.name != "Label":
+			i.queue_free()
 	
 	#add quests
 	for i in quests:
 		if i.isQuestDiscovered():
 			var temp = questNode.instantiate()
-			questcontainer.add_child(temp)
+			match i.mainQuest:
+				true:
+					#print("main quest")
+					mainquestcontainer.add_child(temp)
+				false:
+					#print("side quest")
+					sidequestcontainer.add_child(temp)
 			temp.set_owner(self)
 			temp.quest = i
 			temp.initialize()

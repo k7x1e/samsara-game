@@ -1,8 +1,9 @@
 extends Control
 
+@onready var inventory = $Inventory
 
 func activateMenu():
 	pass
 
 func hideMenu():
-	pass
+	inventory.inventoryGrid.closeDropDown()

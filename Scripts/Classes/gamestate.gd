@@ -63,8 +63,9 @@ func initializeSaves():
 		var save_file = load(str("user://saves/",file_name))
 		#print(save_file)
 		#print(tempname)
-		saves[tempname] = save_file.duplicate(true)
-		file_name = dir.get_next()
+		if save_file:
+			saves[tempname] = save_file.duplicate(true)
+			file_name = dir.get_next()
 	saves = sort_dict_newest_first(saves)
 	return true
 

@@ -503,3 +503,12 @@
 	#that was surprisingly easy to implement.
 	#13:15
 	#added some quests. Time to push.
+	#15:21
+	#im in my bed and i need to get to work but i feel lightheaded for some strange reason.
+	#16:15
+	#ive gotten some mapping done and something just magically broke making the save loading not function.
+	#as it turned out the loading function was not very fond of me changing the location of the interiors. Which is strange considering most saves should have packedscenes instead of scene references but sure
+	#16:29 
+	#finished home map.
+	#16:43
+	#took a cig with dexter and now i feel like shit so i shall cease development for some time

@@ -8,12 +8,13 @@
 [ext_resource type="Material" uid="uid://bn1yxkelwqsrk" path="res://Textures/walls/sinistererplanks.tres" id="3_s7tx2"]
 [ext_resource type="PackedScene" uid="uid://d2ndbyf01218u" path="res://Scenes/models/light.tscn" id="4_fn4jr"]
 [ext_resource type="Resource" uid="uid://bnntlvv555o7v" path="res://Resources/story/conditions/outoftutorial.tres" id="4_m7ia4"]
-[ext_resource type="Script" uid="uid://b7hyysg2wlwul" path="res://Scripts/classes/Behaviour/tutorialguy.gd" id="5_0wdrf"]
+[ext_resource type="Script" uid="uid://b7hyysg2wlwul" path="res://Scripts/Classes/Behaviour/tutorialguy.gd" id="5_0wdrf"]
 [ext_resource type="Environment" uid="uid://lyhkdkhxwhlj" path="res://Resources/game_environment.tres" id="5_1f7fd"]
 [ext_resource type="Resource" uid="uid://xm2tqnhksoev" path="res://Resources/story/conversations/tutorial.tres" id="6_65i65"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://c15nkrf8a3fe" path="res://Resources/tutorial.tres" id="9_m7ia4"]
-[ext_resource type="Texture2D" uid="uid://dv5u5ey2l6unj" path="res://Textures/londonProtagFacce.png" id="13_0wdrf"]
-[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="13_w8204"]
+[ext_resource type="Texture2D" uid="uid://dlppbptyqxtaf" path="res://Textures/UI/marker.png" id="10_00gsy"]
+[ext_resource type="Material" uid="uid://cqc3u4605pbco" path="res://Textures/londonProtagFacce.tres" id="13_0wdrf"]
+[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/Classes/npc.gd" id="13_w8204"]
 [ext_resource type="PackedScene" uid="uid://2bbch46haypm" path="res://Models/elder.glb" id="14_ktix3"]
 
 [sub_resource type="Resource" id="Resource_00gsy"]
@@ -43,11 +44,6 @@ metadata/_custom_type_script = "uid://drjjmjc24qipo"
 vertices = PackedVector3Array(-31.5, 0.5, -6.75, -9, 0.5, -6.75, -9, 0.5, -8.75, -6.75, 0.5, -9, -6.75, 0.5, -31.5, -31.5, 0.5, -31.5, 7, 0.5, -9, 7, 0.5, -31.5, 9, 0.5, -9, 9.25, 0.5, -7.25, 31.5, 0.5, -7.5, 31.5, 0.5, -31.5, 9.25, 0.5, 7.25, 31.5, 0.5, 7.5, -7.25, 0.5, -7.25, -7.25, 0.5, 7.5, 7.5, 0.5, 7.5, 7.5, 0.5, -7.25, -31.5, 0.5, 7, -9, 0.5, 7, -7.5, 0.5, 31.5, -7.25, 0.5, 9.25, -9, 0.5, 9, -31.5, 0.5, 31.5, 9.25, 0.5, 8.75, 8.75, 0.5, 9.25, 7.25, 0.5, 9.25, 7.5, 0.5, 31.5, 31.5, 0.5, 31.5)
 polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(3, 2, 4), PackedInt32Array(4, 2, 5), PackedInt32Array(5, 2, 0), PackedInt32Array(4, 7, 3), PackedInt32Array(3, 7, 6), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(11, 8, 7), PackedInt32Array(8, 6, 7), PackedInt32Array(9, 10, 12), PackedInt32Array(12, 10, 13), PackedInt32Array(17, 16, 14), PackedInt32Array(14, 16, 15), PackedInt32Array(0, 1, 18), PackedInt32Array(18, 1, 19), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 20, 23), PackedInt32Array(22, 23, 18), PackedInt32Array(18, 19, 22), PackedInt32Array(24, 12, 13), PackedInt32Array(27, 26, 25), PackedInt32Array(24, 13, 25), PackedInt32Array(25, 13, 28), PackedInt32Array(25, 28, 27), PackedInt32Array(21, 26, 20), PackedInt32Array(20, 26, 27)]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00gsy"]
-albedo_texture = ExtResource("13_0wdrf")
-metallic_specular = 0.0
-texture_filter = 2
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_f4idf"]
 _surfaces = [{
 "aabb": AABB(-288, -0.5, -288, 576, 0.5, 576),
@@ -67,7 +63,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
-"material": SubResource("StandardMaterial3D_00gsy"),
+"material": ExtResource("13_0wdrf"),
 "name": "londonProtagFacce",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -108,10 +104,10 @@ NpcClass = SubResource("Resource_lakn1")
 [node name="elder" parent="Actor/Visual" unique_id=7493415 instance=ExtResource("14_ktix3")]
 transform = Transform3D(-1.0927845e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927845e-08, 0, 0.118780494, 0)
 
-[node name="Skeleton3D" parent="Actor/Visual/elder/Armature" parent_id_path=PackedInt32Array(7493415, 482351033) index="0" unique_id=1296813774]
+[node name="Skeleton3D" parent="Actor/Visual/elder/Armature" parent_id_path=PackedInt32Array(7493415, 1504912467) index="0" unique_id=622507621]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.9380715, 0.018985264, 0.3408463, 0.05903672)
-bones/3/rotation = Quaternion(0.00021332304, -0.00034140254, 0.01714529, 0.999853)
+bones/1/rotation = Quaternion(0.93802124, 0.021321904, 0.34069818, 0.05988557)
+bones/3/rotation = Quaternion(0.00020647417, -0.00033044157, 0.016594827, 0.9998623)
 bones/5/rotation = Quaternion(0.022711672, -1.1917787e-07, 2.7074563e-09, 0.99974203)
 bones/7/rotation = Quaternion(-0.36593214, -0.027977932, -0.12831022, 0.9213292)
 bones/8/rotation = Quaternion(-0.23305106, -0.018484527, -0.022327406, 0.9720324)
@@ -140,6 +136,12 @@ radius = 1.0
 [node name="Collision" type="CollisionShape3D" parent="Actor" unique_id=1180956514 groups=["Pausable"]]
 shape = SubResource("CapsuleShape3D_7ei5c")
 
+[node name="minimapIcon" type="Sprite3D" parent="Actor" unique_id=1066353911]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+layers = 4096
+billboard = 1
+texture = ExtResource("10_00gsy")
+
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=318183600]
 navigation_mesh = SubResource("NavigationMesh_pen7r")
 
@@ -149,28 +151,29 @@ local_map_file = "uid://dlyu12nb1gnqb"
 map_settings = ExtResource("2_cxoe0")
 metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
 
-[node name="entity_0_worldspawn" type="StaticBody3D" parent="NavigationRegion3D/FuncGodotMap" unique_id=928672245]
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="NavigationRegion3D/FuncGodotMap" unique_id=945465671]
 collision_mask = 0
 
-[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=2047356256]
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=824308002]
+layers = 4097
 mesh = SubResource("ArrayMesh_f4idf")
 
-[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=1452211021]
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=2081774052]
 shape = SubResource("ConvexPolygonShape3D_mvt4t")
 
-[node name="entity_0_brush_1_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=2117898726]
+[node name="entity_0_brush_1_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=816832158]
 shape = SubResource("ConvexPolygonShape3D_ktix3")
 
-[node name="entity_0_brush_2_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=1791445786]
+[node name="entity_0_brush_2_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=2086239759]
 shape = SubResource("ConvexPolygonShape3D_ir32r")
 
-[node name="entity_0_brush_3_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=1628998116]
+[node name="entity_0_brush_3_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=194083609]
 shape = SubResource("ConvexPolygonShape3D_645mn")
 
-[node name="entity_0_brush_4_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=1544327191]
+[node name="entity_0_brush_4_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=995779719]
 shape = SubResource("ConvexPolygonShape3D_ugpl6")
 
-[node name="entity_0_brush_5_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=65553228]
+[node name="entity_0_brush_5_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=1795382695]
 shape = SubResource("ConvexPolygonShape3D_vu85i")
 
 [node name="entity_1_light" parent="NavigationRegion3D/FuncGodotMap" unique_id=290002343 instance=ExtResource("4_fn4jr")]

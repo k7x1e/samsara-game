@@ -14,6 +14,7 @@ var backupGlobals
 @export var spellMaster: Control
 @export var effecthandler: Control
 @export var inventory: Control
+@export var minimap: Control
 
 @export var currentWorldNode: Node
 

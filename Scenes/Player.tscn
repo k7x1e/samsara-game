@@ -21,7 +21,6 @@
 [ext_resource type="AudioStream" uid="uid://bikro78yehb60" path="res://sound/notification/mission.wav" id="13_1iu4k"]
 [ext_resource type="Resource" uid="uid://1huepcxmm62c" path="res://Resources/story/quests/tutorialQuest.tres" id="13_8flut"]
 [ext_resource type="AudioStream" uid="uid://b0ahih5c8udqs" path="res://sound/notification/something.wav" id="14_m0x7a"]
-[ext_resource type="Texture2D" uid="uid://dhmu0toe1itnr" path="res://addons/func_godot/textures/clip.png" id="15_1e7my"]
 [ext_resource type="Resource" uid="uid://bf48dl51ufr1w" path="res://Resources/story/quests/london/scrolls.tres" id="18_c43xd"]
 [ext_resource type="Script" uid="uid://bs1xhdp0kaywn" path="res://Scripts/Classes/statuseffect.gd" id="18_i2e8t"]
 [ext_resource type="Resource" uid="uid://dmhd8hbkd8ft7" path="res://Resources/story/quests/london/wizard.tres" id="19_avx33"]
@@ -29,6 +28,8 @@
 [ext_resource type="Script" uid="uid://phth27cyk05k" path="res://Scripts/rotation.gd" id="21_8flut"]
 [ext_resource type="PackedScene" uid="uid://cwkh1mr03cpqs" path="res://Models/londonProtag.glb" id="25_8flut"]
 [ext_resource type="Script" uid="uid://beia0b2yblfv0" path="res://Scripts/playeranim.gd" id="26_u7x0b"]
+[ext_resource type="Texture2D" uid="uid://cikqcfxse8o58" path="res://Textures/UI/marker_player.png" id="29_lyrkg"]
+[ext_resource type="Texture2D" uid="uid://frywwh03f4ci" path="res://Textures/UI/placeholder_cursor.png" id="30_lyrkg"]
 
 [sub_resource type="Resource" id="Resource_c43xd"]
 script = ExtResource("2_kih0c")
@@ -145,7 +146,7 @@ transitions = ["Start", "rest", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(70.47008, 32.22982)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_c43xd"]
-graph_offset = Vector2(-536.9124, 149.34225)
+graph_offset = Vector2(-379.0088, 13.4095)
 nodes/output/position = Vector2(500, 100)
 nodes/Blend2/node = SubResource("AnimationNodeBlend2_c43xd")
 nodes/Blend2/position = Vector2(-180, -20)
@@ -196,7 +197,7 @@ unlocks = Dictionary[String, ExtResource("2_megsn")]({
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1510999750]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 8, 8)
-cull_mask = 524287
+cull_mask = 520191
 environment = ExtResource("11_1e7my")
 current = true
 size = 9.080143
@@ -221,8 +222,8 @@ transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-
 
 [node name="Skeleton3D" parent="Rotation/londonProtag/Armature" parent_id_path=PackedInt32Array(1098917376, 776788979) index="0" unique_id=249496455]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.93816143, 0.013841583, 0.34116486, 0.057167)
-bones/3/rotation = Quaternion(0.00016725178, -0.00026767, 0.01344243, 0.99990964)
+bones/1/rotation = Quaternion(0.9380361, 0.020662427, 0.34074023, 0.059646025)
+bones/3/rotation = Quaternion(2.2582784e-05, -3.6141544e-05, 0.0018150345, 0.99999845)
 bones/7/rotation = Quaternion(-0.440351, -0.03822061, -0.14063425, 0.8859189)
 bones/8/rotation = Quaternion(-0.10192366, -0.044773385, -0.007949366, 0.99375236)
 bones/9/rotation = Quaternion(-0.17423274, -0.03710145, 0.030870311, 0.98352104)
@@ -264,11 +265,19 @@ script = ExtResource("26_u7x0b")
 player = NodePath("../..")
 anim = NodePath("../londonProtag/AnimationPlayer")
 
+[node name="minimapIcon" type="Sprite3D" parent="Rotation" unique_id=1674695974]
+transform = Transform3D(0.70710677, 0.70710677, 3.090862e-08, 0, -4.371139e-08, 1, 0.70710677, -0.70710677, -3.090862e-08, 0, 0, 0)
+layers = 4096
+texture = ExtResource("29_lyrkg")
+
 [node name="Cursor" type="Node3D" parent="." unique_id=390801373]
 
 [node name="Sprite3D" type="Sprite3D" parent="Cursor" unique_id=523440784]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 billboard = 1
-texture = ExtResource("15_1e7my")
+no_depth_test = true
+render_priority = 1
+texture = ExtResource("30_lyrkg")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=109639042]
 current = true

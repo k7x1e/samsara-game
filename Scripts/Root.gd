@@ -121,7 +121,7 @@ func changeWorld(caller: Variant, Targetscene: String, fromMain: bool, fade: boo
 		interiors[Targetscene] = temptemptemp2
 		Globals.Player.global_position = Globals.mainWorldPlayerPos
 		
-		
+	Globals.minimap.initialize()
 
 func _ready():
 	fadeIn()

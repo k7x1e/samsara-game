@@ -16,7 +16,7 @@ texture = ExtResource("1_71umd")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="lanternItem" unique_id=1264706030]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.99563444, 0)
-layers = 2
+layers = 4098
 light_color = Color(0.5825375, 0.38598925, 7.70092e-07, 1)
 light_energy = 2.0
 omni_range = 10.0

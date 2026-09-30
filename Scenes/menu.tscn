@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bn60qyl38svpl" path="res://Textures/UI/gui_scale_handle.png" id="6_wbdvm"]
 [ext_resource type="Script" uid="uid://dut0nr44rnls7" path="res://Scripts/UI/inventoryMenu.gd" id="8_6swd7"]
 [ext_resource type="LabelSettings" uid="uid://b1ril15u6t25p" path="res://Resources/sampleLabel.tres" id="8_d77ms"]
+[ext_resource type="LabelSettings" uid="uid://32l284xawcit" path="res://Resources/WindowTitle.tres" id="8_nakb8"]
 [ext_resource type="Script" uid="uid://c71xw8g6kkryn" path="res://Scripts/inventory.gd" id="8_q3rjx"]
 [ext_resource type="Script" uid="uid://cbl10r5a0xxmh" path="res://Scripts/UI/mouseOverChecker.gd" id="9_d77ms"]
 [ext_resource type="Texture2D" uid="uid://cioushjp77jse" path="res://Textures/UI/gui_inventory_grid_border.png" id="11_kmwmt"]
@@ -21,6 +22,8 @@
 [ext_resource type="SystemFont" uid="uid://cri31ihw34lpf" path="res://Resources/Fonts/dialogue.tres" id="13_h63v2"]
 [ext_resource type="Script" uid="uid://rokee7uc8edj" path="res://Scripts/UI/quest_menu.gd" id="13_owyel"]
 [ext_resource type="StyleBox" uid="uid://lufuxo8vt8ji" path="res://Resources/UI/dropdownPressed.tres" id="14_1by5w"]
+[ext_resource type="Script" uid="uid://bfabp4ls25beb" path="res://Scripts/UI/mini_map.gd" id="14_i37ye"]
+[ext_resource type="Script" uid="uid://yv02sf2sqc3v" path="res://Scripts/UI/minimapcontainer.gd" id="15_jbv25"]
 [ext_resource type="StyleBox" uid="uid://he3jioswdiig" path="res://Resources/UI/dropdownDisabled.tres" id="15_kmwmt"]
 [ext_resource type="PackedScene" uid="uid://cdrnpgknxmfk3" path="res://Scenes/dialogue.tscn" id="18_rc6uw"]
 [ext_resource type="Script" uid="uid://d163f5ur8ukli" path="res://Scripts/UI/button_sound.gd" id="22_l6llh"]
@@ -34,6 +37,10 @@ border_width_top = 1
 font_size = 18
 shadow_size = 3
 shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Environment" id="Environment_i37ye"]
+background_mode = 1
+background_color = Color(0, 0, 0, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rc6uw"]
 texture = ExtResource("11_kmwmt")
@@ -105,6 +112,7 @@ script = ExtResource("3_cayip")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_wbdvm")
 text = "Character Sheet"
+label_settings = ExtResource("8_nakb8")
 
 [node name="PanelContainer" type="PanelContainer" parent="Menu/CharSheet/VBoxContainer" unique_id=1851446025]
 layout_mode = 2
@@ -222,6 +230,88 @@ text = "This stat determines jack shit. Pee and poo all over the walls"
 label_settings = SubResource("LabelSettings_3p34a")
 autowrap_mode = 2
 
+[node name="miniMap" type="Control" parent="Menu" unique_id=812407623]
+custom_minimum_size = Vector2(175, 200)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -422.0
+offset_right = 413.0
+grow_vertical = 0
+script = ExtResource("14_i37ye")
+
+[node name="Panel" type="Panel" parent="Menu/miniMap" unique_id=1941794819]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_158mb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/miniMap" unique_id=16627512]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/miniMap/VBoxContainer" unique_id=743267972]
+layout_mode = 2
+alignment = 1
+script = ExtResource("3_cayip")
+
+[node name="Label" type="Label" parent="Menu/miniMap/VBoxContainer/HBoxContainer" unique_id=987959427]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_wbdvm")
+text = "Map"
+label_settings = ExtResource("8_nakb8")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Menu/miniMap/VBoxContainer" unique_id=1809388269]
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+script = ExtResource("15_jbv25")
+pan_speed = 0.05
+
+[node name="miniMapViewport" type="SubViewport" parent="Menu/miniMap/VBoxContainer/SubViewportContainer" unique_id=819270228]
+handle_input_locally = false
+gui_disable_input = true
+size = Vector2i(413, 385)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Menu/miniMap/VBoxContainer/SubViewportContainer/miniMapViewport" unique_id=1642047825]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 52, 0)
+cull_mask = 4096
+environment = SubResource("Environment_i37ye")
+projection = 1
+size = 15.0
+
+[node name="Control" type="Control" parent="Menu/miniMap" unique_id=1494662192]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("5_jsrd8")
+maxX = 3200.0
+maxY = 1600.0
+
+[node name="TextureRect" type="TextureRect" parent="Menu/miniMap/Control" unique_id=812823250]
+modulate = Color(0.4417584, 0, 0.086844064, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_wbdvm")
+
 [node name="questTracker" type="Control" parent="Menu" unique_id=1616411586 groups=["init", "updatable"]]
 custom_minimum_size = Vector2(600, 200)
 layout_mode = 1
@@ -261,6 +351,7 @@ script = ExtResource("3_cayip")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_wbdvm")
 text = "Quest Tracker"
+label_settings = ExtResource("8_nakb8")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Menu/questTracker/VBoxContainer" unique_id=498483146]
 custom_minimum_size = Vector2(16, 0)
@@ -367,6 +458,7 @@ script = ExtResource("3_cayip")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_wbdvm")
 text = "Inventory"
+label_settings = ExtResource("8_nakb8")
 
 [node name="PanelContainer" type="PanelContainer" parent="Menu/Inventory/VBoxContainer" unique_id=1302822794]
 layout_mode = 2
@@ -408,6 +500,7 @@ offset_bottom = 40.0
 texture = ExtResource("6_wbdvm")
 
 [node name="DropDown" type="Control" parent="Menu" unique_id=335422401]
+visible = false
 anchors_preset = 0
 offset_right = 180.0
 offset_bottom = 360.0
@@ -633,6 +726,7 @@ mouse_filter = 2
 visible = false
 
 [connection signal="gui_input" from="Menu/CharSheet/Control/TextureRect" to="Menu/CharSheet/Control" method="_on_texture_rect_gui_input"]
+[connection signal="gui_input" from="Menu/miniMap/Control/TextureRect" to="Menu/miniMap/Control" method="_on_texture_rect_gui_input"]
 [connection signal="gui_input" from="Menu/questTracker/Control/TextureRect" to="Menu/questTracker/Control" method="_on_texture_rect_gui_input"]
 [connection signal="gui_input" from="Menu/Inventory/Control/TextureRect" to="Menu/Inventory/Control" method="_on_texture_rect_gui_input"]
 [connection signal="pressed" from="Menu/DropDown/VBoxContainer/use" to="Menu/DropDown" method="_on_use_pressed"]

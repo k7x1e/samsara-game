@@ -11,6 +11,8 @@ extends Node3D
 @export var isGlobal: bool = true
 @export var globalName: StringName = "currentWorldNode"
 
+@export var viewTex: ViewportTexture
+
 func _ready() -> void:
 	Globals.currentWorldNode = self
 	await get_tree().create_timer(0.2).timeout

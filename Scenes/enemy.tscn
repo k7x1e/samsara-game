@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://xmtxhcqgxgc2" path="res://Scripts/enemyMonitor.gd" id="6_ghaa6"]
 [ext_resource type="AudioStream" uid="uid://b0ahih5c8udqs" path="res://sound/notification/something.wav" id="7_auwsv"]
 [ext_resource type="AudioStream" uid="uid://bikro78yehb60" path="res://sound/notification/mission.wav" id="8_8uf12"]
+[ext_resource type="Texture2D" uid="uid://dlppbptyqxtaf" path="res://Textures/UI/marker.png" id="10_po0sg"]
 
 [sub_resource type="Resource" id="Resource_ghaa6"]
 script = ExtResource("3_0830c")
@@ -89,8 +90,8 @@ visible = false
 
 [node name="Skeleton3D" parent="Visual/peasant1/Armature" parent_id_path=PackedInt32Array(347662839, 1919338655) index="0" unique_id=1589811251]
 bones/0/rotation = Quaternion(0.93800986, 0.021814236, 0.34066674, -0.060064632)
-bones/1/rotation = Quaternion(0.93807364, 0.01887875, 0.34085307, 0.05899749)
-bones/3/rotation = Quaternion(0.0119572915, -0.0001579253, -0.0022992115, 0.99992585)
+bones/1/rotation = Quaternion(0.9381423, 0.015087344, 0.34108865, 0.057619434)
+bones/3/rotation = Quaternion(0.012035276, -0.00036182656, 0.004091496, 0.9999192)
 bones/7/rotation = Quaternion(-0.4562524, -0.049126726, -0.16023543, 0.87392503)
 bones/8/rotation = Quaternion(-0.07875365, -0.067492984, -0.10037203, 0.98952925)
 bones/9/rotation = Quaternion(0.014338688, -0.16604029, -0.09179396, 0.9817326)
@@ -151,6 +152,12 @@ collision_mask = 65536
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="aura" unique_id=311374690]
 shape = SubResource("SphereShape3D_auwsv")
+
+[node name="minimapIcon" type="Sprite3D" parent="." unique_id=2056850931]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+layers = 4096
+billboard = 1
+texture = ExtResource("10_po0sg")
 
 [connection signal="moving" from="." to="Monitor" method="moving"]
 

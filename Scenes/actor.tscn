@@ -2,15 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bqdpiionfhc5e" path="res://Scripts/ActorBaseClass.gd" id="1_a4aht"]
 [ext_resource type="PackedScene" uid="uid://bkimo22crvjn5" path="res://Scenes/PlaceholderModel.tscn" id="2_7ei5c"]
-[ext_resource type="Script" uid="uid://baf2et18ajmro" path="res://Scripts/classes/Behaviour/Follower.gd" id="2_k81ir"]
-[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="2_lfvdv"]
+[ext_resource type="Script" uid="uid://baf2et18ajmro" path="res://Scripts/Classes/Behaviour/Follower.gd" id="2_k81ir"]
+[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/Classes/npc.gd" id="2_lfvdv"]
 [ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="2_ltbwf"]
-[ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/classes/dialogueClass.gd" id="4_ttr5y"]
-[ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/classes/dialogueOption.gd" id="5_5kmxp"]
+[ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/Classes/dialogueClass.gd" id="4_ttr5y"]
+[ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/Classes/dialogueOption.gd" id="5_5kmxp"]
 [ext_resource type="Resource" uid="uid://b4f1jaos0metv" path="res://Resources/story/conditions/testCondition.tres" id="6_bnhm3"]
-[ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/classes/conversation.gd" id="6_jluoo"]
+[ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/Classes/conversation.gd" id="6_jluoo"]
 [ext_resource type="Resource" uid="uid://blawyhqgucb6l" path="res://Resources/story/conditions/completedtestQuest.tres" id="7_bnhm3"]
 [ext_resource type="Resource" uid="uid://c2qv5krngu0i0" path="res://Resources/story/quests/testingQuest.tres" id="7_jluoo"]
+[ext_resource type="Texture2D" uid="uid://dlppbptyqxtaf" path="res://Textures/UI/marker.png" id="12_26o22"]
 
 [sub_resource type="Resource" id="Resource_bnhm3"]
 script = ExtResource("5_5kmxp")
@@ -148,3 +149,9 @@ radius = 1.0
 
 [node name="Collision" type="CollisionShape3D" parent="." unique_id=1180956514 groups=["Pausable"]]
 shape = SubResource("CapsuleShape3D_7ei5c")
+
+[node name="minimapIcon" type="Sprite3D" parent="." unique_id=1376510665]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+layers = 4096
+billboard = 1
+texture = ExtResource("12_26o22")

@@ -1,7 +1,16 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://fbnk8rbwu1mp"]
 
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_g28q7"]
+resource_name = "Compressor"
+threshold = -3.0
+ratio = 9.0
+
+[sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_j3pel"]
+resource_name = "Limiter"
+
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_j3pel"]
 resource_name = "Compressor"
+gain = 4.0
 sidechain = &"Sfx"
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
@@ -9,6 +18,10 @@ resource_name = "Reverb"
 wet = 0.07
 
 [resource]
+bus/0/effect/0/effect = SubResource("AudioEffectCompressor_g28q7")
+bus/0/effect/0/enabled = true
+bus/0/effect/1/effect = SubResource("AudioEffectLimiter_j3pel")
+bus/0/effect/1/enabled = true
 bus/1/name = &"Music"
 bus/1/solo = false
 bus/1/mute = false

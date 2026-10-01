@@ -530,3 +530,20 @@
 	#being the lab experiment i am i managed to forget to log today. Anyhow, i added a minimap
 	#20:17
 	#i really should get around to the music manager but yk HOLY boring
+	#
+	##30/09
+	#14:27
+	#leaving to my date with sol in three hours, making a more detailed chart of the structure rn.
+	#make a class with a shitload of enums for the story states
+
+#october
+	##01/10
+	#13:01
+	#october. Misha is still completely useless. If my mood continues as is he will no longer be a part of this project.
+	#but on another note i dont really know what to get done today. I am getting increasingly pissed with the treatment of this project from every part that isnt me
+	#matter of fact people have playtested, did they tell me? no. they instead decided that it would simply be a fun fact to bring up while the game was being discussed.
+	#like i understand that there was absolutely no bad intention but holy shit nigga do i need to brandish the need to document what youre doing into your back with a hot iron??
+	#13:17
+	#working with people is the worst torture imaginable i love both loke and misha dearly but working like this makes me genuinely want to kill them
+	#13:34
+	#no work done today. i simply cant.

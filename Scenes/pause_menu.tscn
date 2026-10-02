@@ -150,7 +150,6 @@ size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("8_0fi7f")
 text = "welcome to the playtest.
 
-There is thus far one quest to do and you start it by going into the pub (building right next to you, decorated) and talking to the person inside (space or Q).
 If you die you have to restart the game.
 Saving and loading SHOULD work fine. The system is a bit shaky so please stress it to its limits.
 You start out without any spells assigned as you need to go into the menu and manually assign them (right click then select assign)
@@ -158,7 +157,7 @@ The various skills you have level as you do them and there are unlocks (only 1 a
 The windows in the inventory can be moved and resized.
 The city is mostly blocked out but is far from finished, ideas are gladly welcome.
 ALSO, the music currently in the game is temporary and is only there to show off an atmosphere.
-
+controller info? none
 Controls:
 Menu: middle mouse button or E
 Interact: Space or Q

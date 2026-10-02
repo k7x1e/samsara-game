@@ -13,11 +13,12 @@
 [ext_resource type="Script" uid="uid://bm2l5giuwq8pu" path="res://Scripts/music_manager.gd" id="10_dahhg"]
 [ext_resource type="Script" uid="uid://n8becq15md55" path="res://Scripts/classes/playlist.gd" id="11_wxwew"]
 [ext_resource type="AudioStream" uid="uid://dd7norou6d4w0" path="res://sound/music/ambient/loke_02.mp3" id="12_acvyw"]
+[ext_resource type="AudioStream" uid="uid://b0ahih5c8udqs" path="res://sound/notification/something.wav" id="12_alh3a"]
 [ext_resource type="AudioStream" uid="uid://ds1552d2ah3xk" path="res://sound/music/Dueil Angoisseus.mp3" id="13_alh3a"]
 
 [sub_resource type="Resource" id="Resource_4q8tf"]
 script = ExtResource("11_wxwew")
-playlist = Array[AudioStream]([ExtResource("13_alh3a"), ExtResource("12_acvyw")])
+playlist = Array[AudioStream]([ExtResource("12_alh3a"), ExtResource("13_alh3a"), ExtResource("12_acvyw")])
 metadata/_custom_type_script = "uid://n8becq15md55"
 
 [sub_resource type="Animation" id="Animation_65i65"]

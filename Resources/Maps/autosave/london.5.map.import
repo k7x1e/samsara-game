@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://bshgr3nsseeu5"
+path="res://.godot/imported/london.5.map-74ce0e0c55f7117b9c836480c85d9c84.tres"
+
+[deps]
+
+source_file="res://Resources/Maps/autosave/london.5.map"
+dest_files=["res://.godot/imported/london.5.map-74ce0e0c55f7117b9c836480c85d9c84.tres"]
+
+[params]
+

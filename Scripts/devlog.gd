@@ -567,4 +567,4 @@
 	#13:51
 	#FINALLY implemented the music manager. No idea why it took so damn long to implement but its here now.
 	#14:17
-	#the menu(minimap excluded) now supports controller
+	#the menu(minimap excluded) now supports controller6

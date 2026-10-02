@@ -547,3 +547,15 @@
 	#working with people is the worst torture imaginable i love both loke and misha dearly but working like this makes me genuinely want to kill them
 	#13:34
 	#no work done today. i simply cant.
+	#
+	##02/10
+	#11:21
+	#it seems ive reached a wall of sorts. I dont know what to do now and my creative juices have ran out. I guess i should just take a small break but in the meantime i will start adding in a bunch of stuff related to the story.
+	#11:58
+	#if it gets especially bad just add controller support, shouldnt be too hard (ignoring cursor)
+	#12:11
+	#fixed spell auto
+	#12:30
+	#adding controller support
+	#12:42
+	#got basic controller support done

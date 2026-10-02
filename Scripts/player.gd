@@ -58,6 +58,8 @@ var dashVector = Vector3(dashD, 0, 0)
 
 @export var goldamt: int = 100
 
+@export var controllerActive: bool = false
+
 var spells: Array[spell]
 
 var referenceN: Node3D
@@ -209,44 +211,59 @@ func checkDialogue():
 
 #evil ass mouselook function niggaaaa
 func look_at_mouse():
-	var mouse_pos = get_viewport().get_mouse_position()
-	
-	#ray
-	var ray_origin = camera.project_ray_origin(mouse_pos)
-	var direction = camera.project_ray_normal(mouse_pos)
-	
-	var plane = Plane(Vector3.UP, global_position.y)
-	
-	var hit = plane.intersects_ray(ray_origin, direction)
-	
-	if hit != null:
-		var localmousePos = hit
-		globalmousePos = hit
+	if !controllerActive:
+		var mouse_pos = get_viewport().get_mouse_position()
 		
-		localmousePos.y = global_position.y
-		rotationNode.lookTarget = localmousePos
-		wizard.look_at(localmousePos, Vector3.UP)
-		#if global_position.distance_to(localmousePos) > 0.1:
-		#	rotationNode.look_at(localmousePos, Vector3.UP)
+		#ray
+		var ray_origin = camera.project_ray_origin(mouse_pos)
+		var direction = camera.project_ray_normal(mouse_pos)
+		
+		var plane = Plane(Vector3.UP, global_position.y)
+		
+		var hit = plane.intersects_ray(ray_origin, direction)
+		
+		if hit != null:
+			var localmousePos = hit
+			globalmousePos = hit
+			
+			localmousePos.y = global_position.y
+			rotationNode.lookTarget = localmousePos
+			wizard.look_at(localmousePos, Vector3.UP)
+			#if global_position.distance_to(localmousePos) > 0.1:
+			#	rotationNode.look_at(localmousePos, Vector3.UP)
+		else:
+			#print("failing somehow")
+			return Vector3.ZERO
 	else:
-		#print("failing somehow")
-		return Vector3.ZERO
+		var input_dir := Input.get_vector("rLeft", "rRight", "rUp", "rDown")
+		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		if direction:
+			var localmousePos = global_position + (direction * 4)
+			localmousePos.y = global_position.y
+			rotationNode.lookTarget = localmousePos
+			wizard.look_at(localmousePos, Vector3.UP)
+			cursorNode.global_position = localmousePos
+	
 
 #use old cursor functionality
 func setCursor():
-	var spacestate = get_world_3d().direct_space_state
-	var mouse_pos = get_viewport().get_mouse_position()
-	
-	#ray
-	var ray_origin = camera.project_ray_origin(mouse_pos)
-	var ray_end = ray_origin + camera.project_ray_normal(mouse_pos) * 2000.0
-	var query = PhysicsRayQueryParameters3D.create(ray_origin, ray_end)
-	query.exclude = [self.get_rid()]
-	
-	#check result
-	var result = spacestate.intersect_ray(query)
-	if result.has("position") and global_position.distance_to(result["position"]) > 0.1:
-		cursorNode.global_position = result["position"]
+	if !controllerActive:
+		var spacestate = get_world_3d().direct_space_state
+		var mouse_pos = get_viewport().get_mouse_position()
+		
+		#ray
+		var ray_origin = camera.project_ray_origin(mouse_pos)
+		var ray_end = ray_origin + camera.project_ray_normal(mouse_pos) * 2000.0
+		var query = PhysicsRayQueryParameters3D.create(ray_origin, ray_end)
+		query.exclude = [self.get_rid()]
+		
+		#check result
+		var result = spacestate.intersect_ray(query)
+		if result.has("position") and global_position.distance_to(result["position"]) > 0.1:
+			cursorNode.global_position = result["position"]
+	else:
+		pass
+		
 
 
 #leveling from walking

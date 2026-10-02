@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/classes/dialogueOption.gd" id="3_shd1d"]
 [ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/classes/conversation.gd" id="4_j1ns2"]
 [ext_resource type="Texture2D" uid="uid://djcuoctbo0jvk" path="res://Textures/UI/gui_panel_dialogue.png" id="5_4hwkt"]
+[ext_resource type="FontFile" uid="uid://cipkajjgaqv3b" path="res://Resources/Fonts/moms.ttf" id="6_shd1d"]
 [ext_resource type="SystemFont" uid="uid://cri31ihw34lpf" path="res://Resources/Fonts/dialogue.tres" id="7_shd1d"]
 
 [sub_resource type="Resource" id="Resource_4hwkt"]
@@ -106,7 +107,7 @@ theme_override_constants/separation = 15
 
 [node name="name" type="Label" parent="dialogue/VBoxContainer" unique_id=1818851391]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("7_shd1d")
+theme_override_fonts/font = ExtResource("6_shd1d")
 text = "Actor name"
 label_settings = SubResource("LabelSettings_4hwkt")
 

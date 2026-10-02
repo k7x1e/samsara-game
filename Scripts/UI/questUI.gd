@@ -2,7 +2,7 @@ extends Control
 
 @onready var icon = $Stuff/Icon
 @onready var nameNode = $Stuff/info/Importance/Name
-@onready var status = $Stuff/info/Importance/Status
+@onready var status = $Stuff/info/Description/Status
 @onready var description = $Stuff/info/Description
 @onready var typeL = $Stuff/info/Description/typelable
 

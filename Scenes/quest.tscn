@@ -27,7 +27,7 @@ shadow_size = 3
 shadow_color = Color(0, 0, 0, 1)
 
 [node name="Quest" type="Control" unique_id=1717426852]
-custom_minimum_size = Vector2(500, 100)
+custom_minimum_size = Vector2(600, 100)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_2revy")
@@ -79,13 +79,6 @@ theme_override_fonts/font = ExtResource("3_gpg5m")
 text = "Quest Name"
 label_settings = ExtResource("4_gq147")
 
-[node name="Status" type="Label" parent="Stuff/info/Importance" unique_id=1664718691]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_gpg5m")
-text = "Quest Status"
-label_settings = ExtResource("4_gq147")
-horizontal_alignment = 2
-
 [node name="Description" type="Label" parent="Stuff/info" unique_id=1662895652]
 clip_contents = true
 custom_minimum_size = Vector2(100, 0)
@@ -96,6 +89,21 @@ text = "Quest description... Bullshit"
 label_settings = SubResource("LabelSettings_anv4d")
 autowrap_mode = 2
 
+[node name="Status" type="Label" parent="Stuff/info/Description" unique_id=1088029151]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Quest Type"
+label_settings = SubResource("LabelSettings_gpg5m")
+horizontal_alignment = 2
+
 [node name="typelable" type="Label" parent="Stuff/info/Description" unique_id=855838240]
 layout_mode = 1
 anchors_preset = 3
@@ -103,8 +111,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -23.0
+offset_left = -75.0
+offset_top = -39.0
+offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Quest Type"

@@ -11,10 +11,11 @@ class_name Follower
 var playerFollowerNode: Variant
 
 func initialize():
-	player = Globals.Player
-	playerFollowerNode = player.getFollowerNode()
+	pass
+	#player = Globals.Player
+	#playerFollowerNode = player.getFollowerNode()
 	
-	nav = actor.nav
+	#nav = actor.nav
 	
 	#await Engine.get_main_loop().create_timer(1.0).timeout
 	

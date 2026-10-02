@@ -13,7 +13,7 @@ metadata/_custom_type_script = "uid://b3rylldbgh8gp"
 [sub_resource type="Resource" id="Resource_7lihs"]
 script = ExtResource("1_x2yb1")
 scene = "res://Scenes/Player.tscn"
-position = Vector3(31.045, 2, 79.239)
+position = Vector3(0, 1.2, -201)
 name = "Player"
 to_be_placed = true
 metadata/_custom_type_script = "uid://b3rylldbgh8gp"

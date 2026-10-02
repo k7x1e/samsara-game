@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://cdrnpgknxmfk3" path="res://Scenes/dialogue.tscn" id="18_rc6uw"]
 [ext_resource type="Script" uid="uid://d163f5ur8ukli" path="res://Scripts/UI/button_sound.gd" id="22_l6llh"]
 [ext_resource type="AudioStream" uid="uid://xb56kx4sujei" path="res://sound/notification/menu.wav" id="23_ocger"]
+[ext_resource type="Texture2D" uid="uid://frywwh03f4ci" path="res://Textures/UI/placeholder_cursor.png" id="27_pde1v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_158mb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -58,13 +59,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -9.0
-offset_top = 4.0
-offset_right = -9.0
-offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_g8i7c")
+speed = 2500.0
 
 [node name="TextureRect" type="TextureRect" parent="Menu" unique_id=1030292509]
 modulate = Color(1, 1, 1, 0.49019608)
@@ -718,6 +716,23 @@ script = ExtResource("22_l6llh")
 [node name="sfx" type="AudioStreamPlayer" parent="Menu/DropDown/VBoxContainer/close" unique_id=2125063466]
 stream = ExtResource("23_ocger")
 bus = &"Sfx"
+
+[node name="controllerCursor" type="Control" parent="Menu" unique_id=660818266]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 15.0
+offset_bottom = 15.0
+mouse_filter = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Menu/controllerCursor" unique_id=1782192708]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_pde1v")
+region_rect = Rect2(53, 53, 22, 22)
 
 [node name="spellGui" parent="." unique_id=1294274690 instance=ExtResource("3_rfqti")]
 mouse_filter = 2

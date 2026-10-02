@@ -20,11 +20,8 @@
 [ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="18_d3xwe"]
 [ext_resource type="AudioStream" uid="uid://cs1ygjrv7be2n" path="res://sound/sfx/typewriter.wav" id="19_3ieen"]
 [ext_resource type="Script" uid="uid://baf2et18ajmro" path="res://Scripts/classes/Behaviour/Follower.gd" id="20_5xxwy"]
-[ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/classes/dialogueClass.gd" id="21_6w4v6"]
-[ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/classes/conversation.gd" id="22_bs65w"]
-[ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/classes/dialogueOption.gd" id="22_d3xwe"]
+[ext_resource type="Resource" uid="uid://djst5ndjwy31i" path="res://Resources/story/conversations/Cain.tres" id="21_vdnvd"]
 [ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="23_0sw68"]
-[ext_resource type="Resource" uid="uid://dmhd8hbkd8ft7" path="res://Resources/story/quests/london/wizard.tres" id="23_3ieen"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fdagy"]
 
@@ -341,50 +338,12 @@ _bundled = {
 "version": 3
 }
 
-[sub_resource type="Resource" id="Resource_3ieen"]
-script = ExtResource("22_d3xwe")
-text = "Good Day"
-target = -1
-metadata/_custom_type_script = "uid://dvewwpayy1s83"
-
-[sub_resource type="Resource" id="Resource_d3xwe"]
-script = ExtResource("22_d3xwe")
-text = "Start Wizard Quest"
-target = 1
-metadata/_custom_type_script = "uid://dvewwpayy1s83"
-
-[sub_resource type="Resource" id="Resource_5xxwy"]
-script = ExtResource("21_6w4v6")
-dialogueText = "Good evening marked one."
-dialogueOptions = Array[ExtResource("22_d3xwe")]([SubResource("Resource_3ieen"), SubResource("Resource_d3xwe")])
-metadata/_custom_type_script = "uid://bg6c48acdck1"
-
-[sub_resource type="Resource" id="Resource_bs65w"]
-script = ExtResource("22_d3xwe")
-text = "Thanks mate"
-target = -1
-metadata/_custom_type_script = "uid://dvewwpayy1s83"
-
-[sub_resource type="Resource" id="Resource_6w4v6"]
-script = ExtResource("21_6w4v6")
-dialogueText = "Sure."
-dialogueOptions = Array[ExtResource("22_d3xwe")]([SubResource("Resource_bs65w")])
-questStatus = 1
-quest = ExtResource("23_3ieen")
-metadata/_custom_type_script = "uid://bg6c48acdck1"
-
-[sub_resource type="Resource" id="Resource_6arch"]
-script = ExtResource("22_bs65w")
-speakerName = "Cain"
-manuscript = Array[ExtResource("21_6w4v6")]([SubResource("Resource_5xxwy"), SubResource("Resource_6w4v6")])
-metadata/_custom_type_script = "uid://bin58sxq57jsc"
-
 [sub_resource type="Resource" id="Resource_073tb"]
 script = ExtResource("20_5xxwy")
 player = null
 nav = null
 hasDialogue = true
-words = SubResource("Resource_6arch")
+words = ExtResource("21_vdnvd")
 speed = 3.0
 actor = null
 billboard = SubResource("PackedScene_wtxdy")
@@ -633,6 +592,6 @@ light_energy = 6.618
 spot_range = 170.0
 spot_angle = 53.575474
 
-[node name="Actor" parent="." unique_id=1866149922 instance=ExtResource("16_kcq24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6493483, 1.64, -2.5288143)
+[node name="Cain" parent="." unique_id=1866149922 instance=ExtResource("16_kcq24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6493483, 1.64, -3.5288143)
 NpcClass = SubResource("Resource_d3dcv")

@@ -118,6 +118,7 @@ func notify(notif: String, Audio: String = "None"):
 		sfx.play()
 
 func _ready():
+	controllerActive = Globals.controllerActive
 	Globals.Player = self
 	Globals.quests = quests
 	Globals.stats = stats

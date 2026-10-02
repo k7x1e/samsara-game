@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://bikro78yehb60" path="res://sound/notification/mission.wav" id="13_1iu4k"]
 [ext_resource type="Resource" uid="uid://1huepcxmm62c" path="res://Resources/story/quests/tutorialQuest.tres" id="13_8flut"]
 [ext_resource type="AudioStream" uid="uid://b0ahih5c8udqs" path="res://sound/notification/something.wav" id="14_m0x7a"]
+[ext_resource type="Resource" uid="uid://dmod3sejpqq40" path="res://Resources/story/quests/findCain.tres" id="16_c43xd"]
 [ext_resource type="Resource" uid="uid://bf48dl51ufr1w" path="res://Resources/story/quests/london/scrolls.tres" id="18_c43xd"]
 [ext_resource type="Script" uid="uid://bs1xhdp0kaywn" path="res://Scripts/classes/statuseffect.gd" id="18_i2e8t"]
 [ext_resource type="Resource" uid="uid://dmhd8hbkd8ft7" path="res://Resources/story/quests/london/wizard.tres" id="19_avx33"]
@@ -184,7 +185,7 @@ equipment = SubResource("Resource_c43xd")
 inventory = SubResource("Resource_megsn")
 stats = SubResource("Resource_1e7my")
 experienceThresh = 5.0
-quests = Array[ExtResource("11_lslt6")]([ExtResource("12_ulo2v"), ExtResource("13_8flut"), ExtResource("18_c43xd"), ExtResource("19_avx33")])
+quests = Array[ExtResource("11_lslt6")]([ExtResource("12_ulo2v"), ExtResource("13_8flut"), ExtResource("18_c43xd"), ExtResource("19_avx33"), ExtResource("16_c43xd")])
 sounds = Dictionary[String, AudioStream]({
 "Level1": ExtResource("14_m0x7a"),
 "Mission1": ExtResource("13_1iu4k")
@@ -223,8 +224,8 @@ transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-
 
 [node name="Skeleton3D" parent="Rotation/londonProtag/Armature" parent_id_path=PackedInt32Array(1098917376, 1182342492) index="0" unique_id=1788119391]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.9381732, 0.01302309, 0.34121457, 0.056869317)
-bones/3/rotation = Quaternion(0.00018441955, -0.00029514538, 0.014822248, 0.9998901)
+bones/1/rotation = Quaternion(0.9380999, 0.017526006, 0.3409377, 0.05850644)
+bones/3/rotation = Quaternion(8.952525e-05, -0.00014327641, 0.0071953638, 0.99997413)
 bones/7/rotation = Quaternion(-0.440351, -0.03822061, -0.14063425, 0.8859189)
 bones/8/rotation = Quaternion(-0.10192366, -0.044773385, -0.007949366, 0.99375236)
 bones/9/rotation = Quaternion(-0.17423274, -0.03710145, 0.030870311, 0.98352104)

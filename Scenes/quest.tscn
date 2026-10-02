@@ -43,10 +43,11 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_h63v2")
 
 [node name="Stuff" type="HBoxContainer" parent="." unique_id=456736620]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 50.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Icon" type="TextureRect" parent="Stuff" unique_id=323029651]
 custom_minimum_size = Vector2(100, 100)
@@ -96,26 +97,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -75.0
-offset_top = -23.0
+offset_left = -90.0
+offset_top = -20.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Quest Type"
-label_settings = SubResource("LabelSettings_gpg5m")
-horizontal_alignment = 2
-
-[node name="typelable" type="Label" parent="Stuff/info/Description" unique_id=855838240]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -75.0
-offset_top = -39.0
-offset_bottom = -16.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Quest Type"
+text = "Quest Status"
 label_settings = SubResource("LabelSettings_gpg5m")
 horizontal_alignment = 2

@@ -40,10 +40,10 @@ func checkBorder():
 			equipBorder.hide()
 
 func _gui_input(event: InputEvent) -> void:
-	if event.is_action_pressed("LeftClick"):
+	if event.is_action_pressed("uiLeftClick"):
 		print("clicked")
 		self.get_parent().pickup(self)
-	if event.is_action_pressed("rightClick"):
+	if event.is_action_pressed("uiRightClick"):
 		self.get_parent().dropDown(self)
 
 func _process(_delta: float) -> void:

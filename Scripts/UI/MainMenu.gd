@@ -20,6 +20,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$main/cont.grab_focus()
 	Globals.gamestate.initializeSaves()
 	saves = Globals.gamestate.saves
 	refreshSaves()
@@ -87,3 +88,7 @@ func loadSave(_which: String):
 	print(Globals.saveToLoad)
 	#load into the loadin screen
 	get_tree().change_scene_to_packed(loadingScreen)
+
+
+func _on_check_box_pressed(toggled_on: bool) -> void:
+	Globals.controllerActive = toggled_on

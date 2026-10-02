@@ -35,6 +35,7 @@ func update():
 				temp.disabled = true
 			temp.pressed.connect(optionPressed.bind(i))
 			b += 1
+			temp.grab_focus()
 		if currentW.questStatus != 0 and currentW.questStatus != 4:
 			print(currentW.questStatus)
 			currentW.quest.setQuestState(currentW.questStatus)

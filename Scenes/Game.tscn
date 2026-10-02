@@ -10,6 +10,15 @@
 [ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="7_fgofq"]
 [ext_resource type="PackedScene" uid="uid://66nltbg1vkjx" path="res://Scenes/Worlds/london/Interiors/londonerHome.tscn" id="8_71axn"]
 [ext_resource type="AudioStream" uid="uid://cx7gpdcgmoe8l" path="res://sound/music/ambient/loke_01.mp3" id="9_71axn"]
+[ext_resource type="Script" uid="uid://bm2l5giuwq8pu" path="res://Scripts/music_manager.gd" id="10_dahhg"]
+[ext_resource type="Script" uid="uid://n8becq15md55" path="res://Scripts/classes/playlist.gd" id="11_wxwew"]
+[ext_resource type="AudioStream" uid="uid://dd7norou6d4w0" path="res://sound/music/ambient/loke_02.mp3" id="12_acvyw"]
+[ext_resource type="AudioStream" uid="uid://ds1552d2ah3xk" path="res://sound/music/Dueil Angoisseus.mp3" id="13_alh3a"]
+
+[sub_resource type="Resource" id="Resource_4q8tf"]
+script = ExtResource("11_wxwew")
+playlist = Array[AudioStream]([ExtResource("13_alh3a"), ExtResource("12_acvyw")])
+metadata/_custom_type_script = "uid://n8becq15md55"
 
 [sub_resource type="Animation" id="Animation_65i65"]
 length = 0.001
@@ -85,10 +94,14 @@ interiors = Dictionary[String, PackedScene]({
 prophecyNotif = NodePath("fading/prophecyNotif")
 fadeAnim = NodePath("fading/AnimationPlayer")
 
-[node name="bgm" type="AudioStreamPlayer" parent="." unique_id=830326665]
+[node name="musicManager" type="AudioStreamPlayer" parent="." unique_id=830326665]
 stream = ExtResource("9_71axn")
 autoplay = true
 bus = &"Music"
+script = ExtResource("10_dahhg")
+playlists = Dictionary[String, ExtResource("11_wxwew")]({
+"City": SubResource("Resource_4q8tf")
+})
 
 [node name="fading" type="CanvasLayer" parent="." unique_id=440606973]
 layer = 3
@@ -120,3 +133,5 @@ theme_override_fonts/font = ExtResource("7_fgofq")
 text = "You've killed a mortal whose fate was essential to yours. The prophecy cannot be completed."
 label_settings = SubResource("LabelSettings_7lihs")
 horizontal_alignment = 1
+
+[connection signal="finished" from="musicManager" to="musicManager" method="_on_finished"]

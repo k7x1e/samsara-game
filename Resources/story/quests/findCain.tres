@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://dmod3sejpqq40"]
+
+[ext_resource type="Texture2D" uid="uid://bpnkh2tp6rng4" path="res://Textures/icons/quests/investigateWizards.png" id="1_2sfk6"]
+[ext_resource type="Script" uid="uid://ctffm134lsqah" path="res://Scripts/classes/quest.gd" id="2_qj5ei"]
+
+[resource]
+script = ExtResource("2_qj5ei")
+icon = ExtResource("1_2sfk6")
+questName = "Find Cain"
+mainQuest = true
+descriptions = Array[String](["blank", "After moving to Moon Town you find out you're supposed to work for a mysterious man called \"Cain\". You have yet to learn where he lives though.", "You've progressed this quest.", "You've found cain in his home.", "mystery status", "You've failed this quest."])
+metadata/_custom_type_script = "uid://ctffm134lsqah"

@@ -559,3 +559,12 @@
 	#adding controller support
 	#12:42
 	#got basic controller support done
+	#12:52
+	#adding a basic insane 
+	#13:24
+	#basic insane what?
+	#anyhow a bunch of small changes done
+	#13:51
+	#FINALLY implemented the music manager. No idea why it took so damn long to implement but its here now.
+	#14:17
+	#the menu(minimap excluded) now supports controller

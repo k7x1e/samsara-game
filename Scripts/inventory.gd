@@ -40,6 +40,7 @@ func updateInventory():
 		temp.set_owner(self)
 		temp.initialize(theInventory.inventory[i])
 		print("added: ", theInventory.inventory[i].name)
+		#temp.grab_focus()
 		
 	#check players inventory, 
 
@@ -114,5 +115,6 @@ func dropDown(nodeinquestion: Node):
 	#replace with a neat function
 	nsfx.play()
 	dropDownNode.show()
+	#dropDownNode.assign1.grab_focus()
 	dropDownNode.global_position = get_global_mouse_position()
 	dropDownNode.updateItem(nodeinquestion)

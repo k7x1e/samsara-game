@@ -43,6 +43,8 @@ var backupGlobals
 
 @export var goldItem: gold
 
+@export var controllerActive: bool = false
+
 func getGlobals() -> Dictionary[String, Variant]:
 	var quests_copy: Array[Quest] = []
 	for q in quests:

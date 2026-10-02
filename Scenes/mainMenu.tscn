@@ -118,6 +118,7 @@ theme_override_constants/separation = 0
 [node name="cont" type="Button" parent="Control/main" unique_id=2032355595]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../new")
 theme_override_fonts/font = ExtResource("2_b7htb")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("4_kqm77")
@@ -129,6 +130,8 @@ text = "Continue"
 [node name="new" type="Button" parent="Control/main" unique_id=197020223]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+focus_neighbor_top = NodePath("../cont")
+focus_neighbor_bottom = NodePath("../load")
 theme_override_fonts/font = ExtResource("2_b7htb")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("4_kqm77")
@@ -140,6 +143,7 @@ text = "New Game"
 [node name="load" type="Button" parent="Control/main" unique_id=218093630]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+focus_neighbor_top = NodePath("../new")
 theme_override_fonts/font = ExtResource("2_b7htb")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("4_kqm77")
@@ -193,6 +197,10 @@ theme_override_styles/disabled = ExtResource("6_wofhc")
 text = "Quit
 "
 
+[node name="CheckBox" type="CheckBox" parent="Control/main" unique_id=1286687908]
+layout_mode = 2
+text = "(EXPERIMENTAL) Controller Mode (READ INFO)"
+
 [node name="anim" type="AnimationPlayer" parent="Control" unique_id=1595246681]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_rn1t7")
@@ -221,3 +229,4 @@ color = Color(0, 0, 0, 0)
 [connection signal="pressed" from="Control/main/loading/load" to="Control" method="_on_load_pressed"]
 [connection signal="pressed" from="Control/main/Settings" to="Control" method="settings_pressed"]
 [connection signal="pressed" from="Control/main/quit" to="Control" method="quit_pressed"]
+[connection signal="toggled" from="Control/main/CheckBox" to="Control" method="_on_check_box_pressed"]

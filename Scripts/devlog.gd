@@ -568,3 +568,16 @@
 	#FINALLY implemented the music manager. No idea why it took so damn long to implement but its here now.
 	#14:17
 	#the menu(minimap excluded) now supports controller6
+	#
+	##05/10
+	#13:35
+	#i believe i did some work like yesterday but it seems i didnt push it. Shit.
+	#anyhow ive tweaked the dropdown to close if the player presses outside of it
+	#13:37
+	#i remember now what i added. I shall readd it here.
+	#13:39
+	#works now.
+	#14:18
+	#big changes to the music manager
+	#14:35
+	#slight film grain. Dont know whether or not i like it

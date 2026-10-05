@@ -16,6 +16,11 @@ extends Control
 
 @export var currentItem: Node
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.is_action_pressed("LeftClick"):
+		if !get_global_rect().has_point(event.global_position):
+			self.close()
+
 func updateItem(iteminQ: Node):
 	currentItem = iteminQ
 	var tempitem: itemClass = currentItem.ownItem

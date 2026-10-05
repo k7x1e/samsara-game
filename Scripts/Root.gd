@@ -4,6 +4,8 @@ extends Node3D
 
 #@onready var preloadshitfuck = load("user://Save/saves.sav")
 
+@onready var musicManager = $musicManager
+
 @export var tickrate: float = 20.0 ##per second
 @export var updaterate: float = 2.5 ##per 10 seconds
 
@@ -90,7 +92,8 @@ func changeWorld(caller: Variant, Targetscene: String, fromMain: bool, fade: boo
 		if !onLoading:
 			Globals.mainWorldPlayerPos = Globals.Player.global_position
 		Globals.Player.global_position = gamestate.newWorld.playerSpawn.global_position
-		
+		if musicManager.checkInteriorPlaylist(Targetscene):
+			musicManager.changePlaylist(Targetscene, true)
 	
 	else:
 		if !gamestate.newWorld:
@@ -116,11 +119,13 @@ func changeWorld(caller: Variant, Targetscene: String, fromMain: bool, fade: boo
 			fadeIn()
 		
 		if fromTutorial:
+			#musicManager.changeSong(load("res://sound/music/peste noire menu.mp3"), true)
 			notify("Samsonarum", true)
 		
 		interiors[Targetscene] = temptemptemp2
 		Globals.Player.global_position = Globals.mainWorldPlayerPos
 		
+		#musicManager.changePlaylist("City")
 	Globals.minimap.initialize()
 
 func _ready():

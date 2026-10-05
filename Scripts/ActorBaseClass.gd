@@ -35,7 +35,7 @@ func tick():
 func damage(amt: float):
 	print("took damage")
 	health -= amt
-	behaviour.say(str("-", amt), 0.2, true)
+	behaviour.notify(str("-", amt), true)
 	if health <= 0:
 		if NpcClass.necessary:
 			Globals.softlocked = true

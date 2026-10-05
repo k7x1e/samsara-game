@@ -36,6 +36,12 @@ var isPaused = false
 @export var fadeAnim: AnimationPlayer
 
 @onready var mNotif = preload("res://Scenes/menacingNotif.tscn")
+@onready var songNotif = $fading/NowPlaying
+
+func nowPlaying(songName: String, artistAlbum: String):
+	songNotif.songName = songName
+	songNotif.artistAlbum = artistAlbum
+	songNotif.initialize()
 
 func notify(what: String, useSound: bool = false):
 	var tempP = mNotif.instantiate()
@@ -125,7 +131,7 @@ func changeWorld(caller: Variant, Targetscene: String, fromMain: bool, fade: boo
 		interiors[Targetscene] = temptemptemp2
 		Globals.Player.global_position = Globals.mainWorldPlayerPos
 		
-		#musicManager.changePlaylist("City")
+		musicManager.changePlaylist("City", true)
 	Globals.minimap.initialize()
 
 func _ready():

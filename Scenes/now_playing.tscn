@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://b14oh2lrhjl14"]
+
+[ext_resource type="FontFile" uid="uid://cipkajjgaqv3b" path="res://Resources/Fonts/moms.ttf" id="1_3k7yo"]
+[ext_resource type="Script" uid="uid://dqjnaqhtrkynm" path="res://Scripts/UI/now_playing.gd" id="1_sqws2"]
+[ext_resource type="LabelSettings" uid="uid://b1ril15u6t25p" path="res://Resources/sampleLabel.tres" id="2_eiy1g"]
+[ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="3_eiy1g"]
+[ext_resource type="SystemFont" uid="uid://cri31ihw34lpf" path="res://Resources/Fonts/dialogue.tres" id="4_kkchr"]
+[ext_resource type="Texture2D" uid="uid://cgf1gn3vp7sb8" path="res://Textures/UI/gui_record_placeholder.png" id="5_tatk1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_eiy1g"]
+font_size = 15
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_5yp64"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 100)]
+}
+
+[sub_resource type="Animation" id="Animation_xr7ft"]
+resource_name = "nowplaying"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5, 3),
+"transitions": PackedFloat32Array(1, 8.574197, 1, 11585.261),
+"update": 0,
+"values": [Vector2(0, 100), Vector2(0, 0), Vector2(0, 0), Vector2(0, 100)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3hl35"]
+_data = {
+&"RESET": SubResource("Animation_5yp64"),
+&"nowplaying": SubResource("Animation_xr7ft")
+}
+
+[node name="NowPlaying" type="Control" unique_id=48834932]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = 350.0
+grow_vertical = 0
+script = ExtResource("1_sqws2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1192769674]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 100.0
+offset_bottom = 100.00003
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1283931456]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="nowPlaying" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=555612090]
+modulate = Color(1, 1, 1, 0.39215687)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_3k7yo")
+text = "Now Playing:"
+label_settings = ExtResource("2_eiy1g")
+
+[node name="SongName" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1760188613]
+modulate = Color(1, 1, 1, 0.39215687)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_eiy1g")
+text = "Song Title"
+label_settings = ExtResource("2_eiy1g")
+
+[node name="Album" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=132885291]
+modulate = Color(1, 1, 1, 0.39215687)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("4_kkchr")
+text = "shitfart productions, Samsonarum OST"
+label_settings = SubResource("LabelSettings_eiy1g")
+
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=1918472436]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Control" unique_id=383402414]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_tatk1")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=932970644]
+libraries/ = SubResource("AnimationLibrary_3hl35")

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="song" format=3 uid="uid://dl6aglpq2o8cc"]
+
+[ext_resource type="AudioStream" uid="uid://ds1552d2ah3xk" path="res://sound/music/Dueil Angoisseus.mp3" id="1_xau7j"]
+[ext_resource type="Script" uid="uid://c5368yh8nkr87" path="res://Scripts/classes/song.gd" id="2_vtuuh"]
+
+[resource]
+script = ExtResource("2_vtuuh")
+audio = ExtResource("1_xau7j")
+songName = "Dueil Angoisseus"
+artist = "Peste Noire"
+album = "Too long"
+metadata/_custom_type_script = "uid://c5368yh8nkr87"

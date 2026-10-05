@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="song" format=3 uid="uid://6y4d7ud8bxep"]
+
+[ext_resource type="AudioStream" uid="uid://dd7norou6d4w0" path="res://sound/music/ambient/loke_02.mp3" id="1_nbddj"]
+[ext_resource type="Script" uid="uid://c5368yh8nkr87" path="res://Scripts/classes/song.gd" id="2_nlbij"]
+
+[resource]
+script = ExtResource("2_nlbij")
+audio = ExtResource("1_nbddj")
+songName = "02"
+artist = "Loke"
+metadata/_custom_type_script = "uid://c5368yh8nkr87"

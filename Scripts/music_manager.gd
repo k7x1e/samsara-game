@@ -4,7 +4,7 @@ extends AudioStreamPlayer
 @export var currentPlaylist: Playlist
 
 @export var playlistIndex: int = 0
-@export var currentQueue: Array[AudioStream]
+@export var currentQueue: Array[song]
 
 @export var tweenDuration: float = 1.0
 
@@ -19,7 +19,7 @@ func checkInteriorPlaylist(index: String):
 		return false
 
 func changePlaylist(playlist: String, immediate: bool = false):
-	if currentPlaylist:
+	if currentQueue:
 		initalizePlayList(playlist)
 	else:
 		initalizePlayList(playlist,true)
@@ -28,23 +28,27 @@ func changePlaylist(playlist: String, immediate: bool = false):
 			playlistIndex += 1
 		updateCurrent(true,true)
 
-func changeSong(song: AudioStream, immediate: bool = false):
-	currentQueue.insert(playlistIndex+1, song)
-	if immediate:
-		playlistIndex += 1
-		updateCurrent(true, true)
+func changeSong(Song: song, immediate: bool = false):
+	print("DEPRECATED")
+	return false
+	#currentQueue.insert(playlistIndex+1, Song)
+	#if immediate:
+	#	playlistIndex += 1
+	#	updateCurrent(true, true)
 
 func initalizePlayList(index: String, fromNone: bool = false):
 	currentPlaylist = playlists[index]
+	var old = currentQueue.duplicate(true)
 	currentQueue.clear()
 	if !fromNone:
-		var old = currentQueue.duplicate()
-	
+		#holy shit im retarded
 		currentQueue.append(old[playlistIndex])
 		
-		currentQueue.append(playlists[index].playlist.duplicate())
+		currentQueue += currentPlaylist.playlist
+		print("added said playlist to current.")
 	else:
-		currentQueue = playlists[index].playlist.duplicate()
+		currentQueue = currentPlaylist.playlist.duplicate(true)
+		print("currentqueue should be not empty by now")
 	playlistIndex = 0
 
 func _on_finished() -> void:
@@ -60,10 +64,12 @@ func updateCurrent(stopCurrent: bool = false, overrideWait: bool = false):
 		var temp = randf_range(currentPlaylist.minWait,currentPlaylist.maxWait)
 		await get_tree().create_timer(temp).timeout
 	if playlistIndex >= currentQueue.size():
-		print("index too high, falling back to 0")
+		print("index: ", playlistIndex, " too high, falling back to 0")
 		playlistIndex = 0
-	stream = currentQueue[playlistIndex]
-	print("Playing track ", playlistIndex, ", ", stream)
+	var songsong = currentQueue[playlistIndex]
+	stream = songsong.audio
+	#print("Playing track ", playlistIndex, ", ", stream)
+	Globals.Root.nowPlaying(songsong.songName, str(songsong.artist,", ", songsong.album))
 	play()
 
 func tweenStop(duration: float):

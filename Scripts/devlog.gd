@@ -581,3 +581,9 @@
 	#big changes to the music manager
 	#14:35
 	#slight film grain. Dont know whether or not i like it
+	#14:40
+	#i will begin work on a now-playing hud thingie and i was told to add stylization based on current world. TBA.
+	#15:25
+	#fuck this music manager bro it genuinely cant for the life of itself add a list to another
+	#15:26
+	#fixed it

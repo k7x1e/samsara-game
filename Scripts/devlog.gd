@@ -587,3 +587,7 @@
 	#fuck this music manager bro it genuinely cant for the life of itself add a list to another
 	#15:26
 	#fixed it
+	#16:17
+	#fixed minimap zooming
+	#16:25
+	#almost got map markers going but now i gotta go

@@ -7199,7 +7199,7 @@
 {
 "classname" "InteriorEntrance"
 "origin" "1760 600 456"
-"interiorName" "Home"
+"interiorName" "Home of Cain"
 "targetScene" "londonerHome"
 }
 // entity 93
@@ -7242,4 +7242,10 @@
 "classname" "lantern"
 "origin" "3984 1912 152"
 "angle" "180"
+}
+// entity 100
+{
+"classname" "MapMarker"
+"origin" "1760 584 456"
+"locationName" "Home Of Cain"
 }

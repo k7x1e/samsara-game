@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://b38tbt5dgk8p5"]
+
+[ext_resource type="Script" uid="uid://bej20lalidb52" path="res://Scripts/map_marker.gd" id="1_8xjm7"]
+[ext_resource type="Texture2D" uid="uid://dlppbptyqxtaf" path="res://Textures/UI/marker.png" id="1_xv5px"]
+[ext_resource type="FontFile" uid="uid://cipkajjgaqv3b" path="res://Resources/Fonts/moms.ttf" id="2_msmyb"]
+[ext_resource type="LabelSettings" uid="uid://b1ril15u6t25p" path="res://Resources/sampleLabel.tres" id="3_8xjm7"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xv5px"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8xjm7"]
+radius = 15.0
+
+[node name="mapMarker" type="Node3D" unique_id=433214876]
+script = ExtResource("1_8xjm7")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=464887834]
+layers = 4096
+billboard = 1
+no_depth_test = true
+texture = SubResource("ViewportTexture_xv5px")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1347922989]
+transparent_bg = true
+handle_input_locally = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport" unique_id=426159850]
+follow_viewport_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="SubViewport/CanvasLayer" unique_id=401934571]
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.3
+anchor_right = 0.7
+anchor_bottom = 0.7
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xv5px")
+
+[node name="Label" type="Label" parent="SubViewport/CanvasLayer" unique_id=1511883093]
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_msmyb")
+text = "This or That"
+label_settings = ExtResource("3_8xjm7")
+horizontal_alignment = 1
+
+[node name="discovery" type="Area3D" parent="." unique_id=337670639]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="discovery" unique_id=260804465]
+shape = SubResource("SphereShape3D_8xjm7")
+
+[connection signal="body_entered" from="discovery" to="." method="_on_discovery_body_entered"]

@@ -273,12 +273,13 @@ layout_mode = 2
 size_flags_vertical = 3
 stretch = true
 script = ExtResource("15_jbv25")
-pan_speed = 0.05
+pan_speed = 0.02
 
 [node name="miniMapViewport" type="SubViewport" parent="Menu/miniMap/VBoxContainer/SubViewportContainer" unique_id=819270228]
 handle_input_locally = false
 gui_disable_input = true
 size = Vector2i(413, 385)
+render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Menu/miniMap/VBoxContainer/SubViewportContainer/miniMapViewport" unique_id=1642047825]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 52, 0)

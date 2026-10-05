@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDPointClass" format=3 uid="uid://dyly7nt6gqrx3"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_c81fb"]
+[ext_resource type="PackedScene" uid="uid://b38tbt5dgk8p5" path="res://Scenes/models/map_marker.tscn" id="2_8ngn2"]
+[ext_resource type="Script" uid="uid://cxsqwtsqd8w33" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="2_g1i4w"]
+
+[resource]
+script = ExtResource("2_g1i4w")
+scene_file = ExtResource("2_8ngn2")
+classname = "MapMarker"
+class_properties = Dictionary[String, Variant]({
+"discoverable": true,
+"locationName": "Placeholder"
+})
+metadata/_custom_type_script = "uid://cxsqwtsqd8w33"

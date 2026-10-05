@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_vtuuh")
 audio = ExtResource("1_xau7j")
-songName = "Dueil Angoisseus"
+songName = "Dueill Angoisseus"
 artist = "Peste Noire"
 album = "Too long"
 metadata/_custom_type_script = "uid://c5368yh8nkr87"

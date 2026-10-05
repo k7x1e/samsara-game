@@ -55,8 +55,10 @@ layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -100.0
-offset_right = 350.0
+offset_left = 10.0
+offset_top = -110.0
+offset_right = 410.0
+offset_bottom = -10.0
 grow_vertical = 0
 script = ExtResource("1_sqws2")
 
@@ -93,6 +95,7 @@ text = "Song Title"
 label_settings = ExtResource("2_eiy1g")
 
 [node name="Album" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=132885291]
+visible = false
 modulate = Color(1, 1, 1, 0.39215687)
 layout_mode = 2
 size_flags_vertical = 1

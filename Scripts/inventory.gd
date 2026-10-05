@@ -46,7 +46,8 @@ func updateInventory():
 
 func checkColumns():
 	var Columns = int(self.size.x / 148)
-	self.set_columns(Columns)
+	if columns > 1:
+		self.set_columns(Columns)
 	var _tempsizeY = int((theInventory.inventory.size()/2)+1) * 148
 	var tempsizeX = int(sqrt(theInventory.inventory.size())+1) * 148
 	#print(tempsizeX)

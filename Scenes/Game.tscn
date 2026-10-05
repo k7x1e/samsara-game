@@ -171,6 +171,7 @@ label_settings = SubResource("LabelSettings_7lihs")
 horizontal_alignment = 1
 
 [node name="grain" type="ColorRect" parent="fading" unique_id=1530865775]
+visible = false
 material = SubResource("ShaderMaterial_x3xnh")
 anchors_preset = 15
 anchor_right = 1.0

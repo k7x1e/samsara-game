@@ -8,40 +8,82 @@
 
 [sub_resource type="Resource" id="Resource_3ieen"]
 script = ExtResource("2_vmstx")
-text = "Good Day"
-target = -1
-metadata/_custom_type_script = "uid://dvewwpayy1s83"
-
-[sub_resource type="Resource" id="Resource_d3xwe"]
-script = ExtResource("2_vmstx")
-text = "Start Wizard Quest"
-target = 1
+text = "Indeed i am"
+target = 2
 metadata/_custom_type_script = "uid://dvewwpayy1s83"
 
 [sub_resource type="Resource" id="Resource_5xxwy"]
 script = ExtResource("1_sqdgx")
 dialogueText = "Good evening. Are you Jeremiah?"
-dialogueOptions = Array[ExtResource("2_vmstx")]([SubResource("Resource_3ieen"), SubResource("Resource_d3xwe")])
+dialogueOptions = Array[ExtResource("2_vmstx")]([SubResource("Resource_3ieen")])
 questStatus = 3
 quest = ExtResource("3_vmstx")
 metadata/_custom_type_script = "uid://bg6c48acdck1"
 
-[sub_resource type="Resource" id="Resource_bs65w"]
+[sub_resource type="Resource" id="Resource_ui8f1"]
 script = ExtResource("2_vmstx")
-text = "Thanks mate"
-target = -1
+text = "What shall i do?"
+target = 3
 metadata/_custom_type_script = "uid://dvewwpayy1s83"
 
 [sub_resource type="Resource" id="Resource_6w4v6"]
 script = ExtResource("1_sqdgx")
-dialogueText = "Sure."
-dialogueOptions = Array[ExtResource("2_vmstx")]([SubResource("Resource_bs65w")])
+dialogueText = "Good. I've been awaiting your arrival Jeremiah. From now on you shall be working under me in my investigations and thus you will be allowed to live here. (n)I work for the state in investigating the quite dubious behavior amongst certain people nowadays. My investigations have shown that indeed, there are a group of \"Wizards\" commonly referred to as \"The Mystics\" who are making quite the ruckus after years of dormancy. (n)And that is where you come in young sir; You are to go and investigate said wizards for me."
+dialogueOptions = Array[ExtResource("2_vmstx")]([SubResource("Resource_ui8f1")])
+metadata/_custom_type_script = "uid://bg6c48acdck1"
+
+[sub_resource type="Resource" id="Resource_sqdgx"]
+script = ExtResource("2_vmstx")
+text = "Indeed."
+target = 1
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_30v1u"]
+script = ExtResource("2_vmstx")
+text = "Not Now"
+target = -1
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_vmstx"]
+script = ExtResource("1_sqdgx")
+dialogueText = "Do you wish to discuss your duties?"
+dialogueOptions = Array[ExtResource("2_vmstx")]([SubResource("Resource_sqdgx"), SubResource("Resource_30v1u")])
+metadata/_custom_type_script = "uid://bg6c48acdck1"
+
+[sub_resource type="Resource" id="Resource_tmle1"]
+script = ExtResource("2_vmstx")
+text = "Goodbye."
+target = -1
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_0rt86"]
+script = ExtResource("2_vmstx")
+text = "Where is the royal library?"
+target = 4
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_jqx2n"]
+script = ExtResource("1_sqdgx")
+dialogueText = "You are to head to the Royal Library and speak to a man called Arthur. He will have information on the subject but he, like most in moon town will not share such information without a favor done. (n)Now if that is the case you can either bribe him or do said favor. I won't sponsor your bribery unfortunately so you're on your own Jeremiah."
+dialogueOptions = Array[ExtResource("2_vmstx")]([SubResource("Resource_tmle1"), SubResource("Resource_0rt86")])
 questStatus = 1
 quest = ExtResource("3_30v1u")
+metadata/_custom_type_script = "uid://bg6c48acdck1"
+
+[sub_resource type="Resource" id="Resource_7uihd"]
+script = ExtResource("2_vmstx")
+text = "Thank you."
+target = -1
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_t42wi"]
+script = ExtResource("1_sqdgx")
+dialogueText = "Second house on the left once you enter the Grand Avenue which is just northeast of here."
+dialogueOptions = Array[ExtResource("2_vmstx")]([SubResource("Resource_7uihd")])
 metadata/_custom_type_script = "uid://bg6c48acdck1"
 
 [resource]
 script = ExtResource("4_ui8f1")
 speakerName = "Cain"
-manuscript = Array[ExtResource("1_sqdgx")]([SubResource("Resource_5xxwy"), SubResource("Resource_6w4v6")])
+manuscript = Array[ExtResource("1_sqdgx")]([SubResource("Resource_5xxwy"), SubResource("Resource_6w4v6"), SubResource("Resource_vmstx"), SubResource("Resource_jqx2n"), SubResource("Resource_t42wi")])
 metadata/_custom_type_script = "uid://bin58sxq57jsc"

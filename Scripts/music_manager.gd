@@ -67,10 +67,11 @@ func updateCurrent(stopCurrent: bool = false, overrideWait: bool = false):
 		print("index: ", playlistIndex, " too high, falling back to 0")
 		playlistIndex = 0
 	var songsong = currentQueue[playlistIndex]
-	stream = songsong.audio
-	#print("Playing track ", playlistIndex, ", ", stream)
-	Globals.Root.nowPlaying(songsong.songName, str(songsong.artist,", ", songsong.album))
-	play()
+	if stream != songsong.audio:
+		stream = songsong.audio
+		#print("Playing track ", playlistIndex, ", ", stream)
+		Globals.Root.nowPlaying(songsong.songName, str(songsong.artist,", ", songsong.album))
+		play()
 
 func tweenStop(duration: float):
 	var tween = get_tree().create_tween()

@@ -36,12 +36,14 @@ func update():
 			temp.pressed.connect(optionPressed.bind(i))
 			b += 1
 			temp.grab_focus()
-		if currentW.questStatus != 0 and currentW.questStatus != 4:
+		if currentW.questStatus != 0 and currentW.questStatus != 4 :
 			print(currentW.questStatus)
 			currentW.quest.setQuestState(currentW.questStatus)
 		elif currentW.questStatus == 4:
 			currentW.quest.botchQuest()
 			#i must say, this system is shit but damn if it isnt convenient to scale
+		if currentW.questStatus == 2 and currentW.progressionLevel != -1:
+			currentW.quest.setProgress(currentW.progressionLevel)
 
 func optionPressed(i: DialogueOption):
 	if i.target == -1:

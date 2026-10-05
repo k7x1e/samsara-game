@@ -591,3 +591,11 @@
 	#fixed minimap zooming
 	#16:25
 	#almost got map markers going but now i gotta go
+	#21:19
+	#forgot to log but ive been spending the last like 3 hours improving controller support
+	#21:29
+	#stinky
+	#22:11
+	#got some more dialogue written.
+	#23:33
+	#started work on library building. Minor tweaks. Time for bed.

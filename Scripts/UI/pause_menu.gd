@@ -13,6 +13,7 @@ var activeMenu: int = 0 #0 info, 1 settings, 2 system
 
 # Called when the node enters the scene tree for the first time.
 func initialize() -> void:
+	infoButton.grab_focus()
 	Globals.Root.pauseMenu = get_parent()
 	updateMenu()
 
@@ -26,6 +27,8 @@ func updateMenu():
 			infoNode.show()
 			settingsNode.hide()
 			systemNode.hide()
+			
+			infoButton.grab_focus()
 		1:
 			infoButton.disabled = false
 			settingsButton.disabled = true
@@ -34,6 +37,8 @@ func updateMenu():
 			infoNode.hide()
 			settingsNode.show()
 			systemNode.hide()
+			
+			settingsButton.grab_focus()
 		2:
 			infoButton.disabled = false
 			settingsButton.disabled = false
@@ -42,6 +47,8 @@ func updateMenu():
 			infoNode.hide()
 			settingsNode.hide()
 			systemNode.show()
+			
+			systemButton.grab_focus()
 
 
 

@@ -3,7 +3,7 @@ extends Node3D
 
 @export var locationName: String
 @export var discovered: bool = false
-@export var discoverable: bool
+@export var discoverable: bool = true
 
 func _func_godot_apply_properties(entity_properties: Dictionary) -> void:
 	locationName = entity_properties["locationName"] as String

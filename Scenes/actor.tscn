@@ -2,117 +2,46 @@
 
 [ext_resource type="Script" uid="uid://bqdpiionfhc5e" path="res://Scripts/ActorBaseClass.gd" id="1_a4aht"]
 [ext_resource type="PackedScene" uid="uid://bkimo22crvjn5" path="res://Scenes/PlaceholderModel.tscn" id="2_7ei5c"]
-[ext_resource type="Script" uid="uid://baf2et18ajmro" path="res://Scripts/Classes/Behaviour/Follower.gd" id="2_k81ir"]
-[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/Classes/npc.gd" id="2_lfvdv"]
+[ext_resource type="Script" uid="uid://baf2et18ajmro" path="res://Scripts/classes/Behaviour/Follower.gd" id="2_k81ir"]
+[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="2_lfvdv"]
 [ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="2_ltbwf"]
-[ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/Classes/dialogueClass.gd" id="4_ttr5y"]
-[ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/Classes/dialogueOption.gd" id="5_5kmxp"]
-[ext_resource type="Resource" uid="uid://b4f1jaos0metv" path="res://Resources/story/conditions/testCondition.tres" id="6_bnhm3"]
-[ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/Classes/conversation.gd" id="6_jluoo"]
-[ext_resource type="Resource" uid="uid://blawyhqgucb6l" path="res://Resources/story/conditions/completedtestQuest.tres" id="7_bnhm3"]
-[ext_resource type="Resource" uid="uid://c2qv5krngu0i0" path="res://Resources/story/quests/testingQuest.tres" id="7_jluoo"]
+[ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="3_jluoo"]
+[ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/classes/dialogueClass.gd" id="4_ttr5y"]
+[ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/classes/dialogueOption.gd" id="5_5kmxp"]
+[ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/classes/conversation.gd" id="6_jluoo"]
+[ext_resource type="Resource" uid="uid://dmod3sejpqq40" path="res://Resources/story/quests/findCain.tres" id="7_bnhm3"]
 [ext_resource type="Texture2D" uid="uid://dlppbptyqxtaf" path="res://Textures/UI/marker.png" id="12_26o22"]
 
 [sub_resource type="Resource" id="Resource_bnhm3"]
 script = ExtResource("5_5kmxp")
-text = "bitch ass kill yourself"
-target = -1
-metadata/_custom_type_script = "uid://dvewwpayy1s83"
-
-[sub_resource type="Resource" id="Resource_3bept"]
-script = ExtResource("5_5kmxp")
-text = "I need a quest."
-target = 2
-condition = ExtResource("6_bnhm3")
-condMode = 1
-fallbackTarget = 2
-metadata/_custom_type_script = "uid://dvewwpayy1s83"
-
-[sub_resource type="Resource" id="Resource_8aov3"]
-script = ExtResource("5_5kmxp")
-text = "Ive talked to the guy."
-target = 4
-condition = ExtResource("7_bnhm3")
-condMode = 1
-fallbackTarget = -2
-hide = true
+text = "Do you know of Cain?"
+target = 1
 metadata/_custom_type_script = "uid://dvewwpayy1s83"
 
 [sub_resource type="Resource" id="Resource_26o22"]
 script = ExtResource("4_ttr5y")
-dialogueText = "sup"
-dialogueOptions = Array[ExtResource("5_5kmxp")]([SubResource("Resource_bnhm3"), SubResource("Resource_3bept"), SubResource("Resource_8aov3")])
+dialogueText = "Good day lad."
+dialogueOptions = Array[ExtResource("5_5kmxp")]([SubResource("Resource_bnhm3")])
 metadata/_custom_type_script = "uid://bg6c48acdck1"
 
-[sub_resource type="Resource" id="Resource_fshpa"]
-script = ExtResource("5_5kmxp")
-text = "Could i please complete it?"
-target = 3
-condition = ExtResource("7_bnhm3")
-condMode = 1
-metadata/_custom_type_script = "uid://dvewwpayy1s83"
-
-[sub_resource type="Resource" id="Resource_387h1"]
-script = ExtResource("4_ttr5y")
-dialogueText = "Indeed you are!"
-dialogueOptions = Array[ExtResource("5_5kmxp")]([SubResource("Resource_fshpa")])
-metadata/_custom_type_script = "uid://bg6c48acdck1"
-
-[sub_resource type="Resource" id="Resource_jluoo"]
-script = ExtResource("5_5kmxp")
-text = "Okay...."
-target = -1
-metadata/_custom_type_script = "uid://dvewwpayy1s83"
-
-[sub_resource type="Resource" id="Resource_axmk6"]
-script = ExtResource("5_5kmxp")
-text = "Could you skip this quest for 75 gold?"
-target = 4
-fallbackTarget = -1
-costsMoney = true
-cost = 75
-metadata/_custom_type_script = "uid://dvewwpayy1s83"
-
-[sub_resource type="Resource" id="Resource_5kmxp"]
-script = ExtResource("4_ttr5y")
-dialogueText = "no youre not. But i could give you one. (n)Go to the building two blocks down. On the right side of it there is a set of stairs. Climb said stars and enter. There will be a few guys guarding there but talk to the guy inside in the hallway to the right and then return to me."
-dialogueOptions = Array[ExtResource("5_5kmxp")]([SubResource("Resource_jluoo"), SubResource("Resource_axmk6")])
-questStatus = 1
-quest = ExtResource("7_jluoo")
-metadata/_custom_type_script = "uid://bg6c48acdck1"
-
-[sub_resource type="Resource" id="Resource_okl4b"]
+[sub_resource type="Resource" id="Resource_3bept"]
 script = ExtResource("5_5kmxp")
 text = "Thanks."
 target = -1
 metadata/_custom_type_script = "uid://dvewwpayy1s83"
 
-[sub_resource type="Resource" id="Resource_sjhd2"]
+[sub_resource type="Resource" id="Resource_jluoo"]
 script = ExtResource("4_ttr5y")
-dialogueText = "Sure!"
-dialogueOptions = Array[ExtResource("5_5kmxp")]([SubResource("Resource_okl4b")])
-questStatus = 3
-quest = ExtResource("7_jluoo")
-metadata/_custom_type_script = "uid://bg6c48acdck1"
-
-[sub_resource type="Resource" id="Resource_ag8pf"]
-script = ExtResource("5_5kmxp")
-text = "Same to you."
-target = -1
-metadata/_custom_type_script = "uid://dvewwpayy1s83"
-
-[sub_resource type="Resource" id="Resource_k4n7o"]
-script = ExtResource("4_ttr5y")
-dialogueText = "Thank you."
-dialogueOptions = Array[ExtResource("5_5kmxp")]([SubResource("Resource_ag8pf")])
-questStatus = 3
-quest = ExtResource("7_jluoo")
+dialogueText = "Wish i knew lad, Ask the bartender I tell ya."
+dialogueOptions = Array[ExtResource("5_5kmxp")]([SubResource("Resource_3bept")])
+questStatus = 2
+quest = ExtResource("7_bnhm3")
 metadata/_custom_type_script = "uid://bg6c48acdck1"
 
 [sub_resource type="Resource" id="Resource_0cu5u"]
 script = ExtResource("6_jluoo")
 speakerName = "Mysterious man"
-manuscript = Array[ExtResource("4_ttr5y")]([SubResource("Resource_26o22"), SubResource("Resource_387h1"), SubResource("Resource_5kmxp"), SubResource("Resource_sjhd2"), SubResource("Resource_k4n7o")])
+manuscript = Array[ExtResource("4_ttr5y")]([SubResource("Resource_26o22"), SubResource("Resource_jluoo")])
 hasQuest = true
 metadata/_custom_type_script = "uid://bin58sxq57jsc"
 

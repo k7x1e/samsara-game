@@ -51,6 +51,15 @@ func isQuestStatePossible(state: int):
 	else:
 		return false
 
+func setProgress(value: int):
+	var succesful = false
+	if value >= progress:
+		progress = value
+		succesful = true
+	
+	if succesful:
+		Globals.Player.notify(str("Progressed ", questName, "."), "Mission1")
+
 func setQuestState(state: int): ##cannot go backwards, 1 given, 2 achieved, 3 completed.
 	#print("changed eyes emoji")
 	var succesful = false

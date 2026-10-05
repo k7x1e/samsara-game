@@ -7,6 +7,7 @@ extends SubViewportContainer
 @export var min_zoom: float = 5
 @export var max_zoom: float = 400
 @export var pan_speed: float = 1.0
+@export var pan_speed_controller: float = 2.0
 
 var dragging: bool = false
 
@@ -16,6 +17,16 @@ func update():
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
+
+func _process(delta: float) -> void:
+	if self.visible:
+		if Input.is_action_pressed("evilmenu") and get_global_rect().has_point(get_global_mouse_position()):
+			var lStick = Input.get_vector("lRight", "lLeft", "lDown", "lUp", 0.1)
+			dragging = true
+			var new = lStick * pan_speed_controller * (camera.size/5)
+			camera.position -= Vector3(new.x,0,new.y)
+		else:
+			dragging = false
 
 func _input(event: InputEvent) -> void:
 	if self.visible:

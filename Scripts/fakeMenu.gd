@@ -1,22 +1,32 @@
 extends Control
 
 @onready var inventory = $Inventory
-@onready var controllerCursor = $controllerCursor
+#@onready var controllerCursor = $controllerCursor
 
+@export var windowSizeSpeed: float = 50
+@export var windowSpeed: float = 0.5
 @export var speed: float = 1.0
 
+var initializedwindow: bool = false
+var shitenpoo
 var pos
 
 func activateMenu():
 	if Globals.controllerActive:
 		pos = Vector2(0,0)
-		controllerCursor.show()
-	else:
-		controllerCursor.hide()
+		#controllerCursor.show()
 	pass
 
 func hideMenu():
 	inventory.inventoryGrid.closeDropDown()
+
+func is_mouse_over_any_child() -> Control:
+	var mouse_pos = get_global_mouse_position()
+	for child in get_children():
+		if child is Control and child.visible and child.get_global_rect().has_point(mouse_pos) and child.name != "TextureRect":
+			#print("this one eyes emoji")
+			return child
+	return null
 
 func _process(delta: float) -> void:
 	if Globals.controllerActive:
@@ -34,6 +44,31 @@ func _process(delta: float) -> void:
 			simulate_mouse_press(MOUSE_BUTTON_LEFT, true)
 		if Input.is_action_just_pressed("contRclick"):
 			simulate_mouse_press(MOUSE_BUTTON_RIGHT, true)
+		
+		#controllerCursor.position = get_global_mouse_position()
+		
+		var sizeVector = Input.get_vector("sizeDown","sizeRight","sizeDown","sizeUp")
+		var lStick = Input.get_vector("lLeft", "lRight", "lUp", "lDown", 0.1)
+		print(lStick.length())
+		
+		if (lStick.length() > 0.1 or sizeVector.length() > 0.1) and !initializedwindow:
+			shitenpoo = is_mouse_over_any_child()
+			initializedwindow = true
+		elif (lStick.length() == 0 and sizeVector.length() == 0) and initializedwindow:
+			shitenpoo = is_mouse_over_any_child()
+			initializedwindow = false
+		
+		if (lStick.length() > 0.1 or sizeVector.length() > 0.1) and shitenpoo != null and !Input.is_action_pressed("evilmenu"):
+			print("moving...")
+			var amt = lStick *windowSpeed*delta
+			shitenpoo.global_position += amt
+			#var global_center = shitenpoo.global_position + (shitenpoo.size / 2)
+			#Input.warp_mouse(global_center)
+			#print(amt)
+			
+			#print("resizing")
+			var sizeAmt = sizeVector * windowSizeSpeed * delta
+			shitenpoo.size += sizeAmt
 
 #func _input(event: InputEvent) -> void:
 #	if Globals.controllerActive:

@@ -8,7 +8,18 @@
 [ext_resource type="PackedScene" uid="uid://dpd75hihwor21" path="res://Scenes/models/interior_entrance.tscn" id="6_r4dhn"]
 [ext_resource type="Material" uid="uid://d2jvvestwm6l4" path="res://Textures/walls/wood-pillar.tres" id="6_tq88l"]
 [ext_resource type="PackedScene" uid="uid://d2py2h2xe5qhq" path="res://Scenes/models/lantern.tscn" id="8_7f25j"]
+[ext_resource type="Script" uid="uid://bqdpiionfhc5e" path="res://Scripts/ActorBaseClass.gd" id="10_3k8r6"]
 [ext_resource type="PackedScene" uid="uid://wggca4kc4v15" path="res://Scenes/actor.tscn" id="11_7f25j"]
+[ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="11_ccq2g"]
+[ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="12_ma6y1"]
+[ext_resource type="Script" uid="uid://baf2et18ajmro" path="res://Scripts/classes/Behaviour/Follower.gd" id="13_ttj1o"]
+[ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/classes/dialogueClass.gd" id="14_bo8bj"]
+[ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/classes/dialogueOption.gd" id="15_likva"]
+[ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/classes/conversation.gd" id="16_4s17e"]
+[ext_resource type="Resource" uid="uid://dmod3sejpqq40" path="res://Resources/story/quests/findCain.tres" id="16_ccq2g"]
+[ext_resource type="PackedScene" uid="uid://bkimo22crvjn5" path="res://Scenes/PlaceholderModel.tscn" id="17_545bl"]
+[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="18_xr2p6"]
+[ext_resource type="Texture2D" uid="uid://dlppbptyqxtaf" path="res://Textures/UI/marker.png" id="19_pn8ue"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_8l2jw"]
 vertices = PackedVector3Array(-9.25, 2.5, -23, -9.25, 2.5, -16.5, -8.75, 2.5, -16.25, 7.75, 2.5, -23, -8.75, 2.5, -15.25, -9.25, 2.5, -15, -9.25, 2.5, -8.5, -8.75, 2.5, -8.25, 7.75, 2.5, -0.25, -8.75, 2.5, -7.25, -9.25, 2.5, -7, -9.25, 2.5, -0.5)
@@ -150,6 +161,76 @@ ssao_intensity = 3.7
 fog_enabled = true
 fog_light_color = Color(0, 0, 0, 1)
 volumetric_fog_albedo = Color(0.21230483, 0.21230483, 0.21230483, 1)
+
+[sub_resource type="Resource" id="Resource_fljgx"]
+script = ExtResource("15_likva")
+text = "Know of Cain?"
+target = 1
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_3k8r6"]
+script = ExtResource("15_likva")
+text = "Nothing."
+target = -1
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_wmx0e"]
+script = ExtResource("14_bo8bj")
+dialogueText = "What can i do you for lad?"
+dialogueOptions = Array[ExtResource("15_likva")]([SubResource("Resource_fljgx"), SubResource("Resource_3k8r6")])
+metadata/_custom_type_script = "uid://bg6c48acdck1"
+
+[sub_resource type="Resource" id="Resource_ma6y1"]
+script = ExtResource("15_likva")
+text = "Indeed. I need directions."
+target = 2
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_ccq2g"]
+script = ExtResource("14_bo8bj")
+dialogueText = "Right above us, I assume you're the one sent to work for him? (n)Not really my business to know just curious..."
+dialogueOptions = Array[ExtResource("15_likva")]([SubResource("Resource_ma6y1")])
+metadata/_custom_type_script = "uid://bg6c48acdck1"
+
+[sub_resource type="Resource" id="Resource_bo8bj"]
+script = ExtResource("15_likva")
+text = "Thanks."
+target = -1
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_ttj1o"]
+script = ExtResource("14_bo8bj")
+dialogueText = "In the alley two buildings down you'll find some stairs. Climb them and cross the little bridge and the door'll be right there."
+dialogueOptions = Array[ExtResource("15_likva")]([SubResource("Resource_bo8bj")])
+questStatus = 2
+progressionLevel = 1
+quest = ExtResource("16_ccq2g")
+metadata/_custom_type_script = "uid://bg6c48acdck1"
+
+[sub_resource type="Resource" id="Resource_unyxo"]
+script = ExtResource("16_4s17e")
+speakerName = "Bartender"
+manuscript = Array[ExtResource("14_bo8bj")]([SubResource("Resource_wmx0e"), SubResource("Resource_ccq2g"), SubResource("Resource_ttj1o")])
+metadata/_custom_type_script = "uid://bin58sxq57jsc"
+
+[sub_resource type="Resource" id="Resource_p2bqa"]
+script = ExtResource("13_ttj1o")
+player = null
+nav = null
+hasDialogue = true
+words = SubResource("Resource_unyxo")
+speed = 3.0
+actor = null
+metadata/_custom_type_script = "uid://baf2et18ajmro"
+
+[sub_resource type="Resource" id="Resource_vcv48"]
+script = ExtResource("18_xr2p6")
+npcName = "Example Actor"
+model = ExtResource("17_545bl")
+behaviour = SubResource("Resource_p2bqa")
+metadata/_custom_type_script = "uid://drjjmjc24qipo"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ei5c"]
 
 [node name="londonPub" type="Node3D" unique_id=977649353]
 script = ExtResource("1_hhnip")
@@ -297,4 +378,35 @@ environment = SubResource("Environment_xglpw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.25, 0)
 
 [node name="Actor" parent="." unique_id=1866149922 instance=ExtResource("11_7f25j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7139394, 3.1990347, -16.553745)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5714362, 3.1990347, -14.254398)
+
+[node name="Actor2" parent="." unique_id=526844756 instance=ExtResource("11_7f25j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2010977, 3.1990347, -8.286836)
+
+[node name="Actor3" parent="." unique_id=1497254946 instance=ExtResource("11_7f25j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2553132, 3.1990347, -12.456122)
+
+[node name="Actor4" parent="." unique_id=980372660 instance=ExtResource("11_7f25j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3946285, 3.1990347, -5.8560696)
+
+[node name="Actor5" type="CharacterBody3D" parent="." unique_id=979746559 groups=["Pausable", "Persistent"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0151577, 3.1990347, -20.731014)
+collision_layer = 521
+collision_mask = 521
+script = ExtResource("10_3k8r6")
+NpcClass = SubResource("Resource_vcv48")
+
+[node name="Visual" type="Node3D" parent="Actor5" unique_id=1983415667 groups=["Pausable"]]
+
+[node name="Nav" type="NavigationAgent3D" parent="Actor5" unique_id=87223851 groups=["Pausable"]]
+avoidance_enabled = true
+radius = 1.0
+
+[node name="Collision" type="CollisionShape3D" parent="Actor5" unique_id=1180956514 groups=["Pausable"]]
+shape = SubResource("CapsuleShape3D_7ei5c")
+
+[node name="minimapIcon" type="Sprite3D" parent="Actor5" unique_id=1376510665]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+layers = 4096
+billboard = 1
+texture = ExtResource("19_pn8ue")

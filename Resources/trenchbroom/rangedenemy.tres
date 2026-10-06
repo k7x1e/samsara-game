@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDPointClass" format=3 uid="uid://dhso51gy8bu5v"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_otjpa"]
+[ext_resource type="PackedScene" uid="uid://bprxsuimjw14o" path="res://Scenes/rangedenemy.tscn" id="2_otjpa"]
+[ext_resource type="Script" uid="uid://cxsqwtsqd8w33" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="3_6hiuq"]
+
+[resource]
+script = ExtResource("3_6hiuq")
+scene_file = ExtResource("2_otjpa")
+classname = "rangedenemy"
+description = "bitchass"
+node_class = "CharacterBody3D"
+metadata/_custom_type_script = "uid://cxsqwtsqd8w33"

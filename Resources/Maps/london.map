@@ -7192,8 +7192,8 @@
 // entity 91
 {
 "classname" "Window"
-"origin" "2208 1216 216"
-"angle" "0"
+"origin" "2208 1280 216"
+"angle" "180"
 }
 // entity 92
 {
@@ -7248,4 +7248,10 @@
 "classname" "MapMarker"
 "origin" "1760 584 456"
 "locationName" "Home Of Cain"
+}
+// entity 101
+{
+"classname" "Window"
+"origin" "2208 1152 216"
+"angle" "180"
 }

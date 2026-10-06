@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://bprxsuimjw14o"]
+
+[ext_resource type="Script" uid="uid://bqdpiionfhc5e" path="res://Scripts/ActorBaseClass.gd" id="1_ww5ji"]
+[ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="2_4l0v1"]
+[ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="3_oxkon"]
+[ext_resource type="Script" uid="uid://c67o5u4as6hen" path="res://Scripts/classes/Behaviour/rangedEnemy.gd" id="4_1i6ac"]
+[ext_resource type="PackedScene" uid="uid://bq815qr265sln" path="res://Scenes/spells/projectile.tscn" id="4_ww5ji"]
+[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="6_ixdqj"]
+[ext_resource type="PackedScene" uid="uid://cwkh1mr03cpqs" path="res://Models/londonProtag.glb" id="7_ww5ji"]
+[ext_resource type="Script" uid="uid://xmtxhcqgxgc2" path="res://Scripts/enemyMonitor.gd" id="8_oimav"]
+[ext_resource type="AudioStream" uid="uid://b0ahih5c8udqs" path="res://sound/notification/something.wav" id="9_d14p5"]
+[ext_resource type="AudioStream" uid="uid://bikro78yehb60" path="res://sound/notification/mission.wav" id="10_qbbjy"]
+[ext_resource type="Texture2D" uid="uid://dlppbptyqxtaf" path="res://Textures/UI/marker.png" id="11_b3joe"]
+
+[sub_resource type="Resource" id="Resource_ww5ji"]
+script = ExtResource("4_1i6ac")
+alertArea = null
+damageArea = null
+detectionArea = null
+player = null
+nav = null
+projectile = ExtResource("4_ww5ji")
+health = 100.0
+speed = 20.0
+actor = null
+metadata/_custom_type_script = "uid://c67o5u4as6hen"
+
+[sub_resource type="Resource" id="Resource_7ei5c"]
+script = ExtResource("6_ixdqj")
+npcName = "Example Actor"
+usesModel = false
+behaviour = SubResource("Resource_ww5ji")
+metadata/_custom_type_script = "uid://drjjmjc24qipo"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_auwsv"]
+animation = &"rest"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8uf12"]
+animation = &"rest"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_po0sg"]
+animation = &"walk_002"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_haro7"]
+filters = ["Armature", "Armature/Skeleton3D:Bone.009.L", "Armature/Skeleton3D:Bone.009.R", "Armature/Skeleton3D:Bone.010.L", "Armature/Skeleton3D:Bone.010.R", "Armature/Skeleton3D:Bone.011.L", "Armature/Skeleton3D:Bone.011.R"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_56vhr"]
+filter_enabled = true
+filters = ["Armature", "Armature/Skeleton3D:Bone.009.L", "Armature/Skeleton3D:Bone.009.R", "Armature/Skeleton3D:Bone.010.L", "Armature/Skeleton3D:Bone.010.R", "Armature/Skeleton3D:Bone.011.L", "Armature/Skeleton3D:Bone.011.R"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ta2yt"]
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_56vhr")
+nodes/Blend2/position = Vector2(80, 100)
+"nodes/Blend2 2/node" = SubResource("AnimationNodeBlend2_haro7")
+"nodes/Blend2 2/position" = Vector2(-180, 240)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_po0sg")
+nodes/Animation/position = Vector2(-480, 200)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_auwsv")
+"nodes/Animation 2/position" = Vector2(-480, 360)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_8uf12")
+"nodes/Animation 3/position" = Vector2(-180, 60)
+node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"Animation 3", &"Blend2", 1, &"Blend2 2", &"Blend2 2", 0, &"Animation", &"Blend2 2", 1, &"Animation 2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0830c"]
+radius = 16.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ei5c"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1dp5w"]
+radius = 24.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_auwsv"]
+radius = 16.0
+
+[node name="Actor" type="CharacterBody3D" unique_id=1866149922 groups=["Pausable", "Persistent", "ticked"]]
+collision_layer = 65545
+collision_mask = 65545
+floor_stop_on_slope = false
+floor_block_on_wall = false
+floor_max_angle = 3.1415927
+script = ExtResource("1_ww5ji")
+NpcClass = SubResource("Resource_7ei5c")
+hasMonitor = true
+
+[node name="Visual" type="Node3D" parent="." unique_id=1983415667 groups=["Pausable"]]
+
+[node name="AnimationTree" type="AnimationTree" parent="Visual" unique_id=1179248732]
+root_node = NodePath("../londonProtag")
+tree_root = SubResource("AnimationNodeBlendTree_ta2yt")
+anim_player = NodePath("../londonProtag/AnimationPlayer")
+parameters/Blend2/blend_amount = 1.0
+"parameters/Blend2 2/blend_amount" = 1.0
+
+[node name="detection" type="Area3D" parent="Visual" unique_id=1714052568]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Visual/detection" unique_id=1691110203]
+shape = SubResource("SphereShape3D_0830c")
+
+[node name="londonProtag" parent="Visual" unique_id=1098917376 instance=ExtResource("7_ww5ji")]
+transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Visual/londonProtag/Armature" parent_id_path=PackedInt32Array(1098917376, 1182342492) index="0" unique_id=1788119391]
+bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
+bones/1/rotation = Quaternion(0.9381832, 0.012284438, 0.3412593, 0.056600664)
+bones/3/rotation = Quaternion(0.00020270042, -0.0003244021, 0.016291529, 0.9998673)
+bones/7/rotation = Quaternion(-0.440351, -0.03822061, -0.14063425, 0.8859189)
+bones/8/rotation = Quaternion(-0.10192366, -0.044773385, -0.007949366, 0.99375236)
+bones/9/rotation = Quaternion(-0.17423274, -0.03710145, 0.030870311, 0.98352104)
+bones/10/rotation = Quaternion(0.22203927, 0.5698971, 0.78985965, 0.045138724)
+bones/11/rotation = Quaternion(0.09578154, 0.8317536, -0.4750532, -0.2708071)
+bones/12/rotation = Quaternion(0.11073949, -0.056747727, -0.22298805, 0.9668468)
+bones/13/rotation = Quaternion(0.14083624, -0.18853082, 0.10712266, 0.96599483)
+bones/15/rotation = Quaternion(0.72698486, 0.094962806, -0.058514364, 0.6775332)
+bones/16/rotation = Quaternion(0.03743713, -0.008029879, -0.00083015836, 0.9992664)
+bones/17/rotation = Quaternion(0.6096443, 0.7403935, -0.14562067, 0.24278796)
+bones/19/rotation = Quaternion(-0.731865, -0.011666051, 0.015933152, 0.6811635)
+bones/20/rotation = Quaternion(-0.03742334, -7.324756e-07, -0.0013116588, 0.99929875)
+bones/21/rotation = Quaternion(-0.11982031, -0.0892347, -0.61523545, 0.7740579)
+
+[node name="Nav" type="NavigationAgent3D" parent="." unique_id=87223851 groups=["Pausable"]]
+avoidance_enabled = true
+height = 2.0
+max_speed = 5.0
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1180956514 groups=["Pausable"]]
+shape = SubResource("CapsuleShape3D_7ei5c")
+
+[node name="attackrange" type="Area3D" parent="." unique_id=1569967285 groups=["Pausable"]]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="attackrange" unique_id=1787433241]
+shape = SubResource("SphereShape3D_1dp5w")
+
+[node name="Monitor" type="Node3D" parent="." unique_id=708360727 node_paths=PackedStringArray("animTree")]
+script = ExtResource("8_oimav")
+animTree = NodePath("../Visual/AnimationTree")
+sounds = Dictionary[String, AudioStream]({
+"attack": ExtResource("9_d14p5"),
+"damage": ExtResource("10_qbbjy"),
+"found": ExtResource("9_d14p5")
+})
+
+[node name="sfx" type="AudioStreamPlayer3D" parent="Monitor" unique_id=226239370]
+bus = &"Sfx"
+
+[node name="aura" type="Area3D" parent="." unique_id=1374981180]
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="aura" unique_id=311374690]
+shape = SubResource("SphereShape3D_auwsv")
+
+[node name="minimapIcon" type="Sprite3D" parent="." unique_id=2056850931]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+layers = 4096
+billboard = 1
+texture = ExtResource("11_b3joe")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=977297218]
+
+[connection signal="moving" from="." to="Monitor" method="moving"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="." method="on_visible"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="on_exite"]
+
+[editable path="Visual/londonProtag"]

@@ -16,10 +16,11 @@
 [ext_resource type="Resource" uid="uid://dsj65iun7hhfy" path="res://Resources/trenchbroom/reference.tres" id="13_xek4h"]
 [ext_resource type="Resource" uid="uid://bfg4h1tu02vos" path="res://Resources/trenchbroom/window.tres" id="14_2cumd"]
 [ext_resource type="Resource" uid="uid://dyly7nt6gqrx3" path="res://Resources/trenchbroom/mapmarker.tres" id="15_qpytk"]
+[ext_resource type="PackedScene" uid="uid://bprxsuimjw14o" path="res://Scenes/rangedenemy.tscn" id="16_ati5i"]
 
 [resource]
 script = ExtResource("1_nxjbw")
 fgd_name = "Samsonarum"
 base_fgd_files = Array[Resource]([ExtResource("1_thwb8")])
-entity_definitions = Array[Resource]([ExtResource("2_ihtdy"), ExtResource("3_ei1db"), ExtResource("4_tbbir"), ExtResource("5_ei1db"), ExtResource("6_tbbir"), ExtResource("7_u87at"), ExtResource("8_odwdo"), ExtResource("9_gpfhl"), ExtResource("10_8lyky"), ExtResource("11_0jbh3"), ExtResource("12_4o6vo"), ExtResource("13_xek4h"), ExtResource("14_2cumd"), ExtResource("15_qpytk")])
+entity_definitions = Array[Resource]([ExtResource("2_ihtdy"), ExtResource("3_ei1db"), ExtResource("4_tbbir"), ExtResource("5_ei1db"), ExtResource("6_tbbir"), ExtResource("7_u87at"), ExtResource("8_odwdo"), ExtResource("9_gpfhl"), ExtResource("10_8lyky"), ExtResource("11_0jbh3"), ExtResource("12_4o6vo"), ExtResource("13_xek4h"), ExtResource("14_2cumd"), ExtResource("15_qpytk"), ExtResource("16_ati5i")])
 metadata/_custom_type_script = "uid://drlmgulwbjwqu"

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bq815qr265sln"]
+
+[ext_resource type="Script" uid="uid://dbohs2ow443p1" path="res://Scripts/projectile.gd" id="1_78kjd"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_p8apc"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_p8apc"]
+
+[node name="projectile" type="Node3D" unique_id=621475420 groups=["ticked"]]
+script = ExtResource("1_78kjd")
+speed = 10.0
+spdamage = 30.0
+
+[node name="Collision" type="Area3D" parent="." unique_id=834055345]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision" unique_id=690040570]
+shape = SubResource("SphereShape3D_p8apc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1629064691]
+mesh = SubResource("SphereMesh_p8apc")
+
+[connection signal="body_entered" from="Collision" to="." method="_on_collision_body_entered"]

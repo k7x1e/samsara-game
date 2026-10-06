@@ -167,7 +167,8 @@ func _physics_process(_delta: float) -> void:
 func signaltick():
 	var tickable = get_tree().get_nodes_in_group("ticked")
 	for object in tickable:
-		object.tick()
+		if object.process_mode != PROCESS_MODE_DISABLED:
+			object.tick()
 	
 func signalupdate():
 	var updatable = get_tree().get_nodes_in_group("updatable")

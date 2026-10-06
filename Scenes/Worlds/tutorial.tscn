@@ -8,13 +8,14 @@
 [ext_resource type="Material" uid="uid://bn1yxkelwqsrk" path="res://Textures/walls/sinistererplanks.tres" id="3_s7tx2"]
 [ext_resource type="PackedScene" uid="uid://d2ndbyf01218u" path="res://Scenes/models/light.tscn" id="4_fn4jr"]
 [ext_resource type="Resource" uid="uid://bnntlvv555o7v" path="res://Resources/story/conditions/outoftutorial.tres" id="4_m7ia4"]
-[ext_resource type="Script" uid="uid://b7hyysg2wlwul" path="res://Scripts/Classes/Behaviour/tutorialguy.gd" id="5_0wdrf"]
+[ext_resource type="Script" uid="uid://b7hyysg2wlwul" path="res://Scripts/classes/Behaviour/tutorialguy.gd" id="5_0wdrf"]
 [ext_resource type="Environment" uid="uid://lyhkdkhxwhlj" path="res://Resources/game_environment.tres" id="5_1f7fd"]
+[ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="5_f4idf"]
 [ext_resource type="Resource" uid="uid://xm2tqnhksoev" path="res://Resources/story/conversations/tutorial.tres" id="6_65i65"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://c15nkrf8a3fe" path="res://Resources/tutorial.tres" id="9_m7ia4"]
 [ext_resource type="Texture2D" uid="uid://dlppbptyqxtaf" path="res://Textures/UI/marker.png" id="10_00gsy"]
 [ext_resource type="Material" uid="uid://cqc3u4605pbco" path="res://Textures/londonProtagFacce.tres" id="13_0wdrf"]
-[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/Classes/npc.gd" id="13_w8204"]
+[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="13_w8204"]
 [ext_resource type="PackedScene" uid="uid://2bbch46haypm" path="res://Models/elder.glb" id="14_ktix3"]
 
 [sub_resource type="Resource" id="Resource_00gsy"]
@@ -104,10 +105,10 @@ NpcClass = SubResource("Resource_lakn1")
 [node name="elder" parent="Actor/Visual" unique_id=7493415 instance=ExtResource("14_ktix3")]
 transform = Transform3D(-1.0927845e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927845e-08, 0, 0.118780494, 0)
 
-[node name="Skeleton3D" parent="Actor/Visual/elder/Armature" parent_id_path=PackedInt32Array(7493415, 1504912467) index="0" unique_id=622507621]
+[node name="Skeleton3D" parent="Actor/Visual/elder/Armature" parent_id_path=PackedInt32Array(7493415, 482351033) index="0" unique_id=1296813774]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.93802124, 0.021321904, 0.34069818, 0.05988557)
-bones/3/rotation = Quaternion(0.00020647417, -0.00033044157, 0.016594827, 0.9998623)
+bones/1/rotation = Quaternion(0.9380441, 0.020297348, 0.3407634, 0.05951342)
+bones/3/rotation = Quaternion(0.00021155905, -0.00033857947, 0.017003514, 0.99985546)
 bones/5/rotation = Quaternion(0.022711672, -1.1917787e-07, 2.7074563e-09, 0.99974203)
 bones/7/rotation = Quaternion(-0.36593214, -0.027977932, -0.12831022, 0.9213292)
 bones/8/rotation = Quaternion(-0.23305106, -0.018484527, -0.022327406, 0.9720324)
@@ -141,6 +142,8 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0
 layers = 4096
 billboard = 1
 texture = ExtResource("10_00gsy")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Actor" unique_id=1732040603]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=318183600]
 navigation_mesh = SubResource("NavigationMesh_pen7r")
@@ -184,5 +187,8 @@ environment = ExtResource("5_1f7fd")
 
 [node name="SpawnPoint" type="Node3D" parent="." unique_id=1198856778]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[connection signal="screen_entered" from="Actor/VisibleOnScreenNotifier3D" to="Actor" method="on_visible"]
+[connection signal="screen_exited" from="Actor/VisibleOnScreenNotifier3D" to="Actor" method="on_exite"]
 
 [editable path="Actor/Visual/elder"]

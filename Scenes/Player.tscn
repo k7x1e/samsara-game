@@ -74,9 +74,6 @@ metadata/_custom_type_script = "uid://bs1xhdp0kaywn"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_utwlt"]
 animation = &"walk_002"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bfbt0"]
-animation = &"Eat"
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_70hv0"]
 animation = &"walk_reverse"
 
@@ -147,7 +144,7 @@ transitions = ["Start", "rest", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(70.47008, 32.22982)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_c43xd"]
-graph_offset = Vector2(-379.0088, 13.4095)
+graph_offset = Vector2(-602.0912, 115.73577)
 nodes/output/position = Vector2(500, 100)
 nodes/Blend2/node = SubResource("AnimationNodeBlend2_c43xd")
 nodes/Blend2/position = Vector2(-180, -20)
@@ -162,14 +159,12 @@ nodes/Animation/position = Vector2(-560, 120)
 "nodes/StateMachine item/node" = SubResource("AnimationNodeStateMachine_lyrkg")
 "nodes/StateMachine item/position" = Vector2(-260, 650)
 "nodes/StateMachine spell/node" = SubResource("AnimationNodeStateMachine_teras")
-"nodes/StateMachine spell/position" = Vector2(-240, 380)
-"nodes/Animation 8/node" = SubResource("AnimationNodeAnimation_bfbt0")
-"nodes/Animation 8/position" = Vector2(-830, 1080)
-"nodes/Blend2 3/node" = SubResource("AnimationNodeBlend2_8flut")
-"nodes/Blend2 3/position" = Vector2(-480, -140)
+"nodes/StateMachine spell/position" = Vector2(-270, 470)
 nodes/Add2/node = SubResource("AnimationNodeAdd2_kih0c")
 nodes/Add2/position = Vector2(50, 450)
-node_connections = [&"output", 0, &"Blend2 2", &"Blend2", 0, &"Blend2 3", &"Blend2", 1, &"Animation", &"Blend2 2", 0, &"Add2", &"Blend2 2", 1, &"Blend2", &"Blend2 3", 0, &"Animation 2", &"Blend2 3", 1, &"Animation 9", &"Add2", 0, &"StateMachine spell", &"Add2", 1, &"StateMachine item"]
+"nodes/Blend2 3/node" = SubResource("AnimationNodeBlend2_8flut")
+"nodes/Blend2 3/position" = Vector2(-480, -140)
+node_connections = [&"output", 0, &"Blend2 2", &"Blend2", 0, &"Blend2 3", &"Blend2", 1, &"Animation", &"Blend2 2", 0, &"Add2", &"Blend2 2", 1, &"Blend2", &"Add2", 0, &"StateMachine spell", &"Add2", 1, &"StateMachine item", &"Blend2 3", 0, &"Animation 2", &"Blend2 3", 1, &"Animation 9"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1e7my"]
 radius = 3.0
@@ -224,8 +219,8 @@ transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-
 
 [node name="Skeleton3D" parent="Rotation/londonProtag/Armature" parent_id_path=PackedInt32Array(1098917376, 1182342492) index="0" unique_id=1788119391]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.93815297, 0.014407918, 0.34113026, 0.05737293)
-bones/3/rotation = Quaternion(0.00015537263, -0.00024865862, 0.012487674, 0.99992204)
+bones/1/rotation = Quaternion(0.93803906, 0.02052836, 0.34074867, 0.05959733)
+bones/3/rotation = Quaternion(1.9685163e-05, -3.1504176e-05, 0.001582145, 0.9999988)
 bones/7/rotation = Quaternion(-0.440351, -0.03822061, -0.14063425, 0.8859189)
 bones/8/rotation = Quaternion(-0.10192366, -0.044773385, -0.007949366, 0.99375236)
 bones/9/rotation = Quaternion(-0.17423274, -0.03710145, 0.030870311, 0.98352104)
@@ -261,8 +256,8 @@ tree_root = SubResource("AnimationNodeBlendTree_c43xd")
 anim_player = NodePath("../londonProtag/AnimationPlayer")
 parameters/Blend2/blend_amount = 1.0
 "parameters/Blend2 2/blend_amount" = 1.0
-"parameters/Blend2 3/blend_amount" = 0.0
 parameters/Add2/add_amount = 1.0
+"parameters/Blend2 3/blend_amount" = 0.0
 script = ExtResource("26_u7x0b")
 player = NodePath("../..")
 anim = NodePath("../londonProtag/AnimationPlayer")

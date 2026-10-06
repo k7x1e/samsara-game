@@ -12,6 +12,9 @@ var ismoving: bool= false
 @export var NpcClass: npc
 @export var hasMonitor: bool = false
 
+@export var isvisible: bool = false ## has to be true since some map specific actors will always be active
+@export var visibilityoverride: bool = false ## makes the actor always tick.
+
 var deltaSHIT: float = 1
 var tempPos
 
@@ -30,7 +33,8 @@ func _physics_process(delta: float) -> void:
 	#TO BE REPLACED
 
 func tick():
-	behaviour.update()
+	if isvisible or visibilityoverride:
+		behaviour.update()
 
 func damage(amt: float):
 	print("took damage")
@@ -59,7 +63,6 @@ func move():
 			moving.emit(true)
 			ismoving = true
 	else:
-		#print("i have nowhere to go....")
 		velocity.x = move_toward(velocity.x, 0, deltaSHIT)
 		velocity.z = move_toward(velocity.z, 0, deltaSHIT)
 		if ismoving:
@@ -95,3 +98,11 @@ func load_save_data(data: Dictionary):
 	health = data["health"]
 	behaviour.actor = self
 	behaviour.initialize()
+
+
+func on_visible() -> void:
+	isvisible = true
+
+
+func on_exite() -> void:
+	isvisible = false

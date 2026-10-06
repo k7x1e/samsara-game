@@ -203,7 +203,7 @@ script = ExtResource("14_bo8bj")
 dialogueText = "In the alley two buildings down you'll find some stairs. Climb them and cross the little bridge and the door'll be right there."
 dialogueOptions = Array[ExtResource("15_likva")]([SubResource("Resource_bo8bj")])
 questStatus = 2
-progressionLevel = 1
+progressionLevel = 2
 quest = ExtResource("16_ccq2g")
 metadata/_custom_type_script = "uid://bg6c48acdck1"
 

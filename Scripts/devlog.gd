@@ -605,3 +605,11 @@
 	#music manager buggy as hell
 	#09:03
 	#fixed
+	#11:36
+	#at school now. I will try to make some ost
+	#12:00
+	#didnt work at all. Now i dont know what to do. i wonder if i should try to make a ranged enemy
+	#12:23
+	#made the actors tick only if visible (or if override active)
+	#12:55
+	#added ranged enemies

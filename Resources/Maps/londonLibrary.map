@@ -19,7 +19,7 @@
 // entity 1
 {
 "classname" "InteriorEntrance"
-"origin" "0 -176 8"
+"origin" "0 176 8"
 "interiorName" "London"
 "targetScene" "londonLibrary"
 "fromInterior" "1"

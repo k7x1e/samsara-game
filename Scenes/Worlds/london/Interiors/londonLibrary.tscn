@@ -9,7 +9,7 @@
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_b68kt"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_6r6ug"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_gjchj"]
 _surfaces = [{
 "aabb": AABB(-6, -0.5, -6, 12, 0.5, 12),
 "attribute_data": PackedByteArray("j8L1vgAAAACPwvU+AAAAAI/C9T4K1yM9j8L1vgrXIz2PwvU+CtcjPY/C9b4K1yM9j8L1vgAAAACPwvU+AAAAAI/C9b6PwvU+j8L1vo/C9b6PwvU+j8L1vo/C9T6PwvU+j8L1Po/C9T6PwvW+j8L1Po/C9b6PwvW+j8L1Po/C9b6PwvW+AAAAAI/C9T4AAAAAj8L1PgrXIz2PwvW+CtcjPY/C9T4K1yM9j8L1vgrXIz2PwvW+AAAAAI/C9T4AAAAA"),
@@ -24,7 +24,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AADAQAAAAAAAAMDAAADAwAAAAAAAAMDAAADAwAAAAL8AAMDAAADAQAAAAL8AAMDAAADAwAAAAL8AAMBAAADAwAAAAL8AAMDAAADAwAAAAAAAAMDAAADAwAAAAAAAAMBAAADAwAAAAL8AAMBAAADAQAAAAL8AAMBAAADAQAAAAL8AAMDAAADAwAAAAL8AAMDAAADAwAAAAAAAAMBAAADAwAAAAAAAAMDAAADAQAAAAAAAAMDAAADAQAAAAAAAAMBAAADAQAAAAAAAAMBAAADAQAAAAAAAAMDAAADAQAAAAL8AAMDAAADAQAAAAL8AAMBAAADAQAAAAL8AAMBAAADAwAAAAL8AAMBAAADAwAAAAAAAAMBAAADAQAAAAAAAAMBA/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
 }]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r2em7"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ae3pd"]
 points = PackedVector3Array(6, 0, 6, 6, -0.5, 6, -6, 0, 6, -6, -0.5, 6, 6, 0, -6, 6, -0.5, -6, -6, 0, -6, -6, -0.5, -6)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_gjchj"]
@@ -45,24 +45,24 @@ local_map_file = "uid://cahps7130ipxb"
 map_settings = ExtResource("2_joq84")
 metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
 
-[node name="entity_0_worldspawn" type="StaticBody3D" parent="NavigationRegion3D/FuncGodotMap" unique_id=1773535873]
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="NavigationRegion3D/FuncGodotMap" unique_id=1264851544]
 collision_mask = 0
 
-[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=1771732046]
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=1857444845]
 layers = 4097
-mesh = SubResource("ArrayMesh_6r6ug")
+mesh = SubResource("ArrayMesh_gjchj")
 
-[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=1189025586]
-shape = SubResource("ConvexPolygonShape3D_r2em7")
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=1940120525]
+shape = SubResource("ConvexPolygonShape3D_ae3pd")
 
 [node name="entity_1_InteriorEntrance" parent="NavigationRegion3D/FuncGodotMap" unique_id=188525590 instance=ExtResource("5_ae3pd")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5.5, 0.25, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.5, 0.25, 0)
 targetSceneString = "londonLibrary"
 fromInterior = true
 interiorName = "London"
 
 [node name="SpawnPoint" type="Node3D" parent="." unique_id=794376774]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=748200838]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)

@@ -99,12 +99,12 @@ collision_mask = 4
 shape = SubResource("SphereShape3D_0830c")
 
 [node name="londonProtag" parent="Visual" unique_id=1098917376 instance=ExtResource("7_ww5ji")]
-transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0, 0, 0)
+transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0, 0.3, 0)
 
 [node name="Skeleton3D" parent="Visual/londonProtag/Armature" parent_id_path=PackedInt32Array(1098917376, 1182342492) index="0" unique_id=1788119391]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.9381832, 0.012284438, 0.3412593, 0.056600664)
-bones/3/rotation = Quaternion(0.00020270042, -0.0003244021, 0.016291529, 0.9998673)
+bones/1/rotation = Quaternion(0.9380469, 0.020166216, 0.3407717, 0.05946578)
+bones/3/rotation = Quaternion(3.4575256e-05, -5.5334312e-05, 0.0027788982, 0.9999962)
 bones/7/rotation = Quaternion(-0.440351, -0.03822061, -0.14063425, 0.8859189)
 bones/8/rotation = Quaternion(-0.10192366, -0.044773385, -0.007949366, 0.99375236)
 bones/9/rotation = Quaternion(-0.17423274, -0.03710145, 0.030870311, 0.98352104)

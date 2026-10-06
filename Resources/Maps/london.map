@@ -7255,3 +7255,8 @@
 "origin" "2208 1152 216"
 "angle" "180"
 }
+// entity 102
+{
+"classname" "rangedenemy"
+"origin" "1200 864 456"
+}

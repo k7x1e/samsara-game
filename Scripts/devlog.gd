@@ -5,7 +5,8 @@
 	#began
 	#22:24
 	#just added mouselook functionality and a cursor. Got basic movement down and i will most likely push this to github now.
-	#21/08
+	#
+	##21/08
 	#10:25
 	#planning to migrate some old assets from dustrialis onto here simply for temporary graphical quality.
 	#as i get home i plan to immediately start work on an inventory system similar to the one i made for dustrialis.
@@ -613,3 +614,7 @@
 	#made the actors tick only if visible (or if override active)
 	#12:55
 	#added ranged enemies
+	#16:37
+	#almost home i dont know what to do or add.
+	#16:44
+	#i need to add managers for dialogue events

@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://dsj65iun7hhfy" path="res://Resources/trenchbroom/reference.tres" id="13_xek4h"]
 [ext_resource type="Resource" uid="uid://bfg4h1tu02vos" path="res://Resources/trenchbroom/window.tres" id="14_2cumd"]
 [ext_resource type="Resource" uid="uid://dyly7nt6gqrx3" path="res://Resources/trenchbroom/mapmarker.tres" id="15_qpytk"]
-[ext_resource type="PackedScene" uid="uid://bprxsuimjw14o" path="res://Scenes/rangedenemy.tscn" id="16_ati5i"]
+[ext_resource type="Resource" uid="uid://dhso51gy8bu5v" path="res://Resources/trenchbroom/rangedenemy.tres" id="16_ati5i"]
 
 [resource]
 script = ExtResource("1_nxjbw")

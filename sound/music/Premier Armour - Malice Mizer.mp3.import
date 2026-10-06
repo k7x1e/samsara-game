@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b11crxj0h858c"
+path="res://.godot/imported/Premier Armour - Malice Mizer.mp3-0fb4ea2ff77ac2088142342a6fff2d36.mp3str"
+
+[deps]
+
+source_file="res://sound/music/Premier Armour - Malice Mizer.mp3"
+dest_files=["res://.godot/imported/Premier Armour - Malice Mizer.mp3-0fb4ea2ff77ac2088142342a6fff2d36.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -599,3 +599,9 @@
 	#got some more dialogue written.
 	#23:33
 	#started work on library building. Minor tweaks. Time for bed.
+	#
+	##06/10
+	#08:50
+	#music manager buggy as hell
+	#09:03
+	#fixed

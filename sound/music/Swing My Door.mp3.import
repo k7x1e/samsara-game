@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bpg4y56ct7yea"
+path="res://.godot/imported/Swing My Door.mp3-f6ae9b649176823a4afcb570faf0578d.mp3str"
+
+[deps]
+
+source_file="res://sound/music/Swing My Door.mp3"
+dest_files=["res://.godot/imported/Swing My Door.mp3-f6ae9b649176823a4afcb570faf0578d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

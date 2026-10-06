@@ -19,7 +19,7 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
 
 func _process(delta: float) -> void:
-	if self.visible:
+	if self.visible and Globals.controllerActive:
 		if Input.is_action_pressed("evilmenu") and get_global_rect().has_point(get_global_mouse_position()):
 			var lStick = Input.get_vector("lRight", "lLeft", "lDown", "lUp", 0.1)
 			dragging = true

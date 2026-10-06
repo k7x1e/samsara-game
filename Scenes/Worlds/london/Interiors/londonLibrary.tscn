@@ -1,0 +1,93 @@
+[gd_scene format=4 uid="uid://ca4gja6yrwcfs"]
+
+[ext_resource type="Script" uid="uid://c2nmolbivfrt2" path="res://Scripts/interiorPoopFartHolder.gd" id="1_0i6h8"]
+[ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_8x0k8"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_joq84"]
+[ext_resource type="Material" uid="uid://cqc3u4605pbco" path="res://Textures/londonProtagFacce.tres" id="4_gjchj"]
+[ext_resource type="PackedScene" uid="uid://dpd75hihwor21" path="res://Scenes/models/interior_entrance.tscn" id="5_ae3pd"]
+[ext_resource type="Environment" uid="uid://lyhkdkhxwhlj" path="res://Resources/game_environment.tres" id="6_gjchj"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_b68kt"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6r6ug"]
+_surfaces = [{
+"aabb": AABB(-6, -0.5, -6, 12, 0.5, 12),
+"attribute_data": PackedByteArray("j8L1vgAAAACPwvU+AAAAAI/C9T4K1yM9j8L1vgrXIz2PwvU+CtcjPY/C9b4K1yM9j8L1vgAAAACPwvU+AAAAAI/C9b6PwvU+j8L1vo/C9b6PwvU+j8L1vo/C9T6PwvU+j8L1Po/C9T6PwvW+j8L1Po/C9b6PwvW+j8L1Po/C9b6PwvW+AAAAAI/C9T4AAAAAj8L1PgrXIz2PwvW+CtcjPY/C9T4K1yM9j8L1vgrXIz2PwvW+AAAAAI/C9T4AAAAA"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": ExtResource("4_gjchj"),
+"name": "londonProtagFacce",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AADAQAAAAAAAAMDAAADAwAAAAAAAAMDAAADAwAAAAL8AAMDAAADAQAAAAL8AAMDAAADAwAAAAL8AAMBAAADAwAAAAL8AAMDAAADAwAAAAAAAAMDAAADAwAAAAAAAAMBAAADAwAAAAL8AAMBAAADAQAAAAL8AAMBAAADAQAAAAL8AAMDAAADAwAAAAL8AAMDAAADAwAAAAAAAAMBAAADAwAAAAAAAAMDAAADAQAAAAAAAAMDAAADAQAAAAAAAAMBAAADAQAAAAAAAAMBAAADAQAAAAAAAAMDAAADAQAAAAL8AAMDAAADAQAAAAL8AAMBAAADAQAAAAL8AAMBAAADAwAAAAL8AAMBAAADAwAAAAAAAAMBAAADAQAAAAAAAAMBA/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+}]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r2em7"]
+points = PackedVector3Array(6, 0, 6, 6, -0.5, 6, -6, 0, 6, -6, -0.5, 6, 6, 0, -6, 6, -0.5, -6, -6, 0, -6, -6, -0.5, -6)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gjchj"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ae3pd"]
+font_size = 50
+
+[node name="londonLibrary" type="Node3D" unique_id=1460089463]
+script = ExtResource("1_0i6h8")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=467621590]
+navigation_mesh = SubResource("NavigationMesh_b68kt")
+
+[node name="FuncGodotMap" type="Node3D" parent="NavigationRegion3D" unique_id=645551127]
+script = ExtResource("1_8x0k8")
+local_map_file = "uid://cahps7130ipxb"
+map_settings = ExtResource("2_joq84")
+metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
+
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="NavigationRegion3D/FuncGodotMap" unique_id=1773535873]
+collision_mask = 0
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=1771732046]
+layers = 4097
+mesh = SubResource("ArrayMesh_6r6ug")
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=1189025586]
+shape = SubResource("ConvexPolygonShape3D_r2em7")
+
+[node name="entity_1_InteriorEntrance" parent="NavigationRegion3D/FuncGodotMap" unique_id=188525590 instance=ExtResource("5_ae3pd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5.5, 0.25, 0)
+targetSceneString = "londonLibrary"
+fromInterior = true
+interiorName = "London"
+
+[node name="SpawnPoint" type="Node3D" parent="." unique_id=794376774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=748200838]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2050621061]
+environment = ExtResource("6_gjchj")
+
+[node name="tba text" type="Sprite3D" parent="." unique_id=1607315602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_gjchj")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=817404103]
+transparent_bg = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport" unique_id=1565993385]
+follow_viewport_enabled = true
+
+[node name="Label" type="Label" parent="SubViewport/CanvasLayer" unique_id=340457996]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "NOT BUILT YET...."
+label_settings = SubResource("LabelSettings_ae3pd")
+horizontal_alignment = 1
+vertical_alignment = 1

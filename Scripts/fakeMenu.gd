@@ -49,7 +49,7 @@ func _process(delta: float) -> void:
 		
 		var sizeVector = Input.get_vector("sizeDown","sizeRight","sizeDown","sizeUp")
 		var lStick = Input.get_vector("lLeft", "lRight", "lUp", "lDown", 0.1)
-		print(lStick.length())
+		#print(lStick.length())
 		
 		if (lStick.length() > 0.1 or sizeVector.length() > 0.1) and !initializedwindow:
 			shitenpoo = is_mouse_over_any_child()
@@ -59,7 +59,7 @@ func _process(delta: float) -> void:
 			initializedwindow = false
 		
 		if (lStick.length() > 0.1 or sizeVector.length() > 0.1) and shitenpoo != null and !Input.is_action_pressed("evilmenu"):
-			print("moving...")
+			#print("moving...")
 			var amt = lStick *windowSpeed*delta
 			shitenpoo.global_position += amt
 			#var global_center = shitenpoo.global_position + (shitenpoo.size / 2)

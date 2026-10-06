@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://cahps7130ipxb"
+path="res://.godot/imported/londonLibrary.map-f76bef667e598b4baa27ef3948c7b13d.tres"
+
+[deps]
+
+source_file="res://Resources/Maps/londonLibrary.map"
+dest_files=["res://.godot/imported/londonLibrary.map-f76bef667e598b4baa27ef3948c7b13d.tres"]
+
+[params]
+

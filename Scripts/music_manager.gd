@@ -24,8 +24,8 @@ func changePlaylist(playlist: String, immediate: bool = false):
 	else:
 		initalizePlayList(playlist,true)
 	if immediate:
-		if currentPlaylist:
-			playlistIndex += 1
+		#if currentPlaylist:
+			#playlistIndex += 1
 		updateCurrent(true,true)
 
 func changeSong(Song: song, immediate: bool = false):
@@ -49,7 +49,7 @@ func initalizePlayList(index: String, fromNone: bool = false):
 	else:
 		currentQueue = currentPlaylist.playlist.duplicate(true)
 		print("currentqueue should be not empty by now")
-	playlistIndex = 0
+	playlistIndex = randi_range(1,currentQueue.size()-1)
 
 func _on_finished() -> void:
 	playlistIndex += 1
@@ -72,6 +72,8 @@ func updateCurrent(stopCurrent: bool = false, overrideWait: bool = false):
 		#print("Playing track ", playlistIndex, ", ", stream)
 		Globals.Root.nowPlaying(songsong.songName, str(songsong.artist,", ", songsong.album))
 		play()
+	else:
+		print("same song, not changing.")
 
 func tweenStop(duration: float):
 	var tween = get_tree().create_tween()

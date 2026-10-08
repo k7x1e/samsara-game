@@ -9,6 +9,7 @@
 script = ExtResource("1_0fsmp")
 render_layers = 4097
 collision_shape_type = 2
+collision_layer = 536870913
 collision_mask = 0
 classname = "func_detail"
 description = "Static collidable geometry. Builds a StaticBody3D with a MeshInstance3D and a single concave CollisionShape3D. Does not occlude other VisualInstance3D nodes."

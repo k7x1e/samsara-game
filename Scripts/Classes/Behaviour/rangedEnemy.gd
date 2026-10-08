@@ -24,6 +24,10 @@ signal damaged()
 var can_attack: bool = true
 var can_move: bool =true
 
+@export var threshold: int = 5 ##ticks before they recalculate target
+var threshcounter
+@export var offset: Vector3 = Vector3(0,0,0)
+
 func initialize():
 	player = Globals.Player
 	
@@ -77,19 +81,28 @@ func hunt():
 	if actor.visual.global_position != tempPosition:
 		actor.visual.look_at(tempPosition, Vector3.UP)
 	if can_move:
-		print("moving")
-		nav.target_position = tempPosition
+		#print("moving")
+		nav.target_position = tempPosition + offset
 		var temptempPosition = nav.get_next_path_position()
 		temptempPosition.y = actor.global_position.y
 		actor.move()
 	if checkAttack() and can_attack:
 		attack()
+	
+	if checkSight():
+		threshcounter = 0
+	else:
+		threshcounter += 1
+		if threshcounter == threshold:
+			#print("recalculating offset")
+			var stink = calculateOffset()
+			offset = Vector3(stink.x,0,stink.y)
 
 func damage(amt: float):
 	if health - amt > 0:
 		health -= amt
 		return true
-		damaged.emit()
+		#damaged.emit()
 	else: 
 		health = 0
 		return false
@@ -97,6 +110,23 @@ func damage(amt: float):
 func checkAttack() -> bool:
 	var bodies = damageArea.get_overlapping_bodies()
 	for body in bodies:
+		return checkSight()
+	return false
+
+func calculateOffset() -> Vector2:
+	var selfpos = actor.global_position
+	var playerpos = player.global_position
+	var temp = (selfpos - playerpos)
+	var tempTrue: Vector2 = Vector2(temp.x,temp.z).normalized()
+	return tempTrue.rotated(90) * range
+
+func checkSight() -> bool:
+	var space_state = actor.get_world_3d().direct_space_state
+	# use global coordinates, not local to node
+	var query = PhysicsRayQueryParameters3D.create(actor.global_position, player.global_position)
+	query.set_collision_mask(30)
+	var result = space_state.intersect_ray(query)
+	if result.collider.name == "Player" or result.collider.name == "Actor":
 		return true
 	return false
 

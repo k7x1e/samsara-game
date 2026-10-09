@@ -30,6 +30,7 @@ func cast(which: int): #1: left, 2: right, 3,4,5: other bindable spells
 	if spells[which].castable and spells[which].checkEquipment():
 		if spells[which].has_method("doSpell"):
 			equipCast.emit(spells[which].anim)
+			await get_tree().create_timer(0.34).timeout
 		if spells[which].hasAnimation:
 			casted.emit(spells[which].animation)
 			await get_tree().create_timer(0.34).timeout

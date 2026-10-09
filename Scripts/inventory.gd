@@ -73,6 +73,9 @@ func pickup(what: Node):
 		print("picked up a ", what.ownItem.name)
 
 func unequip(what: Node):
+	if what.ownItem.Type == 2 and what.ownItem.equipped:
+		print("unequipping")
+		Globals.Player.equipment.unequip(what.ownItem)
 	what.ownItem.equipped = false
 	what.checkBorder()
 	if what.ownItem.isSpell:

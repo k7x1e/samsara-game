@@ -181,7 +181,7 @@ transitions = ["Start", "MindSpell", SubResource("AnimationNodeStateMachineTrans
 graph_offset = Vector2(168.21008, -76.62521)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_c43xd"]
-graph_offset = Vector2(-746.2618, 319.02448)
+graph_offset = Vector2(-623.3913, -112.726585)
 nodes/output/position = Vector2(500, 100)
 nodes/Blend2/node = SubResource("AnimationNodeBlend2_c43xd")
 nodes/Blend2/position = Vector2(-180, -20)
@@ -256,15 +256,15 @@ transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-
 
 [node name="Skeleton3D" parent="Rotation/londonProtag/Armature" parent_id_path=PackedInt32Array(423910710, 385813286) index="0" unique_id=2108380087]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.93801147, 0.021749528, 0.34067085, 0.060040884)
-bones/3/rotation = Quaternion(2.230711e-06, -3.570037e-06, 0.00017928785, 1)
+bones/1/rotation = Quaternion(0.9381305, 0.01580393, 0.34104452, 0.057880484)
+bones/3/rotation = Quaternion(0.00012608923, -0.00020179342, 0.010134097, 0.9999486)
 bones/7/rotation = Quaternion(-0.440351, -0.03822061, -0.14063425, 0.8859189)
 bones/8/rotation = Quaternion(-0.10192366, -0.044773385, -0.007949366, 0.99375236)
 bones/9/rotation = Quaternion(-0.17423274, -0.03710145, 0.030870311, 0.98352104)
 bones/10/rotation = Quaternion(0.22203927, 0.5698971, 0.78985965, 0.045138724)
-bones/11/rotation = Quaternion(-0.08787316, 0.7736609, -0.5851086, -0.2266609)
-bones/12/rotation = Quaternion(0.07615562, -0.033040028, -0.33023375, 0.94024163)
-bones/13/rotation = Quaternion(0.041562986, 0.32151955, 0.006778499, 0.94596606)
+bones/11/rotation = Quaternion(0.09578154, 0.8317536, -0.4750532, -0.2708071)
+bones/12/rotation = Quaternion(0.11073949, -0.056747727, -0.22298805, 0.9668468)
+bones/13/rotation = Quaternion(0.14083624, -0.18853082, 0.10712266, 0.96599483)
 bones/15/rotation = Quaternion(0.72698486, 0.094962806, -0.058514364, 0.6775332)
 bones/16/rotation = Quaternion(0.03743713, -0.008029879, -0.00083015836, 0.9992664)
 bones/17/rotation = Quaternion(0.6096443, 0.7403935, -0.14562067, 0.24278796)
@@ -294,7 +294,7 @@ anim_player = NodePath("../londonProtag/AnimationPlayer")
 parameters/Blend2/blend_amount = 1.0
 "parameters/Blend2 2/blend_amount" = 1.0
 "parameters/Blend2 3/blend_amount" = 0.0
-"parameters/Blend2 4/blend_amount" = 1.0
+"parameters/Blend2 4/blend_amount" = 0.0
 script = ExtResource("26_u7x0b")
 player = NodePath("../..")
 anim = NodePath("../londonProtag/AnimationPlayer")

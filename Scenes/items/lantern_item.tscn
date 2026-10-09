@@ -18,7 +18,7 @@ texture = ExtResource("1_71umd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.99563444, 0)
 layers = 4098
 light_color = Color(0.5825375, 0.38598925, 7.70092e-07, 1)
-light_energy = 2.0
+light_energy = 4.0
 omni_range = 10.0
 
 [node name="lanternItem" parent="lanternItem" unique_id=754240510 instance=ExtResource("1_snjn7")]

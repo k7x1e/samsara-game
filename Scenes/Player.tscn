@@ -256,8 +256,8 @@ transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-
 
 [node name="Skeleton3D" parent="Rotation/londonProtag/Armature" parent_id_path=PackedInt32Array(423910710, 385813286) index="0" unique_id=2108380087]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.9381305, 0.01580393, 0.34104452, 0.057880484)
-bones/3/rotation = Quaternion(0.00012608923, -0.00020179342, 0.010134097, 0.9999486)
+bones/1/rotation = Quaternion(0.9380703, 0.019046104, 0.34084243, 0.059058823)
+bones/3/rotation = Quaternion(5.807441e-05, -9.294238e-05, 0.00466758, 0.9999891)
 bones/7/rotation = Quaternion(-0.440351, -0.03822061, -0.14063425, 0.8859189)
 bones/8/rotation = Quaternion(-0.10192366, -0.044773385, -0.007949366, 0.99375236)
 bones/9/rotation = Quaternion(-0.17423274, -0.03710145, 0.030870311, 0.98352104)

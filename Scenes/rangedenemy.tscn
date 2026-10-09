@@ -73,7 +73,7 @@ radius = 24.0
 radius = 16.0
 
 [node name="Actor" type="CharacterBody3D" unique_id=1866149922 groups=["Pausable", "Persistent", "ticked"]]
-collision_layer = 65545
+collision_layer = 1073807369
 collision_mask = 65545
 floor_stop_on_slope = false
 floor_block_on_wall = false
@@ -98,13 +98,13 @@ collision_mask = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Visual/detection" unique_id=1691110203]
 shape = SubResource("SphereShape3D_0830c")
 
-[node name="londonProtag" parent="Visual" unique_id=1098917376 instance=ExtResource("7_ww5ji")]
+[node name="londonProtag" parent="Visual" unique_id=423910710 instance=ExtResource("7_ww5ji")]
 transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0, 0.3, 0)
 
-[node name="Skeleton3D" parent="Visual/londonProtag/Armature" parent_id_path=PackedInt32Array(1098917376, 1182342492) index="0" unique_id=1788119391]
+[node name="Skeleton3D" parent="Visual/londonProtag/Armature" parent_id_path=PackedInt32Array(423910710, 385813286) index="0" unique_id=2108380087]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.9380469, 0.020166216, 0.3407717, 0.05946578)
-bones/3/rotation = Quaternion(3.4575256e-05, -5.5334312e-05, 0.0027788982, 0.9999962)
+bones/1/rotation = Quaternion(0.9381424, 0.01507964, 0.34108916, 0.05761718)
+bones/3/rotation = Quaternion(0.00014128246, -0.00022610866, 0.011355214, 0.9999355)
 bones/7/rotation = Quaternion(-0.440351, -0.03822061, -0.14063425, 0.8859189)
 bones/8/rotation = Quaternion(-0.10192366, -0.044773385, -0.007949366, 0.99375236)
 bones/9/rotation = Quaternion(-0.17423274, -0.03710145, 0.030870311, 0.98352104)

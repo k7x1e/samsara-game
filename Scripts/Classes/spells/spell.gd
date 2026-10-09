@@ -38,6 +38,8 @@ signal quantity_changed()
 
 @export var requiredLevel: int = 0
 
+@export var priority: bool = false
+
 var curThreads: int = 0
 
 func checkEquipment() -> bool:

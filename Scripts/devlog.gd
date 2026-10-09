@@ -622,3 +622,5 @@
 	##09/10
 	#12:26
 	#implementing weapons today. made a nice lil dagger
+	#13:56
+	#implemented

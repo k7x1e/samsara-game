@@ -52,3 +52,7 @@ func casted(anim: String) -> void:
 
 func reversed(isit: bool) -> void:
 	backwards = isit
+
+
+func equipped_cast(anim: String) -> void:
+	statemachineitem.travel(anim)

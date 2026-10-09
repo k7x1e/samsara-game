@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bqdpiionfhc5e" path="res://Scripts/ActorBaseClass.gd" id="1_0830c"]
 [ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="2_ghaa6"]
-[ext_resource type="Script" uid="uid://wwksmh6v3aja" path="res://Scripts/Classes/Behaviour/baseEnemy.gd" id="3_0830c"]
+[ext_resource type="Script" uid="uid://wwksmh6v3aja" path="res://Scripts/classes/Behaviour/baseEnemy.gd" id="3_0830c"]
 [ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="3_haro7"]
 [ext_resource type="PackedScene" uid="uid://dcjnetgb821re" path="res://Scenes/EnemyModel.tscn" id="4_0830c"]
-[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/Classes/npc.gd" id="5_8uf12"]
+[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="5_8uf12"]
 [ext_resource type="PackedScene" uid="uid://bnkq4ylk1qenb" path="res://Models/peasant1.glb" id="5_auwsv"]
 [ext_resource type="Script" uid="uid://xmtxhcqgxgc2" path="res://Scripts/enemyMonitor.gd" id="6_ghaa6"]
 [ext_resource type="AudioStream" uid="uid://b0ahih5c8udqs" path="res://sound/notification/something.wav" id="7_auwsv"]
@@ -74,7 +74,7 @@ radius = 2.018302
 radius = 16.0
 
 [node name="Actor" type="CharacterBody3D" unique_id=1866149922 groups=["Pausable", "Persistent", "ticked"]]
-collision_layer = 65545
+collision_layer = 1073807369
 collision_mask = 65545
 floor_stop_on_slope = false
 floor_block_on_wall = false
@@ -89,10 +89,10 @@ hasMonitor = true
 transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0, 0.46035022, 0)
 visible = false
 
-[node name="Skeleton3D" parent="Visual/peasant1/Armature" parent_id_path=PackedInt32Array(347662839, 1919338655) index="0" unique_id=1589811251]
+[node name="Skeleton3D" parent="Visual/peasant1/Armature" parent_id_path=PackedInt32Array(347662839, 504917625) index="0" unique_id=1970704553]
 bones/0/rotation = Quaternion(0.93800986, 0.021814236, 0.34066674, -0.060064632)
-bones/1/rotation = Quaternion(0.9381612, 0.013863525, 0.34116355, 0.057174433)
-bones/3/rotation = Quaternion(0.012060342, -0.00042763716, 0.0061542066, 0.99990827)
+bones/1/rotation = Quaternion(0.93810153, 0.01743904, 0.34094322, 0.058474306)
+bones/3/rotation = Quaternion(0.011986519, -0.00023420452, 9.1510585e-05, 0.9999281)
 bones/7/rotation = Quaternion(-0.4562524, -0.049126726, -0.16023543, 0.87392503)
 bones/8/rotation = Quaternion(-0.07875365, -0.067492984, -0.10037203, 0.98952925)
 bones/9/rotation = Quaternion(0.014338688, -0.16604029, -0.09179396, 0.9817326)

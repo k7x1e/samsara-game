@@ -97,6 +97,9 @@ animation = &"daggerhold"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wosd6"]
 animation = &"holdForward"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rxg2u"]
+animation = &"stab"
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lyrkg"]
 switch_mode = 2
 advance_mode = 0
@@ -105,15 +108,25 @@ advance_mode = 0
 switch_mode = 2
 advance_mode = 0
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_00okb"]
+switch_mode = 2
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6hr71"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lyrkg"]
 states/End/position = Vector2(900, 100.171875)
 states/Start/position = Vector2(245, 99.93036)
 states/daggerhold/node = SubResource("AnimationNodeAnimation_avx33")
-states/daggerhold/position = Vector2(486.238, 203.19002)
+states/daggerhold/position = Vector2(431.238, 202.69002)
 states/holdForward/node = SubResource("AnimationNodeAnimation_wosd6")
 states/holdForward/position = Vector2(509.2354, 119.48)
-transitions = ["Start", "holdForward", SubResource("AnimationNodeStateMachineTransition_lyrkg"), "Start", "daggerhold", SubResource("AnimationNodeStateMachineTransition_xixlo")]
-graph_offset = Vector2(177.30782, -18.810026)
+states/stab/node = SubResource("AnimationNodeAnimation_rxg2u")
+states/stab/position = Vector2(653.13293, 214.81496)
+transitions = ["Start", "holdForward", SubResource("AnimationNodeStateMachineTransition_lyrkg"), "Start", "daggerhold", SubResource("AnimationNodeStateMachineTransition_xixlo"), "daggerhold", "stab", SubResource("AnimationNodeStateMachineTransition_00okb"), "stab", "daggerhold", SubResource("AnimationNodeStateMachineTransition_6hr71")]
+graph_offset = Vector2(210.53297, 1.8899571)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kih0c"]
 animation = &"Eat"
@@ -168,7 +181,7 @@ transitions = ["Start", "MindSpell", SubResource("AnimationNodeStateMachineTrans
 graph_offset = Vector2(168.21008, -76.62521)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_c43xd"]
-graph_offset = Vector2(-480.02002, 248.79047)
+graph_offset = Vector2(-746.2618, 319.02448)
 nodes/output/position = Vector2(500, 100)
 nodes/Blend2/node = SubResource("AnimationNodeBlend2_c43xd")
 nodes/Blend2/position = Vector2(-180, -20)
@@ -238,20 +251,20 @@ placeholderSpell = ExtResource("12_miouo")
 script = ExtResource("21_8flut")
 lookTargetNode = NodePath("../lookTarget")
 
-[node name="londonProtag" parent="Rotation" unique_id=1986262905 instance=ExtResource("25_8flut")]
+[node name="londonProtag" parent="Rotation" unique_id=423910710 instance=ExtResource("25_8flut")]
 transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0, 0.06221825, 0)
 
-[node name="Skeleton3D" parent="Rotation/londonProtag/Armature" parent_id_path=PackedInt32Array(1986262905, 683826743) index="0" unique_id=753887103]
+[node name="Skeleton3D" parent="Rotation/londonProtag/Armature" parent_id_path=PackedInt32Array(423910710, 385813286) index="0" unique_id=2108380087]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.938168, 0.013396107, 0.34119195, 0.057004992)
-bones/3/rotation = Quaternion(0.0001765957, -0.00028262404, 0.014193425, 0.99989927)
+bones/1/rotation = Quaternion(0.93811464, 0.016717272, 0.34098807, 0.058212496)
+bones/3/rotation = Quaternion(0.000106929685, -0.00017113045, 0.008594199, 0.99996305)
 bones/7/rotation = Quaternion(-0.440351, -0.03822061, -0.14063425, 0.8859189)
 bones/8/rotation = Quaternion(-0.10192366, -0.044773385, -0.007949366, 0.99375236)
 bones/9/rotation = Quaternion(-0.17423274, -0.03710145, 0.030870311, 0.98352104)
-bones/10/rotation = Quaternion(0.09821282, 0.6422233, 0.7483137, 0.13390344)
-bones/11/rotation = Quaternion(-0.47411242, 0.4835809, -0.40598077, -0.61363393)
-bones/12/rotation = Quaternion(0.09626923, -0.1301686, -0.1257836, 0.9787578)
-bones/13/rotation = Quaternion(0.13266666, -0.19198309, 0.015178671, 0.97227144)
+bones/10/rotation = Quaternion(0.22203927, 0.5698971, 0.78985965, 0.045138724)
+bones/11/rotation = Quaternion(-0.08787316, 0.7736609, -0.5851086, -0.2266609)
+bones/12/rotation = Quaternion(0.07615562, -0.033040028, -0.33023375, 0.94024163)
+bones/13/rotation = Quaternion(0.041562986, 0.32151955, 0.006778499, 0.94596606)
 bones/15/rotation = Quaternion(0.72698486, 0.094962806, -0.058514364, 0.6775332)
 bones/16/rotation = Quaternion(0.03743713, -0.008029879, -0.00083015836, 0.9992664)
 bones/17/rotation = Quaternion(0.6096443, 0.7403935, -0.14562067, 0.24278796)
@@ -316,6 +329,7 @@ bus = &"Sfx"
 [connection signal="moving" from="." to="Rotation/anim" method="moving"]
 [connection signal="stopping" from="." to="Rotation/anim" method="stopping"]
 [connection signal="casted" from="Wizard" to="Rotation/anim" method="casted"]
+[connection signal="equipCast" from="Wizard" to="Rotation/anim" method="equipped_cast"]
 [connection signal="reversed" from="Rotation" to="Rotation/anim" method="reversed"]
 
 [editable path="Rotation/londonProtag"]

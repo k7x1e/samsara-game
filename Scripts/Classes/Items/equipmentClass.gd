@@ -11,6 +11,9 @@ class_name equipmentItem
 
 @export var curNode: Variant
 
+@export var hasSpells: bool = false
+@export var equipmentSpells: Array[equipmentSpell]
+
 func initializeItem():
 	var temp = node.instantiate()
 	Globals.Player.skeleton.add_child(temp)
@@ -19,3 +22,17 @@ func initializeItem():
 		temp.initialize()
 	temp.bone_name = attachmentPoint
 	curNode = temp
+	
+	if hasSpells:
+		for which in equipmentSpells:
+			if Globals.wizard.spells[which.slot] != Globals.wizard.placeholderSpell:
+				print("replacing")
+				Globals.wizard.remove(which, true)
+			Globals.wizard.spells[which.slot] = which
+		Globals.spellMaster.updateSpells(Globals.wizard.spells)
+
+func unequip():
+	if hasSpells:
+		for which in equipmentSpells:
+			Globals.wizard.spells[which.slot] = Globals.wizard.placeholderSpell
+		Globals.spellMaster.updateSpells(Globals.wizard.spells)

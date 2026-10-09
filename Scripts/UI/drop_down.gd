@@ -77,8 +77,12 @@ func assignSpell(which: int):
 			Globals.inventory.unequipItem(itemInQ)
 			Globals.wizard.remove(Globals.wizard.spells.find(itemInQ.theSpell), false)
 		if Globals.wizard.spells[which] != Globals.wizard.placeholderSpell:
-			print("replacing")
-			Globals.wizard.remove(which, true)
+			if !Globals.wizard.spells[which].priority:
+				print("replacing")
+				Globals.wizard.remove(which, true)
+			else:
+				print("couldnt, had priority.")
+				return false
 		Globals.wizard.spells[which] = itemInQ.theSpell
 		itemInQ.equipped = true
 		Globals.inventory.updateInventory()

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="equipmentItem" format=3 uid="uid://ca5npbbgkve3e"]
+
+[ext_resource type="Script" uid="uid://ig7vm5nrl2aa" path="res://Scripts/classes/Items/equipmentClass.gd" id="1_601lx"]
+[ext_resource type="PackedScene" uid="uid://dct8lf22m65bu" path="res://Scenes/items/dagger.tscn" id="1_641fg"]
+[ext_resource type="Texture2D" uid="uid://cam57ov3kx1mh" path="res://Textures/icons/items/dagger.png" id="1_gvo2g"]
+
+[resource]
+script = ExtResource("1_601lx")
+slot = "armRight"
+node = ExtResource("1_641fg")
+associatedAnimation = "daggerhold"
+curNode = null
+name = "Dagger"
+description = "Simple Dagger, does some damage."
+icon = ExtResource("1_gvo2g")
+Type = 2
+equippable = true
+metadata/_custom_type_script = "uid://ig7vm5nrl2aa"

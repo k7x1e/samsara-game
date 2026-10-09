@@ -43,6 +43,19 @@ playlist = Array[ExtResource("12_4q8tf")]([ExtResource("13_x3xnh"), ExtResource(
 wait = true
 metadata/_custom_type_script = "uid://n8becq15md55"
 
+[sub_resource type="Resource" id="Resource_vvhu1"]
+script = ExtResource("12_4q8tf")
+audio = ExtResource("18_rajel")
+songName = "Premier Amour"
+artist = "Malice Mizer"
+album = "Voyage - Sans Retour"
+metadata/_custom_type_script = "uid://c5368yh8nkr87"
+
+[sub_resource type="Resource" id="Resource_rajel"]
+script = ExtResource("11_wxwew")
+playlist = Array[ExtResource("12_4q8tf")]([SubResource("Resource_vvhu1")])
+metadata/_custom_type_script = "uid://n8becq15md55"
+
 [sub_resource type="Resource" id="Resource_lbihj"]
 script = ExtResource("12_4q8tf")
 audio = ExtResource("16_rajel")
@@ -65,19 +78,6 @@ metadata/_custom_type_script = "uid://c5368yh8nkr87"
 [sub_resource type="Resource" id="Resource_x3xnh"]
 script = ExtResource("11_wxwew")
 playlist = Array[ExtResource("12_4q8tf")]([SubResource("Resource_tfod6")])
-metadata/_custom_type_script = "uid://n8becq15md55"
-
-[sub_resource type="Resource" id="Resource_vvhu1"]
-script = ExtResource("12_4q8tf")
-audio = ExtResource("18_rajel")
-songName = "Premier Amour"
-artist = "Malice Mizer"
-album = "Voyage - Sans Retour"
-metadata/_custom_type_script = "uid://c5368yh8nkr87"
-
-[sub_resource type="Resource" id="Resource_rajel"]
-script = ExtResource("11_wxwew")
-playlist = Array[ExtResource("12_4q8tf")]([SubResource("Resource_vvhu1")])
 metadata/_custom_type_script = "uid://n8becq15md55"
 
 [sub_resource type="Animation" id="Animation_65i65"]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dct8lf22m65bu"]
+
+[ext_resource type="PackedScene" uid="uid://b1tsd7i5t4x1n" path="res://Models/DAGGER.glb" id="1_poitq"]
+
+[node name="ModifierBoneTarget3D" type="ModifierBoneTarget3D" unique_id=1150556675]
+
+[node name="DAGGER" parent="." unique_id=1267619545 instance=ExtResource("1_poitq")]
+transform = Transform3D(8.742278e-08, -1, -4.371139e-08, 2.9802319e-08, 4.371139e-08, -1, 1, 8.742278e-08, 2.9802322e-08, 0.58389133, 0.0018533468, 0)

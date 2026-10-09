@@ -29,7 +29,7 @@ func unequip(item: itemClass):
 	if !checkSlots([item.slot]) and slots[item.slot] == item:
 		slots[item.slot] = null
 		item.equipped = false
-		Globals.Player.animManager.playEquipAnim("Start")
+		Globals.Player.animManager.playEquipAnim("Start", true)
 		item.curNode.queue_free()
 		updated.emit()
 		return true

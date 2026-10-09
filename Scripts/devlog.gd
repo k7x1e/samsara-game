@@ -618,3 +618,7 @@
 	#almost home i dont know what to do or add.
 	#16:44
 	#i need to add managers for dialogue events
+	#
+	##09/10
+	#12:26
+	#implementing weapons today. made a nice lil dagger

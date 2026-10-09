@@ -39,8 +39,12 @@ func updateAnim():
 func playAnim(_which: String):
 	statemachinespell.travel(_which)
 
-func playEquipAnim(_which: String):
+func playEquipAnim(_which: String, unequipping: bool = false):
 	statemachineitem.travel(_which)
+	if unequipping:
+		set("parameters/Blend2 4/blend_amount",0.0)
+	else:
+		set("parameters/Blend2 4/blend_amount", 1.0)
 
 func casted(anim: String) -> void:
 	playAnim(anim)

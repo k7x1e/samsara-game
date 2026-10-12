@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0l47n7avkajt"
+path="res://.godot/imported/Ontology for an Ècho.mp3-815a9f555bbb295e9f28a045e1db28d2.mp3str"
+
+[deps]
+
+source_file="res://sound/music/ambient/Ontology for an Ècho.mp3"
+dest_files=["res://.godot/imported/Ontology for an Ècho.mp3-815a9f555bbb295e9f28a045e1db28d2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

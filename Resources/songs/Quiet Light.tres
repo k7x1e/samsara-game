@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="song" format=3 uid="uid://gg42hvhv5r8x"]
+
+[ext_resource type="AudioStream" uid="uid://cysmu7pyoolwd" path="res://sound/music/ambient/Quiet Light (says L to yagami).mp3" id="1_uosmt"]
+[ext_resource type="Script" uid="uid://c5368yh8nkr87" path="res://Scripts/classes/song.gd" id="2_lxv71"]
+
+[resource]
+script = ExtResource("2_lxv71")
+audio = ExtResource("1_uosmt")
+songName = "Quiet Light"
+artist = "Loke"
+metadata/_custom_type_script = "uid://c5368yh8nkr87"

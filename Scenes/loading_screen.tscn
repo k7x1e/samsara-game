@@ -58,6 +58,7 @@ _data = {
 
 [node name="Node3D" type="Node3D" unique_id=566675259]
 script = ExtResource("1_nfm0g")
+loadingTips = Array[String](["He who is inexperienced in the arcane arts will find it quite difficult to cast while holding something.", "Spells don't just have to be bought or made as they can be unlocked.", "Press Space to interact.", "Keep playing our game. Give us as much money as you can.", "The sorcerer will find himself quite incapable of wielding a blade.", "He who wields divine magic must consider carefully how he uses it.", "Smile for the spyware!", "This game has mined 0.03584 Bitcoin through your computer thus far.", "By the time you get into the game your left eye will have murdered your right.", "Make sure your nostrils are intact.", "If you can't read this make sure you have a monitor.", "If you find these tips unfunny please complain to us on twitter and we'll make sure not to read it.", "You suck at this game."])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1221232304]
 follow_viewport_enabled = true
@@ -103,6 +104,23 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_nfm0g")
 theme_override_font_sizes/font_size = 20
 text = "Tip: One faithful day in 2026 a lazy coder would end up putting this text here only to forget to put actual tips in place"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=507081214]
+visible = false
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 260.0
+offset_bottom = 286.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_nfm0g")
+theme_override_font_sizes/font_size = 20
+text = "Press any button to continue"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1

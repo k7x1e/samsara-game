@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="song" format=3 uid="uid://bl7s33meow6an"]
+
+[ext_resource type="AudioStream" uid="uid://c0l47n7avkajt" path="res://sound/music/ambient/Ontology for an Ècho.mp3" id="1_0r2c8"]
+[ext_resource type="Script" uid="uid://c5368yh8nkr87" path="res://Scripts/classes/song.gd" id="2_7snh8"]
+
+[resource]
+script = ExtResource("2_7snh8")
+audio = ExtResource("1_0r2c8")
+songName = "Ontology for an Ècho"
+artist = "Loke"
+metadata/_custom_type_script = "uid://c5368yh8nkr87"

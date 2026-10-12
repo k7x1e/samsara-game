@@ -15,32 +15,19 @@
 [ext_resource type="Script" uid="uid://n8becq15md55" path="res://Scripts/classes/playlist.gd" id="11_wxwew"]
 [ext_resource type="Script" uid="uid://c5368yh8nkr87" path="res://Scripts/classes/song.gd" id="12_4q8tf"]
 [ext_resource type="Resource" uid="uid://dl6aglpq2o8cc" path="res://Resources/songs/Dueil.tres" id="13_x3xnh"]
-[ext_resource type="Resource" uid="uid://6y4d7ud8bxep" path="res://Resources/songs/loke_02.tres" id="14_x3xnh"]
 [ext_resource type="AudioStream" uid="uid://bkup7jcrplqsh" path="res://sound/music/return to me once your soul is at peace.mp3" id="16_8r6kd"]
+[ext_resource type="Resource" uid="uid://gg42hvhv5r8x" path="res://Resources/songs/Quiet Light.tres" id="16_lbihj"]
 [ext_resource type="AudioStream" uid="uid://bpg4y56ct7yea" path="res://sound/music/Swing My Door.mp3" id="16_rajel"]
-[ext_resource type="AudioStream" uid="uid://b5sfeixsm4wtc" path="res://sound/music/ambient/loke_03.mp3" id="16_vvhu1"]
 [ext_resource type="Shader" uid="uid://b7hiplev3r7q2" path="res://Resources/Shaders/grain.gdshader" id="17_4q8tf"]
+[ext_resource type="Resource" uid="uid://bl7s33meow6an" path="res://Resources/songs/ontology.tres" id="17_raj38"]
 [ext_resource type="AudioStream" uid="uid://b11crxj0h858c" path="res://sound/music/Premier Armour - Malice Mizer.mp3" id="18_rajel"]
 [ext_resource type="PackedScene" uid="uid://b14oh2lrhjl14" path="res://Scenes/now_playing.tscn" id="18_x3xnh"]
 
-[sub_resource type="Resource" id="Resource_raj38"]
-script = ExtResource("12_4q8tf")
-audio = ExtResource("16_vvhu1")
-songName = "03"
-artist = "Loke"
-metadata/_custom_type_script = "uid://c5368yh8nkr87"
-
-[sub_resource type="Resource" id="Resource_8e0uq"]
-script = ExtResource("12_4q8tf")
-audio = ExtResource("9_71axn")
-songName = "01"
-artist = "Loke"
-metadata/_custom_type_script = "uid://c5368yh8nkr87"
-
 [sub_resource type="Resource" id="Resource_4q8tf"]
 script = ExtResource("11_wxwew")
-playlist = Array[ExtResource("12_4q8tf")]([ExtResource("13_x3xnh"), ExtResource("14_x3xnh"), SubResource("Resource_raj38"), SubResource("Resource_8e0uq")])
+playlist = Array[ExtResource("12_4q8tf")]([ExtResource("13_x3xnh"), ExtResource("16_lbihj"), ExtResource("17_raj38")])
 wait = true
+maxWait = 20.0
 metadata/_custom_type_script = "uid://n8becq15md55"
 
 [sub_resource type="Resource" id="Resource_vvhu1"]

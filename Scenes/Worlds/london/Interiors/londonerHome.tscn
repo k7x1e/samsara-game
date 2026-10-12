@@ -20,10 +20,9 @@
 [ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="18_d3xwe"]
 [ext_resource type="AudioStream" uid="uid://cs1ygjrv7be2n" path="res://sound/sfx/typewriter.wav" id="19_3ieen"]
 [ext_resource type="Script" uid="uid://baf2et18ajmro" path="res://Scripts/classes/Behaviour/Follower.gd" id="20_5xxwy"]
+[ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="20_sssge"]
 [ext_resource type="Resource" uid="uid://djst5ndjwy31i" path="res://Resources/story/conversations/Cain.tres" id="21_vdnvd"]
 [ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="23_0sw68"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_fdagy"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_om76y"]
 vertices = PackedVector3Array(-5, 1.5, -4.25, -4.25, 1.5, -4.25, -4, 1.5, -6.5, -5, 1.5, -7, -0.5, 1.75, -6.5, -0.5, 1.75, -7, 5.5, 0.5, -7, 0.75, 0.5, -7, 0.75, 0.5, -5.75, 0.75, 0.5, -0.5, 5.5, 0.5, -0.5, -3.5, 0.5, -3, -5, 0.5, -3, -5, 0.5, -0.25, -4, 0.5, 0, -4, 0.5, 3.5, -0.5, 0.5, 3.5, -0.5, 0.5, -0.25, -3, 0.5, -3.5, 0.25, 0.5, -5.25, -3, 0.5, -5.25)
@@ -371,11 +370,11 @@ script = ExtResource("23_0sw68")
 npcName = "Cain"
 model = SubResource("PackedScene_57ena")
 behaviour = SubResource("Resource_073tb")
+necessary = true
 metadata/_custom_type_script = "uid://drjjmjc24qipo"
 
 [node name="londonerHome" type="Node3D" unique_id=283826596]
 script = ExtResource("1_tggpp")
-viewTex = SubResource("ViewportTexture_fdagy")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=562254435]
 navigation_mesh = SubResource("NavigationMesh_om76y")

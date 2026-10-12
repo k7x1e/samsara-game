@@ -624,3 +624,7 @@
 	#implementing weapons today. made a nice lil dagger
 	#13:56
 	#implemented
+	#
+	##12/10
+	#13:01
+	#i am back to working, not really sure what to make today.

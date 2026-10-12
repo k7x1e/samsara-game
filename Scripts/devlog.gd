@@ -625,10 +625,6 @@
 	#13:56
 	#implemented
 	#
-	##12/10
-	#13:01
-	#i am back to working, not really sure what to make today.
-	#14:57
-	#been working on the map. i feel like shit. time to implement loading screen tips
-	#15:10
-	#finished support for it and wrote some loading screen tips
+	##11/10
+	#18:23
+	#time to work

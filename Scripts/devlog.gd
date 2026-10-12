@@ -643,3 +643,5 @@
 	#what purpose could this serve other than to fuck up ALL UID code. 
 	#commenting it fixed that bug and seemingly a whole slew of other ones.
 	#fuck you past casper
+	#23:34
+	#after that nightmare im done for the day. time to go to bed

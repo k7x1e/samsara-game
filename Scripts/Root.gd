@@ -354,4 +354,11 @@ func loadSave(_which: String):
 	get_tree().change_scene_to_packed(screen)
 
 func death():
+	Globals.Player.hide()
+	$fading/monochrome.show()
+	#var oldCamPos = Globals.Player.camera.global_position
+	#Globals.Player.global_position = $playerDeathPos.global_position
+	#Globals.Player.camera.global_position = oldCamPos
+	#Globals.Player.set_process(false)
 	pause(true)
+	musicManager.changePlaylist("Death", true)

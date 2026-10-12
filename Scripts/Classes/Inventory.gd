@@ -13,7 +13,8 @@ signal inventoryChanged()
 func assignIDs():
 	if !idHandler:
 		idHandler = Globals.idHandler
-	idHandler.usedArrays = []
+	#WHY WOULD THIS BE HEREeee
+	#idHandler.usedArrays = []
 	for i in range(inventory.size()):
 		idHandler.give_id(inventory[i])
 
@@ -37,4 +38,5 @@ func add(which:itemClass):
 	inventoryChanged.emit()
 
 func getUIDindex(id:int):
-	return idHandler.usedArrays.find(id)
+	var result = idHandler.usedArrays.find(id)
+	return result

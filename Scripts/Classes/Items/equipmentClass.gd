@@ -25,11 +25,11 @@ func initializeItem():
 	
 	if hasSpells:
 		for which in equipmentSpells:
-			if Globals.wizard.spells[which.slot] != Globals.wizard.placeholderSpell:
+			if Globals.wizard.spells[which.slot] != Globals.wizard.placeholderSpell and Globals.wizard.spells[which.slot] != which:
 				print("replacing")
 				Globals.wizard.remove(which.slot, true)
 			Globals.wizard.spells[which.slot] = which
-		Globals.spellMaster.updateSpells(Globals.wizard.spells)
+		#Globals.spellMaster.updateSpells(Globals.wizard.spells)
 
 func unequip():
 	if hasSpells:

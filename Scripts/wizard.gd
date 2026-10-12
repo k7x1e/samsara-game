@@ -47,10 +47,13 @@ func fail(reason: String = " "):
 
 func remove(which: int, replacement: bool):
 	if replacement:
+		
 		var spellToRemove: spell = spells[which]
-		var itemToUnequip: itemClass = Globals.inventory.getFromUID(spellToRemove.parentItemUID)
+		var itemToUnequip: itemClass = null
+		itemToUnequip = Globals.inventory.getFromUID(spellToRemove.parentItemUID)
 		var NodeToUnequip: Node = Globals.inventory.GetNode(itemToUnequip)
-		itemToUnequip.equipped = false
+		if itemToUnequip != null:
+			itemToUnequip.equipped = false
 		Globals.inventory.unequip(NodeToUnequip)
 	#for some odd reason it was set to duplicate the placeholder which was causing these bugs
 	spells[which] = placeholderSpell

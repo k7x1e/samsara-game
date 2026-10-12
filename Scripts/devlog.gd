@@ -628,3 +628,18 @@
 	##11/10
 	#18:23
 	#time to work
+	#
+	##12/10
+	#22:31
+	#the logs from earlierr today of me doing some bullshit are lost media now o algo, rest in peace.
+	#anyhow i gotta make abridged versions of BoH songs
+	#23:01
+	#abridged 210 excerpt G and made a sick ass death screen
+	#23:04
+	#i figured out the equipment bug. Something about replacing an already equipped spell makes the equipment confused
+	#23:31
+	#most retarded coder on earth?
+	#i had for some STRANGE reason added a line of code that would reset the IdHandlers used array.
+	#what purpose could this serve other than to fuck up ALL UID code. 
+	#commenting it fixed that bug and seemingly a whole slew of other ones.
+	#fuck you past casper

@@ -12,10 +12,12 @@ func give_id(itemInQuestion: itemClass):
 				var result: int = 1  #0 means used
 				for i in range(usedArrays.size()):
 					if usedArrays[i] == temp and result != 0:
+						print("already used....")
 						result = 0
 				if result == 1:
 					itemInQuestion.UID = temp
 					give_id_based_on_type(itemInQuestion, temp)
+					print("added id to used array")
 					usedArrays.append(temp)
 			else:
 				itemInQuestion.UID = 49

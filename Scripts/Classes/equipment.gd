@@ -27,6 +27,7 @@ func equip(item: itemClass):
 func unequip(item: itemClass):
 	print(checkSlots([item.slot]), slots[item.slot].name)
 	if !checkSlots([item.slot]) and slots[item.slot] == item:
+		print("unequipping")
 		slots[item.slot] = null
 		item.equipped = false
 		Globals.Player.animManager.playEquipAnim("Start", true)

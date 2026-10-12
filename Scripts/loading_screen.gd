@@ -21,7 +21,7 @@ func _ready() -> void:
 		return
 
 func fetchRandomTip() -> String:
-	var i = randi_range(0,loadingTips.size())
+	var i = randi_range(0,loadingTips.size()-1)
 	return loadingTips[i]
 
 func _input(event: InputEvent) -> void:

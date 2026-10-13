@@ -12,8 +12,8 @@
 [ext_resource type="AudioStream" uid="uid://cx7gpdcgmoe8l" path="res://sound/music/ambient/loke_01.mp3" id="9_71axn"]
 [ext_resource type="PackedScene" uid="uid://ca4gja6yrwcfs" path="res://Scenes/Worlds/london/Interiors/londonLibrary.tscn" id="9_tfod6"]
 [ext_resource type="Script" uid="uid://bm2l5giuwq8pu" path="res://Scripts/music_manager.gd" id="10_dahhg"]
-[ext_resource type="Script" uid="uid://n8becq15md55" path="res://Scripts/Classes/playlist.gd" id="11_wxwew"]
-[ext_resource type="Script" uid="uid://c5368yh8nkr87" path="res://Scripts/Classes/song.gd" id="12_4q8tf"]
+[ext_resource type="Script" uid="uid://n8becq15md55" path="res://Scripts/classes/playlist.gd" id="11_wxwew"]
+[ext_resource type="Script" uid="uid://c5368yh8nkr87" path="res://Scripts/classes/song.gd" id="12_4q8tf"]
 [ext_resource type="Resource" uid="uid://dl6aglpq2o8cc" path="res://Resources/songs/Dueil.tres" id="13_x3xnh"]
 [ext_resource type="AudioStream" uid="uid://bkup7jcrplqsh" path="res://sound/music/return to me once your soul is at peace.mp3" id="16_8r6kd"]
 [ext_resource type="Resource" uid="uid://gg42hvhv5r8x" path="res://Resources/songs/Quiet Light.tres" id="16_lbihj"]
@@ -23,6 +23,9 @@
 [ext_resource type="AudioStream" uid="uid://b11crxj0h858c" path="res://sound/music/Premier Armour - Malice Mizer.mp3" id="18_rajel"]
 [ext_resource type="PackedScene" uid="uid://b14oh2lrhjl14" path="res://Scenes/now_playing.tscn" id="18_x3xnh"]
 [ext_resource type="Resource" uid="uid://dr6wtb2x5y5ld" path="res://Resources/songs/210G.tres" id="20_lbihj"]
+[ext_resource type="Resource" uid="uid://cf4047g3cn2ch" path="res://Resources/songs/123a.tres" id="21_3jf1l"]
+[ext_resource type="Resource" uid="uid://cfdqese2tgo1h" path="res://Resources/songs/123b.tres" id="22_356ba"]
+[ext_resource type="Resource" uid="uid://bixealjbu1gq1" path="res://Resources/songs/122.tres" id="23_3jf1l"]
 [ext_resource type="Shader" uid="uid://bjn10bjrle70t" path="res://Resources/Shaders/monochrome.gdshader" id="24_raj38"]
 
 [sub_resource type="Resource" id="Resource_4q8tf"]
@@ -30,6 +33,11 @@ script = ExtResource("11_wxwew")
 playlist = Array[ExtResource("12_4q8tf")]([ExtResource("13_x3xnh"), ExtResource("16_lbihj"), ExtResource("17_raj38")])
 wait = true
 maxWait = 20.0
+metadata/_custom_type_script = "uid://n8becq15md55"
+
+[sub_resource type="Resource" id="Resource_raj38"]
+script = ExtResource("11_wxwew")
+playlist = Array[ExtResource("12_4q8tf")]([ExtResource("20_lbihj")])
 metadata/_custom_type_script = "uid://n8becq15md55"
 
 [sub_resource type="Resource" id="Resource_vvhu1"]
@@ -69,9 +77,9 @@ script = ExtResource("11_wxwew")
 playlist = Array[ExtResource("12_4q8tf")]([SubResource("Resource_tfod6")])
 metadata/_custom_type_script = "uid://n8becq15md55"
 
-[sub_resource type="Resource" id="Resource_raj38"]
+[sub_resource type="Resource" id="Resource_356ba"]
 script = ExtResource("11_wxwew")
-playlist = Array[ExtResource("12_4q8tf")]([ExtResource("20_lbihj")])
+playlist = Array[ExtResource("12_4q8tf")]([ExtResource("21_3jf1l"), ExtResource("22_356ba"), ExtResource("23_3jf1l")])
 metadata/_custom_type_script = "uid://n8becq15md55"
 
 [sub_resource type="Animation" id="Animation_65i65"]
@@ -167,6 +175,7 @@ script = ExtResource("10_dahhg")
 playlists = Dictionary[String, ExtResource("11_wxwew")]({
 "City": SubResource("Resource_4q8tf"),
 "Death": SubResource("Resource_raj38"),
+"dungeon": SubResource("Resource_356ba"),
 "londonLibrary": SubResource("Resource_rajel"),
 "londonerHome": SubResource("Resource_acvyw"),
 "tutorial": SubResource("Resource_x3xnh")

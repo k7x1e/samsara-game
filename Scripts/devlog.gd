@@ -665,3 +665,7 @@
 	#finished for the most part
 	#18:31
 	#MOSTLY working now, this is a significant improvement to the spell system and to the game in general
+	#
+	##14/10
+	#00:21
+	#just abridged a couple songs and added them as dungeon themes.

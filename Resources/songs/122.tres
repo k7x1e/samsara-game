@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="song" format=3 uid="uid://bixealjbu1gq1"]
+
+[ext_resource type="AudioStream" uid="uid://ccaxnwo7ok4iv" path="res://sound/music/122.mp3" id="1_epjgm"]
+[ext_resource type="Script" uid="uid://c5368yh8nkr87" path="res://Scripts/classes/song.gd" id="2_pqu2x"]
+
+[resource]
+script = ExtResource("2_pqu2x")
+audio = ExtResource("1_epjgm")
+songName = "122 - Drums and Thigh-Bone Trumpets, Skull-Timbrels - Excerpt"
+artist = "Bull of Heaven"
+album = ""
+metadata/_custom_type_script = "uid://c5368yh8nkr87"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="song" format=3 uid="uid://cf4047g3cn2ch"]
+
+[ext_resource type="AudioStream" uid="uid://duqpqvcuejr6t" path="res://sound/music/123a.mp3" id="1_ool42"]
+[ext_resource type="Script" uid="uid://c5368yh8nkr87" path="res://Scripts/classes/song.gd" id="2_0qvom"]
+
+[resource]
+script = ExtResource("2_0qvom")
+audio = ExtResource("1_ool42")
+songName = "123 - Eighty Thousand Species of Mischevious Sprites - Excerpt A"
+artist = "Bull of Heaven"
+album = ""
+metadata/_custom_type_script = "uid://c5368yh8nkr87"

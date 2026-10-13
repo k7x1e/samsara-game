@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dpd75hihwor21" path="res://Scenes/models/interior_entrance.tscn" id="7_kx6ky"]
 [ext_resource type="PackedScene" uid="uid://cv1a2spb7dc7b" path="res://Scenes/models/lamp_post.tscn" id="8_a3kko"]
 [ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="10_p4rme"]
+[ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="11_46twk"]
 [ext_resource type="PackedScene" uid="uid://wggca4kc4v15" path="res://Scenes/actor.tscn" id="11_130w1"]
 [ext_resource type="Script" uid="uid://baf2et18ajmro" path="res://Scripts/classes/Behaviour/Follower.gd" id="11_kx6ky"]
 [ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/classes/dialogueClass.gd" id="12_coum6"]
@@ -178,6 +179,7 @@ metadata/_custom_type_script = "uid://drjjmjc24qipo"
 
 [node name="londonPub" type="Node3D" unique_id=977649353]
 script = ExtResource("1_a3kko")
+isDungeon = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1349926461]
 navigation_mesh = SubResource("NavigationMesh_8l2jw")
@@ -281,7 +283,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0)
 [node name="Actor" parent="." unique_id=1934936362 instance=ExtResource("11_130w1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.096186, 1.7073615, -9.677196)
 NpcClass = SubResource("Resource_gerup")
-
-[connection signal="moving" from="NavigationRegion3D/FuncGodotMap/entity_2_enemy" to="NavigationRegion3D/FuncGodotMap/entity_2_enemy/Monitor" method="moving"]
-[connection signal="moving" from="NavigationRegion3D/FuncGodotMap/entity_3_enemy" to="NavigationRegion3D/FuncGodotMap/entity_3_enemy/Monitor" method="moving"]
-[connection signal="moving" from="NavigationRegion3D/FuncGodotMap/entity_4_enemy" to="NavigationRegion3D/FuncGodotMap/entity_4_enemy/Monitor" method="moving"]

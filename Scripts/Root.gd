@@ -98,7 +98,9 @@ func changeWorld(caller: Variant, Targetscene: String, fromMain: bool, fade: boo
 		if !onLoading:
 			Globals.mainWorldPlayerPos = Globals.Player.global_position
 		Globals.Player.global_position = gamestate.newWorld.playerSpawn.global_position
-		if musicManager.checkInteriorPlaylist(Targetscene):
+		if gamestate.newWorld.isDungeon:
+			musicManager.changePlaylist("dungeon", true)
+		elif musicManager.checkInteriorPlaylist(Targetscene):
 			musicManager.changePlaylist(Targetscene, true)
 	
 	else:

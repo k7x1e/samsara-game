@@ -23,7 +23,7 @@ signal statChanged()
 @export var progressStats: Array[Variant] = [agilityprogress, magicprogress, perceptionprogress, intelligenceprogress, strengthprogress]
 @export var statDescriptions: Array[String] = ["This stat determines how fast you are, in other words how agile you are.", "How proficient you are within the magic arts. Decreases spell cooldown, cost and increases effect.", 
 "Perception. How good you are at spotting things and how good you are with guns.", "How smart you are, Affects speech and mana.", "Your physical strength. Makes you able to lift more and melee harder."]
-@export var statNames: Array[String] = ["Agility", "Magic", "Perception", "Intelligence", "Strength"]
+@export var statNames: Array[String] = ["agility", "magic", "perception", "intelligence", "strength"]
 
 @export var progressMax: int = 50
 
@@ -47,13 +47,16 @@ func retrieve(stat: int): #0: agility, 1: magic, 2: perception, 3: intelligence,
 func setstat(stat: int, amt: float):
 	#print(stats[stat])
 	stats[stat] = amt
-	#print(stats[stat])
+	print("set stat: ", stat, " to ", amt)
 	Globals.Player.refreshStats()
 	statChanged.emit()
 
 func experience(stat:int):
 	progressStats[stat] += 1
 	checkLevels()
+
+func getStatIntFromString(stat:String):
+	return statNames.find(stat)
 
 func checkLevels():
 	var b = 0

@@ -1,11 +1,31 @@
 [gd_resource type="Resource" script_class="spell" format=3 uid="uid://c16nv1e2gr28j"]
 
 [ext_resource type="Texture2D" uid="uid://874crc0bp3hk" path="res://icon.png" id="1_1yucx"]
-[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/Classes/spells/spell.gd" id="2_xphm0"]
+[ext_resource type="Script" uid="uid://cd6w5kfeybbue" path="res://Scripts/classes/actions/statuseffect.gd" id="2_uhqoq"]
+[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/classes/spells/spell.gd" id="2_xphm0"]
 [ext_resource type="PackedScene" uid="uid://wjrts7plxpwx" path="res://Scenes/spells/dash.tscn" id="3_uhqoq"]
+[ext_resource type="Script" uid="uid://bs1xhdp0kaywn" path="res://Scripts/classes/statuseffect.gd" id="3_ulibp"]
+
+[sub_resource type="Resource" id="Resource_hlwpw"]
+script = ExtResource("3_ulibp")
+Name = "Dashing"
+timed = true
+metadata/_custom_type_script = "uid://bs1xhdp0kaywn"
+
+[sub_resource type="Resource" id="Resource_ulibp"]
+script = ExtResource("2_uhqoq")
+effectTarget = 2
+mode = 1
+statusEffect = SubResource("Resource_hlwpw")
+parameter = &"agility"
+operand = 0
+amount = 6.0
+duration = 0.2
+metadata/_custom_type_script = "uid://cd6w5kfeybbue"
 
 [resource]
 script = ExtResource("2_xphm0")
+action = SubResource("Resource_ulibp")
 spellNode = ExtResource("3_uhqoq")
 basecoolDown = 2.0
 coolDown = 2.0

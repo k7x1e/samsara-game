@@ -11,12 +11,7 @@ func cast(_caster: Variant, _fromInventory: bool = false):
 	if castable and !cooldown_active and quantity > 0 and curThreads == 0:
 		quantity -= 1
 		castable = false
-		var actualNode = spellNode.instantiate()
-		Globals.Root.add_child(actualNode)
-		#actualNode.global_rotation = caster.global_rotation
-		#actualNode.global_position = caster.global_position
-		actualNode.set_owner(Globals.Root)
-		actualNode.initialize()
+		action.do(Globals.Player, self)
 		hasNode = !_fromInventory
 		cooldown_active = true
 		cooldown()

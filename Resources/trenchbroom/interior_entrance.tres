@@ -11,7 +11,8 @@ classname = "InteriorEntrance"
 class_properties = Dictionary[String, Variant]({
 "fromInterior": false,
 "interiorName": "placeholder",
-"targetScene": "sceneName"
+"targetScene": "sceneName",
+"unlocked": true
 })
 node_class = "Node3D"
 metadata/_custom_type_script = "uid://cxsqwtsqd8w33"

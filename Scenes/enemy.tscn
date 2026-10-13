@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://iucjrslv446t"]
 
 [ext_resource type="Script" uid="uid://bqdpiionfhc5e" path="res://Scripts/ActorBaseClass.gd" id="1_0830c"]
+[ext_resource type="Script" uid="uid://cdqtgy65m8nor" path="res://Scripts/classes/actions/enemystab.gd" id="2_56vhr"]
 [ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="2_ghaa6"]
 [ext_resource type="Script" uid="uid://wwksmh6v3aja" path="res://Scripts/classes/Behaviour/baseEnemy.gd" id="3_0830c"]
 [ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="3_haro7"]
@@ -12,8 +13,13 @@
 [ext_resource type="AudioStream" uid="uid://bikro78yehb60" path="res://sound/notification/mission.wav" id="8_8uf12"]
 [ext_resource type="Texture2D" uid="uid://dlppbptyqxtaf" path="res://Textures/UI/marker.png" id="10_po0sg"]
 
+[sub_resource type="Resource" id="Resource_ta2yt"]
+script = ExtResource("2_56vhr")
+metadata/_custom_type_script = "uid://cdqtgy65m8nor"
+
 [sub_resource type="Resource" id="Resource_ghaa6"]
 script = ExtResource("3_0830c")
+attackAction = SubResource("Resource_ta2yt")
 alertArea = null
 damageArea = null
 detectionArea = null
@@ -91,8 +97,8 @@ visible = false
 
 [node name="Skeleton3D" parent="Visual/peasant1/Armature" parent_id_path=PackedInt32Array(347662839, 504917625) index="0" unique_id=1970704553]
 bones/0/rotation = Quaternion(0.93800986, 0.021814236, 0.34066674, -0.060064632)
-bones/1/rotation = Quaternion(0.93810153, 0.01743904, 0.34094322, 0.058474306)
-bones/3/rotation = Quaternion(0.011986519, -0.00023420452, 9.1510585e-05, 0.9999281)
+bones/1/rotation = Quaternion(0.9380138, 0.021651419, 0.34067717, 0.060004715)
+bones/3/rotation = Quaternion(0.011898665, -5.4723455e-06, -0.0070772227, 0.9999042)
 bones/7/rotation = Quaternion(-0.4562524, -0.049126726, -0.16023543, 0.87392503)
 bones/8/rotation = Quaternion(-0.07875365, -0.067492984, -0.10037203, 0.98952925)
 bones/9/rotation = Quaternion(0.014338688, -0.16604029, -0.09179396, 0.9817326)

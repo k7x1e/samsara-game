@@ -4,11 +4,12 @@ class_name spell
 
 signal quantity_changed()
 
-@export var spellNode: PackedScene
+@export var action: Action
+#@export var spellNode: PackedScene ##depreceated
 @export var basecost: int
 @export var cost: int
-@export var basecoolDown: float = 1.0 #IN SECONDS
-@export var coolDown: float = 1.0 #IN SECONDS
+@export var basecoolDown: float = 1.0 ##IN SECONDS
+@export var coolDown: float = 1.0 ##IN SECONDS
 
 #implemented
 @export var name: String
@@ -63,12 +64,8 @@ func cast(caster: Variant):
 			castable = false
 			#this is going to happen in the individual spells when it does damage
 			#Globals.stats.experience(1)
-			var actualNode = spellNode.instantiate()
-			Globals.Root.add_child(actualNode)
-			actualNode.global_rotation = caster.global_rotation
-			actualNode.global_position = caster.global_position
-			actualNode.set_owner(Globals.Root)
-			actualNode.initialize()
+			action.do(Globals.Player, self)
+			
 			Globals.Player.mana -= cost
 			#print(Globals.Player.mana)
 			cooldown_active = true
@@ -81,9 +78,9 @@ func cast(caster: Variant):
 
 func updateStats():
 	if statted:
-		self.coolDown = basecoolDown - (int(Globals.stats.stats[1] / 5) * 0.25)
+		self.coolDown = basecoolDown - (int(Globals.stats.stats[1] / 30) * 0.25)
 		#print (coolDown, basecoolDown)
-		self.cost = basecost - (int(Globals.stats.stats[1] / 10) * 25)
+		self.cost = basecost - (int(Globals.stats.stats[1] / 20) * 25)
 		#print(cost, basecost)
 	#no matter if its statted the hand change will apply
 	if requiredSlots == ["armLeft", "armRight"] and Globals.stats.stats[0] >= Globals.stats.spellHandThreshhold:

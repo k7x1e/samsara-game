@@ -5,6 +5,7 @@ extends Node3D
 @export var targetSceneString: String = "null"
 @export var fromInterior: bool
 @export var interiorName: String = "placeHolder"
+@export var unlocked: bool = true
 
 @onready var billboard = $billboard
 
@@ -16,6 +17,7 @@ func _func_godot_apply_properties(entity_properties: Dictionary) -> void:
 	targetSceneString = entity_properties["targetScene"] as String
 	fromInterior = entity_properties["fromInterior"] as bool
 	interiorName = entity_properties["interiorName"] as String
+	unlocked = entity_properties["unlocked"] as bool
 
 func _ready() -> void:
 	billboard.billboardtext = interiorName
@@ -36,10 +38,13 @@ func _process(delta: float) -> void:
 			for body in bodies:
 				#print(body.name)
 				if body.name == "Player":
-					if fromInterior:
-						Globals.Root.changeWorld(self, targetSceneString, false)
+					if unlocked:
+						if fromInterior:
+							Globals.Root.changeWorld(self, targetSceneString, false)
+						else:
+							Globals.Root.changeWorld(self, targetSceneString, true)
 					else:
-						Globals.Root.changeWorld(self, targetSceneString, true)
+						body.notify("locked...", "locked")
 	else:
 		billboard.hide()
 	

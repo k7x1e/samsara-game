@@ -46,11 +46,14 @@ func update():
 			currentW.quest.setProgress(currentW.progressionLevel)
 
 func optionPressed(i: DialogueOption):
+	if i.action != null:
+		i.action.do(Globals.Root)
 	if i.target == -1:
 		Globals.Root.stopDialogue()
 		return
 	index = 3
 	index = i.target
+	
 	match i.condMode:
 		1:
 			match i.condition.fulfilled:

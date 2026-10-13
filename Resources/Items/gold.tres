@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="gold" format=3 uid="uid://btvygn7abx3hr"]
+
+[ext_resource type="Texture2D" uid="uid://dfoho4pohbad5" path="res://Textures/icons/items/gold.png" id="1_758j5"]
+[ext_resource type="Script" uid="uid://cok8qfpgpgw3b" path="res://Scripts/classes/Items/gold.gd" id="2_estas"]
+
+[resource]
+script = ExtResource("2_estas")
+itemID = 49
+UID = 49
+name = "Gold"
+icon = ExtResource("1_758j5")
+Type = 5
+quantity = 25
+metadata/_custom_type_script = "uid://cok8qfpgpgw3b"

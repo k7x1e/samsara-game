@@ -6,6 +6,8 @@ signal playerFoundAlert()
 signal attacking()
 signal damaged()
 
+@export var attackAction: Action
+
 @export var alerts: bool = true
 @export var alertArea: Variant
 @export var damageArea: Variant
@@ -88,13 +90,7 @@ func damage(amt: float):
 		return false
 
 func attack():
-	var bodies = damageArea.get_overlapping_bodies()
-	for body in bodies:
-		#print("attacking player..")
-		attacking.emit()
-		body.damage(atdamage)
-		cooldown()
-		return true
+	attackAction.do(actor, null, [damageArea, self, atdamage])
 
 func cooldown():
 	can_attack = false

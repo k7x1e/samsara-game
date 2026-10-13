@@ -4,7 +4,7 @@ var backupGlobals
 
 @export var Root: Node3D
 
-@export var Player: CharacterBody3D
+@export var Player: Player
 @export var wizard: Node
 @export var stats: Stats
 

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="equipmentItem" format=3 uid="uid://ca5npbbgkve3e"]
 
-[ext_resource type="Script" uid="uid://ig7vm5nrl2aa" path="res://Scripts/Classes/Items/equipmentClass.gd" id="1_601lx"]
+[ext_resource type="Script" uid="uid://ig7vm5nrl2aa" path="res://Scripts/classes/Items/equipmentClass.gd" id="1_601lx"]
 [ext_resource type="PackedScene" uid="uid://dct8lf22m65bu" path="res://Scenes/items/dagger.tscn" id="1_641fg"]
 [ext_resource type="Texture2D" uid="uid://cam57ov3kx1mh" path="res://Textures/icons/items/dagger.png" id="1_gvo2g"]
-[ext_resource type="Script" uid="uid://b6gxwdgd5651g" path="res://Scripts/Classes/equipmentSpell.gd" id="1_hnuyp"]
-[ext_resource type="Script" uid="uid://w12wn77whdy6" path="res://Scripts/Classes/actions/stab.gd" id="3_8hhar"]
+[ext_resource type="Script" uid="uid://b6gxwdgd5651g" path="res://Scripts/classes/equipmentSpell.gd" id="1_hnuyp"]
+[ext_resource type="Script" uid="uid://w12wn77whdy6" path="res://Scripts/classes/actions/stab.gd" id="3_8hhar"]
 
 [sub_resource type="Resource" id="Resource_jd1bq"]
 script = ExtResource("3_8hhar")
@@ -34,6 +34,7 @@ associatedAnimation = "daggerhold"
 curNode = null
 hasSpells = true
 equipmentSpells = Array[ExtResource("1_hnuyp")]([SubResource("Resource_8hhar")])
+itemID = 45
 name = "Dagger"
 description = "Simple Dagger, does some damage."
 icon = ExtResource("1_gvo2g")

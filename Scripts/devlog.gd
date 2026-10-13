@@ -645,3 +645,23 @@
 	#fuck you past casper
 	#23:34
 	#after that nightmare im done for the day. time to go to bed
+	#
+	##13/10
+	#12:41
+	#just updated the log. not sure what to do now. time to just play what little i have made of the game over and over.
+	#i need to nerf the levelling BADLY.
+	#12:58
+	#nerfed levelling but i feel like i should rely more on the action system for things.
+	#14:19
+	#why would i ever do lame shit like work on the game or add bartering when i can make more milk tea. fuck me
+	#14:50
+	#i got an idea
+	#16:32
+	#this is for when you feel good enough to work. replace spells with actions (or atleast the making a node part),
+	#also change the minimap to update with the update function.
+	#17:08
+	#time for total spell rewrite
+	#18:09
+	#finished for the most part
+	#18:31
+	#MOSTLY working now, this is a significant improvement to the spell system and to the game in general

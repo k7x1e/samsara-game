@@ -571,6 +571,7 @@ transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 5.75
 targetSceneString = "londonerHome"
 fromInterior = true
 interiorName = "London"
+unlocked = null
 
 [node name="entity_2_lantern" parent="NavigationRegion3D/FuncGodotMap" unique_id=742290621 instance=ExtResource("9_tggpp")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.25, 4, -6.875)

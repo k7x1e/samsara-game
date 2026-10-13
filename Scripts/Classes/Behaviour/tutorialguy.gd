@@ -18,6 +18,8 @@ class_name TutorialGuy
 
 @export var playerFollowerNode: Variant
 
+@export var action: Action
+
 func initialize():
 	ownPosition = actor.global_position
 	player = Globals.Player
@@ -45,8 +47,7 @@ func update():
 			#print("no longer walking")
 			animTree.set("parameters/Blend2 2/blend_amount", 0.0)
 	if outoftutorial.fulfilled:
-		print("out of tutorial")
-		Globals.Root.changeWorld(self, "tutorial", false, true, true)
+		action.do(actor)
 
 func death():
 	animTree.set("parameters/Blend2 2/blend_amount", 1.0)

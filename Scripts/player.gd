@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+class_name Player
+
 signal moving()
 signal stopping()
 
@@ -88,11 +90,11 @@ func checkLevelUnlocks(stat: int, level: int): ## only items as of now
 		inventory.add(unlock)
 
 func refreshStats():
-	SPEED = stats.retrieve(0) * 2.5
+	SPEED = stats.retrieve(0) * 1 + 6
 	max_mana = ((stats.retrieve(1) + stats.retrieve(3)) / 2) * 1000
-	max_health = stats.retrieve(4) * 50
+	max_health = stats.retrieve(4) * 20
 	
-	mana_recovery_amt = stats.retrieve(1) * 10
+	mana_recovery_amt = stats.retrieve(1) * 3
 	
 	health_recovery = stats.retrieve(4)
 

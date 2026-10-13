@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="itemSpell" format=3 uid="uid://blam2i3pgoujr"]
 
 [ext_resource type="Texture2D" uid="uid://874crc0bp3hk" path="res://icon.png" id="1_v6bsx"]
-[ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/Classes/Items/SpellItem.gd" id="2_ptysx"]
+[ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/classes/Items/SpellItem.gd" id="2_ptysx"]
 [ext_resource type="Resource" uid="uid://c16nv1e2gr28j" path="res://Resources/Spells/dash.tres" id="3_28qk3"]
 
 [resource]
 script = ExtResource("2_ptysx")
 theSpell = ExtResource("3_28qk3")
+itemID = 41
 name = "Dash"
 description = "Ability to dash a bit. Unlocked at Agility level 5."
 icon = ExtResource("1_v6bsx")

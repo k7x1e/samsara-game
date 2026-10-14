@@ -104,7 +104,7 @@ func stopDragging():
 		dragging = false
 
 func getFromUID(id: int):
-	return theInventory.inventory[theInventory.getUIDindex(id)]
+	return theInventory.inventory[theInventory.getUIDindex(id)-1]
 
 func GetNode(itemC: itemClass):
 	for n in self.get_children():

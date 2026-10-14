@@ -29,7 +29,7 @@ func initializeItem():
 				print("replacing")
 				Globals.wizard.remove(which.slot, true)
 			Globals.wizard.spells[which.slot] = which
-		#Globals.spellMaster.updateSpells(Globals.wizard.spells)
+		Globals.spellMaster.updateSpells(Globals.wizard.spells)
 
 func unequip():
 	if hasSpells:

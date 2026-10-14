@@ -19,7 +19,7 @@ var Menu
 var dialogueMenu
 var pauseMenu
 
-@export_enum("none", "dialogue", "menu", "paused", "specific") var currentMenu: int
+@export_enum("none", "dialogue", "menu", "paused", "specific", "death") var currentMenu: int
 
 #var newWorld
 var newWorldCaller ##dont know what this is still doing here
@@ -208,7 +208,7 @@ func pauseGame():
 	if !pauseMenu:
 		pauseMenu = get_node("PauseMenu")
 	print("pausing")
-	if currentMenu == 0:
+	if currentMenu == 0 or currentMenu == 5:
 		pause(true)
 		pauseMenu.set_process(true)
 		pauseMenu.show()
@@ -363,4 +363,5 @@ func death():
 	#Globals.Player.camera.global_position = oldCamPos
 	#Globals.Player.set_process(false)
 	pause(true)
+	currentMenu = 5
 	musicManager.changePlaylist("Death", true)

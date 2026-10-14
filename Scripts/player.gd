@@ -102,6 +102,7 @@ func damage(amt: float):
 	health -= amt
 	if health <= 0:
 		death()
+	stats.experience(4)
 	notify(str("-", str(amt)))
 
 func death():

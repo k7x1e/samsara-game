@@ -1,11 +1,18 @@
 [gd_resource type="Resource" script_class="itemSpell" format=3 uid="uid://burvo2yn4lmxq"]
 
 [ext_resource type="Texture2D" uid="uid://bqxdpdin82oyj" path="res://Textures/icons/spells/heal.png" id="1_1acg4"]
-[ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/classes/Items/SpellItem.gd" id="2_5n4on"]
-[ext_resource type="Script" uid="uid://ehkal6i02pq" path="res://Scripts/classes/spells/consumable.gd" id="3_mwbfv"]
+[ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/Classes/Items/SpellItem.gd" id="2_5n4on"]
+[ext_resource type="Script" uid="uid://cd6w5kfeybbue" path="res://Scripts/Classes/actions/statuseffect.gd" id="3_1acg4"]
+[ext_resource type="Script" uid="uid://ehkal6i02pq" path="res://Scripts/Classes/spells/consumable.gd" id="3_mwbfv"]
+
+[sub_resource type="Resource" id="Resource_5n4on"]
+script = ExtResource("3_1acg4")
+message = " Healed."
+metadata/_custom_type_script = "uid://cd6w5kfeybbue"
 
 [sub_resource type="Resource" id="Resource_70hv0"]
 script = ExtResource("3_mwbfv")
+action = SubResource("Resource_5n4on")
 name = "Health Potion"
 description = "Heals you. Simple as."
 Icon = ExtResource("1_1acg4")

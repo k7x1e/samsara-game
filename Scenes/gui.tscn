@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://be3ehv472u2gm" path="res://Textures/UI/gui_spell_placeholder.png" id="10_6wv5k"]
 [ext_resource type="Texture2D" uid="uid://c1utujj8n0c4a" path="res://Textures/UI/gui_bar_progress_health.png" id="10_603go"]
 [ext_resource type="Texture2D" uid="uid://ce725l0bb4na5" path="res://Textures/UI/gui_bar_progress_mana.png" id="11_6wv5k"]
+[ext_resource type="Texture2D" uid="uid://j8gwmi2uw5o4" path="res://Textures/UI/gui_spell_placeholder_right.png" id="11_t4dsw"]
+[ext_resource type="Texture2D" uid="uid://o150jjh4i0uw" path="res://Textures/UI/gui_spell_placeholder_left.png" id="15_3tx2u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bf1fa"]
 texture = ExtResource("2_gnd4w")
@@ -164,7 +166,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
-texture = ExtResource("10_6wv5k")
+texture = ExtResource("11_t4dsw")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="spells/HBoxContainer/Spell1" unique_id=1452164036]
@@ -232,7 +234,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
-texture = ExtResource("10_6wv5k")
+texture = ExtResource("15_3tx2u")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="spells/HBoxContainer/Spell2" unique_id=753409486]

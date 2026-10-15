@@ -9,6 +9,7 @@ class_name equipmentSpell
 @export var anim: String
 
 @export var damage: float = 50
+@export var baseDamage: float = 50
 
 func checkEquipment() -> bool:
 	#overwritten due to it being part of equipment
@@ -17,6 +18,7 @@ func checkEquipment() -> bool:
 func cast(caster: Variant):
 	updateStats()
 	if castable and !cooldown_active and curThreads == 0:
+		updateStats()
 		castable = false
 		#this is going to happen in the individual spells when it does damage
 		#Globals.stats.experience(1)
@@ -26,6 +28,7 @@ func cast(caster: Variant):
 		#print(Globals.Player.mana)
 		cooldown_active = true
 		cooldown()
+		Globals.stats.experience(4)
 		return "true"
 	else:
 		return "falsesd"
@@ -35,9 +38,9 @@ func doSpell(): ##only for compatability
 
 func updateStats():
 	if statted:
-		self.coolDown = basecoolDown - (int(Globals.stats.stats[1] / 5) * 0.25)
+		self.coolDown = basecoolDown - (int(Globals.stats.stats[4] / 5) * 0.25)
 		#print (coolDown, basecoolDown)
-		self.cost = basecost - (int(Globals.stats.stats[1] / 10) * 25)
+		self.damage = baseDamage + (Globals.stats.stats[4] * 5)
 		#print(cost, basecost)
 	#no matter if its statted the hand change will apply
 	if requiredSlots == ["armLeft", "armRight"] and Globals.stats.stats[0] >= Globals.stats.spellHandThreshhold:

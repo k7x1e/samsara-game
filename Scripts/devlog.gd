@@ -669,3 +669,10 @@
 	##14/10
 	#00:21
 	#just abridged a couple songs and added them as dungeon themes.
+	#15:02
+	#im seated in front of my computer, If anything i just feel like i want to murder.
+	#dont believe for once that i make this game for some perceived change. Its entertainment for me, maybe art to others.
+	#15:06
+	#equipment system seemingly busted again. Anyhow, i need to start making dungeons and adding a ranged weapon
+	#23:31
+	#im done for today, next to no productivity

@@ -45,6 +45,11 @@ var backupGlobals
 
 @export var controllerActive: bool = false
 
+@export var combatBehaviours: Array[combatBehaviour]
+
+func getBehaviourFromItemType(type: int) -> combatBehaviour:
+	return combatBehaviours[type]
+
 func getGlobals() -> Dictionary[String, Variant]:
 	var quests_copy: Array[Quest] = []
 	for q in quests:

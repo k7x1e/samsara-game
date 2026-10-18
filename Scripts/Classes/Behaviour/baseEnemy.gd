@@ -71,14 +71,6 @@ func wander():
 	pass #do nothing for now
 
 func hunt():
-	var tempPosition = player.global_position
-	nav.target_position = tempPosition
-	var temptempPosition = nav.get_next_path_position()
-	temptempPosition.y = actor.global_position.y
-	if actor.visual.global_position != temptempPosition:
-		actor.visual.look_at(temptempPosition, Vector3.UP)
-	if can_attack:
-		attack()
 
 func damage(amt: float):
 	if health - amt > 0:
@@ -89,8 +81,6 @@ func damage(amt: float):
 		health = 0
 		return false
 
-func attack():
-	attackAction.do(actor, null, [damageArea, self, atdamage])
 
 func cooldown():
 	can_attack = false

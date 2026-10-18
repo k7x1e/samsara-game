@@ -14,6 +14,7 @@ signal quantity_changed()
 
 @export_enum("Item", "Spell", "Equipment", "Consumable", "Book", "Currency") var Type: int ## item, spell, equipment, consumable, book, currency
 @export var isSpell: bool = false
+@export_enum("None", "Ranged", "Melee") var WeaponType: int = 0
 
 @export var equipped: bool = false
 @export var equippable: bool = false #DOES NOT APPLY TO SPELLS #moved to the actual equipment base class

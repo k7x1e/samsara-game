@@ -676,3 +676,11 @@
 	#equipment system seemingly busted again. Anyhow, i need to start making dungeons and adding a ranged weapon
 	#23:31
 	#im done for today, next to no productivity
+	#
+	##18/10
+	#12:46
+	#ive been suffering from a severe case of lazy ass bum. I just got an idea concerning behaviours though.
+	#12:53
+	#so what im thinking is we make behaviours for every weapon type that we store in globals
+	#13:31
+	#how the fuck am i supposed to implement this

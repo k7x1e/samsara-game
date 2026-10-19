@@ -13,13 +13,13 @@ signal damaged()
 @export var player: Variant
 @export var nav: Variant
 
-@export var range: float = 10.0
-
 @export_enum("Wandering","Detected","Dead") var enemy_state: int = 0
 
 @export var atdamage: float = 10.0
 
 @export var projectile: PackedScene
+
+@export var currentCombatBehaviour: combatBehaviour
 
 var can_attack: bool = true
 var can_move: bool =true
@@ -47,6 +47,10 @@ func detectionEntered(body: Node3D):
 
 func detectionExited(body: Node3D):
 	pass
+
+func fixCombatBehaviour():
+	currentCombatBehaviour = Globals.getBehaviourFromItemType(actor.equipped.WeaponType)
+	currentCombatBehaviour.initialize([player,actor,actor.equipped.action,nav,damageArea])
 
 func detectPlayer(detected: bool, isAlerted: bool = false): ##detected is whether or not it is and the second is whether or not said alert comes from alert
 	if detected:
@@ -77,26 +81,10 @@ func wander():
 	pass #do nothing for now
 
 func hunt():
-	var tempPosition = player.global_position
-	if actor.visual.global_position != tempPosition:
-		actor.visual.look_at(tempPosition, Vector3.UP)
-	if can_move:
-		#print("moving")
-		nav.target_position = tempPosition + offset
-		var temptempPosition = nav.get_next_path_position()
-		temptempPosition.y = actor.global_position.y
-		actor.move()
-	if checkAttack() and can_attack:
-		attack()
-	
-	if checkSight():
-		threshcounter = 0
+	if currentCombatBehaviour:
+		currentCombatBehaviour.tick(actor, self)
 	else:
-		threshcounter += 1
-		if threshcounter == threshold:
-			#print("recalculating offset")
-			var stink = calculateOffset()
-			offset = Vector3(stink.x,0,stink.y)
+		fixCombatBehaviour()
 
 func damage(amt: float):
 	if health - amt > 0:
@@ -106,53 +94,3 @@ func damage(amt: float):
 	else: 
 		health = 0
 		return false
-
-func checkAttack() -> bool:
-	var bodies = damageArea.get_overlapping_bodies()
-	for body in bodies:
-		return checkSight()
-	return false
-
-func calculateOffset() -> Vector2:
-	var selfpos = actor.global_position
-	var playerpos = player.global_position
-	var temp = (selfpos - playerpos)
-	var tempTrue: Vector2 = Vector2(temp.x,temp.z).normalized()
-	return tempTrue.rotated(90) * range
-
-func checkSight() -> bool:
-	var space_state = actor.get_world_3d().direct_space_state
-	# use global coordinates, not local to node
-	var query = PhysicsRayQueryParameters3D.create(actor.global_position, player.global_position)
-	query.set_collision_mask(30)
-	var result = space_state.intersect_ray(query)
-	if result.collider.name == "Player" or result.collider.name == "Actor":
-		return true
-	return false
-
-func attack():
-	#replace with projectile
-	var bodies = damageArea.get_overlapping_bodies()
-	for body in bodies:
-		can_attack = false
-		await movementcooldown()
-		#print("attacking player..")
-		attacking.emit()
-		var poop = projectile.instantiate()
-		actor.add_child(poop)
-		poop.set_owner(actor)
-		poop.global_position = actor.global_position
-		poop.global_rotation = actor.visual.global_rotation
-		poop.initialize()
-		cooldown()
-		movementcooldown()
-		return true
-
-func cooldown():
-	can_attack = false
-	await Engine.get_main_loop().create_timer(1.0).timeout
-	can_attack = true
-func movementcooldown():
-	can_move = false
-	await Engine.get_main_loop().create_timer(0.3).timeout
-	can_move = true

@@ -692,3 +692,9 @@
 	#got a basic version of the system up and running
 	#16:38
 	#now ive slacked off for a while time to get started on ranged weapon implementation
+	#18:51
+	#did not do. matter of fact did not do anything.
+	#as of now i am wondering if i should switch to emacs for coding instead of godot native ide.
+	#will not do for a while atleast
+	#19:22
+	#attempted to implement ranged combat behaviour but for some strange reason it never attacks. I am not feeling well at all so i will go to bed. Shit.

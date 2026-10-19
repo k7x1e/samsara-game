@@ -2,18 +2,18 @@
 
 [ext_resource type="Script" uid="uid://cine2pxbjr6ec" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Script" uid="uid://buvsbboygw12p" path="res://Scripts/wizard.gd" id="2_dewec"]
-[ext_resource type="Script" uid="uid://xod4o8t818eu" path="res://Scripts/classes/equipment.gd" id="2_kih0c"]
-[ext_resource type="Script" uid="uid://brua5tb5kc0it" path="res://Scripts/classes/itemClass.gd" id="2_megsn"]
-[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/classes/spells/spell.gd" id="3_5ixxa"]
+[ext_resource type="Script" uid="uid://xod4o8t818eu" path="res://Scripts/Classes/equipment.gd" id="2_kih0c"]
+[ext_resource type="Script" uid="uid://brua5tb5kc0it" path="res://Scripts/Classes/itemClass.gd" id="2_megsn"]
+[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/Classes/spells/spell.gd" id="3_5ixxa"]
 [ext_resource type="Resource" uid="uid://cg1q03enedviq" path="res://Resources/Spells/tests.tres" id="4_o3h8g"]
-[ext_resource type="Script" uid="uid://cse3ubaxht2cj" path="res://Scripts/classes/Inventory.gd" id="4_yoq75"]
+[ext_resource type="Script" uid="uid://cse3ubaxht2cj" path="res://Scripts/Classes/Inventory.gd" id="4_yoq75"]
 [ext_resource type="Resource" uid="uid://btvygn7abx3hr" path="res://Resources/Items/gold.tres" id="6_lyrkg"]
 [ext_resource type="Resource" uid="uid://byn8lfwpbjv8r" path="res://Resources/Spells/thunderbolt.tres" id="8_miouo"]
 [ext_resource type="Resource" uid="uid://ca5npbbgkve3e" path="res://Resources/Items/dagger.tres" id="9_avx33"]
 [ext_resource type="Texture2D" uid="uid://bqxdpdin82oyj" path="res://Textures/icons/spells/heal.png" id="9_x63xi"]
-[ext_resource type="Script" uid="uid://x7tekc2114cw" path="res://Scripts/classes/stats.gd" id="10_o3h8g"]
+[ext_resource type="Script" uid="uid://x7tekc2114cw" path="res://Scripts/Classes/stats.gd" id="10_o3h8g"]
 [ext_resource type="Environment" uid="uid://lyhkdkhxwhlj" path="res://Resources/game_environment.tres" id="11_1e7my"]
-[ext_resource type="Script" uid="uid://ctffm134lsqah" path="res://Scripts/classes/quest.gd" id="11_lslt6"]
+[ext_resource type="Script" uid="uid://ctffm134lsqah" path="res://Scripts/Classes/quest.gd" id="11_lslt6"]
 [ext_resource type="Resource" uid="uid://bvx7kyepfo1oa" path="res://Resources/Spells/placeholder.tres" id="12_miouo"]
 [ext_resource type="Resource" uid="uid://c2qv5krngu0i0" path="res://Resources/story/quests/testingQuest.tres" id="12_ulo2v"]
 [ext_resource type="AudioStream" uid="uid://bikro78yehb60" path="res://sound/notification/mission.wav" id="13_1iu4k"]
@@ -21,7 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://b0ahih5c8udqs" path="res://sound/notification/something.wav" id="14_m0x7a"]
 [ext_resource type="Resource" uid="uid://dmod3sejpqq40" path="res://Resources/story/quests/findCain.tres" id="16_c43xd"]
 [ext_resource type="Resource" uid="uid://bf48dl51ufr1w" path="res://Resources/story/quests/london/scrolls.tres" id="18_c43xd"]
-[ext_resource type="Script" uid="uid://bs1xhdp0kaywn" path="res://Scripts/classes/statuseffect.gd" id="18_i2e8t"]
+[ext_resource type="Script" uid="uid://bs1xhdp0kaywn" path="res://Scripts/Classes/statuseffect.gd" id="18_i2e8t"]
 [ext_resource type="Resource" uid="uid://dmhd8hbkd8ft7" path="res://Resources/story/quests/london/wizard.tres" id="19_avx33"]
 [ext_resource type="Resource" uid="uid://blam2i3pgoujr" path="res://Resources/Items/dash.tres" id="19_qidb7"]
 [ext_resource type="AudioStream" uid="uid://yulpe6g216f" path="res://sound/sfx/locked.wav" id="20_rxg2u"]
@@ -246,10 +246,10 @@ lookTargetNode = NodePath("../lookTarget")
 [node name="londonProtag" parent="Rotation" unique_id=423910710 instance=ExtResource("25_8flut")]
 transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0, 0.06221825, 0)
 
-[node name="Skeleton3D" parent="Rotation/londonProtag/Armature" parent_id_path=PackedInt32Array(423910710, 385813286) index="0" unique_id=2108380087]
+[node name="Skeleton3D" parent="Rotation/londonProtag/Armature" parent_id_path=PackedInt32Array(423910710, 1793400791) index="0" unique_id=442195151]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.93801266, 0.021697666, 0.34067416, 0.06002205)
-bones/3/rotation = Quaternion(4.0182395e-06, -6.4308024e-06, 0.000322956, 1)
+bones/1/rotation = Quaternion(0.9381915, 0.01162967, 0.34129867, 0.05636248)
+bones/3/rotation = Quaternion(0.00020776878, -0.00033251347, 0.016698884, 0.9998606)
 bones/7/rotation = Quaternion(-0.440351, -0.03822061, -0.14063425, 0.8859189)
 bones/8/rotation = Quaternion(-0.10192366, -0.044773385, -0.007949366, 0.99375236)
 bones/9/rotation = Quaternion(-0.17423274, -0.03710145, 0.030870311, 0.98352104)

@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="spell" format=3 uid="uid://cvkb5exdvybqf"]
 
 [ext_resource type="Texture2D" uid="uid://7wri6gpkv7tl" path="res://Textures/icons/spells/trampstamp.png" id="1_2c3am"]
-[ext_resource type="Script" uid="uid://rwq3k2spnonc" path="res://Scripts/classes/actions/spellNode.gd" id="2_37g3t"]
-[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/classes/spells/spell.gd" id="2_p2noy"]
+[ext_resource type="Script" uid="uid://rwq3k2spnonc" path="res://Scripts/Classes/actions/spellNode.gd" id="2_37g3t"]
+[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/Classes/spells/spell.gd" id="2_p2noy"]
 [ext_resource type="PackedScene" uid="uid://bga75wb36a5io" path="res://Scenes/spell.tscn" id="3_w1n3m"]
 
 [sub_resource type="Resource" id="Resource_0j8n3"]

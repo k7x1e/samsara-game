@@ -6,6 +6,7 @@ class_name castNode
 @export var casterPlayer: bool = false
 
 func do(caster: Node, casterSpell: spell = null, args: Array = []):
+	print("casted node, caster is ", caster.name)
 	var actualNode = spellNode.instantiate()
 	Globals.Root.add_child(actualNode)
 	if casterPlayer:

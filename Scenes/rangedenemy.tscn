@@ -3,12 +3,15 @@
 [ext_resource type="Script" uid="uid://bqdpiionfhc5e" path="res://Scripts/ActorBaseClass.gd" id="1_ww5ji"]
 [ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="2_4l0v1"]
 [ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="3_oxkon"]
-[ext_resource type="Script" uid="uid://c67o5u4as6hen" path="res://Scripts/classes/Behaviour/rangedEnemy.gd" id="4_1i6ac"]
+[ext_resource type="Script" uid="uid://c67o5u4as6hen" path="res://Scripts/Classes/Behaviour/rangedEnemy.gd" id="4_1i6ac"]
 [ext_resource type="PackedScene" uid="uid://bq815qr265sln" path="res://Scenes/spells/projectile.tscn" id="4_ww5ji"]
-[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="6_ixdqj"]
+[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/Classes/npc.gd" id="6_ixdqj"]
+[ext_resource type="Script" uid="uid://rwq3k2spnonc" path="res://Scripts/Classes/actions/spellNode.gd" id="7_d1axk"]
 [ext_resource type="PackedScene" uid="uid://cwkh1mr03cpqs" path="res://Models/londonProtag.glb" id="7_ww5ji"]
+[ext_resource type="Script" uid="uid://b6gxwdgd5651g" path="res://Scripts/Classes/equipmentSpell.gd" id="8_244qp"]
 [ext_resource type="Script" uid="uid://xmtxhcqgxgc2" path="res://Scripts/enemyMonitor.gd" id="8_oimav"]
 [ext_resource type="AudioStream" uid="uid://b0ahih5c8udqs" path="res://sound/notification/something.wav" id="9_d14p5"]
+[ext_resource type="Script" uid="uid://ojs3apomqf0t" path="res://Scripts/Classes/Items/weaponClass.gd" id="9_ixdqj"]
 [ext_resource type="AudioStream" uid="uid://bikro78yehb60" path="res://sound/notification/mission.wav" id="10_qbbjy"]
 [ext_resource type="Texture2D" uid="uid://dlppbptyqxtaf" path="res://Textures/UI/marker.png" id="11_b3joe"]
 
@@ -31,6 +34,19 @@ npcName = "Example Actor"
 usesModel = false
 behaviour = SubResource("Resource_ww5ji")
 metadata/_custom_type_script = "uid://drjjmjc24qipo"
+
+[sub_resource type="Resource" id="Resource_43sij"]
+script = ExtResource("7_d1axk")
+spellNode = ExtResource("4_ww5ji")
+metadata/_custom_type_script = "uid://rwq3k2spnonc"
+
+[sub_resource type="Resource" id="Resource_oimav"]
+script = ExtResource("9_ixdqj")
+curNode = null
+action = SubResource("Resource_43sij")
+Type = 2
+WeaponType = 1
+metadata/_custom_type_script = "uid://ojs3apomqf0t"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_auwsv"]
 animation = &"rest"
@@ -81,6 +97,7 @@ floor_max_angle = 3.1415927
 script = ExtResource("1_ww5ji")
 NpcClass = SubResource("Resource_7ei5c")
 hasMonitor = true
+equipped = SubResource("Resource_oimav")
 
 [node name="Visual" type="Node3D" parent="." unique_id=1983415667 groups=["Pausable"]]
 
@@ -101,10 +118,10 @@ shape = SubResource("SphereShape3D_0830c")
 [node name="londonProtag" parent="Visual" unique_id=423910710 instance=ExtResource("7_ww5ji")]
 transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0, 0.3, 0)
 
-[node name="Skeleton3D" parent="Visual/londonProtag/Armature" parent_id_path=PackedInt32Array(423910710, 385813286) index="0" unique_id=2108380087]
+[node name="Skeleton3D" parent="Visual/londonProtag/Armature" parent_id_path=PackedInt32Array(423910710, 1793400791) index="0" unique_id=442195151]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.9381424, 0.01507964, 0.34108916, 0.05761718)
-bones/3/rotation = Quaternion(0.00014128246, -0.00022610866, 0.011355214, 0.9999355)
+bones/1/rotation = Quaternion(0.9380861, 0.018247457, 0.34089258, 0.058768615)
+bones/3/rotation = Quaternion(7.447971e-05, -0.00011919747, 0.0059861154, 0.9999821)
 bones/7/rotation = Quaternion(-0.440351, -0.03822061, -0.14063425, 0.8859189)
 bones/8/rotation = Quaternion(-0.10192366, -0.044773385, -0.007949366, 0.99375236)
 bones/9/rotation = Quaternion(-0.17423274, -0.03710145, 0.030870311, 0.98352104)

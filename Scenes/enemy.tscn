@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="5_8uf12"]
 [ext_resource type="PackedScene" uid="uid://bnkq4ylk1qenb" path="res://Models/peasant1.glb" id="5_auwsv"]
 [ext_resource type="Script" uid="uid://xmtxhcqgxgc2" path="res://Scripts/enemyMonitor.gd" id="6_ghaa6"]
+[ext_resource type="Resource" uid="uid://ca5npbbgkve3e" path="res://Resources/Items/dagger.tres" id="6_ta2yt"]
 [ext_resource type="AudioStream" uid="uid://b0ahih5c8udqs" path="res://sound/notification/something.wav" id="7_auwsv"]
 [ext_resource type="AudioStream" uid="uid://bikro78yehb60" path="res://sound/notification/mission.wav" id="8_8uf12"]
 [ext_resource type="Texture2D" uid="uid://dlppbptyqxtaf" path="res://Textures/UI/marker.png" id="10_po0sg"]
@@ -88,6 +89,7 @@ floor_max_angle = 3.1415927
 script = ExtResource("1_0830c")
 NpcClass = SubResource("Resource_7ei5c")
 hasMonitor = true
+equipped = ExtResource("6_ta2yt")
 
 [node name="Visual" type="Node3D" parent="." unique_id=1983415667 groups=["Pausable"]]
 
@@ -97,8 +99,8 @@ visible = false
 
 [node name="Skeleton3D" parent="Visual/peasant1/Armature" parent_id_path=PackedInt32Array(347662839, 504917625) index="0" unique_id=1970704553]
 bones/0/rotation = Quaternion(0.93800986, 0.021814236, 0.34066674, -0.060064632)
-bones/1/rotation = Quaternion(0.9380138, 0.021651419, 0.34067717, 0.060004715)
-bones/3/rotation = Quaternion(0.011898665, -5.4723455e-06, -0.0070772227, 0.9999042)
+bones/1/rotation = Quaternion(0.93816584, 0.013541385, 0.3411832, 0.05705729)
+bones/3/rotation = Quaternion(0.012066932, -0.00044495944, 0.0066971476, 0.9999047)
 bones/7/rotation = Quaternion(-0.4562524, -0.049126726, -0.16023543, 0.87392503)
 bones/8/rotation = Quaternion(-0.07875365, -0.067492984, -0.10037203, 0.98952925)
 bones/9/rotation = Quaternion(0.014338688, -0.16604029, -0.09179396, 0.9817326)

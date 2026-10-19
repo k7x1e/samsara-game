@@ -23,8 +23,10 @@ func tick(_Caster: Node, _CasterBehaviour: Behaviour):
 	temptempPosition.y = actor.global_position.y
 	if actor.visual.global_position != temptempPosition:
 		actor.visual.look_at(temptempPosition, Vector3.UP)
-	if parameters[4]:
-		attack()
+	#if parameters[4]:
+	#	attack(_CasterBehaviour)
 
-func attack():
-	attackAction.do(actor, null, [parameters[5], self, parameters[6]])
+func attack(_Behaviour: Behaviour):
+	#what?
+	#the args are as follows: [damagearea,self,atdamage]
+	attackAction.do(actor, null, [parameters[5], _Behaviour, parameters[6]])

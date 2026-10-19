@@ -684,3 +684,11 @@
 	#so what im thinking is we make behaviours for every weapon type that we store in globals
 	#13:31
 	#how the fuck am i supposed to implement this
+	#
+	##19/10
+	#15:57
+	#good day. I am incredibly sick. i think its time i finish up what i was doing yesterday. How exciting
+	#16:27
+	#got a basic version of the system up and running
+	#16:38
+	#now ive slacked off for a while time to get started on ranged weapon implementation

@@ -49,7 +49,6 @@
 [ext_resource type="Resource" uid="uid://dmod3sejpqq40" path="res://Resources/story/quests/findCain.tres" id="36_04jkj"]
 [ext_resource type="PackedScene" uid="uid://bkimo22crvjn5" path="res://Scenes/PlaceholderModel.tscn" id="36_atqvy"]
 [ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="37_w5giw"]
-[ext_resource type="PackedScene" uid="uid://bprxsuimjw14o" path="res://Scenes/rangedenemy.tscn" id="45_al5m0"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_qebug"]
 
@@ -17515,21 +17514,6 @@ locationName = "Home Of Cain"
 [node name="entity_99_Window" parent="NavigationRegion3D/east" unique_id=1505267121 instance=ExtResource("25_qebug")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 36, 6.75, 69)
 
-[node name="entity_100_rangedenemy" parent="NavigationRegion3D/east" unique_id=1230510232 instance=ExtResource("45_al5m0")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 27, 15.75, 37.5)
-
-[node name="entity_101_rangedenemy" parent="NavigationRegion3D/east" unique_id=765317584 instance=ExtResource("45_al5m0")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 22.25, 15.75, 54.75)
-
-[node name="entity_102_rangedenemy" parent="NavigationRegion3D/east" unique_id=336794981 instance=ExtResource("45_al5m0")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 18.25, 3.75, 73.75)
-
-[node name="entity_103_rangedenemy" parent="NavigationRegion3D/east" unique_id=280208813 instance=ExtResource("45_al5m0")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 16.75, 3.75, 86.25)
-
-[node name="entity_104_rangedenemy" parent="NavigationRegion3D/east" unique_id=1740134619 instance=ExtResource("45_al5m0")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 23.25, 15.75, 40.25)
-
 [node name="entity_105_light" parent="NavigationRegion3D/east" unique_id=290002343 instance=ExtResource("34_gwaj6")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 56.75, 7, 61.75)
 
@@ -18160,5 +18144,12 @@ light_energy = 0.4
 [node name="introGuy" parent="." unique_id=1645838353 instance=ExtResource("31_1vso6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.29373, 1.14, 126)
 NpcClass = SubResource("Resource_al5m0")
+
+[connection signal="moving" from="NavigationRegion3D/east/entity_21_enemy" to="NavigationRegion3D/east/entity_21_enemy/Monitor" method="moving"]
+[connection signal="moving" from="NavigationRegion3D/east/entity_22_enemy" to="NavigationRegion3D/east/entity_22_enemy/Monitor" method="moving"]
+[connection signal="moving" from="NavigationRegion3D/east/entity_39_enemy" to="NavigationRegion3D/east/entity_39_enemy/Monitor" method="moving"]
+[connection signal="moving" from="NavigationRegion3D/east/entity_40_enemy" to="NavigationRegion3D/east/entity_40_enemy/Monitor" method="moving"]
+[connection signal="moving" from="NavigationRegion3D/east/entity_76_enemy" to="NavigationRegion3D/east/entity_76_enemy/Monitor" method="moving"]
+[connection signal="moving" from="NavigationRegion3D/east/entity_77_enemy" to="NavigationRegion3D/east/entity_77_enemy/Monitor" method="moving"]
 
 [editable path="Water"]

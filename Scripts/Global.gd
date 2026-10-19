@@ -45,10 +45,9 @@ var backupGlobals
 
 @export var controllerActive: bool = false
 
-@export var combatBehaviours: Array[combatBehaviour]
 
 func getBehaviourFromItemType(type: int) -> combatBehaviour:
-	return combatBehaviours[type]
+	return gamestate.combatBehaviours[type].duplicate(true)
 
 func getGlobals() -> Dictionary[String, Variant]:
 	var quests_copy: Array[Quest] = []

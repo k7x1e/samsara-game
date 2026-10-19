@@ -19,6 +19,8 @@ signal damaged()
 
 @export var atdamage: float = 10.0
 
+@export var currentCombatBehaviour: combatBehaviour
+
 var can_attack: bool = true
 
 func initialize():
@@ -45,9 +47,14 @@ func detectPlayer(detected: bool, isAlerted: bool = false): ##detected is whethe
 	if detected:
 		if alerts and !isAlerted:
 			alertEnemies(1)
-		#print("detected player")
+		print("detected player")
 		enemy_state = 1
+		fixCombatBehaviour()
 		playerFoundAlert.emit()
+
+func fixCombatBehaviour():
+	currentCombatBehaviour = Globals.getBehaviourFromItemType(actor.equipped.Type)
+	currentCombatBehaviour.initialize([player,actor,actor.equipped.action,nav,null,damageArea,actor.equipped.action.damage])
 
 func alertEnemies(state: int):
 	var bodies = alertArea.get_overlapping_bodies()
@@ -71,6 +78,10 @@ func wander():
 	pass #do nothing for now
 
 func hunt():
+	currentCombatBehaviour.tick(actor,self)
+	if can_attack:
+		currentCombatBehaviour.attack(self)
+		cooldown()
 
 func damage(amt: float):
 	if health - amt > 0:
@@ -80,7 +91,6 @@ func damage(amt: float):
 	else: 
 		health = 0
 		return false
-
 
 func cooldown():
 	can_attack = false

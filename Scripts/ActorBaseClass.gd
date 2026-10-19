@@ -15,6 +15,8 @@ var ismoving: bool= false
 @export var isvisible: bool = false ## has to be true since some map specific actors will always be active
 @export var visibilityoverride: bool = false ## makes the actor always tick.
 
+@export var equipped: WeaponClass
+
 var deltaSHIT: float = 1
 var tempPos
 

@@ -4,7 +4,7 @@ class_name enemy_stab
 
 @export var damage: float = 10.0
 
-func do(caster: Node, casterSpell: spell = null, args: Array = []):
+func do(_caster: Node, _casterSpell: spell = null, args: Array = []):
 	if args[2] != -1:
 		damage = args[2]
 	var bodies = args[0].get_overlapping_bodies()

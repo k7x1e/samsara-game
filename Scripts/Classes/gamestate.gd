@@ -9,6 +9,8 @@ class_name gameState
 @export var newWorld: Variant
 @export var newWorldName: NodePath ## INSANE JANK, Just make sure no two places have the same name
 
+@export var combatBehaviours: Array[combatBehaviour]
+
 var last_saved: String
 
 func get_last_save() -> SaveGame:

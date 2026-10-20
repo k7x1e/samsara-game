@@ -8,6 +8,7 @@ class_name ranged
 @export var actor: Variant
 @export var attackAction: Action
 @export var nav: Variant
+@export var behaviour: Behaviour
 
 @export var parameters: Array[Variant]
 
@@ -26,6 +27,7 @@ func initialize(args: Array[Variant]):
 	actor = args[1]
 	attackAction = args[2]
 	nav = args[3]
+	behaviour = args[4]
 
 func tick(_Caster: Node, _CasterBehaviour: Behaviour):
 	var tempPosition = target.global_position
@@ -40,17 +42,17 @@ func tick(_Caster: Node, _CasterBehaviour: Behaviour):
 	if checkAttack() and can_attack:
 		attack()
 	if checkSight():
-		print("whats going onz")
+		#print("whats going onz")
 		threshcounter = 0
 	else:
 		threshcounter += 1
 		if threshcounter == threshold:
-			print("recalculating offset")
+			#print("recalculating offset")
 			var stink = calculateOffset()
 			offset = Vector3(stink.x,0,stink.y)
 
 func checkAttack() -> bool:
-	var bodies = parameters[4].get_overlapping_bodies()
+	var bodies = behaviour.damageArea.get_overlapping_bodies()
 	for body in bodies:
 		return checkSight()
 	return false
@@ -68,21 +70,21 @@ func checkSight() -> bool:
 	var query = PhysicsRayQueryParameters3D.create(actor.global_position, target.global_position)
 	query.set_collision_mask(30)
 	var result = space_state.intersect_ray(query)
-	if result.collider.name == "target" or result.collider.name == "Actor":
+	if result.collider.name == "Player" or result.collider.name == "Actor":
 		return true
 	return false
 
 func attack():
-	print("attacking")
+	#print("attacking")
 	#replace with projectile
-	var bodies = parameters[4].get_overlapping_bodies()
+	var bodies = behaviour.damageArea.get_overlapping_bodies()
 	for body in bodies:
 		can_attack = false
 		await movementcooldown()
 		#print("attacking target..")
-		actor.Behaviour.attacking.emit()
+		actor.behaviour.attacking.emit()
 		
-		attackAction.do(actor, null)
+		attackAction.do(actor.visual, null)
 		
 		#var poop = projectile.instantiate()
 		#actor.add_child(poop)

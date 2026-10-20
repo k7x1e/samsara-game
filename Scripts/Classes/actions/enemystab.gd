@@ -11,6 +11,5 @@ func do(_caster: Node, _casterSpell: spell = null, args: Array = []):
 	for body in bodies:
 		#print("attacking player..")
 		args[1].attacking.emit()
-		body.damage(args[2])
-		args[1].cooldown()
+		body.damage(damage)
 		return true

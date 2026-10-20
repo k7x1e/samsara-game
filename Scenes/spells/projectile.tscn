@@ -6,7 +6,7 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_p8apc"]
 
-[node name="projectile" type="Node3D" unique_id=621475420 groups=["ticked"]]
+[node name="projectile" type="Node3D" unique_id=621475420 groups=["Pausable", "ticked"]]
 script = ExtResource("1_78kjd")
 speed = 10.0
 spdamage = 30.0

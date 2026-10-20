@@ -2,13 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://dct8lf22m65bu" path="res://Scenes/items/dagger.tscn" id="1_641fg"]
 [ext_resource type="Texture2D" uid="uid://cam57ov3kx1mh" path="res://Textures/icons/items/dagger.png" id="1_gvo2g"]
-[ext_resource type="Script" uid="uid://b6gxwdgd5651g" path="res://Scripts/Classes/equipmentSpell.gd" id="1_hnuyp"]
-[ext_resource type="Script" uid="uid://cdqtgy65m8nor" path="res://Scripts/Classes/actions/enemystab.gd" id="1_jd1bq"]
-[ext_resource type="Script" uid="uid://w12wn77whdy6" path="res://Scripts/Classes/actions/stab.gd" id="3_8hhar"]
-[ext_resource type="Script" uid="uid://ojs3apomqf0t" path="res://Scripts/Classes/Items/weaponClass.gd" id="5_8hhar"]
+[ext_resource type="Script" uid="uid://b6gxwdgd5651g" path="res://Scripts/classes/equipmentSpell.gd" id="1_hnuyp"]
+[ext_resource type="Script" uid="uid://cdqtgy65m8nor" path="res://Scripts/classes/actions/enemystab.gd" id="1_jd1bq"]
+[ext_resource type="Script" uid="uid://w12wn77whdy6" path="res://Scripts/classes/actions/stab.gd" id="3_8hhar"]
+[ext_resource type="Script" uid="uid://ojs3apomqf0t" path="res://Scripts/classes/Items/weaponClass.gd" id="5_8hhar"]
 
 [sub_resource type="Resource" id="Resource_vyu04"]
 script = ExtResource("1_jd1bq")
+damage = 30.0
 metadata/_custom_type_script = "uid://cdqtgy65m8nor"
 
 [sub_resource type="Resource" id="Resource_hkrn1"]
@@ -16,9 +17,10 @@ script = ExtResource("3_8hhar")
 stabrange = 2.0
 metadata/_custom_type_script = "uid://w12wn77whdy6"
 
-[sub_resource type="Resource" id="Resource_wpo1r"]
+[sub_resource type="Resource" id="Resource_jd1bq"]
 script = ExtResource("1_hnuyp")
 spellClass = SubResource("Resource_hkrn1")
+anim = "stab"
 basecoolDown = 0.4
 coolDown = 0.4
 name = "stab"
@@ -38,7 +40,7 @@ node = ExtResource("1_641fg")
 associatedAnimation = "daggerhold"
 curNode = null
 hasSpells = true
-equipmentSpells = Array[ExtResource("1_hnuyp")]([SubResource("Resource_wpo1r")])
+equipmentSpells = Array[ExtResource("1_hnuyp")]([SubResource("Resource_jd1bq")])
 action = SubResource("Resource_vyu04")
 itemID = 45
 name = "Dagger"

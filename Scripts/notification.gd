@@ -9,7 +9,7 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func initialize() -> void:
 	self.global_position.y += offset
-	print("im in")
+	#print("im in")
 	textLabel.text = ntext
 	anim.play("notif")
 	await get_tree().create_timer(1.0).timeout

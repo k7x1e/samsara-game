@@ -6,8 +6,11 @@ class_name meleeCombat
 @export var actor: Variant
 @export var attackAction: Action
 @export var nav: Variant
+@export var behaviour: Behaviour
 
 @export var parameters: Array[Variant]
+
+var can_attack: bool = true
 
 func initialize(args: Array[Variant]): ##0: target, 1: the actor, 2: the action associated with the item, 3: the navigationagent.
 	parameters = args
@@ -15,6 +18,7 @@ func initialize(args: Array[Variant]): ##0: target, 1: the actor, 2: the action 
 	actor = args[1]
 	attackAction = args[2]
 	nav = args[3]
+	behaviour = args[4]
 
 func tick(_Caster: Node, _CasterBehaviour: Behaviour):
 	var tempPosition = target.global_position
@@ -23,10 +27,17 @@ func tick(_Caster: Node, _CasterBehaviour: Behaviour):
 	temptempPosition.y = actor.global_position.y
 	if actor.visual.global_position != temptempPosition:
 		actor.visual.look_at(temptempPosition, Vector3.UP)
-	#if parameters[4]:
-	#	attack(_CasterBehaviour)
+	if can_attack:
+		attack(_CasterBehaviour)
 
 func attack(_Behaviour: Behaviour):
+	print("attacking")
 	#what?
 	#the args are as follows: [damagearea,self,atdamage]
-	attackAction.do(actor, null, [parameters[5], _Behaviour, parameters[6]])
+	attackAction.do(actor, null, [_Behaviour.damageArea, _Behaviour, -1])
+	cooldown()
+
+func cooldown():
+	can_attack = false
+	await Engine.get_main_loop().create_timer(1.0).timeout
+	can_attack = true

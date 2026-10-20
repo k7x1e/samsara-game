@@ -3,7 +3,6 @@ extends Behaviour
 class_name rangedEnemy
 
 signal playerFoundAlert()
-signal attacking()
 signal damaged()
 
 @export var alerts: bool = true
@@ -33,7 +32,7 @@ func initialize():
 	
 	nav = actor.nav
 	
-	damageArea = actor.get_node("attackrange")
+	damageArea = actor.damageArea
 	detectionArea = actor.visual.get_node("detection")
 	detectionArea.body_entered.connect(detectionEntered)
 	detectionArea.body_exited.connect(detectionExited)
@@ -47,10 +46,6 @@ func detectionEntered(body: Node3D):
 
 func detectionExited(body: Node3D):
 	pass
-
-func fixCombatBehaviour():
-	currentCombatBehaviour = Globals.getBehaviourFromItemType(actor.equipped.WeaponType)
-	currentCombatBehaviour.initialize([player,actor,actor.equipped.action,nav,damageArea])
 
 func detectPlayer(detected: bool, isAlerted: bool = false): ##detected is whether or not it is and the second is whether or not said alert comes from alert
 	if detected:
@@ -81,10 +76,10 @@ func wander():
 	pass #do nothing for now
 
 func hunt():
-	if currentCombatBehaviour:
-		currentCombatBehaviour.tick(actor, self)
+	if actor.currentCombatBehaviour:
+		actor.currentCombatBehaviour.tick(actor, self)
 	else:
-		fixCombatBehaviour()
+		actor.fixCombatBehaviour()
 
 func damage(amt: float):
 	if health - amt > 0:

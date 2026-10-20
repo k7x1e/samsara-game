@@ -3,7 +3,6 @@ extends Behaviour
 class_name baseEnemy
 
 signal playerFoundAlert()
-signal attacking()
 signal damaged()
 
 @export var attackAction: Action
@@ -19,8 +18,6 @@ signal damaged()
 
 @export var atdamage: float = 10.0
 
-@export var currentCombatBehaviour: combatBehaviour
-
 var can_attack: bool = true
 
 func initialize():
@@ -28,7 +25,7 @@ func initialize():
 	
 	nav = actor.nav
 	
-	damageArea = actor.get_node("attackrange")
+	damageArea = actor.damageArea
 	detectionArea = actor.visual.get_node("detection")
 	detectionArea.body_entered.connect(detectionEntered)
 	detectionArea.body_exited.connect(detectionExited)
@@ -49,12 +46,8 @@ func detectPlayer(detected: bool, isAlerted: bool = false): ##detected is whethe
 			alertEnemies(1)
 		#print("detected player")
 		enemy_state = 1
-		fixCombatBehaviour()
+		actor.fixCombatBehaviour()
 		playerFoundAlert.emit()
-
-func fixCombatBehaviour():
-	currentCombatBehaviour = Globals.getBehaviourFromItemType(actor.equipped.WeaponType)
-	currentCombatBehaviour.initialize([player,actor,actor.equipped.action,nav,null,damageArea,actor.equipped.action.damage])
 
 func alertEnemies(state: int):
 	var bodies = alertArea.get_overlapping_bodies()
@@ -78,21 +71,13 @@ func wander():
 	pass #do nothing for now
 
 func hunt():
-	currentCombatBehaviour.tick(actor,self)
-	if can_attack:
-		currentCombatBehaviour.attack(self)
-		cooldown()
+	actor.currentCombatBehaviour.tick(actor,self)
 
 func damage(amt: float):
 	if health - amt > 0:
 		health -= amt
 		return true
-		damaged.emit()
+		#damaged.emit()
 	else: 
 		health = 0
 		return false
-
-func cooldown():
-	can_attack = false
-	await Engine.get_main_loop().create_timer(1.0).timeout
-	can_attack = true

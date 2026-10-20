@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+class_name actorBaseClass
+
 signal moving(fact: bool)
 var ismoving: bool= false
 
@@ -7,6 +9,7 @@ var ismoving: bool= false
 @onready var visual = $Visual
 @onready var nav = $Nav
 @onready var monitor = $Monitor
+@onready var damageArea = $attackrange
 
 @export var health: float = 100 ##welcome to cp brother
 @export var NpcClass: npc
@@ -17,6 +20,8 @@ var ismoving: bool= false
 
 @export var equipped: WeaponClass
 
+@export var currentCombatBehaviour: combatBehaviour
+
 var deltaSHIT: float = 1
 var tempPos
 
@@ -24,6 +29,11 @@ func _ready() -> void:
 	await initialize()
 	if hasMonitor:
 		await monitor.initialize()
+
+func fixCombatBehaviour():
+	currentCombatBehaviour = Globals.getBehaviourFromItemType(equipped.WeaponType)
+	currentCombatBehaviour.initialize([behaviour.player,self,equipped.action,nav,behaviour])
+
 
 func _physics_process(delta: float) -> void:
 	deltaSHIT = delta
@@ -36,11 +46,14 @@ func _physics_process(delta: float) -> void:
 
 func tick():
 	if isvisible or visibilityoverride:
+		#print("ticking behaviour")
 		behaviour.update()
 
 func damage(amt: float):
-	print("took damage")
+	#print("took damage")
 	health -= amt
+	if behaviour.has_method("takeDamage"):
+		behaviour.takeDamage(amt)
 	behaviour.notify(str("-", amt), true)
 	if health <= 0:
 		if NpcClass.necessary:

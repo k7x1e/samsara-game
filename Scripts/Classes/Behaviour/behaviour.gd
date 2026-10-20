@@ -2,8 +2,10 @@ extends Resource
 
 class_name Behaviour
 
+signal attacking
+
 @export var health: float
-@export var speed: float
+@export var speed: float = 15
 @export var actor: Variant
 @export var hasDialoge: bool = false
 

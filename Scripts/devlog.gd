@@ -698,3 +698,12 @@
 	#will not do for a while atleast
 	#19:22
 	#attempted to implement ranged combat behaviour but for some strange reason it never attacks. I am not feeling well at all so i will go to bed. Shit.
+	#
+	##20/10
+	#10:06
+	#time to fix what i couldnt yesterday.
+	#10:19
+	#as it turns out if you only attack if youre aiming at "target" you wont attack. How foolish.
+	#anyhow i gotta get to work on npc angering
+	#11:02
+	#set up npc angering and made several changes to the combat behaviour and actor systems

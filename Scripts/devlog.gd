@@ -707,3 +707,8 @@
 	#anyhow i gotta get to work on npc angering
 	#11:02
 	#set up npc angering and made several changes to the combat behaviour and actor systems
+	#
+	##22/10
+	#15:08
+	#the sickness is getting better. i believe i shall at the very least attempt to get something done today
+	#maybe i shall start on the library.

@@ -18162,10 +18162,4 @@ light_energy = 0.4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.29373, 1.14, 126)
 NpcClass = SubResource("Resource_al5m0")
 
-[connection signal="moving" from="NavigationRegion3D/east/entity_100_rangedenemy" to="NavigationRegion3D/east/entity_100_rangedenemy/Monitor" method="moving"]
-[connection signal="moving" from="NavigationRegion3D/east/entity_101_rangedenemy" to="NavigationRegion3D/east/entity_101_rangedenemy/Monitor" method="moving"]
-[connection signal="moving" from="NavigationRegion3D/east/entity_102_rangedenemy" to="NavigationRegion3D/east/entity_102_rangedenemy/Monitor" method="moving"]
-[connection signal="moving" from="NavigationRegion3D/east/entity_103_rangedenemy" to="NavigationRegion3D/east/entity_103_rangedenemy/Monitor" method="moving"]
-[connection signal="moving" from="NavigationRegion3D/east/entity_104_rangedenemy" to="NavigationRegion3D/east/entity_104_rangedenemy/Monitor" method="moving"]
-
 [editable path="Water"]

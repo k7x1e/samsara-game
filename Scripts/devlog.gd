@@ -712,3 +712,22 @@
 	#15:08
 	#the sickness is getting better. i believe i shall at the very least attempt to get something done today
 	#maybe i shall start on the library.
+	#
+	##23/10
+	#01:42
+	#after a solid while ive managed to SOMEWHAT optimize the ChangeWorld function from 61 lines to 57.
+	#not much but if i remove blank lines it comes down to about 46 to 47 
+	#HOW
+	#HOW IS IT LONGER
+	#WHAT
+	#01:48
+	#i will make a more thorough optimization
+	#02:18
+	#just finished making a hopefully improved version of changeworld using fucking emacs.
+	#02:23
+	#fixed it up a little, time to test
+	#02:27
+	#it seems to work just fine. so this means that in the grand scale of things we shaved the code down from 46 to 23. fuck yeah
+	#if one would want the raw numbers its 61 to 28
+	#02:30
+	#as it seems to be functional ill be going to bed.

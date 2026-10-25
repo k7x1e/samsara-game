@@ -30,26 +30,27 @@ func initialize(args: Array[Variant]):
 	behaviour = args[4]
 
 func tick(_Caster: Node, _CasterBehaviour: Behaviour):
-	var tempPosition = target.global_position
-	if actor.visual.global_position != tempPosition:
-		actor.visual.look_at(tempPosition, Vector3.UP)
-	if can_move:
-		#print("moving")
-		nav.target_position = tempPosition + offset
-		var temptempPosition = nav.get_next_path_position()
-		temptempPosition.y = actor.global_position.y
-		actor.move()
-	if checkAttack() and can_attack:
-		attack()
-	if checkSight():
-		#print("whats going onz")
-		threshcounter = 0
-	else:
-		threshcounter += 1
-		if threshcounter == threshold:
-			#print("recalculating offset")
-			var stink = calculateOffset()
-			offset = Vector3(stink.x,0,stink.y)
+	if actor != null:
+		var tempPosition = target.global_position
+		if actor.visual.global_position != tempPosition:
+			actor.visual.look_at(tempPosition, Vector3.UP)
+		if can_move:
+			#print("moving")
+			nav.target_position = tempPosition + offset
+			var temptempPosition = nav.get_next_path_position()
+			temptempPosition.y = actor.global_position.y
+			actor.move()
+		if checkAttack() and can_attack:
+			attack()
+		if checkSight():
+			#print("whats going onz")
+			threshcounter = 0
+		else:
+			threshcounter += 1
+			if threshcounter == threshold:
+				#print("recalculating offset")
+				var stink = calculateOffset()
+				offset = Vector3(stink.x,0,stink.y)
 
 func checkAttack() -> bool:
 	var bodies = behaviour.damageArea.get_overlapping_bodies()

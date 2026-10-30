@@ -38,7 +38,7 @@ func notify(message: String, rootparent: bool = false):
 		Globals.Root.add_child(temp)
 	else:
 		actor.add_child(temp)
-	temp.set_owner(actor)
+	#temp.set_owner(actor)
 	temp.ntext = message
 	temp.global_position = actor.global_position
 	temp.initialize()

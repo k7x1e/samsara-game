@@ -24,3 +24,6 @@ signal quantity_changed()
 	set(value):
 		quantity = value
 		emit_signal('quantity_changed')
+
+@export var model: PackedScene = null
+@export var offset: Vector3 = Vector3(0,1,0)

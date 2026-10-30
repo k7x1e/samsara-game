@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="20_sssge"]
 [ext_resource type="Resource" uid="uid://djst5ndjwy31i" path="res://Resources/story/conversations/Cain.tres" id="21_vdnvd"]
 [ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="23_0sw68"]
+[ext_resource type="PackedScene" uid="uid://cgyw6oicswx6p" path="res://Scenes/physics_item.tscn" id="24_d3xwe"]
+[ext_resource type="Resource" uid="uid://cfcd0wi1f6o47" path="res://Resources/Items/lantern.tres" id="25_3ieen"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_om76y"]
 vertices = PackedVector3Array(-5, 1.5, -4.25, -4.25, 1.5, -4.25, -4, 1.5, -6.5, -5, 1.5, -7, -0.5, 1.75, -6.5, -0.5, 1.75, -7, 5.5, 0.5, -7, 0.75, 0.5, -7, 0.75, 0.5, -5.75, 0.75, 0.5, -0.5, 5.5, 0.5, -0.5, -3.5, 0.5, -3, -5, 0.5, -3, -5, 0.5, -0.25, -4, 0.5, 0, -4, 0.5, 3.5, -0.5, 0.5, 3.5, -0.5, 0.5, -0.25, -3, 0.5, -3.5, 0.25, 0.5, -5.25, -3, 0.5, -5.25)
@@ -342,6 +344,7 @@ script = ExtResource("20_5xxwy")
 player = null
 nav = null
 hasDialogue = true
+damageArea = null
 words = ExtResource("21_vdnvd")
 speed = 3.0
 actor = null
@@ -571,7 +574,6 @@ transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 5.75
 targetSceneString = "londonerHome"
 fromInterior = true
 interiorName = "London"
-unlocked = null
 
 [node name="entity_2_lantern" parent="NavigationRegion3D/FuncGodotMap" unique_id=742290621 instance=ExtResource("9_tggpp")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.25, 4, -6.875)
@@ -595,3 +597,7 @@ spot_angle = 53.575474
 [node name="Cain" parent="." unique_id=1866149922 instance=ExtResource("16_kcq24")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6493483, 1.64, -3.5288143)
 NpcClass = SubResource("Resource_d3dcv")
+
+[node name="physicsItem" parent="." unique_id=726585440 instance=ExtResource("24_d3xwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9147702, 1.7176576, -6.607363)
+ownItem = ExtResource("25_3ieen")

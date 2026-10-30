@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cgyw6oicswx6p"]
+
+[ext_resource type="Script" uid="uid://brc41yjqtk464" path="res://Scripts/physics_item.gd" id="1_vgtuq"]
+[ext_resource type="Texture2D" uid="uid://cam57ov3kx1mh" path="res://Textures/icons/items/dagger.png" id="3_bjutu"]
+[ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="5_nuf07"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ayc0h"]
+radius = 2.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dp1f6"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sierg"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_right = 10
+border_color = Color(0, 0, 0, 1)
+
+[node name="physicsItem" type="Node3D" unique_id=726585440 groups=["init"]]
+script = ExtResource("1_vgtuq")
+
+[node name="sprite" type="Sprite3D" parent="." unique_id=239059087]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+billboard = 2
+texture = ExtResource("3_bjutu")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1280034903]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1761644894]
+shape = SubResource("SphereShape3D_ayc0h")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1139322088 groups=["Pausable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+billboard = 1
+texture = SubResource("ViewportTexture_dp1f6")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1734711657 groups=["Pausable"]]
+transparent_bg = true
+size = Vector2i(512, 50)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport" unique_id=663028258 groups=["Pausable"]]
+
+[node name="CenterContainer" type="CenterContainer" parent="SubViewport/CanvasLayer" unique_id=1351815552 groups=["Pausable"]]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SubViewport/CanvasLayer/CenterContainer" unique_id=38271620 groups=["Pausable"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("5_nuf07")
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_sierg")
+bbcode_enabled = true
+text = "Placeholder"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area3D" to="." method="body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="body_exited"]

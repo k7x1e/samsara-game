@@ -2,8 +2,13 @@
 
 [resource]
 background_mode = 1
-ssao_enabled = true
-ssao_intensity = 3.7
+tonemap_mode = 4
+ssao_intensity = 5.64
+ssil_enabled = true
+ssil_radius = 7.0
+ssil_intensity = 2.0
+sdfgi_use_occlusion = true
 fog_enabled = true
-fog_light_color = Color(0.038285255, 0.012378421, 0, 1)
+fog_light_color = Color(0.018317899, 0.005495371, 0, 1)
+fog_density = 0.0148
 volumetric_fog_albedo = Color(0.21230483, 0.21230483, 0.21230483, 1)

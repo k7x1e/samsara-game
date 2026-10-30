@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="conversation" format=3 uid="uid://bvnfwiqt3nvr1"]
+
+[ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/classes/dialogueClass.gd" id="1_sk76p"]
+[ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/classes/dialogueOption.gd" id="2_aupdi"]
+[ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/classes/conversation.gd" id="3_lkkk6"]
+
+[sub_resource type="Resource" id="Resource_36g3o"]
+script = ExtResource("2_aupdi")
+text = "Good evening. A \"wise man\" told me that you possess information on the first scroll."
+target = 1
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_vhf2b"]
+script = ExtResource("2_aupdi")
+text = "Goodbye."
+target = -1
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_i8gnf"]
+script = ExtResource("1_sk76p")
+dialogueText = "Good Morning?"
+dialogueOptions = Array[ExtResource("2_aupdi")]([SubResource("Resource_36g3o"), SubResource("Resource_vhf2b")])
+metadata/_custom_type_script = "uid://bg6c48acdck1"
+
+[sub_resource type="Resource" id="Resource_sk76p"]
+script = ExtResource("2_aupdi")
+text = "Marked?"
+target = 2
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_aupdi"]
+script = ExtResource("2_aupdi")
+text = "Thanks."
+target = -1
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_d2j5p"]
+script = ExtResource("1_sk76p")
+dialogueText = "Oh indeed I may know of something. It would be customary of me to ask a favor to do such a thing but seeing as youre marked I won't. A ship came into port recently carrying all three scrolls, two of them were stolen by unknown actors but the first might just still be there. I'd advice against going there my friend."
+dialogueOptions = Array[ExtResource("2_aupdi")]([SubResource("Resource_sk76p"), SubResource("Resource_aupdi")])
+metadata/_custom_type_script = "uid://bg6c48acdck1"
+
+[sub_resource type="Resource" id="Resource_j104x"]
+script = ExtResource("2_aupdi")
+text = "Thanks..."
+target = -1
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_lkkk6"]
+script = ExtResource("1_sk76p")
+dialogueText = "You'll know soon enough my friend..."
+dialogueOptions = Array[ExtResource("2_aupdi")]([SubResource("Resource_j104x")])
+metadata/_custom_type_script = "uid://bg6c48acdck1"
+
+[resource]
+script = ExtResource("3_lkkk6")
+speakerName = "The Ex-Gnostic"
+manuscript = Array[ExtResource("1_sk76p")]([SubResource("Resource_i8gnf"), SubResource("Resource_d2j5p"), SubResource("Resource_lkkk6")])
+metadata/_custom_type_script = "uid://bin58sxq57jsc"

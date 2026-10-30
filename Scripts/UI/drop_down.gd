@@ -140,6 +140,7 @@ func _on_close_pressed() -> void:
 
 
 func _on_discard_pressed() -> void:
+	Globals.Root.placeItem(currentItem.ownItem, Globals.Player.global_position)
 	Globals.Player.inventory.remove(currentItem.ownItem)
 	Globals.inventory.updateInventory()
 	close()

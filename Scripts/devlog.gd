@@ -731,3 +731,23 @@
 	#if one would want the raw numbers its 61 to 28
 	#02:30
 	#as it seems to be functional ill be going to bed.
+	#
+	##26/10
+	#15:04
+	#been lacking
+	#
+	##27/10
+	#22:11
+	#work? X Jerk? ✔✔✔✔✔✔
+	#i know i STILL havent implemented bartering or crits but mate i gotta add more story meat
+	#22:34
+	#added the ex-gnostic
+	#22:55
+	#did some slight graphical changes
+	#
+	##30/10
+	#17:02
+	#bum alert
+	#i will try to implement like actual physical items
+	#17:51
+	#added actual physical items, time to push

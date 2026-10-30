@@ -2,7 +2,7 @@ extends Node
 
 var backupGlobals
 
-@export var Root: Node3D
+@export var Root: Root
 
 @export var Player: Player
 @export var wizard: Node

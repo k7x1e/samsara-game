@@ -1,5 +1,7 @@
 extends Node3D
 
+class_name Root
+
 @export var gamestate: gameState
 
 #@onready var preloadshitfuck = load("user://Save/saves.sav")
@@ -36,6 +38,19 @@ var isPaused = false
 
 @onready var mNotif = preload("res://Scenes/menacingNotif.tscn")
 @onready var songNotif = $fading/NowPlaying
+
+@onready var physItem: PackedScene = preload("res://Scenes/physics_item.tscn")
+
+func placeItem(item: itemClass, pos:Vector3):
+	var tempPooper = physItem.instantiate()
+	self.add_child(tempPooper)
+	tempPooper.set_owner(self)
+	
+	tempPooper.ownItem = item
+	tempPooper.global_position = pos
+	tempPooper.initialize()
+	
+	return true
 
 func nowPlaying(songName: String, artistAlbum: String):
 	songNotif.songName = songName

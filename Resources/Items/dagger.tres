@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cdqtgy65m8nor" path="res://Scripts/classes/actions/enemystab.gd" id="1_jd1bq"]
 [ext_resource type="Script" uid="uid://w12wn77whdy6" path="res://Scripts/classes/actions/stab.gd" id="3_8hhar"]
 [ext_resource type="Script" uid="uid://ojs3apomqf0t" path="res://Scripts/classes/Items/weaponClass.gd" id="5_8hhar"]
+[ext_resource type="PackedScene" uid="uid://d2jqv4w2barcm" path="res://Scenes/items/Models/dagger.tscn" id="5_vyu04"]
 
 [sub_resource type="Resource" id="Resource_vyu04"]
 script = ExtResource("1_jd1bq")
@@ -49,4 +50,5 @@ icon = ExtResource("1_gvo2g")
 Type = 2
 WeaponType = 2
 equippable = true
+model = ExtResource("5_vyu04")
 metadata/_custom_type_script = "uid://ojs3apomqf0t"

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dhxgl60lqqfjv"]
+
+[ext_resource type="PackedScene" uid="uid://b20anxbmoysp7" path="res://Models/potion.glb" id="1_tu50l"]
+
+[node name="potion" unique_id=632858756 instance=ExtResource("1_tu50l")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.431, 0)

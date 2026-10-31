@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ccxmiy3iod6n6"]
+
+[ext_resource type="PackedScene" uid="uid://bj28q8tser5qi" path="res://Models/lanternItem.glb" id="1_5grbr"]
+
+[node name="lanternItem" unique_id=754240510 instance=ExtResource("1_5grbr")]
+transform = Transform3D(0.23344272, -0.90617853, 0.35262573, 0.9683832, 0.2494674, 0, -0.087968625, 0.34147683, 0.93576443, -0.896796, 0.6848582, 0.42495036)

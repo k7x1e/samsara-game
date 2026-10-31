@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d2jqv4w2barcm"]
+
+[ext_resource type="PackedScene" uid="uid://b1tsd7i5t4x1n" path="res://Models/DAGGER.glb" id="1_duwn8"]
+
+[node name="Node3D" type="Node3D" unique_id=813700436]
+
+[node name="DAGGER" parent="." unique_id=1267619545 instance=ExtResource("1_duwn8")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0.086927444, 0)

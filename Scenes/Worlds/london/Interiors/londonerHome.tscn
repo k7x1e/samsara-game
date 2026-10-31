@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="23_0sw68"]
 [ext_resource type="PackedScene" uid="uid://cgyw6oicswx6p" path="res://Scenes/physics_item.tscn" id="24_d3xwe"]
 [ext_resource type="Resource" uid="uid://cfcd0wi1f6o47" path="res://Resources/Items/lantern.tres" id="25_3ieen"]
+[ext_resource type="Resource" uid="uid://burvo2yn4lmxq" path="res://Resources/Items/heal.tres" id="26_5xxwy"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_om76y"]
 vertices = PackedVector3Array(-5, 1.5, -4.25, -4.25, 1.5, -4.25, -4, 1.5, -6.5, -5, 1.5, -7, -0.5, 1.75, -6.5, -0.5, 1.75, -7, 5.5, 0.5, -7, 0.75, 0.5, -7, 0.75, 0.5, -5.75, 0.75, 0.5, -0.5, 5.5, 0.5, -0.5, -3.5, 0.5, -3, -5, 0.5, -3, -5, 0.5, -0.25, -4, 0.5, 0, -4, 0.5, 3.5, -0.5, 0.5, 3.5, -0.5, 0.5, -0.25, -3, 0.5, -3.5, 0.25, 0.5, -5.25, -3, 0.5, -5.25)
@@ -595,9 +596,30 @@ spot_range = 170.0
 spot_angle = 53.575474
 
 [node name="Cain" parent="." unique_id=1866149922 instance=ExtResource("16_kcq24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6493483, 1.64, -3.5288143)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6899467, 1.64, -2.1628447)
 NpcClass = SubResource("Resource_d3dcv")
 
 [node name="physicsItem" parent="." unique_id=726585440 instance=ExtResource("24_d3xwe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9147702, 1.7176576, -6.607363)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9147702, 1.9417782, -6.607363)
 ownItem = ExtResource("25_3ieen")
+spawned = true
+
+[node name="potion" parent="." unique_id=1466826521 instance=ExtResource("24_d3xwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.920317, 3.56, 3.326517)
+ownItem = ExtResource("26_5xxwy")
+spawned = true
+
+[node name="potion2" parent="." unique_id=743108451 instance=ExtResource("24_d3xwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7506914, 3.56, 2.7487237)
+ownItem = ExtResource("26_5xxwy")
+spawned = true
+
+[node name="potion3" parent="." unique_id=2127094226 instance=ExtResource("24_d3xwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.031432, 3.56, 2.0837533)
+ownItem = ExtResource("26_5xxwy")
+spawned = true
+
+[node name="potion4" parent="." unique_id=1832108341 instance=ExtResource("24_d3xwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.031432, 3.56, 1.5256894)
+ownItem = ExtResource("26_5xxwy")
+spawned = true

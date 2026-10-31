@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ca0j7b45r5gjn"]
+
+[ext_resource type="Texture2D" uid="uid://874crc0bp3hk" path="res://icon.png" id="1_b226h"]
+
+[node name="Control" type="Control" unique_id=1479691136]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1962393111]
+root_node = NodePath("")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=940031172]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -480.0
+offset_right = 480.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_b226h")
+expand_mode = 1

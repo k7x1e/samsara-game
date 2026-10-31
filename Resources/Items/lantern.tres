@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="equipmentItem" format=3 uid="uid://cfcd0wi1f6o47"]
 
+[ext_resource type="Script" uid="uid://b6gxwdgd5651g" path="res://Scripts/classes/equipmentSpell.gd" id="1_f0jnu"]
 [ext_resource type="Texture2D" uid="uid://bcmc20jgy0dgp" path="res://Textures/icons/items/lantern.png" id="1_r6agu"]
 [ext_resource type="PackedScene" uid="uid://l0h4n0debnqg" path="res://Scenes/items/lantern_item.tscn" id="2_hewwn"]
 [ext_resource type="Script" uid="uid://ig7vm5nrl2aa" path="res://Scripts/classes/Items/equipmentClass.gd" id="3_f0jnu"]
+[ext_resource type="PackedScene" uid="uid://ccxmiy3iod6n6" path="res://Scenes/items/Models/lantern_item.tscn" id="3_f8jeg"]
 
 [resource]
 script = ExtResource("3_f0jnu")
@@ -14,4 +16,6 @@ name = "Lantern"
 icon = ExtResource("1_r6agu")
 Type = 2
 equippable = true
+model = ExtResource("3_f8jeg")
+offset = Vector3(0, -0.75, 0)
 metadata/_custom_type_script = "uid://ig7vm5nrl2aa"

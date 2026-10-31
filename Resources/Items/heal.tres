@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bqxdpdin82oyj" path="res://Textures/icons/spells/heal.png" id="1_1acg4"]
 [ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/classes/Items/SpellItem.gd" id="2_5n4on"]
+[ext_resource type="PackedScene" uid="uid://dhxgl60lqqfjv" path="res://Scenes/items/Models/potion.tscn" id="2_mwbfv"]
 [ext_resource type="Script" uid="uid://cd6w5kfeybbue" path="res://Scripts/classes/actions/statuseffect.gd" id="3_1acg4"]
 [ext_resource type="Script" uid="uid://ehkal6i02pq" path="res://Scripts/classes/spells/consumable.gd" id="3_mwbfv"]
 
@@ -34,4 +35,7 @@ description = "Some bullshit i guess"
 icon = ExtResource("1_1acg4")
 Type = 3
 isSpell = true
+quantity = 1
+model = ExtResource("2_mwbfv")
+offset = Vector3(0, 0, 0)
 metadata/_custom_type_script = "uid://crrif2oof7ji8"

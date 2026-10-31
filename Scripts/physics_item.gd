@@ -1,3 +1,4 @@
+@tool
 extends Node3D
 
 class_name physicsItem
@@ -6,13 +7,23 @@ class_name physicsItem
 @onready var nameLabel: RichTextLabel = $SubViewport/CanvasLayer/CenterContainer/RichTextLabel
 @onready var nameSprite: Sprite3D = $Sprite3D
 
-@export var ownItem: itemClass
+@export var ownItem: itemClass:
+	set(newItem):
+		ownItem = newItem
+		ownItem.changed.connect(initialize)
 
 @export var nearPlayer: bool = false
 
+@export var spawned: bool = false
+
 var ownModel: Node
 
+func _ready() -> void:
+	if spawned:
+		initialize()
+
 func initialize():
+	print("initializing")
 	checkModel()
 	updateText()
 

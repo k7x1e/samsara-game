@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var speed: float = 5.0
-@export var spdamage: float = 50.0
+@export var damage: float = 50.0
 
 func initialize() -> void:
 	await get_tree().create_timer(5.0).timeout
@@ -25,5 +25,5 @@ func _on_collision_body_entered(body: Node3D) -> void:
 	print(body.name)
 	if body.name != "Player":
 		Globals.stats.experience(1)
-		body.damage(spdamage)
+		body.damage(damage)
 		self.queue_free()

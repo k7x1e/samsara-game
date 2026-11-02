@@ -5,47 +5,101 @@
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_cxoe0"]
 [ext_resource type="Script" uid="uid://bqdpiionfhc5e" path="res://Scripts/ActorBaseClass.gd" id="2_mvt4t"]
 [ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="3_65i65"]
-[ext_resource type="Script" uid="uid://cmxxck0reg3ca" path="res://Scripts/classes/actions/tutorialend.gd" id="3_mvt4t"]
 [ext_resource type="Material" uid="uid://bn1yxkelwqsrk" path="res://Textures/walls/sinistererplanks.tres" id="3_s7tx2"]
 [ext_resource type="PackedScene" uid="uid://d2ndbyf01218u" path="res://Scenes/models/light.tscn" id="4_fn4jr"]
-[ext_resource type="Resource" uid="uid://bnntlvv555o7v" path="res://Resources/story/conditions/outoftutorial.tres" id="4_m7ia4"]
-[ext_resource type="Script" uid="uid://b7hyysg2wlwul" path="res://Scripts/classes/Behaviour/tutorialguy.gd" id="5_0wdrf"]
+[ext_resource type="Script" uid="uid://baf2et18ajmro" path="res://Scripts/classes/Behaviour/Follower.gd" id="5_00gsy"]
 [ext_resource type="Environment" uid="uid://lyhkdkhxwhlj" path="res://Resources/game_environment.tres" id="5_1f7fd"]
 [ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="5_f4idf"]
 [ext_resource type="Resource" uid="uid://xm2tqnhksoev" path="res://Resources/story/conversations/tutorial.tres" id="6_65i65"]
+[ext_resource type="Script" uid="uid://7egkv825rd1e" path="res://Scripts/classes/Behaviour/subBehaviour.gd" id="6_vl8n3"]
+[ext_resource type="Script" uid="uid://cdqtgy65m8nor" path="res://Scripts/classes/actions/enemystab.gd" id="8_vu85i"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://c15nkrf8a3fe" path="res://Resources/tutorial.tres" id="9_m7ia4"]
+[ext_resource type="Script" uid="uid://b6gxwdgd5651g" path="res://Scripts/classes/equipmentSpell.gd" id="9_vl8n3"]
 [ext_resource type="Texture2D" uid="uid://dlppbptyqxtaf" path="res://Textures/UI/marker.png" id="10_00gsy"]
+[ext_resource type="Texture2D" uid="uid://cam57ov3kx1mh" path="res://Textures/icons/items/dagger.png" id="10_wi4ug"]
+[ext_resource type="Script" uid="uid://w12wn77whdy6" path="res://Scripts/classes/actions/stab.gd" id="11_037dr"]
+[ext_resource type="PackedScene" uid="uid://d2jqv4w2barcm" path="res://Scenes/items/Models/dagger.tscn" id="12_rrc7u"]
 [ext_resource type="Material" uid="uid://cqc3u4605pbco" path="res://Textures/londonProtagFacce.tres" id="13_0wdrf"]
+[ext_resource type="PackedScene" uid="uid://dct8lf22m65bu" path="res://Scenes/items/dagger.tscn" id="13_e3o8m"]
 [ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="13_w8204"]
 [ext_resource type="PackedScene" uid="uid://2bbch46haypm" path="res://Models/elder.glb" id="14_ktix3"]
+[ext_resource type="Script" uid="uid://ojs3apomqf0t" path="res://Scripts/classes/Items/weaponClass.gd" id="14_w8204"]
 
-[sub_resource type="Resource" id="Resource_ktix3"]
-script = ExtResource("3_mvt4t")
-metadata/_custom_type_script = "uid://cmxxck0reg3ca"
-
-[sub_resource type="Resource" id="Resource_00gsy"]
-script = ExtResource("5_0wdrf")
+[sub_resource type="Resource" id="Resource_f4idf"]
+script = ExtResource("5_00gsy")
 player = null
 nav = null
 hasDialogue = true
+angerDialogue = "fool..."
+damageArea = null
 words = ExtResource("6_65i65")
-outoftutorial = ExtResource("4_m7ia4")
-respawnPosition = Vector3(0, 0.956, -6)
-animTree = ExtResource("9_m7ia4")
-playerFollowerNode = null
-action = SubResource("Resource_ktix3")
-speed = 3.0
+health = 9999.0
 actor = null
-metadata/_custom_type_script = "uid://b7hyysg2wlwul"
+hasDialoge = true
+metadata/_custom_type_script = "uid://baf2et18ajmro"
 
 [sub_resource type="Resource" id="Resource_lakn1"]
 script = ExtResource("13_w8204")
 npcName = "Tutorial Guy"
 usesModel = false
-behaviour = SubResource("Resource_00gsy")
+behaviour = SubResource("Resource_f4idf")
 metadata/_custom_type_script = "uid://drjjmjc24qipo"
 
+[sub_resource type="Resource" id="Resource_vyu04"]
+script = ExtResource("8_vu85i")
+damage = 50.0
+metadata/_custom_type_script = "uid://cdqtgy65m8nor"
+
+[sub_resource type="Resource" id="Resource_hkrn1"]
+script = ExtResource("11_037dr")
+stabrange = 2.0
+metadata/_custom_type_script = "uid://w12wn77whdy6"
+
+[sub_resource type="Resource" id="Resource_jd1bq"]
+script = ExtResource("9_vl8n3")
+spellClass = SubResource("Resource_hkrn1")
+anim = "stab"
+basecoolDown = 0.4
+coolDown = 0.4
+name = "stab"
+Icon = ExtResource("10_wi4ug")
+uiNode = null
+spellTimer = null
+statted = false
+hasAnimation = false
+requiredSlots = Array[String](["armRight"])
+priority = true
+stats = Dictionary[StringName, Variant]({
+&"damage": 50
+})
+metadata/_custom_type_script = "uid://b6gxwdgd5651g"
+
+[sub_resource type="Resource" id="Resource_vu85i"]
+script = ExtResource("14_w8204")
+slot = "armRight"
+node = ExtResource("13_e3o8m")
+associatedAnimation = "daggerhold"
+curNode = null
+hasSpells = true
+equipmentSpells = Array[ExtResource("9_vl8n3")]([SubResource("Resource_jd1bq")])
+action = SubResource("Resource_vyu04")
+itemID = 45
+name = "Dagger"
+description = "Simple Dagger, does some damage."
+icon = ExtResource("10_wi4ug")
+Type = 2
+WeaponType = 2
+equippable = true
+model = ExtResource("12_rrc7u")
+offset = Vector3(0, 0, 0)
+metadata/_custom_type_script = "uid://ojs3apomqf0t"
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ei5c"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vu85i"]
+radius = 2.018302
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vl8n3"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_pen7r"]
 vertices = PackedVector3Array(-31.5, 0.5, -6.75, -9, 0.5, -6.75, -9, 0.5, -8.75, -6.75, 0.5, -9, -6.75, 0.5, -31.5, -31.5, 0.5, -31.5, 7, 0.5, -9, 7, 0.5, -31.5, 9, 0.5, -9, 9.25, 0.5, -7.25, 31.5, 0.5, -7.5, 31.5, 0.5, -31.5, 9.25, 0.5, 7.25, 31.5, 0.5, 7.5, -7.25, 0.5, -7.25, -7.25, 0.5, 7.5, 7.5, 0.5, 7.5, 7.5, 0.5, -7.25, -31.5, 0.5, 7, -9, 0.5, 7, -7.5, 0.5, 31.5, -7.25, 0.5, 9.25, -9, 0.5, 9, -31.5, 0.5, 31.5, 9.25, 0.5, 8.75, 8.75, 0.5, 9.25, 7.25, 0.5, 9.25, 7.5, 0.5, 31.5, 31.5, 0.5, 31.5)
@@ -104,7 +158,10 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 collision_layer = 521
 collision_mask = 521
 script = ExtResource("2_mvt4t")
+health = 999.0
 NpcClass = SubResource("Resource_lakn1")
+visibilityoverride = true
+equipped = SubResource("Resource_vu85i")
 
 [node name="Visual" type="Node3D" parent="Actor" unique_id=1983415667 groups=["Pausable"]]
 
@@ -113,8 +170,8 @@ transform = Transform3D(-1.0927845e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.092784
 
 [node name="Skeleton3D" parent="Actor/Visual/elder/Armature" parent_id_path=PackedInt32Array(7493415, 482351033) index="0" unique_id=1296813774]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.9381862, 0.012049491, 0.3412735, 0.056515202)
-bones/3/rotation = Quaternion(0.00013549108, -0.00021684017, 0.010889749, 0.99994075)
+bones/1/rotation = Quaternion(0.9380117, 0.021740712, 0.34067142, 0.060037684)
+bones/3/rotation = Quaternion(4.6130404e-05, -7.38272e-05, 0.0037076136, 0.9999932)
 bones/5/rotation = Quaternion(0.022711672, -1.1917787e-07, 2.7074563e-09, 0.99974203)
 bones/7/rotation = Quaternion(-0.36593214, -0.027977932, -0.12831022, 0.9213292)
 bones/8/rotation = Quaternion(-0.23305106, -0.018484527, -0.022327406, 0.9720324)
@@ -150,6 +207,18 @@ billboard = 1
 texture = ExtResource("10_00gsy")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Actor" unique_id=1732040603]
+
+[node name="attackrange" type="Area3D" parent="Actor" unique_id=1098529373 groups=["Pausable"]]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Actor/attackrange" unique_id=885507662 groups=["Pausable"]]
+shape = SubResource("SphereShape3D_vu85i")
+
+[node name="Area3D" type="Area3D" parent="Actor" unique_id=2012866090]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Actor/Area3D" unique_id=1433453865]
+shape = SubResource("SphereShape3D_vl8n3")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=318183600]
 navigation_mesh = SubResource("NavigationMesh_pen7r")

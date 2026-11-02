@@ -22,7 +22,9 @@
 [ext_resource type="Script" uid="uid://baf2et18ajmro" path="res://Scripts/classes/Behaviour/Follower.gd" id="20_5xxwy"]
 [ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="20_sssge"]
 [ext_resource type="Resource" uid="uid://djst5ndjwy31i" path="res://Resources/story/conversations/Cain.tres" id="21_vdnvd"]
+[ext_resource type="Script" uid="uid://7egkv825rd1e" path="res://Scripts/classes/Behaviour/subBehaviour.gd" id="22_073tb"]
 [ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="23_0sw68"]
+[ext_resource type="Script" uid="uid://cnpnfxiwvhunm" path="res://Scripts/classes/Behaviour/subbehaviour/sayRandom.gd" id="23_57ena"]
 [ext_resource type="PackedScene" uid="uid://cgyw6oicswx6p" path="res://Scenes/physics_item.tscn" id="24_d3xwe"]
 [ext_resource type="Resource" uid="uid://cfcd0wi1f6o47" path="res://Resources/Items/lantern.tres" id="25_3ieen"]
 [ext_resource type="Texture2D" uid="uid://bqxdpdin82oyj" path="res://Textures/icons/spells/heal.png" id="26_wtxdy"]
@@ -344,6 +346,11 @@ _bundled = {
 "version": 3
 }
 
+[sub_resource type="Resource" id="Resource_56n24"]
+script = ExtResource("23_57ena")
+sayings = Array[String](["Where could my pipe be...", "Hmm...", "See anything interesting Jeremiah?"])
+metadata/_custom_type_script = "uid://cnpnfxiwvhunm"
+
 [sub_resource type="Resource" id="Resource_073tb"]
 script = ExtResource("20_5xxwy")
 player = null
@@ -354,6 +361,8 @@ words = ExtResource("21_vdnvd")
 speed = 3.0
 actor = null
 billboard = SubResource("PackedScene_wtxdy")
+subBehaviours = Array[ExtResource("22_073tb")]([SubResource("Resource_56n24")])
+usesSubBehaviours = true
 metadata/_custom_type_script = "uid://baf2et18ajmro"
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_wsunn"]
@@ -410,7 +419,6 @@ description = "Some bullshit i guess"
 icon = ExtResource("26_wtxdy")
 Type = 3
 isSpell = true
-quantity = 1
 model = ExtResource("27_6arch")
 offset = Vector3(0, 0, 0)
 metadata/_custom_type_script = "uid://crrif2oof7ji8"
@@ -424,7 +432,6 @@ description = "Some bullshit i guess"
 icon = ExtResource("26_wtxdy")
 Type = 3
 isSpell = true
-quantity = 1
 model = ExtResource("27_6arch")
 offset = Vector3(0, 0, 0)
 metadata/_custom_type_script = "uid://crrif2oof7ji8"
@@ -452,7 +459,6 @@ description = "Some bullshit i guess"
 icon = ExtResource("26_wtxdy")
 Type = 3
 isSpell = true
-quantity = 1
 model = ExtResource("27_6arch")
 offset = Vector3(0, 0, 0)
 metadata/_custom_type_script = "uid://crrif2oof7ji8"

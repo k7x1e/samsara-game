@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://cdrnpgknxmfk3" path="res://Scenes/dialogue.tscn" id="18_rc6uw"]
 [ext_resource type="Script" uid="uid://d163f5ur8ukli" path="res://Scripts/UI/button_sound.gd" id="22_l6llh"]
 [ext_resource type="AudioStream" uid="uid://xb56kx4sujei" path="res://sound/notification/menu.wav" id="23_ocger"]
+[ext_resource type="FontFile" uid="uid://cipkajjgaqv3b" path="res://Resources/Fonts/moms.ttf" id="24_pde1v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_158mb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -504,7 +505,7 @@ texture = ExtResource("6_wbdvm")
 
 [node name="DropDown" type="Control" parent="Menu" unique_id=335422401]
 anchors_preset = 0
-offset_right = 180.0
+offset_right = 238.0
 offset_bottom = 389.0
 script = ExtResource("12_23t3j")
 
@@ -526,11 +527,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="Name" type="Label" parent="Menu/DropDown/VBoxContainer" unique_id=240930019]
+[node name="Name" type="RichTextLabel" parent="Menu/DropDown/VBoxContainer" unique_id=1270159804]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_wbdvm")
+theme_override_fonts/bold_font = ExtResource("24_pde1v")
 theme_override_styles/normal = ExtResource("15_kmwmt")
+bbcode_enabled = true
 text = "Name"
 vertical_alignment = 1
 

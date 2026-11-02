@@ -114,7 +114,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="SubViewport/CanvasLayer/CenterContainer" unique_id=321443388]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_wohpn")
-text = "Levelled up, niggaaa"
+text = "Farting heee hee hoo hoo"
 label_settings = SubResource("LabelSettings_wohpn")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1941277878]

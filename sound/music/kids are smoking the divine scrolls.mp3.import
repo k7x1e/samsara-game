@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://guqameyo44yt"
+path="res://.godot/imported/kids are smoking the divine scrolls.mp3-40fece31a26ee8dbab8095b01c6737b4.mp3str"
+
+[deps]
+
+source_file="res://sound/music/kids are smoking the divine scrolls.mp3"
+dest_files=["res://.godot/imported/kids are smoking the divine scrolls.mp3-40fece31a26ee8dbab8095b01c6737b4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

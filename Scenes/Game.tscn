@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://b14oh2lrhjl14" path="res://Scenes/now_playing.tscn" id="18_x3xnh"]
 [ext_resource type="Resource" uid="uid://dr6wtb2x5y5ld" path="res://Resources/songs/210G.tres" id="20_lbihj"]
 [ext_resource type="Resource" uid="uid://cf4047g3cn2ch" path="res://Resources/songs/123a.tres" id="21_3jf1l"]
+[ext_resource type="Resource" uid="uid://7mqpi4th7gl7" path="res://Resources/songs/6ft7.tres" id="21_356ba"]
 [ext_resource type="Resource" uid="uid://cfdqese2tgo1h" path="res://Resources/songs/123b.tres" id="22_356ba"]
 [ext_resource type="Resource" uid="uid://bixealjbu1gq1" path="res://Resources/songs/122.tres" id="23_3jf1l"]
 [ext_resource type="Shader" uid="uid://bjn10bjrle70t" path="res://Resources/Shaders/monochrome.gdshader" id="24_raj38"]
@@ -42,7 +43,7 @@ metadata/_custom_type_script = "uid://n8becq15md55"
 
 [sub_resource type="Resource" id="Resource_356ba"]
 script = ExtResource("11_wxwew")
-playlist = Array[ExtResource("12_4q8tf")]([ExtResource("21_3jf1l"), ExtResource("22_356ba"), ExtResource("23_3jf1l")])
+playlist = Array[ExtResource("12_4q8tf")]([ExtResource("21_3jf1l"), ExtResource("22_356ba"), ExtResource("23_3jf1l"), ExtResource("21_356ba")])
 metadata/_custom_type_script = "uid://n8becq15md55"
 
 [sub_resource type="Resource" id="Resource_vvhu1"]

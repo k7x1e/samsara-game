@@ -10,7 +10,13 @@ extends Node3D
 func initialize() -> void:
 	self.global_position.y += offset
 	#print("im in")
-	textLabel.text = ntext
+	textLabel.text = strip(ntext)
 	anim.play("notif")
 	await get_tree().create_timer(1.0).timeout
+	queue_free()
 	#sself.queue_free()
+
+func strip(input:String) -> String:
+	var regex = RegEx.new()
+	regex.compile("\\[.*?\\]")
+	return regex.sub(input, "", true)

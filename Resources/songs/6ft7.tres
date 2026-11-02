@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="song" format=3 uid="uid://7mqpi4th7gl7"]
+
+[ext_resource type="AudioStream" uid="uid://guqameyo44yt" path="res://sound/music/kids are smoking the divine scrolls.mp3" id="1_521mx"]
+[ext_resource type="Script" uid="uid://c5368yh8nkr87" path="res://Scripts/classes/song.gd" id="2_f4fic"]
+
+[resource]
+script = ExtResource("2_f4fic")
+audio = ExtResource("1_521mx")
+songName = "6 Foot 7"
+artist = "Lil Wayne"
+album = "Kids Are Smoking the Coronavirus"
+metadata/_custom_type_script = "uid://c5368yh8nkr87"

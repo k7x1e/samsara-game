@@ -153,3 +153,4 @@ func _on_use_pressed() -> void:
 func modifier_pressed() -> void:
 	currentItem.ownItem.checkAndReverseModifier()
 	currentItem.ownItem.applyModifier(Globals.getRandomModifier())
+	updateItem(currentItem)

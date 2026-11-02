@@ -39,6 +39,7 @@ var _quantity: int = 1
 
 @export var currentModifier: itemModifier = null
 
+@export var stats: Dictionary[StringName, Variant] = {&"damage": 50.0, &"cost": 50, &"cooldown": 1.0}
 var backups: Dictionary[StringName, Variant]
 
 func get_proper(property: StringName):
@@ -71,12 +72,17 @@ func applyModifier(modifier: itemModifier):
 		backups[i] = get_proper(i)
 		set_proper(i,modifier.getvalue(i,self))
 		print("set ", i, " to ", get_proper(i))
+	
+	initializeStats()
+
+func initializeStats():
+	pass ## does not really do anything in the case of this particular class. Depends on
 
 func checkAndReverseModifier() -> bool:
 	if currentModifier != null:
 		name = _name
 		for i in backups:
-			set(i,backups[i])
+			set_proper(i,backups[i])
 		currentModifier = null
 		return true
 	else:

@@ -31,8 +31,15 @@ func _ready() -> void:
 		await monitor.initialize()
 
 func fixCombatBehaviour():
-	currentCombatBehaviour = Globals.getBehaviourFromItemType(equipped.WeaponType).duplicate(true)
-	currentCombatBehaviour.initialize([behaviour.player,self,equipped.action,nav,behaviour])
+	var scaryaction: Action
+	if equipped != null:
+		currentCombatBehaviour = Globals.getBehaviourFromItemType(equipped.WeaponType).duplicate(true)
+		scaryaction = equipped.action
+	else:
+		currentCombatBehaviour = Globals.getBehaviourFromItemType(0)
+		scaryaction = Action.new()
+	currentCombatBehaviour.initialize([behaviour.player,self,scaryaction,nav,behaviour])
+		
 
 
 func _physics_process(delta: float) -> void:
@@ -48,7 +55,7 @@ func _physics_process(delta: float) -> void:
 func tick():
 	if isvisible or visibilityoverride:
 		#print("ticking behaviour")
-		behaviour.update()
+		behaviour._update()
 
 func damage(amt: float):
 	#print("took damage")

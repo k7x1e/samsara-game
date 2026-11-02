@@ -135,7 +135,7 @@ func changeWorld(caller: Variant, Targetscene: String, fromMain: bool, fade: boo
 	currentInterior = actualTarget
 
 func _ready():
-	Input.mouse_mode =Input.MOUSE_MODE_CONFINED
+	#Input.mouse_mode =Input.MOUSE_MODE_CONFINED
 	fadeIn()
 	Globals.gamestate = Globals.gamestate.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 	gamestate = Globals.gamestate

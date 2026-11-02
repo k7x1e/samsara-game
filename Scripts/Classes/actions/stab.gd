@@ -4,7 +4,7 @@ class_name stab
 
 @export var stabrange: float
 
-func do(caster: Node, casterSpell: spell = null, args: Array = []):
+func do(caster: Node, casterSpell: spell = null, args: Array = [], params: Dictionary[StringName, Variant] = {}):
 	var space_state = caster.get_world_3d().direct_space_state
 	# use global coordinates, not local to node
 	

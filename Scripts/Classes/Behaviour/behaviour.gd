@@ -12,6 +12,9 @@ signal attacking
 @export var billboard: PackedScene = preload("res://Scenes/billboard.tscn")
 @export var notification: PackedScene = preload("res://Scenes/notification.tscn")
 
+@export var subBehaviours: Array[subBehaviour]
+@export var usesSubBehaviours: bool = false
+
 func damage(amt: float) -> bool: #return true if survived, if dead return false to let the actor kill itself.
 	if health - amt > 0:
 		health -= amt
@@ -50,6 +53,16 @@ func death():
 func initialize():
 	#set important things here.
 	pass
+
+func _update():
+	#do subBehaviours first
+	if usesSubBehaviours:
+		tickSubBehaviours()
+	update()
+
+func tickSubBehaviours():
+	for i in subBehaviours:
+		i.tick(self)
 
 func update():
 	#stick kinda whatever here

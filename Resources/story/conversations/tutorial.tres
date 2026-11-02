@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/classes/dialogueOption.gd" id="2_ros8p"]
 [ext_resource type="Resource" uid="uid://1huepcxmm62c" path="res://Resources/story/quests/tutorialQuest.tres" id="3_v8vff"]
 [ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/classes/conversation.gd" id="4_4rbfs"]
+[ext_resource type="Script" uid="uid://cmxxck0reg3ca" path="res://Scripts/classes/actions/tutorialend.gd" id="4_ros8p"]
 
 [sub_resource type="Resource" id="Resource_f4idf"]
 script = ExtResource("2_ros8p")
@@ -35,10 +36,15 @@ dialogueText = "You might not know who you are and neither do I. (n)We are both 
 dialogueOptions = Array[ExtResource("2_ros8p")]([SubResource("Resource_ugpl6")])
 metadata/_custom_type_script = "uid://bg6c48acdck1"
 
+[sub_resource type="Resource" id="Resource_ros8p"]
+script = ExtResource("4_ros8p")
+metadata/_custom_type_script = "uid://cmxxck0reg3ca"
+
 [sub_resource type="Resource" id="Resource_645mn"]
 script = ExtResource("2_ros8p")
 text = "Farewell then."
 target = -1
+action = SubResource("Resource_ros8p")
 metadata/_custom_type_script = "uid://dvewwpayy1s83"
 
 [sub_resource type="Resource" id="Resource_ir32r"]
@@ -49,10 +55,15 @@ questStatus = 4
 quest = ExtResource("3_v8vff")
 metadata/_custom_type_script = "uid://bg6c48acdck1"
 
+[sub_resource type="Resource" id="Resource_v8vff"]
+script = ExtResource("4_ros8p")
+metadata/_custom_type_script = "uid://cmxxck0reg3ca"
+
 [sub_resource type="Resource" id="Resource_vu85i"]
 script = ExtResource("2_ros8p")
 text = "Farewell."
 target = -1
+action = SubResource("Resource_v8vff")
 metadata/_custom_type_script = "uid://dvewwpayy1s83"
 
 [sub_resource type="Resource" id="Resource_vl8n3"]

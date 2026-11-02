@@ -18,8 +18,6 @@ class_name baseWeapon
 
 @export var testing: Array[int] = [0,1,2]
 
-@export var stats: Dictionary[StringName, Variant] = {&"damage": 50.0}
-
 func initializeItem():
 	var temp = node.instantiate()
 	Globals.Player.skeleton.add_child(temp)

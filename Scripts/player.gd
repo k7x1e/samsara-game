@@ -62,6 +62,9 @@ var dashVector = Vector3(dashD, 0, 0)
 
 @export var controllerActive: bool = false
 
+@export var notifications: Array[String]
+var canNotify: bool = true
+
 var spells: Array[spell]
 
 var referenceN: Node3D
@@ -109,7 +112,10 @@ func death():
 	notify("you died !!")
 	Globals.Root.death()
 
-func notify(notif: String, Audio: String = "None"):
+func notify(notif: String, _Audio: String = "None"):
+	notifications.append(notif)
+
+func _notify(notif: String, Audio: String = "None"):
 	var temp = notification.instantiate()
 	self.add_child(temp)
 	temp.set_owner(self)
@@ -119,6 +125,14 @@ func notify(notif: String, Audio: String = "None"):
 	if Audio != "None":
 		sfx.stream = sounds[Audio]
 		sfx.play()
+
+func progressNotificationQueue():
+	canNotify = false
+	_notify(notifications[0])
+	notifications.pop_front()
+	await get_tree().create_timer(0.1).timeout
+	canNotify = true
+
 
 func _ready():
 	controllerActive = Globals.controllerActive
@@ -161,7 +175,8 @@ func tick():
 		recoverMana()
 	if canRecoverhealth:
 		recoverHealth()
-	
+	if canNotify and notifications.size() > 0:
+		progressNotificationQueue()
 	
 	look_at_mouse()
 	setCursor()
@@ -173,6 +188,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
+	if Input.is_action_just_pressed("evilDebugKey"):
+		notify("test")
 	if Input.is_action_just_pressed("interact"):
 		checkDialogue()
 	#call mouselook func

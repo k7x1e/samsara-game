@@ -778,3 +778,18 @@
 	#discovered that the packcurrent part of changeworld isnt packing anything. Shit.
 	#14:31
 	#currentinterior (VERY IMPORTANT) was not being assigned. BUllshit
+	#
+	##02/11
+	#10:32
+	#
+	#16:27
+	#i need to add notification queueing
+	#16:36
+	#added notification queueing... what now....
+	#19:21
+	#what to do.....
+	#i should make an unarmed combatbehaviour thats just the ranged one but without attacking...
+	#20:27
+	#been making a bunch of bullshit to improve the behaviour of NPCs. They now speak at random
+	#22:11
+	#items can now be "green"

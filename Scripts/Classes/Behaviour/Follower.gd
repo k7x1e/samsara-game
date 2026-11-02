@@ -10,6 +10,7 @@ class_name Passive
 @export var angerable: bool = true
 @export var angered: bool = false
 @export var angerThresh: int = 0 ##how much damage needs to be taken before it gets angered. zero means any damage will piss it off.
+@export var angerDialogue: String = "HEY!!!"
 
 @export var damageArea: Variant
 
@@ -19,16 +20,26 @@ var anger: int = 0
 
 @export var currentCombatBehaviour: combatBehaviour
 
+@export var isHero: bool = false ##if unarmed passive nearby screams it will attack the player
+
+
+
 var playerFollowerNode: Variant
 
 func takeDamage(amt: int):
 	#print("taking damage")
 	anger += amt
-	if anger >= angerThresh:
+	if anger >= angerThresh and !angered:
 		#print("angered")
 		getAngered()
 
+func hero():
+	if isHero:
+		getAngered()
+
 func getAngered():
+	usesSubBehaviours = false
+	say(angerDialogue, 1.0)
 	hasDialogue = false
 	print("angered")
 	angered = true

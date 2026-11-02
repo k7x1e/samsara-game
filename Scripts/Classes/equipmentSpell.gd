@@ -8,7 +8,6 @@ class_name equipmentSpell
 
 @export var anim: String
 
-@export var stats: Dictionary[StringName, Variant]
 @export var damage: float = 50
 @export var baseDamage: float = 50
 

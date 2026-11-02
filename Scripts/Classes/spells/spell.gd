@@ -41,6 +41,8 @@ signal quantity_changed()
 
 @export var priority: bool = false
 
+@export var stats: Dictionary[StringName,Variant] = {"damage":50.0}
+
 var curThreads: int = 0
 
 func checkEquipment() -> bool:
@@ -64,7 +66,7 @@ func cast(caster: Variant):
 			castable = false
 			#this is going to happen in the individual spells when it does damage
 			#Globals.stats.experience(1)
-			action.do(Globals.Player, self)
+			action.do(Globals.Player, self,[],stats)
 			
 			Globals.Player.mana -= cost
 			#print(Globals.Player.mana)

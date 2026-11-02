@@ -4,5 +4,5 @@ extends Resource
 
 class_name Action
 
-func do(caster: Node, casterSpell: spell = null, args: Array = []):
+func do(caster: Node, casterSpell: spell = null, args: Array = [], params: Dictionary[StringName, Variant] = {}):
 	Globals.Player.notify("No Action!")

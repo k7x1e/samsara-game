@@ -24,7 +24,7 @@ func setparameter(targetT, targetP, value, isStat: bool = false):
 	if isStat:
 		Globals.stats.setstat(Globals.stats.getStatIntFromString(targetP), value)
 
-func do(caster: Node, casterSpell: spell = null, args: Array = []):
+func do(caster: Node, casterSpell: spell = null, args: Array = [], params: Dictionary[StringName, Variant] = {}):
 	if effectTarget == 2:
 		targetIsStat = true
 	

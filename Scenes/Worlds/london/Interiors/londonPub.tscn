@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://wggca4kc4v15" path="res://Scenes/actor.tscn" id="11_7f25j"]
 [ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="11_ccq2g"]
 [ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="12_ma6y1"]
+[ext_resource type="Script" uid="uid://7egkv825rd1e" path="res://Scripts/classes/Behaviour/subBehaviour.gd" id="13_ma6y1"]
 [ext_resource type="Script" uid="uid://baf2et18ajmro" path="res://Scripts/classes/Behaviour/Follower.gd" id="13_ttj1o"]
 [ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/classes/dialogueClass.gd" id="14_bo8bj"]
 [ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/classes/dialogueOption.gd" id="15_likva"]
@@ -162,6 +163,58 @@ fog_enabled = true
 fog_light_color = Color(0, 0, 0, 1)
 volumetric_fog_albedo = Color(0.21230483, 0.21230483, 0.21230483, 1)
 
+[sub_resource type="Resource" id="Resource_bnhm3"]
+script = ExtResource("15_likva")
+text = "Do you know of Cain?"
+target = 1
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_26o22"]
+script = ExtResource("14_bo8bj")
+dialogueText = "Good day lad."
+dialogueOptions = Array[ExtResource("15_likva")]([SubResource("Resource_bnhm3")])
+metadata/_custom_type_script = "uid://bg6c48acdck1"
+
+[sub_resource type="Resource" id="Resource_3bept"]
+script = ExtResource("15_likva")
+text = "Thanks."
+target = -1
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_jluoo"]
+script = ExtResource("14_bo8bj")
+dialogueText = "Wish i knew lad, Ask the bartender I tell ya."
+dialogueOptions = Array[ExtResource("15_likva")]([SubResource("Resource_3bept")])
+questStatus = 2
+progressionLevel = 1
+quest = ExtResource("16_ccq2g")
+metadata/_custom_type_script = "uid://bg6c48acdck1"
+
+[sub_resource type="Resource" id="Resource_0cu5u"]
+script = ExtResource("16_4s17e")
+speakerName = "Mysterious man"
+manuscript = Array[ExtResource("14_bo8bj")]([SubResource("Resource_26o22"), SubResource("Resource_jluoo")])
+hasQuest = true
+metadata/_custom_type_script = "uid://bin58sxq57jsc"
+
+[sub_resource type="Resource" id="Resource_likva"]
+script = ExtResource("13_ttj1o")
+player = null
+nav = null
+hasDialogue = true
+damageArea = null
+words = SubResource("Resource_0cu5u")
+isHero = true
+actor = null
+metadata/_custom_type_script = "uid://baf2et18ajmro"
+
+[sub_resource type="Resource" id="Resource_4s17e"]
+script = ExtResource("18_xr2p6")
+npcName = "Example Actor"
+model = ExtResource("17_545bl")
+behaviour = SubResource("Resource_likva")
+metadata/_custom_type_script = "uid://drjjmjc24qipo"
+
 [sub_resource type="Resource" id="Resource_fljgx"]
 script = ExtResource("15_likva")
 text = "Know of Cain?"
@@ -218,7 +271,9 @@ script = ExtResource("13_ttj1o")
 player = null
 nav = null
 hasDialogue = true
+damageArea = null
 words = SubResource("Resource_unyxo")
+isHero = true
 speed = 3.0
 actor = null
 metadata/_custom_type_script = "uid://baf2et18ajmro"
@@ -382,12 +437,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5714362, 3.1990347, -14.254
 
 [node name="Actor2" parent="." unique_id=526844756 instance=ExtResource("11_7f25j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2010977, 3.1990347, -8.286836)
+equipped = null
 
 [node name="Actor3" parent="." unique_id=1497254946 instance=ExtResource("11_7f25j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2553132, 3.1990347, -12.456122)
 
 [node name="Actor4" parent="." unique_id=980372660 instance=ExtResource("11_7f25j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3946285, 3.1990347, -5.8560696)
+NpcClass = SubResource("Resource_4s17e")
 
 [node name="Actor5" type="CharacterBody3D" parent="." unique_id=979746559 groups=["Pausable", "Persistent"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0151577, 3.1990347, -20.731014)

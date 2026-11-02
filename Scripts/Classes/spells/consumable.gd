@@ -11,7 +11,7 @@ func cast(_caster: Variant, _fromInventory: bool = false):
 	if castable and !cooldown_active and quantity > 0 and curThreads == 0:
 		quantity -= 1
 		castable = false
-		action.do(Globals.Player, self)
+		action.do(Globals.Player, self,[],stats)
 		hasNode = !_fromInventory
 		cooldown_active = true
 		cooldown()

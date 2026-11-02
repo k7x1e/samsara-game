@@ -11,11 +11,17 @@ class_name sayRandom
 
 @export var duration: float = 3.0
 
+var lastSaid: int = 0
+var temp: int = 0
+
 func tick(_behaviour: Behaviour):
 	if delayCounter == delay:
 		delayCounter = 0
 		delay = randi_range(minDelay,maxDelay)
-		
-		_behaviour.say(sayings[randi_range(0,sayings.size()-1)], duration)
+		temp = randi_range(0,sayings.size()-1)
+		while temp == lastSaid:
+			temp = randi_range(0,sayings.size()-1)
+		_behaviour.say(sayings[temp], duration)
+		lastSaid = temp
 	else:
 		delayCounter += 1

@@ -21,6 +21,7 @@ spaceDelay = 0.005
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=928405031 groups=["Pausable"]]
 billboard = 1
+no_depth_test = true
 texture = SubResource("ViewportTexture_dwpb4")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1884092643 groups=["Pausable"]]

@@ -793,3 +793,5 @@
 	#been making a bunch of bullshit to improve the behaviour of NPCs. They now speak at random
 	#22:11
 	#items can now be "green"
+	#22:39
+	#fixed a bug where items could have their names changed to be just their modifiers

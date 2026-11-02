@@ -9,7 +9,7 @@ signal removed
 @export var itemID: int #mostly for tracking purposes
 @export var UID: int = 0 #AT NO POINT CAN THIS MATCH ANY OTHER ID EVER USED
 
-var _name: String
+@export var _name: String
 @export var name: String
 @export var description: String
 @export var icon: Texture
@@ -40,7 +40,7 @@ var _quantity: int = 1
 @export var currentModifier: itemModifier = null
 
 @export var stats: Dictionary[StringName, Variant] = {&"damage": 50.0, &"cost": 50, &"cooldown": 1.0}
-var backups: Dictionary[StringName, Variant]
+@export var backups: Dictionary[StringName, Variant]
 
 func get_proper(property: StringName):
 	if get(property) != null:

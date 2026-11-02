@@ -28,6 +28,8 @@ func do(caster: Node, casterSpell: spell = null, args: Array = [], params: Dicti
 	if effectTarget == 2:
 		targetIsStat = true
 	
+	amount = params["damage"]
+	
 	var affected
 	var targettemp
 	

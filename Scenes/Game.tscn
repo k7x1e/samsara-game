@@ -31,7 +31,7 @@
 
 [sub_resource type="Resource" id="Resource_4q8tf"]
 script = ExtResource("11_wxwew")
-playlist = Array[ExtResource("12_4q8tf")]([ExtResource("13_x3xnh"), ExtResource("16_lbihj"), ExtResource("17_raj38")])
+playlist = Array[ExtResource("12_4q8tf")]([ExtResource("13_x3xnh"), ExtResource("16_lbihj"), ExtResource("17_raj38"), ExtResource("21_356ba")])
 wait = true
 maxWait = 20.0
 metadata/_custom_type_script = "uid://n8becq15md55"

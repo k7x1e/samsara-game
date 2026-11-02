@@ -35,6 +35,9 @@ func updateText():
 		tempStr = str(ownItem.quantity, " ")
 	tempStr += ownItem.name
 	
+	if ownItem.quantity > 1 and ownItem.name != "Gold":
+		tempStr += "s"
+	
 	nameLabel.text = tempStr
 
 func checkModel():

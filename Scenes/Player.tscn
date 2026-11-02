@@ -119,14 +119,14 @@ states/stab/position = Vector2(653.13293, 214.81496)
 transitions = ["Start", "holdForward", SubResource("AnimationNodeStateMachineTransition_lyrkg"), "Start", "daggerhold", SubResource("AnimationNodeStateMachineTransition_xixlo"), "daggerhold", "stab", SubResource("AnimationNodeStateMachineTransition_00okb"), "stab", "daggerhold", SubResource("AnimationNodeStateMachineTransition_6hr71")]
 graph_offset = Vector2(210.53297, 1.8899571)
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kih0c"]
-animation = &"Eat"
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wpo1r"]
 animation = &"MindSpell"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pqity"]
 animation = &"boringCast"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kih0c"]
+animation = &"Eat"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xixlo"]
 animation = &"rest"
@@ -159,20 +159,20 @@ advance_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_teras"]
-states/Eat/node = SubResource("AnimationNodeAnimation_kih0c")
-states/Eat/position = Vector2(487.82507, 72.30982)
 states/MindSpell/node = SubResource("AnimationNodeAnimation_wpo1r")
 states/MindSpell/position = Vector2(317.8013, 231.61)
 states/Start/position = Vector2(123, 99.625)
 states/boringCast/node = SubResource("AnimationNodeAnimation_pqity")
 states/boringCast/position = Vector2(512.725, 243.10999)
+states/eat/node = SubResource("AnimationNodeAnimation_kih0c")
+states/eat/position = Vector2(487.82507, 72.30982)
 states/rest/node = SubResource("AnimationNodeAnimation_xixlo")
 states/rest/position = Vector2(315.8776, -46.440125)
-transitions = ["Start", "MindSpell", SubResource("AnimationNodeStateMachineTransition_wosd6"), "Start", "boringCast", SubResource("AnimationNodeStateMachineTransition_hkrn1"), "Start", "Eat", SubResource("AnimationNodeStateMachineTransition_wpo1r"), "Eat", "rest", SubResource("AnimationNodeStateMachineTransition_bfbt0"), "boringCast", "rest", SubResource("AnimationNodeStateMachineTransition_pqity"), "MindSpell", "rest", SubResource("AnimationNodeStateMachineTransition_opqna"), "Start", "rest", SubResource("AnimationNodeStateMachineTransition_avx33")]
-graph_offset = Vector2(168.21008, -76.62521)
+transitions = ["Start", "MindSpell", SubResource("AnimationNodeStateMachineTransition_wosd6"), "Start", "boringCast", SubResource("AnimationNodeStateMachineTransition_hkrn1"), "Start", "eat", SubResource("AnimationNodeStateMachineTransition_wpo1r"), "eat", "rest", SubResource("AnimationNodeStateMachineTransition_bfbt0"), "boringCast", "rest", SubResource("AnimationNodeStateMachineTransition_pqity"), "MindSpell", "rest", SubResource("AnimationNodeStateMachineTransition_opqna"), "Start", "rest", SubResource("AnimationNodeStateMachineTransition_avx33")]
+graph_offset = Vector2(46.980095, 0.41474646)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_c43xd"]
-graph_offset = Vector2(-623.3913, -112.726585)
+graph_offset = Vector2(-385.34103, 232.07504)
 nodes/output/position = Vector2(500, 100)
 nodes/Blend2/node = SubResource("AnimationNodeBlend2_c43xd")
 nodes/Blend2/position = Vector2(-180, -20)
@@ -195,7 +195,7 @@ nodes/Animation/position = Vector2(-560, 120)
 node_connections = [&"output", 0, &"Blend2 2", &"Blend2", 0, &"Blend2 3", &"Blend2", 1, &"Animation", &"Blend2 2", 0, &"Blend2 4", &"Blend2 2", 1, &"Blend2", &"Blend2 3", 0, &"Animation 2", &"Blend2 3", 1, &"Animation 9", &"Blend2 4", 0, &"StateMachine spell", &"Blend2 4", 1, &"StateMachine item"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1e7my"]
-radius = 3.0
+radius = 2.5
 
 [node name="Player" type="CharacterBody3D" unique_id=1215905502 groups=["Pausable", "Persistent", "init", "ticked", "updatable"]]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
@@ -248,8 +248,8 @@ transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-
 
 [node name="Skeleton3D" parent="Rotation/londonProtag/Armature" parent_id_path=PackedInt32Array(423910710, 385813286) index="0" unique_id=2108380087]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.9380574, 0.019669332, 0.34080312, 0.05928527)
-bones/3/rotation = Quaternion(4.4999644e-05, -7.201752e-05, 0.0036167307, 0.9999935)
+bones/1/rotation = Quaternion(0.9380402, 0.02047027, 0.34075242, 0.059576225)
+bones/3/rotation = Quaternion(2.7379581e-05, -4.3818338e-05, 0.0022005644, 0.9999976)
 bones/7/rotation = Quaternion(-0.440351, -0.03822061, -0.14063425, 0.8859189)
 bones/8/rotation = Quaternion(-0.10192366, -0.044773385, -0.007949366, 0.99375236)
 bones/9/rotation = Quaternion(-0.17423274, -0.03710145, 0.030870311, 0.98352104)

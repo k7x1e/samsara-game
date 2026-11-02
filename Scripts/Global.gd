@@ -45,6 +45,8 @@ var backupGlobals
 
 @export var controllerActive: bool = false
 
+func getRandomModifier() -> itemModifier:
+	return gamestate.modifiers[randi_range(1,gamestate.modifiers.size())-1]
 
 func getBehaviourFromItemType(type: int) -> combatBehaviour:
 	return gamestate.combatBehaviours[type].duplicate(true)

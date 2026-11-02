@@ -72,7 +72,7 @@ func fadeOut():
 
 func packCurrent() -> PackedScene:
 	if !gamestate.newWorld:
-			gamestate.newWorld = get_node(gamestate.newWorldName)
+		gamestate.newWorld = get_node(gamestate.newWorldName)
 	
 	var tempworld
 	if currentInterior == "london":
@@ -107,10 +107,13 @@ func changeWorld(caller: Variant, Targetscene: String, fromMain: bool, fade: boo
 		gamestate.newWorld.queue_free()
 	elif fromMain:
 		$World.queue_free()
+	gamestate.newWorld = null
+	var temp = gamestate.newWorld
 	gamestate.newWorld = interiors[actualTarget].instantiate()
 	self.add_child(gamestate.newWorld)
 	gamestate.newWorld.set_owner(self)
 	gamestate.newWorldName = get_path_to(gamestate.newWorld)
+	print(gamestate.newWorldName)
 
 	if fade:
 		pause(false)
@@ -129,6 +132,7 @@ func changeWorld(caller: Variant, Targetscene: String, fromMain: bool, fade: boo
 		Globals.Player.global_position = Globals.mainWorldPlayerPos
 		musicManager.changePlaylist("City", true)
 	Globals.minimap.initialize()
+	currentInterior = actualTarget
 
 func _ready():
 	Input.mouse_mode =Input.MOUSE_MODE_CONFINED

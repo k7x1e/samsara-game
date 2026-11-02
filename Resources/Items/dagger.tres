@@ -51,4 +51,5 @@ Type = 2
 WeaponType = 2
 equippable = true
 model = ExtResource("5_vyu04")
+offset = Vector3(0, 0, 0)
 metadata/_custom_type_script = "uid://ojs3apomqf0t"

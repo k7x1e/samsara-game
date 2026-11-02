@@ -34,6 +34,7 @@ grow_vertical = 2
 metadata/isGlobal = false
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1095377448]
+visible = false
 modulate = Color(1, 1, 1, 0.7058824)
 layout_mode = 1
 anchors_preset = 15
@@ -322,6 +323,7 @@ theme_override_styles/disabled = ExtResource("5_stj27")
 text = "Discard"
 
 [node name="System" type="Control" parent="menu/VBoxContainer/PanelContainer" unique_id=1603087875]
+visible = false
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="menu/VBoxContainer/PanelContainer/System" unique_id=2122097367]

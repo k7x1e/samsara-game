@@ -6,14 +6,14 @@
 [ext_resource type="Script" uid="uid://cd6w5kfeybbue" path="res://Scripts/classes/actions/statuseffect.gd" id="3_1acg4"]
 [ext_resource type="Script" uid="uid://ehkal6i02pq" path="res://Scripts/classes/spells/consumable.gd" id="3_mwbfv"]
 
-[sub_resource type="Resource" id="Resource_5n4on"]
+[sub_resource type="Resource" id="Resource_xm6am"]
 script = ExtResource("3_1acg4")
 message = " Healed."
 metadata/_custom_type_script = "uid://cd6w5kfeybbue"
 
 [sub_resource type="Resource" id="Resource_70hv0"]
 script = ExtResource("3_mwbfv")
-action = SubResource("Resource_5n4on")
+action = SubResource("Resource_xm6am")
 name = "Health Potion"
 description = "Heals you. Simple as."
 Icon = ExtResource("1_1acg4")
@@ -35,7 +35,6 @@ description = "Some bullshit i guess"
 icon = ExtResource("1_1acg4")
 Type = 3
 isSpell = true
-quantity = 1
 model = ExtResource("2_mwbfv")
 offset = Vector3(0, 0, 0)
 metadata/_custom_type_script = "uid://crrif2oof7ji8"

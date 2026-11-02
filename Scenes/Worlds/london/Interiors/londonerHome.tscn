@@ -25,7 +25,11 @@
 [ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="23_0sw68"]
 [ext_resource type="PackedScene" uid="uid://cgyw6oicswx6p" path="res://Scenes/physics_item.tscn" id="24_d3xwe"]
 [ext_resource type="Resource" uid="uid://cfcd0wi1f6o47" path="res://Resources/Items/lantern.tres" id="25_3ieen"]
-[ext_resource type="Resource" uid="uid://burvo2yn4lmxq" path="res://Resources/Items/heal.tres" id="26_5xxwy"]
+[ext_resource type="Texture2D" uid="uid://bqxdpdin82oyj" path="res://Textures/icons/spells/heal.png" id="26_wtxdy"]
+[ext_resource type="PackedScene" uid="uid://dhxgl60lqqfjv" path="res://Scenes/items/Models/potion.tscn" id="27_6arch"]
+[ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/classes/Items/SpellItem.gd" id="28_073tb"]
+[ext_resource type="Script" uid="uid://cd6w5kfeybbue" path="res://Scripts/classes/actions/statuseffect.gd" id="29_57ena"]
+[ext_resource type="Script" uid="uid://ehkal6i02pq" path="res://Scripts/classes/spells/consumable.gd" id="30_d3dcv"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_om76y"]
 vertices = PackedVector3Array(-5, 1.5, -4.25, -4.25, 1.5, -4.25, -4, 1.5, -6.5, -5, 1.5, -7, -0.5, 1.75, -6.5, -0.5, 1.75, -7, 5.5, 0.5, -7, 0.75, 0.5, -7, 0.75, 0.5, -5.75, 0.75, 0.5, -0.5, 5.5, 0.5, -0.5, -3.5, 0.5, -3, -5, 0.5, -3, -5, 0.5, -0.25, -4, 0.5, 0, -4, 0.5, 3.5, -0.5, 0.5, 3.5, -0.5, 0.5, -0.25, -3, 0.5, -3.5, 0.25, 0.5, -5.25, -3, 0.5, -5.25)
@@ -377,6 +381,82 @@ behaviour = SubResource("Resource_073tb")
 necessary = true
 metadata/_custom_type_script = "uid://drjjmjc24qipo"
 
+[sub_resource type="Resource" id="Resource_5n4on"]
+script = ExtResource("29_57ena")
+message = " Healed."
+metadata/_custom_type_script = "uid://cd6w5kfeybbue"
+
+[sub_resource type="Resource" id="Resource_70hv0"]
+script = ExtResource("30_d3dcv")
+action = SubResource("Resource_5n4on")
+name = "Health Potion"
+description = "Heals you. Simple as."
+Icon = ExtResource("26_wtxdy")
+uiNode = null
+spellTimer = null
+limited = true
+statted = false
+quantity = 5
+animation = "eat"
+requiredSlots = Array[String](["armLeft"])
+metadata/_custom_type_script = "uid://ehkal6i02pq"
+
+[sub_resource type="Resource" id="Resource_mexwi"]
+script = ExtResource("28_073tb")
+theSpell = SubResource("Resource_70hv0")
+itemID = 2
+name = "Health Potion"
+description = "Some bullshit i guess"
+icon = ExtResource("26_wtxdy")
+Type = 3
+isSpell = true
+quantity = 1
+model = ExtResource("27_6arch")
+offset = Vector3(0, 0, 0)
+metadata/_custom_type_script = "uid://crrif2oof7ji8"
+
+[sub_resource type="Resource" id="Resource_yjt33"]
+script = ExtResource("28_073tb")
+theSpell = SubResource("Resource_70hv0")
+itemID = 2
+name = "Health Potion"
+description = "Some bullshit i guess"
+icon = ExtResource("26_wtxdy")
+Type = 3
+isSpell = true
+quantity = 1
+model = ExtResource("27_6arch")
+offset = Vector3(0, 0, 0)
+metadata/_custom_type_script = "uid://crrif2oof7ji8"
+
+[sub_resource type="Resource" id="Resource_81o1y"]
+script = ExtResource("28_073tb")
+theSpell = SubResource("Resource_70hv0")
+itemID = 2
+name = "Health Potion"
+description = "Some bullshit i guess"
+icon = ExtResource("26_wtxdy")
+Type = 3
+isSpell = true
+quantity = 3
+model = ExtResource("27_6arch")
+offset = Vector3(0, 0, 0)
+metadata/_custom_type_script = "uid://crrif2oof7ji8"
+
+[sub_resource type="Resource" id="Resource_rjqfr"]
+script = ExtResource("28_073tb")
+theSpell = SubResource("Resource_70hv0")
+itemID = 2
+name = "Health Potion"
+description = "Some bullshit i guess"
+icon = ExtResource("26_wtxdy")
+Type = 3
+isSpell = true
+quantity = 1
+model = ExtResource("27_6arch")
+offset = Vector3(0, 0, 0)
+metadata/_custom_type_script = "uid://crrif2oof7ji8"
+
 [node name="londonerHome" type="Node3D" unique_id=283826596]
 script = ExtResource("1_tggpp")
 
@@ -606,20 +686,20 @@ spawned = true
 
 [node name="potion" parent="." unique_id=1466826521 instance=ExtResource("24_d3xwe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.920317, 3.56, 3.326517)
-ownItem = ExtResource("26_5xxwy")
+ownItem = SubResource("Resource_mexwi")
 spawned = true
 
 [node name="potion2" parent="." unique_id=743108451 instance=ExtResource("24_d3xwe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7506914, 3.56, 2.7487237)
-ownItem = ExtResource("26_5xxwy")
+ownItem = SubResource("Resource_yjt33")
 spawned = true
 
 [node name="potion3" parent="." unique_id=2127094226 instance=ExtResource("24_d3xwe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.031432, 3.56, 2.0837533)
-ownItem = ExtResource("26_5xxwy")
+ownItem = SubResource("Resource_81o1y")
 spawned = true
 
 [node name="potion4" parent="." unique_id=1832108341 instance=ExtResource("24_d3xwe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.031432, 3.56, 1.5256894)
-ownItem = ExtResource("26_5xxwy")
+ownItem = SubResource("Resource_rjqfr")
 spawned = true

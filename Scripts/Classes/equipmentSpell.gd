@@ -8,12 +8,18 @@ class_name equipmentSpell
 
 @export var anim: String
 
+@export var stats: Dictionary[StringName, Variant]
 @export var damage: float = 50
 @export var baseDamage: float = 50
 
 func checkEquipment() -> bool:
 	#overwritten due to it being part of equipment
 	return true
+
+func initialize(newStats: Dictionary[StringName, Variant]):
+	stats = newStats
+	for i in stats:
+		set(i, stats[i])
 
 func cast(caster: Variant):
 	updateStats()
@@ -40,7 +46,8 @@ func updateStats():
 	if statted:
 		self.coolDown = basecoolDown - (int(Globals.stats.stats[4] / 5) * 0.25)
 		#print (coolDown, basecoolDown)
-		self.damage = baseDamage + (Globals.stats.stats[4] * 5)
+		self.damage = stats["damage"] + (Globals.stats.stats[4] * 5)
+		print(damage)
 		#print(cost, basecost)
 	#no matter if its statted the hand change will apply
 	if requiredSlots == ["armLeft", "armRight"] and Globals.stats.stats[0] >= Globals.stats.spellHandThreshhold:

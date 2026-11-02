@@ -31,7 +31,7 @@ func _ready() -> void:
 		await monitor.initialize()
 
 func fixCombatBehaviour():
-	currentCombatBehaviour = Globals.getBehaviourFromItemType(equipped.WeaponType)
+	currentCombatBehaviour = Globals.getBehaviourFromItemType(equipped.WeaponType).duplicate(true)
 	currentCombatBehaviour.initialize([behaviour.player,self,equipped.action,nav,behaviour])
 
 
@@ -40,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		move_and_slide()
 	#basically to tick the behaviour script(when i eventually make it). 
 	#Will most likely be replaced by a tick function handled by the combat manager.
 	#TO BE REPLACED

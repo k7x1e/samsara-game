@@ -3,11 +3,13 @@ extends Resource
 class_name itemClass
 
 signal quantity_changed()
+signal removed
 
 #THIS IS IMPORTANT EVERY SINGLE ITEM HAS TO BE UNIQUE OTHERWISE IT WILL INTRODUCE INSANE GLITCHES
 @export var itemID: int #mostly for tracking purposes
 @export var UID: int = 0 #AT NO POINT CAN THIS MATCH ANY OTHER ID EVER USED
 
+var _name: String
 @export var name: String
 @export var description: String
 @export var icon: Texture
@@ -20,10 +22,62 @@ signal quantity_changed()
 @export var equippable: bool = false #DOES NOT APPLY TO SPELLS #moved to the actual equipment base class
 
 @export var cost: int
-@export var quantity: int:
+@export var quantity: int = 1:
+	get:
+		return _quantity
 	set(value):
-		quantity = value
-		emit_signal('quantity_changed')
+		if _quantity == value:
+			return
+		elif value == 0:
+			removed.emit()
+		_quantity = value
+		quantity_changed.emit()
+var _quantity: int = 1
 
 @export var model: PackedScene = null
 @export var offset: Vector3 = Vector3(0,1,0)
+
+@export var currentModifier: itemModifier = null
+
+var backups: Dictionary[StringName, Variant]
+
+func get_proper(property: StringName):
+	if get(property) != null:
+		return get(property)
+	if "[" in property:
+		var newP = property.left(property.find("["))
+		var index = property.right(property.length()-property.find("["))
+		index = index.right(-1)
+		index = index.left(-1)
+		return get(newP)[index]
+
+func set_proper(property:StringName, Value: Variant):
+	if get(property) != null:
+		set(property,Value)
+	if "[" in property:
+		var newP = property.left(property.find("["))
+		var index = property.right(property.length()-property.find("["))
+		index = index.right(-1)
+		index = index.left(-1)
+		get(newP)[index] = Value
+
+func applyModifier(modifier: itemModifier):
+	_name = name
+	name = str(modifier.typename, " ", name)
+	
+	currentModifier = modifier
+	
+	for i in modifier.effects:
+		backups[i] = get_proper(i)
+		set_proper(i,modifier.getvalue(i,self))
+		print("set ", i, " to ", get_proper(i))
+
+func checkAndReverseModifier() -> bool:
+	if currentModifier != null:
+		name = _name
+		for i in backups:
+			set(i,backups[i])
+		currentModifier = null
+		return true
+	else:
+		return false

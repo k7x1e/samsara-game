@@ -32,17 +32,25 @@ func updateInventory():
 	flush()
 	theInventory = Globals.Player.inventory
 	for i in range(theInventory.inventory.size()):
-		if theInventory.inventory[i].has_method("initialize"):
-			if !theInventory.inventory[i].initialized:
-				theInventory.inventory[i].initialize()
-		var temp = itemNode.instantiate()
-		self.add_child(temp)
-		temp.set_owner(self)
-		temp.initialize(theInventory.inventory[i])
-		print("added: ", theInventory.inventory[i].name)
-		#temp.grab_focus()
+		if theInventory.inventory[i].quantity > 0:
+			if theInventory.inventory[i].has_method("initialize"):
+				if !theInventory.inventory[i].initialized:
+					theInventory.inventory[i].initialize()
+			theInventory.inventory[i].removed.disconnect(destroy)
+			theInventory.inventory[i].removed.connect(destroy.bind(theInventory.inventory[i]))
+			var temp = itemNode.instantiate()
+			self.add_child(temp)
+			temp.set_owner(self)
+			temp.initialize(theInventory.inventory[i])
+			#print("added: ", theInventory.inventory[i].name)
+			#temp.grab_focus()
 		
 	#check players inventory, 
+
+func destroy(which:itemClass):
+	theInventory.remove(which)
+	unequipItem(which)
+	updateInventory()
 
 func checkColumns():
 	var Columns = int(self.size.x / 148)

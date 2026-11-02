@@ -148,3 +148,8 @@ func _on_discard_pressed() -> void:
 
 func _on_use_pressed() -> void:
 	currentItem.ownItem.theSpell.cast(self, true)
+
+
+func modifier_pressed() -> void:
+	currentItem.ownItem.checkAndReverseModifier()
+	currentItem.ownItem.applyModifier(Globals.getRandomModifier())

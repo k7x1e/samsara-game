@@ -22,4 +22,5 @@ name = "FUCK"
 Icon = ExtResource("1_2c3am")
 uiNode = null
 spellTimer = null
+quantity = 1
 metadata/_custom_type_script = "uid://b52li86lflfyj"

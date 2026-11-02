@@ -751,3 +751,30 @@
 	#i will try to implement like actual physical items
 	#17:51
 	#added actual physical items, time to push
+	#
+	##31/10
+	#20:31
+	#oh my god why does none of this function properly what is going on
+	#why is it all evil
+	#20:34
+	#for some reason after it is appended its quantity is magically increased to 5 for some insane reason
+
+#november
+	##01/11
+	#forgot to add the time, 10 something
+	#gotta add enchantments (terraria style)
+	#make an enchantment class and store like 30 of them (varying strengths) in an array inside globals
+	#make a function to retrieve them at random and then a function to apply them to the item.
+	#i eat poop
+	#13:22
+	#implemented modifiers to basic function.
+	#had to make a custom wrapper for get() to return the proper value if i input a stringname like array[2]
+	#not sure what will be done with this though.
+	#13:44
+	#fixed issues with said system and made it actually apply stuff
+	#13:49
+	#now i should add enemy loot
+	#14:19
+	#discovered that the packcurrent part of changeworld isnt packing anything. Shit.
+	#14:31
+	#currentinterior (VERY IMPORTANT) was not being assigned. BUllshit

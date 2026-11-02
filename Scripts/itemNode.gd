@@ -25,6 +25,7 @@ func initialize(fart: itemClass):
 func update():
 	if ownItem.isSpell:
 		ownItem.quantity = ownItem.theSpell.quantity
+		print("set quantity to ", ownItem.quantity)
 	if ownItem.quantity != 0:
 		quantitylabel.text = str(ownItem.quantity)
 	else:

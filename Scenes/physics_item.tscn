@@ -16,10 +16,73 @@ border_width_left = 10
 border_width_right = 10
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_bjutu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("visual:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("visual:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -6.2831855)]
+}
+
+[sub_resource type="Animation" id="Animation_nuf07"]
+resource_name = "drop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("visual:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 0.6),
+"transitions": PackedFloat32Array(1, 0.20306297, 0.025382876),
+"update": 0,
+"values": [Vector3(0, 1, 0), Vector3(0, 1.6, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("visual:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.54999995, 0.59999996, 0.60099995, 0.7),
+"transitions": PackedFloat32Array(1, 1.5157167, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -18.849556), Vector3(0, 0, -19.722221), Vector3(0, 0, -18.849556), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dp1f6"]
+_data = {
+&"RESET": SubResource("Animation_bjutu"),
+&"drop": SubResource("Animation_nuf07")
+}
+
 [node name="physicsItem" type="Node3D" unique_id=726585440 groups=["init"]]
 script = ExtResource("1_vgtuq")
 
-[node name="sprite" type="Sprite3D" parent="." unique_id=239059087]
+[node name="visual" type="Node3D" parent="." unique_id=1164179387]
+transform = Transform3D(0.9999999, 1.7484554e-07, 0, -1.7484554e-07, 0.9999999, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="sprite" type="Sprite3D" parent="visual" unique_id=239059087]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
 billboard = 1
 shaded = true
@@ -64,6 +127,9 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=564642387]
+libraries/ = SubResource("AnimationLibrary_dp1f6")
 
 [connection signal="body_entered" from="Area3D" to="." method="body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="body_exited"]

@@ -25707,3 +25707,8 @@
 "classname" "lantern"
 "origin" "172 -2648 112"
 }
+// entity 178
+{
+"classname" "sizeReference"
+"origin" "10888 3082 62"
+}

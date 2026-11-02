@@ -56,6 +56,13 @@
 [ext_resource type="AudioStream" uid="uid://cs1ygjrv7be2n" path="res://sound/sfx/typewriter.wav" id="54_kwnki"]
 [ext_resource type="Script" uid="uid://c1sq1djlgalom" path="res://Scripts/notification.gd" id="55_cvubk"]
 [ext_resource type="Resource" uid="uid://bvnfwiqt3nvr1" path="res://Resources/story/conversations/exgnostic.tres" id="56_vhf2b"]
+[ext_resource type="PackedScene" uid="uid://cgyw6oicswx6p" path="res://Scenes/physics_item.tscn" id="57_dsm2w"]
+[ext_resource type="Resource" uid="uid://burvo2yn4lmxq" path="res://Resources/Items/heal.tres" id="58_0d7cr"]
+[ext_resource type="Texture2D" uid="uid://bqxdpdin82oyj" path="res://Textures/icons/spells/heal.png" id="58_82dmg"]
+[ext_resource type="PackedScene" uid="uid://dhxgl60lqqfjv" path="res://Scenes/items/Models/potion.tscn" id="59_0d7cr"]
+[ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/classes/Items/SpellItem.gd" id="60_l4vrt"]
+[ext_resource type="Script" uid="uid://cd6w5kfeybbue" path="res://Scripts/classes/actions/statuseffect.gd" id="61_ry8tx"]
+[ext_resource type="Script" uid="uid://ehkal6i02pq" path="res://Scripts/classes/spells/consumable.gd" id="62_uq5fj"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_qebug"]
 
@@ -9179,6 +9186,39 @@ npcName = "Ex-Gnostic"
 model = SubResource("PackedScene_bfe7m")
 behaviour = SubResource("Resource_twcab")
 metadata/_custom_type_script = "uid://drjjmjc24qipo"
+
+[sub_resource type="Resource" id="Resource_xm6am"]
+script = ExtResource("61_ry8tx")
+message = " Healed."
+metadata/_custom_type_script = "uid://cd6w5kfeybbue"
+
+[sub_resource type="Resource" id="Resource_70hv0"]
+script = ExtResource("62_uq5fj")
+action = SubResource("Resource_xm6am")
+name = "Health Potion"
+description = "Heals you. Simple as."
+Icon = ExtResource("58_82dmg")
+uiNode = null
+spellTimer = null
+limited = true
+statted = false
+quantity = 5
+animation = "eat"
+requiredSlots = Array[String](["armLeft"])
+metadata/_custom_type_script = "uid://ehkal6i02pq"
+
+[sub_resource type="Resource" id="Resource_tutfb"]
+script = ExtResource("60_l4vrt")
+theSpell = SubResource("Resource_70hv0")
+itemID = 2
+name = "Health Potion"
+description = "Some bullshit i guess"
+icon = ExtResource("58_82dmg")
+Type = 3
+isSpell = true
+model = ExtResource("59_0d7cr")
+offset = Vector3(0, 0, 0)
+metadata/_custom_type_script = "uid://crrif2oof7ji8"
 
 [node name="World" type="Node3D" unique_id=1226380381 node_paths=PackedStringArray("tramNodes") groups=["Pausable"]]
 script = ExtResource("1_no8kt")
@@ -18376,5 +18416,15 @@ NpcClass = SubResource("Resource_al5m0")
 [node name="exgnostic" parent="." unique_id=883655086 instance=ExtResource("31_1vso6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.505, 1.8525496, 3.229)
 NpcClass = SubResource("Resource_wan5q")
+
+[node name="potion" parent="." unique_id=726585440 instance=ExtResource("57_dsm2w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.52536, 3.56, 128.19992)
+ownItem = ExtResource("58_0d7cr")
+spawned = true
+
+[node name="potion2" parent="." unique_id=748388137 instance=ExtResource("57_dsm2w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.232765, 3.56, 128.19992)
+ownItem = SubResource("Resource_tutfb")
+spawned = true
 
 [editable path="Water"]

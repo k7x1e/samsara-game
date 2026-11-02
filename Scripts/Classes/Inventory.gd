@@ -34,13 +34,22 @@ func remove(which:itemClass):
 func add(which:itemClass):
 	for i in inventory:
 		if i.itemID == which.itemID:
-			print("adding...")
+			print("adding...", i.name)
 			i.quantity += which.quantity
+			if i.isSpell:
+				i.theSpell.quantity = i.quantity
+			print("added ", which.quantity, " to item, total is now ", i.quantity)
 			inventoryChanged.emit()
 			return true
 	#this is not called when loading game. OR it is but only once for some strange reason
-	inventory.append(which)
+	var newitem = which.duplicate(true)
+	newitem.quantity = which.quantity
+	if newitem.isSpell:
+		newitem.theSpell.quantity = newitem.quantity
+	inventory.append(newitem)
 	assignIDs()
+	inventoryChanged.emit()
+	return true
 
 func getUIDindex(id:int):
 	var result = idHandler.usedArrays.find(id)

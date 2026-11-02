@@ -5,4 +5,4 @@
 [node name="Node3D" type="Node3D" unique_id=813700436]
 
 [node name="DAGGER" parent="." unique_id=1267619545 instance=ExtResource("1_duwn8")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0.086927444, 0)
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, -0.852, 0)

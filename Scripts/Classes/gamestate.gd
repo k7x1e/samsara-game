@@ -10,6 +10,7 @@ class_name gameState
 @export var newWorldName: NodePath ## INSANE JANK, Just make sure no two places have the same name
 
 @export var combatBehaviours: Array[combatBehaviour]
+@export var modifiers: Array[itemModifier]
 
 var last_saved: String
 

@@ -24,7 +24,6 @@ metadata/_custom_type_script = "uid://dvewwpayy1s83"
 script = ExtResource("2_4hwkt")
 dialogueText = "Bitchass niggaaaaa!!!"
 dialogueOptions = Array[ExtResource("3_shd1d")]([SubResource("Resource_4hwkt"), SubResource("Resource_shd1d")])
-target = 1
 metadata/_custom_type_script = "uid://bg6c48acdck1"
 
 [sub_resource type="Resource" id="Resource_j1ns2"]

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="samsonarum"
+config/name="Samsonarum"
 config/version="alpha"
 run/main_scene="uid://bjo1qm1kfwu2s"
 config/features=PackedStringArray("4.6", "Forward Plus")
@@ -26,6 +26,10 @@ buses/default_bus_layout="uid://fbnk8rbwu1mp"
 [autoload]
 
 Globals="*uid://bvmx1pu32ivk1"
+
+[debug]
+
+gdscript/warnings/empty_file=0
 
 [display]
 
@@ -52,6 +56,10 @@ Persistent=""
 ticked=""
 updatable=""
 init=""
+
+[gui]
+
+theme/custom_font="uid://bkdajsuaheiiv"
 
 [input]
 

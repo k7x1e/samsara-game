@@ -503,10 +503,9 @@ offset_bottom = 40.0
 texture = ExtResource("6_wbdvm")
 
 [node name="DropDown" type="Control" parent="Menu" unique_id=335422401]
-visible = false
 anchors_preset = 0
 offset_right = 180.0
-offset_bottom = 360.0
+offset_bottom = 389.0
 script = ExtResource("12_23t3j")
 
 [node name="Panel" type="Panel" parent="Menu/DropDown" unique_id=1954048637]
@@ -583,6 +582,23 @@ alignment = 0
 script = ExtResource("22_l6llh")
 
 [node name="sfx" type="AudioStreamPlayer" parent="Menu/DropDown/VBoxContainer/unequip" unique_id=223808885]
+stream = ExtResource("23_ocger")
+bus = &"Sfx"
+
+[node name="modifier" type="Button" parent="Menu/DropDown/VBoxContainer" unique_id=666894539]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_wbdvm")
+theme_override_styles/normal = ExtResource("13_5ti5v")
+theme_override_styles/pressed = ExtResource("14_1by5w")
+theme_override_styles/hover = ExtResource("14_1by5w")
+theme_override_styles/disabled = ExtResource("15_kmwmt")
+text = "Apply Modifier"
+alignment = 0
+script = ExtResource("22_l6llh")
+
+[node name="sfx" type="AudioStreamPlayer" parent="Menu/DropDown/VBoxContainer/modifier" unique_id=1389749623]
 stream = ExtResource("23_ocger")
 bus = &"Sfx"
 
@@ -732,6 +748,7 @@ visible = false
 [connection signal="pressed" from="Menu/DropDown/VBoxContainer/use" to="Menu/DropDown" method="_on_use_pressed"]
 [connection signal="pressed" from="Menu/DropDown/VBoxContainer/equip" to="Menu/DropDown" method="_on_equip_pressed"]
 [connection signal="pressed" from="Menu/DropDown/VBoxContainer/unequip" to="Menu/DropDown" method="_on_unequip_pressed"]
+[connection signal="pressed" from="Menu/DropDown/VBoxContainer/modifier" to="Menu/DropDown" method="modifier_pressed"]
 [connection signal="pressed" from="Menu/DropDown/VBoxContainer/assign1" to="Menu/DropDown" method="_on_assign_1_pressed"]
 [connection signal="pressed" from="Menu/DropDown/VBoxContainer/assign2" to="Menu/DropDown" method="_on_assign_2_pressed"]
 [connection signal="pressed" from="Menu/DropDown/VBoxContainer/assign3" to="Menu/DropDown" method="_on_assign_3_pressed"]

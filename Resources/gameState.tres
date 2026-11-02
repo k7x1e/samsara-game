@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b3rylldbgh8gp" path="res://Scripts/classes/nodeStart.gd" id="1_x2yb1"]
 [ext_resource type="Script" uid="uid://3v1lnlpbfoow" path="res://Scripts/classes/Behaviour/ranged.gd" id="2_0brm1"]
 [ext_resource type="Script" uid="uid://q3omhxxnd0b1" path="res://Scripts/classes/Behaviour/melee.gd" id="2_8ag07"]
+[ext_resource type="Script" uid="uid://bgor865by1nfd" path="res://Scripts/classes/modifier.gd" id="5_0brm1"]
 [ext_resource type="Script" uid="uid://8rdsmfig1jxy" path="res://Scripts/classes/SavveGame.gd" id="6_68t1i"]
 [ext_resource type="Script" uid="uid://cdociv5s4yb3q" path="res://Scripts/classes/gamestate.gd" id="7_dptg4"]
 
@@ -47,10 +48,28 @@ scene = "res://Scenes/pause_menu.tscn"
 name = "pausemenu"
 metadata/_custom_type_script = "uid://b3rylldbgh8gp"
 
+[sub_resource type="Resource" id="Resource_y7o6f"]
+script = ExtResource("5_0brm1")
+effects = Dictionary[StringName, Variant]({
+&"quantity": 2
+})
+metadata/_custom_type_script = "uid://bgor865by1nfd"
+
+[sub_resource type="Resource" id="Resource_0brm1"]
+script = ExtResource("5_0brm1")
+typename = "Insane"
+operand = 3
+effects = Dictionary[StringName, Variant]({
+&"cost": 10,
+&"stats[damage]": 5.0
+})
+metadata/_custom_type_script = "uid://bgor865by1nfd"
+
 [resource]
 script = ExtResource("7_dptg4")
 initnodes = Array[ExtResource("1_x2yb1")]([SubResource("Resource_fgofq"), SubResource("Resource_7lihs"), SubResource("Resource_bf53h"), SubResource("Resource_mk8vb")])
 rootNode = null
 newWorld = null
 combatBehaviours = Array[ExtResource("1_2ifht")]([null, SubResource("Resource_f4myi"), SubResource("Resource_cm6gp")])
+modifiers = Array[ExtResource("5_0brm1")]([SubResource("Resource_y7o6f"), SubResource("Resource_0brm1")])
 metadata/_custom_type_script = "uid://cdociv5s4yb3q"

@@ -51,6 +51,7 @@
 [ext_resource type="Resource" uid="uid://dmod3sejpqq40" path="res://Resources/story/quests/findCain.tres" id="36_04jkj"]
 [ext_resource type="PackedScene" uid="uid://bkimo22crvjn5" path="res://Scenes/PlaceholderModel.tscn" id="36_atqvy"]
 [ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="37_w5giw"]
+[ext_resource type="Script" uid="uid://7egkv825rd1e" path="res://Scripts/classes/Behaviour/subBehaviour.gd" id="46_0d7cr"]
 [ext_resource type="Script" uid="uid://dvhlvrgx56mc5" path="res://Scripts/billboard.gd" id="52_vhf2b"]
 [ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="53_g44x5"]
 [ext_resource type="AudioStream" uid="uid://cs1ygjrv7be2n" path="res://sound/sfx/typewriter.wav" id="54_kwnki"]
@@ -18426,5 +18427,12 @@ spawned = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.232765, 3.56, 128.19992)
 ownItem = SubResource("Resource_tutfb")
 spawned = true
+
+[connection signal="moving" from="NavigationRegion3D/east/entity_21_enemy" to="NavigationRegion3D/east/entity_21_enemy/Monitor" method="moving"]
+[connection signal="moving" from="NavigationRegion3D/east/entity_22_enemy" to="NavigationRegion3D/east/entity_22_enemy/Monitor" method="moving"]
+[connection signal="moving" from="NavigationRegion3D/east/entity_39_enemy" to="NavigationRegion3D/east/entity_39_enemy/Monitor" method="moving"]
+[connection signal="moving" from="NavigationRegion3D/east/entity_40_enemy" to="NavigationRegion3D/east/entity_40_enemy/Monitor" method="moving"]
+[connection signal="moving" from="NavigationRegion3D/east/entity_76_enemy" to="NavigationRegion3D/east/entity_76_enemy/Monitor" method="moving"]
+[connection signal="moving" from="NavigationRegion3D/east/entity_77_enemy" to="NavigationRegion3D/east/entity_77_enemy/Monitor" method="moving"]
 
 [editable path="Water"]

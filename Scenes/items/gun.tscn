@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cyr5p218sdq17"]
+
+[ext_resource type="PackedScene" uid="uid://dmg4dguoqhgds" path="res://Models/thompson.glb" id="1_egm1s"]
+
+[node name="ModifierBoneTarget3D" type="ModifierBoneTarget3D" unique_id=1150556675]
+
+[node name="thompson" parent="." unique_id=570188920 instance=ExtResource("1_egm1s")]
+transform = Transform3D(0.59152603, 0.6746552, -0.07026082, -0.16976088, 0.05698839, -0.8820054, -0.6567173, 0.592952, 0.1647114, 0.2315538, 0.66641223, -0.024237573)

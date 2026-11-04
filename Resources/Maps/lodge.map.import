@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://cbfydp33yavk0"
+path="res://.godot/imported/lodge.map-01a1c1880ebae8ef71824407ef055e93.tres"
+
+[deps]
+
+source_file="res://Resources/Maps/lodge.map"
+dest_files=["res://.godot/imported/lodge.map-01a1c1880ebae8ef71824407ef055e93.tres"]
+
+[params]
+

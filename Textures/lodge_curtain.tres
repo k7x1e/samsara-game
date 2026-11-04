@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b1whcfhxpo7y3"]
+
+[ext_resource type="Texture2D" uid="uid://ceff0ikn7npb1" path="res://Textures/lodge_curtain.jpg" id="1_txo43"]
+
+[resource]
+albedo_texture = ExtResource("1_txo43")
+metallic_specular = 0.0
+texture_filter = 2

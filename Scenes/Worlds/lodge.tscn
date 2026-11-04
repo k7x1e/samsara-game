@@ -1,0 +1,124 @@
+[gd_scene format=4 uid="uid://cr5mhsc6q2f5c"]
+
+[ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_2c1q8"]
+[ext_resource type="Script" uid="uid://c2nmolbivfrt2" path="res://Scripts/interiorPoopFartHolder.gd" id="1_y7jyo"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_y7jyo"]
+[ext_resource type="Material" uid="uid://ccomlerysa2ca" path="res://Textures/lodge_floor.tres" id="4_qqhww"]
+[ext_resource type="Material" uid="uid://b1whcfhxpo7y3" path="res://Textures/lodge_curtain.tres" id="5_6sj0j"]
+[ext_resource type="PackedScene" uid="uid://bflspavgatr07" path="res://Scenes/spawner.tscn" id="6_qqhww"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_k5wo8"]
+vertices = PackedVector3Array(-13.25, 0.5, -15.25, -13.25, 0.5, 15.5, 13.5, 0.5, 15.5, 13.5, 0.5, -15.25)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_k5wo8"]
+_surfaces = [{
+"aabb": AABB(-14, -0.5, -16, 28, 0.5, 32),
+"attribute_data": PackedByteArray("AABgwAAAAAAAAGBAAAAAAAAAYEAEAgE+AABgwAQCAT4AAIBABAIBPgAAgMAEAgE+AACAwAAAAAAAAIBAAAAAAAAAgMCHw2FAAACAwIfDYcAAAIBAh8NhwAAAgECHw2FAAACAQIfDYUAAAIDAh8NhQAAAgMCHw2HAAACAQIfDYcAAAIDAAAAAAAAAgEAAAAAAAACAQAQCAT4AAIDABAIBPgAAYEAEAgE+AABgwAQCAT4AAGDAAAAAAAAAYEAAAAAA"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": ExtResource("4_qqhww"),
+"name": "lodge_floor",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AABgQQAAAAAAAIDBAABgwQAAAAAAAIDBAABgwQAAAL8AAIDBAABgQQAAAL8AAIDBAABgwQAAAL8AAIBBAABgwQAAAL8AAIDBAABgwQAAAAAAAIDBAABgwQAAAAAAAIBBAABgwQAAAL8AAIBBAABgQQAAAL8AAIBBAABgQQAAAL8AAIDBAABgwQAAAL8AAIDBAABgwQAAAAAAAIBBAABgwQAAAAAAAIDBAABgQQAAAAAAAIDBAABgQQAAAAAAAIBBAABgQQAAAAAAAIBBAABgQQAAAAAAAIDBAABgQQAAAL8AAIDBAABgQQAAAL8AAIBBAABgQQAAAL8AAIBBAABgwQAAAL8AAIBBAABgwQAAAAAAAIBBAABgQQAAAAAAAIBB/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+}, {
+"aabb": AABB(-14.25, -0.5, -16.25, 28.25, 14.5, 32.25),
+"attribute_data": PackedByteArray("ODbTPgsqKL/C+9Y+Cyoov8L71j4MMMA8ODbTPgwwwDyJYvE+DDDAPIli8b4MMMA8iWLxvgsqKL+JYvE+Cyoov4li8b7LKis/iWLxvgsqKD+JYvE+CyooP4li8T7LKis/iWLxPssqKz+JYvG+yyorP4li8b4LKig/iWLxPgsqKD+JYvG+Cyoov4li8T4LKii/iWLxPgwwwDyJYvG+DDDAPDg2074MMMA8wvvWvgwwwDzC+9a+Cyoovzg2074LKii/ODbTvgsqKL/C+9Y+Cyoov8L71j4MMMA8ODbTvgwwwDyJYvG+DDDAPBMo9b4MMMA8Eyj1vgsqKL+JYvG+Cyoov4li8T7LKis/iWLxPgsqKL8TKPU+CyoovxMo9T7LKis/iWLxvssqKz8TKPW+yyorPxMo9b4LKii/iWLxvgsqKL+JYvE+CyoovxMo9T4LKii/Eyj1PgwwwDyJYvE+DDDAPDg20z4MMMA8wvvWvgwwwDzC+9a+Cyoovzg20z4LKii/"),
+"format": 34359742487,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8A"),
+"material": ExtResource("5_6sj0j"),
+"name": "lodge_curtain",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AABgwQAAYEEAAIDBAABkwQAAYEEAAIDBAABkwQAAAL8AAIDBAABgwQAAAL8AAIDBAABkwQAAAL8AAIBBAABkwQAAAL8AAIDBAABkwQAAYEEAAIDBAABkwQAAYEEAAIBBAABkwQAAAL8AAIBBAABgwQAAAL8AAIBBAABgwQAAAL8AAIDBAABkwQAAAL8AAIDBAABkwQAAYEEAAIBBAABkwQAAYEEAAIDBAABgwQAAYEEAAIDBAABgwQAAYEEAAIBBAABgwQAAYEEAAIBBAABgwQAAYEEAAIDBAABgwQAAAL8AAIDBAABgwQAAAL8AAIBBAABgwQAAAL8AAIBBAABkwQAAAL8AAIBBAABkwQAAYEEAAIBBAABgwQAAYEEAAIBBAABgQQAAYEEAAILBAABkwQAAYEEAAILBAABkwQAAAL8AAILBAABgQQAAAL8AAILBAABkwQAAAL8AAIDBAABkwQAAAL8AAILBAABkwQAAYEEAAILBAABkwQAAYEEAAIDBAABkwQAAAL8AAIDBAABgQQAAAL8AAIDBAABgQQAAAL8AAILBAABkwQAAAL8AAILBAABkwQAAYEEAAIDBAABkwQAAYEEAAILBAABgQQAAYEEAAILBAABgQQAAYEEAAIDBAABgQQAAYEEAAIDBAABgQQAAYEEAAILBAABgQQAAAL8AAILBAABgQQAAAL8AAIDBAABgQQAAAL8AAIDBAABkwQAAAL8AAIDBAABkwQAAYEEAAIDBAABgQQAAYEEAAIDB/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+//////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+}]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ymai6"]
+points = PackedVector3Array(14, 0, 16, 14, -0.5, 16, -14, 0, 16, -14, -0.5, 16, 14, 0, -16, 14, -0.5, -16, -14, 0, -16, -14, -0.5, -16)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_asyip"]
+points = PackedVector3Array(-14, 14, 16, -14, -0.5, 16, -14.25, 14, 16, -14.25, -0.5, 16, -14, 14, -16, -14, -0.5, -16, -14.25, 14, -16, -14.25, -0.5, -16)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uteyd"]
+points = PackedVector3Array(14, 14, -16, 14, -0.5, -16, -14.25, 14, -16, -14.25, -0.5, -16, 14, 14, -16.25, 14, -0.5, -16.25, -14.25, 14, -16.25, -14.25, -0.5, -16.25)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mxke3"]
+points = PackedVector3Array(14.25, 14, 16, 14.25, -0.5, 16, 14, 14, 16, 14, -0.5, 16, 14.25, 14, -16, 14.25, -0.5, -16, 14, 14, -16, 14, -0.5, -16)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_chwer"]
+points = PackedVector3Array(14.25, 14, 16.25, 14.25, -0.5, 16.25, -14, 14, 16.25, -14, -0.5, 16.25, 14.25, 14, 16, 14.25, -0.5, 16, -14, 14, 16, -14, -0.5, 16)
+
+[node name="lodge" type="Node3D" unique_id=1676644298]
+script = ExtResource("1_y7jyo")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1247165917]
+navigation_mesh = SubResource("NavigationMesh_k5wo8")
+
+[node name="FuncGodotMap" type="Node3D" parent="NavigationRegion3D" unique_id=1246510008]
+script = ExtResource("1_2c1q8")
+local_map_file = "uid://cbfydp33yavk0"
+map_settings = ExtResource("2_y7jyo")
+metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
+
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="NavigationRegion3D/FuncGodotMap" unique_id=1345222568]
+collision_layer = 536870913
+collision_mask = 0
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=506599142]
+layers = 4097
+mesh = SubResource("ArrayMesh_k5wo8")
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=177514202]
+shape = SubResource("ConvexPolygonShape3D_ymai6")
+
+[node name="entity_0_brush_1_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=987584610]
+shape = SubResource("ConvexPolygonShape3D_asyip")
+
+[node name="entity_0_brush_2_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=1311534531]
+shape = SubResource("ConvexPolygonShape3D_uteyd")
+
+[node name="entity_0_brush_3_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=2063543609]
+shape = SubResource("ConvexPolygonShape3D_mxke3")
+
+[node name="entity_0_brush_4_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=605761237]
+shape = SubResource("ConvexPolygonShape3D_chwer")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=902586750]
+transform = Transform3D(0.6830126, -0.6659757, 0.2999503, -0.0062359422, 0.40533018, 0.9141491, -0.73037994, -0.62624586, 0.27269256, 0, 0, 0)
+light_energy = 0.327
+
+[node name="SpawnPoint" type="Node3D" parent="." unique_id=587569970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Spawner" parent="." unique_id=517591928 instance=ExtResource("6_qqhww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.589834, 0, 0)
+duration = 3.0
+
+[node name="Spawner2" parent="." unique_id=185304632 instance=ExtResource("6_qqhww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.859294, -1.9073486e-06, 10.150462)
+duration = 3.0
+
+[node name="Spawner3" parent="." unique_id=1593733702 instance=ExtResource("6_qqhww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1586351, 0, 14.147182)
+duration = 3.0
+
+[node name="Spawner4" parent="." unique_id=376316333 instance=ExtResource("6_qqhww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.868885, -9.536743e-07, 5.0546627)
+duration = 3.0
+
+[node name="Spawner5" parent="." unique_id=1572239461 instance=ExtResource("6_qqhww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.54772, -9.536743e-07, -2.2924662)
+duration = 3.0
+
+[node name="Spawner6" parent="." unique_id=41971225 instance=ExtResource("6_qqhww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.424021, -1.9073486e-06, -13.468137)
+duration = 3.0
+
+[node name="Spawner7" parent="." unique_id=631271313 instance=ExtResource("6_qqhww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3898163, -1.9073486e-06, -14.578689)
+duration = 3.0

@@ -16,7 +16,7 @@ class_name baseWeapon
 @export var hasSpells: bool = false
 @export var equipmentSpells: Array[equipmentSpell]
 
-@export var testing: Array[int] = [0,1,2]
+#@export var testing: Array[int] = [0,1,2]
 
 func initializeItem():
 	var temp = node.instantiate()

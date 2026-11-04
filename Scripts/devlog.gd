@@ -795,3 +795,19 @@
 	#items can now be "green"
 	#22:39
 	#fixed a bug where items could have their names changed to be just their modifiers
+	#
+	##04/11
+	#11:28
+	#get something done today...
+	#14:37
+	#didnt. i think its time i add guns.
+	#15:59
+	#added a thompson
+	#22:11
+	#added the black lodge, realized now i never finished the thompson implementation
+	#23:54
+	#boooriiing
+	#
+	##05/11
+	#00:39
+	#added a couple icons

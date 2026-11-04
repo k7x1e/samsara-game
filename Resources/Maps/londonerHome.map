@@ -556,3 +556,8 @@
 "origin" "8 -20 128"
 "angle" "90"
 }
+// entity 4
+{
+"classname" "londonTable"
+"origin" "104 -24 8"
+}

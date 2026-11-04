@@ -17,7 +17,6 @@
 
 [sub_resource type="Resource" id="Resource_387h1"]
 script = ExtResource("6_3bept")
-minDelay = 90
 maxDelay = 600
 sayings = Array[String](["Hi", "Fuck You", "Badabar fry i knew this was my yat", "so im supposed to let her show her body for the thousand likes?", "now i can fly to my side ting yat"])
 metadata/_custom_type_script = "uid://cnpnfxiwvhunm"

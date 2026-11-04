@@ -39,7 +39,7 @@ func cast(caster: Variant):
 		return "falsesd"
 
 func doSpell(): ##only for compatability
-	spellClass.do(Globals.Player, self)
+	spellClass.do(Globals.Player, self,[],stats)
 
 func updateStats():
 	if statted:

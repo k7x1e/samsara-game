@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ccomlerysa2ca"]
+
+[ext_resource type="Texture2D" uid="uid://vbd72444p3oq" path="res://Textures/lodge_floor.png" id="1_28eo7"]
+
+[resource]
+albedo_texture = ExtResource("1_28eo7")
+metallic_specular = 0.0
+texture_filter = 2

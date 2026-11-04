@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="baseWeapon" format=3 uid="uid://btmocvkl6dded"]
+
+[ext_resource type="Script" uid="uid://rwq3k2spnonc" path="res://Scripts/classes/actions/spellNode.gd" id="1_wkygb"]
+[ext_resource type="PackedScene" uid="uid://bga75wb36a5io" path="res://Scenes/spell.tscn" id="2_cfefg"]
+[ext_resource type="Script" uid="uid://b6gxwdgd5651g" path="res://Scripts/classes/equipmentSpell.gd" id="3_ing6a"]
+[ext_resource type="Script" uid="uid://c23w3hwjjlb6g" path="res://Scripts/classes/actions/castRay.gd" id="5_cfefg"]
+[ext_resource type="PackedScene" uid="uid://cdfv702tcejvx" path="res://Scenes/impact.tscn" id="5_ing6a"]
+[ext_resource type="PackedScene" uid="uid://cyr5p218sdq17" path="res://Scenes/items/gun.tscn" id="6_wy04p"]
+[ext_resource type="Script" uid="uid://ojs3apomqf0t" path="res://Scripts/classes/Items/weaponClass.gd" id="7_7hyx7"]
+[ext_resource type="Texture2D" uid="uid://babr3fifxl0mh" path="res://Textures/icons/items/thompson.png" id="7_ing6a"]
+
+[sub_resource type="Resource" id="Resource_hkrn1"]
+script = ExtResource("1_wkygb")
+spellNode = ExtResource("2_cfefg")
+casterPlayer = true
+metadata/_custom_type_script = "uid://rwq3k2spnonc"
+
+[sub_resource type="Resource" id="Resource_wosd6"]
+script = ExtResource("1_wkygb")
+spellNode = ExtResource("2_cfefg")
+casterPlayer = true
+metadata/_custom_type_script = "uid://rwq3k2spnonc"
+
+[sub_resource type="Resource" id="Resource_ing6a"]
+script = ExtResource("5_cfefg")
+nodeAtTarget = ExtResource("5_ing6a")
+metadata/_custom_type_script = "uid://c23w3hwjjlb6g"
+
+[sub_resource type="Resource" id="Resource_wpo1r"]
+script = ExtResource("3_ing6a")
+spellClass = SubResource("Resource_ing6a")
+action = SubResource("Resource_wosd6")
+basecoolDown = 0.1
+coolDown = 0.1
+delay = 0.0
+Icon = ExtResource("7_ing6a")
+uiNode = null
+spellTimer = null
+requiredSlots = Array[String](["armRight"])
+priority = true
+metadata/_custom_type_script = "uid://b6gxwdgd5651g"
+
+[resource]
+script = ExtResource("7_7hyx7")
+slot = "armRight"
+node = ExtResource("6_wy04p")
+associatedAnimation = "thompsonHold"
+curNode = null
+hasSpells = true
+equipmentSpells = Array[ExtResource("3_ing6a")]([SubResource("Resource_wpo1r")])
+action = SubResource("Resource_hkrn1")
+itemID = 77
+name = "Thompson"
+description = "some bullshit"
+icon = ExtResource("7_ing6a")
+Type = 2
+WeaponType = 1
+equippable = true
+stats = Dictionary[StringName, Variant]({
+&"cooldown": 1.0,
+&"cost": 50,
+&"damage": 50.0,
+&"range": 70.0
+})
+metadata/_custom_type_script = "uid://ojs3apomqf0t"

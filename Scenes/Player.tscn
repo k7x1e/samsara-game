@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://cg1q03enedviq" path="res://Resources/Spells/tests.tres" id="4_o3h8g"]
 [ext_resource type="Script" uid="uid://cse3ubaxht2cj" path="res://Scripts/classes/Inventory.gd" id="4_yoq75"]
 [ext_resource type="Resource" uid="uid://btvygn7abx3hr" path="res://Resources/Items/gold.tres" id="6_lyrkg"]
+[ext_resource type="Resource" uid="uid://btmocvkl6dded" path="res://Resources/Items/thompson.tres" id="7_c43xd"]
 [ext_resource type="Resource" uid="uid://byn8lfwpbjv8r" path="res://Resources/Spells/thunderbolt.tres" id="8_miouo"]
 [ext_resource type="Resource" uid="uid://ca5npbbgkve3e" path="res://Resources/Items/dagger.tres" id="9_avx33"]
 [ext_resource type="Texture2D" uid="uid://bqxdpdin82oyj" path="res://Textures/icons/spells/heal.png" id="9_x63xi"]
@@ -37,7 +38,7 @@ metadata/_custom_type_script = "uid://xod4o8t818eu"
 
 [sub_resource type="Resource" id="Resource_megsn"]
 script = ExtResource("4_yoq75")
-inventory = Array[ExtResource("2_megsn")]([ExtResource("6_lyrkg"), ExtResource("4_o3h8g"), ExtResource("9_avx33")])
+inventory = Array[ExtResource("2_megsn")]([ExtResource("6_lyrkg"), ExtResource("4_o3h8g"), ExtResource("9_avx33"), ExtResource("7_c43xd")])
 metadata/_custom_type_script = "uid://cse3ubaxht2cj"
 
 [sub_resource type="Resource" id="Resource_1e7my"]
@@ -77,7 +78,6 @@ filters = ["Armature", "Armature/Skeleton3D:Bone.009.L", "Armature/Skeleton3D:Bo
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_8flut"]
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_rxg2u"]
-filter_enabled = true
 filters = ["Armature/Skeleton3D:Bone.005.R", "Armature/Skeleton3D:Bone.006.R", "Armature/Skeleton3D:Bone.007.R", "Armature/Skeleton3D:Bone.008.R"]
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_c43xd"]
@@ -90,6 +90,9 @@ animation = &"holdForward"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rxg2u"]
 animation = &"stab"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c43xd"]
+animation = &"thompsonHold"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lyrkg"]
 switch_mode = 2
@@ -107,17 +110,23 @@ advance_mode = 0
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rxg2u"]
+switch_mode = 2
+advance_mode = 0
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lyrkg"]
 states/End/position = Vector2(900, 100.171875)
-states/Start/position = Vector2(245, 99.93036)
+states/Start/position = Vector2(245, 100.05112)
 states/daggerhold/node = SubResource("AnimationNodeAnimation_avx33")
 states/daggerhold/position = Vector2(431.238, 202.69002)
 states/holdForward/node = SubResource("AnimationNodeAnimation_wosd6")
 states/holdForward/position = Vector2(509.2354, 119.48)
 states/stab/node = SubResource("AnimationNodeAnimation_rxg2u")
 states/stab/position = Vector2(653.13293, 214.81496)
-transitions = ["Start", "holdForward", SubResource("AnimationNodeStateMachineTransition_lyrkg"), "Start", "daggerhold", SubResource("AnimationNodeStateMachineTransition_xixlo"), "daggerhold", "stab", SubResource("AnimationNodeStateMachineTransition_00okb"), "stab", "daggerhold", SubResource("AnimationNodeStateMachineTransition_6hr71")]
-graph_offset = Vector2(210.53297, 1.8899571)
+states/thompsonHold/node = SubResource("AnimationNodeAnimation_c43xd")
+states/thompsonHold/position = Vector2(448.54297, 36.05496)
+transitions = ["Start", "holdForward", SubResource("AnimationNodeStateMachineTransition_lyrkg"), "Start", "daggerhold", SubResource("AnimationNodeStateMachineTransition_xixlo"), "daggerhold", "stab", SubResource("AnimationNodeStateMachineTransition_00okb"), "stab", "daggerhold", SubResource("AnimationNodeStateMachineTransition_6hr71"), "Start", "thompsonHold", SubResource("AnimationNodeStateMachineTransition_rxg2u")]
+graph_offset = Vector2(197.06297, -51.07504)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wpo1r"]
 animation = &"MindSpell"
@@ -172,7 +181,7 @@ transitions = ["Start", "MindSpell", SubResource("AnimationNodeStateMachineTrans
 graph_offset = Vector2(46.980095, 0.41474646)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_c43xd"]
-graph_offset = Vector2(-385.34103, 232.07504)
+graph_offset = Vector2(-374.34503, 292.99298)
 nodes/output/position = Vector2(500, 100)
 nodes/Blend2/node = SubResource("AnimationNodeBlend2_c43xd")
 nodes/Blend2/position = Vector2(-180, -20)
@@ -246,10 +255,11 @@ lookTargetNode = NodePath("../lookTarget")
 [node name="londonProtag" parent="Rotation" unique_id=423910710 instance=ExtResource("25_8flut")]
 transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0, 0.06221825, 0)
 
-[node name="Skeleton3D" parent="Rotation/londonProtag/Armature" parent_id_path=PackedInt32Array(423910710, 385813286) index="0" unique_id=2108380087]
+[node name="Skeleton3D" parent="Rotation/londonProtag/Armature" parent_id_path=PackedInt32Array(423910710, 1277473229) index="0" unique_id=1535804226]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.9381555, 0.0142436735, 0.34114036, 0.05731321)
-bones/3/rotation = Quaternion(0.00015881773, -0.00025417213, 0.012764565, 0.9999186)
+bones/1/rotation = Quaternion(0.9381103, 0.016959578, 0.34097296, 0.058300562)
+bones/3/rotation = Quaternion(0.00010163584, -0.00016265818, 0.008168719, 0.9999666)
+bones/6/rotation = Quaternion(-0.8222617, -1.5877157e-07, 1.7295704e-07, 0.56910956)
 bones/7/rotation = Quaternion(-0.440351, -0.03822061, -0.14063425, 0.8859189)
 bones/8/rotation = Quaternion(-0.10192366, -0.044773385, -0.007949366, 0.99375236)
 bones/9/rotation = Quaternion(-0.17423274, -0.03710145, 0.030870311, 0.98352104)

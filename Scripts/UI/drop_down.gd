@@ -147,7 +147,7 @@ func _on_discard_pressed() -> void:
 
 
 func _on_use_pressed() -> void:
-	currentItem.ownItem.theSpell.cast(self, true)
+	currentItem.ownItem.theSpell.cast(self)
 
 
 func modifier_pressed() -> void:

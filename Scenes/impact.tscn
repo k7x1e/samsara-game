@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cdfv702tcejvx"]
+
+[ext_resource type="Texture2D" uid="uid://cwytxqcdd47w3" path="res://Textures/impact.png" id="1_m86lx"]
+
+[node name="impact" type="Node3D" unique_id=594181112]
+
+[node name="Decal" type="Decal" parent="." unique_id=1872536895]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+texture_albedo = ExtResource("1_m86lx")

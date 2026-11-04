@@ -247,7 +247,7 @@ func look_at_mouse():
 			var localmousePos = hit
 			globalmousePos = hit
 			
-			localmousePos.y = global_position.y
+			#localmousePos.y = global_position.y #does nothing
 			rotationNode.lookTarget = localmousePos
 			wizard.look_at(localmousePos, Vector3.UP)
 			#if global_position.distance_to(localmousePos) > 0.1:

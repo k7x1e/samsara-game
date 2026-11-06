@@ -16,7 +16,6 @@
 [ext_resource type="Script" uid="uid://n8becq15md55" path="res://Scripts/classes/playlist.gd" id="11_wxwew"]
 [ext_resource type="Script" uid="uid://c5368yh8nkr87" path="res://Scripts/classes/song.gd" id="12_4q8tf"]
 [ext_resource type="Resource" uid="uid://dl6aglpq2o8cc" path="res://Resources/songs/Dueil.tres" id="13_x3xnh"]
-[ext_resource type="AudioStream" uid="uid://bkup7jcrplqsh" path="res://sound/music/return to me once your soul is at peace.mp3" id="16_8r6kd"]
 [ext_resource type="Resource" uid="uid://gg42hvhv5r8x" path="res://Resources/songs/Quiet Light.tres" id="16_lbihj"]
 [ext_resource type="AudioStream" uid="uid://bpg4y56ct7yea" path="res://sound/music/Swing My Door.mp3" id="16_rajel"]
 [ext_resource type="Shader" uid="uid://b7hiplev3r7q2" path="res://Resources/Shaders/grain.gdshader" id="17_4q8tf"]
@@ -30,10 +29,11 @@
 [ext_resource type="Resource" uid="uid://bixealjbu1gq1" path="res://Resources/songs/122.tres" id="23_3jf1l"]
 [ext_resource type="AudioStream" uid="uid://glmyariuav0l" path="res://sound/music/115.mp3" id="23_iyesh"]
 [ext_resource type="Shader" uid="uid://bjn10bjrle70t" path="res://Resources/Shaders/monochrome.gdshader" id="24_raj38"]
+[ext_resource type="Resource" uid="uid://b6ikjnl1u2ka5" path="res://Resources/songs/returnToMe.tres" id="26_iyesh"]
 
 [sub_resource type="Resource" id="Resource_4q8tf"]
 script = ExtResource("11_wxwew")
-playlist = Array[ExtResource("12_4q8tf")]([ExtResource("13_x3xnh"), ExtResource("16_lbihj"), ExtResource("17_raj38"), ExtResource("21_356ba")])
+playlist = Array[ExtResource("12_4q8tf")]([ExtResource("13_x3xnh"), ExtResource("16_lbihj"), ExtResource("17_raj38"), ExtResource("21_3jf1l")])
 wait = true
 maxWait = 20.0
 metadata/_custom_type_script = "uid://n8becq15md55"
@@ -85,15 +85,9 @@ script = ExtResource("11_wxwew")
 playlist = Array[ExtResource("12_4q8tf")]([SubResource("Resource_lbihj")])
 metadata/_custom_type_script = "uid://n8becq15md55"
 
-[sub_resource type="Resource" id="Resource_tfod6"]
-script = ExtResource("12_4q8tf")
-audio = ExtResource("16_8r6kd")
-songName = "Return to me once your soul is at peace."
-metadata/_custom_type_script = "uid://c5368yh8nkr87"
-
 [sub_resource type="Resource" id="Resource_x3xnh"]
 script = ExtResource("11_wxwew")
-playlist = Array[ExtResource("12_4q8tf")]([SubResource("Resource_tfod6")])
+playlist = Array[ExtResource("12_4q8tf")]([ExtResource("26_iyesh")])
 metadata/_custom_type_script = "uid://n8becq15md55"
 
 [sub_resource type="Animation" id="Animation_65i65"]

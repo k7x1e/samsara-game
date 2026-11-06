@@ -23,7 +23,7 @@ func cooldown():
 	curThreads += 1
 	spellTimer = Timer.new()
 	Globals.spellMaster.add_child(spellTimer)
-	if hasNode:
+	if hasNode and uiNode != null:
 		uiNode.dim.show()
 		uiNode.timer_active = true
 		uiNode.timerNode = spellTimer
@@ -32,6 +32,6 @@ func cooldown():
 	await Engine.get_main_loop().create_timer(coolDown).timeout
 	curThreads -= 1
 	cooldown_active = false
-	if hasNode:
+	if hasNode and uiNode != null:
 		uiNode.dim.hide()
 	castable = true

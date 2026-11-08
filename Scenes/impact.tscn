@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cwytxqcdd47w3" path="res://Textures/impact.png" id="1_m86lx"]
 
-[node name="impact" type="Node3D" unique_id=594181112]
+[node name="impact" type="Node3D" unique_id=594181112 groups=["garbage"]]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Decal" type="Decal" parent="." unique_id=1872536895]

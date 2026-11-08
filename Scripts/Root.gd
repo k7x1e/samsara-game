@@ -10,12 +10,15 @@ class_name Root
 
 @export var tickrate: float = 20.0 ##per second
 @export var updaterate: float = 2.5 ##per 10 seconds
+@export var garbageDelay: float = 120 ## seconds before garbage is removed
 
 var tickdelay:float
 var ticktick: float = 0.0
 
 var updatedelay: float
 var updatetick: float = 0.0
+
+var garbagetick: float = 0.0
 
 var Menu
 var dialogueMenu
@@ -156,6 +159,7 @@ func _physics_process(_delta: float) -> void:
 		toggleMenu()
 	ticktick += _delta
 	updatetick += _delta
+	garbagetick += _delta
 	if ticktick >= tickdelay and !isPaused:
 		#print("ticking")
 		signaltick()
@@ -163,6 +167,14 @@ func _physics_process(_delta: float) -> void:
 	if updatetick >= updatedelay and !isPaused:
 		signalupdate()
 		updatetick = 0.0
+	if garbagetick >= garbageDelay and !isPaused:
+		cleanGarbage()
+		garbagetick = 0.0
+
+func cleanGarbage():
+	var garbage = get_tree().get_nodes_in_group("garbage")
+	for object in garbage:
+		object.queue_free()
 
 func signaltick():
 	var tickable = get_tree().get_nodes_in_group("ticked")

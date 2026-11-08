@@ -815,3 +815,10 @@
 	#i find the zombies easter egg quite amusing
 	#13:03
 	#idk what to do, more models?
+	#
+	##06/11
+	#15:51
+	#fart poop shit fuck
+	#15:57
+	#for some strange reason the gamestate keeps resetting every now and then.
+	#i shall implement "garbage" if that makes sense

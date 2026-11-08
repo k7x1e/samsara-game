@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="itemSpell" format=3 uid="uid://burvo2yn4lmxq"]
 
 [ext_resource type="Texture2D" uid="uid://du0ipivjknk21" path="res://Textures/icons/items/potion.png" id="1_mwbfv"]
-[ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/classes/Items/SpellItem.gd" id="2_5n4on"]
+[ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/Classes/Items/SpellItem.gd" id="2_5n4on"]
 [ext_resource type="PackedScene" uid="uid://dhxgl60lqqfjv" path="res://Scenes/items/Models/potion.tscn" id="2_mwbfv"]
-[ext_resource type="Script" uid="uid://cd6w5kfeybbue" path="res://Scripts/classes/actions/statuseffect.gd" id="3_1acg4"]
-[ext_resource type="Script" uid="uid://ehkal6i02pq" path="res://Scripts/classes/spells/consumable.gd" id="3_mwbfv"]
+[ext_resource type="Script" uid="uid://cd6w5kfeybbue" path="res://Scripts/Classes/actions/statuseffect.gd" id="3_1acg4"]
+[ext_resource type="Script" uid="uid://ehkal6i02pq" path="res://Scripts/Classes/spells/consumable.gd" id="3_mwbfv"]
 
 [sub_resource type="Resource" id="Resource_xm6am"]
 script = ExtResource("3_1acg4")

@@ -854,3 +854,5 @@
 	#works fine now.
 	#12:50
 	#fixed item animations and death screen.
+	#13:03
+	#fixed couriers so they wont be in the wrong worlds.

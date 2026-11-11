@@ -2,6 +2,8 @@ extends Node3D
 
 class_name Root
 
+signal inLondon
+
 @export var gamestate: gameState
 
 #@onready var preloadshitfuck = load("user://Save/saves.sav")
@@ -47,6 +49,10 @@ var isPaused = false
 @onready var courier: PackedScene = preload("res://Scenes/actors/courier.tscn")
 
 func sendCourier(message:Variant,isConvo:bool=false): ##by default message can be a string and it will use the preset, if isConvo is true the message is expected to be of the conversation class
+	if currentInterior != "london":
+		await inLondon
+		await get_tree().create_timer(5).timeout
+		print("we are now in london.... i shall embark")
 	var convo: conversation
 	if isConvo:
 		convo = message
@@ -55,7 +61,7 @@ func sendCourier(message:Variant,isConvo:bool=false): ##by default message can b
 		temp.manuscript[0].dialogueText = str("Urgent message for Jeremiah: (n)", message)
 		convo = temp
 	var tempCourier = courier.duplicate(true).instantiate()
-	self.add_child(tempCourier)
+	$World.add_child(tempCourier)
 	tempCourier.global_position = Vector3(25,2,-8)
 	tempCourier.behaviour.origin = Vector3(25,2,-8)
 	tempCourier.set_owner(self)
@@ -151,6 +157,7 @@ func changeWorld(caller: Variant, Targetscene: String, fromMain: bool, fade: boo
 		if musicManager.checkInteriorPlaylist(playlistT):
 			musicManager.changePlaylist(playlistT, true)
 	else:
+		inLondon.emit()
 		Globals.Player.global_position = Globals.mainWorldPlayerPos
 		musicManager.changePlaylist("City", true)
 	Globals.minimap.initialize()

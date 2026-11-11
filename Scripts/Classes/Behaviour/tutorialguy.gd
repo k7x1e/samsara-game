@@ -4,7 +4,7 @@ class_name TutorialGuy
 
 @export var player: Variant
 @export var nav: Variant
-@export var hasDialogue: bool
+#@export var hasDialogue: bool
 
 @export var words: conversation
 @export var outoftutorial: Condition

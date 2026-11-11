@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://buvsbboygw12p" path="res://Scripts/wizard.gd" id="2_dewec"]
 [ext_resource type="Script" uid="uid://xod4o8t818eu" path="res://Scripts/classes/equipment.gd" id="2_kih0c"]
 [ext_resource type="Script" uid="uid://brua5tb5kc0it" path="res://Scripts/classes/itemClass.gd" id="2_megsn"]
-[ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/classes/spells/spell.gd" id="3_5ixxa"]
 [ext_resource type="Resource" uid="uid://cg1q03enedviq" path="res://Resources/Spells/tests.tres" id="4_o3h8g"]
 [ext_resource type="Script" uid="uid://cse3ubaxht2cj" path="res://Scripts/classes/Inventory.gd" id="4_yoq75"]
 [ext_resource type="Resource" uid="uid://btvygn7abx3hr" path="res://Resources/Items/gold.tres" id="6_lyrkg"]
@@ -50,7 +49,6 @@ intelligence = 2.0
 strength = 2.0
 stats = null
 progressStats = null
-progressMax = 25
 statDict = Dictionary[String, Variant]({})
 metadata/_custom_type_script = "uid://x7tekc2114cw"
 
@@ -78,9 +76,24 @@ filters = ["Armature", "Armature/Skeleton3D:Bone.009.L", "Armature/Skeleton3D:Bo
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_8flut"]
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_rxg2u"]
+filter_enabled = true
 filters = ["Armature/Skeleton3D:Bone.005.R", "Armature/Skeleton3D:Bone.006.R", "Armature/Skeleton3D:Bone.007.R", "Armature/Skeleton3D:Bone.008.R"]
 
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_xixlo"]
+
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_c43xd"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bfbt0"]
+animation = &"thompsonHold"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y6y60"]
+switch_mode = 2
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_vmcrb"]
+states/thompsonHold/node = SubResource("AnimationNodeAnimation_bfbt0")
+states/thompsonHold/position = Vector2(388.5, 48)
+transitions = ["Start", "thompsonHold", SubResource("AnimationNodeStateMachineTransition_y6y60")]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_avx33"]
 animation = &"daggerhold"
@@ -90,9 +103,6 @@ animation = &"holdForward"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rxg2u"]
 animation = &"stab"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c43xd"]
-animation = &"thompsonHold"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lyrkg"]
 switch_mode = 2
@@ -110,10 +120,6 @@ advance_mode = 0
 switch_mode = 2
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rxg2u"]
-switch_mode = 2
-advance_mode = 0
-
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lyrkg"]
 states/End/position = Vector2(900, 100.171875)
 states/Start/position = Vector2(245, 100.05112)
@@ -123,9 +129,7 @@ states/holdForward/node = SubResource("AnimationNodeAnimation_wosd6")
 states/holdForward/position = Vector2(509.2354, 119.48)
 states/stab/node = SubResource("AnimationNodeAnimation_rxg2u")
 states/stab/position = Vector2(653.13293, 214.81496)
-states/thompsonHold/node = SubResource("AnimationNodeAnimation_c43xd")
-states/thompsonHold/position = Vector2(448.54297, 36.05496)
-transitions = ["Start", "holdForward", SubResource("AnimationNodeStateMachineTransition_lyrkg"), "Start", "daggerhold", SubResource("AnimationNodeStateMachineTransition_xixlo"), "daggerhold", "stab", SubResource("AnimationNodeStateMachineTransition_00okb"), "stab", "daggerhold", SubResource("AnimationNodeStateMachineTransition_6hr71"), "Start", "thompsonHold", SubResource("AnimationNodeStateMachineTransition_rxg2u")]
+transitions = ["Start", "holdForward", SubResource("AnimationNodeStateMachineTransition_lyrkg"), "Start", "daggerhold", SubResource("AnimationNodeStateMachineTransition_xixlo"), "daggerhold", "stab", SubResource("AnimationNodeStateMachineTransition_00okb"), "stab", "daggerhold", SubResource("AnimationNodeStateMachineTransition_6hr71")]
 graph_offset = Vector2(197.06297, -51.07504)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wpo1r"]
@@ -181,7 +185,7 @@ transitions = ["Start", "MindSpell", SubResource("AnimationNodeStateMachineTrans
 graph_offset = Vector2(46.980095, 0.41474646)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_c43xd"]
-graph_offset = Vector2(-374.34503, 292.99298)
+graph_offset = Vector2(-864.8782, 812.4148)
 nodes/output/position = Vector2(500, 100)
 nodes/Blend2/node = SubResource("AnimationNodeBlend2_c43xd")
 nodes/Blend2/position = Vector2(-180, -20)
@@ -193,15 +197,19 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_lyrkg")
 nodes/Animation/position = Vector2(-560, 120)
 "nodes/Blend2 2/node" = SubResource("AnimationNodeBlend2_avx33")
 "nodes/Blend2 2/position" = Vector2(235.48795, 247.86899)
-"nodes/StateMachine item/node" = SubResource("AnimationNodeStateMachine_lyrkg")
-"nodes/StateMachine item/position" = Vector2(-370, 740)
+"nodes/StateMachine item1hand/node" = SubResource("AnimationNodeStateMachine_lyrkg")
+"nodes/StateMachine item1hand/position" = Vector2(-370, 740)
 "nodes/StateMachine spell/node" = SubResource("AnimationNodeStateMachine_teras")
 "nodes/StateMachine spell/position" = Vector2(-400, 450)
 "nodes/Blend2 3/node" = SubResource("AnimationNodeBlend2_8flut")
 "nodes/Blend2 3/position" = Vector2(-480, -140)
+"nodes/StateMachine 2handed/node" = SubResource("AnimationNodeStateMachine_vmcrb")
+"nodes/StateMachine 2handed/position" = Vector2(-280, 950)
 "nodes/Blend2 4/node" = SubResource("AnimationNodeBlend2_rxg2u")
-"nodes/Blend2 4/position" = Vector2(20, 680)
-node_connections = [&"output", 0, &"Blend2 2", &"Blend2", 0, &"Blend2 3", &"Blend2", 1, &"Animation", &"Blend2 2", 0, &"Blend2 4", &"Blend2 2", 1, &"Blend2", &"Blend2 3", 0, &"Animation 2", &"Blend2 3", 1, &"Animation 9", &"Blend2 4", 0, &"StateMachine spell", &"Blend2 4", 1, &"StateMachine item"]
+"nodes/Blend2 4/position" = Vector2(-100, 540)
+"nodes/Blend2 5/node" = SubResource("AnimationNodeBlend2_xixlo")
+"nodes/Blend2 5/position" = Vector2(90, 580)
+node_connections = [&"output", 0, &"Blend2 2", &"Blend2", 0, &"Blend2 3", &"Blend2", 1, &"Animation", &"Blend2 2", 0, &"Blend2 5", &"Blend2 2", 1, &"Blend2", &"Blend2 3", 0, &"Animation 2", &"Blend2 3", 1, &"Animation 9", &"Blend2 4", 0, &"StateMachine spell", &"Blend2 4", 1, &"StateMachine item1hand", &"Blend2 5", 0, &"Blend2 4", &"Blend2 5", 1, &"StateMachine 2handed"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1e7my"]
 radius = 2.5
@@ -245,7 +253,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
 
 [node name="Wizard" type="Node3D" parent="." unique_id=2016947607]
 script = ExtResource("2_dewec")
-spells = Array[ExtResource("3_5ixxa")]([ExtResource("12_miouo"), ExtResource("12_miouo"), ExtResource("12_miouo"), ExtResource("12_miouo"), ExtResource("12_miouo")])
+spells = [ExtResource("12_miouo"), ExtResource("12_miouo"), ExtResource("12_miouo"), ExtResource("12_miouo"), ExtResource("12_miouo")]
 placeholderSpell = ExtResource("12_miouo")
 
 [node name="Rotation" type="Node3D" parent="." unique_id=415138007 node_paths=PackedStringArray("lookTargetNode") groups=["ticked"]]
@@ -255,10 +263,13 @@ lookTargetNode = NodePath("../lookTarget")
 [node name="londonProtag" parent="Rotation" unique_id=423910710 instance=ExtResource("25_8flut")]
 transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0, 0.06221825, 0)
 
-[node name="Skeleton3D" parent="Rotation/londonProtag/Armature" parent_id_path=PackedInt32Array(423910710, 1277473229) index="0" unique_id=1535804226]
+[node name="Armature" parent="Rotation/londonProtag" index="2" unique_id=1277473229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13780698, 0)
+
+[node name="Skeleton3D" parent="Rotation/londonProtag/Armature" index="0" unique_id=1535804226]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.9381103, 0.016959578, 0.34097296, 0.058300562)
-bones/3/rotation = Quaternion(0.00010163584, -0.00016265818, 0.008168719, 0.9999666)
+bones/1/rotation = Quaternion(0.93812174, 0.016309138, 0.34101334, 0.058064144)
+bones/3/rotation = Quaternion(0.00011549135, -0.00018483253, 0.009282321, 0.99995697)
 bones/6/rotation = Quaternion(-0.8222617, -1.5877157e-07, 1.7295704e-07, 0.56910956)
 bones/7/rotation = Quaternion(-0.440351, -0.03822061, -0.14063425, 0.8859189)
 bones/8/rotation = Quaternion(-0.10192366, -0.044773385, -0.007949366, 0.99375236)
@@ -267,12 +278,12 @@ bones/10/rotation = Quaternion(0.22203927, 0.5698971, 0.78985965, 0.045138724)
 bones/11/rotation = Quaternion(0.09578154, 0.8317536, -0.4750532, -0.2708071)
 bones/12/rotation = Quaternion(0.11073949, -0.056747727, -0.22298805, 0.9668468)
 bones/13/rotation = Quaternion(0.14083624, -0.18853082, 0.10712266, 0.96599483)
-bones/15/rotation = Quaternion(0.72698486, 0.094962806, -0.058514364, 0.6775332)
-bones/16/rotation = Quaternion(0.03743713, -0.008029879, -0.00083015836, 0.9992664)
-bones/17/rotation = Quaternion(0.6096443, 0.7403935, -0.14562067, 0.24278796)
-bones/19/rotation = Quaternion(-0.731865, -0.011666051, 0.015933152, 0.6811635)
-bones/20/rotation = Quaternion(-0.03742334, -7.324756e-07, -0.0013116588, 0.99929875)
-bones/21/rotation = Quaternion(-0.11982031, -0.0892347, -0.61523545, 0.7740579)
+bones/15/rotation = Quaternion(0.67155313, 0.34448245, -0.23325598, 0.6131394)
+bones/16/rotation = Quaternion(0.023934262, -0.04814703, 0.3786946, 0.92395854)
+bones/17/rotation = Quaternion(0.69785035, 0.65965366, -0.17870906, 0.21430093)
+bones/19/rotation = Quaternion(-0.7235571, 0.11583898, 0.10386148, 0.6725023)
+bones/20/rotation = Quaternion(-0.024282428, 0.054908805, 0.5106973, 0.8576618)
+bones/21/rotation = Quaternion(-0.09808993, -0.10171953, -0.3652542, 0.9201201)
 
 [node name="AimModifier3D" type="AimModifier3D" parent="Rotation/londonProtag/Armature/Skeleton3D" index="0" unique_id=1846975441]
 transform = Transform3D(5.722046e-06, 30.000004, 3.5762798e-06, -4.547474e-13, -3.576279e-06, 30.000002, 30.00001, -8.583069e-06, -1.5916157e-12, -1.0048591e-14, 1.1764284, -5.024298e-15)
@@ -293,10 +304,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 root_node = NodePath("../londonProtag")
 tree_root = SubResource("AnimationNodeBlendTree_c43xd")
 anim_player = NodePath("../londonProtag/AnimationPlayer")
-parameters/Blend2/blend_amount = 1.0
+parameters/Blend2/blend_amount = 0.0
 "parameters/Blend2 2/blend_amount" = 1.0
 "parameters/Blend2 3/blend_amount" = 0.0
 "parameters/Blend2 4/blend_amount" = 0.0
+"parameters/Blend2 5/blend_amount" = 0.0
 script = ExtResource("26_u7x0b")
 player = NodePath("../..")
 anim = NodePath("../londonProtag/AnimationPlayer")

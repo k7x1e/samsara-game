@@ -16,7 +16,7 @@ extends Control
 
 var tween
 
-func initialize():	
+func initialize(dontRetract: bool = false):
 	var l = toShow.length()
 	var b = 1
 	while b <= l:
@@ -29,7 +29,8 @@ func initialize():
 		else:
 			await get_tree().create_timer(spaceDelay).timeout
 		b += 1
-	
+	if dontRetract:
+		return true
 	while b >= 0:
 		label.text= toShow.left(b)
 		await get_tree().create_timer(reverseLetterDelay).timeout

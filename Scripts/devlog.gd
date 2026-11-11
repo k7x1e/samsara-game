@@ -822,3 +822,35 @@
 	#15:57
 	#for some strange reason the gamestate keeps resetting every now and then.
 	#i shall implement "garbage" if that makes sense
+	#
+	##09/11
+	#12:47
+	#time to do a bunch of bullshit
+	#13:07
+	#i am getting increasingly pissed because my hans just dont want to work and its refusing to set hasdialogue to false properly.
+	#13:22
+	#fuck this game bro
+	#14:23
+	#fuck everyone who worked on this samsonarum will die the same death as dustrialis did.
+	#15:18
+	#i want to cancel this god awful project nobody is doing anything im completely stuck doing a bunch of bullshit
+	#
+	##11/11
+	#10:05
+	#hope is regained but i am struggling from a severe case of i dont know what to do now. maybe a bit of writing?
+	#i really gotta get that stat menu made.
+	#i will do that once ive finished the funny youtube video i am watching.
+	#i have a really dumb idea. Courier NPC. One that just comes up to you to tell you about some bullshit
+	#10:57
+	#added a courier. Fun feature.
+	#11:24
+	#bugfixing and for some strange reason the actorbaseclass "move()" function did not use delta for its movement which is kinda fucked.
+	#actually no why would it the delta will always be the same since its a tick function???
+	#11:33
+	#calling sendCourier freezes game
+	#11:38
+	#as it turned out, sayRandom would freeze the game trying to find something it hadnt already said if you only had one entry in sayings, dumb
+	#11:44
+	#works fine now.
+	#12:50
+	#fixed item animations and death screen.

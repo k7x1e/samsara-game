@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("3_f0jnu")
-slot = "armRight"
+slot = Array[String](["armRight"])
 node = ExtResource("2_hewwn")
 curNode = null
 itemID = 676767

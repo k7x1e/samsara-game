@@ -96,7 +96,7 @@ func move():
 	move_and_slide()
 
 func initialize():
-	behaviour = NpcClass.behaviour.duplicate()
+	behaviour = NpcClass.behaviour.duplicate(true)
 	behaviour.actor = self
 	behaviour.initialize()
 	if NpcClass.usesModel:

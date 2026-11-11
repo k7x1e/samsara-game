@@ -189,7 +189,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	if Input.is_action_just_pressed("evilDebugKey"):
-		notify("test")
+		Globals.Root.sendCourier("the poopwaffen sends its regards")
 	if Input.is_action_just_pressed("interact"):
 		checkDialogue()
 	#call mouselook func
@@ -226,7 +226,9 @@ func checkDialogue():
 	if dialogueArea.has_overlapping_bodies():
 		var bodies = dialogueArea.get_overlapping_bodies()
 		for body in bodies:
-			if body.NpcClass.behaviour.hasDialogue:
+			if body.behaviour.hasDialogue == true:
+				#used the preset instead of the active behaviour
+				#print("Has dialogue")
 				Globals.Root.startDialogue(body.NpcClass.behaviour.words)
 				return
 

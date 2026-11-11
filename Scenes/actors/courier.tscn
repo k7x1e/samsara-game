@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://pk1akgi5rc5q"]
+
+[ext_resource type="Script" uid="uid://bqdpiionfhc5e" path="res://Scripts/ActorBaseClass.gd" id="1_mr2go"]
+[ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="2_4vopc"]
+[ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="3_h5mwl"]
+[ext_resource type="Script" uid="uid://x17x88r6wwpt" path="res://Scripts/classes/Behaviour/Courier.gd" id="4_ac2s6"]
+[ext_resource type="Script" uid="uid://7egkv825rd1e" path="res://Scripts/classes/Behaviour/subBehaviour.gd" id="5_87wjo"]
+[ext_resource type="Script" uid="uid://bc33fveu1oyam" path="res://Scripts/classes/Behaviour/subbehaviour/forceTalk.gd" id="6_1jkxr"]
+[ext_resource type="Script" uid="uid://cnpnfxiwvhunm" path="res://Scripts/classes/Behaviour/subbehaviour/sayRandom.gd" id="7_awo4p"]
+[ext_resource type="Resource" uid="uid://gjj20nv5a6jg" path="res://Resources/story/conversations/courierPreset.tres" id="7_cajas"]
+[ext_resource type="PackedScene" uid="uid://bkimo22crvjn5" path="res://Scenes/PlaceholderModel.tscn" id="11_y7xcc"]
+[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="12_a15q2"]
+[ext_resource type="Resource" uid="uid://ca5npbbgkve3e" path="res://Resources/Items/dagger.tres" id="13_pu68c"]
+[ext_resource type="Texture2D" uid="uid://dlppbptyqxtaf" path="res://Textures/UI/marker.png" id="14_r1jb2"]
+
+[sub_resource type="Resource" id="Resource_r5y57"]
+script = ExtResource("6_1jkxr")
+metadata/_custom_type_script = "uid://bc33fveu1oyam"
+
+[sub_resource type="Resource" id="Resource_1jkxr"]
+script = ExtResource("7_awo4p")
+sayings = Array[String](["where could he be...."])
+careAboutLastSaid = false
+metadata/_custom_type_script = "uid://cnpnfxiwvhunm"
+
+[sub_resource type="Resource" id="Resource_aiey3"]
+script = ExtResource("4_ac2s6")
+words = ExtResource("7_cajas")
+speed = 20.0
+actor = null
+subBehaviours = Array[ExtResource("5_87wjo")]([SubResource("Resource_r5y57"), SubResource("Resource_1jkxr")])
+usesSubBehaviours = true
+metadata/_custom_type_script = "uid://x17x88r6wwpt"
+
+[sub_resource type="Resource" id="Resource_7ei5c"]
+script = ExtResource("12_a15q2")
+npcName = "Courier"
+model = ExtResource("11_y7xcc")
+behaviour = SubResource("Resource_aiey3")
+metadata/_custom_type_script = "uid://drjjmjc24qipo"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ei5c"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_26o22"]
+radius = 2.018302
+
+[node name="Actor" type="CharacterBody3D" unique_id=1866149922 groups=["Pausable", "Persistent", "ticked"]]
+collision_layer = 1073873417
+collision_mask = 131593
+script = ExtResource("1_mr2go")
+NpcClass = SubResource("Resource_7ei5c")
+visibilityoverride = true
+equipped = ExtResource("13_pu68c")
+
+[node name="Visual" type="Node3D" parent="." unique_id=1983415667 groups=["Pausable"]]
+
+[node name="Nav" type="NavigationAgent3D" parent="." unique_id=87223851 groups=["Pausable"]]
+avoidance_enabled = true
+radius = 1.0
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1180956514 groups=["Pausable"]]
+shape = SubResource("CapsuleShape3D_7ei5c")
+
+[node name="minimapIcon" type="Sprite3D" parent="." unique_id=1376510665]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+layers = 4096
+billboard = 1
+texture = ExtResource("14_r1jb2")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1032441868]
+
+[node name="attackrange" type="Area3D" parent="." unique_id=692885892 groups=["Pausable"]]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="attackrange" unique_id=1324611702 groups=["Pausable"]]
+shape = SubResource("SphereShape3D_26o22")
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="." method="on_visible"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="on_exite"]

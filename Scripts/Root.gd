@@ -43,6 +43,23 @@ var isPaused = false
 @onready var songNotif = $fading/NowPlaying
 
 @onready var physItem: PackedScene = preload("res://Scenes/physics_item.tscn")
+@onready var convoPreset: conversation = preload("res://Resources/story/conversations/courierPreset.tres")
+@onready var courier: PackedScene = preload("res://Scenes/actors/courier.tscn")
+
+func sendCourier(message:Variant,isConvo:bool=false): ##by default message can be a string and it will use the preset, if isConvo is true the message is expected to be of the conversation class
+	var convo: conversation
+	if isConvo:
+		convo = message
+	else:
+		var temp: conversation = convoPreset.duplicate(true)
+		temp.manuscript[0].dialogueText = str("Urgent message for Jeremiah: (n)", message)
+		convo = temp
+	var tempCourier = courier.duplicate(true).instantiate()
+	self.add_child(tempCourier)
+	tempCourier.global_position = Vector3(25,2,-8)
+	tempCourier.behaviour.origin = Vector3(25,2,-8)
+	tempCourier.set_owner(self)
+	tempCourier.behaviour.setMessage(convo)
 
 func placeItem(item: itemClass, pos:Vector3):
 	var tempPooper = physItem.instantiate()
@@ -60,12 +77,12 @@ func nowPlaying(songName: String, artistAlbum: String):
 	songNotif.artistAlbum = artistAlbum
 	songNotif.initialize()
 
-func notify(what: String, useSound: bool = false):
+func notify(what: String, useSound: bool = false, dontRetract: bool = false):
 	var tempP = mNotif.instantiate()
 	$fading.add_child(tempP)
 	tempP.toShow = what
 	tempP.sound = useSound
-	tempP.initialize()
+	tempP.initialize(dontRetract)
 
 func fadeIn():
 	fadeAnim.play("fadein")
@@ -123,6 +140,8 @@ func changeWorld(caller: Variant, Targetscene: String, fromMain: bool, fade: boo
 		fadeIn()
 	if fromTutorial:
 		notify("Samsonarum.", true)
+		#TEMPORARY
+		Globals.Root.sendCourier("the poopwaffen sends its regards")
 	if fromMain:
 		Globals.mainWorldPlayerPos = Globals.Player.global_position
 		Globals.Player.global_position = gamestate.newWorld.playerSpawn.global_position
@@ -375,3 +394,5 @@ func death():
 	pause(true)
 	currentMenu = 5
 	musicManager.changePlaylist("Death", true)
+	await get_tree().create_timer(1).timeout
+	notify("you died...", true, true)

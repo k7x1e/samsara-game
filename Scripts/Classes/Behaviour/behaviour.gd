@@ -7,7 +7,7 @@ signal attacking
 @export var health: float
 @export var speed: float = 15
 @export var actor: Variant
-@export var hasDialoge: bool = false
+@export var hasDialogue: bool = false ##WHAT THEFUCK IS GOING ON
 
 @export var billboard: PackedScene = preload("res://Scenes/billboard.tscn")
 @export var notification: PackedScene = preload("res://Scenes/notification.tscn")

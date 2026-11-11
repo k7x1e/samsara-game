@@ -11,6 +11,7 @@ class_name sayRandom
 
 @export var duration: float = 3.0
 
+@export var careAboutLastSaid := true
 var lastSaid: int = 0
 var temp: int = 0
 
@@ -19,8 +20,9 @@ func tick(_behaviour: Behaviour):
 		delayCounter = 0
 		delay = randi_range(minDelay,maxDelay)
 		temp = randi_range(0,sayings.size()-1)
-		while temp == lastSaid:
-			temp = randi_range(0,sayings.size()-1)
+		if careAboutLastSaid:
+			while temp == lastSaid:
+				temp = randi_range(0,sayings.size()-1)
 		_behaviour.say(sayings[temp], duration)
 		lastSaid = temp
 	else:

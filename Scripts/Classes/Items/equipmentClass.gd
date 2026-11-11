@@ -2,7 +2,7 @@ extends itemClass
 
 class_name equipmentItem
 
-@export var slot: String
+@export var slot: Array[String]
 
 @export var node: PackedScene
 

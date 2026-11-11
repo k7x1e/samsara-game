@@ -4,7 +4,7 @@ class_name baseWeapon
 
 #literally just a copy of the equipment class..
 
-@export var slot: String
+@export var slot: Array[String]
 
 @export var node: PackedScene
 

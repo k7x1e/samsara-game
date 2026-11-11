@@ -5,7 +5,7 @@ class_name Passive
 
 @export var player: Variant
 @export var nav: Variant
-@export var hasDialogue: bool
+#@export var hasDialogue: bool
 
 @export var angerable: bool = true
 @export var angered: bool = false
@@ -41,6 +41,7 @@ func getAngered():
 	usesSubBehaviours = false
 	say(angerDialogue, 1.0)
 	hasDialogue = false
+	print("hasDialogue: ",hasDialogue)
 	print("angered")
 	angered = true
 	actor.fixCombatBehaviour()

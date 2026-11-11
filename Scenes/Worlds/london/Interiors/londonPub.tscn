@@ -12,15 +12,22 @@
 [ext_resource type="PackedScene" uid="uid://wggca4kc4v15" path="res://Scenes/actor.tscn" id="11_7f25j"]
 [ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="11_ccq2g"]
 [ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="12_ma6y1"]
-[ext_resource type="Script" uid="uid://7egkv825rd1e" path="res://Scripts/classes/Behaviour/subBehaviour.gd" id="13_ma6y1"]
+[ext_resource type="Script" uid="uid://7egkv825rd1e" path="res://Scripts/classes/Behaviour/subBehaviour.gd" id="13_pn8ue"]
 [ext_resource type="Script" uid="uid://baf2et18ajmro" path="res://Scripts/classes/Behaviour/Follower.gd" id="13_ttj1o"]
 [ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/classes/dialogueClass.gd" id="14_bo8bj"]
+[ext_resource type="Script" uid="uid://cnpnfxiwvhunm" path="res://Scripts/classes/Behaviour/subbehaviour/sayRandom.gd" id="14_pn8ue"]
+[ext_resource type="Script" uid="uid://cimjvt5q67h2h" path="res://Scripts/classes/Behaviour/subbehaviour/wander.gd" id="15_fljgx"]
 [ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/classes/dialogueOption.gd" id="15_likva"]
 [ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/classes/conversation.gd" id="16_4s17e"]
 [ext_resource type="Resource" uid="uid://dmod3sejpqq40" path="res://Resources/story/quests/findCain.tres" id="16_ccq2g"]
 [ext_resource type="PackedScene" uid="uid://bkimo22crvjn5" path="res://Scenes/PlaceholderModel.tscn" id="17_545bl"]
+[ext_resource type="Script" uid="uid://ctffm134lsqah" path="res://Scripts/classes/quest.gd" id="18_wmx0e"]
 [ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="18_xr2p6"]
 [ext_resource type="Texture2D" uid="uid://dlppbptyqxtaf" path="res://Textures/UI/marker.png" id="19_pn8ue"]
+[ext_resource type="Script" uid="uid://dvhlvrgx56mc5" path="res://Scripts/billboard.gd" id="21_unyxo"]
+[ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="22_p2bqa"]
+[ext_resource type="AudioStream" uid="uid://cs1ygjrv7be2n" path="res://sound/sfx/typewriter.wav" id="23_vcv48"]
+[ext_resource type="Script" uid="uid://c1sq1djlgalom" path="res://Scripts/notification.gd" id="24_lpobv"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_8l2jw"]
 vertices = PackedVector3Array(-9.25, 2.5, -23, -9.25, 2.5, -16.5, -8.75, 2.5, -16.25, 7.75, 2.5, -23, -8.75, 2.5, -15.25, -9.25, 2.5, -15, -9.25, 2.5, -8.5, -8.75, 2.5, -8.25, 7.75, 2.5, -0.25, -8.75, 2.5, -7.25, -9.25, 2.5, -7, -9.25, 2.5, -0.5)
@@ -163,56 +170,290 @@ fog_enabled = true
 fog_light_color = Color(0, 0, 0, 1)
 volumetric_fog_albedo = Color(0.21230483, 0.21230483, 0.21230483, 1)
 
-[sub_resource type="Resource" id="Resource_bnhm3"]
+[sub_resource type="Resource" id="Resource_pn8ue"]
+script = ExtResource("14_pn8ue")
+maxDelay = 600
+sayings = Array[String](["Hi", "Fuck You", "Badabar fry i knew this was my yat", "so im supposed to let her show her body for the thousand likes?", "now i can fly to my side ting yat"])
+metadata/_custom_type_script = "uid://cnpnfxiwvhunm"
+
+[sub_resource type="Resource" id="Resource_lpobv"]
+script = ExtResource("15_fljgx")
+metadata/_custom_type_script = "uid://cimjvt5q67h2h"
+
+[sub_resource type="Resource" id="Resource_ps84r"]
 script = ExtResource("15_likva")
 text = "Do you know of Cain?"
 target = 1
 metadata/_custom_type_script = "uid://dvewwpayy1s83"
 
-[sub_resource type="Resource" id="Resource_26o22"]
+[sub_resource type="Resource" id="Resource_tiaka"]
 script = ExtResource("14_bo8bj")
 dialogueText = "Good day lad."
-dialogueOptions = Array[ExtResource("15_likva")]([SubResource("Resource_bnhm3")])
+dialogueOptions = Array[ExtResource("15_likva")]([SubResource("Resource_ps84r")])
 metadata/_custom_type_script = "uid://bg6c48acdck1"
 
-[sub_resource type="Resource" id="Resource_3bept"]
+[sub_resource type="Resource" id="Resource_3irne"]
 script = ExtResource("15_likva")
 text = "Thanks."
 target = -1
 metadata/_custom_type_script = "uid://dvewwpayy1s83"
 
-[sub_resource type="Resource" id="Resource_jluoo"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i5l3k"]
+load_path = "res://.godot/imported/investigateWizards.png-651e2fcf2f1512b87a7f42ddc44ab723.ctex"
+
+[sub_resource type="Resource" id="Resource_doq6b"]
+script = ExtResource("18_wmx0e")
+icon = SubResource("CompressedTexture2D_i5l3k")
+questName = "Find Cain"
+mainQuest = true
+progressDescriptionsActive = true
+descriptions = Array[String](["blank", "After moving to Moon Town you find out you're supposed to work for a mysterious man called \"Cain\". You have yet to learn where he lives though.", "not used", "You've found cain in his home.", "mystery status", "You've failed this quest."])
+progressDescriptions = Array[String](["After asking around you've been told of someone who might very well know where Cain is.", "You've learned of where Cain lives but have yet to find him."])
+metadata/_custom_type_script = "uid://ctffm134lsqah"
+
+[sub_resource type="Resource" id="Resource_38o4f"]
 script = ExtResource("14_bo8bj")
 dialogueText = "Wish i knew lad, Ask the bartender I tell ya."
-dialogueOptions = Array[ExtResource("15_likva")]([SubResource("Resource_3bept")])
+dialogueOptions = Array[ExtResource("15_likva")]([SubResource("Resource_3irne")])
 questStatus = 2
 progressionLevel = 1
-quest = ExtResource("16_ccq2g")
+quest = SubResource("Resource_doq6b")
 metadata/_custom_type_script = "uid://bg6c48acdck1"
 
-[sub_resource type="Resource" id="Resource_0cu5u"]
+[sub_resource type="Resource" id="Resource_kew5p"]
 script = ExtResource("16_4s17e")
 speakerName = "Mysterious man"
-manuscript = Array[ExtResource("14_bo8bj")]([SubResource("Resource_26o22"), SubResource("Resource_jluoo")])
+manuscript = Array[ExtResource("14_bo8bj")]([SubResource("Resource_tiaka"), SubResource("Resource_38o4f")])
 hasQuest = true
 metadata/_custom_type_script = "uid://bin58sxq57jsc"
 
-[sub_resource type="Resource" id="Resource_likva"]
+[sub_resource type="Resource" id="Resource_lxbg8"]
 script = ExtResource("13_ttj1o")
 player = null
 nav = null
-hasDialogue = true
 damageArea = null
-words = SubResource("Resource_0cu5u")
-isHero = true
+words = SubResource("Resource_kew5p")
 actor = null
+hasDialogue = true
+subBehaviours = Array[ExtResource("13_pn8ue")]([SubResource("Resource_pn8ue"), SubResource("Resource_lpobv")])
+usesSubBehaviours = true
 metadata/_custom_type_script = "uid://baf2et18ajmro"
 
-[sub_resource type="Resource" id="Resource_4s17e"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_wsunn"]
+
+[sub_resource type="PackedScene" id="PackedScene_0ci5q"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Model", "MeshInstance3D", "mesh"),
+"node_count": 1,
+"node_ids": PackedInt32Array(1429497101),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0),
+"variants": [SubResource("CylinderMesh_wsunn")],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_bsv1a"]
 script = ExtResource("18_xr2p6")
 npcName = "Example Actor"
-model = ExtResource("17_545bl")
-behaviour = SubResource("Resource_likva")
+model = SubResource("PackedScene_0ci5q")
+behaviour = SubResource("Resource_lxbg8")
+metadata/_custom_type_script = "uid://drjjmjc24qipo"
+
+[sub_resource type="Resource" id="Resource_i5l3k"]
+script = ExtResource("14_pn8ue")
+maxDelay = 600
+sayings = Array[String](["Hi", "Fuck You", "Badabar fry i knew this was my yat", "so im supposed to let her show her body for the thousand likes?", "now i can fly to my side ting yat"])
+metadata/_custom_type_script = "uid://cnpnfxiwvhunm"
+
+[sub_resource type="Resource" id="Resource_0ci5q"]
+script = ExtResource("15_fljgx")
+wanderRadius = 3.0
+metadata/_custom_type_script = "uid://cimjvt5q67h2h"
+
+[sub_resource type="Resource" id="Resource_h21x4"]
+script = ExtResource("13_ttj1o")
+player = null
+nav = null
+damageArea = null
+words = SubResource("Resource_kew5p")
+actor = null
+hasDialogue = true
+subBehaviours = Array[ExtResource("13_pn8ue")]([SubResource("Resource_i5l3k"), SubResource("Resource_0ci5q")])
+usesSubBehaviours = true
+metadata/_custom_type_script = "uid://baf2et18ajmro"
+
+[sub_resource type="Resource" id="Resource_lk2pa"]
+script = ExtResource("18_xr2p6")
+npcName = "Example Actor"
+model = SubResource("PackedScene_0ci5q")
+behaviour = SubResource("Resource_h21x4")
+metadata/_custom_type_script = "uid://drjjmjc24qipo"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dwpb4"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgofq"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_right = 10
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_h21x4"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("billboard", "Node3D", "Pausable", "script", "billboardtext", "letterDelay", "spaceDelay", "Sprite3D", "Sprite3D", "Pausable", "billboard", "no_depth_test", "texture", "SubViewport", "SubViewport", "Pausable", "transparent_bg", "size", "CanvasLayer", "CanvasLayer", "Pausable", "CenterContainer", "CenterContainer", "Pausable", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "RichTextLabel", "RichTextLabel", "Pausable", "layout_mode", "size_flags_horizontal", "theme_override_fonts/normal_font", "theme_override_font_sizes/normal_font_size", "theme_override_font_sizes/bold_font_size", "theme_override_styles/normal", "bbcode_enabled", "text", "fit_content", "scroll_active", "autowrap_mode", "horizontal_alignment", "sfx", "AudioStreamPlayer3D", "stream", "volume_db", "bus"),
+"node_count": 7,
+"node_ids": PackedInt32Array(1199928384, 928405031, 1884092643, 1910178090, 612352579, 786642556, 1239307463),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./SubViewport"), NodePath("./SubViewport/CanvasLayer"), NodePath("./SubViewport/CanvasLayer/CenterContainer"), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 4, 3, 0, 4, 1, 5, 2, 6, 3, 1, 2, 1073741824, 0, 8, 7, -1, 3, 10, 4, 11, 5, 12, 6, 1, 9, 1073741825, 0, 14, 13, -1, 2, 16, 7, 17, 8, 1, 15, 1073741826, 0, 19, 18, -1, 0, 1, 20, 1073741827, 0, 22, 21, -1, 5, 24, 9, 25, 10, 26, 11, 27, 12, 28, 13, 1, 23, 1073741828, 0, 30, 29, -1, 12, 32, 14, 33, 15, 34, 16, 35, 17, 36, 18, 37, 19, 38, 20, 39, 21, 40, 22, 41, 23, 42, 24, 43, 25, 1, 31, 1073741829, 0, 45, 44, -1, 3, 46, 26, 47, 27, 48, 28, 0),
+"variants": [ExtResource("21_unyxo"), "I am an npc bro", 0.01, 0.005, 1, true, SubResource("ViewportTexture_dwpb4"), true, Vector2i(2048, 50), 15, 1.0, 1.0, 2, 2, 2, 3, ExtResource("22_p2bqa"), 30, 30, SubResource("StyleBoxFlat_fgofq"), true, "Placeholder", true, false, 0, 1, ExtResource("23_vcv48"), -20.0, &"Sfx"],
+"version": 3
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_wohpn"]
+font_size = 30
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wohpn"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="Animation" id="Animation_wohpn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.9490196)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6kda2"]
+resource_name = "notif"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1.2311403),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.9490196), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0009999999, 1),
+"transitions": PackedFloat32Array(1, 4.5948124),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.6, 0.6, 0.6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lk1ln"]
+_data = {
+&"RESET": SubResource("Animation_wohpn"),
+&"notif": SubResource("Animation_6kda2")
+}
+
+[sub_resource type="PackedScene" id="PackedScene_lk2pa"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("notification", "Node3D", "script", "SubViewport", "SubViewport", "transparent_bg", "size", "CanvasLayer", "CanvasLayer", "CenterContainer", "CenterContainer", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "Label", "Label", "layout_mode", "theme_override_fonts/font", "text", "label_settings", "Sprite3D", "Sprite3D", "modulate", "billboard", "texture", "AnimationPlayer", "AnimationPlayer", "libraries/"),
+"node_count": 7,
+"node_ids": PackedInt32Array(633069758, 879773878, 946751260, 1083919178, 321443388, 1941277878, 1844106017),
+"node_paths": [NodePath("."), NodePath("./SubViewport"), NodePath("./SubViewport/CanvasLayer"), NodePath("./SubViewport/CanvasLayer/CenterContainer"), NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 2, 5, 1, 6, 2, 0, 1073741825, 0, 8, 7, -1, 0, 0, 1073741826, 0, 10, 9, -1, 5, 11, 3, 12, 4, 13, 5, 14, 6, 15, 7, 0, 1073741827, 0, 17, 16, -1, 4, 18, 8, 19, 9, 20, 10, 21, 11, 0, 1073741828, 0, 23, 22, -1, 3, 24, 12, 25, 13, 26, 14, 0, 1073741829, 0, 28, 27, -1, 1, 29, 15, 0),
+"variants": [ExtResource("24_lpobv"), true, Vector2i(1024, 50), 15, 1.0, 1.0, 2, 2, 2, ExtResource("22_p2bqa"), "Farting heee hee hoo hoo", SubResource("LabelSettings_wohpn"), Color(1, 1, 1, 0.9490196), 1, SubResource("ViewportTexture_wohpn"), SubResource("AnimationLibrary_lk1ln")],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_2q6p0"]
+script = ExtResource("14_pn8ue")
+maxDelay = 600
+sayings = Array[String](["Hi", "Fuck You", "Badabar fry i knew this was my yat", "so im supposed to let her show her body for the thousand likes?", "now i can fly to my side ting yat"])
+metadata/_custom_type_script = "uid://cnpnfxiwvhunm"
+
+[sub_resource type="Resource" id="Resource_x6pxi"]
+script = ExtResource("15_fljgx")
+wanderRadius = 3.0
+metadata/_custom_type_script = "uid://cimjvt5q67h2h"
+
+[sub_resource type="Resource" id="Resource_quapo"]
+script = ExtResource("13_ttj1o")
+player = null
+nav = null
+damageArea = null
+words = SubResource("Resource_kew5p")
+actor = null
+hasDialogue = true
+billboard = SubResource("PackedScene_h21x4")
+notification = SubResource("PackedScene_lk2pa")
+subBehaviours = Array[ExtResource("13_pn8ue")]([SubResource("Resource_2q6p0"), SubResource("Resource_x6pxi")])
+usesSubBehaviours = true
+metadata/_custom_type_script = "uid://baf2et18ajmro"
+
+[sub_resource type="Resource" id="Resource_oogvr"]
+script = ExtResource("18_xr2p6")
+npcName = "Example Actor"
+model = SubResource("PackedScene_0ci5q")
+behaviour = SubResource("Resource_quapo")
 metadata/_custom_type_script = "uid://drjjmjc24qipo"
 
 [sub_resource type="Resource" id="Resource_fljgx"]
@@ -270,12 +511,12 @@ metadata/_custom_type_script = "uid://bin58sxq57jsc"
 script = ExtResource("13_ttj1o")
 player = null
 nav = null
-hasDialogue = true
 damageArea = null
 words = SubResource("Resource_unyxo")
 isHero = true
 speed = 3.0
 actor = null
+hasDialogue = true
 metadata/_custom_type_script = "uid://baf2et18ajmro"
 
 [sub_resource type="Resource" id="Resource_vcv48"]
@@ -434,17 +675,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.25, 0)
 
 [node name="Actor" parent="." unique_id=1866149922 instance=ExtResource("11_7f25j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5714362, 3.1990347, -14.254398)
+NpcClass = SubResource("Resource_bsv1a")
 
 [node name="Actor2" parent="." unique_id=526844756 instance=ExtResource("11_7f25j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2010977, 3.1990347, -8.286836)
+NpcClass = SubResource("Resource_lk2pa")
 equipped = null
 
 [node name="Actor3" parent="." unique_id=1497254946 instance=ExtResource("11_7f25j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2553132, 3.1990347, -12.456122)
+NpcClass = SubResource("Resource_oogvr")
 
 [node name="Actor4" parent="." unique_id=980372660 instance=ExtResource("11_7f25j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3946285, 3.1990347, -5.8560696)
-NpcClass = SubResource("Resource_4s17e")
+NpcClass = SubResource("Resource_oogvr")
 
 [node name="Actor5" type="CharacterBody3D" parent="." unique_id=979746559 groups=["Pausable", "Persistent"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0151577, 3.1990347, -20.731014)

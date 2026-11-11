@@ -4,31 +4,44 @@ class_name EquipmentManager
 
 signal updated
 
-@export var slots: Dictionary[String, itemClass] = {
+@export var slots: Dictionary[String, Variant] = {
 	"armLeft":null,
 	"armRight":null,
 	#armor wont be implemented for a while
 	}
 
+func checkHands(item:itemClass) -> bool:
+	var hands := 0
+	if "armLeft" in item.slot:
+		hands += 1
+	if "armRight" in item.slot:
+		hands += 1
+	if hands == 2:
+		return true
+	return false
 
 func equip(item: itemClass):
-	if checkSlots([item.slot]):
+	if summarizeResult(checkSlots(item.slot)):
 		print("succesfully equipped")
-		slots[item.slot] = item
+		for i in item.slot:
+			slots[i] = item
 		item.equipped = true
 		updated.emit()
-		Globals.Player.animManager.playEquipAnim(item.associatedAnimation)
+		var twohanded = checkHands(item)
+		Globals.Player.animManager.playEquipAnim(item.associatedAnimation, false, twohanded)
 		item.initializeItem()
 		return true
 	else:
-		print(slots[item.slot].name)
 		return false
 
 func unequip(item: itemClass):
-	print(checkSlots([item.slot]), slots[item.slot].name)
-	if !checkSlots([item.slot]) and slots[item.slot] == item:
+	if !summarizeResult(checkSlots(item.slot)):
+		for i in item.slot:
+			if slots[i] != item:
+				return false
 		print("unequipping")
-		slots[item.slot] = null
+		for i in item.slot:
+			slots[i] = null
 		item.equipped = false
 		Globals.Player.animManager.playEquipAnim("Start", true)
 		item.unequip()
@@ -38,6 +51,13 @@ func unequip(item: itemClass):
 	else:
 		return false
 
+func summarizeResult(todo: Array[bool]): ##input result of checkSlots. If all are false return false if all are true return true.
+	#previous approach was stupid.
+	for i in todo:
+		if !i:
+			return false
+	return true
+
 func checkSlots(slotsToCheck: Array[String]): ## true means available, if input is only one then output is just a bool
 	var result: Array[bool] = []
 	for i in slotsToCheck:
@@ -45,7 +65,7 @@ func checkSlots(slotsToCheck: Array[String]): ## true means available, if input 
 			result.append(true)
 		else:
 			result.append(false)
-	if result.size() == 1:
-		return result[0]
-	else:
-		return result
+	#depreceated
+	#if result.size() == 1:
+	#	return result[0]
+	return result

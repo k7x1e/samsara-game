@@ -99,8 +99,8 @@ visible = false
 
 [node name="Skeleton3D" parent="Visual/peasant1/Armature" parent_id_path=PackedInt32Array(347662839, 504917625) index="0" unique_id=1970704553]
 bones/0/rotation = Quaternion(0.93800986, 0.021814236, 0.34066674, -0.060064632)
-bones/1/rotation = Quaternion(0.9381919, 0.011595101, 0.34130087, 0.056349367)
-bones/3/rotation = Quaternion(0.012100175, -0.00053249503, 0.009440843, 0.9998821)
+bones/1/rotation = Quaternion(0.9380109, 0.021777034, 0.34066916, 0.06005034)
+bones/3/rotation = Quaternion(0.011897051, -1.2836673e-06, -0.0072084963, 0.99990326)
 bones/7/rotation = Quaternion(-0.4562524, -0.049126726, -0.16023543, 0.87392503)
 bones/8/rotation = Quaternion(-0.07875365, -0.067492984, -0.10037203, 0.98952925)
 bones/9/rotation = Quaternion(0.014338688, -0.16604029, -0.09179396, 0.9817326)

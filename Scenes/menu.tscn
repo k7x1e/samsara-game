@@ -164,9 +164,9 @@ cull_mask = 262144
 environment = SubResource("Environment_ygxe1")
 
 [node name="item" type="Node3D" parent="Menu/previewMenu/VBoxContainer/PanelContainer/ScrollContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1998983350]
-transform = Transform3D(-0.19436127, 0, 0.9807766, 0, 1, 0, -0.9807766, 0, -0.19436127, 0, 0, 0)
+transform = Transform3D(-0.98728156, 0, -0.15803535, 0, 1, 0, 0.15803535, 0, -0.98728156, 0, 0, 0)
 script = ExtResource("12_ygxe1")
-amt = 0.1
+amt = 3.0
 
 [node name="offset" type="Node3D" parent="Menu/previewMenu/VBoxContainer/PanelContainer/ScrollContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/item" unique_id=1009964520]
 transform = Transform3D(1.0000005, 0, 0, 0, 0.99999994, 0, 0, 0, 1.0000005, 0, 0, 0)

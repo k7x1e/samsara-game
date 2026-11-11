@@ -22,6 +22,8 @@ func damage(amt: float) -> bool: #return true if survived, if dead return false 
 
 func death():
 	#here is where one would stick fancy death stuff, do whatever then send the destruction command.
+	if !donemission:
+		Globals.Root.sendCourier(words,true)
 	actor.destroy()
 
 func setMessage(message: conversation):

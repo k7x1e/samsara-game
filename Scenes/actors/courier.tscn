@@ -3,14 +3,16 @@
 [ext_resource type="Script" uid="uid://bqdpiionfhc5e" path="res://Scripts/ActorBaseClass.gd" id="1_mr2go"]
 [ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="2_4vopc"]
 [ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="3_h5mwl"]
-[ext_resource type="Script" uid="uid://x17x88r6wwpt" path="res://Scripts/classes/Behaviour/Courier.gd" id="4_ac2s6"]
-[ext_resource type="Script" uid="uid://7egkv825rd1e" path="res://Scripts/classes/Behaviour/subBehaviour.gd" id="5_87wjo"]
-[ext_resource type="Script" uid="uid://bc33fveu1oyam" path="res://Scripts/classes/Behaviour/subbehaviour/forceTalk.gd" id="6_1jkxr"]
-[ext_resource type="Script" uid="uid://cnpnfxiwvhunm" path="res://Scripts/classes/Behaviour/subbehaviour/sayRandom.gd" id="7_awo4p"]
+[ext_resource type="Script" uid="uid://x17x88r6wwpt" path="res://Scripts/Classes/Behaviour/Courier.gd" id="4_ac2s6"]
+[ext_resource type="Script" uid="uid://7egkv825rd1e" path="res://Scripts/Classes/Behaviour/subBehaviour.gd" id="5_87wjo"]
+[ext_resource type="Script" uid="uid://bc33fveu1oyam" path="res://Scripts/Classes/Behaviour/subbehaviour/forceTalk.gd" id="6_1jkxr"]
+[ext_resource type="Script" uid="uid://cnpnfxiwvhunm" path="res://Scripts/Classes/Behaviour/subbehaviour/sayRandom.gd" id="7_awo4p"]
 [ext_resource type="Resource" uid="uid://gjj20nv5a6jg" path="res://Resources/story/conversations/courierPreset.tres" id="7_cajas"]
-[ext_resource type="PackedScene" uid="uid://bkimo22crvjn5" path="res://Scenes/PlaceholderModel.tscn" id="11_y7xcc"]
-[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="12_a15q2"]
+[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/Classes/npc.gd" id="12_a15q2"]
+[ext_resource type="PackedScene" uid="uid://b7dbugdkfgs43" path="res://Models/courier.glb" id="12_awo4p"]
+[ext_resource type="Script" uid="uid://sgkxx5fsvhpm" path="res://Scripts/actorAnim.gd" id="13_1jkxr"]
 [ext_resource type="Resource" uid="uid://ca5npbbgkve3e" path="res://Resources/Items/dagger.tres" id="13_pu68c"]
+[ext_resource type="AudioStream" uid="uid://trg3htoeq12" path="res://sound/nightmare.mp3" id="14_h8dmo"]
 [ext_resource type="Texture2D" uid="uid://dlppbptyqxtaf" path="res://Textures/UI/marker.png" id="14_r1jb2"]
 
 [sub_resource type="Resource" id="Resource_r5y57"]
@@ -26,7 +28,7 @@ metadata/_custom_type_script = "uid://cnpnfxiwvhunm"
 [sub_resource type="Resource" id="Resource_aiey3"]
 script = ExtResource("4_ac2s6")
 words = ExtResource("7_cajas")
-speed = 20.0
+speed = 60.0
 actor = null
 subBehaviours = Array[ExtResource("5_87wjo")]([SubResource("Resource_r5y57"), SubResource("Resource_1jkxr")])
 usesSubBehaviours = true
@@ -35,7 +37,7 @@ metadata/_custom_type_script = "uid://x17x88r6wwpt"
 [sub_resource type="Resource" id="Resource_7ei5c"]
 script = ExtResource("12_a15q2")
 npcName = "Courier"
-model = ExtResource("11_y7xcc")
+usesModel = false
 behaviour = SubResource("Resource_aiey3")
 metadata/_custom_type_script = "uid://drjjmjc24qipo"
 
@@ -43,6 +45,30 @@ metadata/_custom_type_script = "uid://drjjmjc24qipo"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_26o22"]
 radius = 2.018302
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1jkxr"]
+animation = &"rest"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h8dmo"]
+animation = &"walk_002"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r5y57"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_au4to"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8bnk8"]
+switch_mode = 2
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_awo4p"]
+states/rest/node = SubResource("AnimationNodeAnimation_1jkxr")
+states/rest/position = Vector2(351, 105)
+states/walk_002/node = SubResource("AnimationNodeAnimation_h8dmo")
+states/walk_002/position = Vector2(377, 194)
+transitions = ["Start", "rest", SubResource("AnimationNodeStateMachineTransition_r5y57"), "rest", "walk_002", SubResource("AnimationNodeStateMachineTransition_au4to"), "walk_002", "rest", SubResource("AnimationNodeStateMachineTransition_8bnk8")]
+graph_offset = Vector2(55, 27)
 
 [node name="Actor" type="CharacterBody3D" unique_id=1866149922 groups=["Pausable", "Persistent", "ticked"]]
 collision_layer = 1073873417
@@ -53,6 +79,28 @@ visibilityoverride = true
 equipped = ExtResource("13_pu68c")
 
 [node name="Visual" type="Node3D" parent="." unique_id=1983415667 groups=["Pausable"]]
+
+[node name="courier" parent="Visual" unique_id=192641884 instance=ExtResource("12_awo4p")]
+transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, 0.76312244, 0)
+
+[node name="Skeleton3D" parent="Visual/courier/Armature" parent_id_path=PackedInt32Array(192641884, 1269207993) index="0" unique_id=1477783807]
+bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
+bones/1/rotation = Quaternion(0.93806404, 0.019352635, 0.34082308, 0.059170205)
+bones/3/rotation = Quaternion(5.16437e-05, -8.265067e-05, 0.004150729, 0.9999915)
+bones/6/rotation = Quaternion(-0.8222617, -1.5877157e-07, 1.7295703e-07, 0.5691096)
+bones/7/rotation = Quaternion(-0.44035098, -0.038220607, -0.14063428, 0.8859189)
+bones/8/rotation = Quaternion(-0.10192373, -0.04477334, -0.00794932, 0.9937524)
+bones/9/rotation = Quaternion(-0.1742328, -0.037101448, 0.030870324, 0.983521)
+bones/10/rotation = Quaternion(0.22203933, 0.5698971, 0.78985965, 0.045138706)
+bones/11/rotation = Quaternion(0.09578161, 0.8317535, -0.4750532, -0.27080724)
+bones/12/rotation = Quaternion(0.11073944, -0.056747783, -0.22298814, 0.9668468)
+bones/13/rotation = Quaternion(0.14083622, -0.18853085, 0.107122675, 0.9659949)
+bones/15/rotation = Quaternion(0.72698486, 0.094962806, -0.058514364, 0.6775332)
+bones/16/rotation = Quaternion(0.03743713, -0.008029879, -0.00083015836, 0.9992664)
+bones/17/rotation = Quaternion(0.6096443, 0.7403935, -0.14562067, 0.24278796)
+bones/19/rotation = Quaternion(-0.731865, -0.011666051, 0.015933152, 0.6811635)
+bones/20/rotation = Quaternion(-0.03742333, -7.3431727e-07, -0.001311659, 0.99929875)
+bones/21/rotation = Quaternion(-0.11982032, -0.08923471, -0.61523545, 0.7740579)
 
 [node name="Nav" type="NavigationAgent3D" parent="." unique_id=87223851 groups=["Pausable"]]
 avoidance_enabled = true
@@ -76,5 +124,19 @@ collision_mask = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="attackrange" unique_id=1324611702 groups=["Pausable"]]
 shape = SubResource("SphereShape3D_26o22")
 
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=301668955]
+root_node = NodePath("../Visual/courier")
+tree_root = SubResource("AnimationNodeStateMachine_awo4p")
+anim_player = NodePath("../Visual/courier/AnimationPlayer")
+script = ExtResource("13_1jkxr")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1942570964]
+stream = ExtResource("14_h8dmo")
+volume_db = 2.0
+autoplay = true
+
+[connection signal="moving" from="." to="AnimationTree" method="moving"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="." method="on_visible"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="on_exite"]
+
+[editable path="Visual/courier"]

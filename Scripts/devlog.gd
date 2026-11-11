@@ -856,3 +856,15 @@
 	#fixed item animations and death screen.
 	#13:03
 	#fixed couriers so they wont be in the wrong worlds.
+	#13:13
+	#might make a prototype of the aforementioned preview
+	#13:23
+	#got the absolute barebones basics for the preview menu down.
+	#13:30
+	#implemented further, gotta go now
+	#14:50
+	#at home now
+	#gonna make the ItemSlot a prefab and have it just emit a signal instead of having every one be proprietary.
+	#16:08
+	#i guess theres not much more to add to the item menu.
+	#wait no actually i know exactly what it needs

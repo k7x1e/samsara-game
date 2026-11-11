@@ -21,7 +21,9 @@ signal removed
 @export var equipped: bool = false
 @export var equippable: bool = false #DOES NOT APPLY TO SPELLS #moved to the actual equipment base class
 
-@export var cost: int
+@export var shownStats: Array[StringName] = [&"name", &"description", &"quantity", &"cost"]
+
+@export var cost: int = 1
 @export var quantity: int = 1:
 	get:
 		return _quantity
@@ -38,6 +40,8 @@ var _quantity: int = 1
 @export var offset: Vector3 = Vector3(0,1,0)
 
 @export var currentModifier: itemModifier = null
+var currentModifierName: String = "" #jank
+@export var affectedStats: Array[StringName] = []
 
 @export var stats: Dictionary[StringName, Variant] = {&"damage": 50.0, &"cost": 50, &"cooldown": 1.0}
 @export var backups: Dictionary[StringName, Variant]
@@ -45,9 +49,9 @@ var _quantity: int = 1
 func get_proper(property: StringName):
 	if get(property) != null:
 		return get(property)
-	if "[" in property:
-		var newP = property.left(property.find("["))
-		var index = property.right(property.length()-property.find("["))
+	if "(" in property:
+		var newP = property.left(property.find("("))
+		var index = property.right(property.length()-property.find("("))
 		index = index.right(-1)
 		index = index.left(-1)
 		return get(newP)[index]
@@ -55,9 +59,9 @@ func get_proper(property: StringName):
 func set_proper(property:StringName, Value: Variant):
 	if get(property) != null:
 		set(property,Value)
-	if "[" in property:
-		var newP = property.left(property.find("["))
-		var index = property.right(property.length()-property.find("["))
+	if "(" in property:
+		var newP = property.left(property.find("("))
+		var index = property.right(property.length()-property.find("("))
 		index = index.right(-1)
 		index = index.left(-1)
 		get(newP)[index] = Value
@@ -67,8 +71,15 @@ func applyModifier(modifier: itemModifier):
 	name = str(modifier.typename, " ", name)
 	
 	currentModifier = modifier
+	currentModifierName = modifier.typename
+	
+	if !(&"modifier" in shownStats):
+		shownStats.append(&"modifier")
 	
 	for i in modifier.effects:
+		#if !(i in shownStats):
+		#	shownStats.append(i)
+		affectedStats.append(i)
 		backups[i] = get_proper(i)
 		set_proper(i,modifier.getvalue(i,self))
 		print("set ", i, " to ", get_proper(i))
@@ -80,6 +91,7 @@ func initializeStats():
 
 func checkAndReverseModifier() -> bool:
 	if currentModifier != null:
+		affectedStats.clear()
 		name = _name
 		for i in backups:
 			set_proper(i,backups[i])

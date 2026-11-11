@@ -28,13 +28,10 @@
 [ext_resource type="Script" uid="uid://cnpnfxiwvhunm" path="res://Scripts/classes/Behaviour/subbehaviour/sayRandom.gd" id="23_57ena"]
 [ext_resource type="PackedScene" uid="uid://cgyw6oicswx6p" path="res://Scenes/physics_item.tscn" id="24_d3xwe"]
 [ext_resource type="Resource" uid="uid://cfcd0wi1f6o47" path="res://Resources/Items/lantern.tres" id="25_3ieen"]
-[ext_resource type="Texture2D" uid="uid://bqxdpdin82oyj" path="res://Textures/icons/spells/heal.png" id="26_wtxdy"]
 [ext_resource type="PackedScene" uid="uid://dhxgl60lqqfjv" path="res://Scenes/items/Models/potion.tscn" id="27_6arch"]
 [ext_resource type="Script" uid="uid://crrif2oof7ji8" path="res://Scripts/classes/Items/SpellItem.gd" id="28_073tb"]
-[ext_resource type="Script" uid="uid://cd6w5kfeybbue" path="res://Scripts/classes/actions/statuseffect.gd" id="29_57ena"]
-[ext_resource type="Script" uid="uid://ehkal6i02pq" path="res://Scripts/classes/spells/consumable.gd" id="30_d3dcv"]
+[ext_resource type="Resource" uid="uid://burvo2yn4lmxq" path="res://Resources/Items/heal.tres" id="29_d3dcv"]
 [ext_resource type="Script" uid="uid://cyow1fbruchxc" path="res://Scripts/classes/actions/teleport.gd" id="34_mexwi"]
-[ext_resource type="Texture2D" uid="uid://du0ipivjknk21" path="res://Textures/icons/items/potion.png" id="34_rjqfr"]
 [ext_resource type="Script" uid="uid://b52li86lflfyj" path="res://Scripts/classes/spells/spell.gd" id="35_yjt33"]
 [ext_resource type="Texture2D" uid="uid://bnlbxptucfur1" path="res://Textures/icons/items/potion_white.png" id="36_rjqfr"]
 
@@ -360,11 +357,11 @@ metadata/_custom_type_script = "uid://cnpnfxiwvhunm"
 script = ExtResource("20_5xxwy")
 player = null
 nav = null
-hasDialogue = true
 damageArea = null
 words = ExtResource("21_vdnvd")
 speed = 3.0
 actor = null
+hasDialogue = true
 billboard = SubResource("PackedScene_wtxdy")
 subBehaviours = Array[ExtResource("22_073tb")]([SubResource("Resource_56n24")])
 usesSubBehaviours = true
@@ -395,79 +392,6 @@ behaviour = SubResource("Resource_073tb")
 necessary = true
 metadata/_custom_type_script = "uid://drjjmjc24qipo"
 
-[sub_resource type="Resource" id="Resource_5n4on"]
-script = ExtResource("29_57ena")
-message = " Healed."
-metadata/_custom_type_script = "uid://cd6w5kfeybbue"
-
-[sub_resource type="Resource" id="Resource_70hv0"]
-script = ExtResource("30_d3dcv")
-action = SubResource("Resource_5n4on")
-name = "Health Potion"
-description = "Heals you. Simple as."
-Icon = ExtResource("34_rjqfr")
-uiNode = null
-spellTimer = null
-limited = true
-statted = false
-quantity = 5
-animation = "eat"
-requiredSlots = Array[String](["armLeft"])
-metadata/_custom_type_script = "uid://ehkal6i02pq"
-
-[sub_resource type="Resource" id="Resource_mexwi"]
-script = ExtResource("28_073tb")
-theSpell = SubResource("Resource_70hv0")
-itemID = 2
-name = "Health Potion"
-description = "Some bullshit i guess"
-icon = ExtResource("26_wtxdy")
-Type = 3
-isSpell = true
-model = ExtResource("27_6arch")
-offset = Vector3(0, 0, 0)
-metadata/_custom_type_script = "uid://crrif2oof7ji8"
-
-[sub_resource type="Resource" id="Resource_yjt33"]
-script = ExtResource("28_073tb")
-theSpell = SubResource("Resource_70hv0")
-itemID = 2
-name = "Health Potion"
-description = "Some bullshit i guess"
-icon = ExtResource("26_wtxdy")
-Type = 3
-isSpell = true
-model = ExtResource("27_6arch")
-offset = Vector3(0, 0, 0)
-metadata/_custom_type_script = "uid://crrif2oof7ji8"
-
-[sub_resource type="Resource" id="Resource_81o1y"]
-script = ExtResource("28_073tb")
-theSpell = SubResource("Resource_70hv0")
-itemID = 2
-name = "Health Potion"
-description = "Some bullshit i guess"
-icon = ExtResource("26_wtxdy")
-Type = 3
-isSpell = true
-quantity = 3
-model = ExtResource("27_6arch")
-offset = Vector3(0, 0, 0)
-metadata/_custom_type_script = "uid://crrif2oof7ji8"
-
-[sub_resource type="Resource" id="Resource_rjqfr"]
-script = ExtResource("28_073tb")
-theSpell = SubResource("Resource_70hv0")
-itemID = 2
-name = "Health Potion"
-description = "Some bullshit i guess"
-icon = ExtResource("34_rjqfr")
-Type = 3
-isSpell = true
-model = ExtResource("27_6arch")
-offset = Vector3(0, 0, 0)
-metadata/_custom_type_script = "uid://crrif2oof7ji8"
-
 [sub_resource type="Resource" id="Resource_8iyr6"]
 script = ExtResource("34_mexwi")
 target = "lodge"
@@ -493,6 +417,7 @@ theSpell = SubResource("Resource_qbowp")
 itemID = 9769
 _name = "Mysterious Potion"
 name = "Mysterious Potion"
+description = "Potion containing some unknown liquid... Looks kind of grey and clear, very viscous. Label says: \"ELEMENT 115; DO NOT DRINK\"."
 icon = ExtResource("36_rjqfr")
 Type = 3
 isSpell = true
@@ -732,22 +657,22 @@ spawned = true
 
 [node name="potion" parent="." unique_id=1466826521 instance=ExtResource("24_d3xwe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.920317, 3.56, 3.326517)
-ownItem = SubResource("Resource_mexwi")
+ownItem = ExtResource("29_d3dcv")
 spawned = true
 
 [node name="potion2" parent="." unique_id=743108451 instance=ExtResource("24_d3xwe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7506914, 3.56, 2.7487237)
-ownItem = SubResource("Resource_yjt33")
+ownItem = ExtResource("29_d3dcv")
 spawned = true
 
 [node name="potion3" parent="." unique_id=2127094226 instance=ExtResource("24_d3xwe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.031432, 3.56, 2.0837533)
-ownItem = SubResource("Resource_81o1y")
+ownItem = ExtResource("29_d3dcv")
 spawned = true
 
 [node name="potion4" parent="." unique_id=1832108341 instance=ExtResource("24_d3xwe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.031432, 3.56, 1.5256894)
-ownItem = SubResource("Resource_rjqfr")
+ownItem = ExtResource("29_d3dcv")
 spawned = true
 
 [node name="talisman" parent="." unique_id=2108427934 instance=ExtResource("24_d3xwe")]

@@ -13,6 +13,7 @@ node = ExtResource("2_hewwn")
 curNode = null
 itemID = 676767
 name = "Lantern"
+description = "The cream of the crop in portable lighting technology. May show things unseen in the dark."
 icon = ExtResource("1_r6agu")
 Type = 2
 equippable = true

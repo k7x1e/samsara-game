@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cv3r1rpgpf3io"]
+
+[ext_resource type="PackedScene" uid="uid://dmg4dguoqhgds" path="res://Models/thompson.glb" id="1_b4jil"]
+
+[node name="thompson" type="Node3D" unique_id=707920412]
+transform = Transform3D(-3.7855173e-08, -0.8660254, 0.5, 1, -4.371139e-08, 0, 2.1855694e-08, 0.5, 0.8660254, 0, -1.0077169, 0)
+
+[node name="thompson" parent="." unique_id=570188920 instance=ExtResource("1_b4jil")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[editable path="thompson"]

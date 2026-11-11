@@ -28,7 +28,6 @@ action = SubResource("Resource_ulibp")
 basecoolDown = 2.0
 coolDown = 2.0
 name = "Dash"
-description = "Is this even used?"
 Icon = ExtResource("1_1yucx")
 uiNode = null
 spellTimer = null

@@ -58,10 +58,29 @@ metadata/_custom_type_script = "uid://b3rylldbgh8gp"
 
 [sub_resource type="Resource" id="Resource_f4myi"]
 script = ExtResource("3_2ifht")
-typename = "[color=green]green[/green]"
+typename = "[color=green]green[/color]"
 operand = 3
 effects = Dictionary[StringName, Variant]({
-&"stats[damage]": 200.0
+&"stats(damage)": 200.0
+})
+metadata/_custom_type_script = "uid://bgor865by1nfd"
+
+[sub_resource type="Resource" id="Resource_cm6gp"]
+script = ExtResource("3_2ifht")
+typename = "[color=crimson]Insane[/color]"
+operand = 3
+effects = Dictionary[StringName, Variant]({
+&"stats(cost)": 20.0,
+&"stats(damage)": 10.0
+})
+metadata/_custom_type_script = "uid://bgor865by1nfd"
+
+[sub_resource type="Resource" id="Resource_vgsid"]
+script = ExtResource("3_2ifht")
+typename = "mundane"
+operand = 2
+effects = Dictionary[StringName, Variant]({
+&"stats(damage)": 2.0
 })
 metadata/_custom_type_script = "uid://bgor865by1nfd"
 
@@ -71,5 +90,5 @@ initnodes = Array[ExtResource("1_x2yb1")]([SubResource("Resource_fgofq"), SubRes
 rootNode = null
 newWorld = null
 combatBehaviours = Array[ExtResource("1_2ifht")]([SubResource("Resource_y7o6f"), SubResource("Resource_f83gs"), SubResource("Resource_e54vh")])
-modifiers = Array[ExtResource("3_2ifht")]([SubResource("Resource_f4myi")])
+modifiers = Array[ExtResource("3_2ifht")]([SubResource("Resource_f4myi"), SubResource("Resource_cm6gp"), SubResource("Resource_vgsid")])
 metadata/_custom_type_script = "uid://cdociv5s4yb3q"

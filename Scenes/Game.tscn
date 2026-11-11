@@ -1,15 +1,22 @@
 [gd_scene format=3 uid="uid://c7loruht48vqs"]
 
 [ext_resource type="Script" uid="uid://brkcfwu3ix8u6" path="res://Scripts/Root.gd" id="1_kldst"]
-[ext_resource type="Resource" uid="uid://b5t6pkvtcweo4" path="res://Resources/gameState.tres" id="2_kldst"]
+[ext_resource type="Script" uid="uid://nsmcb4tcvx0m" path="res://Scripts/classes/Behaviour/combatBehaviour.gd" id="2_4eqlp"]
+[ext_resource type="Script" uid="uid://cgwekx14o1ydn" path="res://Scripts/classes/Behaviour/unarmed.gd" id="3_18uti"]
 [ext_resource type="PackedScene" uid="uid://c12hkpbebfwf0" path="res://Scenes/Worlds/london/Interiors/londonPub.tscn" id="3_j5yw3"]
+[ext_resource type="Script" uid="uid://3v1lnlpbfoow" path="res://Scripts/classes/Behaviour/ranged.gd" id="4_khy6b"]
 [ext_resource type="PackedScene" uid="uid://nxogfgeamf7b" path="res://Scenes/Worlds/london/Interiors/mysteryPlace.tscn" id="4_kldst"]
 [ext_resource type="PackedScene" uid="uid://prrtp8iwyf2t" path="res://Scenes/Worlds/tutorial.tscn" id="5_7lihs"]
+[ext_resource type="Script" uid="uid://q3omhxxnd0b1" path="res://Scripts/classes/Behaviour/melee.gd" id="5_pti6k"]
 [ext_resource type="PackedScene" uid="uid://def56i5yvabj3" path="res://Scenes/Worlds/london/Interiors/wizard_lair.tscn" id="6_2irst"]
+[ext_resource type="Script" uid="uid://b3rylldbgh8gp" path="res://Scripts/classes/nodeStart.gd" id="6_lmarx"]
+[ext_resource type="Script" uid="uid://bgor865by1nfd" path="res://Scripts/classes/modifier.gd" id="7_7av8l"]
 [ext_resource type="PackedScene" uid="uid://dgo271ukrhe1h" path="res://Scenes/world.tscn" id="7_bf53h"]
 [ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="7_fgofq"]
 [ext_resource type="PackedScene" uid="uid://66nltbg1vkjx" path="res://Scenes/Worlds/london/Interiors/londonerHome.tscn" id="8_71axn"]
+[ext_resource type="Script" uid="uid://8rdsmfig1jxy" path="res://Scripts/classes/SavveGame.gd" id="8_dctr5"]
 [ext_resource type="AudioStream" uid="uid://cx7gpdcgmoe8l" path="res://sound/music/ambient/loke_01.mp3" id="9_71axn"]
+[ext_resource type="Script" uid="uid://cdociv5s4yb3q" path="res://Scripts/classes/gamestate.gd" id="9_mi7vx"]
 [ext_resource type="PackedScene" uid="uid://ca4gja6yrwcfs" path="res://Scenes/Worlds/london/Interiors/londonLibrary.tscn" id="9_tfod6"]
 [ext_resource type="Script" uid="uid://bm2l5giuwq8pu" path="res://Scripts/music_manager.gd" id="10_dahhg"]
 [ext_resource type="PackedScene" uid="uid://cr5mhsc6q2f5c" path="res://Scenes/Worlds/lodge.tscn" id="10_i4lct"]
@@ -30,6 +37,90 @@
 [ext_resource type="AudioStream" uid="uid://glmyariuav0l" path="res://sound/music/115.mp3" id="23_iyesh"]
 [ext_resource type="Shader" uid="uid://bjn10bjrle70t" path="res://Resources/Shaders/monochrome.gdshader" id="24_raj38"]
 [ext_resource type="Resource" uid="uid://b6ikjnl1u2ka5" path="res://Resources/songs/returnToMe.tres" id="26_iyesh"]
+
+[sub_resource type="Resource" id="Resource_y7o6f"]
+script = ExtResource("3_18uti")
+target = null
+actor = null
+nav = null
+metadata/_custom_type_script = "uid://cgwekx14o1ydn"
+
+[sub_resource type="Resource" id="Resource_f83gs"]
+script = ExtResource("4_khy6b")
+target = null
+actor = null
+nav = null
+metadata/_custom_type_script = "uid://3v1lnlpbfoow"
+
+[sub_resource type="Resource" id="Resource_e54vh"]
+script = ExtResource("5_pti6k")
+target = null
+actor = null
+nav = null
+metadata/_custom_type_script = "uid://q3omhxxnd0b1"
+
+[sub_resource type="Resource" id="Resource_fgofq"]
+script = ExtResource("6_lmarx")
+scene = "res://Scenes/world.tscn"
+name = "World"
+metadata/_custom_type_script = "uid://b3rylldbgh8gp"
+
+[sub_resource type="Resource" id="Resource_7lihs"]
+script = ExtResource("6_lmarx")
+scene = "res://Scenes/Player.tscn"
+position = Vector3(91, 1.14, 128)
+name = "Player"
+to_be_placed = true
+metadata/_custom_type_script = "uid://b3rylldbgh8gp"
+
+[sub_resource type="Resource" id="Resource_bf53h"]
+script = ExtResource("6_lmarx")
+scene = "res://Scenes/menu.tscn"
+name = "Menu"
+metadata/_custom_type_script = "uid://b3rylldbgh8gp"
+
+[sub_resource type="Resource" id="Resource_mk8vb"]
+script = ExtResource("6_lmarx")
+scene = "res://Scenes/pause_menu.tscn"
+name = "pausemenu"
+metadata/_custom_type_script = "uid://b3rylldbgh8gp"
+
+[sub_resource type="Resource" id="Resource_f4myi"]
+script = ExtResource("7_7av8l")
+typename = "[color=green]green[/color]"
+operand = 3
+effects = Dictionary[StringName, Variant]({
+&"stats(damage)": 200.0
+})
+metadata/_custom_type_script = "uid://bgor865by1nfd"
+
+[sub_resource type="Resource" id="Resource_cm6gp"]
+script = ExtResource("7_7av8l")
+typename = "[color=crimson]Insane[/color]"
+operand = 3
+effects = Dictionary[StringName, Variant]({
+&"stats(cost)": 20.0,
+&"stats(damage)": 10.0
+})
+metadata/_custom_type_script = "uid://bgor865by1nfd"
+
+[sub_resource type="Resource" id="Resource_vgsid"]
+script = ExtResource("7_7av8l")
+typename = "mundane"
+operand = 2
+effects = Dictionary[StringName, Variant]({
+&"stats(damage)": 2.0
+})
+metadata/_custom_type_script = "uid://bgor865by1nfd"
+
+[sub_resource type="Resource" id="Resource_t2joc"]
+script = ExtResource("9_mi7vx")
+initnodes = Array[ExtResource("6_lmarx")]([SubResource("Resource_fgofq"), SubResource("Resource_7lihs"), SubResource("Resource_bf53h"), SubResource("Resource_mk8vb")])
+rootNode = null
+newWorld = null
+combatBehaviours = Array[ExtResource("2_4eqlp")]([SubResource("Resource_y7o6f"), SubResource("Resource_f83gs"), SubResource("Resource_e54vh")])
+modifiers = Array[ExtResource("7_7av8l")]([SubResource("Resource_f4myi"), SubResource("Resource_cm6gp"), SubResource("Resource_vgsid")])
+metadata/_custom_type_script = "uid://cdociv5s4yb3q"
 
 [sub_resource type="Resource" id="Resource_4q8tf"]
 script = ExtResource("11_wxwew")
@@ -163,7 +254,7 @@ shader_parameter/contrast = 1.0
 [node name="Root" type="Node3D" unique_id=1717732160 node_paths=PackedStringArray("prophecyNotif", "fadeAnim")]
 process_mode = 3
 script = ExtResource("1_kldst")
-gamestate = ExtResource("2_kldst")
+gamestate = SubResource("Resource_t2joc")
 interiors = Dictionary[String, PackedScene]({
 "lodge": ExtResource("10_i4lct"),
 "london": ExtResource("7_bf53h"),

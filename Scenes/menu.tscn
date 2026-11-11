@@ -8,19 +8,24 @@
 [ext_resource type="StyleBox" uid="uid://ciy75oh1vleff" path="res://Resources/UI/styleBox.tres" id="4_158mb"]
 [ext_resource type="Script" uid="uid://cc3vogycdtbde" path="res://Scripts/UI/char_sheet.gd" id="4_dldpb"]
 [ext_resource type="Script" uid="uid://80ps74wrcq4r" path="res://Scripts/UI/resize_handle.gd" id="5_jsrd8"]
+[ext_resource type="Script" uid="uid://c7i7soyccoss1" path="res://Scripts/UI/previewMenu.gd" id="5_lvy56"]
 [ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="5_wbdvm"]
 [ext_resource type="Texture2D" uid="uid://bn60qyl38svpl" path="res://Textures/UI/gui_scale_handle.png" id="6_wbdvm"]
 [ext_resource type="Script" uid="uid://dut0nr44rnls7" path="res://Scripts/UI/inventoryMenu.gd" id="8_6swd7"]
 [ext_resource type="LabelSettings" uid="uid://b1ril15u6t25p" path="res://Resources/sampleLabel.tres" id="8_d77ms"]
 [ext_resource type="LabelSettings" uid="uid://32l284xawcit" path="res://Resources/WindowTitle.tres" id="8_nakb8"]
 [ext_resource type="Script" uid="uid://c71xw8g6kkryn" path="res://Scripts/inventory.gd" id="8_q3rjx"]
+[ext_resource type="PackedScene" uid="uid://3nlf1rqetdle" path="res://Scenes/item_slot.tscn" id="9_747ic"]
 [ext_resource type="Script" uid="uid://cbl10r5a0xxmh" path="res://Scripts/UI/mouseOverChecker.gd" id="9_d77ms"]
+[ext_resource type="Script" uid="uid://iadylkvy4o3a" path="res://Scripts/UI/preview.gd" id="9_x0760"]
 [ext_resource type="Texture2D" uid="uid://cioushjp77jse" path="res://Textures/UI/gui_inventory_grid_border.png" id="11_kmwmt"]
 [ext_resource type="Script" uid="uid://dgvxv4hvhj2dl" path="res://Scripts/UI/tooltip.gd" id="12_3p34a"]
 [ext_resource type="Script" uid="uid://dscj8jy3r1qnb" path="res://Scripts/UI/drop_down.gd" id="12_23t3j"]
+[ext_resource type="Script" uid="uid://bck3e5doowear" path="res://Scripts/itemspinner.gd" id="12_ygxe1"]
 [ext_resource type="StyleBox" uid="uid://ds457w8c45wbg" path="res://Resources/UI/dropdownNormal.tres" id="13_5ti5v"]
 [ext_resource type="SystemFont" uid="uid://cri31ihw34lpf" path="res://Resources/Fonts/dialogue.tres" id="13_h63v2"]
 [ext_resource type="Script" uid="uid://rokee7uc8edj" path="res://Scripts/UI/quest_menu.gd" id="13_owyel"]
+[ext_resource type="Texture2D" uid="uid://874crc0bp3hk" path="res://icon.png" id="13_ygxe1"]
 [ext_resource type="StyleBox" uid="uid://lufuxo8vt8ji" path="res://Resources/UI/dropdownPressed.tres" id="14_1by5w"]
 [ext_resource type="Script" uid="uid://bfabp4ls25beb" path="res://Scripts/UI/mini_map.gd" id="14_i37ye"]
 [ext_resource type="Script" uid="uid://yv02sf2sqc3v" path="res://Scripts/UI/minimapcontainer.gd" id="15_jbv25"]
@@ -33,6 +38,8 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_158mb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_top = 1
+
+[sub_resource type="Environment" id="Environment_ygxe1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3p34a"]
 font_size = 18
@@ -78,6 +85,135 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_cayip")
+
+[node name="previewMenu" type="Control" parent="Menu" unique_id=298893864]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 34.0
+offset_top = -497.0
+offset_right = 447.0
+offset_bottom = -75.0
+grow_vertical = 2
+script = ExtResource("5_lvy56")
+
+[node name="Panel" type="Panel" parent="Menu/previewMenu" unique_id=1464084387]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_158mb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/previewMenu" unique_id=791892226]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/previewMenu/VBoxContainer" unique_id=1716250349]
+layout_mode = 2
+alignment = 1
+script = ExtResource("3_cayip")
+
+[node name="Label" type="Label" parent="Menu/previewMenu/VBoxContainer/HBoxContainer" unique_id=214829096]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_wbdvm")
+text = "Item Statistics"
+label_settings = ExtResource("8_nakb8")
+
+[node name="PanelContainer" type="PanelContainer" parent="Menu/previewMenu/VBoxContainer" unique_id=1553095862]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_158mb")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Menu/previewMenu/VBoxContainer/PanelContainer" unique_id=1421830445]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/previewMenu/VBoxContainer/PanelContainer/ScrollContainer" unique_id=440238670]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("9_x0760")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/previewMenu/VBoxContainer/PanelContainer/ScrollContainer/VBoxContainer" unique_id=1879948413]
+layout_mode = 2
+
+[node name="itemSlot" parent="Menu/previewMenu/VBoxContainer/PanelContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=669376457 instance=ExtResource("9_747ic")]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Menu/previewMenu/VBoxContainer/PanelContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=695030666]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Menu/previewMenu/VBoxContainer/PanelContainer/ScrollContainer/VBoxContainer/HBoxContainer/SubViewportContainer" unique_id=1703116821]
+handle_input_locally = false
+size = Vector2i(281, 128)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Menu/previewMenu/VBoxContainer/PanelContainer/ScrollContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1892247969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+cull_mask = 262144
+environment = SubResource("Environment_ygxe1")
+
+[node name="item" type="Node3D" parent="Menu/previewMenu/VBoxContainer/PanelContainer/ScrollContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1998983350]
+transform = Transform3D(-0.19436127, 0, 0.9807766, 0, 1, 0, -0.9807766, 0, -0.19436127, 0, 0, 0)
+script = ExtResource("12_ygxe1")
+amt = 0.1
+
+[node name="offset" type="Node3D" parent="Menu/previewMenu/VBoxContainer/PanelContainer/ScrollContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/item" unique_id=1009964520]
+transform = Transform3D(1.0000005, 0, 0, 0, 0.99999994, 0, 0, 0, 1.0000005, 0, 0, 0)
+
+[node name="placeholder" type="Sprite3D" parent="Menu/previewMenu/VBoxContainer/PanelContainer/ScrollContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/item/offset" unique_id=365528047]
+layers = 262144
+pixel_size = 0.001
+texture = ExtResource("13_ygxe1")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Menu/previewMenu/VBoxContainer/PanelContainer/ScrollContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1310079009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+layers = 262144
+light_energy = 2.0
+
+[node name="Label" type="RichTextLabel" parent="Menu/previewMenu/VBoxContainer/PanelContainer/ScrollContainer/VBoxContainer" unique_id=1560528503]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/line_separation = 5
+theme_override_constants/paragraph_separation = 5
+theme_override_fonts/normal_font = ExtResource("5_wbdvm")
+theme_override_font_sizes/normal_font_size = 26
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "Name: whatever"
+fit_content = true
+
+[node name="Control" type="Control" parent="Menu/previewMenu" unique_id=1430748777]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("5_jsrd8")
+maxX = 3200.0
+maxY = 1600.0
+
+[node name="TextureRect" type="TextureRect" parent="Menu/previewMenu/Control" unique_id=368305966]
+modulate = Color(0.4417584, 0, 0.086844064, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_wbdvm")
 
 [node name="CharSheet" type="Control" parent="Menu" unique_id=1679423571 groups=["updatable"]]
 custom_minimum_size = Vector2(175, 200)
@@ -469,17 +605,18 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_rc6uw")
 
-[node name="sfx" type="AudioStreamPlayer" parent="Menu/Inventory/VBoxContainer/PanelContainer" unique_id=1361512347]
-stream = ExtResource("23_ocger")
-bus = &"Sfx"
-
 [node name="GridContainer" type="GridContainer" parent="Menu/Inventory/VBoxContainer/PanelContainer" unique_id=641757518]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 columns = 12
 script = ExtResource("8_q3rjx")
+
+[node name="sfx" type="AudioStreamPlayer" parent="Menu/Inventory/VBoxContainer/PanelContainer" unique_id=1361512347]
+stream = ExtResource("23_ocger")
+bus = &"Sfx"
 
 [node name="Control" type="Control" parent="Menu/Inventory" unique_id=1986825879]
 layout_mode = 1
@@ -504,6 +641,7 @@ offset_bottom = 40.0
 texture = ExtResource("6_wbdvm")
 
 [node name="DropDown" type="Control" parent="Menu" unique_id=335422401]
+visible = false
 anchors_preset = 0
 offset_right = 238.0
 offset_bottom = 389.0
@@ -743,6 +881,7 @@ bus = &"Sfx"
 [node name="Dialogue" parent="." unique_id=8686405 instance=ExtResource("18_rc6uw")]
 visible = false
 
+[connection signal="gui_input" from="Menu/previewMenu/Control/TextureRect" to="Menu/previewMenu/Control" method="_on_texture_rect_gui_input"]
 [connection signal="gui_input" from="Menu/CharSheet/Control/TextureRect" to="Menu/CharSheet/Control" method="_on_texture_rect_gui_input"]
 [connection signal="gui_input" from="Menu/miniMap/Control/TextureRect" to="Menu/miniMap/Control" method="_on_texture_rect_gui_input"]
 [connection signal="gui_input" from="Menu/questTracker/Control/TextureRect" to="Menu/questTracker/Control" method="_on_texture_rect_gui_input"]

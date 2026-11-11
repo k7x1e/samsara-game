@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://3nlf1rqetdle"]
+
+[ext_resource type="Script" uid="uid://bcq57omshcl47" path="res://Scripts/item_slot.gd" id="1_qaprs"]
+
+[node name="itemSlot" type="Control" unique_id=669376457]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qaprs")
+
+[node name="Panel" type="Panel" parent="." unique_id=1146269770]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2

@@ -45,7 +45,7 @@ func _gui_input(event: InputEvent) -> void:
 		print("clicked")
 		self.get_parent().pickup(self)
 	if event.is_action_pressed("uiRightClick"):
-		self.get_parent().dropDown(self)
+		Globals.inventory.dropDown(self)
 
 func _process(_delta: float) -> void:
 	if dragging:

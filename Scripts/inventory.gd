@@ -67,17 +67,20 @@ func flush():
 		self.remove_child(n)
 		n.queue_free()
 
-func pickup(what: Node):
+func pickup(what: Node, inInventory: bool = true):
 	if !dragging:
 		var pickedItem = what.ownItem
-		theInventory.remove(pickedItem)
+		if inInventory:
+			theInventory.remove(pickedItem)
 		self.remove_child(what)
 		Globals.menu.add_child(what)
 		what.dragging = true
-		unequip(what)
+		if inInventory:
+			unequip(what)
 		dragging = true
 		draggingNode = what
-		updateInventory()
+		if inInventory:
+			updateInventory()
 		print("picked up a ", what.ownItem.name)
 
 func unequip(what: Node):
@@ -101,14 +104,16 @@ func unequipItem(what: itemClass):
 func _gui_input(event: InputEvent) -> void:
 	#checkColumns()
 	if event.is_action_pressed("LeftClick"):
-		stopDragging()
+		stopDragging(true)
+		
 
-func stopDragging():
+func stopDragging(toInventory: bool = false):
 	if dragging:
 		var itembackup = draggingNode.ownItem
 		draggingNode.queue_free()
-		theInventory.add(itembackup)
-		updateInventory()
+		if toInventory:
+			theInventory.add(itembackup)
+			updateInventory()
 		dragging = false
 
 func getFromUID(id: int):

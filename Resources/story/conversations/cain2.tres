@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="conversation" format=3 uid="uid://63ad2hn0gpnm"]
+
+[ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/classes/dialogueClass.gd" id="1_bb40k"]
+[ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/classes/conversation.gd" id="2_0qarb"]
+[ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/classes/dialogueOption.gd" id="2_3yti7"]
+[ext_resource type="Script" uid="uid://djbalu2kq3p74" path="res://Scripts/classes/action.gd" id="3_dmbs5"]
+
+[sub_resource type="Resource" id="Resource_7t2du"]
+script = ExtResource("2_3yti7")
+text = "what??"
+target = -1
+metadata/_custom_type_script = "uid://dvewwpayy1s83"
+
+[sub_resource type="Resource" id="Resource_jcsg2"]
+script = ExtResource("1_bb40k")
+dialogueText = "Hello I'm Cain and now it's time for PAIN!!!"
+dialogueOptions = Array[ExtResource("2_3yti7")]([SubResource("Resource_7t2du")])
+metadata/_custom_type_script = "uid://bg6c48acdck1"
+
+[resource]
+script = ExtResource("2_0qarb")
+speakerName = "Cain"
+manuscript = Array[ExtResource("1_bb40k")]([SubResource("Resource_jcsg2")])
+metadata/_custom_type_script = "uid://bin58sxq57jsc"

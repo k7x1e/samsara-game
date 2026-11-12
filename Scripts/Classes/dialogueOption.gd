@@ -15,4 +15,4 @@ extends Resource
 @export var costsMoney: bool = false
 @export var cost: int = 10
 
-@export var action: Action = null
+@export var action: Array[Action] = []

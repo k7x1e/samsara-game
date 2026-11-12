@@ -15,6 +15,8 @@ class_name physicsItem
 
 @export var spawned: bool = false
 
+@export var actions: Array[Action] = [] ## only to be used if an action will be triggered upon being picked up. (stuff like quest progression or having a npc get mad for example)
+
 var ownModel: Node
 var notpickedup: bool = true
 
@@ -53,11 +55,16 @@ func checkModel():
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and nearPlayer and notpickedup:
+		doActions()
 		notpickedup = false
 		Globals.Player.inventory.add(ownItem)
 		Globals.Player.notify(str("Picked up a ", ownItem.name))
 		Globals.inventory.updateInventory()
 		self.queue_free()
+
+func doActions() -> void:
+	for i in actions:
+		i.do(self,null,[],{"item": ownItem})
 
 func body_entered(body: Node3D) -> void:
 	nearPlayer = true

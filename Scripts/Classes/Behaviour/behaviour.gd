@@ -51,7 +51,6 @@ func death():
 	actor.destroy()
 
 func initialize():
-	#set important things here.
 	pass
 
 func _update():

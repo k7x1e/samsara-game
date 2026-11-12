@@ -76,7 +76,6 @@ metadata/_custom_type_script = "uid://b6gxwdgd5651g"
 
 [sub_resource type="Resource" id="Resource_vu85i"]
 script = ExtResource("14_w8204")
-slot = "armRight"
 node = ExtResource("13_e3o8m")
 associatedAnimation = "daggerhold"
 curNode = null
@@ -170,8 +169,8 @@ transform = Transform3D(-1.0927845e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.092784
 
 [node name="Skeleton3D" parent="Actor/Visual/elder/Armature" parent_id_path=PackedInt32Array(7493415, 482351033) index="0" unique_id=1296813774]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.93801177, 0.021737697, 0.34067157, 0.060036585)
-bones/3/rotation = Quaternion(4.923821e-05, -7.880095e-05, 0.003957396, 0.99999225)
+bones/1/rotation = Quaternion(0.93801236, 0.021707438, 0.3406735, 0.06002559)
+bones/3/rotation = Quaternion(8.579322e-05, -0.00013730366, 0.006895411, 0.9999763)
 bones/5/rotation = Quaternion(0.022711672, -1.1917787e-07, 2.7074563e-09, 0.99974203)
 bones/7/rotation = Quaternion(-0.36593214, -0.027977932, -0.12831022, 0.9213292)
 bones/8/rotation = Quaternion(-0.23305106, -0.018484527, -0.022327406, 0.9720324)

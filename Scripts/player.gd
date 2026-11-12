@@ -229,7 +229,7 @@ func checkDialogue():
 			if body.behaviour.hasDialogue == true:
 				#used the preset instead of the active behaviour
 				#print("Has dialogue")
-				Globals.Root.startDialogue(body.NpcClass.behaviour.words)
+				Globals.Root.startDialogue(body.behaviour.words)
 				return
 
 #evil ass mouselook function niggaaaa

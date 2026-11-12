@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="conversation" format=3 uid="uid://xm2tqnhksoev"]
 
-[ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/Classes/dialogueClass.gd" id="1_fdpo0"]
-[ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/Classes/dialogueOption.gd" id="2_ros8p"]
+[ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/classes/dialogueClass.gd" id="1_fdpo0"]
+[ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/classes/dialogueOption.gd" id="2_ros8p"]
+[ext_resource type="Script" uid="uid://djbalu2kq3p74" path="res://Scripts/classes/action.gd" id="3_4rbfs"]
 [ext_resource type="Resource" uid="uid://1huepcxmm62c" path="res://Resources/story/quests/tutorialQuest.tres" id="3_v8vff"]
-[ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/Classes/conversation.gd" id="4_4rbfs"]
-[ext_resource type="Script" uid="uid://cmxxck0reg3ca" path="res://Scripts/Classes/actions/tutorialend.gd" id="4_ros8p"]
+[ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/classes/conversation.gd" id="4_4rbfs"]
+[ext_resource type="Script" uid="uid://cmxxck0reg3ca" path="res://Scripts/classes/actions/tutorialend.gd" id="4_ros8p"]
 
 [sub_resource type="Resource" id="Resource_f4idf"]
 script = ExtResource("2_ros8p")
@@ -36,7 +37,7 @@ dialogueText = "You might not know who you are and neither do I. (n)We are both 
 dialogueOptions = Array[ExtResource("2_ros8p")]([SubResource("Resource_ugpl6")])
 metadata/_custom_type_script = "uid://bg6c48acdck1"
 
-[sub_resource type="Resource" id="Resource_ros8p"]
+[sub_resource type="Resource" id="Resource_jux2f"]
 script = ExtResource("4_ros8p")
 metadata/_custom_type_script = "uid://cmxxck0reg3ca"
 
@@ -44,7 +45,7 @@ metadata/_custom_type_script = "uid://cmxxck0reg3ca"
 script = ExtResource("2_ros8p")
 text = "Farewell then."
 target = -1
-action = SubResource("Resource_ros8p")
+action = Array[ExtResource("3_4rbfs")]([SubResource("Resource_jux2f")])
 metadata/_custom_type_script = "uid://dvewwpayy1s83"
 
 [sub_resource type="Resource" id="Resource_ir32r"]
@@ -55,7 +56,7 @@ questStatus = 4
 quest = ExtResource("3_v8vff")
 metadata/_custom_type_script = "uid://bg6c48acdck1"
 
-[sub_resource type="Resource" id="Resource_v8vff"]
+[sub_resource type="Resource" id="Resource_50xj6"]
 script = ExtResource("4_ros8p")
 metadata/_custom_type_script = "uid://cmxxck0reg3ca"
 
@@ -63,7 +64,7 @@ metadata/_custom_type_script = "uid://cmxxck0reg3ca"
 script = ExtResource("2_ros8p")
 text = "Farewell."
 target = -1
-action = SubResource("Resource_v8vff")
+action = Array[ExtResource("3_4rbfs")]([SubResource("Resource_50xj6")])
 metadata/_custom_type_script = "uid://dvewwpayy1s83"
 
 [sub_resource type="Resource" id="Resource_vl8n3"]

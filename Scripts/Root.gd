@@ -3,6 +3,7 @@ extends Node3D
 class_name Root
 
 signal inLondon
+signal outOfMenu
 
 @export var gamestate: gameState
 
@@ -48,6 +49,8 @@ var isPaused = false
 @onready var convoPreset: conversation = preload("res://Resources/story/conversations/courierPreset.tres")
 @onready var courier: PackedScene = preload("res://Scenes/actors/courier.tscn")
 
+@export var currentDialogue: Variant
+
 func sendCourier(message:Variant,isConvo:bool=false): ##by default message can be a string and it will use the preset, if isConvo is true the message is expected to be of the conversation class
 	if currentInterior != "london":
 		await inLondon
@@ -84,6 +87,8 @@ func nowPlaying(songName: String, artistAlbum: String):
 	songNotif.initialize()
 
 func notify(what: String, useSound: bool = false, dontRetract: bool = false):
+	if currentMenu != 0:
+		await outOfMenu
 	var tempP = mNotif.instantiate()
 	$fading.add_child(tempP)
 	tempP.toShow = what
@@ -224,9 +229,11 @@ func startDialogue(theconvo: conversation):
 	Globals.dialogueMenu.dialogueToUse = theconvo
 	toggleDialogue()
 	Globals.dialogueMenu.update()
+	currentDialogue = theconvo
 
 func stopDialogue():
 	toggleDialogue()
+	currentDialogue = null
 
 func toggleDialogue():
 	if currentMenu == 0:
@@ -239,6 +246,7 @@ func toggleDialogue():
 		Globals.dialogueMenu.set_process(false)
 		Globals.dialogueMenu.get_parent().hide()
 		currentMenu = 0
+		outOfMenu.emit()
 
 func pauseGame():
 	if !pauseMenu:
@@ -254,6 +262,7 @@ func pauseGame():
 		pauseMenu.set_process(false)
 		pauseMenu.hide()
 		currentMenu = 0
+		outOfMenu.emit()
 
 func toggleMenu():
 	if currentMenu == 0:
@@ -268,6 +277,7 @@ func toggleMenu():
 		Menu.set_process(false)
 		pause(false)
 		currentMenu = 0
+		outOfMenu.emit()
 
 
 #straight up stealing code from dustrialis, gng

@@ -77,7 +77,7 @@ func move():
 	tempPos = nav.get_next_path_position()
 	#print("headed to ", tempPos)
 	var direction = position.direction_to(tempPos)
-	visual.look_at(nav.target_position, Vector3.UP)
+	#visual.look_at(nav.target_position, Vector3.UP)
 	if direction:
 		#print("i have motion")
 		#oh my god nigga "i have motion"

@@ -44,7 +44,7 @@ func refresh():
 	labelString = ""
 	for i in curItem.shownStats:
 		var temp = get_proper(i, curItem)
-		labelString += str(i,": ", temp, "[br]")
+		labelString += str("[p]",i,": ", temp, "[/p][br]")
 	
 	label.text = labelString
 

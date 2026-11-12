@@ -868,3 +868,16 @@
 	#16:08
 	#i guess theres not much more to add to the item menu.
 	#wait no actually i know exactly what it needs
+	#
+	##12/11
+	#10:18
+	#Samsonarum. Book 1; Act 1: Exordium.
+	#Samsonarum. Book 1; Act 2: something
+	#Samsonarum. Book 1; Act 3: orgasmius.
+	#could be cool, exordium is a sick ass name.
+	#10:26
+	#added root notify action (menacing text). Telling cain that you are jeremiah will now trigger one.
+	#10:56
+	#changeConversation is now functional again.
+	#11:28
+	#a hard day of work.

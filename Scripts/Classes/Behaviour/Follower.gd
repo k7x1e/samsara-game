@@ -47,6 +47,9 @@ func getAngered():
 	actor.fixCombatBehaviour()
 
 func initialize():
+	if hasDialogue:
+		words.ownerB = self
+	
 	damageArea = actor.damageArea
 	player = Globals.Player
 	#playerFollowerNode = player.getFollowerNode()

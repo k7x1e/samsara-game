@@ -47,7 +47,8 @@ func update():
 
 func optionPressed(i: DialogueOption):
 	if i.action != null:
-		i.action.do(Globals.Root)
+		for p in i.action:
+			p.do(Globals.Root)
 	if i.target == -1:
 		Globals.Root.stopDialogue()
 		return

@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://bqdpiionfhc5e" path="res://Scripts/ActorBaseClass.gd" id="1_mr2go"]
 [ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="2_4vopc"]
 [ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="3_h5mwl"]
-[ext_resource type="Script" uid="uid://x17x88r6wwpt" path="res://Scripts/Classes/Behaviour/Courier.gd" id="4_ac2s6"]
-[ext_resource type="Script" uid="uid://7egkv825rd1e" path="res://Scripts/Classes/Behaviour/subBehaviour.gd" id="5_87wjo"]
-[ext_resource type="Script" uid="uid://bc33fveu1oyam" path="res://Scripts/Classes/Behaviour/subbehaviour/forceTalk.gd" id="6_1jkxr"]
-[ext_resource type="Script" uid="uid://cnpnfxiwvhunm" path="res://Scripts/Classes/Behaviour/subbehaviour/sayRandom.gd" id="7_awo4p"]
+[ext_resource type="Script" uid="uid://x17x88r6wwpt" path="res://Scripts/classes/Behaviour/Courier.gd" id="4_ac2s6"]
+[ext_resource type="Script" uid="uid://7egkv825rd1e" path="res://Scripts/classes/Behaviour/subBehaviour.gd" id="5_87wjo"]
+[ext_resource type="Script" uid="uid://bc33fveu1oyam" path="res://Scripts/classes/Behaviour/subbehaviour/forceTalk.gd" id="6_1jkxr"]
+[ext_resource type="Script" uid="uid://cnpnfxiwvhunm" path="res://Scripts/classes/Behaviour/subbehaviour/sayRandom.gd" id="7_awo4p"]
 [ext_resource type="Resource" uid="uid://gjj20nv5a6jg" path="res://Resources/story/conversations/courierPreset.tres" id="7_cajas"]
-[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/Classes/npc.gd" id="12_a15q2"]
+[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="12_a15q2"]
 [ext_resource type="PackedScene" uid="uid://b7dbugdkfgs43" path="res://Models/courier.glb" id="12_awo4p"]
 [ext_resource type="Script" uid="uid://sgkxx5fsvhpm" path="res://Scripts/actorAnim.gd" id="13_1jkxr"]
 [ext_resource type="Resource" uid="uid://ca5npbbgkve3e" path="res://Resources/Items/dagger.tres" id="13_pu68c"]
@@ -28,7 +28,6 @@ metadata/_custom_type_script = "uid://cnpnfxiwvhunm"
 [sub_resource type="Resource" id="Resource_aiey3"]
 script = ExtResource("4_ac2s6")
 words = ExtResource("7_cajas")
-speed = 60.0
 actor = null
 subBehaviours = Array[ExtResource("5_87wjo")]([SubResource("Resource_r5y57"), SubResource("Resource_1jkxr")])
 usesSubBehaviours = true
@@ -83,10 +82,10 @@ equipped = ExtResource("13_pu68c")
 [node name="courier" parent="Visual" unique_id=192641884 instance=ExtResource("12_awo4p")]
 transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, 0.76312244, 0)
 
-[node name="Skeleton3D" parent="Visual/courier/Armature" parent_id_path=PackedInt32Array(192641884, 1269207993) index="0" unique_id=1477783807]
+[node name="Skeleton3D" parent="Visual/courier/Armature" parent_id_path=PackedInt32Array(192641884, 301523256) index="0" unique_id=47192675]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.93806404, 0.019352635, 0.34082308, 0.059170205)
-bones/3/rotation = Quaternion(5.16437e-05, -8.265067e-05, 0.004150729, 0.9999915)
+bones/1/rotation = Quaternion(0.9380283, 0.021012831, 0.34071785, 0.0597733)
+bones/3/rotation = Quaternion(1.04242245e-05, -1.6682952e-05, 0.0008378204, 0.99999964)
 bones/6/rotation = Quaternion(-0.8222617, -1.5877157e-07, 1.7295703e-07, 0.5691096)
 bones/7/rotation = Quaternion(-0.44035098, -0.038220607, -0.14063428, 0.8859189)
 bones/8/rotation = Quaternion(-0.10192373, -0.04477334, -0.00794932, 0.9937524)

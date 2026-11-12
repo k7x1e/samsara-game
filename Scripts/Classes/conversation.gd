@@ -6,6 +6,7 @@ class_name conversation
 @export var manuscript: Array[dialogue] = []
 @export var linkedQuest: Quest ## you do not need to assign this, its self setting.
 @export var hasQuest: bool
+@export var ownerB: Behaviour
 
 func updateQuest(): ## does not support conversations with several quests yet. will implement when needed
 	if hasQuest:

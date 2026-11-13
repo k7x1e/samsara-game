@@ -881,3 +881,19 @@
 	#changeConversation is now functional again.
 	#11:28
 	#a hard day of work.
+	#12:53
+	#hopefully time to get something done
+	#
+	##13/11
+	#09:46
+	#highkey forgot to log but made a courier model but no textures for it. I will maybe get to work on textures now.
+	#no fucking way i forgot to push
+	#FUCK
+	#09:52
+	#gave my girlfriend careful instructions to run git push
+	#nigga how did i forget to push
+	#fuck erik fors om du läser detta är du en värdelös lärare och en ännu sämre spelutvecklare, get a grip, retard.
+	#09:53
+	#matters-of-facts aside time to actually get some work done.
+	#12:19
+	#made a (slightly) better peasant model and implemented it. Will improve later.

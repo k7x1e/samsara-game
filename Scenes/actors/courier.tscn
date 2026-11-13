@@ -82,6 +82,7 @@ equipped = ExtResource("13_pu68c")
 [node name="courier" parent="Visual" unique_id=1104498072 instance=ExtResource("12_awo4p")]
 transform = Transform3D(-0.3, 0, -4.5298744e-08, 0, 0.3, 0, 4.5298744e-08, 0, -0.3, 0, 0.35906374, 0)
 
+<<<<<<< HEAD
 [node name="Skeleton3D" parent="Visual/courier/Armature" parent_id_path=PackedInt32Array(1104498072, 1192578828) index="0" unique_id=63478763]
 bones/0/position = Vector3(5.9266854e-09, -0.3690953, -9.355443e-09)
 bones/0/rotation = Quaternion(-5.587933e-09, 1.4901161e-07, 1.6763806e-08, 1)
@@ -103,6 +104,26 @@ bones/19/rotation = Quaternion(-0.6538622, 0.042536262, 0.041446816, 0.7542792)
 bones/20/rotation = Quaternion(-0.07752509, -0.0012909874, -0.035505265, 0.99635714)
 bones/21/rotation = Quaternion(0.010151447, 0.016835278, -0.6774286, 0.7353259)
 bones/23/rotation = Quaternion(-0.653336, 0.21065485, -0.657914, 0.30971897)
+=======
+[node name="Skeleton3D" parent="Visual/courier/Armature" parent_id_path=PackedInt32Array(192641884, 301523256) index="0" unique_id=47192675]
+bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
+bones/1/rotation = Quaternion(0.9381418, 0.01511949, 0.34108666, 0.05763166)
+bones/3/rotation = Quaternion(0.00014133762, -0.00022619695, 0.011359646, 0.9999355)
+bones/6/rotation = Quaternion(-0.8222617, -1.5877157e-07, 1.7295703e-07, 0.5691096)
+bones/7/rotation = Quaternion(-0.44035098, -0.038220607, -0.14063428, 0.8859189)
+bones/8/rotation = Quaternion(-0.10192373, -0.04477334, -0.00794932, 0.9937524)
+bones/9/rotation = Quaternion(-0.1742328, -0.037101448, 0.030870324, 0.983521)
+bones/10/rotation = Quaternion(0.22203933, 0.5698971, 0.78985965, 0.045138706)
+bones/11/rotation = Quaternion(0.09578161, 0.8317535, -0.4750532, -0.27080724)
+bones/12/rotation = Quaternion(0.11073944, -0.056747783, -0.22298814, 0.9668468)
+bones/13/rotation = Quaternion(0.14083622, -0.18853085, 0.107122675, 0.9659949)
+bones/15/rotation = Quaternion(0.72698486, 0.094962806, -0.058514364, 0.6775332)
+bones/16/rotation = Quaternion(0.03743713, -0.008029879, -0.00083015836, 0.9992664)
+bones/17/rotation = Quaternion(0.6096443, 0.7403935, -0.14562067, 0.24278796)
+bones/19/rotation = Quaternion(-0.731865, -0.011666051, 0.015933152, 0.6811635)
+bones/20/rotation = Quaternion(-0.03742333, -7.3431727e-07, -0.001311659, 0.99929875)
+bones/21/rotation = Quaternion(-0.11982032, -0.08923471, -0.61523545, 0.7740579)
+>>>>>>> fa5423604e371d4e2580862d829d1a881f776edc
 
 [node name="Nav" type="NavigationAgent3D" parent="." unique_id=87223851 groups=["Pausable"]]
 avoidance_enabled = true

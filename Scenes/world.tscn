@@ -53,11 +53,16 @@
 [ext_resource type="PackedScene" uid="uid://dmwlw28tgirug" path="res://Scenes/models/player_reference.tscn" id="36_l4vrt"]
 [ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="37_w5giw"]
 [ext_resource type="Script" uid="uid://7egkv825rd1e" path="res://Scripts/classes/Behaviour/subBehaviour.gd" id="46_0d7cr"]
+[ext_resource type="Script" uid="uid://bc33fveu1oyam" path="res://Scripts/classes/Behaviour/subbehaviour/forceTalk.gd" id="48_tutfb"]
+[ext_resource type="Script" uid="uid://bqeuuk8kqu4jr" path="res://Scripts/classes/Behaviour/subbehaviour/lookAtPlayer.gd" id="49_s73dv"]
+[ext_resource type="Script" uid="uid://djbalu2kq3p74" path="res://Scripts/classes/action.gd" id="50_ry8tx"]
 [ext_resource type="Script" uid="uid://dvhlvrgx56mc5" path="res://Scripts/billboard.gd" id="52_vhf2b"]
 [ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="53_g44x5"]
 [ext_resource type="AudioStream" uid="uid://cs1ygjrv7be2n" path="res://sound/sfx/typewriter.wav" id="54_kwnki"]
 [ext_resource type="Script" uid="uid://c1sq1djlgalom" path="res://Scripts/notification.gd" id="55_cvubk"]
+[ext_resource type="PackedScene" uid="uid://25wk3pxjeimw" path="res://Models/peasant3.glb" id="55_uq5fj"]
 [ext_resource type="Resource" uid="uid://bvnfwiqt3nvr1" path="res://Resources/story/conversations/exgnostic.tres" id="56_vhf2b"]
+[ext_resource type="Script" uid="uid://sgkxx5fsvhpm" path="res://Scripts/actorAnim.gd" id="56_xm6am"]
 [ext_resource type="PackedScene" uid="uid://cgyw6oicswx6p" path="res://Scenes/physics_item.tscn" id="57_dsm2w"]
 [ext_resource type="Resource" uid="uid://burvo2yn4lmxq" path="res://Resources/Items/heal.tres" id="58_0d7cr"]
 [ext_resource type="PackedScene" uid="uid://dhxgl60lqqfjv" path="res://Scenes/items/Models/potion.tscn" id="59_0d7cr"]
@@ -8980,6 +8985,14 @@ points = PackedVector3Array(52, 20, 0, 52, 0, 0, 28, 20, 0, 28, 0, 0, 52, 20, -1
 material = ExtResource("25_i4fjy")
 size = Vector2(400, 500)
 
+[sub_resource type="Resource" id="Resource_s73dv"]
+script = ExtResource("48_tutfb")
+metadata/_custom_type_script = "uid://bc33fveu1oyam"
+
+[sub_resource type="Resource" id="Resource_lxtj3"]
+script = ExtResource("49_s73dv")
+metadata/_custom_type_script = "uid://bqeuuk8kqu4jr"
+
 [sub_resource type="Resource" id="Resource_r74th"]
 script = ExtResource("35_r74th")
 text = "List?"
@@ -9045,14 +9058,42 @@ damageArea = null
 words = SubResource("Resource_jwdyn")
 actor = null
 hasDialogue = true
+subBehaviours = Array[ExtResource("46_0d7cr")]([SubResource("Resource_s73dv"), SubResource("Resource_lxtj3")])
+usesSubBehaviours = true
 metadata/_custom_type_script = "uid://baf2et18ajmro"
 
 [sub_resource type="Resource" id="Resource_al5m0"]
 script = ExtResource("37_w5giw")
 npcName = "Example Actor"
+usesModel = false
 model = ExtResource("36_atqvy")
 behaviour = SubResource("Resource_t6yt7")
 metadata/_custom_type_script = "uid://drjjmjc24qipo"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m4x7e"]
+animation = &"rest"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vt4ob"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hgeoe"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tk7xo"]
+switch_mode = 2
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_scl1n"]
+switch_mode = 2
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_tutfb"]
+states/rest/node = SubResource("AnimationNodeAnimation_m4x7e")
+states/rest/position = Vector2(381.245, 109.3025)
+states/run/node = SubResource("AnimationNodeAnimation_vt4ob")
+states/run/position = Vector2(394.245, 289.3025)
+transitions = ["Start", "rest", SubResource("AnimationNodeStateMachineTransition_hgeoe"), "rest", "run", SubResource("AnimationNodeStateMachineTransition_tk7xo"), "run", "rest", SubResource("AnimationNodeStateMachineTransition_scl1n")]
+graph_offset = Vector2(118.44001, -15.210042)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_dwpb4"]
 viewport_path = NodePath("SubViewport")
@@ -18465,8 +18506,35 @@ light_color = Color(0.2491396, 0.34562343, 0.516933, 1)
 light_energy = 0.4
 
 [node name="introGuy" parent="." unique_id=1645838353 instance=ExtResource("31_1vso6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.29373, 1.14, 126)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.29373, 1.3753527, 126)
 NpcClass = SubResource("Resource_al5m0")
+
+[node name="peasant3" parent="introGuy/Visual" parent_id_path=PackedInt32Array(1645838353, 1983415667) index="0" unique_id=1845622582 instance=ExtResource("55_uq5fj")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.086907744, 0)
+
+[node name="Skeleton3D" parent="introGuy/Visual/peasant3/Armature" parent_id_path=PackedInt32Array(1845622582, 1494916605) index="0" unique_id=243683415]
+bones/1/rotation = Quaternion(0.022630751, 0, 6.188798e-18, 0.999744)
+bones/2/rotation = Quaternion(0, 2.0679515e-25, -8.2071826e-25, 1)
+bones/3/rotation = Quaternion(0, 2.0679515e-25, -8.2071826e-25, 1)
+bones/4/rotation = Quaternion(0, 2.0679515e-25, -8.2071826e-25, 1)
+bones/6/rotation = Quaternion(-0.0057090963, -0.0044341297, 0.51135117, 0.8593415)
+bones/7/rotation = Quaternion(-0.14874437, 0.04875998, 0.018674463, 0.9874963)
+bones/10/rotation = Quaternion(-0.0057090954, 0.004434128, -0.51135117, 0.8593415)
+bones/11/rotation = Quaternion(-0.14874439, -0.04875995, -0.01867444, 0.98749626)
+bones/13/rotation = Quaternion(0.7058879, -0.020732174, -0.6977596, -0.120099925)
+bones/14/rotation = Quaternion(-0.04882013, -0.0006658289, 0.105390534, 0.9932316)
+bones/15/rotation = Quaternion(-0.008577505, 0.0045998557, -0.6667261, 0.7452393)
+bones/16/rotation = Quaternion(0.5106359, -0.49988687, -0.4998868, -0.48936412)
+bones/17/rotation = Quaternion(0.7058879, 0.020732174, 0.6977596, -0.120099925)
+bones/18/rotation = Quaternion(-0.04882013, 0.0006658289, -0.105390534, 0.9932316)
+bones/19/rotation = Quaternion(-0.008577505, -0.0045998557, 0.6667261, 0.7452393)
+bones/20/rotation = Quaternion(0.5106359, 0.49988687, 0.4998868, -0.48936412)
+
+[node name="AnimationTree" type="AnimationTree" parent="introGuy/Visual" parent_id_path=PackedInt32Array(1645838353, 1983415667) index="1" unique_id=1287270942]
+root_node = NodePath("../peasant3")
+tree_root = SubResource("AnimationNodeStateMachine_tutfb")
+anim_player = NodePath("../peasant3/AnimationPlayer")
+script = ExtResource("56_xm6am")
 
 [node name="exgnostic" parent="." unique_id=883655086 instance=ExtResource("31_1vso6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.505, 1.8525496, 3.229)
@@ -18482,4 +18550,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.232765, 3.56, 128.19992)
 ownItem = SubResource("Resource_tutfb")
 spawned = true
 
+[connection signal="moving" from="introGuy" to="introGuy/Visual/AnimationTree" method="moving"]
+
 [editable path="Water"]
+[editable path="introGuy"]
+[editable path="introGuy/Visual/peasant3"]

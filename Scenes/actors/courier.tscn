@@ -84,8 +84,8 @@ transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-
 
 [node name="Skeleton3D" parent="Visual/courier/Armature" parent_id_path=PackedInt32Array(192641884, 301523256) index="0" unique_id=47192675]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
-bones/1/rotation = Quaternion(0.9381418, 0.01511949, 0.34108666, 0.05763166)
-bones/3/rotation = Quaternion(0.00014133762, -0.00022619695, 0.011359646, 0.9999355)
+bones/1/rotation = Quaternion(0.93819135, 0.011643627, 0.34129778, 0.056367554)
+bones/3/rotation = Quaternion(0.00020779946, -0.00033256263, 0.016701352, 0.99986047)
 bones/6/rotation = Quaternion(-0.8222617, -1.5877157e-07, 1.7295703e-07, 0.5691096)
 bones/7/rotation = Quaternion(-0.44035098, -0.038220607, -0.14063428, 0.8859189)
 bones/8/rotation = Quaternion(-0.10192373, -0.04477334, -0.00794932, 0.9937524)

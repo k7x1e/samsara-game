@@ -55,16 +55,17 @@ switch_mode = 2
 advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_scl1n"]
-switch_mode = 2
+xfade_time = 1.4
+switch_mode = 1
 advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_dhkrs"]
 states/rest/node = SubResource("AnimationNodeAnimation_m4x7e")
 states/rest/position = Vector2(381.245, 109.3025)
 states/run/node = SubResource("AnimationNodeAnimation_vt4ob")
-states/run/position = Vector2(394.245, 289.3025)
+states/run/position = Vector2(394.245, 288.8025)
 transitions = ["Start", "rest", SubResource("AnimationNodeStateMachineTransition_hgeoe"), "rest", "run", SubResource("AnimationNodeStateMachineTransition_tk7xo"), "run", "rest", SubResource("AnimationNodeStateMachineTransition_scl1n")]
-graph_offset = Vector2(118.44001, -15.210042)
+graph_offset = Vector2(-44.414932, 79.852394)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0830c"]
 radius = 8.0
@@ -107,7 +108,7 @@ shape = SubResource("SphereShape3D_0830c")
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.5010329, 0)
 
 [node name="Skeleton3D" parent="Visual/peasant2/Armature" parent_id_path=PackedInt32Array(71455771, 1344848233) index="0" unique_id=1947495093]
-bones/1/rotation = Quaternion(0.0182711, 0, -1.458063e-17, 0.99983317)
+bones/1/rotation = Quaternion(0.026395358, 0, -3.779795e-18, 0.9996517)
 bones/2/rotation = Quaternion(0, 2.0679515e-25, -8.2071826e-25, 1)
 bones/3/rotation = Quaternion(0, 2.0679515e-25, -8.2071826e-25, 1)
 bones/4/rotation = Quaternion(0, 2.0679515e-25, -8.2071826e-25, 1)

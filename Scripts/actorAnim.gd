@@ -9,6 +9,6 @@ func moving(fact: bool) -> void:
 	print("am i walking? ", fact)
 	match fact:
 		true:
-			statemachine.travel("walk_002")
+			statemachine.travel("run")
 		false:
 			statemachine.travel("rest")

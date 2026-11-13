@@ -1,31 +1,9 @@
 [gd_resource type="Resource" script_class="conversation" format=3 uid="uid://gjj20nv5a6jg"]
 
-<<<<<<< HEAD
-[ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/Classes/dialogueClass.gd" id="1_lkl2h"]
-[ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/Classes/dialogueOption.gd" id="2_cf2uf"]
-[ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/Classes/conversation.gd" id="3_535b2"]
-[ext_resource type="Script" uid="uid://djbalu2kq3p74" path="res://Scripts/Classes/action.gd" id="3_cf2uf"]
-=======
-[ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/classes/dialogueClass.gd" id="1_lkl2h"]
-[ext_resource type="Script" uid="uid://dvewwpayy1s83" path="res://Scripts/classes/dialogueOption.gd" id="2_cf2uf"]
-[ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/classes/conversation.gd" id="3_535b2"]
-[ext_resource type="Script" uid="uid://djbalu2kq3p74" path="res://Scripts/classes/action.gd" id="3_cf2uf"]
->>>>>>> fa5423604e371d4e2580862d829d1a881f776edc
-
-[sub_resource type="Resource" id="Resource_awo4p"]
-script = ExtResource("2_cf2uf")
-text = "Thanks."
-target = -1
-metadata/_custom_type_script = "uid://dvewwpayy1s83"
-
-[sub_resource type="Resource" id="Resource_1jkxr"]
-script = ExtResource("1_lkl2h")
-dialogueText = "I've been told to tell you that \"scatwaffen sends it regards\"."
-dialogueOptions = Array[ExtResource("2_cf2uf")]([SubResource("Resource_awo4p")])
-metadata/_custom_type_script = "uid://bg6c48acdck1"
+[ext_resource type="Script" uid="uid://bg6c48acdck1" path="res://Scripts/classes/dialogueClass.gd" id="1_8gmqg"]
+[ext_resource type="Script" uid="uid://bin58sxq57jsc" path="res://Scripts/classes/conversation.gd" id="2_lkl2h"]
 
 [resource]
-script = ExtResource("3_535b2")
+script = ExtResource("2_lkl2h")
 speakerName = "Courier"
-manuscript = Array[ExtResource("1_lkl2h")]([SubResource("Resource_1jkxr")])
 metadata/_custom_type_script = "uid://bin58sxq57jsc"

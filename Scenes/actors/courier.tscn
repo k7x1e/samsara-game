@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://bqdpiionfhc5e" path="res://Scripts/ActorBaseClass.gd" id="1_mr2go"]
 [ext_resource type="PackedScene" uid="uid://dbhtmjtvoohhi" path="res://Scenes/billboard.tscn" id="2_4vopc"]
 [ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="3_h5mwl"]
-[ext_resource type="Script" uid="uid://x17x88r6wwpt" path="res://Scripts/classes/Behaviour/Courier.gd" id="4_ac2s6"]
-[ext_resource type="Script" uid="uid://7egkv825rd1e" path="res://Scripts/classes/Behaviour/subBehaviour.gd" id="5_87wjo"]
-[ext_resource type="Script" uid="uid://bc33fveu1oyam" path="res://Scripts/classes/Behaviour/subbehaviour/forceTalk.gd" id="6_1jkxr"]
-[ext_resource type="Script" uid="uid://cnpnfxiwvhunm" path="res://Scripts/classes/Behaviour/subbehaviour/sayRandom.gd" id="7_awo4p"]
+[ext_resource type="Script" uid="uid://x17x88r6wwpt" path="res://Scripts/Classes/Behaviour/Courier.gd" id="4_ac2s6"]
+[ext_resource type="Script" uid="uid://7egkv825rd1e" path="res://Scripts/Classes/Behaviour/subBehaviour.gd" id="5_87wjo"]
+[ext_resource type="Script" uid="uid://bc33fveu1oyam" path="res://Scripts/Classes/Behaviour/subbehaviour/forceTalk.gd" id="6_1jkxr"]
+[ext_resource type="Script" uid="uid://cnpnfxiwvhunm" path="res://Scripts/Classes/Behaviour/subbehaviour/sayRandom.gd" id="7_awo4p"]
 [ext_resource type="Resource" uid="uid://gjj20nv5a6jg" path="res://Resources/story/conversations/courierPreset.tres" id="7_cajas"]
-[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/classes/npc.gd" id="12_a15q2"]
+[ext_resource type="Script" uid="uid://drjjmjc24qipo" path="res://Scripts/Classes/npc.gd" id="12_a15q2"]
 [ext_resource type="PackedScene" uid="uid://b7dbugdkfgs43" path="res://Models/courier.glb" id="12_awo4p"]
 [ext_resource type="Script" uid="uid://sgkxx5fsvhpm" path="res://Scripts/actorAnim.gd" id="13_1jkxr"]
 [ext_resource type="Resource" uid="uid://ca5npbbgkve3e" path="res://Resources/Items/dagger.tres" id="13_pu68c"]
@@ -49,7 +49,7 @@ radius = 2.018302
 animation = &"rest"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h8dmo"]
-animation = &"walk_002"
+animation = &"run"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r5y57"]
 advance_mode = 2
@@ -64,9 +64,9 @@ advance_mode = 0
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_awo4p"]
 states/rest/node = SubResource("AnimationNodeAnimation_1jkxr")
 states/rest/position = Vector2(351, 105)
-states/walk_002/node = SubResource("AnimationNodeAnimation_h8dmo")
-states/walk_002/position = Vector2(377, 194)
-transitions = ["Start", "rest", SubResource("AnimationNodeStateMachineTransition_r5y57"), "rest", "walk_002", SubResource("AnimationNodeStateMachineTransition_au4to"), "walk_002", "rest", SubResource("AnimationNodeStateMachineTransition_8bnk8")]
+states/run/node = SubResource("AnimationNodeAnimation_h8dmo")
+states/run/position = Vector2(378, 194)
+transitions = ["Start", "rest", SubResource("AnimationNodeStateMachineTransition_r5y57"), "rest", "run", SubResource("AnimationNodeStateMachineTransition_au4to"), "run", "rest", SubResource("AnimationNodeStateMachineTransition_8bnk8")]
 graph_offset = Vector2(55, 27)
 
 [node name="Actor" type="CharacterBody3D" unique_id=1866149922 groups=["Pausable", "Persistent", "ticked"]]
@@ -79,9 +79,32 @@ equipped = ExtResource("13_pu68c")
 
 [node name="Visual" type="Node3D" parent="." unique_id=1983415667 groups=["Pausable"]]
 
-[node name="courier" parent="Visual" unique_id=192641884 instance=ExtResource("12_awo4p")]
-transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, 0.76312244, 0)
+[node name="courier" parent="Visual" unique_id=1104498072 instance=ExtResource("12_awo4p")]
+transform = Transform3D(-0.3, 0, -4.5298744e-08, 0, 0.3, 0, 4.5298744e-08, 0, -0.3, 0, 0.35906374, 0)
 
+<<<<<<< HEAD
+[node name="Skeleton3D" parent="Visual/courier/Armature" parent_id_path=PackedInt32Array(1104498072, 1192578828) index="0" unique_id=63478763]
+bones/0/position = Vector3(5.9266854e-09, -0.3690953, -9.355443e-09)
+bones/0/rotation = Quaternion(-5.587933e-09, 1.4901161e-07, 1.6763806e-08, 1)
+bones/1/rotation = Quaternion(-0.02133603, 0.0063959477, -0.0024045736, 0.999749)
+bones/2/rotation = Quaternion(-0.028866591, 0.008906054, -0.003604478, 0.99953717)
+bones/3/rotation = Quaternion(-0.031754278, 0.009818115, -0.0036600863, 0.99944085)
+bones/6/rotation = Quaternion(0.18086442, -0.0158228, 0.7744026, 0.60608447)
+bones/7/rotation = Quaternion(0.023776922, 0.13899851, 0.5133874, 0.84649134)
+bones/8/rotation = Quaternion(-0.048100986, 0.10800024, 0.01243813, 0.99290866)
+bones/9/rotation = Quaternion(0.041387852, -0.17969961, 0.18318783, 0.965628)
+bones/10/rotation = Quaternion(0.1808646, 0.015822679, -0.7744027, 0.60608435)
+bones/11/rotation = Quaternion(0.023776947, -0.13899854, -0.5133874, 0.8464913)
+bones/12/rotation = Quaternion(-0.04810098, -0.10800026, -0.012438146, 0.99290866)
+bones/13/rotation = Quaternion(0.041387733, 0.17969969, -0.18318784, 0.9656279)
+bones/15/rotation = Quaternion(-0.65386224, -0.04253626, -0.04144681, 0.7542792)
+bones/16/rotation = Quaternion(-0.07752509, 0.001290989, 0.035505258, 0.99635714)
+bones/17/rotation = Quaternion(0.010151453, -0.016835285, 0.67742854, 0.73532593)
+bones/19/rotation = Quaternion(-0.6538622, 0.042536262, 0.041446816, 0.7542792)
+bones/20/rotation = Quaternion(-0.07752509, -0.0012909874, -0.035505265, 0.99635714)
+bones/21/rotation = Quaternion(0.010151447, 0.016835278, -0.6774286, 0.7353259)
+bones/23/rotation = Quaternion(-0.653336, 0.21065485, -0.657914, 0.30971897)
+=======
 [node name="Skeleton3D" parent="Visual/courier/Armature" parent_id_path=PackedInt32Array(192641884, 301523256) index="0" unique_id=47192675]
 bones/0/rotation = Quaternion(0.93801, 0.021814255, 0.34066665, -0.060064573)
 bones/1/rotation = Quaternion(0.93819135, 0.011643627, 0.34129778, 0.056367554)
@@ -100,6 +123,7 @@ bones/17/rotation = Quaternion(0.6096443, 0.7403935, -0.14562067, 0.24278796)
 bones/19/rotation = Quaternion(-0.731865, -0.011666051, 0.015933152, 0.6811635)
 bones/20/rotation = Quaternion(-0.03742333, -7.3431727e-07, -0.001311659, 0.99929875)
 bones/21/rotation = Quaternion(-0.11982032, -0.08923471, -0.61523545, 0.7740579)
+>>>>>>> fa5423604e371d4e2580862d829d1a881f776edc
 
 [node name="Nav" type="NavigationAgent3D" parent="." unique_id=87223851 groups=["Pausable"]]
 avoidance_enabled = true

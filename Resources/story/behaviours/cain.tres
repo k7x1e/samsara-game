@@ -4,9 +4,9 @@
 [ext_resource type="FontFile" uid="uid://bkdajsuaheiiv" path="res://Resources/Fonts/Remington Ragged.ttf" id="2_bbujf"]
 [ext_resource type="AudioStream" uid="uid://cs1ygjrv7be2n" path="res://sound/sfx/typewriter.wav" id="3_e3vvs"]
 [ext_resource type="PackedScene" uid="uid://co56i3kh45h03" path="res://Scenes/notification.tscn" id="4_725ay"]
-[ext_resource type="Script" uid="uid://baf2et18ajmro" path="res://Scripts/classes/Behaviour/Follower.gd" id="5_rys7m"]
-[ext_resource type="Script" uid="uid://7egkv825rd1e" path="res://Scripts/classes/Behaviour/subBehaviour.gd" id="6_rcv2l"]
-[ext_resource type="Script" uid="uid://cnpnfxiwvhunm" path="res://Scripts/classes/Behaviour/subbehaviour/sayRandom.gd" id="7_b0geo"]
+[ext_resource type="Script" uid="uid://baf2et18ajmro" path="res://Scripts/Classes/Behaviour/Follower.gd" id="5_rys7m"]
+[ext_resource type="Script" uid="uid://7egkv825rd1e" path="res://Scripts/Classes/Behaviour/subBehaviour.gd" id="6_rcv2l"]
+[ext_resource type="Script" uid="uid://cnpnfxiwvhunm" path="res://Scripts/Classes/Behaviour/subbehaviour/sayRandom.gd" id="7_b0geo"]
 [ext_resource type="Resource" uid="uid://djst5ndjwy31i" path="res://Resources/story/conversations/Cain.tres" id="8_ilb7m"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_dwpb4"]
